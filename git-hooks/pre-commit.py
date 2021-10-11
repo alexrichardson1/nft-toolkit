@@ -37,8 +37,18 @@ def format_files(staged_files, file_extension, formatter):
 
 
 def format_python(files):
-    """Formats python files"""
+    """Formats python files."""
     format_files(files, ".py", "autopep8 -i ")
+
+
+def format_node(files):
+    """Formats node related files."""
+    format_files(files, ".js", "yarn format ")
+    format_files(files, ".ts", "yarn format ")
+    format_files(files, ".tsx", "yarn format ")
+    format_files(files, ".json", "yarn format ")
+    format_files(files, ".html", "yarn format ")
+    format_files(files, ".css", "yarn format ")
 
 
 def run_linter(file, linter):
@@ -60,6 +70,13 @@ def lint_python(files):
     lint_files(files, ".py", "pylint ")
 
 
+def eslint(files):
+    """Lint javascript/typescript files."""
+    lint_files(files, ".js", "yarn tslint ")
+    lint_files(files, ".ts", "yarn tslint ")
+    lint_files(files, ".tsx", "yarn tslint ")
+
+
 def main():
     """Main function for the pre-commit hook."""
     print("--- Running pre-commit hook ---")
@@ -76,11 +93,11 @@ def main():
     staged_files = [
         file for file in staged_files if file not in deleted_filles]
     # add format functions here
-    format_functions = [format_python]  # e.g. [format_java, format_haskell]
+    format_functions = [format_python, format_node]
     for format_function in format_functions:
         format_function(staged_files)
     # add lint functions here
-    lint_functions = [lint_python]  # e.g. [lint_java, lint_haskell]
+    lint_functions = [lint_python, eslint]
     for lint_function in lint_functions:
         lint_function(staged_files)
     print(Fore.GREEN + Style.BRIGHT +
