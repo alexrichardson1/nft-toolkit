@@ -1,0 +1,11 @@
+{
+  "name": "nft-toolkit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/alexrichardson1/NFT-Toolkit",
+  "author": "R, Alex <alex.richardson19@imperial.ac.uk>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  }
+}
