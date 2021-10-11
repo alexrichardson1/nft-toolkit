@@ -1,0 +1,36 @@
+
+# Follow these guidelines to format all your commit messages:
+# 
+#     <type>(<scope>): <subject>
+#     <BLANK LINE>
+#     <body>
+#     <BLANK LINE>
+#     <footer>
+# 
+# Please note that:
+#  - The HEADER is a single line of maximum 50 characters that contains a
+#    type, a scope, and a subject
+#       + <type> describes the kind of change that this commit is   
+#                providing. 
+#          Allowed types are:
+#             * feat (feature)
+#             * fix (bug fix)
+#             * style (formatting)
+#             * refactor
+#             * perf (anything related to performance)
+#             * test (everything related to testing)
+#             * docs (documentation)
+#             * chore (everything related to maintaining repository)
+#             * build (changes that affect the build system or external 
+#                      dependencies)
+#             * ci (changes to the CI configuration)
+#       + <scope> file or directory specifying the place of the commit    
+#                 change
+#       + <subject> short description of the change, in   
+#                   the following format:
+#             * Imperative present tense: "Add" not "Added"
+#             * Capitalised first letter
+#             * NO punctuation
+#  - The BODY must be phrased in imperative present tense 
+#  - The FOOTER is the place to reference issues that   
+#    this commit closes
