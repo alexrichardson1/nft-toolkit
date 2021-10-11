@@ -1,0 +1,99 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "eslint-plugin-tsdoc"],
+  "ignorePatterns": [],
+  "rules": {
+    // Possible Problems
+    "no-constructor-return": "error",
+    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-self-compare": "error",
+    "no-template-curly-in-string": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-unreachable-loop": "error",
+    "no-use-before-define": "error",
+    // Suggestions
+    "block-scoped-var": "error",
+    "camelcase": ["error", { "allow": [] }],
+    "class-methods-use-this": "error",
+    "consistent-return": "error",
+    "consistent-this": "warn",
+    "curly": "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "dot-notation": "error",
+    "eqeqeq": "error",
+    "id-denylist": ["data", "error", "cb", "callback", "temp", "foo", "bar"],
+    "id-length": ["error", { "max": 25, "exceptions": ["i", "j", "e"] }],
+    "max-classes-per-file": ["warn", 2],
+    "max-depth": ["error", 2],
+    "max-lines": ["error", 500],
+    "max-lines-per-function": ["error", { "max": 200 }],
+    "new-cap": "warn",
+    "no-confusing-arrow": "warn",
+    "no-else-return": "error",
+    "no-empty-function": "error",
+    "no-implicit-coercion": "error",
+    "no-invalid-this": "error",
+    "no-iterator": "error",
+    "no-labels": "error",
+    "no-lone-blocks": "error",
+    "no-lonely-if": "error",
+    "no-loop-func": "error",
+    "no-magic-numbers": [
+      "warn",
+      {
+        "ignore": [0, 1],
+        "ignoreArrayIndexes": true,
+        "enforceConst": true
+      }
+    ],
+    "no-mixed-operators": "warn",
+    "no-negated-condition": "error",
+    "no-nested-ternary": "error",
+    "no-return-assign": ["error", "always"],
+    "no-return-await": "error",
+    "no-throw-literal": "error",
+    "no-undef-init": "error",
+    "no-undefined": "error",
+    "no-unneeded-ternary": "error",
+    "no-unused-expressions": "warn",
+    "no-useless-catch": "error",
+    "no-useless-computed-key": "warn",
+    "no-useless-concat": "error",
+    "no-useless-constructor": "error",
+    "no-useless-return": "error",
+    "no-var": "warn",
+    "prefer-const": ["error", { "destructuring": "any" }],
+    "prefer-destructuring": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "require-await": "error",
+    "spaced-comment": "error",
+    "yoda": ["warn", "never", { "exceptRange": true }],
+    // Layout & Formatting
+    "arrow-parens": "warn",
+    "jsx-quotes": ["error", "prefer-double"],
+    "line-comment-position": ["warn", { "position": "above" }],
+    "no-multi-spaces": "error",
+    // Other
+    "react/react-in-jsx-scope": "off",
+    "tsdoc/syntax": "warn"
+  },
+  "root": true
+}
