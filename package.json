@@ -8,6 +8,10 @@
   "dependencies": {
     "typescript": "^4.4.3"
   },
+  "scripts": {
+    "format": "yarn prettier --ignore-path .gitignore --write",
+    "tslint": "yarn eslint --ignore-path .gitignore"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
