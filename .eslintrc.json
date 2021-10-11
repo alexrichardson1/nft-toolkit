@@ -38,7 +38,7 @@
     "default-case-last": "error",
     "dot-notation": "error",
     "eqeqeq": "error",
-    "id-denylist": ["data", "error", "cb", "callback", "temp", "foo", "bar"],
+    "id-denylist": ["error", "data", "cb", "callback", "temp", "foo", "bar"],
     "id-length": ["error", { "max": 25, "exceptions": ["i", "j", "e"] }],
     "max-classes-per-file": ["warn", 2],
     "max-depth": ["error", 2],
