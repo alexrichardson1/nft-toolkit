@@ -13,6 +13,8 @@
     "@typescript-eslint/parser": "^4.33.0",
     "eslint": "^8.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "tsdoc": "^0.0.4",
+    "typedoc": "^0.22.5"
   }
 }
