@@ -254,3 +254,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Local db storage
+postgres-data
