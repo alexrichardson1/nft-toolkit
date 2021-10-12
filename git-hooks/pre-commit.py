@@ -81,7 +81,7 @@ def lint_python(files):
 
 def eslint(files):
     """Lint javascript/typescript files."""
-    lint_files(files, [".js", ".ts", ".tsx"], "yarn tslint ")
+    lint_files(files, [".js", ".ts", ".tsx"], "yarn tslint --max-warnings 0 ")
 
 
 def main():
