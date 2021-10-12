@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 const app = express();
-const port = 5000; // default port to listen
+// default port to listen
+const port = 5000;
 
 const corsOptions = {
   origin: "http://localhost:3000",
