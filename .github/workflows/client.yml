@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Frontend CI
+name: client CI
 
 on:
   push:
@@ -22,10 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       # - name: Set-up seed env vars
-      #   run: echo "REACT_APP_SEED=${{ secrets.SEED }}" >> frontend/.env
+      #   run: echo "REACT_APP_SEED=${{ secrets.SEED }}" >> client/.env
       - name: Install dependencies
-        run: yarn && cd frontend/ && yarn
+        run: yarn && cd client/ && yarn
       - name: Build
-        run: cd frontend/ && yarn build
+        run: cd client/ && yarn build
       - name: Test
-        run: cd frontend/ && yarn test --ci
+        run: cd client/ && yarn test --ci
