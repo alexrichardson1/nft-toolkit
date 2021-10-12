@@ -1,0 +1,32 @@
+version: "3"
+services:
+  client:
+    stdin_open: true
+    networks:
+      - nft-toolkit
+    depends_on:
+      - server
+  server:
+    ports:
+      - "5000:5000"
+    networks:
+      - nft-toolkit
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:10.5
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - nft-toolkit
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./server/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+networks:
+  nft-toolkit:
+    driver: bridge
+volumes:
+  postgres-data:
+    driver: local
