@@ -8,18 +8,7 @@ Used to validate the commit message
 import sys
 import re
 from colorama import Fore, Style
-
-
-def exit_failure(error_message):
-    """Exits non-zero with error message."""
-    print(
-        Fore.RED +
-        Style.BRIGHT +
-        "fatal: " +
-        error_message +
-        Style.RESET_ALL)
-    print("-------------------------------")
-    sys.exit(1)
+from util import exit_failure
 
 
 def co_authors(last_line):
