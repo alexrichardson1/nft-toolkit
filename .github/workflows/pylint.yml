@@ -1,21 +1,23 @@
-name: PyLint Runner
+name: Pylint
 
-on: [push]
+on:
+  push:
+    branches-ignore: []
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Set up Python 3.9
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install pylint
-      - name: Run Pylint
+          python3 -m pip3 install --upgrade pip3
+          pip3 install pylint
+      - name: Analysing the code with pylint
         run: |
-          python lint.py --path ./src --threshold 2
+          pylint `ls -R|grep .py$|xargs`
