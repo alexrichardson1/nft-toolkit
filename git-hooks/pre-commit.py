@@ -9,18 +9,7 @@ import sys
 import os
 import subprocess
 from colorama import Fore, Back, Style
-
-
-def exit_failure(error_message):
-    """Exits non-zero with error message."""
-    print(
-        Fore.RED +
-        Style.BRIGHT +
-        "fatal: " +
-        error_message +
-        Style.RESET_ALL)
-    print("-------------------------------")
-    sys.exit(1)
+from util import exit_failure
 
 
 def run_formatter(files, formatter):
