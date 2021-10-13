@@ -2,15 +2,14 @@
   "name": "nft-toolkit-server",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "build/src/index.js",
+  "main": "build/src/",
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/index.ts",
     "start-production": "node .",
-    "sol-lint": "yarn solium -d smart-contracts/contracts",
     "compile": "yarn hardhat compile",
     "console": "yarn hardhat console",
-    "sol-test": "yarn hardhat test"
+    "soltest": "yarn hardhat test"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
@@ -24,7 +23,6 @@
     "hardhat": "^2.6.5",
     "mocha": "^9.1.2",
     "nodemon": "^2.0.13",
-    "solium": "^1.2.5",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
