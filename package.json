@@ -10,7 +10,8 @@
   },
   "scripts": {
     "format": "yarn prettier --ignore-path .gitignore --write",
-    "tslint": "yarn eslint --ignore-path .gitignore"
+    "tslint": "yarn eslint --ignore-path .gitignore",
+    "solint": "yarn solium -d smart-contracts/contracts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
@@ -19,6 +20,8 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-tsdoc": "^0.2.14",
     "prettier": "^2.4.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.18",
+    "solium": "^1.2.5",
     "tsdoc": "^0.0.4",
     "typedoc": "^0.22.5"
   }
