@@ -55,7 +55,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: nft-toolkit-eb
-          environment_name: Nfttoolkiteb-env
+          environment_name: Nfttoolkiteb-env-1
           version_label: ${{github.SHA}}
           region: eu-west-2
           deployment_package: deploy.zip
