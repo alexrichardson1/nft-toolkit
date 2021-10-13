@@ -17,7 +17,8 @@ def run_formatter(files, formatter):
     files_list = [f for f in files.split(" ") if f != ""]
     for file in files_list:
         print("Formatting file: " + Back.BLACK + file + Style.RESET_ALL)
-    os.system(formatter + files)
+    if os.WEXITSTATUS(os.system(formatter + files)) != 0:
+        exit_failure("formatting failed")
     os.system("git add " + files)
 
 
