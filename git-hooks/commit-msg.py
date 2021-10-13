@@ -16,9 +16,10 @@ def co_authors(last_line):
     # add authors here
     authors = {"AR": "Co-authored-by: R, Alex <alex.richardson19@imperial.ac.uk>",
                "JP": "Co-authored-by: Jaimi Patel <jaimip34@gmail.com>",
-               "AD": "Co-authored-by: Dalal, Aayush <aayush.dalal19@imperial.ac.uk>",
-               "RJ": "Co-authored-by: rj619 <reece.jackson19@imperial.ac.uk>",
-               "DS": "Co-authored-by: Devam Savjani <devamsavjani@rocketmail.com>"}
+               "AD": "Co-authored-by: Aayush Dalal <aayush.dalal19@imperial.ac.uk>",
+               "RJ": "Co-authored-by: Reece Jackson <Rjackson2000@icloud.com>",
+               "DS": "Co-authored-by: Devam Savjani <devamsavjani@rocketmail.com>",
+               "MS": "Co-authored-by: Morkus Salasevicius <devamsavjani@rocketmail.com>", }
     line = last_line.strip("\n").split(" ")
     print(Fore.GREEN + Style.BRIGHT +
           "Replacing name(s) with co-author(s)" + Style.RESET_ALL)
