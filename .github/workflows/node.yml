@@ -28,4 +28,4 @@ jobs:
       - name: Lint TypeScript/JavaScript
         run: yarn tslint --max-warnings 0 .
       - name: Lint Solidity
-        run: yarn solint server/smart-contracts/
+        run: yarn solint -d server/smart-contracts/contracts
