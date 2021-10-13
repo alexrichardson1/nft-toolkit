@@ -1,9 +1,10 @@
 name: Deploy to DockerHub & AWS EB
 
-# on:
-#   push:
-#     branches:
-#       - "master"
+on:
+  push:
+    branches-ignore: []
+    # branches:
+    #   - "master"
 
 jobs:
   docker:
