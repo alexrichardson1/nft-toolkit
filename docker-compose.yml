@@ -1,32 +1,28 @@
-version: "3"
+version: "3.3"
 services:
+  nginx:
+    depends_on:
+      - client
+      - backend
+    restart: always # because it is routing traffic to our entire app
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
   client:
-    stdin_open: true
-    networks:
-      - nft-toolkit
-    depends_on:
-      - server
-  server:
-    ports:
-      - "5000:5000"
-    networks:
-      - nft-toolkit
-    depends_on:
-      - postgres
-  postgres:
-    image: postgres:10.5
-    restart: always
-    ports:
-      - "5432:5432"
-    networks:
-      - nft-toolkit
+    build:
+      context: ./client
+      dockerfile: Dockerfile
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
-      # copy the sql script to create tables
-      - ./server/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
-networks:
-  nft-toolkit:
-    driver: bridge
-volumes:
-  postgres-data:
-    driver: local
+      - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
+    restart: on-failure
+    container_name: client
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    restart: on-failure
+    container_name: server
+    volumes:
+      - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
