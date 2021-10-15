@@ -5,7 +5,7 @@
   "main": "build/src/",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon src/index.ts",
+    "start": "nodemon --files src/index.ts",
     "start-production": "node .",
     "compile": "yarn hardhat compile",
     "console": "yarn hardhat console",
