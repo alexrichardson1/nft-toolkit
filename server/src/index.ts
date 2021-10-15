@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import collectionRoutes from "./routes/collection";
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 mongoose.connect(process.env.DB_URI);
+
+// Routes to handle requests
+app.use("/collection", collectionRoutes);
 
 // define a route handler for the default home page
 app.get("/", (_req, res) => {
