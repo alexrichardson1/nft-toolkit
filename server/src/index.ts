@@ -1,5 +1,9 @@
 import express from "express";
 import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 const app = express();
 // default port to listen
 const port = 5000;
@@ -9,6 +13,8 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
+
+mongoose.connect(process.env.DB_URI);
 
 // define a route handler for the default home page
 app.get("/", (_req, res) => {
