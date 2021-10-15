@@ -25,6 +25,12 @@
     {
       "name": "server",
       "image": "jmp119/nft-toolkit-server",
+      "environmentFiles": [
+        {
+          "value": "arn:aws:s3:::elasticbeanstalk-eu-west-2-307164813438/server.env",
+          "type": "s3"
+        }
+      ],
       "hostname": "server",
       "essential": false,
       "memory": 300
