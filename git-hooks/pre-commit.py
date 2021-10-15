@@ -38,10 +38,10 @@ def format_python(files):
     format_files(files, [".py"], "autopep8 -i ")
 
 
-def format_node(files):
+def prettier(files):
     """Formats node related files."""
     format_files(files, [".js", ".ts", ".tsx", ".json",
-                         ".html", ".css", ".yml", ".md"], "yarn format ")
+                         ".html", ".css", ".yml", ".md", ".sol"], "yarn format ")
 
 
 def run_linter(files, linter):
@@ -90,7 +90,7 @@ def main():
     staged_files = [
         file for file in staged_files if file not in deleted_filles]
     # add format functions here
-    format_functions = [format_python, format_node]
+    format_functions = [format_python, prettier]
     for format_function in format_functions:
         format_function(staged_files)
     # add lint functions here
