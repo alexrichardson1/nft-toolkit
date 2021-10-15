@@ -1,0 +1,1 @@
+type AnchorType = null | HTMLElement;
