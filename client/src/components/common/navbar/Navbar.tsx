@@ -15,6 +15,7 @@ import {
   ToolbarStyle,
   OptionsStyle,
 } from "./NavbarStyles";
+import OpenIconSpeedDial from "./Icons";
 
 const Navbar = (): JSX.Element => {
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorType>(null);
@@ -68,6 +69,7 @@ const Navbar = (): JSX.Element => {
               <AccountBalanceWalletIcon />
               Connect Wallet
             </Fab>
+            <OpenIconSpeedDial />
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
