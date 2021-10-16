@@ -5,7 +5,7 @@ import SolanaLogo from "images/solana-logo.svg";
 import BinanceLogo from "images/binance-logo.svg";
 import AvalancheLogo from "images/avalanche-logo.svg";
 
-const logos = [
+const networkLogos = [
   EthereumLogo,
   CardanoLogo,
   AvalancheLogo,
@@ -14,6 +14,13 @@ const logos = [
   BinanceLogo,
 ];
 
-const names = ["Ethereum", "Cardano", "Avalanche", "Solana", "Polygon", "BSC"];
+const networkNames = [
+  "Ethereum",
+  "Cardano",
+  "Avalanche",
+  "Solana",
+  "Polygon",
+  "BSC",
+];
 
-export { logos, names };
+export { networkLogos, networkNames };
