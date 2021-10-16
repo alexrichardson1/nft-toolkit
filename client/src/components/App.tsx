@@ -1,4 +1,4 @@
-import Navbar from "./common/navbar/Navbar";
+import Navbar from "components/common/Navbar";
 
 const App = (): JSX.Element => {
   return (
