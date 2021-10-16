@@ -1,10 +1,13 @@
-import Navbar from "components/common/Navbar";
+import Home from "pages/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = (): JSX.Element => {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 };
 
