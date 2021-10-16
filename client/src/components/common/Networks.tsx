@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { networkLogos, networkNames } from "common/constants";
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import SvgLogo from "components/common/SvgLogo";
+import { networks } from "common/constants";
 
 const containerStyle = {
   height: 60,
@@ -12,20 +11,9 @@ const containerStyle = {
   flexGrow: 1,
 };
 
-const NetworkDimensions = "70%";
+const NETWORK_DIMENSIONS = "70%";
 
-const actions: SpeedDialActions[] = networkLogos.map((logo, index) => {
-  return {
-    icon: (
-      <SvgLogo
-        icon={logo}
-        width={NetworkDimensions}
-        height={NetworkDimensions}
-      />
-    ),
-    name: networkNames[index],
-  };
-});
+const actions = networks(NETWORK_DIMENSIONS);
 
 const OpenIconSpeedDial = (): JSX.Element => {
   const [selectedNet, setSelectedNet] = useState(actions[0]);
@@ -36,12 +24,12 @@ const OpenIconSpeedDial = (): JSX.Element => {
         ariaLabel="Network selection"
         direction="down"
         icon={selectedNet.icon}>
-        {actions.map((action) => (
+        {actions.map((network) => (
           <SpeedDialAction
-            key={action.name}
-            icon={action.icon}
-            tooltipTitle={action.name}
-            onClick={() => setSelectedNet(action)}
+            key={network.name}
+            icon={network.icon}
+            tooltipTitle={network.name}
+            onClick={() => setSelectedNet(network)}
           />
         ))}
       </SpeedDial>

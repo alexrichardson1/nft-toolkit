@@ -1,7 +1,7 @@
 interface PropsT {
   icon: string;
-  width: string;
-  height: string;
+  width: string | number;
+  height: string | number;
 }
 
 const SvgLogo = (props: PropsT): JSX.Element => (
