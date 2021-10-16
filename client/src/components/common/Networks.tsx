@@ -15,7 +15,7 @@ const NETWORK_DIMENSIONS = "70%";
 
 const actions = networks(NETWORK_DIMENSIONS);
 
-const OpenIconSpeedDial = (): JSX.Element => {
+const NetworkSpeedDial = (): JSX.Element => {
   const [selectedNet, setSelectedNet] = useState(actions[0]);
 
   return (
@@ -37,4 +37,4 @@ const OpenIconSpeedDial = (): JSX.Element => {
   );
 };
 
-export default OpenIconSpeedDial;
+export default NetworkSpeedDial;

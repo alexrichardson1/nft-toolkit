@@ -1,10 +1,11 @@
+import Typography from "@mui/material/Typography";
 import Navbar from "components/common/Navbar";
 
 const Home = (): JSX.Element => {
   return (
     <>
       <Navbar />
-      Hello world!
+      <Typography>Hello world!</Typography>
     </>
   );
 };

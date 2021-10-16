@@ -3,6 +3,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { DEFAULT_MUI_ICON_SIZE, networks } from "common/constants";
 import { useState } from "react";
+import { Typography } from "@mui/material";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 
@@ -45,10 +46,12 @@ const MobileMenu = (props: PropsT): JSX.Element => {
         <MenuItem
           sx={menuItemStyle}
           onClick={() => console.log("Clicked this")}>
-          <AccountBalanceWalletIcon /> Connect Wallet
+          <AccountBalanceWalletIcon color="secondary" />
+          <Typography>Connect Wallet</Typography>
         </MenuItem>
         <MenuItem sx={menuItemStyle} onClick={handleNetworkMenuOpen}>
-          {selectedNetwork.icon} {selectedNetwork.name}
+          {selectedNetwork.icon}
+          <Typography>{selectedNetwork.name}</Typography>
         </MenuItem>
       </Menu>
       <Menu
@@ -65,7 +68,8 @@ const MobileMenu = (props: PropsT): JSX.Element => {
             onClick={() => handleNetworkChange(network)}
             key={network.name}
             sx={menuItemStyle}>
-            {network.icon} {network.name}
+            {network.icon}
+            <Typography>{network.name}</Typography>
           </MenuItem>
         ))}
       </Menu>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import OpenIconSpeedDial from "components/common/Networks";
+import NetworkSpeedDial from "components/common/Networks";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
@@ -58,10 +58,10 @@ const Navbar = (): JSX.Element => {
               color="primary"
               aria-label="add"
               sx={fabStyle}>
-              <AccountBalanceWalletIcon />
-              Connect Wallet
+              <AccountBalanceWalletIcon color="secondary" />
+              <Typography>Connect Wallet</Typography>
             </Fab>
-            <OpenIconSpeedDial />
+            <NetworkSpeedDial />
           </Box>
           <Box sx={moreIconContainerStyle}>
             <IconButton
