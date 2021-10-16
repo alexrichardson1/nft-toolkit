@@ -5,11 +5,10 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import MoreIcon from "@mui/icons-material/MoreVert";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import Toolbar from "@mui/material/Toolbar";
+import MoreIcon from "@mui/icons-material/MoreVert";
+import MobileMenu from "./MobileMenu";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
 
@@ -18,8 +17,6 @@ const toolbarStyle = { justifyContent: "center", alignItems: "center" };
 const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
 
 const fabStyle = { padding: "15px", display: "flex", gap: "5px" };
-
-const menuItemStyle = { display: "flex", gap: "5px" };
 
 const appBarStyle = {
   height: "80px",
@@ -46,21 +43,6 @@ const Navbar = (): JSX.Element => {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileAnchorEl(event.currentTarget);
   };
-
-  const MobileMenu = () => (
-    <Menu
-      anchorEl={mobileAnchorEl}
-      anchorOrigin={anchorOrigin}
-      transformOrigin={anchorOrigin}
-      id={"primary-menu-mobile"}
-      keepMounted
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}>
-      <MenuItem sx={menuItemStyle} onClick={() => console.log("Clicked this")}>
-        <AccountBalanceWalletIcon /> Connect Wallet
-      </MenuItem>
-    </Menu>
-  );
 
   return (
     <Box flexGrow={1}>
@@ -94,7 +76,12 @@ const Navbar = (): JSX.Element => {
           </Box>
         </Toolbar>
       </AppBar>
-      <MobileMenu />
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        anchOrigin={anchorOrigin}
+        anchorEl={mobileAnchorEl}
+        handleClose={handleMobileMenuClose}
+      />
     </Box>
   );
 };
