@@ -1,8 +1,12 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import { DEFAULT_MUI_ICON_SIZE, networks } from "common/constants";
+import { useState } from "react";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
+
+const networkList = networks(DEFAULT_MUI_ICON_SIZE);
 
 interface PropsT {
   isOpen: boolean;
@@ -12,21 +16,61 @@ interface PropsT {
   handleClose: () => void;
 }
 
-const MobileMenu = (props: PropsT): JSX.Element => (
-  <Menu
-    anchorEl={props.anchorEl}
-    anchorOrigin={props.anchOrigin}
-    transformOrigin={
-      props.transformOrigin ? props.transformOrigin : props.anchOrigin
-    }
-    id={"primary-menu-mobile"}
-    keepMounted
-    open={props.isOpen}
-    onClose={props.handleClose}>
-    <MenuItem sx={menuItemStyle} onClick={() => console.log("Clicked this")}>
-      <AccountBalanceWalletIcon /> Connect Wallet
-    </MenuItem>
-  </Menu>
-);
+const MobileMenu = (props: PropsT): JSX.Element => {
+  const [selectedNetwork, setSelectedNetwork] = useState(networkList[0]);
+  const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
+
+  const isNetworkMenuOpen = Boolean(networkAnchorEl);
+  const handleNetworkMenuClose = () => setNetworkAnchorEl(null);
+  const handleNetworkMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setNetworkAnchorEl(event.currentTarget);
+  };
+  const handleNetworkChange = (network: NetworksT) => {
+    setSelectedNetwork(network);
+    handleNetworkMenuClose();
+  };
+
+  return (
+    <>
+      <Menu
+        anchorEl={props.anchorEl}
+        anchorOrigin={props.anchOrigin}
+        transformOrigin={
+          props.transformOrigin ? props.transformOrigin : props.anchOrigin
+        }
+        id={"primary-menu-mobile"}
+        keepMounted
+        open={props.isOpen}
+        onClose={props.handleClose}>
+        <MenuItem
+          sx={menuItemStyle}
+          onClick={() => console.log("Clicked this")}>
+          <AccountBalanceWalletIcon /> Connect Wallet
+        </MenuItem>
+        <MenuItem sx={menuItemStyle} onClick={handleNetworkMenuOpen}>
+          {selectedNetwork.icon} {selectedNetwork.name}
+        </MenuItem>
+      </Menu>
+      <Menu
+        keepMounted
+        anchorOrigin={props.anchOrigin}
+        transformOrigin={
+          props.transformOrigin ? props.transformOrigin : props.anchOrigin
+        }
+        onClose={handleNetworkMenuClose}
+        anchorEl={networkAnchorEl}
+        open={isNetworkMenuOpen}>
+        {networkList.map((network) => (
+          <MenuItem
+            onClick={() => handleNetworkChange(network)}
+            key={network.name}
+            sx={menuItemStyle}>
+            {network.icon} {network.name}
+          </MenuItem>
+        ))}
+      </Menu>
+    </>
+  );
+};
 
 export default MobileMenu;
