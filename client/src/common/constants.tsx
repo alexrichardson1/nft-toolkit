@@ -4,8 +4,11 @@ import PolygonLogo from "images/polygon-logo.svg";
 import SolanaLogo from "images/solana-logo.svg";
 import BinanceLogo from "images/binance-logo.svg";
 import AvalancheLogo from "images/avalanche-logo.svg";
+import SvgLogo from "components/common/SvgLogo";
 
-const networkLogos = [
+export const DEFAULT_MUI_ICON_SIZE = 24;
+
+export const networkLogos = [
   EthereumLogo,
   CardanoLogo,
   AvalancheLogo,
@@ -14,7 +17,7 @@ const networkLogos = [
   BinanceLogo,
 ];
 
-const networkNames = [
+export const networkNames = [
   "Ethereum",
   "Cardano",
   "Avalanche",
@@ -23,4 +26,10 @@ const networkNames = [
   "BSC",
 ];
 
-export { networkLogos, networkNames };
+export const networks = (dimensions: string | number): NetworksT[] =>
+  networkLogos.map((logo, index) => {
+    return {
+      icon: <SvgLogo icon={logo} width={dimensions} height={dimensions} />,
+      name: networkNames[index],
+    };
+  });
