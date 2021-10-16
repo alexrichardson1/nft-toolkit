@@ -1,9 +1,18 @@
 import { Router } from "express";
-import { uploadImagesLocal, uploadImagesS3 } from "../controllers/collection";
+import {
+  saveCollectionToDB,
+  uploadImagesLocal,
+  uploadImagesS3,
+} from "../controllers/collection";
 // eslint-disable-next-line new-cap
 const collectionRoutes = Router();
 
-// TODO: Add deployContracts, uploadDB
-collectionRoutes.post("/", uploadImagesLocal, uploadImagesS3);
+// TODO: Add deployContracts
+collectionRoutes.post(
+  "/",
+  uploadImagesLocal,
+  uploadImagesS3,
+  saveCollectionToDB
+);
 
 export default collectionRoutes;
