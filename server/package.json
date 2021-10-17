@@ -1,10 +1,11 @@
 {
   "name": "nft-toolkit-server",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "main": "build/src/",
   "scripts": {
     "build": "tsc",
+    "test": "",
     "start": "nodemon --files src/index.ts",
     "start-production": "node .",
     "compile": "yarn hardhat compile",
