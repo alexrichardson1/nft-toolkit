@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NetworkSpeedDial from "components/common/Networks";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -9,6 +9,10 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import Toolbar from "@mui/material/Toolbar";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./MobileMenu";
+import ThemeContext from "context/theme/ThemeContext";
+import { useTheme } from "@mui/material/styles";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
 
@@ -32,6 +36,9 @@ const optionsStyle = {
 };
 
 const Navbar = (): JSX.Element => {
+  const theme = useTheme();
+  const { toggleColourMode } = useContext(ThemeContext);
+
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorType>(null);
 
   const isMobileMenuOpen = Boolean(mobileAnchorEl);
@@ -62,6 +69,13 @@ const Navbar = (): JSX.Element => {
               <Typography>Connect Wallet</Typography>
             </Fab>
             <NetworkSpeedDial />
+            <IconButton onClick={toggleColourMode}>
+              {theme.palette.mode === "dark" ? (
+                <Brightness7Icon color="success" fontSize="large" />
+              ) : (
+                <Brightness4Icon color="error" fontSize="large" />
+              )}
+            </IconButton>
           </Box>
           <Box sx={moreIconContainerStyle}>
             <IconButton

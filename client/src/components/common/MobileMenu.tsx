@@ -1,9 +1,13 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import ThemeContext from "context/theme/ThemeContext";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { DEFAULT_MUI_ICON_SIZE, networks } from "common/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 
@@ -20,6 +24,8 @@ interface PropsT {
 const MobileMenu = (props: PropsT): JSX.Element => {
   const [selectedNetwork, setSelectedNetwork] = useState(networkList[0]);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
+  const { toggleColourMode } = useContext(ThemeContext);
+  const theme = useTheme();
 
   const isNetworkMenuOpen = Boolean(networkAnchorEl);
   const handleNetworkMenuClose = () => setNetworkAnchorEl(null);
@@ -29,6 +35,11 @@ const MobileMenu = (props: PropsT): JSX.Element => {
   const handleNetworkChange = (network: NetworksT) => {
     setSelectedNetwork(network);
     handleNetworkMenuClose();
+  };
+
+  const changeThemeAndClose = () => {
+    toggleColourMode();
+    props.handleClose();
   };
 
   return (
@@ -43,6 +54,14 @@ const MobileMenu = (props: PropsT): JSX.Element => {
         keepMounted
         open={props.isOpen}
         onClose={props.handleClose}>
+        <MenuItem sx={menuItemStyle} onClick={changeThemeAndClose}>
+          {theme.palette.mode === "dark" ? (
+            <Brightness7Icon color="success" />
+          ) : (
+            <Brightness4Icon color="error" />
+          )}
+          <Typography>Change Theme</Typography>
+        </MenuItem>
         <MenuItem
           sx={menuItemStyle}
           onClick={() => console.log("Clicked this")}>

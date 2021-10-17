@@ -1,10 +1,9 @@
-import { createTheme } from "@mui/material";
-import { purple, yellow } from "@mui/material/colors";
+import { createContext } from "react";
 
-export const theme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: purple,
-    secondary: yellow,
-  },
-});
+interface ThemeContextT {
+  toggleColourMode: () => void;
+}
+
+const ThemeContext = createContext({} as ThemeContextT);
+
+export default ThemeContext;
