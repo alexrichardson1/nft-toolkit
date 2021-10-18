@@ -28,4 +28,4 @@ jobs:
       - name: Hardhat Build
         run: cd server/ && yarn compile
       - name: Test
-        run: cd server/ && yarn test --ci
+        run: cd server/ && yarn test
