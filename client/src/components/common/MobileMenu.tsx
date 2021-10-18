@@ -22,22 +22,25 @@ interface PropsT {
 }
 
 const MobileMenu = (props: PropsT): JSX.Element => {
+  const theme = useTheme();
+  const { toggleColourMode } = useContext(ThemeContext);
+
   const [selectedNetwork, setSelectedNetwork] = useState(networkList[0]);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
-  const { toggleColourMode } = useContext(ThemeContext);
-  const theme = useTheme();
 
   const isNetworkMenuOpen = Boolean(networkAnchorEl);
+
   const handleNetworkMenuClose = () => setNetworkAnchorEl(null);
-  const handleNetworkMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+
+  const handleNetworkMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
     setNetworkAnchorEl(event.currentTarget);
-  };
+
   const handleNetworkChange = (network: NetworksT) => {
     setSelectedNetwork(network);
     handleNetworkMenuClose();
   };
 
-  const changeThemeAndClose = () => {
+  const handleThemeChange = () => {
     toggleColourMode();
     props.handleClose();
   };
@@ -54,7 +57,7 @@ const MobileMenu = (props: PropsT): JSX.Element => {
         keepMounted
         open={props.isOpen}
         onClose={props.handleClose}>
-        <MenuItem sx={menuItemStyle} onClick={changeThemeAndClose}>
+        <MenuItem sx={menuItemStyle} onClick={handleThemeChange}>
           {theme.palette.mode === "dark" ? (
             <Brightness7Icon color="success" />
           ) : (
@@ -68,10 +71,12 @@ const MobileMenu = (props: PropsT): JSX.Element => {
           <AccountBalanceWalletIcon color="secondary" />
           <Typography>Connect Wallet</Typography>
         </MenuItem>
-        <MenuItem sx={menuItemStyle} onClick={handleNetworkMenuOpen}>
-          {selectedNetwork.icon}
-          <Typography>{selectedNetwork.name}</Typography>
-        </MenuItem>
+        {selectedNetwork && (
+          <MenuItem sx={menuItemStyle} onClick={handleNetworkMenuOpen}>
+            {selectedNetwork.icon}
+            <Typography>{selectedNetwork.name}</Typography>
+          </MenuItem>
+        )}
       </Menu>
       <Menu
         keepMounted

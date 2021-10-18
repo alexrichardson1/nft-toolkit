@@ -1,4 +1,3 @@
-import { useContext, useState } from "react";
 import NetworkSpeedDial from "components/common/Networks";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,9 +9,10 @@ import Toolbar from "@mui/material/Toolbar";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./MobileMenu";
 import ThemeContext from "context/theme/ThemeContext";
-import { useTheme } from "@mui/material/styles";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useContext, useState } from "react";
+import { useTheme } from "@mui/material/styles";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
 
@@ -22,11 +22,7 @@ const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
 
 const fabStyle = { padding: "15px", display: "flex", gap: "5px" };
 
-const appBarStyle = {
-  height: "80px",
-  display: "flex",
-  justifyContent: "center",
-};
+const appBarStyle = { height: 80, display: "flex", justifyContent: "center" };
 
 const optionsStyle = {
   display: { xs: "none", md: "flex" },
@@ -43,13 +39,10 @@ const Navbar = (): JSX.Element => {
 
   const isMobileMenuOpen = Boolean(mobileAnchorEl);
 
-  const handleMobileMenuClose = () => {
-    setMobileAnchorEl(null);
-  };
+  const handleMobileMenuClose = () => setMobileAnchorEl(null);
 
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
     setMobileAnchorEl(event.currentTarget);
-  };
 
   return (
     <Box flexGrow={1}>

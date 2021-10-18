@@ -1,7 +1,8 @@
-import { useState } from "react";
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import { useState } from "react";
 import { networks } from "common/constants";
 
 const containerStyle = {
@@ -23,7 +24,7 @@ const NetworkSpeedDial = (): JSX.Element => {
       <SpeedDial
         ariaLabel="Network selection"
         direction="down"
-        icon={selectedNet.icon}>
+        icon={selectedNet ? selectedNet.icon : <AccountBalanceWalletIcon />}>
         {actions.map((network) => (
           <SpeedDialAction
             key={network.name}

@@ -30,6 +30,6 @@ export const networks = (dimensions: string | number): NetworksT[] =>
   networkLogos.map((logo, index) => {
     return {
       icon: <SvgLogo icon={logo} width={dimensions} height={dimensions} />,
-      name: networkNames[index],
+      name: networkNames[index] || "",
     };
   });
