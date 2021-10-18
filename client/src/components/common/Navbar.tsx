@@ -9,22 +9,31 @@ import Toolbar from "@mui/material/Toolbar";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./MobileMenu";
 import ThemeContext from "context/theme/ThemeContext";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
+import NightsStayIcon from "@mui/icons-material/NightsStay";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useContext, useState } from "react";
 import { useTheme } from "@mui/material/styles";
+import { getComponentByMode } from "common/constants";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
 
-const toolbarStyle = { justifyContent: "center", alignItems: "center" };
-
 const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
 
-const fabStyle = { padding: "15px", display: "flex", gap: "5px" };
+const extendedFabStyle = {
+  display: "flex",
+  gap: "7px",
+  alignItems: "center",
+  justifyCotnent: "center",
+};
 
-const appBarStyle = { height: 80, display: "flex", justifyContent: "center" };
+const toolbarStyle = {
+  width: "100%",
+  height: "100%",
+  justifyContent: "center",
+  alignItems: "center",
+};
 
-const optionsStyle = {
+const navOptionsStyle = {
   display: { xs: "none", md: "flex" },
   alignItems: "center",
   justifyContent: "center",
@@ -33,6 +42,15 @@ const optionsStyle = {
 
 const Navbar = (): JSX.Element => {
   const theme = useTheme();
+
+  const appBarStyle = {
+    background: theme.palette.background.default,
+    color: theme.palette.text.primary,
+    display: "flex",
+    justifyContent: "center",
+    height: 90,
+  };
+
   const { toggleColourMode } = useContext(ThemeContext);
 
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorType>(null);
@@ -44,33 +62,35 @@ const Navbar = (): JSX.Element => {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
     setMobileAnchorEl(event.currentTarget);
 
+  const getThemeIcon = () =>
+    getComponentByMode(
+      theme.palette.mode,
+      <NightsStayIcon fontSize="large" />,
+      <Brightness7Icon fontSize="large" />
+    );
+
   return (
     <Box flexGrow={1}>
       <AppBar sx={appBarStyle} position="sticky">
         <Toolbar sx={toolbarStyle}>
-          <Typography variant="h4" noWrap component="div">
-            NFTit
+          <Typography color="primary" variant="h3" noWrap component="div">
+            NFToolkit
           </Typography>
           <Box flexGrow={1} />
-          <Box sx={optionsStyle}>
+          <Box sx={navOptionsStyle}>
             <Fab
               variant="extended"
               color="primary"
-              aria-label="add"
-              sx={fabStyle}>
-              <AccountBalanceWalletIcon color="secondary" />
+              aria-label="connect wallet"
+              sx={extendedFabStyle}>
+              <AccountBalanceWalletIcon />
               <Typography>Connect Wallet</Typography>
             </Fab>
             <NetworkSpeedDial />
-            <IconButton onClick={toggleColourMode}>
-              {theme.palette.mode === "dark" ? (
-                <Brightness7Icon color="success" fontSize="large" />
-              ) : (
-                <Brightness4Icon color="error" fontSize="large" />
-              )}
-            </IconButton>
+            <Fab onClick={toggleColourMode}>{getThemeIcon()}</Fab>
           </Box>
           <Box sx={moreIconContainerStyle}>
+            <IconButton onClick={toggleColourMode}>{getThemeIcon()}</IconButton>
             <IconButton
               size="large"
               aria-label="show more"

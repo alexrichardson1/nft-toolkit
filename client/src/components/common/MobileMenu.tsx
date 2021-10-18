@@ -1,13 +1,9 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import ThemeContext from "context/theme/ThemeContext";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { DEFAULT_MUI_ICON_SIZE, networks } from "common/constants";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 
@@ -22,9 +18,6 @@ interface PropsT {
 }
 
 const MobileMenu = (props: PropsT): JSX.Element => {
-  const theme = useTheme();
-  const { toggleColourMode } = useContext(ThemeContext);
-
   const [selectedNetwork, setSelectedNetwork] = useState(networkList[0]);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
 
@@ -40,11 +33,6 @@ const MobileMenu = (props: PropsT): JSX.Element => {
     handleNetworkMenuClose();
   };
 
-  const handleThemeChange = () => {
-    toggleColourMode();
-    props.handleClose();
-  };
-
   return (
     <>
       <Menu
@@ -57,18 +45,10 @@ const MobileMenu = (props: PropsT): JSX.Element => {
         keepMounted
         open={props.isOpen}
         onClose={props.handleClose}>
-        <MenuItem sx={menuItemStyle} onClick={handleThemeChange}>
-          {theme.palette.mode === "dark" ? (
-            <Brightness7Icon color="success" />
-          ) : (
-            <Brightness4Icon color="error" />
-          )}
-          <Typography>Change Theme</Typography>
-        </MenuItem>
         <MenuItem
           sx={menuItemStyle}
           onClick={() => console.log("Clicked this")}>
-          <AccountBalanceWalletIcon color="secondary" />
+          <AccountBalanceWalletIcon color="primary" />
           <Typography>Connect Wallet</Typography>
         </MenuItem>
         {selectedNetwork && (
