@@ -1,11 +1,11 @@
-import { amber, deepOrange, grey } from "@mui/material/colors";
+import { cyan, deepOrange, pink, teal } from "@mui/material/colors";
 import { useMemo, useState } from "react";
+import ThemeContext from "./ThemeContext";
 import {
   createTheme,
   ThemeOptions,
   ThemeProvider as MUIThemeProvider,
 } from "@mui/material/styles";
-import ThemeContext from "./ThemeContext";
 
 export const getDesign = (mode: string): ThemeOptions => {
   return mode === "light"
@@ -13,28 +13,16 @@ export const getDesign = (mode: string): ThemeOptions => {
         // palette values for light mode
         palette: {
           mode: "light",
-          primary: amber,
-          divider: amber[200],
-          text: {
-            primary: grey[900],
-            secondary: grey[800],
-          },
+          primary: pink,
+          secondary: deepOrange,
         },
       }
     : {
         // palette values for dark mode
         palette: {
           mode: "dark",
-          primary: deepOrange,
-          divider: deepOrange[700],
-          background: {
-            default: deepOrange[900],
-            paper: deepOrange[900],
-          },
-          text: {
-            primary: "#fff",
-            secondary: grey[500],
-          },
+          primary: cyan,
+          secondary: teal,
         },
       };
 };
