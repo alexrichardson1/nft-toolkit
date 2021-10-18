@@ -5,7 +5,7 @@
   "main": "build/src/",
   "scripts": {
     "build": "tsc",
-    "test": "",
+    "test": "mocha -r ts-node/register src/tests/**/*.test.ts",
     "start": "nodemon --files src/index.ts",
     "start-production": "node .",
     "compile": "yarn hardhat compile",
@@ -15,11 +15,14 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@types/chai": "^4.2.22",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/mocha": "^9.0.0",
     "@types/multer": "^1.4.7",
     "@types/node": "^16.9.2",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.5",
