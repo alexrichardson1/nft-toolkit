@@ -9,8 +9,8 @@ import Toolbar from "@mui/material/Toolbar";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./MobileMenu";
 import ThemeContext from "context/theme/ThemeContext";
-import NightsStayIcon from "@mui/icons-material/NightsStay";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import { useContext, useState } from "react";
 import { Theme, useTheme } from "@mui/material/styles";
 import { getComponentByMode } from "common/constants";
@@ -65,8 +65,8 @@ const Navbar = (): JSX.Element => {
   const getThemeIcon = () =>
     getComponentByMode(
       theme.palette.mode,
-      <NightsStayIcon fontSize="large" />,
-      <Brightness7Icon fontSize="large" />
+      <DarkModeIcon fontSize="large" />,
+      <LightModeIcon fontSize="large" />
     );
 
   return (
