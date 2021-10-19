@@ -3,7 +3,7 @@ name: Deploy to DockerHub & AWS EB
 on:
   push:
     branches:
-      - "master"
+      - "cd-fixes"
 
 jobs:
   docker:
@@ -58,3 +58,4 @@ jobs:
           version_label: ${{github.SHA}}
           region: eu-west-2
           deployment_package: deploy.zip
+          existing_bucket_name: elasticbeanstalk-eu-west-2-307164813438
