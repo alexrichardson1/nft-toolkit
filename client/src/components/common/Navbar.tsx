@@ -12,7 +12,7 @@ import ThemeContext from "context/theme/ThemeContext";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useContext, useState } from "react";
-import { useTheme } from "@mui/material/styles";
+import { Theme, useTheme } from "@mui/material/styles";
 import { getComponentByMode } from "common/constants";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
@@ -27,8 +27,8 @@ const extendedFabStyle = {
 };
 
 const toolbarStyle = {
-  width: "100%",
-  height: "100%",
+  width: 1,
+  height: 1,
   justifyContent: "center",
   alignItems: "center",
 };
@@ -40,16 +40,16 @@ const navOptionsStyle = {
   gap: "15px",
 };
 
+const appBarStyle = {
+  background: (theme: Theme) => theme.palette.background.default,
+  color: "text.primary",
+  display: "flex",
+  justifyContent: "center",
+  height: 90,
+};
+
 const Navbar = (): JSX.Element => {
   const theme = useTheme();
-
-  const appBarStyle = {
-    background: theme.palette.background.default,
-    color: theme.palette.text.primary,
-    display: "flex",
-    justifyContent: "center",
-    height: 90,
-  };
 
   const { toggleColourMode } = useContext(ThemeContext);
 
