@@ -7,6 +7,7 @@ interface ImageI {
 interface LayerI {
   name: string;
   images: ImageI[];
+  rarity: number;
 }
 
 interface GenCollectionI {
@@ -17,28 +18,41 @@ interface GenCollectionI {
   layers: LayerI[];
 }
 
+function generateRandomPercentage() {
+  const MAX_RAND = 100;
+  return Math.floor(Math.random() * MAX_RAND);
+}
+
+function chooseLayerImage(images: ImageI[]): ImageI {
+  const randomValue = generateRandomPercentage();
+  let rarityCumulative = 0;
+  for (const image of images) {
+    rarityCumulative += image.rarity;
+    if (randomValue <= rarityCumulative) {
+      return image;
+    }
+  }
+  return {
+    name: "fail",
+    rarity: 0,
+  };
+}
+
 /**
  * PRE: Layers are assumed to be of equal dimensions
  * @param collection - Collection of picture layers
  */
 function generate(collection: GenCollectionI): ImageI[][] {
-  const MAX_RAND = 100;
   const generatedCollection: ImageI[][] = [];
   for (let i = 0; i < collection.quantity; i++) {
     const chosenLayerImages: ImageI[] = [];
     let layerIndex = 0;
     collection.layers.forEach((layer) => {
       // TODO: make sure this is a uniform distribution with 0-100 inclusive
-      const randomValue = Math.floor(Math.random() * MAX_RAND);
-      let rarityCumulative = 0;
-      layer.images.forEach((image) => {
-        rarityCumulative += image.rarity;
-        if (randomValue <= rarityCumulative) {
-          chosenLayerImages[layerIndex] = image;
-          return;
-        }
-        layerIndex++;
-      });
+      const includeLayer = generateRandomPercentage() <= layer.rarity;
+      if (includeLayer) {
+        chosenLayerImages[layerIndex++] = chooseLayerImage(layer.images);
+      }
     });
     generatedCollection[i] = chosenLayerImages;
   }
