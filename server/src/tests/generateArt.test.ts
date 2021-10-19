@@ -14,6 +14,7 @@ describe("Generate Art", () => {
           { name: "black", rarity: 30 },
           { name: "blue", rarity: 40 },
         ],
+        rarity: 100,
       },
       {
         name: "body",
@@ -22,6 +23,7 @@ describe("Generate Art", () => {
           { name: "skinny", rarity: 70 },
           { name: "normal", rarity: 10 },
         ],
+        rarity: 100,
       },
       {
         name: "head",
@@ -30,6 +32,7 @@ describe("Generate Art", () => {
           { name: "spiky", rarity: 25 },
           { name: "durag", rarity: 5 },
         ],
+        rarity: 100,
       },
     ],
   };
