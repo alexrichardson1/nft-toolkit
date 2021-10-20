@@ -35,11 +35,11 @@ export const networks = (dimensions: string | number): NetworksT[] =>
     };
   });
 
-export const getComponentByMode = (
+export const getComponentByMode = <T,>(
   mode: PaletteMode,
-  lightComponent: React.ReactNode,
-  darkComponent: React.ReactNode
-): React.ReactNode => {
+  lightComponent: T,
+  darkComponent: T
+): T => {
   if (mode === "light") {
     return lightComponent;
   }
