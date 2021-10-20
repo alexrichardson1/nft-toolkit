@@ -3,10 +3,13 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Typography } from "@mui/material";
 
 interface PropsT {
-  setFiles: React.Dispatch<React.SetStateAction<File[]>>;
+  dispatch: React.Dispatch<formActionI>;
+  files: ImageListT;
 }
 
-const ImageUpload = ({ setFiles }: PropsT): JSX.Element => {
+const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
+  const numberOfFiles = files.length;
+
   return (
     <>
       <label
@@ -16,7 +19,10 @@ const ImageUpload = ({ setFiles }: PropsT): JSX.Element => {
         onDragEnter={(e) => e.preventDefault()}
         onDrop={(e) => {
           e.preventDefault();
-          setFiles((prev) => [...prev, ...Array.from(e.dataTransfer.files)]);
+          dispatch({
+            type: "CHANGE_IMAGES",
+            payload: Array.from(e.dataTransfer.files),
+          });
         }}
         htmlFor="upload-files">
         <CloudUploadIcon
@@ -24,12 +30,19 @@ const ImageUpload = ({ setFiles }: PropsT): JSX.Element => {
           color="primary"
           fontSize="large"
         />
-        <Typography variant="h5">Drag and drop your images here</Typography>
+        {numberOfFiles > 0 &&
+          `Uploaded ${numberOfFiles} file${numberOfFiles === 1 ? "" : "s"}`}
+        <Typography align="center" variant="h5">
+          Drag and drop your image(s) here
+        </Typography>
       </label>
       <input
         onChange={(e) => {
           e.preventDefault();
-          setFiles((prev) => [...prev, ...Array.from(e.target.files || [])]);
+          dispatch({
+            type: "CHANGE_IMAGES",
+            payload: Array.from(e.target.files || []),
+          });
         }}
         id="upload-files"
         className="image-upload-input"

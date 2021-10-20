@@ -17,8 +17,8 @@ interface PropsT {
 const Input = (props: PropsT): JSX.Element => {
   return (
     <TextField
-      InputProps={props.InputProps}
       type={props.type}
+      InputProps={props.InputProps}
       variant="outlined"
       label={props.label}
       name={props.name}
