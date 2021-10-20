@@ -3,7 +3,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Typography } from "@mui/material";
 
 interface PropsT {
-  dispatch: React.Dispatch<formActionI>;
+  dispatch: React.Dispatch<FormActionI>;
   files: ImageListT;
 }
 

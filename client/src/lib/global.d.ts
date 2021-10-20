@@ -11,22 +11,22 @@ type AnchorOriginType = {
 
 type ImageListT = { image: File; url: string }[];
 
-interface FormStateT {
+interface FormStateI {
   collectionName: string;
   description: string;
   images: ImageListT;
   mintingPrice: number;
 }
 
-type formActionIypeT =
+type FormActionIypeT =
   | "CHANGE_NAME"
   | "CHANGE_PRICE"
   | "CHANGE_IMAGES"
   | "CHANGE_DESCRIPTION";
 
-type formActionPayloadT = string | File[] | number;
+type FormActionPayloadT = string | File[] | number;
 
-interface formActionI {
-  type: formActionIypeT;
-  payload: formActionPayloadT;
+interface FormActionI {
+  type: FormActionIypeT;
+  payload: FormActionPayloadT;
 }

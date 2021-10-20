@@ -1,4 +1,4 @@
-const formReducer = (state: FormStateT, action: formActionI): FormStateT => {
+const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   switch (action.type) {
     case "CHANGE_NAME":
       return {
