@@ -1,4 +1,4 @@
-import { generate, GenCollectionI } from "controllers/generateArt";
+import { generate, GenCollectionI } from "../controllers/generateArt";
 
 describe("Generate Art", () => {
   const testData: GenCollectionI = {
@@ -37,8 +37,37 @@ describe("Generate Art", () => {
     ],
   };
 
-  test("TODO", () => {
-    // Math.random = () => 0;
-    console.log(generate(testData));
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
+
+  test("Produces black background, fat body, durag head", () => {
+    testData.quantity = 1;
+    // eslint-disable-next-line no-magic-numbers
+    const vals = [0.02, 0.45, 0.08, 0.18, 0.08, 0.96];
+    let i = 0;
+    Math.random = () => {
+      return vals[i++] || 0;
+    };
+    const expected = [
+      [
+        { name: "black", rarity: 30 },
+        { name: "fat", rarity: 20 },
+        { name: "durag", rarity: 5 },
+      ],
+    ];
+    const result = generate(testData);
+    expect(result).toMatchObject(expected);
+  });
+
+  // test("TODO", () => {
+  //   const vals = Array.from({ length: 30 }, (_, i) => i + 1);
+  //   let i = 0;
+  //   Math.random = () => {
+  //     return vals[i++] || 0;
+  //   };
+  //   console.log(generate(testData));
+  // });
+
+  // TODO: Write a test for duplicates
 });
