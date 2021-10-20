@@ -8,3 +8,25 @@ type AnchorOriginType = {
   vertical: VertPositionType;
   horizontal: HorizontalPositionType;
 };
+
+type ImageListT = { image: File; url: string }[];
+
+interface FormStateT {
+  collectionName: string;
+  description: string;
+  images: ImageListT;
+  mintingPrice: number;
+}
+
+type formActionIypeT =
+  | "CHANGE_NAME"
+  | "CHANGE_PRICE"
+  | "CHANGE_IMAGES"
+  | "CHANGE_DESCRIPTION";
+
+type formActionPayloadT = string | File[] | number;
+
+interface formActionI {
+  type: formActionIypeT;
+  payload: formActionPayloadT;
+}
