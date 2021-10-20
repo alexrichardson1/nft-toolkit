@@ -2,16 +2,22 @@ import Input from "./Input";
 import Tabs from "./Tabs";
 import ImageUpload from "./custom-image-upload/ImageUpload";
 import InputAdornment from "@mui/material/InputAdornment";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import DoneIcon from "@mui/icons-material/Done";
 import ClearIcon from "@mui/icons-material/Clear";
 import Container from "@mui/material/Container";
-import { useState } from "react";
+import NetworkContext from "context/network/NetworkContext";
+import { useContext, useState } from "react";
+import { getNetworkFromName } from "common/constants";
+
+const ICON_SIZE = 25;
 
 const Form = (): JSX.Element => {
   const [files, setFiles] = useState<File[]>([]);
+  const { selectedNet } = useContext(NetworkContext);
+  const networkIcon = getNetworkFromName(selectedNet, ICON_SIZE).icon;
+
   return (
     <Container>
       <Input
@@ -37,9 +43,7 @@ const Form = (): JSX.Element => {
         placeholder="Enter minting price"
         InputProps={{
           endAdornment: (
-            <InputAdornment position="end">
-              <AccountCircle />
-            </InputAdornment>
+            <InputAdornment position="end">{networkIcon}</InputAdornment>
           ),
         }}
       />
