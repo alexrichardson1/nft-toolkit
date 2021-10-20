@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { FormEvent, useContext, useReducer } from "react";
-import { getNetworkFromName } from "common/constants";
+import { getNetworkFromName } from "utils/constants";
 import Box from "@mui/material/Box";
 
 const ICON_SIZE = 25;

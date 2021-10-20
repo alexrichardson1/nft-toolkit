@@ -3,7 +3,7 @@ import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { useContext } from "react";
-import { getNetworkFromName, networks } from "common/constants";
+import { getNetworkFromName, networks } from "utils/constants";
 import NetworkContext from "context/network/NetworkContext";
 
 const containerStyle = {

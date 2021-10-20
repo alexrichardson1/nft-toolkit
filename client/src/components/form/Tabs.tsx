@@ -3,7 +3,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import { getComponentByMode } from "common/constants";
+import { getComponentByMode } from "utils/getComponentByMode";
 import Grid from "@mui/material/Grid";
 
 const tabPanelStyle = { padding: 3 };

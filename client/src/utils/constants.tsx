@@ -5,7 +5,6 @@ import SolanaLogo from "images/solana-logo.svg";
 import BinanceLogo from "images/binance-logo.svg";
 import AvalancheLogo from "images/avalanche-logo.svg";
 import SvgLogo from "components/common/SvgLogo";
-import { PaletteMode } from "@mui/material";
 
 export const DEFAULT_MUI_ICON_SIZE = 24;
 
@@ -88,17 +87,6 @@ export const networks = (dimensions: string | number): NetworksT[] =>
       name: networkNames[index] || "",
     };
   });
-
-export const getComponentByMode = <T,>(
-  mode: PaletteMode,
-  lightComponent: T,
-  darkComponent: T
-): T => {
-  if (mode === "light") {
-    return lightComponent;
-  }
-  return darkComponent;
-};
 
 export const mainContainerStyle = {
   py: 3,

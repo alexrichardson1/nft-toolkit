@@ -8,7 +8,7 @@ import {
   DEFAULT_MUI_ICON_SIZE,
   getNetworkFromName,
   networks,
-} from "common/constants";
+} from "utils/constants";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 

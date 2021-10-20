@@ -13,7 +13,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useContext, useState } from "react";
 import { useTheme } from "@mui/material/styles";
-import { getComponentByMode } from "common/constants";
+import { getComponentByMode } from "utils/getComponentByMode";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
 
