@@ -1,3 +1,5 @@
+import MobileMenu from "./MobileMenu";
+import ThemeContext from "context/theme/ThemeContext";
 import NetworkSpeedDial from "components/common/Networks";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -7,13 +9,12 @@ import Typography from "@mui/material/Typography";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import Toolbar from "@mui/material/Toolbar";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import MobileMenu from "./MobileMenu";
-import ThemeContext from "context/theme/ThemeContext";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useContext, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import { getComponentByMode } from "utils/getComponentByMode";
+import { useEthers } from "@usedapp/core";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
 
@@ -49,6 +50,8 @@ const appBarStyle = {
 };
 
 const Navbar = (): JSX.Element => {
+  const { activateBrowserWallet, account, deactivate } = useEthers();
+
   const theme = useTheme();
 
   const { toggleColourMode } = useContext(ThemeContext);
@@ -69,6 +72,23 @@ const Navbar = (): JSX.Element => {
       <LightModeIcon fontSize="large" />
     );
 
+  const connectWallet = () => {
+    if (account) {
+      deactivate();
+      return;
+    }
+    activateBrowserWallet();
+  };
+
+  const getAccountString = () => {
+    if (!account) {
+      return "Connect Wallet";
+    }
+    const START_CHARS = 8;
+    const END_CHARS = 4;
+    return `${account.slice(0, START_CHARS)}....${account.slice(-END_CHARS)}`;
+  };
+
   return (
     <Box flexGrow={1}>
       <AppBar sx={appBarStyle} position="sticky">
@@ -79,12 +99,13 @@ const Navbar = (): JSX.Element => {
           <Box flexGrow={1} />
           <Box sx={navOptionsStyle}>
             <Fab
+              onClick={connectWallet}
               variant="extended"
               color="primary"
               aria-label="connect wallet"
               sx={extendedFabStyle}>
               <AccountBalanceWalletIcon />
-              <Typography>Connect Wallet</Typography>
+              <Typography>{getAccountString()}</Typography>
             </Fab>
             <NetworkSpeedDial />
             <Fab onClick={toggleColourMode}>{getThemeIcon()}</Fab>
