@@ -27,6 +27,60 @@ export const networkNames = [
   "BSC",
 ];
 
+export const getNetworkFromName = (
+  network: string,
+  dimensions: string | number
+): NetworksT => {
+  switch (network) {
+    case "Cardano":
+      return {
+        icon: (
+          <SvgLogo icon={CardanoLogo} width={dimensions} height={dimensions} />
+        ),
+        name: "Cardano",
+      };
+    case "Avalanche":
+      return {
+        icon: (
+          <SvgLogo
+            icon={AvalancheLogo}
+            width={dimensions}
+            height={dimensions}
+          />
+        ),
+        name: "Avalanche",
+      };
+    case "Solana":
+      return {
+        icon: (
+          <SvgLogo icon={SolanaLogo} width={dimensions} height={dimensions} />
+        ),
+        name: "Solana",
+      };
+    case "Polygon":
+      return {
+        icon: (
+          <SvgLogo icon={PolygonLogo} width={dimensions} height={dimensions} />
+        ),
+        name: "Polygon",
+      };
+    case "BSC":
+      return {
+        icon: (
+          <SvgLogo icon={BinanceLogo} width={dimensions} height={dimensions} />
+        ),
+        name: "BSC",
+      };
+    default:
+      return {
+        icon: (
+          <SvgLogo icon={EthereumLogo} width={dimensions} height={dimensions} />
+        ),
+        name: "Ethereum",
+      };
+  }
+};
+
 export const networks = (dimensions: string | number): NetworksT[] =>
   networkLogos.map((logo, index) => {
     return {
