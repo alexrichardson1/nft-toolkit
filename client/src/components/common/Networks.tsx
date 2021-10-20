@@ -4,7 +4,6 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { useState } from "react";
 import { networks } from "common/constants";
-import { Theme } from "@mui/material/styles";
 
 const containerStyle = {
   height: 60,
@@ -17,10 +16,10 @@ const actions = networks(NETWORK_DIMENSIONS);
 
 const mainFabStyle = {
   border: "3px solid",
-  backgroundColor: (theme: Theme) => theme.palette.background.default,
-  borderColor: (theme: Theme) => theme.palette.primary.main,
+  bgcolor: "background.default",
+  borderColor: "primary.main",
   "&:hover": {
-    borderColor: (theme: Theme) => theme.palette.secondary.main,
+    borderColor: "secondary.main",
   },
 };
 
@@ -31,7 +30,7 @@ const getSmallFabStyle = (network: NetworksT, selectedNet?: NetworksT) => {
   return {
     border: "3px solid",
     background: "white",
-    borderColor: (theme: Theme) => theme.palette.primary.main,
+    borderColor: "primary.main",
   };
 };
 

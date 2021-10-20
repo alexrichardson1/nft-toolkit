@@ -12,7 +12,7 @@ import ThemeContext from "context/theme/ThemeContext";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { useContext, useState } from "react";
-import { Theme, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { getComponentByMode } from "common/constants";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
@@ -41,7 +41,7 @@ const navOptionsStyle = {
 };
 
 const appBarStyle = {
-  background: (theme: Theme) => theme.palette.background.default,
+  bgcolor: "background.default",
   color: "text.primary",
   display: "flex",
   justifyContent: "center",
