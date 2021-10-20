@@ -1,6 +1,6 @@
 type AnchorType = null | HTMLElement;
 
-type NetworksT = { icon: JSX.Element; name: string };
+type NetworkT = { icon: string; name: string; chainId?: number };
 
 type VertPositionType = number | "top" | "center" | "bottom";
 type HorizontalPositionType = number | "left" | "center" | "right";

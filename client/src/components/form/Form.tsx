@@ -11,8 +11,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { FormEvent, useContext, useReducer } from "react";
-import { getNetworkFromName } from "utils/constants";
 import Box from "@mui/material/Box";
+import SvgLogo from "components/common/SvgLogo";
 
 const ICON_SIZE = 25;
 
@@ -25,8 +25,6 @@ const initialState = {
 
 const Form = (): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
-  const networkIcon = getNetworkFromName(selectedNet, ICON_SIZE).icon;
-
   const [state, dispatch] = useReducer(formReducer, initialState);
 
   return (
@@ -94,7 +92,15 @@ const Form = (): JSX.Element => {
               InputProps={{
                 inputProps: { min: 0 },
                 endAdornment: (
-                  <InputAdornment position="end">{networkIcon}</InputAdornment>
+                  <InputAdornment position="end">
+                    {
+                      <SvgLogo
+                        icon={selectedNet.icon}
+                        width={ICON_SIZE}
+                        height={ICON_SIZE}
+                      />
+                    }
+                  </InputAdornment>
                 ),
               }}
             />

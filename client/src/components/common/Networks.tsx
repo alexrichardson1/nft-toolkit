@@ -2,9 +2,10 @@ import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import { useContext, useMemo } from "react";
-import { getNetworkFromName, networks } from "utils/constants";
+import { useContext } from "react";
+import { networks } from "utils/constants";
 import NetworkContext from "context/network/NetworkContext";
+import SvgLogo from "./SvgLogo";
 
 const containerStyle = {
   height: 60,
@@ -12,8 +13,6 @@ const containerStyle = {
 };
 
 const NETWORK_DIMENSIONS = "70%";
-
-const actions = networks(NETWORK_DIMENSIONS);
 
 const mainFabStyle = {
   border: "3px solid",
@@ -24,8 +23,8 @@ const mainFabStyle = {
   },
 };
 
-const getSmallFabStyle = (network: NetworksT, selectedNetwork?: NetworksT) => {
-  if (!selectedNetwork || selectedNetwork.name !== network.name) {
+const getSmallFabStyle = (network: NetworkT, selectedNetwork: NetworkT) => {
+  if (selectedNetwork.name !== network.name) {
     return { background: "white" };
   }
   return {
@@ -37,10 +36,6 @@ const getSmallFabStyle = (network: NetworksT, selectedNetwork?: NetworksT) => {
 
 const NetworkSpeedDial = (): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
-  const selectedNetwork = useMemo(
-    () => getNetworkFromName(selectedNet, NETWORK_DIMENSIONS),
-    [selectedNet]
-  );
 
   return (
     <Box sx={containerStyle}>
@@ -49,15 +44,29 @@ const NetworkSpeedDial = (): JSX.Element => {
         direction="down"
         FabProps={{ sx: mainFabStyle }}
         icon={
-          selectedNetwork ? selectedNetwork.icon : <AccountBalanceWalletIcon />
+          selectedNet ? (
+            <SvgLogo
+              icon={selectedNet.icon}
+              width={NETWORK_DIMENSIONS}
+              height={NETWORK_DIMENSIONS}
+            />
+          ) : (
+            <AccountBalanceWalletIcon />
+          )
         }>
-        {actions.map((network) => (
+        {networks.map((network) => (
           <SpeedDialAction
-            FabProps={{ sx: getSmallFabStyle(network, selectedNetwork) }}
+            FabProps={{ sx: getSmallFabStyle(network, selectedNet) }}
             key={network.name}
-            icon={network.icon}
+            icon={
+              <SvgLogo
+                icon={network.icon}
+                width={NETWORK_DIMENSIONS}
+                height={NETWORK_DIMENSIONS}
+              />
+            }
             tooltipTitle={network.name}
-            onClick={() => setSelectedNet(network.name)}
+            onClick={() => setSelectedNet(network)}
           />
         ))}
       </SpeedDial>

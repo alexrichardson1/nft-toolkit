@@ -1,8 +1,8 @@
 import { createContext } from "react";
 
 interface NetworkContextT {
-  selectedNet: string;
-  setSelectedNet: (newNetwork: string) => void;
+  selectedNet: NetworkT;
+  setSelectedNet: (newNetwork: NetworkT) => void;
 }
 
 const NetworkContext = createContext({} as NetworkContextT);
