@@ -1,9 +1,14 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import { DEFAULT_MUI_ICON_SIZE, networks } from "common/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Typography } from "@mui/material";
+import NetworkContext from "context/network/NetworkContext";
+import {
+  DEFAULT_MUI_ICON_SIZE,
+  getNetworkFromName,
+  networks,
+} from "common/constants";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 
@@ -18,8 +23,13 @@ interface PropsT {
 }
 
 const MobileMenu = (props: PropsT): JSX.Element => {
-  const [selectedNetwork, setSelectedNetwork] = useState(networkList[0]);
+  const { selectedNet, setSelectedNet } = useContext(NetworkContext);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
+
+  const selectedNetwork = getNetworkFromName(
+    selectedNet,
+    DEFAULT_MUI_ICON_SIZE
+  );
 
   const isNetworkMenuOpen = Boolean(networkAnchorEl);
 
@@ -29,7 +39,7 @@ const MobileMenu = (props: PropsT): JSX.Element => {
     setNetworkAnchorEl(event.currentTarget);
 
   const handleNetworkChange = (network: NetworksT) => {
-    setSelectedNetwork(network);
+    setSelectedNet(network.name);
     handleNetworkMenuClose();
   };
 

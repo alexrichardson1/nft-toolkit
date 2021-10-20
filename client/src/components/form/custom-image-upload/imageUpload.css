@@ -4,7 +4,7 @@
 
 .image-upload-label {
   display: flex;
-  border: 2px dashed black;
+  border: 1px dashed black;
   border-radius: 4px;
   width: 100%;
   /* Change this after */

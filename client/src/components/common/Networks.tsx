@@ -2,8 +2,9 @@ import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import { useState } from "react";
-import { networks } from "common/constants";
+import { useContext } from "react";
+import { getNetworkFromName, networks } from "common/constants";
+import NetworkContext from "context/network/NetworkContext";
 
 const containerStyle = {
   height: 60,
@@ -23,8 +24,8 @@ const mainFabStyle = {
   },
 };
 
-const getSmallFabStyle = (network: NetworksT, selectedNet?: NetworksT) => {
-  if (!selectedNet || selectedNet.name !== network.name) {
+const getSmallFabStyle = (network: NetworksT, selectedNetwork?: NetworksT) => {
+  if (!selectedNetwork || selectedNetwork.name !== network.name) {
     return { background: "white" };
   }
   return {
@@ -35,22 +36,24 @@ const getSmallFabStyle = (network: NetworksT, selectedNet?: NetworksT) => {
 };
 
 const NetworkSpeedDial = (): JSX.Element => {
-  const [selectedNet, setSelectedNet] = useState(actions[0]);
-
+  const { selectedNet, setSelectedNet } = useContext(NetworkContext);
+  const selectedNetwork = getNetworkFromName(selectedNet, NETWORK_DIMENSIONS);
   return (
     <Box sx={containerStyle}>
       <SpeedDial
         ariaLabel="network selection"
         direction="down"
         FabProps={{ sx: mainFabStyle }}
-        icon={selectedNet ? selectedNet.icon : <AccountBalanceWalletIcon />}>
+        icon={
+          selectedNetwork ? selectedNetwork.icon : <AccountBalanceWalletIcon />
+        }>
         {actions.map((network) => (
           <SpeedDialAction
-            FabProps={{ sx: getSmallFabStyle(network, selectedNet) }}
+            FabProps={{ sx: getSmallFabStyle(network, selectedNetwork) }}
             key={network.name}
             icon={network.icon}
             tooltipTitle={network.name}
-            onClick={() => setSelectedNet(network)}
+            onClick={() => setSelectedNet(network.name)}
           />
         ))}
       </SpeedDial>

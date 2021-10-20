@@ -7,6 +7,8 @@ import { getComponentByMode } from "common/constants";
 
 const tabPanelStyle = { padding: 3 };
 
+const tabsStyle = { borderRight: 1, borderColor: "divider" };
+
 const vTabsContainerStyle = {
   flexGrow: 1,
   bgcolor: "background.paper",
@@ -75,7 +77,7 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               getComponentByMode(theme.palette.mode, "#121212", "white"),
           },
         }}
-        sx={{ borderRight: 1, borderColor: "divider" }}>
+        sx={tabsStyle}>
         <Tab label="Image 1" {...a11yProps(0)} />
         <Tab label="Image 2" {...a11yProps(1)} />
         <Tab label="Image 3" {...a11yProps(IMAGE_3)} />
