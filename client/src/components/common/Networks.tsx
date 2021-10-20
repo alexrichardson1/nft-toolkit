@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { getNetworkFromName, networks } from "utils/constants";
 import NetworkContext from "context/network/NetworkContext";
 
@@ -37,7 +37,11 @@ const getSmallFabStyle = (network: NetworksT, selectedNetwork?: NetworksT) => {
 
 const NetworkSpeedDial = (): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
-  const selectedNetwork = getNetworkFromName(selectedNet, NETWORK_DIMENSIONS);
+  const selectedNetwork = useMemo(
+    () => getNetworkFromName(selectedNet, NETWORK_DIMENSIONS),
+    [selectedNet]
+  );
+
   return (
     <Box sx={containerStyle}>
       <SpeedDial

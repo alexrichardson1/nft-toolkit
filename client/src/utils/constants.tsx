@@ -8,6 +8,13 @@ import SvgLogo from "components/common/SvgLogo";
 
 export const DEFAULT_MUI_ICON_SIZE = 24;
 
+export const mainContainerStyle = {
+  py: 3,
+  width: 1,
+  minHeight: "calc(100vh - 91px)",
+  bgcolor: "background.default",
+};
+
 export const networkLogos = [
   EthereumLogo,
   CardanoLogo,
@@ -87,10 +94,3 @@ export const networks = (dimensions: string | number): NetworksT[] =>
       name: networkNames[index] || "",
     };
   });
-
-export const mainContainerStyle = {
-  py: 3,
-  width: 1,
-  minHeight: "calc(100vh - 91px)",
-  bgcolor: "background.default",
-};
