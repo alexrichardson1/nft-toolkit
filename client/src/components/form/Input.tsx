@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { OutlinedInputProps, TextField } from "@mui/material";
 
 interface PropsT {
   name?: string;
@@ -7,6 +7,7 @@ interface PropsT {
   placeholder: string;
   required?: boolean;
   multiline?: boolean;
+  InputProps?: Partial<OutlinedInputProps>;
   rows?: number;
   onChange?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   error?: string;
@@ -16,6 +17,7 @@ interface PropsT {
 const Input = (props: PropsT): JSX.Element => {
   return (
     <TextField
+      InputProps={props.InputProps}
       type={props.type}
       variant="outlined"
       label={props.label}
