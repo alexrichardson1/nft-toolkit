@@ -11,7 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import { getComponentByMode } from "utils/getComponentByMode";
 import { useEthers } from "@usedapp/core";
@@ -50,7 +50,7 @@ const appBarStyle = {
 };
 
 const Navbar = (): JSX.Element => {
-  const { activateBrowserWallet, account, deactivate } = useEthers();
+  const { activateBrowserWallet, account, deactivate, chainId } = useEthers();
 
   const theme = useTheme();
 
@@ -88,6 +88,13 @@ const Navbar = (): JSX.Element => {
     const END_CHARS = 4;
     return `${account.slice(0, START_CHARS)}....${account.slice(-END_CHARS)}`;
   };
+
+  useEffect(() => {
+    if (!chainId) {
+      return;
+    }
+    console.log(chainId);
+  }, [chainId]);
 
   return (
     <Box flexGrow={1}>
