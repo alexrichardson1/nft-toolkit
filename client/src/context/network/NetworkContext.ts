@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 interface NetworkContextT {
   selectedNet: string;
-  setSelectedNet: React.Dispatch<React.SetStateAction<string>>;
+  setSelectedNet: (newNetwork: string) => void;
 }
 
 const NetworkContext = createContext({} as NetworkContextT);
