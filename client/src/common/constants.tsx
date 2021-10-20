@@ -5,7 +5,7 @@ import SolanaLogo from "images/solana-logo.svg";
 import BinanceLogo from "images/binance-logo.svg";
 import AvalancheLogo from "images/avalanche-logo.svg";
 import SvgLogo from "components/common/SvgLogo";
-import { PaletteMode } from "@mui/material";
+import { PaletteMode, Theme } from "@mui/material";
 
 export const DEFAULT_MUI_ICON_SIZE = 24;
 
@@ -44,4 +44,10 @@ export const getComponentByMode = <T,>(
     return lightComponent;
   }
   return darkComponent;
+};
+
+export const mainContainerStyle = {
+  width: 1,
+  minHeight: "calc(100vh - 91px)",
+  background: (theme: Theme): string => theme.palette.background.default,
 };
