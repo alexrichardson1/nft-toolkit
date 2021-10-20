@@ -1,0 +1,27 @@
+.image-upload-input {
+  display: none;
+}
+
+.image-upload-label {
+  display: flex;
+  border: 2px dashed black;
+  border-radius: 4px;
+  width: 100%;
+  /* Change this after */
+  min-height: 200px;
+  height: 30vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.2s all ease-in-out;
+  gap: 5px;
+  background: white;
+}
+
+.image-upload-label:hover {
+  background: #d0d0d0;
+}
+
+.image-upload-label:hover .image-upload-cloud {
+  color: black;
+}
