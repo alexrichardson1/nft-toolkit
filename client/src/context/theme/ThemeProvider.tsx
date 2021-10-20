@@ -1,11 +1,13 @@
 import { cyan, deepOrange, pink, teal } from "@mui/material/colors";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ThemeContext from "./ThemeContext";
 import {
   createTheme,
   ThemeOptions,
   ThemeProvider as MUIThemeProvider,
 } from "@mui/material/styles";
+import { getComponentByMode } from "utils/getComponentByMode";
+import { PaletteMode } from "@mui/material";
 
 export const getDesign = (mode: string): ThemeOptions => {
   return mode === "light"
@@ -36,11 +38,23 @@ interface PropsT {
 }
 
 const ThemeProvider = (props: PropsT): JSX.Element => {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState<PaletteMode>("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setMode(storedTheme as PaletteMode);
+    }
+  }, []);
+
   const colourMode = useMemo(
     () => ({
       toggleColourMode: () =>
-        setMode((prev) => (prev === "light" ? "dark" : "light")),
+        setMode((prev) => {
+          const newTheme = getComponentByMode(prev, "dark", "light");
+          localStorage.setItem("theme", newTheme);
+          return newTheme;
+        }),
     }),
     []
   );
