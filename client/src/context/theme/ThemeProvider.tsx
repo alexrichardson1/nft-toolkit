@@ -23,6 +23,10 @@ export const getDesign = (mode: string): ThemeOptions => {
           mode: "dark",
           primary: cyan,
           secondary: teal,
+          background: {
+            paper: "#202144",
+            default: "#202124",
+          },
         },
       };
 };
