@@ -53,6 +53,8 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         mintingPrice: parseFloat(action.payload.price || "0"),
       };
+    case "RESET_STATE":
+      return action.payload.initialState || state;
     default:
       return state;
   }
