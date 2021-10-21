@@ -21,7 +21,7 @@ const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
           e.preventDefault();
           dispatch({
             type: "CHANGE_IMAGES",
-            payload: Array.from(e.dataTransfer.files),
+            payload: { images: Array.from(e.dataTransfer.files) },
           });
         }}
         htmlFor="upload-files">
@@ -41,7 +41,7 @@ const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
           e.preventDefault();
           dispatch({
             type: "CHANGE_IMAGES",
-            payload: Array.from(e.target.files || []),
+            payload: { images: Array.from(e.target.files || []) },
           });
         }}
         id="upload-files"

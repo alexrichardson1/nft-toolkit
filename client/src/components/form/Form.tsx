@@ -1,8 +1,9 @@
 import Input from "./Input";
-import Tabs from "./Tabs";
+import Tabs from "./tabs/Tabs";
 import formReducer from "./formReducer";
 import NetworkContext from "context/network/NetworkContext";
 import ImageUpload from "./custom-image-upload/ImageUpload";
+import SvgLogo from "components/common/SvgLogo";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import DoneIcon from "@mui/icons-material/Done";
@@ -10,9 +11,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import { FormEvent, useContext, useReducer } from "react";
 import Box from "@mui/material/Box";
-import SvgLogo from "components/common/SvgLogo";
+import { FormEvent, useContext, useReducer } from "react";
 
 const ICON_SIZE = 25;
 
@@ -22,6 +22,19 @@ const initialState = {
   images: [],
   mintingPrice: 0,
 };
+
+const buttonsWrapperStyle = { display: "flex", gap: "10px" };
+
+const buttonContainerStyle = { display: "flex" };
+
+const priceInputProps = (selectedNet: NetworkT) => ({
+  inputProps: { min: 0 },
+  endAdornment: (
+    <InputAdornment position="end">
+      {<SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />}
+    </InputAdornment>
+  ),
+});
 
 const Form = (): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
@@ -33,7 +46,7 @@ const Form = (): JSX.Element => {
         e.preventDefault();
         console.log(state);
       }}
-      component={"form"}>
+      component="form">
       <Grid justifyContent="center" spacing={2} direction="column" container>
         <Grid item md={12}>
           <Paper>
@@ -42,7 +55,10 @@ const Form = (): JSX.Element => {
               value={state.collectionName}
               placeholder="Please enter your collection name"
               onChange={(e) =>
-                dispatch({ type: "CHANGE_NAME", payload: e.target.value })
+                dispatch({
+                  type: "CHANGE_NAME",
+                  payload: { newName: e.target.value },
+                })
               }
               required
             />
@@ -60,7 +76,7 @@ const Form = (): JSX.Element => {
               onChange={(e) =>
                 dispatch({
                   type: "CHANGE_DESCRIPTION",
-                  payload: e.target.value,
+                  payload: { description: e.target.value },
                 })
               }
             />
@@ -74,7 +90,7 @@ const Form = (): JSX.Element => {
         {state.images.length > 0 && (
           <Grid item md={12}>
             <Paper>
-              <Tabs files={state.images} />
+              <Tabs dispatch={dispatch} files={state.images} />
             </Paper>
           </Grid>
         )}
@@ -85,31 +101,21 @@ const Form = (): JSX.Element => {
               required
               type="number"
               onChange={(e) =>
-                dispatch({ type: "CHANGE_PRICE", payload: e.target.value })
+                dispatch({
+                  type: "CHANGE_PRICE",
+                  payload: { price: e.target.value },
+                })
               }
               value={state.mintingPrice}
               placeholder="Enter minting price"
-              InputProps={{
-                inputProps: { min: 0 },
-                endAdornment: (
-                  <InputAdornment position="end">
-                    {
-                      <SvgLogo
-                        icon={selectedNet.icon}
-                        width={ICON_SIZE}
-                        height={ICON_SIZE}
-                      />
-                    }
-                  </InputAdornment>
-                ),
-              }}
+              InputProps={priceInputProps(selectedNet)}
             />
           </Paper>
         </Grid>
         <Grid item md={12}>
-          <Box sx={{ display: "flex" }}>
+          <Box sx={buttonContainerStyle}>
             <Box flexGrow={1} />
-            <Box sx={{ display: "flex", gap: "10px" }}>
+            <Box sx={buttonsWrapperStyle}>
               <Button
                 startIcon={<ClearIcon />}
                 color="error"
