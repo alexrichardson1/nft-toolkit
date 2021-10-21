@@ -1,17 +1,17 @@
 import { DAppProvider } from "@usedapp/core";
-import App from "App";
+import Form from "components/form/Form";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("App snapshot", () => {
+test("Form snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <App />
+          <Form />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>

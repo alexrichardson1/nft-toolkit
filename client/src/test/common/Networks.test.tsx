@@ -1,17 +1,17 @@
 import { DAppProvider } from "@usedapp/core";
-import App from "App";
+import NetworkSpeedDial from "components/common/Networks";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("App snapshot", () => {
+test("NetworksSpeedDial snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <App />
+          <NetworkSpeedDial />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>

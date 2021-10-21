@@ -1,17 +1,21 @@
 import { DAppProvider } from "@usedapp/core";
-import App from "App";
+import Tabs from "components/form/tabs/Tabs";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("App snapshot", () => {
+test("Tabs snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <App />
+          <Tabs
+            files={[]}
+            handleImageDelete={() => console.log("Image deleted during test")}
+            handleNameChange={() => console.log("Name changed during test")}
+          />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>
