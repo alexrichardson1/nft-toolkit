@@ -9,7 +9,7 @@ type AnchorOriginType = {
   horizontal: HorizontalPositionType;
 };
 
-type ImageListT = { image: File; url: string }[];
+type ImageListT = { image: File; url: string; name: string; id: string }[];
 
 interface FormStateI {
   collectionName: string;
@@ -22,11 +22,18 @@ type FormActionIypeT =
   | "CHANGE_NAME"
   | "CHANGE_PRICE"
   | "CHANGE_IMAGES"
-  | "CHANGE_DESCRIPTION";
+  | "CHANGE_DESCRIPTION"
+  | "CHANGE_IMAGE_NAME";
 
-type FormActionPayloadT = string | File[] | number;
+interface FormActionPayloadI {
+  newName?: string;
+  description?: string;
+  images?: File[];
+  newImageObj?: { newImageName: string; imageId: string };
+  price?: string;
+}
 
 interface FormActionI {
   type: FormActionIypeT;
-  payload: FormActionPayloadT;
+  payload: FormActionPayloadI;
 }
