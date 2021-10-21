@@ -1,7 +1,7 @@
 import chai, { expect } from "chai";
 import { ethers } from "hardhat";
 import { solidity } from "ethereum-waffle";
-import { NFT } from "../typechain/NFT";
+import { NFT } from "../typechain";
 
 chai.use(solidity);
 
@@ -9,9 +9,8 @@ const collectionSize = 10;
 const collectionWeiPrice = ethers.utils.parseEther("1");
 const baseURI = "";
 
-describe("NFT Collection Contract", function () {
+describe("NFT Collection Contract", () => {
   let nftContract: NFT;
-
   before(async () => {
     const NFTContract = await ethers.getContractFactory("NFT");
     nftContract = await NFTContract.deploy(
