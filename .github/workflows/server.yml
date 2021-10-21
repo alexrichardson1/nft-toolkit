@@ -27,5 +27,7 @@ jobs:
         run: cd server/ && yarn build
       - name: Hardhat Build
         run: cd server/ && yarn compile
-      - name: Test
+      - name: Test Server
         run: cd server/ && yarn test
+      - name: Test Contracts
+        run: cd server/ && yarn soltest
