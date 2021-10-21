@@ -1,13 +1,13 @@
-import { cyan, deepOrange, pink, teal } from "@mui/material/colors";
-import { useEffect, useMemo, useState } from "react";
 import ThemeContext from "./ThemeContext";
+import { cyan, deepOrange, teal } from "@mui/material/colors";
+import { useEffect, useMemo, useState } from "react";
+import { getComponentByMode } from "utils/getComponentByMode";
+import { PaletteMode } from "@mui/material";
 import {
   createTheme,
   ThemeOptions,
   ThemeProvider as MUIThemeProvider,
 } from "@mui/material/styles";
-import { getComponentByMode } from "utils/getComponentByMode";
-import { PaletteMode } from "@mui/material";
 
 export const getDesign = (mode: string): ThemeOptions => {
   return mode === "light"
@@ -15,7 +15,7 @@ export const getDesign = (mode: string): ThemeOptions => {
         // palette values for light mode
         palette: {
           mode: "light",
-          primary: pink,
+          primary: cyan,
           secondary: deepOrange,
           background: {
             default: "#F0F0F0",
