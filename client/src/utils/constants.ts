@@ -1,11 +1,13 @@
-import EthereumLogo from "images/ethereum-logo.svg";
+import AvalancheLogo from "images/avalanche-logo.svg";
+import BinanceLogo from "images/binance-logo.svg";
 import CardanoLogo from "images/cardano-logo.svg";
+import EthereumLogo from "images/ethereum-logo.svg";
 import PolygonLogo from "images/polygon-logo.svg";
 import SolanaLogo from "images/solana-logo.svg";
-import BinanceLogo from "images/binance-logo.svg";
-import AvalancheLogo from "images/avalanche-logo.svg";
 
 export const DEFAULT_MUI_ICON_SIZE = 24;
+
+export const DEFAULT_MUI_DARK = "#121212";
 
 export const mainContainerStyle = {
   py: 3,
