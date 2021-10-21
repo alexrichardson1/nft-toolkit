@@ -48,13 +48,23 @@ jobs:
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
-      - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v18
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: nft-toolkit-eb
-          environment_name: Nfttoolkiteb-env-1
-          version_label: ${{github.SHA}}
-          region: eu-west-2
-          deployment_package: deploy.zip
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: "eu-west-2"
+
+      - name: Upload package to S3 bucket
+        run: aws s3 cp deploy.zip s3://elasticbeanstalk-eu-west-2-307164813438/
+
+      - name: Create new ElasticBeanstalk Application Version
+        run: |
+          aws elasticbeanstalk create-application-version \
+          --application-name nft-toolkit-eb \
+          --source-bundle S3Bucket="elasticbeanstalk-eu-west-2-307164813438",S3Key="deploy.zip" \
+          --version-label "${{ github.sha }}" \
+          --description "commit-sha-${{ github.sha }}"
+
+      - name: Deploy new ElasticBeanstalk Application Version
+        run: aws elasticbeanstalk update-environment --environment-name Nfttoolkiteb-env-1 --version-label ${{ github.sha }}

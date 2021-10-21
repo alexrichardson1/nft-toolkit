@@ -38,10 +38,10 @@ def format_python(files):
     format_files(files, [".py"], "autopep8 -i ")
 
 
-def format_node(files):
+def prettier(files):
     """Formats node related files."""
     format_files(files, [".js", ".ts", ".tsx", ".json",
-                         ".html", ".css", ".yml", ".md"], "yarn format ")
+                         ".html", ".css", ".yml", ".md", ".sol"], "yarn format ")
 
 
 def run_linter(files, linter):
@@ -77,20 +77,14 @@ def eslint(files):
 def main():
     """Main function for the pre-commit hook."""
     print("--- Running pre-commit hook ---")
+    # all staged files except delted files
     files = subprocess.check_output(
-        "git diff --name-only --staged",
+        "git diff --name-only --staged --diff-filter=d",
         shell=True,
         universal_newlines=True)
-    staged_files = files.split("\n")
-    files = subprocess.check_output(
-        "git diff --name-only --diff-filter=D",
-        shell=True,
-        universal_newlines=True)
-    deleted_filles = files.split("\n")
-    staged_files = [
-        file for file in staged_files if file not in deleted_filles]
+    staged_files = [file for file in files.split("\n") if file != ""]
     # add format functions here
-    format_functions = [format_python, format_node]
+    format_functions = [format_python, prettier]
     for format_function in format_functions:
         format_function(staged_files)
     # add lint functions here

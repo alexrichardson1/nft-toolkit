@@ -25,3 +25,6 @@ yarn-error.log*
 # smart-contract build files
 /smart-contracts/artifacts
 /smart-contracts/cache
+
+# local image storage
+/uploads
