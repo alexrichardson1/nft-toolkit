@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import { generate, GenCollectionI } from "../controllers/generateArt";
+import { GenCollectionI, generate } from "../controllers/generateArt";
 
 describe("Generate Art", () => {
   const testData: GenCollectionI = {

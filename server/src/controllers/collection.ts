@@ -1,8 +1,8 @@
-import multer from "multer";
-import { createReadStream } from "fs";
 import { PutObjectCommand, S3 } from "@aws-sdk/client-s3";
+import { NextFunction, Request, RequestHandler, Response } from "express";
+import { createReadStream } from "fs";
+import multer from "multer";
 import path from "path";
-import { NextFunction, Request, Response, RequestHandler } from "express";
 import { Collection, Token } from "../models/collection";
 
 export const uploadImagesLocal = multer({ dest: "uploads/" }).any();
