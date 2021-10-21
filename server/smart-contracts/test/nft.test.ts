@@ -1,6 +1,6 @@
 import chai, { expect } from "chai";
-import { ethers } from "hardhat";
 import { solidity } from "ethereum-waffle";
+import { ethers } from "hardhat";
 import { NFT } from "../typechain";
 
 chai.use(solidity);

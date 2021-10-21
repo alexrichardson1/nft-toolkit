@@ -20,6 +20,7 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-tsdoc": "^0.2.14",
     "prettier": "^2.4.1",
+    "prettier-plugin-organize-imports": "^2.3.4",
     "prettier-plugin-solidity": "^1.0.0-beta.18",
     "solium": "^1.2.5",
     "tsdoc": "^0.0.4",
