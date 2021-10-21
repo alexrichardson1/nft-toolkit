@@ -1,4 +1,5 @@
-import { OutlinedInputProps, TextField } from "@mui/material";
+import { OutlinedInputProps, TextField, Theme } from "@mui/material";
+import { SxProps } from "@mui/system";
 
 interface PropsT {
   name?: string;
@@ -12,11 +13,13 @@ interface PropsT {
   onChange?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   error?: string;
   type?: React.HTMLInputTypeAttribute;
+  sx?: SxProps<Theme>;
 }
 
 const Input = (props: PropsT): JSX.Element => {
   return (
     <TextField
+      sx={props.sx}
       type={props.type}
       InputProps={props.InputProps}
       variant="outlined"
