@@ -7,6 +7,7 @@ chai.use(solidity);
 
 const collectionSize = 10;
 const collectionWeiPrice = ethers.utils.parseEther("1");
+const baseURI = "";
 
 describe("NFT Collection Contract", function () {
   let nftContract: NFT;
@@ -16,6 +17,7 @@ describe("NFT Collection Contract", function () {
     nftContract = await NFTContract.deploy(
       "Monkeys",
       "MNKY",
+      baseURI,
       collectionSize,
       collectionWeiPrice
     );
