@@ -3,6 +3,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import TabPanel from "./TabPanel";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 import { getComponentByMode } from "utils/getComponentByMode";
 import { useState } from "react";
 
@@ -40,6 +42,10 @@ interface PropsT {
 
 const VerticalTabs = (props: PropsT): JSX.Element => {
   const [value, setValue] = useState(0);
+
+  const handleImageDelete = (deleteId: string) => {
+    props.dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
+  };
 
   const handleNameChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -90,6 +96,9 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               required
               onChange={(e) => handleNameChange(e, image.id)}
             />
+            <IconButton onClick={() => handleImageDelete(image.id)}>
+              <DeleteIcon fontSize="large" color="error" />
+            </IconButton>
           </Box>
           <img
             height="100%"
