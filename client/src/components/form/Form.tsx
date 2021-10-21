@@ -38,6 +38,40 @@ const Form = (): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
   const [state, dispatch] = useReducer(formReducer, initialState);
 
+  const handleImageDelete = (deleteId: string) => {
+    dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
+  };
+
+  const handleNameChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    id: string
+  ) =>
+    dispatch({
+      type: "CHANGE_IMAGE_NAME",
+      payload: {
+        newImageObj: {
+          newImageName: e.target.value,
+          imageId: id,
+        },
+      },
+    });
+
+  const handleImageDrop = (
+    e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
+    files: FileList | null
+  ) => {
+    e.preventDefault();
+    dispatch({
+      type: "CHANGE_IMAGES",
+      payload: { images: Array.from(files || []) },
+    });
+  };
+
+  const handleFormSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log(state);
+  };
+
   const mintingGrid = (
     <Grid item md={12}>
       <Paper>
@@ -129,24 +163,26 @@ const Form = (): JSX.Element => {
   );
 
   return (
-    <Container
-      onSubmit={(e: FormEvent) => {
-        e.preventDefault();
-        console.log(state);
-      }}
-      component="form">
+    <Container onSubmit={handleFormSubmit} component="form">
       <Grid justifyContent="center" spacing={2} direction="column" container>
         {collectionNameGrid}
         {descriptionGrid}
         <Grid item md={12}>
           <Paper>
-            <ImageUpload files={state.images} dispatch={dispatch} />
+            <ImageUpload
+              handleImageDrop={handleImageDrop}
+              files={state.images}
+            />
           </Paper>
         </Grid>
         {state.images.length > 0 && (
           <Grid item md={12}>
             <Paper>
-              <Tabs dispatch={dispatch} files={state.images} />
+              <Tabs
+                handleImageDelete={handleImageDelete}
+                handleNameChange={handleNameChange}
+                files={state.images}
+              />
             </Paper>
           </Grid>
         )}

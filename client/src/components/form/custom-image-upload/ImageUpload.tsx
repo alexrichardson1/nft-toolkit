@@ -3,24 +3,17 @@ import { Typography } from "@mui/material";
 import "./imageUpload.css";
 
 interface PropsT {
-  dispatch: React.Dispatch<FormActionI>;
   files: ImageListT;
+  handleImageDrop: (
+    e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
+    files: FileList | null
+  ) => void;
 }
 
-const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
+const ImageUpload = ({ files, handleImageDrop }: PropsT): JSX.Element => {
   const numberOfFiles = files.length;
   const preventDefault = (e: React.DragEvent<HTMLLabelElement>) =>
     e.preventDefault();
-  const handleImageDrop = (
-    e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
-    files: FileList | null
-  ) => {
-    e.preventDefault();
-    dispatch({
-      type: "CHANGE_IMAGES",
-      payload: { images: Array.from(files || []) },
-    });
-  };
 
   return (
     <>

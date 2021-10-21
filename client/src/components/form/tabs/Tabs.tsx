@@ -34,27 +34,15 @@ const accessibilityProps = (index: number) => {
 
 interface PropsT {
   files: ImageListT;
-  dispatch: React.Dispatch<FormActionI>;
+  handleImageDelete: (deleteId: string) => void;
+  handleNameChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    id: string
+  ) => void;
 }
 
 const VerticalTabs = (props: PropsT): JSX.Element => {
   const [value, setValue] = useState(0);
-  const handleImageDelete = (deleteId: string) => {
-    props.dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
-  };
-  const handleNameChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    id: string
-  ) =>
-    props.dispatch({
-      type: "CHANGE_IMAGE_NAME",
-      payload: {
-        newImageObj: {
-          newImageName: e.target.value,
-          imageId: id,
-        },
-      },
-    });
 
   return (
     <Box sx={vTabsContainerStyle}>
@@ -90,9 +78,9 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               value={image.name}
               placeholder="Enter name for NFT here"
               required
-              onChange={(e) => handleNameChange(e, image.id)}
+              onChange={(e) => props.handleNameChange(e, image.id)}
             />
-            <IconButton onClick={() => handleImageDelete(image.id)}>
+            <IconButton onClick={() => props.handleImageDelete(image.id)}>
               <DeleteIcon fontSize="large" color="error" />
             </IconButton>
           </Box>
