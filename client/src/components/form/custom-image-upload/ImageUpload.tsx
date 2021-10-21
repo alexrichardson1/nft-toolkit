@@ -33,7 +33,7 @@ const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
         {numberOfFiles > 0 &&
           `Uploaded ${numberOfFiles} file${numberOfFiles === 1 ? "" : "s"}`}
         <Typography align="center" variant="h5">
-          Drag and drop your image(s) here
+          Upload your NFT collection image(s) here
         </Typography>
       </label>
       <input
