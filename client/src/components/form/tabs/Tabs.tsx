@@ -1,17 +1,16 @@
-import Input from "../Input";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
-import TabPanel from "./TabPanel";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import { getComponentByMode } from "utils/getComponentByMode";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 import { useState } from "react";
+import { DEFAULT_MUI_DARK } from "utils/constants";
+import { getComponentByMode } from "utils/getComponentByMode";
+import Input from "../Input";
+import TabPanel from "./TabPanel";
 
 const tabsStyle = { borderRight: 1, borderColor: "divider" };
-
 const nameInputStyle = { flexGrow: 1 };
-
 const vTabsContainerStyle = {
   flexGrow: 1,
   bgcolor: "background.paper",
@@ -20,14 +19,12 @@ const vTabsContainerStyle = {
   border: 1,
   borderRadius: 1,
 };
-
 const inputAndDeleteContainer = {
   gap: "10px",
   display: "flex",
   width: "100%",
   alignItems: "center",
 };
-
 const accessibilityProps = (index: number) => {
   return {
     id: `vertical-tab-${index}`,
@@ -42,11 +39,9 @@ interface PropsT {
 
 const VerticalTabs = (props: PropsT): JSX.Element => {
   const [value, setValue] = useState(0);
-
   const handleImageDelete = (deleteId: string) => {
     props.dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
   };
-
   const handleNameChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     id: string
@@ -73,7 +68,7 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
         TabScrollButtonProps={{
           sx: {
             color: (theme) =>
-              getComponentByMode(theme.palette.mode, "#121212", "white"),
+              getComponentByMode(theme.palette.mode, DEFAULT_MUI_DARK, "white"),
           },
         }}
         sx={tabsStyle}>
@@ -85,6 +80,7 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
           />
         ))}
       </Tabs>
+
       {props.files.map((image, idx) => (
         <TabPanel key={image.id} value={value} index={idx}>
           <Box sx={inputAndDeleteContainer}>
@@ -100,6 +96,7 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               <DeleteIcon fontSize="large" color="error" />
             </IconButton>
           </Box>
+
           <img
             height="100%"
             width="100%"

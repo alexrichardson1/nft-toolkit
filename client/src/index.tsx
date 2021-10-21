@@ -1,10 +1,10 @@
+import CssBaseline from "@mui/material/CssBaseline";
+import { DAppProvider } from "@usedapp/core";
+import App from "App";
+import NetworkProvider from "context/network/NetworkProvider";
+import ThemeProvider from "context/theme/ThemeProvider";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "components/App";
-import CssBaseline from "@mui/material/CssBaseline";
-import ThemeProvider from "context/theme/ThemeProvider";
-import NetworkProvider from "context/network/NetworkProvider";
-import { DAppProvider } from "@usedapp/core";
 
 ReactDOM.render(
   <React.StrictMode>

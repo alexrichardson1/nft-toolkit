@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
-import NetworkContext from "./NetworkContext";
-import { networks } from "utils/constants";
 import EthereumLogo from "images/ethereum-logo.svg";
+import { useEffect, useState } from "react";
+import { networks } from "utils/constants";
+import NetworkContext from "./NetworkContext";
+
+const DEFAULT_NET = {
+  name: "Ethereum",
+  icon: EthereumLogo,
+  chainId: 0,
+};
 
 interface PropsT {
   children: React.ReactNode;
 }
 
 const NetworkProvider = (props: PropsT): JSX.Element => {
-  const [selectedNet, setSelectedNet] = useState<NetworkT>({
-    name: "Ethereum",
-    icon: EthereumLogo,
-    chainId: 0,
-  });
+  const [selectedNet, setSelectedNet] = useState<NetworkT>(DEFAULT_NET);
 
   const handleNetworkChange = (newNetwork: NetworkT) => {
     localStorage.setItem("preferred-network", newNetwork.name);
@@ -25,8 +27,7 @@ const NetworkProvider = (props: PropsT): JSX.Element => {
       const preferredNet = networks.find(
         (network) => network.name === preferredNetName
       );
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      setSelectedNet(preferredNet!);
+      setSelectedNet(preferredNet || DEFAULT_NET);
     }
   }, []);
 

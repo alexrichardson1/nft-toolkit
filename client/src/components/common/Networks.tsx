@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import NetworkContext from "context/network/NetworkContext";
 import { useContext } from "react";
 import { networks } from "utils/constants";
-import NetworkContext from "context/network/NetworkContext";
 import SvgLogo from "./SvgLogo";
 
 const containerStyle = {
@@ -37,23 +36,21 @@ const getSmallFabStyle = (network: NetworkT, selectedNetwork: NetworkT) => {
 const NetworkSpeedDial = (): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
 
+  const speedDialIcon = (
+    <SvgLogo
+      icon={selectedNet.icon}
+      width={NETWORK_DIMENSIONS}
+      height={NETWORK_DIMENSIONS}
+    />
+  );
+
   return (
     <Box sx={containerStyle}>
       <SpeedDial
         ariaLabel="network selection"
         direction="down"
         FabProps={{ sx: mainFabStyle }}
-        icon={
-          selectedNet ? (
-            <SvgLogo
-              icon={selectedNet.icon}
-              width={NETWORK_DIMENSIONS}
-              height={NETWORK_DIMENSIONS}
-            />
-          ) : (
-            <AccountBalanceWalletIcon />
-          )
-        }>
+        icon={speedDialIcon}>
         {networks.map((network) => (
           <SpeedDialAction
             FabProps={{ sx: getSmallFabStyle(network, selectedNet) }}

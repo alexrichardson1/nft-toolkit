@@ -1,6 +1,6 @@
-import "./imageUpload.css";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Typography } from "@mui/material";
+import "./imageUpload.css";
 
 interface PropsT {
   dispatch: React.Dispatch<FormActionI>;
@@ -9,21 +9,27 @@ interface PropsT {
 
 const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
   const numberOfFiles = files.length;
+  const preventDefault = (e: React.DragEvent<HTMLLabelElement>) =>
+    e.preventDefault();
+  const handleImageDrop = (
+    e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
+    files: FileList | null
+  ) => {
+    e.preventDefault();
+    dispatch({
+      type: "CHANGE_IMAGES",
+      payload: { images: Array.from(files || []) },
+    });
+  };
 
   return (
     <>
       <label
         className="image-upload-label"
-        onDragOver={(e) => e.preventDefault()}
-        onDragLeave={(e) => e.preventDefault()}
-        onDragEnter={(e) => e.preventDefault()}
-        onDrop={(e) => {
-          e.preventDefault();
-          dispatch({
-            type: "CHANGE_IMAGES",
-            payload: { images: Array.from(e.dataTransfer.files) },
-          });
-        }}
+        onDragOver={preventDefault}
+        onDragLeave={preventDefault}
+        onDragEnter={preventDefault}
+        onDrop={(e) => handleImageDrop(e, e.dataTransfer.files)}
         htmlFor="upload-files">
         <CloudUploadIcon
           className="image-upload-cloud"
@@ -36,14 +42,9 @@ const ImageUpload = ({ files, dispatch }: PropsT): JSX.Element => {
           Upload your NFT collection image(s) here
         </Typography>
       </label>
+
       <input
-        onChange={(e) => {
-          e.preventDefault();
-          dispatch({
-            type: "CHANGE_IMAGES",
-            payload: { images: Array.from(e.target.files || []) },
-          });
-        }}
+        onChange={(e) => handleImageDrop(e, e.target.files)}
         id="upload-files"
         className="image-upload-input"
         type="file"

@@ -1,23 +1,22 @@
-import MobileMenu from "./MobileMenu";
-import ThemeContext from "context/theme/ThemeContext";
-import NetworkSpeedDial from "components/common/Networks";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import MoreIcon from "@mui/icons-material/MoreVert";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import Toolbar from "@mui/material/Toolbar";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import { useContext, useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
-import { getComponentByMode } from "utils/getComponentByMode";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import { useEthers } from "@usedapp/core";
+import NetworkSpeedDial from "components/common/Networks";
+import ThemeContext from "context/theme/ThemeContext";
+import { useContext, useState } from "react";
+import { getComponentByMode } from "utils/getComponentByMode";
+import MobileMenu from "./common/MobileMenu";
 
 const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
-
 const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
 
 const extendedFabStyle = {
@@ -50,18 +49,12 @@ const appBarStyle = {
 };
 
 const Navbar = (): JSX.Element => {
-  const { activateBrowserWallet, account, deactivate, chainId } = useEthers();
-
+  const { activateBrowserWallet, account, deactivate } = useEthers();
   const theme = useTheme();
-
   const { toggleColourMode } = useContext(ThemeContext);
-
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorType>(null);
-
   const isMobileMenuOpen = Boolean(mobileAnchorEl);
-
   const handleMobileMenuClose = () => setMobileAnchorEl(null);
-
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
     setMobileAnchorEl(event.currentTarget);
 
@@ -89,12 +82,36 @@ const Navbar = (): JSX.Element => {
     return `${account.slice(0, START_CHARS)}....${account.slice(-END_CHARS)}`;
   };
 
-  useEffect(() => {
-    if (!chainId) {
-      return;
-    }
-    console.log(chainId);
-  }, [chainId]);
+  const navOptions = (
+    <Box sx={navOptionsStyle}>
+      <Fab
+        onClick={connectWallet}
+        variant="extended"
+        color="primary"
+        aria-label="connect wallet"
+        sx={extendedFabStyle}>
+        <AccountBalanceWalletIcon />
+        <Typography>{getAccountString()}</Typography>
+      </Fab>
+      <NetworkSpeedDial />
+      <Fab onClick={toggleColourMode}>{getThemeIcon()}</Fab>
+    </Box>
+  );
+
+  const moreOptionsIcon = (
+    <Box sx={moreIconContainerStyle}>
+      <IconButton onClick={toggleColourMode}>{getThemeIcon()}</IconButton>
+      <IconButton
+        size="large"
+        aria-label="show more"
+        aria-controls={"primary-menu-mobile"}
+        aria-haspopup="true"
+        onClick={handleMobileMenuOpen}
+        color="inherit">
+        <MoreIcon fontSize="large" />
+      </IconButton>
+    </Box>
+  );
 
   return (
     <Box flexGrow={1}>
@@ -104,31 +121,8 @@ const Navbar = (): JSX.Element => {
             NFToolkit
           </Typography>
           <Box flexGrow={1} />
-          <Box sx={navOptionsStyle}>
-            <Fab
-              onClick={connectWallet}
-              variant="extended"
-              color="primary"
-              aria-label="connect wallet"
-              sx={extendedFabStyle}>
-              <AccountBalanceWalletIcon />
-              <Typography>{getAccountString()}</Typography>
-            </Fab>
-            <NetworkSpeedDial />
-            <Fab onClick={toggleColourMode}>{getThemeIcon()}</Fab>
-          </Box>
-          <Box sx={moreIconContainerStyle}>
-            <IconButton onClick={toggleColourMode}>{getThemeIcon()}</IconButton>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={"primary-menu-mobile"}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit">
-              <MoreIcon fontSize="large" />
-            </IconButton>
-          </Box>
+          {navOptions}
+          {moreOptionsIcon}
         </Toolbar>
       </AppBar>
       <MobileMenu

@@ -1,9 +1,10 @@
 import { Box } from "@mui/system";
+import { ReactNode } from "react";
 
 const tabPanelStyle = { width: "100%", height: "100%" };
 
 interface TabPanelProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   index: number;
   value: number;
 }
@@ -21,6 +22,7 @@ const TabPanel = (props: TabPanelProps): JSX.Element => {
       {...other}>
       {value === index && (
         <Box
+          // inline sx required
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -36,4 +38,5 @@ const TabPanel = (props: TabPanelProps): JSX.Element => {
     </div>
   );
 };
+
 export default TabPanel;

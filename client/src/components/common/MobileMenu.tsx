@@ -1,11 +1,11 @@
-import SvgLogo from "./SvgLogo";
-import NetworkContext from "context/network/NetworkContext";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import { Typography } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import NetworkContext from "context/network/NetworkContext";
 import { useContext, useState } from "react";
-import { Typography } from "@mui/material";
 import { DEFAULT_MUI_ICON_SIZE, networks } from "utils/constants";
+import SvgLogo from "./SvgLogo";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 
@@ -20,14 +20,11 @@ interface PropsT {
 const MobileMenu = (props: PropsT): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
-
   const isNetworkMenuOpen = Boolean(networkAnchorEl);
 
   const handleNetworkMenuClose = () => setNetworkAnchorEl(null);
-
   const handleNetworkMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
     setNetworkAnchorEl(event.currentTarget);
-
   const handleNetworkChange = (network: NetworkT) => {
     setSelectedNet(network);
     handleNetworkMenuClose();
@@ -51,6 +48,7 @@ const MobileMenu = (props: PropsT): JSX.Element => {
           <AccountBalanceWalletIcon color="primary" />
           <Typography>Connect Wallet</Typography>
         </MenuItem>
+
         <MenuItem sx={menuItemStyle} onClick={handleNetworkMenuOpen}>
           <SvgLogo
             icon={selectedNet.icon}
@@ -60,6 +58,7 @@ const MobileMenu = (props: PropsT): JSX.Element => {
           <Typography>{selectedNet.name}</Typography>
         </MenuItem>
       </Menu>
+
       <Menu
         keepMounted
         anchorOrigin={props.anchOrigin}
