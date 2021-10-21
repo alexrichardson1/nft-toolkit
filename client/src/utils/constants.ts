@@ -24,3 +24,9 @@ export const networks: NetworkT[] = [
   { name: "Polygon", icon: PolygonLogo, chainId: 137 },
   { name: "BSC", icon: BinanceLogo, chainId: 56 },
 ];
+
+export const DEFAULT_NET = {
+  name: "Ethereum",
+  icon: EthereumLogo,
+  chainId: 1,
+};

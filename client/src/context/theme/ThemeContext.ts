@@ -4,6 +4,8 @@ interface ThemeContextT {
   toggleColourMode: () => void;
 }
 
-const ThemeContext = createContext({} as ThemeContextT);
+const ThemeContext = createContext<ThemeContextT>({
+  toggleColourMode: () => void 0 === 0,
+});
 
 export default ThemeContext;

@@ -45,8 +45,9 @@ const ThemeProvider = (props: PropsT): JSX.Element => {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setMode(storedTheme as PaletteMode);
+    if (storedTheme && (storedTheme === "light" || storedTheme === "dark")) {
+      const paletteStoredTheme: PaletteMode = storedTheme;
+      setMode(paletteStoredTheme);
     }
   }, []);
 
