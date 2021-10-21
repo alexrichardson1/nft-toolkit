@@ -9,6 +9,7 @@ RUN yarn
 
 COPY . .
 
+RUN yarn compile
 RUN yarn build
 
 EXPOSE 5000

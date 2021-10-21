@@ -3,27 +3,30 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract NFT is ERC721URIStorage {
+contract NFT is ERC721Enumerable {
   uint256 private _price;
   uint256 private _limit;
+  string private _baseURIString;
   using Counters for Counters.Counter;
   Counters.Counter public _tokenIdTracker;
 
   constructor(
     string memory name,
     string memory symbol,
+    string memory baseURI,
     uint256 limit,
     uint256 price
   ) ERC721(name, symbol) {
     _limit = limit;
     _price = price;
+    _baseURIString = baseURI;
   }
 
-  function setTokenURI(uint256 tokenId, string memory _tokenURI) external {
-    _setTokenURI(tokenId, _tokenURI);
+  function _baseURI() internal view virtual override returns (string memory) {
+    return _baseURIString;
   }
 
   function mint(uint256 amount) public payable {
