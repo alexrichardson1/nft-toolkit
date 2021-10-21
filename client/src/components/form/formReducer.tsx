@@ -15,12 +15,14 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         images: [
           ...state.images,
-          ...(action.payload.images || []).map((newImage) => ({
-            image: newImage,
-            url: URL.createObjectURL(newImage),
-            name: "",
-            id: newImage.name + newImage.size,
-          })),
+          ...(action.payload.images || []).map((newImage) => {
+            return {
+              image: newImage,
+              url: URL.createObjectURL(newImage),
+              name: newImage.name.replace(/\.[^/.]+$/, ""),
+              id: newImage.name + newImage.size,
+            };
+          }),
         ],
       };
     case "CHANGE_IMAGE_NAME":
@@ -31,7 +33,6 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
             action.payload.newImageObj &&
             image.id === action.payload.newImageObj.imageId
           ) {
-            console.log(action.payload.newImageObj.newImageName);
             return {
               ...image,
               name: action.payload.newImageObj.newImageName,
@@ -39,6 +40,13 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           }
           return image;
         }),
+      };
+    case "DELETE_IMAGE":
+      return {
+        ...state,
+        images: state.images.filter(
+          (image) => image.id !== action.payload.deleteId
+        ),
       };
     case "CHANGE_PRICE":
       return {

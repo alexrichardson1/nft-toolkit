@@ -23,7 +23,8 @@ type FormActionIypeT =
   | "CHANGE_PRICE"
   | "CHANGE_IMAGES"
   | "CHANGE_DESCRIPTION"
-  | "CHANGE_IMAGE_NAME";
+  | "CHANGE_IMAGE_NAME"
+  | "DELETE_IMAGE";
 
 interface FormActionPayloadI {
   newName?: string;
@@ -31,6 +32,7 @@ interface FormActionPayloadI {
   images?: File[];
   newImageObj?: { newImageName: string; imageId: string };
   price?: string;
+  deleteId?: string;
 }
 
 interface FormActionI {
