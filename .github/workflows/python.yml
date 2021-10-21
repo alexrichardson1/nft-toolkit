@@ -18,9 +18,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Lint
-        run: |
-          pylint $(find . -name "*.py" | xargs)
       - name: Format
-        run: |
-          autopep8 -r --diff --exit-code .
+        run: autopep8 -r --diff --exit-code .
+      - name: Lint
+        run: pylint $(find . -name "*.py" | xargs)
+      - name: Commit Convention
+        run: python3 git-hooks/commit_checker.py
