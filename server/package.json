@@ -5,8 +5,8 @@
   "main": "build/src/",
   "scripts": {
     "build": "tsc",
-    "test": "mocha -r ts-node/register src/tests/**/*.test.ts --exit",
-    "start": "nodemon --files src/index.ts",
+    "test": "yarn jest src/tests/",
+    "start": "nodemon --files src/server.ts",
     "start-production": "node .",
     "compile": "yarn hardhat compile",
     "console": "yarn hardhat console",
