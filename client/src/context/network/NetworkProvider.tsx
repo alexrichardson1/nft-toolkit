@@ -1,13 +1,6 @@
-import EthereumLogo from "images/ethereum-logo.svg";
 import { useEffect, useState } from "react";
-import { networks } from "utils/constants";
+import { DEFAULT_NET, networks } from "utils/constants";
 import NetworkContext from "./NetworkContext";
-
-const DEFAULT_NET = {
-  name: "Ethereum",
-  icon: EthereumLogo,
-  chainId: 0,
-};
 
 interface PropsT {
   children: React.ReactNode;
