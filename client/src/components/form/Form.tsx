@@ -121,7 +121,10 @@ const Form = (): JSX.Element => {
                 color="error"
                 size="large"
                 variant="contained"
-                type="reset">
+                type="reset"
+                onClick={() =>
+                  dispatch({ type: "RESET_STATE", payload: { initialState } })
+                }>
                 Reset
               </Button>
               <Button
