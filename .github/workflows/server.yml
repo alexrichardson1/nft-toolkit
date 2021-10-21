@@ -23,10 +23,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn && cd server/ && yarn
-      - name: TSC Build
-        run: cd server/ && yarn build
       - name: Hardhat Build
         run: cd server/ && yarn compile
+      - name: TSC Build
+        run: cd server/ && yarn build
       - name: Test Server
         run: cd server/ && yarn test
       - name: Test Contracts
