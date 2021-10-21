@@ -15,7 +15,8 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "baseUrl": "src",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
   "include": ["src", "smart-contracts/test", "smart-contracts/typechain"],
   "files": ["./hardhat.config.ts"],

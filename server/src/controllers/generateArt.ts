@@ -20,7 +20,8 @@ interface GenCollectionI {
 
 function generateRandomPercentage() {
   const MAX_RAND = 100;
-  return Math.floor(Math.random() * MAX_RAND);
+  // TODO: make sure this is a uniform distribution with 0-100 inclusive
+  return Math.random() * MAX_RAND;
 }
 
 function chooseLayerImage(images: ImageI[]): ImageI {
@@ -39,7 +40,8 @@ function chooseLayerImage(images: ImageI[]): ImageI {
 }
 
 /**
- * PRE: Layers are assumed to be of equal dimensions
+ * PRE: Layer images are assumed to be of equal dimensions, so that we don't
+ * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
 function generate(collection: GenCollectionI): ImageI[][] {
@@ -48,7 +50,6 @@ function generate(collection: GenCollectionI): ImageI[][] {
     const chosenLayerImages: ImageI[] = [];
     let layerIndex = 0;
     collection.layers.forEach((layer) => {
-      // TODO: make sure this is a uniform distribution with 0-100 inclusive
       const includeLayer = generateRandomPercentage() <= layer.rarity;
       if (includeLayer) {
         chosenLayerImages[layerIndex++] = chooseLayerImage(layer.images);
