@@ -17,6 +17,9 @@ export const getDesign = (mode: string): ThemeOptions => {
           mode: "light",
           primary: pink,
           secondary: deepOrange,
+          background: {
+            default: "#F0F0F0",
+          },
         },
       }
     : {
