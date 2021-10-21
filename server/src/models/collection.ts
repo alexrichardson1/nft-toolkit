@@ -8,7 +8,7 @@ const tokenSchema = new Schema({
 });
 
 // TODO: complete collection schema - contract address?
-const collectionSchema = new Schema({
+export const collectionSchema = new Schema({
   name: String,
   description: String,
   symbol: String,
