@@ -1,45 +1,55 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import "./imageUpload.css";
 
 interface PropsT {
-  files: ImageListT;
+  imgObjs: ImageListT;
   handleImageDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
-    files: FileList | null
+    imgObjs: FileList | null
   ) => void;
 }
 
-const ImageUpload = ({ files, handleImageDrop }: PropsT): JSX.Element => {
-  const numberOfFiles = files.length;
+const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
+  const numberOfImages = imgObjs.length;
+  const theme = useTheme();
+
   const preventDefault = (e: React.DragEvent<HTMLLabelElement>) =>
     e.preventDefault();
+
+  const labelStyle = {
+    borderRadius: theme.shape.borderRadius,
+    borderColor: theme.palette.primary.main,
+  };
 
   return (
     <>
       <label
-        className="image-upload-label"
+        tabIndex={0}
+        style={labelStyle}
+        className="img-upload-label"
         onDragOver={preventDefault}
         onDragLeave={preventDefault}
         onDragEnter={preventDefault}
         onDrop={(e) => handleImageDrop(e, e.dataTransfer.files)}
-        htmlFor="upload-files">
+        htmlFor="upload-images">
         <CloudUploadIcon
-          className="image-upload-cloud"
+          className="img-upload-cloud"
           color="primary"
           fontSize="large"
         />
-        {numberOfFiles > 0 &&
-          `Uploaded ${numberOfFiles} file${numberOfFiles === 1 ? "" : "s"}`}
+        {numberOfImages > 0 &&
+          `Uploaded ${numberOfImages} image${numberOfImages === 1 ? "" : "s"}`}
         <Typography align="center" variant="h5">
           Upload your NFT collection image(s) here
         </Typography>
       </label>
 
       <input
+        accept="image/*"
         onChange={(e) => handleImageDrop(e, e.target.files)}
-        id="upload-files"
-        className="image-upload-input"
+        id="upload-images"
+        className="img-upload-input"
         type="file"
         multiple
       />

@@ -49,7 +49,7 @@ const Form = (): JSX.Element => {
     dispatch({
       type: "CHANGE_IMAGE_NAME",
       payload: {
-        newImageObj: {
+        newImgObj: {
           newImageName: e.target.value,
           imageId: id,
         },
@@ -58,12 +58,12 @@ const Form = (): JSX.Element => {
 
   const handleImageDrop = (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
-    files: FileList | null
+    imgObjs: FileList | null
   ) => {
     e.preventDefault();
     dispatch({
       type: "CHANGE_IMAGES",
-      payload: { images: Array.from(files || []) },
+      payload: { images: Array.from(imgObjs || []) },
     });
   };
 
@@ -171,7 +171,7 @@ const Form = (): JSX.Element => {
           <Paper>
             <ImageUpload
               handleImageDrop={handleImageDrop}
-              files={state.images}
+              imgObjs={state.images}
             />
           </Paper>
         </Grid>
@@ -181,7 +181,7 @@ const Form = (): JSX.Element => {
               <Tabs
                 handleImageDelete={handleImageDelete}
                 handleNameChange={handleNameChange}
-                files={state.images}
+                imgObjs={state.images}
               />
             </Paper>
           </Grid>
