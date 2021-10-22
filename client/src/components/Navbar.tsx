@@ -15,6 +15,7 @@ import NetworkSpeedDial from "components/common/Networks";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
+import { NAVBAR_HEIGHT } from "utils/constants";
 import { getComponentByMode } from "utils/getComponentByMode";
 import MobileMenu from "./common/MobileMenu";
 
@@ -47,7 +48,7 @@ const appBarStyle = {
   color: "text.primary",
   display: "flex",
   justifyContent: "center",
-  height: 90,
+  height: NAVBAR_HEIGHT,
 };
 
 const Navbar = (): JSX.Element => {
