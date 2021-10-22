@@ -77,7 +77,7 @@ const Form = (): JSX.Element => {
     e.preventDefault();
     dispatch({
       type: "CHANGE_IMAGES",
-      payload: { images: Array.from(imgObjs || []) },
+      payload: { images: Array.from(imgObjs ?? []) },
     });
   };
 

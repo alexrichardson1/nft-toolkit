@@ -16,7 +16,7 @@ const NetworkProvider = (props: ProviderPropsI): JSX.Element => {
       const preferredNet = NETWORKS.find(
         (network) => network.name === preferredNetName
       );
-      setSelectedNet(preferredNet || DEFAULT_NET);
+      setSelectedNet(preferredNet ?? DEFAULT_NET);
     }
   }, []);
 
