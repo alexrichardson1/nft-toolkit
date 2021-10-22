@@ -4,7 +4,7 @@
 
 .img-upload-label {
   display: flex;
-  border: 1px dashed;
+  border: 1px transparent;
   width: 100%;
   min-height: 200px;
   height: 30vh;
@@ -12,6 +12,7 @@
   justify-content: center;
   flex-direction: column;
   transition: 0.1s all ease-in-out;
+  transition: border 0.05s ease-in-out;
   gap: 5px;
   cursor: pointer;
   background: transparent;
@@ -20,7 +21,7 @@
 .img-upload-label:hover,
 .img-upload-label:focus,
 .img-upload-label:active {
-  border-width: 3px;
+  border: 2px solid;
   outline: none;
 }
 
