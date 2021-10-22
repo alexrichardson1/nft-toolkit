@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 
-const Input = (props: InputPropsT): JSX.Element => {
+const Input = (props: InputPropsI): JSX.Element => {
   return (
     <TextField
       type={props.type}
