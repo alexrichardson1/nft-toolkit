@@ -13,10 +13,13 @@ import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { FormEvent, useContext, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
-import { DEFAULT_ALERT_DURATION } from "utils/constants";
+import {
+  DEFAULT_ALERT_DURATION,
+  DEFAULT_ALERT_ELEVATION,
+} from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import FormGridItem from "./FormGridInput";
+import FormGridInput from "./FormGridInput";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -110,7 +113,7 @@ const Form = (): JSX.Element => {
     <Box flexGrow={1}>
       <Collapse in={alertMessage.length !== 0}>
         <Alert
-          elevation={6}
+          elevation={DEFAULT_ALERT_ELEVATION}
           variant="filled"
           severity={alertSeverity}
           action={
@@ -153,13 +156,13 @@ const Form = (): JSX.Element => {
   return (
     <Container onSubmit={handleFormSubmit} component="form">
       <Grid justifyContent="center" spacing={2} direction="column" container>
-        <FormGridItem
+        <FormGridInput
           value={state.collectionName}
           onChange={handleCollNameChange}
           placeholder="Enter a collection name"
           label="Collection Name"
         />
-        <FormGridItem
+        <FormGridInput
           value={state.description}
           multiline
           onChange={handleDescriptionChange}
@@ -186,7 +189,7 @@ const Form = (): JSX.Element => {
             </Paper>
           </Grid>
         )}
-        <FormGridItem
+        <FormGridInput
           value={state.mintingPrice}
           onChange={handleMintPriceChange}
           placeholder="Enter a minting price"

@@ -1,7 +1,7 @@
 import { Grid, Paper } from "@mui/material";
-import Input from "./Input";
+import Input from "../common/Input";
 
-const FormGridItem = (props: InputPropsT): JSX.Element => {
+const FormGridInput = (props: InputPropsI): JSX.Element => {
   return (
     <Grid item xs={12}>
       <Paper>
@@ -23,4 +23,4 @@ const FormGridItem = (props: InputPropsT): JSX.Element => {
   );
 };
 
-export default FormGridItem;
+export default FormGridInput;
