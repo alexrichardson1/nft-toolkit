@@ -11,17 +11,17 @@ import NetworkContext from "context/network/NetworkContext";
 import { FormEvent, useContext, useReducer } from "react";
 import formReducer from "reducers/formReducer";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import Input from "./Input";
+import FormGridItem from "./FormGridInput";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
-
-const initialState = {
+const INITIAL_STATE = {
   collectionName: "",
   description: "",
   images: [],
   mintingPrice: 0,
 };
+
 const buttonsWrapperStyle = { display: "flex", gap: "10px" };
 const buttonContainerStyle = { display: "flex" };
 
@@ -36,16 +36,13 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 
 const Form = (): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
-  const [state, dispatch] = useReducer(formReducer, initialState);
+  const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
 
   const handleImageDelete = (deleteId: string) => {
     dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
   };
 
-  const handleNameChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    id: string
-  ) =>
+  const handleImgNameChange = (e: InputEventT, id: string) =>
     dispatch({
       type: "CHANGE_IMAGE_NAME",
       payload: {
@@ -67,30 +64,61 @@ const Form = (): JSX.Element => {
     });
   };
 
+  const handleCollNameChange = (e: InputEventT) =>
+    dispatch({
+      type: "CHANGE_NAME",
+      payload: { newName: e.target.value },
+    });
+
+  const handleDescriptionChange = (e: InputEventT) =>
+    dispatch({
+      type: "CHANGE_DESCRIPTION",
+      payload: { description: e.target.value },
+    });
+
+  const handleMintPriceChange = (e: InputEventT) =>
+    dispatch({
+      type: "CHANGE_PRICE",
+      payload: { price: e.target.value },
+    });
+
+  const handleStateReset = () =>
+    dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
+
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(state);
   };
 
+  const collectionNameGrid = (
+    <FormGridItem
+      value={state.collectionName}
+      onChange={handleCollNameChange}
+      placeholder="Enter a collection name"
+      label="Collection Name"
+    />
+  );
+
+  const descriptionGrid = (
+    <FormGridItem
+      value={state.description}
+      multiline
+      onChange={handleDescriptionChange}
+      placeholder="Enter a description"
+      rows={4}
+      label="Description"
+    />
+  );
+
   const mintingGrid = (
-    <Grid item md={12}>
-      <Paper>
-        <Input
-          label="Minting Price"
-          required
-          type="number"
-          onChange={(e) =>
-            dispatch({
-              type: "CHANGE_PRICE",
-              payload: { price: e.target.value },
-            })
-          }
-          value={state.mintingPrice}
-          placeholder="Enter minting price"
-          InputProps={priceInputProps(selectedNet)}
-        />
-      </Paper>
-    </Grid>
+    <FormGridItem
+      value={state.mintingPrice}
+      onChange={handleMintPriceChange}
+      placeholder="Enter a minting price"
+      label="Minting Price"
+      type="number"
+      InputProps={priceInputProps(selectedNet)}
+    />
   );
 
   const resetGrid = (
@@ -104,9 +132,7 @@ const Form = (): JSX.Element => {
             size="large"
             variant="contained"
             type="reset"
-            onClick={() =>
-              dispatch({ type: "RESET_STATE", payload: { initialState } })
-            }>
+            onClick={handleStateReset}>
             Reset
           </Button>
           <Button
@@ -119,46 +145,6 @@ const Form = (): JSX.Element => {
           </Button>
         </Box>
       </Box>
-    </Grid>
-  );
-
-  const collectionNameGrid = (
-    <Grid item md={12}>
-      <Paper>
-        <Input
-          label="Collection Name"
-          value={state.collectionName}
-          placeholder="Please enter your collection name"
-          onChange={(e) =>
-            dispatch({
-              type: "CHANGE_NAME",
-              payload: { newName: e.target.value },
-            })
-          }
-          required
-        />
-      </Paper>
-    </Grid>
-  );
-
-  const descriptionGrid = (
-    <Grid item md={12}>
-      <Paper>
-        <Input
-          rows={4}
-          label="Description"
-          value={state.description}
-          placeholder="Please enter a description"
-          multiline
-          required
-          onChange={(e) =>
-            dispatch({
-              type: "CHANGE_DESCRIPTION",
-              payload: { description: e.target.value },
-            })
-          }
-        />
-      </Paper>
     </Grid>
   );
 
@@ -180,7 +166,7 @@ const Form = (): JSX.Element => {
             <Paper>
               <Tabs
                 handleImageDelete={handleImageDelete}
-                handleNameChange={handleNameChange}
+                handleNameChange={handleImgNameChange}
                 imgObjs={state.images}
               />
             </Paper>

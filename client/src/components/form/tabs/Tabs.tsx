@@ -35,10 +35,7 @@ const accessibilityProps = (index: number) => {
 interface PropsT {
   imgObjs: ImageListT;
   handleImageDelete: (deleteId: string) => void;
-  handleNameChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    id: string
-  ) => void;
+  handleNameChange: (e: InputEventT, id: string) => void;
 }
 
 const VerticalTabs = (props: PropsT): JSX.Element => {
