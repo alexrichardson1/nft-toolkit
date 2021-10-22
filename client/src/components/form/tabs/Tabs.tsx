@@ -6,7 +6,7 @@ import Tabs from "@mui/material/Tabs";
 import { useState } from "react";
 import { DEFAULT_MUI_DARK } from "utils/constants";
 import { getComponentByMode } from "utils/getComponentByMode";
-import Input from "../Input";
+import Input from "../../common/Input";
 import TabPanel from "./TabPanel";
 
 const tabsStyle = { borderRight: 1, borderColor: "divider" };
@@ -25,12 +25,11 @@ const inputAndDeleteContainer = {
   width: 1,
   alignItems: "center",
 };
-const accessibilityProps = (index: number) => {
-  return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
-  };
-};
+
+const accessibilityProps = (index: number) => ({
+  id: `vertical-tab-${index}`,
+  "aria-controls": `vertical-tabpanel-${index}`,
+});
 
 interface PropsT {
   imgObjs: ImageListT;
