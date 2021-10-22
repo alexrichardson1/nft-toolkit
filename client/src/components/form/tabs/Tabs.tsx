@@ -62,9 +62,9 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
           },
         }}
         sx={tabsStyle}>
-        {props.imgObjs.map((img, idx) => (
+        {props.imgObjs.map((imgObj, idx) => (
           <Tab
-            key={img.id}
+            key={imgObj.id}
             label={`Image ${idx + 1}`}
             {...accessibilityProps(idx)}
           />
