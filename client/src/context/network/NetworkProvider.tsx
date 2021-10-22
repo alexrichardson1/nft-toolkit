@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DEFAULT_NET, networks } from "utils/constants";
+import { DEFAULT_NET, NETWORKS } from "utils/constants";
 import NetworkContext from "./NetworkContext";
 
 const NetworkProvider = (props: ProviderPropsI): JSX.Element => {
@@ -13,7 +13,7 @@ const NetworkProvider = (props: ProviderPropsI): JSX.Element => {
   useEffect(() => {
     const preferredNetName = localStorage.getItem("preferred-network");
     if (preferredNetName) {
-      const preferredNet = networks.find(
+      const preferredNet = NETWORKS.find(
         (network) => network.name === preferredNetName
       );
       setSelectedNet(preferredNet || DEFAULT_NET);
