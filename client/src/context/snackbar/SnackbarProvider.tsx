@@ -20,7 +20,7 @@ Alert.displayName = "Alert";
 const INITIAL_ALERT_COLOR = "success";
 const SNACKBAR_DURATION = 6000;
 const SBAR_ANCHOR_ORIGIN: SnackbarOrigin = {
-  vertical: "bottom",
+  vertical: "top",
   horizontal: "center",
 };
 
