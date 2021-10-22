@@ -11,12 +11,6 @@ import { forwardRef, useState } from "react";
 import { DEFAULT_ALERT_DURATION } from "utils/constants";
 import showAlert from "utils/showAlert";
 import SnackbarContext from "./SnackbarContext";
-const snackbarStyle = { width: "100%" };
-
-const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-Alert.displayName = "Alert";
 
 const INITIAL_ALERT_COLOR = "success";
 const SBAR_ANCHOR_ORIGIN: SnackbarOrigin = {
@@ -24,9 +18,16 @@ const SBAR_ANCHOR_ORIGIN: SnackbarOrigin = {
   horizontal: "center",
 };
 
+const snackbarStyle = { width: "100%" };
+
+const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+Alert.displayName = "Alert";
+
 const SnackbarProvider = (props: ProviderPropsI): JSX.Element => {
   const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState("Success!");
+  const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState<AlertColor>(INITIAL_ALERT_COLOR);
 
   const showSnackbar = (type: AlertColor, message: string) => {
