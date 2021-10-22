@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useState } from "react";
-import { DEFAULT_MUI_ICON_SIZE, networks } from "utils/constants";
+import { DEFAULT_MUI_ICON_SIZE, NETWORKS } from "utils/constants";
 import SvgLogo from "./SvgLogo";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
@@ -20,7 +20,6 @@ interface PropsT {
 const MobileMenu = (props: PropsT): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorT>(null);
-  const isNetworkMenuOpen = Boolean(networkAnchorEl);
 
   const handleNetworkMenuClose = () => setNetworkAnchorEl(null);
   const handleNetworkMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
@@ -30,15 +29,16 @@ const MobileMenu = (props: PropsT): JSX.Element => {
     handleNetworkMenuClose();
   };
 
+  const IS_NET_MENU_OPEN = Boolean(networkAnchorEl);
+  const MOBILE_MENU_ID = "primary-menu-mobile";
+
   return (
     <>
       <Menu
         anchorEl={props.anchorEl}
         anchorOrigin={props.anchOrigin}
-        transformOrigin={
-          props.transformOrigin ? props.transformOrigin : props.anchOrigin
-        }
-        id={"primary-menu-mobile"}
+        transformOrigin={props.transformOrigin ?? props.anchOrigin}
+        id={MOBILE_MENU_ID}
         keepMounted
         open={props.isOpen}
         onClose={props.handleClose}>
@@ -62,13 +62,11 @@ const MobileMenu = (props: PropsT): JSX.Element => {
       <Menu
         keepMounted
         anchorOrigin={props.anchOrigin}
-        transformOrigin={
-          props.transformOrigin ? props.transformOrigin : props.anchOrigin
-        }
+        transformOrigin={props.transformOrigin ?? props.anchOrigin}
         onClose={handleNetworkMenuClose}
         anchorEl={networkAnchorEl}
-        open={isNetworkMenuOpen}>
-        {networks.map((network) => (
+        open={IS_NET_MENU_OPEN}>
+        {NETWORKS.map((network) => (
           <MenuItem
             onClick={() => handleNetworkChange(network)}
             key={network.name}

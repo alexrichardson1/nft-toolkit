@@ -24,28 +24,24 @@ const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
 };
 
 const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
-
 const extendedFabStyle = {
   display: "flex",
   gap: "7px",
   alignItems: "center",
   justifyCotnent: "center",
 };
-
 const toolbarStyle = {
   width: 1,
   height: 1,
   justifyContent: "center",
   alignItems: "center",
 };
-
 const navOptionsStyle = {
   display: { xs: "none", md: "flex" },
   alignItems: "center",
   justifyContent: "center",
   gap: "15px",
 };
-
 const appBarStyle = {
   bgcolor: "background.default",
   color: "text.primary",
@@ -55,12 +51,12 @@ const appBarStyle = {
 };
 
 const Navbar = (): JSX.Element => {
-  const { activateBrowserWallet, account, deactivate } = useEthers();
   const theme = useTheme();
   const { toggleColourMode } = useContext(ThemeContext);
   const { showSnackbar } = useContext(SnackbarContext);
+  const { activateBrowserWallet, account, deactivate } = useEthers();
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorT>(null);
-  const isMobileMenuOpen = Boolean(mobileAnchorEl);
+
   const handleMobileMenuClose = () => setMobileAnchorEl(null);
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
     setMobileAnchorEl(event.currentTarget);
@@ -94,6 +90,8 @@ const Navbar = (): JSX.Element => {
     return `${account.slice(0, START_CHARS)}....${account.slice(-END_CHARS)}`;
   };
 
+  const IS_MOBILE_MENU_OPEN = Boolean(mobileAnchorEl);
+
   const navOptions = (
     <Box sx={navOptionsStyle}>
       <Fab
@@ -116,7 +114,7 @@ const Navbar = (): JSX.Element => {
       <IconButton
         size="large"
         aria-label="show more"
-        aria-controls={"primary-menu-mobile"}
+        aria-controls="primary-menu-mobile"
         aria-haspopup="true"
         onClick={handleMobileMenuOpen}
         color="inherit">
@@ -138,7 +136,7 @@ const Navbar = (): JSX.Element => {
         </Toolbar>
       </AppBar>
       <MobileMenu
-        isOpen={isMobileMenuOpen}
+        isOpen={IS_MOBILE_MENU_OPEN}
         anchOrigin={MENU_ANCHOR_ORIGIN}
         anchorEl={mobileAnchorEl}
         handleClose={handleMobileMenuClose}

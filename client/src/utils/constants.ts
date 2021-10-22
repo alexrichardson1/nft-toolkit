@@ -7,6 +7,7 @@ import SolanaLogo from "images/solana-logo.svg";
 
 export const DEFAULT_MUI_ICON_SIZE = 24;
 export const DEFAULT_ALERT_DURATION = 6000;
+export const DEFAULT_ALERT_ELEVATION = 6;
 export const DEFAULT_MUI_DARK = "#121212";
 
 export const mainContainerStyle = {
@@ -16,7 +17,7 @@ export const mainContainerStyle = {
   bgcolor: "background.default",
 };
 
-export const networks: NetworkT[] = [
+export const NETWORKS: NetworkT[] = [
   { name: "Ethereum", icon: EthereumLogo, chainId: 1 },
   { name: "Cardano", icon: CardanoLogo },
   { name: "Avalanche", icon: AvalancheLogo, chainId: 43114 },

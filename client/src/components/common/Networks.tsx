@@ -3,16 +3,15 @@ import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext } from "react";
-import { networks } from "utils/constants";
+import { NETWORKS } from "utils/constants";
 import SvgLogo from "./SvgLogo";
+
+const NETWORK_DIMENSIONS = "70%";
 
 const containerStyle = {
   height: 60,
   width: 60,
 };
-
-const NETWORK_DIMENSIONS = "70%";
-
 const mainFabStyle = {
   border: "3px solid",
   bgcolor: "background.default",
@@ -51,7 +50,7 @@ const NetworkSpeedDial = (): JSX.Element => {
         direction="down"
         FabProps={{ sx: mainFabStyle }}
         icon={speedDialIcon}>
-        {networks.map((network) => (
+        {NETWORKS.map((network) => (
           <SpeedDialAction
             FabProps={{ sx: getSmallFabStyle(network, selectedNet) }}
             key={network.name}
