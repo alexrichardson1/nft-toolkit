@@ -3,26 +3,16 @@ services:
   nginx:
     depends_on:
       - client
-      - backend
-    restart: always # because it is routing traffic to our entire app
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
+      - server
+    image: jmp119/nft-toolkit-nginx
+    restart: always
     ports:
       - "80:80"
   client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    volumes:
-      - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
+    image: jmp119/nft-toolkit-client
     restart: on-failure
-    container_name: client
   server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: jmp119/nft-toolkit-server
+    env_file:
+      - .env
     restart: on-failure
-    container_name: server
-    volumes:
-      - /app/node_modules # Inside the container, don't try to override this folder, just leave as is
