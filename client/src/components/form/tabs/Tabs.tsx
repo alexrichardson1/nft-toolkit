@@ -33,7 +33,7 @@ const accessibilityProps = (index: number) => {
 };
 
 interface PropsT {
-  files: ImageListT;
+  imgObjs: ImageListT;
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -52,7 +52,9 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
         allowScrollButtonsMobile
         selectionFollowsFocus
         value={value}
-        onChange={(_e, newValue) => setValue(newValue)}
+        onChange={(_e, newValue) =>
+          setValue(newValue < props.imgObjs.length ? newValue : 0)
+        }
         TabScrollButtonProps={{
           sx: {
             color: (theme) =>
@@ -60,37 +62,32 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
           },
         }}
         sx={tabsStyle}>
-        {props.files.map((image, idx) => (
+        {props.imgObjs.map((img, idx) => (
           <Tab
-            key={image.id}
+            key={img.id}
             label={`Image ${idx + 1}`}
             {...accessibilityProps(idx)}
           />
         ))}
       </Tabs>
 
-      {props.files.map((image, idx) => (
-        <TabPanel key={image.id} value={value} index={idx}>
+      {props.imgObjs.map((imgObj, idx) => (
+        <TabPanel key={imgObj.id} value={value} index={idx}>
           <Box sx={inputAndDeleteContainer}>
             <Input
               sx={nameInputStyle}
               label="Name"
-              value={image.name}
-              placeholder="Enter name for NFT here"
+              value={imgObj.name}
+              placeholder="Enter a name for this NFT here"
               required
-              onChange={(e) => props.handleNameChange(e, image.id)}
+              onChange={(e) => props.handleNameChange(e, imgObj.id)}
             />
-            <IconButton onClick={() => props.handleImageDelete(image.id)}>
+            <IconButton onClick={() => props.handleImageDelete(imgObj.id)}>
               <DeleteIcon fontSize="large" color="error" />
             </IconButton>
           </Box>
 
-          <img
-            height="100%"
-            width="100%"
-            src={image.url}
-            alt="uploaded_image"
-          />
+          <img width="100%" src={imgObj.url} alt={imgObj.image.name} />
         </TabPanel>
       ))}
     </Box>
