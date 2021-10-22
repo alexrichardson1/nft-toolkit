@@ -26,7 +26,7 @@ const buttonsWrapperStyle = { display: "flex", gap: "10px" };
 const buttonContainerStyle = { display: "flex" };
 
 const priceInputProps = (selectedNet: NetworkT) => ({
-  inputProps: { min: 0 },
+  inputProps: { min: "0.00", step: "any" },
   endAdornment: (
     <InputAdornment position="end">
       {<SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />}
