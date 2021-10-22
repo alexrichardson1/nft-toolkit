@@ -12,7 +12,7 @@ test("Tabs snapshot", () => {
       <NetworkProvider>
         <DAppProvider config={{}}>
           <Tabs
-            files={[]}
+            imgObjs={[]}
             handleImageDelete={() => console.log("Image deleted during test")}
             handleNameChange={() => console.log("Name changed during test")}
           />

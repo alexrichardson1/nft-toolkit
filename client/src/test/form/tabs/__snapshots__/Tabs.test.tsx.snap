@@ -677,9 +677,9 @@ exports[`Tabs snapshot 1`] = `
                           <NotificationsProvider>
                             <TransactionProvider>
                               <VerticalTabs
-                                files={Array []}
                                 handleImageDelete={[Function]}
                                 handleNameChange={[Function]}
+                                imgObjs={Array []}
                               >
                                 <ForwardRef(Box)
                                   sx={

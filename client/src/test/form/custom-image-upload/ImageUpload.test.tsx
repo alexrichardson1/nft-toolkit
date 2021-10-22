@@ -12,7 +12,7 @@ test("ImageUpload snapshot", () => {
       <NetworkProvider>
         <DAppProvider config={{}}>
           <ImageUpload
-            files={[]}
+            imgObjs={[]}
             handleImageDrop={() => console.log("Image dropped into box")}
           />
         </DAppProvider>
