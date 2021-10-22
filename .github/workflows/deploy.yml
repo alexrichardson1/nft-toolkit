@@ -3,7 +3,7 @@ name: Deploy to DockerHub & AWS EB
 on:
   push:
     branches:
-      - "master"
+      - "upgrade-cd"
 
 jobs:
   docker:
@@ -61,10 +61,10 @@ jobs:
       - name: Create new ElasticBeanstalk Application Version
         run: |
           aws elasticbeanstalk create-application-version \
-          --application-name nft-toolkit-eb \
+          --application-name NFToolkit \
           --source-bundle S3Bucket="elasticbeanstalk-eu-west-2-307164813438",S3Key="deploy.zip" \
           --version-label "${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
 
       - name: Deploy new ElasticBeanstalk Application Version
-        run: aws elasticbeanstalk update-environment --environment-name Nfttoolkiteb-env-1 --version-label ${{ github.sha }}
+        run: aws elasticbeanstalk update-environment --environment-name Nftoolkit-env --version-label ${{ github.sha }}
