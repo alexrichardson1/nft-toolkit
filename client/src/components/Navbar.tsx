@@ -12,6 +12,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useEthers } from "@usedapp/core";
 import NetworkSpeedDial from "components/common/Networks";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
 import { getComponentByMode } from "utils/getComponentByMode";
@@ -57,6 +58,7 @@ const Navbar = (): JSX.Element => {
   const { activateBrowserWallet, account, deactivate } = useEthers();
   const theme = useTheme();
   const { toggleColourMode } = useContext(ThemeContext);
+  const { showSnackbar } = useContext(SnackbarContext);
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorT>(null);
   const isMobileMenuOpen = Boolean(mobileAnchorEl);
   const handleMobileMenuClose = () => setMobileAnchorEl(null);
@@ -76,6 +78,11 @@ const Navbar = (): JSX.Element => {
       return;
     }
     activateBrowserWallet();
+    if (account) {
+      showSnackbar("success", "Your wallet has been connected!");
+      return;
+    }
+    showSnackbar("error", "Your wallet was not connected. Please try again.");
   };
 
   const getAccountString = () => {
