@@ -9,13 +9,7 @@ export const DEFAULT_MUI_ICON_SIZE = 24;
 export const DEFAULT_ALERT_DURATION = 6000;
 export const DEFAULT_ALERT_ELEVATION = 6;
 export const DEFAULT_MUI_DARK = "#121212";
-
-export const mainContainerStyle = {
-  py: 3,
-  width: 1,
-  minHeight: "calc(100vh - 91px)",
-  bgcolor: "background.default",
-};
+export const NAVBAR_HEIGHT = 90;
 
 export const NETWORKS: NetworkT[] = [
   { name: "Ethereum", icon: EthereumLogo, chainId: 1 },
@@ -30,4 +24,11 @@ export const DEFAULT_NET = {
   name: "Ethereum",
   icon: EthereumLogo,
   chainId: 1,
+};
+
+export const mainContainerStyle = {
+  py: 3,
+  width: 1,
+  minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+  bgcolor: "background.default",
 };
