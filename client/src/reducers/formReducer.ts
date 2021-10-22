@@ -28,24 +28,24 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     case "CHANGE_IMAGE_NAME":
       return {
         ...state,
-        images: state.images.map((image) => {
+        images: state.images.map((imgObj) => {
           if (
-            action.payload.newImageObj &&
-            image.id === action.payload.newImageObj.imageId
+            action.payload.newImgObj &&
+            imgObj.id === action.payload.newImgObj.imageId
           ) {
             return {
-              ...image,
-              name: action.payload.newImageObj.newImageName,
+              ...imgObj,
+              name: action.payload.newImgObj.newImageName,
             };
           }
-          return image;
+          return imgObj;
         }),
       };
     case "DELETE_IMAGE":
       return {
         ...state,
         images: state.images.filter(
-          (image) => image.id !== action.payload.deleteId
+          (imgObj) => imgObj.id !== action.payload.deleteId
         ),
       };
     case "CHANGE_PRICE":
