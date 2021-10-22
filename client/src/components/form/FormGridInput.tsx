@@ -3,7 +3,7 @@ import Input from "./Input";
 
 const FormGridItem = (props: InputPropsT): JSX.Element => {
   return (
-    <Grid item md={12}>
+    <Grid item xs={12}>
       <Paper>
         <Input
           sx={props.sx}
