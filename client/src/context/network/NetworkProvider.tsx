@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import { DEFAULT_NET, networks } from "utils/constants";
 import NetworkContext from "./NetworkContext";
 
-interface PropsT {
-  children: React.ReactNode;
-}
-
-const NetworkProvider = (props: PropsT): JSX.Element => {
+const NetworkProvider = (props: ProviderPropsI): JSX.Element => {
   const [selectedNet, setSelectedNet] = useState<NetworkT>(DEFAULT_NET);
 
   const handleNetworkChange = (newNetwork: NetworkT) => {
