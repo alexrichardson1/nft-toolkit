@@ -36,11 +36,7 @@ export const getDesign = (mode: string): ThemeOptions => {
       };
 };
 
-interface PropsT {
-  children: React.ReactNode;
-}
-
-const ThemeProvider = (props: PropsT): JSX.Element => {
+const ThemeProvider = (props: ProviderPropsI): JSX.Element => {
   const [mode, setMode] = useState<PaletteMode>("light");
 
   useEffect(() => {
