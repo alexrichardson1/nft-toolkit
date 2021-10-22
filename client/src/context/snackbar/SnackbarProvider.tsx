@@ -8,17 +8,17 @@ import {
 } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import { forwardRef, useState } from "react";
+import { DEFAULT_ALERT_DURATION } from "utils/constants";
+import showAlert from "utils/showAlert";
 import SnackbarContext from "./SnackbarContext";
 const snackbarStyle = { width: "100%" };
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-
 Alert.displayName = "Alert";
 
 const INITIAL_ALERT_COLOR = "success";
-const SNACKBAR_DURATION = 6000;
 const SBAR_ANCHOR_ORIGIN: SnackbarOrigin = {
   vertical: "top",
   horizontal: "center",
@@ -28,19 +28,19 @@ const SnackbarProvider = (props: ProviderPropsI): JSX.Element => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("Success!");
   const [severity, setSeverity] = useState<AlertColor>(INITIAL_ALERT_COLOR);
+
   const showSnackbar = (type: AlertColor, message: string) => {
-    setSeverity(type);
-    setMessage(message);
+    showAlert(setSeverity, type, setMessage, message);
     setOpen(true);
   };
+
   const handleSnackbarClose = (
     _event?: React.SyntheticEvent<unknown, Event>,
     reason?: SnackbarCloseReason
   ): void => {
-    if (reason === "clickaway") {
-      return;
+    if (reason !== "clickaway") {
+      setOpen(false);
     }
-    setOpen(false);
   };
 
   return (
@@ -48,7 +48,7 @@ const SnackbarProvider = (props: ProviderPropsI): JSX.Element => {
       <Snackbar
         anchorOrigin={SBAR_ANCHOR_ORIGIN}
         open={open}
-        autoHideDuration={SNACKBAR_DURATION}
+        autoHideDuration={DEFAULT_ALERT_DURATION}
         onClose={handleSnackbarClose}
         TransitionComponent={Slide}>
         <Alert
