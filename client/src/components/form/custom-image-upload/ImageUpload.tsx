@@ -20,6 +20,7 @@ const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
   const labelStyle = {
     borderRadius: theme.shape.borderRadius,
     borderColor: theme.palette.primary.main,
+    boxShadow: theme.shadows[2],
   };
 
   return (
