@@ -2,6 +2,7 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { PopoverOrigin } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
@@ -16,7 +17,11 @@ import { useContext, useState } from "react";
 import { getComponentByMode } from "utils/getComponentByMode";
 import MobileMenu from "./common/MobileMenu";
 
-const anchorOrigin: AnchorOriginType = { vertical: "top", horizontal: "right" };
+const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
+  vertical: "top",
+  horizontal: "right",
+};
+
 const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
 
 const extendedFabStyle = {
@@ -52,7 +57,7 @@ const Navbar = (): JSX.Element => {
   const { activateBrowserWallet, account, deactivate } = useEthers();
   const theme = useTheme();
   const { toggleColourMode } = useContext(ThemeContext);
-  const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorType>(null);
+  const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorT>(null);
   const isMobileMenuOpen = Boolean(mobileAnchorEl);
   const handleMobileMenuClose = () => setMobileAnchorEl(null);
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) =>
@@ -127,7 +132,7 @@ const Navbar = (): JSX.Element => {
       </AppBar>
       <MobileMenu
         isOpen={isMobileMenuOpen}
-        anchOrigin={anchorOrigin}
+        anchOrigin={MENU_ANCHOR_ORIGIN}
         anchorEl={mobileAnchorEl}
         handleClose={handleMobileMenuClose}
       />
