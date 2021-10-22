@@ -1,7 +1,7 @@
 import { Box, SxProps, Theme } from "@mui/system";
 import { ReactNode } from "react";
 
-const tabPanelStyle = { width: "100%", height: "100%" };
+const tabPanelStyle = { width: 1, height: 1 };
 
 const tabPanelBoxStyle: SxProps<Theme> = {
   display: "flex",
@@ -9,8 +9,8 @@ const tabPanelBoxStyle: SxProps<Theme> = {
   alignItems: "center",
   gap: 1,
   padding: 3,
-  height: "100%",
-  width: "100%",
+  height: 1,
+  width: 1,
   overflowY: "scroll",
 };
 
@@ -24,15 +24,15 @@ const TabPanel = (props: TabPanelProps): JSX.Element => {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
+    <Box
       role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
-      style={tabPanelStyle}
+      sx={tabPanelStyle}
       {...other}>
       {value === index && <Box sx={tabPanelBoxStyle}>{children}</Box>}
-    </div>
+    </Box>
   );
 };
 

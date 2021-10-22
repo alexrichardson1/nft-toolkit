@@ -22,7 +22,7 @@ const vTabsContainerStyle = {
 const inputAndDeleteContainer = {
   gap: "10px",
   display: "flex",
-  width: "100%",
+  width: 1,
   alignItems: "center",
 };
 const accessibilityProps = (index: number) => {
@@ -83,7 +83,6 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               <DeleteIcon fontSize="large" color="error" />
             </IconButton>
           </Box>
-
           <img width="100%" src={imgObj.url} alt={imgObj.image.name} />
         </TabPanel>
       ))}
