@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-interface ThemeContextT {
+interface ThemeContextI {
   toggleColourMode: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextT>({
+const ThemeContext = createContext<ThemeContextI>({
   toggleColourMode: () => void 0 === 0,
 });
 

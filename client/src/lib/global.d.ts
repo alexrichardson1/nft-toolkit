@@ -6,7 +6,7 @@ type NetworkT = { icon: string; name: string; chainId?: number };
 
 type AnchorT = null | HTMLElement;
 
-interface InputPropsT {
+interface InputPropsI {
   name?: string;
   label: React.ReactNode;
   value: unknown;
