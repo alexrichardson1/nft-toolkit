@@ -729,8 +729,8 @@ exports[`Form snapshot 1`] = `
                                           >
                                             <ForwardRef(Paper)>
                                               <ImageUpload
-                                                files={Array []}
                                                 handleImageDrop={[Function]}
+                                                imgObjs={Array []}
                                               />
                                             </ForwardRef(Paper)>
                                           </ForwardRef(Grid)>
@@ -752,7 +752,8 @@ exports[`Form snapshot 1`] = `
                                                       />
                                                     </ForwardRef(InputAdornment)>,
                                                     "inputProps": Object {
-                                                      "min": 0,
+                                                      "min": "0.00",
+                                                      "step": "any",
                                                     },
                                                   }
                                                 }
@@ -870,8 +871,8 @@ exports[`Form snapshot 1`] = `
                                                 >
                                                   <ForwardRef(Paper)>
                                                     <ImageUpload
-                                                      files={Array []}
                                                       handleImageDrop={[Function]}
+                                                      imgObjs={Array []}
                                                     />
                                                   </ForwardRef(Paper)>
                                                 </ForwardRef(Grid)>,
@@ -894,7 +895,8 @@ exports[`Form snapshot 1`] = `
                                                             />
                                                           </ForwardRef(InputAdornment)>,
                                                           "inputProps": Object {
-                                                            "min": 0,
+                                                            "min": "0.00",
+                                                            "step": "any",
                                                           },
                                                         }
                                                       }
@@ -4355,8 +4357,8 @@ exports[`Form snapshot 1`] = `
                                                   Object {
                                                     "children": <ForwardRef(Paper)>
                                                       <ImageUpload
-                                                        files={Array []}
                                                         handleImageDrop={[Function]}
+                                                        imgObjs={Array []}
                                                       />
                                                     </ForwardRef(Paper)>,
                                                     "columnSpacing": 0,
@@ -4387,8 +4389,8 @@ exports[`Form snapshot 1`] = `
                                                       ownerState={
                                                         Object {
                                                           "children": <ImageUpload
-                                                            files={Array []}
                                                             handleImageDrop={[Function]}
+                                                            imgObjs={Array []}
                                                           />,
                                                           "component": "div",
                                                           "elevation": 1,
@@ -4401,24 +4403,31 @@ exports[`Form snapshot 1`] = `
                                                         className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                                                       >
                                                         <ImageUpload
-                                                          files={Array []}
                                                           handleImageDrop={[Function]}
+                                                          imgObjs={Array []}
                                                         >
                                                           <label
-                                                            className="image-upload-label"
-                                                            htmlFor="upload-files"
+                                                            className="img-upload-label"
+                                                            htmlFor="upload-images"
                                                             onDragEnter={[Function]}
                                                             onDragLeave={[Function]}
                                                             onDragOver={[Function]}
                                                             onDrop={[Function]}
+                                                            style={
+                                                              Object {
+                                                                "borderColor": "#00bcd4",
+                                                                "borderRadius": 4,
+                                                              }
+                                                            }
+                                                            tabIndex={0}
                                                           >
                                                             <ForwardRef(CloudUploadIcon)
-                                                              className="image-upload-cloud"
+                                                              className="img-upload-cloud"
                                                               color="primary"
                                                               fontSize="large"
                                                             >
                                                               <ForwardRef(SvgIcon)
-                                                                className="image-upload-cloud"
+                                                                className="img-upload-cloud"
                                                                 color="primary"
                                                                 data-testid="CloudUploadIcon"
                                                                 fontSize="large"
@@ -4426,7 +4435,7 @@ exports[`Form snapshot 1`] = `
                                                                 <MuiSvgIconRoot
                                                                   aria-hidden={true}
                                                                   as="svg"
-                                                                  className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge image-upload-cloud"
+                                                                  className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud"
                                                                   data-testid="CloudUploadIcon"
                                                                   focusable="false"
                                                                   ownerState={
@@ -4434,7 +4443,7 @@ exports[`Form snapshot 1`] = `
                                                                       "children": <path
                                                                         d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
                                                                       />,
-                                                                      "className": "image-upload-cloud",
+                                                                      "className": "img-upload-cloud",
                                                                       "color": "primary",
                                                                       "component": "svg",
                                                                       "data-testid": "CloudUploadIcon",
@@ -4446,7 +4455,7 @@ exports[`Form snapshot 1`] = `
                                                                 >
                                                                   <svg
                                                                     aria-hidden={true}
-                                                                    className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge image-upload-cloud css-5cbsdu-MuiSvgIcon-root"
+                                                                    className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud css-5cbsdu-MuiSvgIcon-root"
                                                                     data-testid="CloudUploadIcon"
                                                                     focusable="false"
                                                                     viewBox="0 0 24 24"
@@ -4509,8 +4518,9 @@ exports[`Form snapshot 1`] = `
                                                             </ForwardRef(Typography)>
                                                           </label>
                                                           <input
-                                                            className="image-upload-input"
-                                                            id="upload-files"
+                                                            accept="image/*"
+                                                            className="img-upload-input"
+                                                            id="upload-images"
                                                             multiple={true}
                                                             onChange={[Function]}
                                                             type="file"
@@ -4545,7 +4555,8 @@ exports[`Form snapshot 1`] = `
                                                               />
                                                             </ForwardRef(InputAdornment)>,
                                                             "inputProps": Object {
-                                                              "min": 0,
+                                                              "min": "0.00",
+                                                              "step": "any",
                                                             },
                                                           }
                                                         }
@@ -4597,7 +4608,8 @@ exports[`Form snapshot 1`] = `
                                                                   />
                                                                 </ForwardRef(InputAdornment)>,
                                                                 "inputProps": Object {
-                                                                  "min": 0,
+                                                                  "min": "0.00",
+                                                                  "step": "any",
                                                                 },
                                                               }
                                                             }
@@ -4631,7 +4643,8 @@ exports[`Form snapshot 1`] = `
                                                                 />
                                                               </ForwardRef(InputAdornment)>,
                                                               "inputProps": Object {
-                                                                "min": 0,
+                                                                "min": "0.00",
+                                                                "step": "any",
                                                               },
                                                             }
                                                           }
@@ -4655,7 +4668,8 @@ exports[`Form snapshot 1`] = `
                                                                   />
                                                                 </ForwardRef(InputAdornment)>,
                                                                 "inputProps": Object {
-                                                                  "min": 0,
+                                                                  "min": "0.00",
+                                                                  "step": "any",
                                                                 },
                                                               }
                                                             }
@@ -4687,7 +4701,8 @@ exports[`Form snapshot 1`] = `
                                                                       />
                                                                     </ForwardRef(InputAdornment)>,
                                                                     "inputProps": Object {
-                                                                      "min": 0,
+                                                                      "min": "0.00",
+                                                                      "step": "any",
                                                                     },
                                                                   },
                                                                   "autoFocus": false,
@@ -4746,7 +4761,8 @@ exports[`Form snapshot 1`] = `
                                                                           fullWidth={true}
                                                                           inputProps={
                                                                             Object {
-                                                                              "min": 0,
+                                                                              "min": "0.00",
+                                                                              "step": "any",
                                                                             }
                                                                           }
                                                                           label={
@@ -4920,7 +4936,8 @@ exports[`Form snapshot 1`] = `
                                                                       fullWidth={true}
                                                                       inputProps={
                                                                         Object {
-                                                                          "min": 0,
+                                                                          "min": "0.00",
+                                                                          "step": "any",
                                                                         }
                                                                       }
                                                                       label={
@@ -5003,7 +5020,8 @@ exports[`Form snapshot 1`] = `
                                                                         inputComponent="input"
                                                                         inputProps={
                                                                           Object {
-                                                                            "min": 0,
+                                                                            "min": "0.00",
+                                                                            "step": "any",
                                                                           }
                                                                         }
                                                                         multiline={false}
@@ -5449,7 +5467,8 @@ exports[`Form snapshot 1`] = `
                                                                               "id": undefined,
                                                                               "inputComponent": "input",
                                                                               "inputProps": Object {
-                                                                                "min": 0,
+                                                                                "min": "0.00",
+                                                                                "step": "any",
                                                                               },
                                                                               "inputRef": undefined,
                                                                               "maxRows": undefined,
@@ -5794,7 +5813,7 @@ exports[`Form snapshot 1`] = `
                                                                               autoFocus={false}
                                                                               className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd"
                                                                               disabled={false}
-                                                                              min={0}
+                                                                              min="0.00"
                                                                               onAnimationStart={[Function]}
                                                                               onBlur={[Function]}
                                                                               onChange={[Function]}
@@ -5889,7 +5908,8 @@ exports[`Form snapshot 1`] = `
                                                                                   "id": undefined,
                                                                                   "inputComponent": "input",
                                                                                   "inputProps": Object {
-                                                                                    "min": 0,
+                                                                                    "min": "0.00",
+                                                                                    "step": "any",
                                                                                   },
                                                                                   "inputRef": undefined,
                                                                                   "maxRows": undefined,
@@ -5910,6 +5930,7 @@ exports[`Form snapshot 1`] = `
                                                                               }
                                                                               placeholder="Enter minting price"
                                                                               required={true}
+                                                                              step="any"
                                                                               theme={
                                                                                 Object {
                                                                                   "breakpoints": Object {
@@ -6233,13 +6254,14 @@ exports[`Form snapshot 1`] = `
                                                                                 autoFocus={false}
                                                                                 className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
                                                                                 disabled={false}
-                                                                                min={0}
+                                                                                min="0.00"
                                                                                 onAnimationStart={[Function]}
                                                                                 onBlur={[Function]}
                                                                                 onChange={[Function]}
                                                                                 onFocus={[Function]}
                                                                                 placeholder="Enter minting price"
                                                                                 required={true}
+                                                                                step="any"
                                                                                 type="number"
                                                                                 value={0}
                                                                               />

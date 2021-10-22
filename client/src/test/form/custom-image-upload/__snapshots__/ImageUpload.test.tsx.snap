@@ -677,24 +677,31 @@ exports[`ImageUpload snapshot 1`] = `
                           <NotificationsProvider>
                             <TransactionProvider>
                               <ImageUpload
-                                files={Array []}
                                 handleImageDrop={[Function]}
+                                imgObjs={Array []}
                               >
                                 <label
-                                  className="image-upload-label"
-                                  htmlFor="upload-files"
+                                  className="img-upload-label"
+                                  htmlFor="upload-images"
                                   onDragEnter={[Function]}
                                   onDragLeave={[Function]}
                                   onDragOver={[Function]}
                                   onDrop={[Function]}
+                                  style={
+                                    Object {
+                                      "borderColor": "#00bcd4",
+                                      "borderRadius": 4,
+                                    }
+                                  }
+                                  tabIndex={0}
                                 >
                                   <ForwardRef(CloudUploadIcon)
-                                    className="image-upload-cloud"
+                                    className="img-upload-cloud"
                                     color="primary"
                                     fontSize="large"
                                   >
                                     <ForwardRef(SvgIcon)
-                                      className="image-upload-cloud"
+                                      className="img-upload-cloud"
                                       color="primary"
                                       data-testid="CloudUploadIcon"
                                       fontSize="large"
@@ -702,7 +709,7 @@ exports[`ImageUpload snapshot 1`] = `
                                       <MuiSvgIconRoot
                                         aria-hidden={true}
                                         as="svg"
-                                        className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge image-upload-cloud"
+                                        className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud"
                                         data-testid="CloudUploadIcon"
                                         focusable="false"
                                         ownerState={
@@ -710,7 +717,7 @@ exports[`ImageUpload snapshot 1`] = `
                                             "children": <path
                                               d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
                                             />,
-                                            "className": "image-upload-cloud",
+                                            "className": "img-upload-cloud",
                                             "color": "primary",
                                             "component": "svg",
                                             "data-testid": "CloudUploadIcon",
@@ -722,7 +729,7 @@ exports[`ImageUpload snapshot 1`] = `
                                       >
                                         <svg
                                           aria-hidden={true}
-                                          className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge image-upload-cloud css-5cbsdu-MuiSvgIcon-root"
+                                          className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud css-5cbsdu-MuiSvgIcon-root"
                                           data-testid="CloudUploadIcon"
                                           focusable="false"
                                           viewBox="0 0 24 24"
@@ -785,8 +792,9 @@ exports[`ImageUpload snapshot 1`] = `
                                   </ForwardRef(Typography)>
                                 </label>
                                 <input
-                                  className="image-upload-input"
-                                  id="upload-files"
+                                  accept="image/*"
+                                  className="img-upload-input"
+                                  id="upload-images"
                                   multiple={true}
                                   onChange={[Function]}
                                   type="file"
