@@ -1,5 +1,5 @@
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import { Typography } from "@mui/material";
+import { PopoverOrigin, Typography } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import NetworkContext from "context/network/NetworkContext";
@@ -11,15 +11,15 @@ const menuItemStyle = { display: "flex", gap: "5px" };
 
 interface PropsT {
   isOpen: boolean;
-  anchorEl: AnchorType;
-  anchOrigin: AnchorOriginType;
-  transformOrigin?: AnchorOriginType;
+  anchorEl: AnchorT;
+  anchOrigin: PopoverOrigin;
+  transformOrigin?: PopoverOrigin;
   handleClose: () => void;
 }
 
 const MobileMenu = (props: PropsT): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
-  const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorType>(null);
+  const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorT>(null);
   const isNetworkMenuOpen = Boolean(networkAnchorEl);
 
   const handleNetworkMenuClose = () => setNetworkAnchorEl(null);
