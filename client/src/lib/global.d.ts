@@ -31,7 +31,7 @@ interface FormActionPayloadI {
   newName?: string;
   description?: string;
   images?: File[];
-  newImageObj?: { newImageName: string; imageId: string };
+  newImgObj?: { newImageName: string; imageId: string };
   price?: string;
   deleteId?: string;
   initialState?: FormStateI;
