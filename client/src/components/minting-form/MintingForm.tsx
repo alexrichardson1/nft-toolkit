@@ -9,8 +9,6 @@ import Paper from "@mui/material/Paper";
 import { SxProps } from "@mui/system";
 import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
-import ImageUpload from "components/create-new/custom-image-upload/ImageUpload";
-import Tabs from "components/create-new/tabs/Tabs";
 import NetworkContext from "context/network/NetworkContext";
 import { FormEvent, useContext, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
@@ -19,6 +17,8 @@ import {
   DEFAULT_ALERT_ELEVATION,
 } from "utils/constants";
 import showAlert from "utils/showAlert";
+import ImageUpload from "./custom-image-upload/ImageUpload";
+import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
 const DESCRIPTION_ROWS = 4;
@@ -50,7 +50,7 @@ const priceInputProps = (selectedNet: NetworkT) => ({
   ),
 });
 
-const CreateNewPage = (): JSX.Element => {
+const MintingForm = (): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
@@ -213,4 +213,4 @@ const CreateNewPage = (): JSX.Element => {
   );
 };
 
-export default CreateNewPage;
+export default MintingForm;
