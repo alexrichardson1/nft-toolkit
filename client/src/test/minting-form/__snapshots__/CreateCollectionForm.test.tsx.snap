@@ -6268,425 +6268,224 @@ exports[`MintingForm snapshot 1`] = `
                                           <div
                                             className="MuiBox-root css-50gf6y"
                                           >
-                                            <ForwardRef(Box)
-                                              flexGrow={1}
+                                            <ForwardRef(Collapse)
+                                              in={false}
+                                              sx={
+                                                Object {
+                                                  "flexGrow": 1,
+                                                }
+                                              }
                                             >
-                                              <Styled(div)
-                                                as="div"
-                                                className="MuiBox-root"
+                                              <Transition
+                                                addEndListener={[Function]}
+                                                appear={false}
+                                                enter={true}
+                                                exit={true}
+                                                in={false}
+                                                mountOnEnter={false}
+                                                nodeRef={
+                                                  Object {
+                                                    "current": <div
+                                                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
+                                                      style="min-height: 0px;"
+                                                    >
+                                                      <div
+                                                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                                                      >
+                                                        <div
+                                                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                                        >
+                                                          <div
+                                                            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
+                                                            role="alert"
+                                                          >
+                                                            <div
+                                                              class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+                                                            >
+                                                              <svg
+                                                                aria-hidden="true"
+                                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                data-testid="SuccessOutlinedIcon"
+                                                                focusable="false"
+                                                                viewBox="0 0 24 24"
+                                                              >
+                                                                <path
+                                                                  d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                                />
+                                                              </svg>
+                                                            </div>
+                                                            <div
+                                                              class="MuiAlert-message css-acap47-MuiAlert-message"
+                                                            />
+                                                            <div
+                                                              class="MuiAlert-action css-ki1hdl-MuiAlert-action"
+                                                            >
+                                                              <button
+                                                                aria-label="close"
+                                                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
+                                                                tabindex="0"
+                                                                type="button"
+                                                              >
+                                                                <svg
+                                                                  aria-hidden="true"
+                                                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                  data-testid="CloseIcon"
+                                                                  focusable="false"
+                                                                  viewBox="0 0 24 24"
+                                                                >
+                                                                  <path
+                                                                    d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                                  />
+                                                                </svg>
+                                                                <span
+                                                                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                />
+                                                              </button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>,
+                                                  }
+                                                }
+                                                onEnter={[Function]}
+                                                onEntered={[Function]}
+                                                onEntering={[Function]}
+                                                onExit={[Function]}
+                                                onExited={[Function]}
+                                                onExiting={[Function]}
                                                 sx={
                                                   Object {
                                                     "flexGrow": 1,
                                                   }
                                                 }
-                                                theme={
-                                                  Object {
-                                                    "breakpoints": Object {
-                                                      "between": [Function],
-                                                      "down": [Function],
-                                                      "keys": Array [
-                                                        "xs",
-                                                        "sm",
-                                                        "md",
-                                                        "lg",
-                                                        "xl",
-                                                      ],
-                                                      "only": [Function],
-                                                      "unit": "px",
-                                                      "up": [Function],
-                                                      "values": Object {
-                                                        "lg": 1200,
-                                                        "md": 900,
-                                                        "sm": 600,
-                                                        "xl": 1536,
-                                                        "xs": 0,
-                                                      },
-                                                    },
-                                                    "components": Object {},
-                                                    "direction": "ltr",
-                                                    "mixins": Object {
-                                                      "toolbar": Object {
-                                                        "@media (min-width:0px) and (orientation: landscape)": Object {
-                                                          "minHeight": 48,
-                                                        },
-                                                        "@media (min-width:600px)": Object {
-                                                          "minHeight": 64,
-                                                        },
-                                                        "minHeight": 56,
-                                                      },
-                                                    },
-                                                    "palette": Object {
-                                                      "action": Object {
-                                                        "activatedOpacity": 0.12,
-                                                        "active": "rgba(0, 0, 0, 0.54)",
-                                                        "disabled": "rgba(0, 0, 0, 0.26)",
-                                                        "disabledBackground": "rgba(0, 0, 0, 0.12)",
-                                                        "disabledOpacity": 0.38,
-                                                        "focus": "rgba(0, 0, 0, 0.12)",
-                                                        "focusOpacity": 0.12,
-                                                        "hover": "rgba(0, 0, 0, 0.04)",
-                                                        "hoverOpacity": 0.04,
-                                                        "selected": "rgba(0, 0, 0, 0.08)",
-                                                        "selectedOpacity": 0.08,
-                                                      },
-                                                      "augmentColor": [Function],
-                                                      "background": Object {
-                                                        "default": "#F0F0F0",
-                                                        "paper": "#fff",
-                                                      },
-                                                      "common": Object {
-                                                        "black": "#000",
-                                                        "white": "#fff",
-                                                      },
-                                                      "contrastThreshold": 3,
-                                                      "divider": "rgba(0, 0, 0, 0.12)",
-                                                      "error": Object {
-                                                        "contrastText": "#fff",
-                                                        "dark": "#c62828",
-                                                        "light": "#ef5350",
-                                                        "main": "#d32f2f",
-                                                      },
-                                                      "getContrastText": [Function],
-                                                      "grey": Object {
-                                                        "100": "#f5f5f5",
-                                                        "200": "#eeeeee",
-                                                        "300": "#e0e0e0",
-                                                        "400": "#bdbdbd",
-                                                        "50": "#fafafa",
-                                                        "500": "#9e9e9e",
-                                                        "600": "#757575",
-                                                        "700": "#616161",
-                                                        "800": "#424242",
-                                                        "900": "#212121",
-                                                        "A100": "#f5f5f5",
-                                                        "A200": "#eeeeee",
-                                                        "A400": "#bdbdbd",
-                                                        "A700": "#616161",
-                                                      },
-                                                      "info": Object {
-                                                        "contrastText": "#fff",
-                                                        "dark": "#01579b",
-                                                        "light": "#03a9f4",
-                                                        "main": "#0288d1",
-                                                      },
-                                                      "mode": "light",
-                                                      "primary": Object {
-                                                        "100": "#b2ebf2",
-                                                        "200": "#80deea",
-                                                        "300": "#4dd0e1",
-                                                        "400": "#26c6da",
-                                                        "50": "#e0f7fa",
-                                                        "500": "#00bcd4",
-                                                        "600": "#00acc1",
-                                                        "700": "#0097a7",
-                                                        "800": "#00838f",
-                                                        "900": "#006064",
-                                                        "A100": "#84ffff",
-                                                        "A200": "#18ffff",
-                                                        "A400": "#00e5ff",
-                                                        "A700": "#00b8d4",
-                                                        "contrastText": "rgba(0, 0, 0, 0.87)",
-                                                        "dark": "#0097a7",
-                                                        "light": "#4dd0e1",
-                                                        "main": "#00bcd4",
-                                                      },
-                                                      "secondary": Object {
-                                                        "100": "#f8bbd0",
-                                                        "200": "#f48fb1",
-                                                        "300": "#f06292",
-                                                        "400": "#ec407a",
-                                                        "50": "#fce4ec",
-                                                        "500": "#e91e63",
-                                                        "600": "#d81b60",
-                                                        "700": "#c2185b",
-                                                        "800": "#ad1457",
-                                                        "900": "#880e4f",
-                                                        "A100": "#ff80ab",
-                                                        "A200": "#ff4081",
-                                                        "A400": "#f50057",
-                                                        "A700": "#c51162",
-                                                        "contrastText": "#fff",
-                                                        "dark": "#c51162",
-                                                        "light": "#ff4081",
-                                                        "main": "#f50057",
-                                                      },
-                                                      "success": Object {
-                                                        "contrastText": "#fff",
-                                                        "dark": "#1b5e20",
-                                                        "light": "#4caf50",
-                                                        "main": "#2e7d32",
-                                                      },
-                                                      "text": Object {
-                                                        "disabled": "rgba(0, 0, 0, 0.38)",
-                                                        "primary": "rgba(0, 0, 0, 0.87)",
-                                                        "secondary": "rgba(0, 0, 0, 0.6)",
-                                                      },
-                                                      "tonalOffset": 0.2,
-                                                      "warning": Object {
-                                                        "contrastText": "#fff",
-                                                        "dark": "#e65100",
-                                                        "light": "#ff9800",
-                                                        "main": "#ED6C02",
-                                                      },
-                                                    },
-                                                    "shadows": Array [
-                                                      "none",
-                                                      "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-                                                      "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-                                                      "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-                                                      "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-                                                      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-                                                      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-                                                      "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
-                                                      "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-                                                      "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
-                                                      "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
-                                                      "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
-                                                      "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
-                                                      "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
-                                                      "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
-                                                      "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
-                                                      "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
-                                                      "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
-                                                      "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
-                                                      "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
-                                                      "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
-                                                      "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
-                                                      "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
-                                                      "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
-                                                      "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
-                                                    ],
-                                                    "shape": Object {
-                                                      "borderRadius": 4,
-                                                    },
-                                                    "spacing": [Function],
-                                                    "transitions": Object {
-                                                      "create": [Function],
-                                                      "duration": Object {
-                                                        "complex": 375,
-                                                        "enteringScreen": 225,
-                                                        "leavingScreen": 195,
-                                                        "short": 250,
-                                                        "shorter": 200,
-                                                        "shortest": 150,
-                                                        "standard": 300,
-                                                      },
-                                                      "easing": Object {
-                                                        "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-                                                        "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-                                                        "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-                                                        "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-                                                      },
-                                                      "getAutoHeightDuration": [Function],
-                                                    },
-                                                    "typography": Object {
-                                                      "body1": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "1rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0.00938em",
-                                                        "lineHeight": 1.5,
-                                                      },
-                                                      "body2": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "0.875rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0.01071em",
-                                                        "lineHeight": 1.43,
-                                                      },
-                                                      "button": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "0.875rem",
-                                                        "fontWeight": 500,
-                                                        "letterSpacing": "0.02857em",
-                                                        "lineHeight": 1.75,
-                                                        "textTransform": "uppercase",
-                                                      },
-                                                      "caption": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "0.75rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0.03333em",
-                                                        "lineHeight": 1.66,
-                                                      },
-                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                      "fontSize": 14,
-                                                      "fontWeightBold": 700,
-                                                      "fontWeightLight": 300,
-                                                      "fontWeightMedium": 500,
-                                                      "fontWeightRegular": 400,
-                                                      "h1": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "6rem",
-                                                        "fontWeight": 300,
-                                                        "letterSpacing": "-0.01562em",
-                                                        "lineHeight": 1.167,
-                                                      },
-                                                      "h2": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "3.75rem",
-                                                        "fontWeight": 300,
-                                                        "letterSpacing": "-0.00833em",
-                                                        "lineHeight": 1.2,
-                                                      },
-                                                      "h3": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "3rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0em",
-                                                        "lineHeight": 1.167,
-                                                      },
-                                                      "h4": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "2.125rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0.00735em",
-                                                        "lineHeight": 1.235,
-                                                      },
-                                                      "h5": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "1.5rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0em",
-                                                        "lineHeight": 1.334,
-                                                      },
-                                                      "h6": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "1.25rem",
-                                                        "fontWeight": 500,
-                                                        "letterSpacing": "0.0075em",
-                                                        "lineHeight": 1.6,
-                                                      },
-                                                      "htmlFontSize": 16,
-                                                      "overline": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "0.75rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0.08333em",
-                                                        "lineHeight": 2.66,
-                                                        "textTransform": "uppercase",
-                                                      },
-                                                      "pxToRem": [Function],
-                                                      "subtitle1": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "1rem",
-                                                        "fontWeight": 400,
-                                                        "letterSpacing": "0.00938em",
-                                                        "lineHeight": 1.75,
-                                                      },
-                                                      "subtitle2": Object {
-                                                        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                                        "fontSize": "0.875rem",
-                                                        "fontWeight": 500,
-                                                        "letterSpacing": "0.00714em",
-                                                        "lineHeight": 1.57,
-                                                      },
-                                                    },
-                                                    "zIndex": Object {
-                                                      "appBar": 1100,
-                                                      "drawer": 1200,
-                                                      "mobileStepper": 1000,
-                                                      "modal": 1300,
-                                                      "snackbar": 1400,
-                                                      "speedDial": 1050,
-                                                      "tooltip": 1500,
-                                                    },
-                                                    Symbol(mui.nested): false,
-                                                  }
-                                                }
+                                                timeout={300}
+                                                unmountOnExit={false}
                                               >
-                                                <div
-                                                  className="MuiBox-root css-i9gxme"
-                                                >
-                                                  <ForwardRef(Collapse)
-                                                    in={false}
-                                                  >
-                                                    <Transition
-                                                      addEndListener={[Function]}
-                                                      appear={false}
-                                                      enter={true}
-                                                      exit={true}
-                                                      in={false}
-                                                      mountOnEnter={false}
-                                                      nodeRef={
-                                                        Object {
-                                                          "current": <div
-                                                            class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                                                            style="min-height: 0px;"
+                                                <MuiCollapseRoot
+                                                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                                                  ownerState={
+                                                    Object {
+                                                      "children": <ForwardRef(Alert)
+                                                        action={
+                                                          <ForwardRef(IconButton)
+                                                            aria-label="close"
+                                                            color="inherit"
+                                                            onClick={[Function]}
+                                                            size="small"
                                                           >
-                                                            <div
-                                                              class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                                                            >
-                                                              <div
-                                                                class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                                            <Memo
+                                                              fontSize="inherit"
+                                                            />
+                                                          </ForwardRef(IconButton)>
+                                                        }
+                                                        elevation={6}
+                                                        severity="success"
+                                                        variant="filled"
+                                                      >
+                                                        
+                                                      </ForwardRef(Alert)>,
+                                                      "collapsedSize": "0px",
+                                                      "in": false,
+                                                      "orientation": "vertical",
+                                                      "state": "exited",
+                                                      "sx": Object {
+                                                        "flexGrow": 1,
+                                                      },
+                                                    }
+                                                  }
+                                                  style={
+                                                    Object {
+                                                      "minHeight": "0px",
+                                                    }
+                                                  }
+                                                  sx={
+                                                    Object {
+                                                      "flexGrow": 1,
+                                                    }
+                                                  }
+                                                >
+                                                  <div
+                                                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
+                                                    style={
+                                                      Object {
+                                                        "minHeight": "0px",
+                                                      }
+                                                    }
+                                                  >
+                                                    <MuiCollapseWrapper
+                                                      className="MuiCollapse-wrapper MuiCollapse-vertical"
+                                                      ownerState={
+                                                        Object {
+                                                          "children": <ForwardRef(Alert)
+                                                            action={
+                                                              <ForwardRef(IconButton)
+                                                                aria-label="close"
+                                                                color="inherit"
+                                                                onClick={[Function]}
+                                                                size="small"
                                                               >
-                                                                <div
-                                                                  class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
-                                                                  role="alert"
-                                                                >
-                                                                  <div
-                                                                    class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
-                                                                  >
-                                                                    <svg
-                                                                      aria-hidden="true"
-                                                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                                                      data-testid="SuccessOutlinedIcon"
-                                                                      focusable="false"
-                                                                      viewBox="0 0 24 24"
-                                                                    >
-                                                                      <path
-                                                                        d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                                                                      />
-                                                                    </svg>
-                                                                  </div>
-                                                                  <div
-                                                                    class="MuiAlert-message css-acap47-MuiAlert-message"
-                                                                  />
-                                                                  <div
-                                                                    class="MuiAlert-action css-ki1hdl-MuiAlert-action"
-                                                                  >
-                                                                    <button
-                                                                      aria-label="close"
-                                                                      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
-                                                                      tabindex="0"
-                                                                      type="button"
-                                                                    >
-                                                                      <svg
-                                                                        aria-hidden="true"
-                                                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                                                        data-testid="CloseIcon"
-                                                                        focusable="false"
-                                                                        viewBox="0 0 24 24"
-                                                                      >
-                                                                        <path
-                                                                          d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                                                        />
-                                                                      </svg>
-                                                                      <span
-                                                                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                                      />
-                                                                    </button>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>,
+                                                                <Memo
+                                                                  fontSize="inherit"
+                                                                />
+                                                              </ForwardRef(IconButton)>
+                                                            }
+                                                            elevation={6}
+                                                            severity="success"
+                                                            variant="filled"
+                                                          >
+                                                            
+                                                          </ForwardRef(Alert)>,
+                                                          "collapsedSize": "0px",
+                                                          "in": false,
+                                                          "orientation": "vertical",
+                                                          "state": "exited",
+                                                          "sx": Object {
+                                                            "flexGrow": 1,
+                                                          },
                                                         }
                                                       }
-                                                      onEnter={[Function]}
-                                                      onEntered={[Function]}
-                                                      onEntering={[Function]}
-                                                      onExit={[Function]}
-                                                      onExited={[Function]}
-                                                      onExiting={[Function]}
-                                                      timeout={300}
-                                                      unmountOnExit={false}
                                                     >
-                                                      <MuiCollapseRoot
-                                                        className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
-                                                        ownerState={
-                                                          Object {
-                                                            "children": <ForwardRef(Alert)
+                                                      <div
+                                                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                                                      >
+                                                        <MuiCollapseWrapperInner
+                                                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                                                          ownerState={
+                                                            Object {
+                                                              "children": <ForwardRef(Alert)
+                                                                action={
+                                                                  <ForwardRef(IconButton)
+                                                                    aria-label="close"
+                                                                    color="inherit"
+                                                                    onClick={[Function]}
+                                                                    size="small"
+                                                                  >
+                                                                    <Memo
+                                                                      fontSize="inherit"
+                                                                    />
+                                                                  </ForwardRef(IconButton)>
+                                                                }
+                                                                elevation={6}
+                                                                severity="success"
+                                                                variant="filled"
+                                                              >
+                                                                
+                                                              </ForwardRef(Alert)>,
+                                                              "collapsedSize": "0px",
+                                                              "in": false,
+                                                              "orientation": "vertical",
+                                                              "state": "exited",
+                                                              "sx": Object {
+                                                                "flexGrow": 1,
+                                                              },
+                                                            }
+                                                          }
+                                                        >
+                                                          <div
+                                                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                                          >
+                                                            <ForwardRef(Alert)
                                                               action={
                                                                 <ForwardRef(IconButton)
                                                                   aria-label="close"
@@ -6703,35 +6502,12 @@ exports[`MintingForm snapshot 1`] = `
                                                               severity="success"
                                                               variant="filled"
                                                             >
-                                                              
-                                                            </ForwardRef(Alert)>,
-                                                            "collapsedSize": "0px",
-                                                            "in": false,
-                                                            "orientation": "vertical",
-                                                            "state": "exited",
-                                                          }
-                                                        }
-                                                        style={
-                                                          Object {
-                                                            "minHeight": "0px",
-                                                          }
-                                                        }
-                                                      >
-                                                        <div
-                                                          className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                                                          style={
-                                                            Object {
-                                                              "minHeight": "0px",
-                                                            }
-                                                          }
-                                                        >
-                                                          <MuiCollapseWrapper
-                                                            className="MuiCollapse-wrapper MuiCollapse-vertical"
-                                                            ownerState={
-                                                              Object {
-                                                                "children": <ForwardRef(Alert)
-                                                                  action={
-                                                                    <ForwardRef(IconButton)
+                                                              <MuiAlertRoot
+                                                                className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled"
+                                                                elevation={6}
+                                                                ownerState={
+                                                                  Object {
+                                                                    "action": <ForwardRef(IconButton)
                                                                       aria-label="close"
                                                                       color="inherit"
                                                                       onClick={[Function]}
@@ -6740,467 +6516,382 @@ exports[`MintingForm snapshot 1`] = `
                                                                       <Memo
                                                                         fontSize="inherit"
                                                                       />
-                                                                    </ForwardRef(IconButton)>
-                                                                  }
-                                                                  elevation={6}
-                                                                  severity="success"
-                                                                  variant="filled"
-                                                                >
-                                                                  
-                                                                </ForwardRef(Alert)>,
-                                                                "collapsedSize": "0px",
-                                                                "in": false,
-                                                                "orientation": "vertical",
-                                                                "state": "exited",
-                                                              }
-                                                            }
-                                                          >
-                                                            <div
-                                                              className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                                                            >
-                                                              <MuiCollapseWrapperInner
-                                                                className="MuiCollapse-wrapperInner MuiCollapse-vertical"
-                                                                ownerState={
-                                                                  Object {
-                                                                    "children": <ForwardRef(Alert)
-                                                                      action={
-                                                                        <ForwardRef(IconButton)
-                                                                          aria-label="close"
-                                                                          color="inherit"
-                                                                          onClick={[Function]}
-                                                                          size="small"
-                                                                        >
-                                                                          <Memo
-                                                                            fontSize="inherit"
-                                                                          />
-                                                                        </ForwardRef(IconButton)>
-                                                                      }
-                                                                      elevation={6}
-                                                                      severity="success"
-                                                                      variant="filled"
-                                                                    >
-                                                                      
-                                                                    </ForwardRef(Alert)>,
-                                                                    "collapsedSize": "0px",
-                                                                    "in": false,
-                                                                    "orientation": "vertical",
-                                                                    "state": "exited",
+                                                                    </ForwardRef(IconButton)>,
+                                                                    "children": "",
+                                                                    "color": undefined,
+                                                                    "elevation": 6,
+                                                                    "severity": "success",
+                                                                    "variant": "filled",
                                                                   }
                                                                 }
+                                                                role="alert"
+                                                                square={true}
                                                               >
-                                                                <div
-                                                                  className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                                                <ForwardRef(Paper)
+                                                                  className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
+                                                                  elevation={6}
+                                                                  role="alert"
+                                                                  square={true}
                                                                 >
-                                                                  <ForwardRef(Alert)
-                                                                    action={
-                                                                      <ForwardRef(IconButton)
-                                                                        aria-label="close"
-                                                                        color="inherit"
-                                                                        onClick={[Function]}
-                                                                        size="small"
-                                                                      >
-                                                                        <Memo
-                                                                          fontSize="inherit"
-                                                                        />
-                                                                      </ForwardRef(IconButton)>
-                                                                    }
-                                                                    elevation={6}
-                                                                    severity="success"
-                                                                    variant="filled"
-                                                                  >
-                                                                    <MuiAlertRoot
-                                                                      className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled"
-                                                                      elevation={6}
-                                                                      ownerState={
-                                                                        Object {
-                                                                          "action": <ForwardRef(IconButton)
-                                                                            aria-label="close"
-                                                                            color="inherit"
-                                                                            onClick={[Function]}
-                                                                            size="small"
-                                                                          >
-                                                                            <Memo
-                                                                              fontSize="inherit"
-                                                                            />
-                                                                          </ForwardRef(IconButton)>,
-                                                                          "children": "",
-                                                                          "color": undefined,
-                                                                          "elevation": 6,
-                                                                          "severity": "success",
-                                                                          "variant": "filled",
-                                                                        }
-                                                                      }
-                                                                      role="alert"
-                                                                      square={true}
-                                                                    >
-                                                                      <ForwardRef(Paper)
-                                                                        className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
-                                                                        elevation={6}
-                                                                        role="alert"
-                                                                        square={true}
-                                                                      >
-                                                                        <MuiPaperRoot
-                                                                          as="div"
-                                                                          className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
-                                                                          ownerState={
-                                                                            Object {
-                                                                              "children": Array [
-                                                                                <MuiAlertIcon
-                                                                                  className="MuiAlert-icon"
-                                                                                  ownerState={
-                                                                                    Object {
-                                                                                      "action": <ForwardRef(IconButton)
-                                                                                        aria-label="close"
-                                                                                        color="inherit"
-                                                                                        onClick={[Function]}
-                                                                                        size="small"
-                                                                                      >
-                                                                                        <Memo
-                                                                                          fontSize="inherit"
-                                                                                        />
-                                                                                      </ForwardRef(IconButton)>,
-                                                                                      "children": "",
-                                                                                      "color": undefined,
-                                                                                      "elevation": 6,
-                                                                                      "severity": "success",
-                                                                                      "variant": "filled",
-                                                                                    }
-                                                                                  }
-                                                                                >
-                                                                                  <Memo
-                                                                                    fontSize="inherit"
-                                                                                  />
-                                                                                </MuiAlertIcon>,
-                                                                                <MuiAlertMessage
-                                                                                  className="MuiAlert-message"
-                                                                                  ownerState={
-                                                                                    Object {
-                                                                                      "action": <ForwardRef(IconButton)
-                                                                                        aria-label="close"
-                                                                                        color="inherit"
-                                                                                        onClick={[Function]}
-                                                                                        size="small"
-                                                                                      >
-                                                                                        <Memo
-                                                                                          fontSize="inherit"
-                                                                                        />
-                                                                                      </ForwardRef(IconButton)>,
-                                                                                      "children": "",
-                                                                                      "color": undefined,
-                                                                                      "elevation": 6,
-                                                                                      "severity": "success",
-                                                                                      "variant": "filled",
-                                                                                    }
-                                                                                  }
-                                                                                >
-                                                                                  
-                                                                                </MuiAlertMessage>,
-                                                                                <MuiAlertAction
-                                                                                  className="MuiAlert-action"
-                                                                                >
-                                                                                  <ForwardRef(IconButton)
-                                                                                    aria-label="close"
-                                                                                    color="inherit"
-                                                                                    onClick={[Function]}
-                                                                                    size="small"
-                                                                                  >
-                                                                                    <Memo
-                                                                                      fontSize="inherit"
-                                                                                    />
-                                                                                  </ForwardRef(IconButton)>
-                                                                                </MuiAlertAction>,
-                                                                                null,
-                                                                              ],
-                                                                              "className": "MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root",
-                                                                              "component": "div",
-                                                                              "elevation": 6,
-                                                                              "role": "alert",
-                                                                              "square": true,
-                                                                              "variant": "elevation",
-                                                                            }
-                                                                          }
-                                                                          role="alert"
-                                                                        >
-                                                                          <div
-                                                                            className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
-                                                                            role="alert"
-                                                                          >
-                                                                            <MuiAlertIcon
-                                                                              className="MuiAlert-icon"
-                                                                              ownerState={
-                                                                                Object {
-                                                                                  "action": <ForwardRef(IconButton)
-                                                                                    aria-label="close"
-                                                                                    color="inherit"
-                                                                                    onClick={[Function]}
-                                                                                    size="small"
-                                                                                  >
-                                                                                    <Memo
-                                                                                      fontSize="inherit"
-                                                                                    />
-                                                                                  </ForwardRef(IconButton)>,
-                                                                                  "children": "",
-                                                                                  "color": undefined,
-                                                                                  "elevation": 6,
-                                                                                  "severity": "success",
-                                                                                  "variant": "filled",
-                                                                                }
-                                                                              }
-                                                                            >
-                                                                              <div
-                                                                                className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
-                                                                              >
-                                                                                <ForwardRef(SuccessOutlinedIcon)
-                                                                                  fontSize="inherit"
-                                                                                >
-                                                                                  <ForwardRef(SvgIcon)
-                                                                                    data-testid="SuccessOutlinedIcon"
-                                                                                    fontSize="inherit"
-                                                                                  >
-                                                                                    <MuiSvgIconRoot
-                                                                                      aria-hidden={true}
-                                                                                      as="svg"
-                                                                                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
-                                                                                      data-testid="SuccessOutlinedIcon"
-                                                                                      focusable="false"
-                                                                                      ownerState={
-                                                                                        Object {
-                                                                                          "children": <path
-                                                                                            d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                                                                                          />,
-                                                                                          "color": "inherit",
-                                                                                          "component": "svg",
-                                                                                          "data-testid": "SuccessOutlinedIcon",
-                                                                                          "fontSize": "inherit",
-                                                                                          "viewBox": "0 0 24 24",
-                                                                                        }
-                                                                                      }
-                                                                                      viewBox="0 0 24 24"
-                                                                                    >
-                                                                                      <svg
-                                                                                        aria-hidden={true}
-                                                                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                                                                        data-testid="SuccessOutlinedIcon"
-                                                                                        focusable="false"
-                                                                                        viewBox="0 0 24 24"
-                                                                                      >
-                                                                                        <path
-                                                                                          d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                                                                                        />
-                                                                                      </svg>
-                                                                                    </MuiSvgIconRoot>
-                                                                                  </ForwardRef(SvgIcon)>
-                                                                                </ForwardRef(SuccessOutlinedIcon)>
-                                                                              </div>
-                                                                            </MuiAlertIcon>
-                                                                            <MuiAlertMessage
-                                                                              className="MuiAlert-message"
-                                                                              ownerState={
-                                                                                Object {
-                                                                                  "action": <ForwardRef(IconButton)
-                                                                                    aria-label="close"
-                                                                                    color="inherit"
-                                                                                    onClick={[Function]}
-                                                                                    size="small"
-                                                                                  >
-                                                                                    <Memo
-                                                                                      fontSize="inherit"
-                                                                                    />
-                                                                                  </ForwardRef(IconButton)>,
-                                                                                  "children": "",
-                                                                                  "color": undefined,
-                                                                                  "elevation": 6,
-                                                                                  "severity": "success",
-                                                                                  "variant": "filled",
-                                                                                }
-                                                                              }
-                                                                            >
-                                                                              <div
-                                                                                className="MuiAlert-message css-acap47-MuiAlert-message"
-                                                                              />
-                                                                            </MuiAlertMessage>
-                                                                            <MuiAlertAction
-                                                                              className="MuiAlert-action"
-                                                                            >
-                                                                              <div
-                                                                                className="MuiAlert-action css-ki1hdl-MuiAlert-action"
-                                                                              >
-                                                                                <ForwardRef(IconButton)
+                                                                  <MuiPaperRoot
+                                                                    as="div"
+                                                                    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
+                                                                    ownerState={
+                                                                      Object {
+                                                                        "children": Array [
+                                                                          <MuiAlertIcon
+                                                                            className="MuiAlert-icon"
+                                                                            ownerState={
+                                                                              Object {
+                                                                                "action": <ForwardRef(IconButton)
                                                                                   aria-label="close"
                                                                                   color="inherit"
                                                                                   onClick={[Function]}
                                                                                   size="small"
                                                                                 >
-                                                                                  <MuiIconButtonRoot
-                                                                                    aria-label="close"
-                                                                                    centerRipple={true}
-                                                                                    className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
-                                                                                    disabled={false}
-                                                                                    focusRipple={true}
-                                                                                    onClick={[Function]}
-                                                                                    ownerState={
-                                                                                      Object {
-                                                                                        "aria-label": "close",
-                                                                                        "children": <Memo
-                                                                                          fontSize="inherit"
-                                                                                        />,
-                                                                                        "color": "inherit",
-                                                                                        "disableFocusRipple": false,
-                                                                                        "disabled": false,
-                                                                                        "edge": false,
-                                                                                        "onClick": [Function],
-                                                                                        "size": "small",
-                                                                                      }
+                                                                                  <Memo
+                                                                                    fontSize="inherit"
+                                                                                  />
+                                                                                </ForwardRef(IconButton)>,
+                                                                                "children": "",
+                                                                                "color": undefined,
+                                                                                "elevation": 6,
+                                                                                "severity": "success",
+                                                                                "variant": "filled",
+                                                                              }
+                                                                            }
+                                                                          >
+                                                                            <Memo
+                                                                              fontSize="inherit"
+                                                                            />
+                                                                          </MuiAlertIcon>,
+                                                                          <MuiAlertMessage
+                                                                            className="MuiAlert-message"
+                                                                            ownerState={
+                                                                              Object {
+                                                                                "action": <ForwardRef(IconButton)
+                                                                                  aria-label="close"
+                                                                                  color="inherit"
+                                                                                  onClick={[Function]}
+                                                                                  size="small"
+                                                                                >
+                                                                                  <Memo
+                                                                                    fontSize="inherit"
+                                                                                  />
+                                                                                </ForwardRef(IconButton)>,
+                                                                                "children": "",
+                                                                                "color": undefined,
+                                                                                "elevation": 6,
+                                                                                "severity": "success",
+                                                                                "variant": "filled",
+                                                                              }
+                                                                            }
+                                                                          >
+                                                                            
+                                                                          </MuiAlertMessage>,
+                                                                          <MuiAlertAction
+                                                                            className="MuiAlert-action"
+                                                                          >
+                                                                            <ForwardRef(IconButton)
+                                                                              aria-label="close"
+                                                                              color="inherit"
+                                                                              onClick={[Function]}
+                                                                              size="small"
+                                                                            >
+                                                                              <Memo
+                                                                                fontSize="inherit"
+                                                                              />
+                                                                            </ForwardRef(IconButton)>
+                                                                          </MuiAlertAction>,
+                                                                          null,
+                                                                        ],
+                                                                        "className": "MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root",
+                                                                        "component": "div",
+                                                                        "elevation": 6,
+                                                                        "role": "alert",
+                                                                        "square": true,
+                                                                        "variant": "elevation",
+                                                                      }
+                                                                    }
+                                                                    role="alert"
+                                                                  >
+                                                                    <div
+                                                                      className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
+                                                                      role="alert"
+                                                                    >
+                                                                      <MuiAlertIcon
+                                                                        className="MuiAlert-icon"
+                                                                        ownerState={
+                                                                          Object {
+                                                                            "action": <ForwardRef(IconButton)
+                                                                              aria-label="close"
+                                                                              color="inherit"
+                                                                              onClick={[Function]}
+                                                                              size="small"
+                                                                            >
+                                                                              <Memo
+                                                                                fontSize="inherit"
+                                                                              />
+                                                                            </ForwardRef(IconButton)>,
+                                                                            "children": "",
+                                                                            "color": undefined,
+                                                                            "elevation": 6,
+                                                                            "severity": "success",
+                                                                            "variant": "filled",
+                                                                          }
+                                                                        }
+                                                                      >
+                                                                        <div
+                                                                          className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+                                                                        >
+                                                                          <ForwardRef(SuccessOutlinedIcon)
+                                                                            fontSize="inherit"
+                                                                          >
+                                                                            <ForwardRef(SvgIcon)
+                                                                              data-testid="SuccessOutlinedIcon"
+                                                                              fontSize="inherit"
+                                                                            >
+                                                                              <MuiSvgIconRoot
+                                                                                aria-hidden={true}
+                                                                                as="svg"
+                                                                                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                                                                                data-testid="SuccessOutlinedIcon"
+                                                                                focusable="false"
+                                                                                ownerState={
+                                                                                  Object {
+                                                                                    "children": <path
+                                                                                      d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                                                    />,
+                                                                                    "color": "inherit",
+                                                                                    "component": "svg",
+                                                                                    "data-testid": "SuccessOutlinedIcon",
+                                                                                    "fontSize": "inherit",
+                                                                                    "viewBox": "0 0 24 24",
+                                                                                  }
+                                                                                }
+                                                                                viewBox="0 0 24 24"
+                                                                              >
+                                                                                <svg
+                                                                                  aria-hidden={true}
+                                                                                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                                  data-testid="SuccessOutlinedIcon"
+                                                                                  focusable="false"
+                                                                                  viewBox="0 0 24 24"
+                                                                                >
+                                                                                  <path
+                                                                                    d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                                                  />
+                                                                                </svg>
+                                                                              </MuiSvgIconRoot>
+                                                                            </ForwardRef(SvgIcon)>
+                                                                          </ForwardRef(SuccessOutlinedIcon)>
+                                                                        </div>
+                                                                      </MuiAlertIcon>
+                                                                      <MuiAlertMessage
+                                                                        className="MuiAlert-message"
+                                                                        ownerState={
+                                                                          Object {
+                                                                            "action": <ForwardRef(IconButton)
+                                                                              aria-label="close"
+                                                                              color="inherit"
+                                                                              onClick={[Function]}
+                                                                              size="small"
+                                                                            >
+                                                                              <Memo
+                                                                                fontSize="inherit"
+                                                                              />
+                                                                            </ForwardRef(IconButton)>,
+                                                                            "children": "",
+                                                                            "color": undefined,
+                                                                            "elevation": 6,
+                                                                            "severity": "success",
+                                                                            "variant": "filled",
+                                                                          }
+                                                                        }
+                                                                      >
+                                                                        <div
+                                                                          className="MuiAlert-message css-acap47-MuiAlert-message"
+                                                                        />
+                                                                      </MuiAlertMessage>
+                                                                      <MuiAlertAction
+                                                                        className="MuiAlert-action"
+                                                                      >
+                                                                        <div
+                                                                          className="MuiAlert-action css-ki1hdl-MuiAlert-action"
+                                                                        >
+                                                                          <ForwardRef(IconButton)
+                                                                            aria-label="close"
+                                                                            color="inherit"
+                                                                            onClick={[Function]}
+                                                                            size="small"
+                                                                          >
+                                                                            <MuiIconButtonRoot
+                                                                              aria-label="close"
+                                                                              centerRipple={true}
+                                                                              className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
+                                                                              disabled={false}
+                                                                              focusRipple={true}
+                                                                              onClick={[Function]}
+                                                                              ownerState={
+                                                                                Object {
+                                                                                  "aria-label": "close",
+                                                                                  "children": <Memo
+                                                                                    fontSize="inherit"
+                                                                                  />,
+                                                                                  "color": "inherit",
+                                                                                  "disableFocusRipple": false,
+                                                                                  "disabled": false,
+                                                                                  "edge": false,
+                                                                                  "onClick": [Function],
+                                                                                  "size": "small",
+                                                                                }
+                                                                              }
+                                                                            >
+                                                                              <ForwardRef(ButtonBase)
+                                                                                aria-label="close"
+                                                                                centerRipple={true}
+                                                                                className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
+                                                                                disabled={false}
+                                                                                focusRipple={true}
+                                                                                onClick={[Function]}
+                                                                              >
+                                                                                <MuiButtonBaseRoot
+                                                                                  aria-label="close"
+                                                                                  as="button"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
+                                                                                  disabled={false}
+                                                                                  onBlur={[Function]}
+                                                                                  onClick={[Function]}
+                                                                                  onContextMenu={[Function]}
+                                                                                  onDragLeave={[Function]}
+                                                                                  onFocus={[Function]}
+                                                                                  onKeyDown={[Function]}
+                                                                                  onKeyUp={[Function]}
+                                                                                  onMouseDown={[Function]}
+                                                                                  onMouseLeave={[Function]}
+                                                                                  onMouseUp={[Function]}
+                                                                                  onTouchEnd={[Function]}
+                                                                                  onTouchMove={[Function]}
+                                                                                  onTouchStart={[Function]}
+                                                                                  ownerState={
+                                                                                    Object {
+                                                                                      "aria-label": "close",
+                                                                                      "centerRipple": true,
+                                                                                      "children": <Memo
+                                                                                        fontSize="inherit"
+                                                                                      />,
+                                                                                      "className": "MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root",
+                                                                                      "component": "button",
+                                                                                      "disableRipple": false,
+                                                                                      "disableTouchRipple": false,
+                                                                                      "disabled": false,
+                                                                                      "focusRipple": true,
+                                                                                      "focusVisible": false,
+                                                                                      "onClick": [Function],
+                                                                                      "tabIndex": 0,
                                                                                     }
+                                                                                  }
+                                                                                  tabIndex={0}
+                                                                                  type="button"
+                                                                                >
+                                                                                  <button
+                                                                                    aria-label="close"
+                                                                                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
+                                                                                    disabled={false}
+                                                                                    onBlur={[Function]}
+                                                                                    onClick={[Function]}
+                                                                                    onContextMenu={[Function]}
+                                                                                    onDragLeave={[Function]}
+                                                                                    onFocus={[Function]}
+                                                                                    onKeyDown={[Function]}
+                                                                                    onKeyUp={[Function]}
+                                                                                    onMouseDown={[Function]}
+                                                                                    onMouseLeave={[Function]}
+                                                                                    onMouseUp={[Function]}
+                                                                                    onTouchEnd={[Function]}
+                                                                                    onTouchMove={[Function]}
+                                                                                    onTouchStart={[Function]}
+                                                                                    tabIndex={0}
+                                                                                    type="button"
                                                                                   >
-                                                                                    <ForwardRef(ButtonBase)
-                                                                                      aria-label="close"
-                                                                                      centerRipple={true}
-                                                                                      className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
-                                                                                      disabled={false}
-                                                                                      focusRipple={true}
-                                                                                      onClick={[Function]}
+                                                                                    <ForwardRef(CloseIcon)
+                                                                                      fontSize="inherit"
                                                                                     >
-                                                                                      <MuiButtonBaseRoot
-                                                                                        aria-label="close"
-                                                                                        as="button"
-                                                                                        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
-                                                                                        disabled={false}
-                                                                                        onBlur={[Function]}
-                                                                                        onClick={[Function]}
-                                                                                        onContextMenu={[Function]}
-                                                                                        onDragLeave={[Function]}
-                                                                                        onFocus={[Function]}
-                                                                                        onKeyDown={[Function]}
-                                                                                        onKeyUp={[Function]}
-                                                                                        onMouseDown={[Function]}
-                                                                                        onMouseLeave={[Function]}
-                                                                                        onMouseUp={[Function]}
-                                                                                        onTouchEnd={[Function]}
-                                                                                        onTouchMove={[Function]}
-                                                                                        onTouchStart={[Function]}
-                                                                                        ownerState={
-                                                                                          Object {
-                                                                                            "aria-label": "close",
-                                                                                            "centerRipple": true,
-                                                                                            "children": <Memo
-                                                                                              fontSize="inherit"
-                                                                                            />,
-                                                                                            "className": "MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root",
-                                                                                            "component": "button",
-                                                                                            "disableRipple": false,
-                                                                                            "disableTouchRipple": false,
-                                                                                            "disabled": false,
-                                                                                            "focusRipple": true,
-                                                                                            "focusVisible": false,
-                                                                                            "onClick": [Function],
-                                                                                            "tabIndex": 0,
-                                                                                          }
-                                                                                        }
-                                                                                        tabIndex={0}
-                                                                                        type="button"
+                                                                                      <ForwardRef(SvgIcon)
+                                                                                        data-testid="CloseIcon"
+                                                                                        fontSize="inherit"
                                                                                       >
-                                                                                        <button
-                                                                                          aria-label="close"
-                                                                                          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
-                                                                                          disabled={false}
-                                                                                          onBlur={[Function]}
-                                                                                          onClick={[Function]}
-                                                                                          onContextMenu={[Function]}
-                                                                                          onDragLeave={[Function]}
-                                                                                          onFocus={[Function]}
-                                                                                          onKeyDown={[Function]}
-                                                                                          onKeyUp={[Function]}
-                                                                                          onMouseDown={[Function]}
-                                                                                          onMouseLeave={[Function]}
-                                                                                          onMouseUp={[Function]}
-                                                                                          onTouchEnd={[Function]}
-                                                                                          onTouchMove={[Function]}
-                                                                                          onTouchStart={[Function]}
-                                                                                          tabIndex={0}
-                                                                                          type="button"
+                                                                                        <MuiSvgIconRoot
+                                                                                          aria-hidden={true}
+                                                                                          as="svg"
+                                                                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                                                                                          data-testid="CloseIcon"
+                                                                                          focusable="false"
+                                                                                          ownerState={
+                                                                                            Object {
+                                                                                              "children": <path
+                                                                                                d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                                                              />,
+                                                                                              "color": "inherit",
+                                                                                              "component": "svg",
+                                                                                              "data-testid": "CloseIcon",
+                                                                                              "fontSize": "inherit",
+                                                                                              "viewBox": "0 0 24 24",
+                                                                                            }
+                                                                                          }
+                                                                                          viewBox="0 0 24 24"
                                                                                         >
-                                                                                          <ForwardRef(CloseIcon)
-                                                                                            fontSize="inherit"
+                                                                                          <svg
+                                                                                            aria-hidden={true}
+                                                                                            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                                            data-testid="CloseIcon"
+                                                                                            focusable="false"
+                                                                                            viewBox="0 0 24 24"
                                                                                           >
-                                                                                            <ForwardRef(SvgIcon)
-                                                                                              data-testid="CloseIcon"
-                                                                                              fontSize="inherit"
-                                                                                            >
-                                                                                              <MuiSvgIconRoot
-                                                                                                aria-hidden={true}
-                                                                                                as="svg"
-                                                                                                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
-                                                                                                data-testid="CloseIcon"
-                                                                                                focusable="false"
-                                                                                                ownerState={
-                                                                                                  Object {
-                                                                                                    "children": <path
-                                                                                                      d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                                                                                    />,
-                                                                                                    "color": "inherit",
-                                                                                                    "component": "svg",
-                                                                                                    "data-testid": "CloseIcon",
-                                                                                                    "fontSize": "inherit",
-                                                                                                    "viewBox": "0 0 24 24",
-                                                                                                  }
-                                                                                                }
-                                                                                                viewBox="0 0 24 24"
-                                                                                              >
-                                                                                                <svg
-                                                                                                  aria-hidden={true}
-                                                                                                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                                                                                  data-testid="CloseIcon"
-                                                                                                  focusable="false"
-                                                                                                  viewBox="0 0 24 24"
-                                                                                                >
-                                                                                                  <path
-                                                                                                    d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                                                                                  />
-                                                                                                </svg>
-                                                                                              </MuiSvgIconRoot>
-                                                                                            </ForwardRef(SvgIcon)>
-                                                                                          </ForwardRef(CloseIcon)>
-                                                                                          <ForwardRef(TouchRipple)
-                                                                                            center={true}
-                                                                                          >
-                                                                                            <MuiTouchRippleRoot
-                                                                                              className="MuiTouchRipple-root"
-                                                                                            >
-                                                                                              <span
-                                                                                                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                                                              >
-                                                                                                <TransitionGroup
-                                                                                                  childFactory={[Function]}
-                                                                                                  component={null}
-                                                                                                  exit={true}
-                                                                                                />
-                                                                                              </span>
-                                                                                            </MuiTouchRippleRoot>
-                                                                                          </ForwardRef(TouchRipple)>
-                                                                                        </button>
-                                                                                      </MuiButtonBaseRoot>
-                                                                                    </ForwardRef(ButtonBase)>
-                                                                                  </MuiIconButtonRoot>
-                                                                                </ForwardRef(IconButton)>
-                                                                              </div>
-                                                                            </MuiAlertAction>
-                                                                          </div>
-                                                                        </MuiPaperRoot>
-                                                                      </ForwardRef(Paper)>
-                                                                    </MuiAlertRoot>
-                                                                  </ForwardRef(Alert)>
-                                                                </div>
-                                                              </MuiCollapseWrapperInner>
-                                                            </div>
-                                                          </MuiCollapseWrapper>
-                                                        </div>
-                                                      </MuiCollapseRoot>
-                                                    </Transition>
-                                                  </ForwardRef(Collapse)>
-                                                </div>
-                                              </Styled(div)>
-                                            </ForwardRef(Box)>
+                                                                                            <path
+                                                                                              d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                                                            />
+                                                                                          </svg>
+                                                                                        </MuiSvgIconRoot>
+                                                                                      </ForwardRef(SvgIcon)>
+                                                                                    </ForwardRef(CloseIcon)>
+                                                                                    <ForwardRef(TouchRipple)
+                                                                                      center={true}
+                                                                                    >
+                                                                                      <MuiTouchRippleRoot
+                                                                                        className="MuiTouchRipple-root"
+                                                                                      >
+                                                                                        <span
+                                                                                          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                                        >
+                                                                                          <TransitionGroup
+                                                                                            childFactory={[Function]}
+                                                                                            component={null}
+                                                                                            exit={true}
+                                                                                          />
+                                                                                        </span>
+                                                                                      </MuiTouchRippleRoot>
+                                                                                    </ForwardRef(TouchRipple)>
+                                                                                  </button>
+                                                                                </MuiButtonBaseRoot>
+                                                                              </ForwardRef(ButtonBase)>
+                                                                            </MuiIconButtonRoot>
+                                                                          </ForwardRef(IconButton)>
+                                                                        </div>
+                                                                      </MuiAlertAction>
+                                                                    </div>
+                                                                  </MuiPaperRoot>
+                                                                </ForwardRef(Paper)>
+                                                              </MuiAlertRoot>
+                                                            </ForwardRef(Alert)>
+                                                          </div>
+                                                        </MuiCollapseWrapperInner>
+                                                      </div>
+                                                    </MuiCollapseWrapper>
+                                                  </div>
+                                                </MuiCollapseRoot>
+                                              </Transition>
+                                            </ForwardRef(Collapse)>
                                             <ForwardRef(Box)
                                               sx={
                                                 Object {
@@ -7541,6 +7232,7 @@ exports[`MintingForm snapshot 1`] = `
                                                 >
                                                   <ForwardRef(Button)
                                                     color="error"
+                                                    disabled={false}
                                                     onClick={[Function]}
                                                     size="large"
                                                     startIcon={<Memo />}
@@ -7775,94 +7467,245 @@ exports[`MintingForm snapshot 1`] = `
                                                       </ForwardRef(ButtonBase)>
                                                     </MuiButtonRoot>
                                                   </ForwardRef(Button)>
-                                                  <ForwardRef(Button)
+                                                  <ForwardRef(LoadingButton)
                                                     color="success"
                                                     endIcon={<Memo />}
+                                                    loading={false}
+                                                    loadingPosition="end"
                                                     size="large"
                                                     type="submit"
                                                     variant="contained"
                                                   >
-                                                    <MuiButtonRoot
+                                                    <MuiLoadingButtonRoot
                                                       classes={
                                                         Object {
-                                                          "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
-                                                          "label": "MuiButton-label",
-                                                          "root": "MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
-                                                          "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
+                                                          "endIcon": "",
+                                                          "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                          "root": "MuiLoadingButton-root",
+                                                          "startIcon": "",
                                                         }
                                                       }
-                                                      component="button"
+                                                      color="success"
                                                       disabled={false}
-                                                      focusRipple={true}
-                                                      focusVisibleClassName=""
+                                                      endIcon={<Memo />}
                                                       ownerState={
                                                         Object {
                                                           "children": "Submit",
                                                           "color": "success",
-                                                          "component": "button",
-                                                          "disableElevation": false,
-                                                          "disableFocusRipple": false,
                                                           "disabled": false,
                                                           "endIcon": <Memo />,
-                                                          "fullWidth": false,
+                                                          "loading": false,
+                                                          "loadingIndicator": <ForwardRef(CircularProgress)
+                                                            color="inherit"
+                                                            size={16}
+                                                          />,
+                                                          "loadingPosition": "end",
                                                           "size": "large",
                                                           "type": "submit",
                                                           "variant": "contained",
                                                         }
                                                       }
+                                                      size="large"
                                                       type="submit"
+                                                      variant="contained"
                                                     >
-                                                      <ForwardRef(ButtonBase)
-                                                        className="css-cy3usa-MuiButton-root"
+                                                      <ForwardRef(Button)
+                                                        className="css-1g64sds-MuiLoadingButton-root"
                                                         classes={
                                                           Object {
-                                                            "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
-                                                            "label": "MuiButton-label",
-                                                            "root": "MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
-                                                            "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
+                                                            "endIcon": "",
+                                                            "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                            "root": "MuiLoadingButton-root",
+                                                            "startIcon": "",
                                                           }
                                                         }
-                                                        component="button"
+                                                        color="success"
                                                         disabled={false}
-                                                        focusRipple={true}
-                                                        focusVisibleClassName=""
+                                                        endIcon={<Memo />}
+                                                        size="large"
                                                         type="submit"
+                                                        variant="contained"
                                                       >
-                                                        <MuiButtonBaseRoot
-                                                          as="button"
-                                                          className="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-cy3usa-MuiButton-root"
+                                                        <MuiButtonRoot
+                                                          className="css-1g64sds-MuiLoadingButton-root"
                                                           classes={
                                                             Object {
                                                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
                                                               "label": "MuiButton-label",
-                                                              "root": "MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
+                                                              "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                              "root": "MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
                                                               "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
                                                             }
                                                           }
+                                                          component="button"
                                                           disabled={false}
-                                                          onBlur={[Function]}
-                                                          onContextMenu={[Function]}
-                                                          onDragLeave={[Function]}
-                                                          onFocus={[Function]}
-                                                          onKeyDown={[Function]}
-                                                          onKeyUp={[Function]}
-                                                          onMouseDown={[Function]}
-                                                          onMouseLeave={[Function]}
-                                                          onMouseUp={[Function]}
-                                                          onTouchEnd={[Function]}
-                                                          onTouchMove={[Function]}
-                                                          onTouchStart={[Function]}
+                                                          focusRipple={true}
+                                                          focusVisibleClassName=""
                                                           ownerState={
                                                             Object {
-                                                              "centerRipple": false,
                                                               "children": Array [
-                                                                undefined,
+                                                                false,
                                                                 "Submit",
+                                                              ],
+                                                              "className": "css-1g64sds-MuiLoadingButton-root",
+                                                              "classes": Object {
+                                                                "endIcon": "",
+                                                                "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                                "root": "MuiLoadingButton-root",
+                                                                "startIcon": "",
+                                                              },
+                                                              "color": "success",
+                                                              "component": "button",
+                                                              "disableElevation": false,
+                                                              "disableFocusRipple": false,
+                                                              "disabled": false,
+                                                              "endIcon": <Memo />,
+                                                              "fullWidth": false,
+                                                              "size": "large",
+                                                              "type": "submit",
+                                                              "variant": "contained",
+                                                            }
+                                                          }
+                                                          type="submit"
+                                                        >
+                                                          <ForwardRef(ButtonBase)
+                                                            className="css-180al1z-MuiButton-root-MuiLoadingButton-root"
+                                                            classes={
+                                                              Object {
+                                                                "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
+                                                                "label": "MuiButton-label",
+                                                                "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                                "root": "MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
+                                                                "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
+                                                              }
+                                                            }
+                                                            component="button"
+                                                            disabled={false}
+                                                            focusRipple={true}
+                                                            focusVisibleClassName=""
+                                                            type="submit"
+                                                          >
+                                                            <MuiButtonBaseRoot
+                                                              as="button"
+                                                              className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-180al1z-MuiButton-root-MuiLoadingButton-root"
+                                                              classes={
+                                                                Object {
+                                                                  "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
+                                                                  "label": "MuiButton-label",
+                                                                  "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                                  "root": "MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
+                                                                  "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
+                                                                }
+                                                              }
+                                                              disabled={false}
+                                                              onBlur={[Function]}
+                                                              onContextMenu={[Function]}
+                                                              onDragLeave={[Function]}
+                                                              onFocus={[Function]}
+                                                              onKeyDown={[Function]}
+                                                              onKeyUp={[Function]}
+                                                              onMouseDown={[Function]}
+                                                              onMouseLeave={[Function]}
+                                                              onMouseUp={[Function]}
+                                                              onTouchEnd={[Function]}
+                                                              onTouchMove={[Function]}
+                                                              onTouchStart={[Function]}
+                                                              ownerState={
+                                                                Object {
+                                                                  "centerRipple": false,
+                                                                  "children": Array [
+                                                                    undefined,
+                                                                    Array [
+                                                                      false,
+                                                                      "Submit",
+                                                                    ],
+                                                                    <MuiButtonEndIcon
+                                                                      className="MuiButton-endIcon MuiButton-iconSizeLarge"
+                                                                      ownerState={
+                                                                        Object {
+                                                                          "children": Array [
+                                                                            false,
+                                                                            "Submit",
+                                                                          ],
+                                                                          "className": "css-1g64sds-MuiLoadingButton-root",
+                                                                          "classes": Object {
+                                                                            "endIcon": "",
+                                                                            "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                                            "root": "MuiLoadingButton-root",
+                                                                            "startIcon": "",
+                                                                          },
+                                                                          "color": "success",
+                                                                          "component": "button",
+                                                                          "disableElevation": false,
+                                                                          "disableFocusRipple": false,
+                                                                          "disabled": false,
+                                                                          "endIcon": <Memo />,
+                                                                          "fullWidth": false,
+                                                                          "size": "large",
+                                                                          "type": "submit",
+                                                                          "variant": "contained",
+                                                                        }
+                                                                      }
+                                                                    >
+                                                                      <Memo />
+                                                                    </MuiButtonEndIcon>,
+                                                                  ],
+                                                                  "className": "css-180al1z-MuiButton-root-MuiLoadingButton-root",
+                                                                  "classes": Object {
+                                                                    "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
+                                                                    "label": "MuiButton-label",
+                                                                    "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                                    "root": "MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
+                                                                    "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
+                                                                  },
+                                                                  "component": "button",
+                                                                  "disableRipple": false,
+                                                                  "disableTouchRipple": false,
+                                                                  "disabled": false,
+                                                                  "focusRipple": true,
+                                                                  "focusVisible": false,
+                                                                  "focusVisibleClassName": "",
+                                                                  "tabIndex": 0,
+                                                                  "type": "submit",
+                                                                }
+                                                              }
+                                                              tabIndex={0}
+                                                              type="submit"
+                                                            >
+                                                              <button
+                                                                className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-8hdand-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                                                                disabled={false}
+                                                                onBlur={[Function]}
+                                                                onContextMenu={[Function]}
+                                                                onDragLeave={[Function]}
+                                                                onFocus={[Function]}
+                                                                onKeyDown={[Function]}
+                                                                onKeyUp={[Function]}
+                                                                onMouseDown={[Function]}
+                                                                onMouseLeave={[Function]}
+                                                                onMouseUp={[Function]}
+                                                                onTouchEnd={[Function]}
+                                                                onTouchMove={[Function]}
+                                                                onTouchStart={[Function]}
+                                                                tabIndex={0}
+                                                                type="submit"
+                                                              >
+                                                                Submit
                                                                 <MuiButtonEndIcon
                                                                   className="MuiButton-endIcon MuiButton-iconSizeLarge"
                                                                   ownerState={
                                                                     Object {
-                                                                      "children": "Submit",
+                                                                      "children": Array [
+                                                                        false,
+                                                                        "Submit",
+                                                                      ],
+                                                                      "className": "css-1g64sds-MuiLoadingButton-root",
+                                                                      "classes": Object {
+                                                                        "endIcon": "",
+                                                                        "loadingIndicator": "MuiLoadingButton-loadingIndicator",
+                                                                        "root": "MuiLoadingButton-root",
+                                                                        "startIcon": "",
+                                                                      },
                                                                       "color": "success",
                                                                       "component": "button",
                                                                       "disableElevation": false,
@@ -7876,132 +7719,73 @@ exports[`MintingForm snapshot 1`] = `
                                                                     }
                                                                   }
                                                                 >
-                                                                  <Memo />
-                                                                </MuiButtonEndIcon>,
-                                                              ],
-                                                              "className": "css-cy3usa-MuiButton-root",
-                                                              "classes": Object {
-                                                                "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
-                                                                "label": "MuiButton-label",
-                                                                "root": "MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge",
-                                                                "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
-                                                              },
-                                                              "component": "button",
-                                                              "disableRipple": false,
-                                                              "disableTouchRipple": false,
-                                                              "disabled": false,
-                                                              "focusRipple": true,
-                                                              "focusVisible": false,
-                                                              "focusVisibleClassName": "",
-                                                              "tabIndex": 0,
-                                                              "type": "submit",
-                                                            }
-                                                          }
-                                                          tabIndex={0}
-                                                          type="submit"
-                                                        >
-                                                          <button
-                                                            className="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-mkazzp-MuiButtonBase-root-MuiButton-root"
-                                                            disabled={false}
-                                                            onBlur={[Function]}
-                                                            onContextMenu={[Function]}
-                                                            onDragLeave={[Function]}
-                                                            onFocus={[Function]}
-                                                            onKeyDown={[Function]}
-                                                            onKeyUp={[Function]}
-                                                            onMouseDown={[Function]}
-                                                            onMouseLeave={[Function]}
-                                                            onMouseUp={[Function]}
-                                                            onTouchEnd={[Function]}
-                                                            onTouchMove={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            tabIndex={0}
-                                                            type="submit"
-                                                          >
-                                                            Submit
-                                                            <MuiButtonEndIcon
-                                                              className="MuiButton-endIcon MuiButton-iconSizeLarge"
-                                                              ownerState={
-                                                                Object {
-                                                                  "children": "Submit",
-                                                                  "color": "success",
-                                                                  "component": "button",
-                                                                  "disableElevation": false,
-                                                                  "disableFocusRipple": false,
-                                                                  "disabled": false,
-                                                                  "endIcon": <Memo />,
-                                                                  "fullWidth": false,
-                                                                  "size": "large",
-                                                                  "type": "submit",
-                                                                  "variant": "contained",
-                                                                }
-                                                              }
-                                                            >
-                                                              <span
-                                                                className="MuiButton-endIcon MuiButton-iconSizeLarge css-z4rqyd-MuiButton-endIcon"
-                                                              >
-                                                                <ForwardRef(DoneIcon)>
-                                                                  <ForwardRef(SvgIcon)
-                                                                    data-testid="DoneIcon"
+                                                                  <span
+                                                                    className="MuiButton-endIcon MuiButton-iconSizeLarge css-z4rqyd-MuiButton-endIcon"
                                                                   >
-                                                                    <MuiSvgIconRoot
-                                                                      aria-hidden={true}
-                                                                      as="svg"
-                                                                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
-                                                                      data-testid="DoneIcon"
-                                                                      focusable="false"
-                                                                      ownerState={
-                                                                        Object {
-                                                                          "children": <path
-                                                                            d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
-                                                                          />,
-                                                                          "color": "inherit",
-                                                                          "component": "svg",
-                                                                          "data-testid": "DoneIcon",
-                                                                          "fontSize": "medium",
-                                                                          "viewBox": "0 0 24 24",
-                                                                        }
-                                                                      }
-                                                                      viewBox="0 0 24 24"
-                                                                    >
-                                                                      <svg
-                                                                        aria-hidden={true}
-                                                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                                    <ForwardRef(DoneIcon)>
+                                                                      <ForwardRef(SvgIcon)
                                                                         data-testid="DoneIcon"
-                                                                        focusable="false"
-                                                                        viewBox="0 0 24 24"
                                                                       >
-                                                                        <path
-                                                                          d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
-                                                                        />
-                                                                      </svg>
-                                                                    </MuiSvgIconRoot>
-                                                                  </ForwardRef(SvgIcon)>
-                                                                </ForwardRef(DoneIcon)>
-                                                              </span>
-                                                            </MuiButtonEndIcon>
-                                                            <ForwardRef(TouchRipple)
-                                                              center={false}
-                                                            >
-                                                              <MuiTouchRippleRoot
-                                                                className="MuiTouchRipple-root"
-                                                              >
-                                                                <span
-                                                                  className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        <MuiSvgIconRoot
+                                                                          aria-hidden={true}
+                                                                          as="svg"
+                                                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                                                          data-testid="DoneIcon"
+                                                                          focusable="false"
+                                                                          ownerState={
+                                                                            Object {
+                                                                              "children": <path
+                                                                                d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+                                                                              />,
+                                                                              "color": "inherit",
+                                                                              "component": "svg",
+                                                                              "data-testid": "DoneIcon",
+                                                                              "fontSize": "medium",
+                                                                              "viewBox": "0 0 24 24",
+                                                                            }
+                                                                          }
+                                                                          viewBox="0 0 24 24"
+                                                                        >
+                                                                          <svg
+                                                                            aria-hidden={true}
+                                                                            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                                            data-testid="DoneIcon"
+                                                                            focusable="false"
+                                                                            viewBox="0 0 24 24"
+                                                                          >
+                                                                            <path
+                                                                              d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+                                                                            />
+                                                                          </svg>
+                                                                        </MuiSvgIconRoot>
+                                                                      </ForwardRef(SvgIcon)>
+                                                                    </ForwardRef(DoneIcon)>
+                                                                  </span>
+                                                                </MuiButtonEndIcon>
+                                                                <ForwardRef(TouchRipple)
+                                                                  center={false}
                                                                 >
-                                                                  <TransitionGroup
-                                                                    childFactory={[Function]}
-                                                                    component={null}
-                                                                    exit={true}
-                                                                  />
-                                                                </span>
-                                                              </MuiTouchRippleRoot>
-                                                            </ForwardRef(TouchRipple)>
-                                                          </button>
-                                                        </MuiButtonBaseRoot>
-                                                      </ForwardRef(ButtonBase)>
-                                                    </MuiButtonRoot>
-                                                  </ForwardRef(Button)>
+                                                                  <MuiTouchRippleRoot
+                                                                    className="MuiTouchRipple-root"
+                                                                  >
+                                                                    <span
+                                                                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                    >
+                                                                      <TransitionGroup
+                                                                        childFactory={[Function]}
+                                                                        component={null}
+                                                                        exit={true}
+                                                                      />
+                                                                    </span>
+                                                                  </MuiTouchRippleRoot>
+                                                                </ForwardRef(TouchRipple)>
+                                                              </button>
+                                                            </MuiButtonBaseRoot>
+                                                          </ForwardRef(ButtonBase)>
+                                                        </MuiButtonRoot>
+                                                      </ForwardRef(Button)>
+                                                    </MuiLoadingButtonRoot>
+                                                  </ForwardRef(LoadingButton)>
                                                 </div>
                                               </Styled(div)>
                                             </ForwardRef(Box)>
