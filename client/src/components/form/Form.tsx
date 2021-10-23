@@ -1,14 +1,13 @@
 import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
-import { Alert, AlertColor, Collapse, IconButton } from "@mui/material";
+import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import { SxProps } from "@mui/system";
+import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { FormEvent, useContext, useReducer, useState } from "react";
@@ -19,7 +18,6 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import FormGridInput from "./FormGridInput";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -44,7 +42,7 @@ const buttonsWrapperStyle = {
 };
 
 const priceInputProps = (selectedNet: NetworkT) => ({
-  inputProps: { min: "0.00", step: "any" },
+  inputProps: { min: "0", step: "any" },
   endAdornment: (
     <InputAdornment position="end">
       <SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />
@@ -154,57 +152,64 @@ const Form = (): JSX.Element => {
   );
 
   return (
-    <Container onSubmit={handleFormSubmit} component="form">
-      <Grid justifyContent="center" spacing={2} direction="column" container>
-        <FormGridInput
+    <Stack
+      onSubmit={handleFormSubmit}
+      component="form"
+      justifyContent="center"
+      spacing={2}>
+      <Paper>
+        <Input
           value={state.collectionName}
           onChange={handleCollNameChange}
           placeholder="Enter a collection name"
           label="Collection Name"
+          required
         />
-        <FormGridInput
+      </Paper>
+
+      <Paper>
+        <Input
           value={state.description}
           multiline
           onChange={handleDescriptionChange}
           placeholder="Enter a description"
           rows={DESCRIPTION_ROWS}
           label="Description"
+          required
         />
-        <Grid item xs={12}>
-          <Paper>
-            <ImageUpload
-              handleImageDrop={handleImageDrop}
-              imgObjs={state.images}
-            />
-          </Paper>
-        </Grid>
-        {state.images.length > 0 && (
-          <Grid item xs={12}>
-            <Paper>
-              <Tabs
-                handleImageDelete={handleImageDelete}
-                handleNameChange={handleImgNameChange}
-                imgObjs={state.images}
-              />
-            </Paper>
-          </Grid>
-        )}
-        <FormGridInput
+      </Paper>
+
+      <Paper>
+        <ImageUpload handleImageDrop={handleImageDrop} imgObjs={state.images} />
+      </Paper>
+
+      {state.images.length > 0 && (
+        <Paper>
+          <Tabs
+            handleImageDelete={handleImageDelete}
+            handleNameChange={handleImgNameChange}
+            imgObjs={state.images}
+          />
+        </Paper>
+      )}
+
+      <Paper>
+        <Input
           value={state.mintingPrice}
           onChange={handleMintPriceChange}
           placeholder="Enter a minting price"
           label="Minting Price"
           type="number"
           InputProps={priceInputProps(selectedNet)}
+          required
         />
-        <Grid item xs={12}>
-          <Box sx={formFooterStyle}>
-            {alertBox}
-            {formButtons}
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+      </Paper>
+
+      <Box sx={formFooterStyle}>
+        {alertBox}
+        {formButtons}
+      </Box>
+    </Stack>
   );
 };
 

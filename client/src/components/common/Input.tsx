@@ -13,7 +13,7 @@ const Input = (props: InputPropsI): JSX.Element => {
       rows={props.rows}
       onChange={props.onChange}
       name={props.name}
-      required
+      required={props.required}
       variant="outlined"
       fullWidth
       {...(props.error && { error: true, helperText: props.error })}
