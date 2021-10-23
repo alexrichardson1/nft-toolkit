@@ -49,7 +49,7 @@ const uploadToBucket = (collection: string, filePath: string, id: number) => {
 
 export const uploadImagesS3: RequestHandler = (
   req: Request,
-  _res: Response,
+  res: Response,
   next: NextFunction
 ) => {
   const collection: CollectionT = req.body;
@@ -58,13 +58,10 @@ export const uploadImagesS3: RequestHandler = (
     return next(new Error("File array undefined"));
   }
   const fileArray = files as Express.Multer.File[];
-  fileArray.map((file, id) => {
-    const imageURL = uploadToBucket(collection.name, file.path, id + 1);
-    const currentToken = collection.tokens[id];
-    if (currentToken) {
-      currentToken.image = imageURL;
-    }
-  });
+  const imageURLs = fileArray.map((file, id) =>
+    uploadToBucket(collection.name, file.path, id + 1)
+  );
+  res.json({ images: imageURLs });
   return next();
 };
 
