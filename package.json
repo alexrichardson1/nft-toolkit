@@ -27,6 +27,7 @@
     "glob-parent": "^5.1.2",
     "diff": "^3.5.0",
     "tsdoc": "^0.0.4",
-    "typedoc": "^0.22.5"
+    "typedoc": "^0.22.5",
+    "underscore": "^1.12.1"
   }
 }

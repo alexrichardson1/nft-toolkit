@@ -2966,6 +2966,11 @@ underscore@1.4.2:
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.4.2.tgz#cb2aae6a7999a89fd55aaee75bce0311698cebfb"
   integrity sha1-yyquanmZqJ/VWq7nW84DEWmM6/s=
 
+underscore@^1.12.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
+  integrity sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==
+
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
