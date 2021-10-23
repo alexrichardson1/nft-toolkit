@@ -12,6 +12,7 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.4",
+    "@mui/lab": "^5.0.0-alpha.51",
     "@mui/material": "^5.0.4",
     "@types/enzyme": "^3.10.10",
     "@types/enzyme-to-json": "^1.5.4",
