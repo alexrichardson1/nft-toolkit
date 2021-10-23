@@ -1,7 +1,7 @@
-import MintingForm from "components/minting-form/CreateCollectionForm";
+import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
 
-const MintingPage = (): JSX.Element => {
-  return <MintingForm />;
+const CreateCollectionPage = (): JSX.Element => {
+  return <CreateCollectionForm />;
 };
 
-export default MintingPage;
+export default CreateCollectionPage;
