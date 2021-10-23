@@ -5,6 +5,7 @@ const config: Config.InitialOptions = {
   preset: "ts-jest",
   testEnvironment: "node",
   modulePathIgnorePatterns: ["build"],
+  coveragePathIgnorePatterns: ["smart-contracts"],
   coverageThreshold: {
     global: {
       branches: 90,
