@@ -45,7 +45,6 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
   const NUMBER_OF_IMAGES = props.imgObjs.length;
 
   useEffect(() => {
-    console.log(value);
     if (value >= NUMBER_OF_IMAGES) {
       setValue(NUMBER_OF_IMAGES - 1);
     }
