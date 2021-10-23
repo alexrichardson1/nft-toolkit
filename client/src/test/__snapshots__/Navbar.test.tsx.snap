@@ -115,24 +115,24 @@ exports[`Navbar snapshot 1`] = `
             "main": "#00bcd4",
           },
           "secondary": Object {
-            "100": "#ffccbc",
-            "200": "#ffab91",
-            "300": "#ff8a65",
-            "400": "#ff7043",
-            "50": "#fbe9e7",
-            "500": "#ff5722",
-            "600": "#f4511e",
-            "700": "#e64a19",
-            "800": "#d84315",
-            "900": "#bf360c",
-            "A100": "#ff9e80",
-            "A200": "#ff6e40",
-            "A400": "#ff3d00",
-            "A700": "#dd2c00",
+            "100": "#f8bbd0",
+            "200": "#f48fb1",
+            "300": "#f06292",
+            "400": "#ec407a",
+            "50": "#fce4ec",
+            "500": "#e91e63",
+            "600": "#d81b60",
+            "700": "#c2185b",
+            "800": "#ad1457",
+            "900": "#880e4f",
+            "A100": "#ff80ab",
+            "A200": "#ff4081",
+            "A400": "#f50057",
+            "A700": "#c51162",
             "contrastText": "#fff",
-            "dark": "#dd2c00",
-            "light": "#ff6e40",
-            "main": "#ff3d00",
+            "dark": "#c51162",
+            "light": "#ff4081",
+            "main": "#f50057",
           },
           "success": Object {
             "contrastText": "#fff",
@@ -432,24 +432,24 @@ exports[`Navbar snapshot 1`] = `
               "main": "#00bcd4",
             },
             "secondary": Object {
-              "100": "#ffccbc",
-              "200": "#ffab91",
-              "300": "#ff8a65",
-              "400": "#ff7043",
-              "50": "#fbe9e7",
-              "500": "#ff5722",
-              "600": "#f4511e",
-              "700": "#e64a19",
-              "800": "#d84315",
-              "900": "#bf360c",
-              "A100": "#ff9e80",
-              "A200": "#ff6e40",
-              "A400": "#ff3d00",
-              "A700": "#dd2c00",
+              "100": "#f8bbd0",
+              "200": "#f48fb1",
+              "300": "#f06292",
+              "400": "#ec407a",
+              "50": "#fce4ec",
+              "500": "#e91e63",
+              "600": "#d81b60",
+              "700": "#c2185b",
+              "800": "#ad1457",
+              "900": "#880e4f",
+              "A100": "#ff80ab",
+              "A200": "#ff4081",
+              "A400": "#f50057",
+              "A700": "#c51162",
               "contrastText": "#fff",
-              "dark": "#dd2c00",
-              "light": "#ff6e40",
-              "main": "#ff3d00",
+              "dark": "#c51162",
+              "light": "#ff4081",
+              "main": "#f50057",
             },
             "success": Object {
               "contrastText": "#fff",
@@ -800,24 +800,24 @@ exports[`Navbar snapshot 1`] = `
                                             "main": "#00bcd4",
                                           },
                                           "secondary": Object {
-                                            "100": "#ffccbc",
-                                            "200": "#ffab91",
-                                            "300": "#ff8a65",
-                                            "400": "#ff7043",
-                                            "50": "#fbe9e7",
-                                            "500": "#ff5722",
-                                            "600": "#f4511e",
-                                            "700": "#e64a19",
-                                            "800": "#d84315",
-                                            "900": "#bf360c",
-                                            "A100": "#ff9e80",
-                                            "A200": "#ff6e40",
-                                            "A400": "#ff3d00",
-                                            "A700": "#dd2c00",
+                                            "100": "#f8bbd0",
+                                            "200": "#f48fb1",
+                                            "300": "#f06292",
+                                            "400": "#ec407a",
+                                            "50": "#fce4ec",
+                                            "500": "#e91e63",
+                                            "600": "#d81b60",
+                                            "700": "#c2185b",
+                                            "800": "#ad1457",
+                                            "900": "#880e4f",
+                                            "A100": "#ff80ab",
+                                            "A200": "#ff4081",
+                                            "A400": "#f50057",
+                                            "A700": "#c51162",
                                             "contrastText": "#fff",
-                                            "dark": "#dd2c00",
-                                            "light": "#ff6e40",
-                                            "main": "#ff3d00",
+                                            "dark": "#c51162",
+                                            "light": "#ff4081",
+                                            "main": "#f50057",
                                           },
                                           "success": Object {
                                             "contrastText": "#fff",
@@ -1552,24 +1552,24 @@ exports[`Navbar snapshot 1`] = `
                                                                   "main": "#00bcd4",
                                                                 },
                                                                 "secondary": Object {
-                                                                  "100": "#ffccbc",
-                                                                  "200": "#ffab91",
-                                                                  "300": "#ff8a65",
-                                                                  "400": "#ff7043",
-                                                                  "50": "#fbe9e7",
-                                                                  "500": "#ff5722",
-                                                                  "600": "#f4511e",
-                                                                  "700": "#e64a19",
-                                                                  "800": "#d84315",
-                                                                  "900": "#bf360c",
-                                                                  "A100": "#ff9e80",
-                                                                  "A200": "#ff6e40",
-                                                                  "A400": "#ff3d00",
-                                                                  "A700": "#dd2c00",
+                                                                  "100": "#f8bbd0",
+                                                                  "200": "#f48fb1",
+                                                                  "300": "#f06292",
+                                                                  "400": "#ec407a",
+                                                                  "50": "#fce4ec",
+                                                                  "500": "#e91e63",
+                                                                  "600": "#d81b60",
+                                                                  "700": "#c2185b",
+                                                                  "800": "#ad1457",
+                                                                  "900": "#880e4f",
+                                                                  "A100": "#ff80ab",
+                                                                  "A200": "#ff4081",
+                                                                  "A400": "#f50057",
+                                                                  "A700": "#c51162",
                                                                   "contrastText": "#fff",
-                                                                  "dark": "#dd2c00",
-                                                                  "light": "#ff6e40",
-                                                                  "main": "#ff3d00",
+                                                                  "dark": "#c51162",
+                                                                  "light": "#ff4081",
+                                                                  "main": "#f50057",
                                                                 },
                                                                 "success": Object {
                                                                   "contrastText": "#fff",
@@ -1900,24 +1900,24 @@ exports[`Navbar snapshot 1`] = `
                                                                   "main": "#00bcd4",
                                                                 },
                                                                 "secondary": Object {
-                                                                  "100": "#ffccbc",
-                                                                  "200": "#ffab91",
-                                                                  "300": "#ff8a65",
-                                                                  "400": "#ff7043",
-                                                                  "50": "#fbe9e7",
-                                                                  "500": "#ff5722",
-                                                                  "600": "#f4511e",
-                                                                  "700": "#e64a19",
-                                                                  "800": "#d84315",
-                                                                  "900": "#bf360c",
-                                                                  "A100": "#ff9e80",
-                                                                  "A200": "#ff6e40",
-                                                                  "A400": "#ff3d00",
-                                                                  "A700": "#dd2c00",
+                                                                  "100": "#f8bbd0",
+                                                                  "200": "#f48fb1",
+                                                                  "300": "#f06292",
+                                                                  "400": "#ec407a",
+                                                                  "50": "#fce4ec",
+                                                                  "500": "#e91e63",
+                                                                  "600": "#d81b60",
+                                                                  "700": "#c2185b",
+                                                                  "800": "#ad1457",
+                                                                  "900": "#880e4f",
+                                                                  "A100": "#ff80ab",
+                                                                  "A200": "#ff4081",
+                                                                  "A400": "#f50057",
+                                                                  "A700": "#c51162",
                                                                   "contrastText": "#fff",
-                                                                  "dark": "#dd2c00",
-                                                                  "light": "#ff6e40",
-                                                                  "main": "#ff3d00",
+                                                                  "dark": "#c51162",
+                                                                  "light": "#ff4081",
+                                                                  "main": "#f50057",
                                                                 },
                                                                 "success": Object {
                                                                   "contrastText": "#fff",
@@ -2470,24 +2470,24 @@ exports[`Navbar snapshot 1`] = `
                                                                           "main": "#00bcd4",
                                                                         },
                                                                         "secondary": Object {
-                                                                          "100": "#ffccbc",
-                                                                          "200": "#ffab91",
-                                                                          "300": "#ff8a65",
-                                                                          "400": "#ff7043",
-                                                                          "50": "#fbe9e7",
-                                                                          "500": "#ff5722",
-                                                                          "600": "#f4511e",
-                                                                          "700": "#e64a19",
-                                                                          "800": "#d84315",
-                                                                          "900": "#bf360c",
-                                                                          "A100": "#ff9e80",
-                                                                          "A200": "#ff6e40",
-                                                                          "A400": "#ff3d00",
-                                                                          "A700": "#dd2c00",
+                                                                          "100": "#f8bbd0",
+                                                                          "200": "#f48fb1",
+                                                                          "300": "#f06292",
+                                                                          "400": "#ec407a",
+                                                                          "50": "#fce4ec",
+                                                                          "500": "#e91e63",
+                                                                          "600": "#d81b60",
+                                                                          "700": "#c2185b",
+                                                                          "800": "#ad1457",
+                                                                          "900": "#880e4f",
+                                                                          "A100": "#ff80ab",
+                                                                          "A200": "#ff4081",
+                                                                          "A400": "#f50057",
+                                                                          "A700": "#c51162",
                                                                           "contrastText": "#fff",
-                                                                          "dark": "#dd2c00",
-                                                                          "light": "#ff6e40",
-                                                                          "main": "#ff3d00",
+                                                                          "dark": "#c51162",
+                                                                          "light": "#ff4081",
+                                                                          "main": "#f50057",
                                                                         },
                                                                         "success": Object {
                                                                           "contrastText": "#fff",
@@ -2876,7 +2876,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                     aria-expanded="false"
                                                                                     aria-haspopup="true"
                                                                                     aria-label="network selection"
-                                                                                    class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-e5a8jf-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab"
+                                                                                    class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1wyarrq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab"
                                                                                     style="transform: none; webkit-transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
                                                                                     tabindex="0"
                                                                                     type="button"
@@ -3070,7 +3070,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                   aria-expanded={false}
                                                                                   aria-haspopup="true"
                                                                                   aria-label="network selection"
-                                                                                  className="MuiSpeedDial-fab css-1ekpne-MuiSpeedDial-fab"
+                                                                                  className="MuiSpeedDial-fab css-384tge-MuiSpeedDial-fab"
                                                                                   color="primary"
                                                                                   onClick={[Function]}
                                                                                   style={
@@ -3085,7 +3085,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                     aria-expanded={false}
                                                                                     aria-haspopup="true"
                                                                                     aria-label="network selection"
-                                                                                    className="MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1ekpne-MuiSpeedDial-fab"
+                                                                                    className="MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-384tge-MuiSpeedDial-fab"
                                                                                     component="button"
                                                                                     disabled={false}
                                                                                     focusRipple={true}
@@ -3102,7 +3102,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                           icon="ethereum-logo.svg"
                                                                                           width="70%"
                                                                                         />,
-                                                                                        "className": "MuiSpeedDial-fab css-1ekpne-MuiSpeedDial-fab",
+                                                                                        "className": "MuiSpeedDial-fab css-384tge-MuiSpeedDial-fab",
                                                                                         "color": "primary",
                                                                                         "component": "button",
                                                                                         "disableFocusRipple": false,
@@ -3128,7 +3128,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                       aria-expanded={false}
                                                                                       aria-haspopup="true"
                                                                                       aria-label="network selection"
-                                                                                      className="MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1j0n1no-MuiFab-root-MuiSpeedDial-fab"
+                                                                                      className="MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-a2ovqr-MuiFab-root-MuiSpeedDial-fab"
                                                                                       component="button"
                                                                                       disabled={false}
                                                                                       focusRipple={true}
@@ -3147,7 +3147,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                         aria-haspopup="true"
                                                                                         aria-label="network selection"
                                                                                         as="button"
-                                                                                        className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1j0n1no-MuiFab-root-MuiSpeedDial-fab"
+                                                                                        className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-a2ovqr-MuiFab-root-MuiSpeedDial-fab"
                                                                                         disabled={false}
                                                                                         onBlur={[Function]}
                                                                                         onClick={[Function]}
@@ -3174,7 +3174,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                               icon="ethereum-logo.svg"
                                                                                               width="70%"
                                                                                             />,
-                                                                                            "className": "MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1j0n1no-MuiFab-root-MuiSpeedDial-fab",
+                                                                                            "className": "MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-a2ovqr-MuiFab-root-MuiSpeedDial-fab",
                                                                                             "component": "button",
                                                                                             "disableRipple": false,
                                                                                             "disableTouchRipple": false,
@@ -3204,7 +3204,7 @@ exports[`Navbar snapshot 1`] = `
                                                                                           aria-expanded={false}
                                                                                           aria-haspopup="true"
                                                                                           aria-label="network selection"
-                                                                                          className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-e5a8jf-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab"
+                                                                                          className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1wyarrq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab"
                                                                                           disabled={false}
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
@@ -6652,24 +6652,24 @@ exports[`Navbar snapshot 1`] = `
                                                                   "main": "#00bcd4",
                                                                 },
                                                                 "secondary": Object {
-                                                                  "100": "#ffccbc",
-                                                                  "200": "#ffab91",
-                                                                  "300": "#ff8a65",
-                                                                  "400": "#ff7043",
-                                                                  "50": "#fbe9e7",
-                                                                  "500": "#ff5722",
-                                                                  "600": "#f4511e",
-                                                                  "700": "#e64a19",
-                                                                  "800": "#d84315",
-                                                                  "900": "#bf360c",
-                                                                  "A100": "#ff9e80",
-                                                                  "A200": "#ff6e40",
-                                                                  "A400": "#ff3d00",
-                                                                  "A700": "#dd2c00",
+                                                                  "100": "#f8bbd0",
+                                                                  "200": "#f48fb1",
+                                                                  "300": "#f06292",
+                                                                  "400": "#ec407a",
+                                                                  "50": "#fce4ec",
+                                                                  "500": "#e91e63",
+                                                                  "600": "#d81b60",
+                                                                  "700": "#c2185b",
+                                                                  "800": "#ad1457",
+                                                                  "900": "#880e4f",
+                                                                  "A100": "#ff80ab",
+                                                                  "A200": "#ff4081",
+                                                                  "A400": "#f50057",
+                                                                  "A700": "#c51162",
                                                                   "contrastText": "#fff",
-                                                                  "dark": "#dd2c00",
-                                                                  "light": "#ff6e40",
-                                                                  "main": "#ff3d00",
+                                                                  "dark": "#c51162",
+                                                                  "light": "#ff4081",
+                                                                  "main": "#f50057",
                                                                 },
                                                                 "success": Object {
                                                                   "contrastText": "#fff",

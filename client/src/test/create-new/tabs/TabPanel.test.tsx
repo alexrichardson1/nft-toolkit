@@ -1,17 +1,17 @@
 import { DAppProvider } from "@usedapp/core";
-import Input from "components/form/Input";
+import TabPanel from "components/create-new/tabs/TabPanel";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("Input snapshot", () => {
+test("TabPanel snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <Input value="test" label="test" placeholder="This is a test" />
+          <TabPanel index={0} value={0} />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>

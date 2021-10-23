@@ -1,17 +1,20 @@
 import { DAppProvider } from "@usedapp/core";
-import TabPanel from "components/form/tabs/TabPanel";
+import ImageUpload from "components/create-new/custom-image-upload/ImageUpload";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("TabPanel snapshot", () => {
+test("ImageUpload snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <TabPanel index={0} value={0} />
+          <ImageUpload
+            imgObjs={[]}
+            handleImageDrop={() => console.log("Image dropped into box")}
+          />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>
