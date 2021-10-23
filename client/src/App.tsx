@@ -1,6 +1,6 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/system/Box";
-import MintingForm from "components/minting-form/CreateCollectionForm";
+import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
 import Navbar from "components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { mainContainerStyle } from "utils/constants";
@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
         <Switch>
           <Box sx={mainContainerStyle}>
             <Container>
-              <Route exact path="/" component={MintingForm} />
+              <Route exact path="/" component={CreateCollectionForm} />
             </Container>
           </Box>
         </Switch>
