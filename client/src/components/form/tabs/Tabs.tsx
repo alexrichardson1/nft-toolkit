@@ -3,10 +3,10 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+import Input from "components/common/Input";
 import { useState } from "react";
 import { DEFAULT_MUI_DARK } from "utils/constants";
 import { getComponentByMode } from "utils/getComponentByMode";
-import Input from "../../common/Input";
 import TabPanel from "./TabPanel";
 
 const tabsStyle = { borderRight: 1, borderColor: "divider" };
