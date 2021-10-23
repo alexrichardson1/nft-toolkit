@@ -701,6 +701,7 @@ exports[`Input snapshot 1`] = `
                                         "InputProps": undefined,
                                         "autoFocus": false,
                                         "color": "primary",
+                                        "defaultValue": undefined,
                                         "disabled": false,
                                         "error": false,
                                         "fullWidth": true,
