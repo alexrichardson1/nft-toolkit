@@ -1,6 +1,6 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/system/Box";
-import MintingForm from "components/minting-form/MintingForm";
+import MintingForm from "components/minting-form/CreateCollectionForm";
 import Navbar from "components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { mainContainerStyle } from "utils/constants";

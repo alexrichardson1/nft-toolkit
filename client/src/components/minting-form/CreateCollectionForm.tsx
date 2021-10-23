@@ -1,6 +1,7 @@
 import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
+import LoadingButton from "@mui/lab/LoadingButton";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -29,6 +30,7 @@ const INITIAL_STATE = {
   mintingPrice: 0,
 };
 
+const alertContainerStyle = { flexGrow: 1 };
 const formFooterStyle: SxProps = {
   display: "flex",
   gap: "10px",
@@ -55,6 +57,17 @@ const MintingForm = (): JSX.Element => {
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
+  const [loading, setLoading] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState("");
+
+  const startLoading = (message = "Loading...") => {
+    setLoadingMessage(message);
+    setLoading(true);
+  };
+  const stopLoading = () => {
+    setLoading(false);
+    setLoadingMessage("");
+  };
 
   const closeAlert = () => setAlertMessage("");
 
@@ -104,29 +117,34 @@ const MintingForm = (): JSX.Element => {
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(state);
-    showFormAlert("error", "You have hit a dead-end");
+    startLoading("uploading");
+    const UPLOADING_DURATION = 5000;
+    setTimeout(() => setLoadingMessage("Minting NFT"), UPLOADING_DURATION);
+    const MINTING_DURATION = 5000;
+    setTimeout(() => {
+      stopLoading();
+      showFormAlert("success", "Minting Successful");
+    }, UPLOADING_DURATION + MINTING_DURATION);
   };
 
   const alertBox = (
-    <Box flexGrow={1}>
-      <Collapse in={alertMessage.length !== 0}>
-        <Alert
-          elevation={DEFAULT_ALERT_ELEVATION}
-          variant="filled"
-          severity={alertSeverity}
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={closeAlert}>
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }>
-          {alertMessage}
-        </Alert>
-      </Collapse>
-    </Box>
+    <Collapse sx={alertContainerStyle} in={alertMessage.length !== 0}>
+      <Alert
+        elevation={DEFAULT_ALERT_ELEVATION}
+        variant="filled"
+        severity={alertSeverity}
+        action={
+          <IconButton
+            aria-label="close"
+            color="inherit"
+            size="small"
+            onClick={closeAlert}>
+            <CloseIcon fontSize="inherit" />
+          </IconButton>
+        }>
+        {alertMessage}
+      </Alert>
+    </Collapse>
   );
 
   const formButtons = (
@@ -137,17 +155,20 @@ const MintingForm = (): JSX.Element => {
         size="large"
         variant="contained"
         type="reset"
+        disabled={loading}
         onClick={handleStateReset}>
         Reset
       </Button>
-      <Button
+      <LoadingButton
+        loading={loading}
+        loadingPosition="end"
         type="submit"
         endIcon={<DoneIcon />}
         color="success"
         size="large"
         variant="contained">
-        Submit
-      </Button>
+        {loading ? loadingMessage : "Submit"}
+      </LoadingButton>
     </Box>
   );
 

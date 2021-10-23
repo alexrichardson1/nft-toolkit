@@ -1,4 +1,4 @@
-import MintingForm from "components/minting-form/MintingForm";
+import MintingForm from "components/minting-form/CreateCollectionForm";
 
 const MintingPage = (): JSX.Element => {
   return <MintingForm />;
