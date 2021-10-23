@@ -1,4 +1,3 @@
-/* eslint-disable no-magic-numbers */
 import { GenCollectionI, generate } from "../controllers/generateArt";
 
 describe("Generate Art", () => {
@@ -51,27 +50,56 @@ describe("Generate Art", () => {
 
   test("Produces black background, fat body, durag head", () => {
     testData.quantity = 1;
-    setMathRandomReturn([0.02, 0.45, 0.08, 0.18, 0.08, 0.96]);
-    const expected = [
+    const PROB1 = 0.02;
+    const PROB2 = 0.45;
+    const PROB3 = 0.08;
+    const PROB4 = 0.18;
+    const PROB5 = 0.08;
+    const PROB6 = 0.96;
+    setMathRandomReturn([PROB1, PROB2, PROB3, PROB4, PROB5, PROB6]);
+    const result = generate(testData);
+    expect(result).toMatchObject([
       [
         { name: "black", rarity: 30 },
         { name: "fat", rarity: 20 },
         { name: "durag", rarity: 5 },
       ],
-    ];
-    const result = generate(testData);
-    expect(result).toMatchObject(expected);
+    ]);
   });
 
   test("Different random values produce different combinations", () => {
     testData.quantity = 2;
+    const PROB1 = 0.0;
+    const PROB2 = 0.3;
+    const PROB3 = 0.0;
+    const PROB4 = 0.905;
+    const PROB5 = 0.0;
+    const PROB6 = 0.6999;
+    const PROB7 = 0.0;
+    const PROB8 = 0.6;
+    const PROB9 = 0.0;
+    const PROB10 = 0.5;
+    const PROB11 = 0.0;
+    const PROB12 = 0.95;
+
     setMathRandomReturn([
       // red, normal, bald
-      0.0, 0.3, 0.0, 0.905, 0.0, 0.6999,
+      PROB1,
+      PROB2,
+      PROB3,
+      PROB4,
+      PROB5,
+      PROB6,
       // black, skinny, spiky
-      0.0, 0.6, 0.0, 0.5, 0.0, 0.95,
+      PROB7,
+      PROB8,
+      PROB9,
+      PROB10,
+      PROB11,
+      PROB12,
     ]);
-    const expected = [
+
+    expect(generate(testData)).toMatchObject([
       [
         { name: "red", rarity: 30 },
         { name: "normal", rarity: 10 },
@@ -82,9 +110,7 @@ describe("Generate Art", () => {
         { name: "skinny", rarity: 70 },
         { name: "spiky", rarity: 25 },
       ],
-    ];
-
-    expect(generate(testData)).toMatchObject(expected);
+    ]);
   });
 
   // test("TODO", () => {
