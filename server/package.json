@@ -32,6 +32,7 @@
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "ethereum-waffle": "^3.4.0",
+    "node-fetch": "^2.6.1",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.5",
     "jest": "^27.3.1",
