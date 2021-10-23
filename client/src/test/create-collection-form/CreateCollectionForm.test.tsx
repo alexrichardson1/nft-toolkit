@@ -1,21 +1,17 @@
 import { DAppProvider } from "@usedapp/core";
-import Tabs from "components/minting-form/tabs/Tabs";
+import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("Tabs snapshot", () => {
+test("CreateCollectionForm snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <Tabs
-            imgObjs={[]}
-            handleImageDelete={() => console.log("Image deleted during test")}
-            handleNameChange={() => console.log("Name changed during test")}
-          />
+          <CreateCollectionForm />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>

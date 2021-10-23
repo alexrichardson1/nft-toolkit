@@ -3,15 +3,15 @@ import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
-import MintingPage from "pages/CreateCollectionPage";
+import CreateCollectionPage from "pages/CreateCollectionPage";
 
-test("MintingPage snapshot", () => {
+test("CreateCollectionPage snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <MintingPage />
+          <CreateCollectionPage />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>

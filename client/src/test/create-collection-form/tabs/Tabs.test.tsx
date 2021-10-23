@@ -1,19 +1,20 @@
 import { DAppProvider } from "@usedapp/core";
-import ImageUpload from "components/minting-form/custom-image-upload/ImageUpload";
+import Tabs from "components/create-collection-form/tabs/Tabs";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("ImageUpload snapshot", () => {
+test("Tabs snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <ImageUpload
+          <Tabs
             imgObjs={[]}
-            handleImageDrop={() => console.log("Image dropped into box")}
+            handleImageDelete={() => console.log("Image deleted during test")}
+            handleNameChange={() => console.log("Name changed during test")}
           />
         </DAppProvider>
       </NetworkProvider>

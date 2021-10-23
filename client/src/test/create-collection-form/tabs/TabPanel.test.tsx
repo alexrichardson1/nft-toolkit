@@ -1,5 +1,5 @@
 import { DAppProvider } from "@usedapp/core";
-import TabPanel from "components/minting-form/tabs/TabPanel";
+import TabPanel from "components/create-collection-form/tabs/TabPanel";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
