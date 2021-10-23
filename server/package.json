@@ -29,6 +29,7 @@
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "ethereum-waffle": "^3.4.0",
+    "lodash": "^4.17.21",
     "set-value": "^4.0.1",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.5",
