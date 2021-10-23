@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MintingForm snapshot 1`] = `
+exports[`CreateCollectionForm snapshot 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -676,7 +676,7 @@ exports[`MintingForm snapshot 1`] = `
                         >
                           <NotificationsProvider>
                             <TransactionProvider>
-                              <MintingForm>
+                              <CreateCollectionForm>
                                 <ForwardRef(Stack)
                                   component="form"
                                   justifyContent="center"
@@ -7817,7 +7817,7 @@ exports[`MintingForm snapshot 1`] = `
                                     </form>
                                   </MuiStackRoot>
                                 </ForwardRef(Stack)>
-                              </MintingForm>
+                              </CreateCollectionForm>
                             </TransactionProvider>
                           </NotificationsProvider>
                         </ChainStateProvider>
