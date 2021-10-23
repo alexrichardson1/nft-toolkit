@@ -6,20 +6,6 @@ type NetworkT = { icon: string; name: string; chainId?: number };
 
 type AnchorT = null | HTMLElement;
 
-interface InputPropsI {
-  name?: string;
-  label: React.ReactNode;
-  value: unknown;
-  placeholder: string;
-  required?: boolean;
-  multiline?: boolean;
-  InputProps?: Partial<OutlinedInputProps>;
-  rows?: number;
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-  error?: string;
-  type?: React.HTMLInputTypeAttribute;
-  sx?: SxProps<Theme>;
-}
 type InputEventT = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
 type ImageListT = { image: File; url: string; name: string; id: string }[];
