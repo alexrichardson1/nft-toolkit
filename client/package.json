@@ -39,6 +39,16 @@
     "@types/react-test-renderer": "^17.0.1",
     "react-test-renderer": "^17.0.2"
   },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
