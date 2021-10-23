@@ -58,7 +58,7 @@ const priceInputProps = (selectedNet: NetworkT) => ({
   ),
 });
 
-const MintingForm = (): JSX.Element => {
+const CreateCollectionForm = (): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
@@ -246,4 +246,4 @@ const MintingForm = (): JSX.Element => {
   );
 };
 
-export default MintingForm;
+export default CreateCollectionForm;
