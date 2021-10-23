@@ -7474,6 +7474,14 @@ exports[`MintingPage snapshot 1`] = `
                                                       loading={false}
                                                       loadingPosition="end"
                                                       size="large"
+                                                      sx={
+                                                        Object {
+                                                          "&.Mui-disabled": Object {
+                                                            "bgcolor": "secondary.main",
+                                                            "color": "white",
+                                                          },
+                                                        }
+                                                      }
                                                       type="submit"
                                                       variant="contained"
                                                     >
@@ -7502,16 +7510,30 @@ exports[`MintingPage snapshot 1`] = `
                                                             />,
                                                             "loadingPosition": "end",
                                                             "size": "large",
+                                                            "sx": Object {
+                                                              "&.Mui-disabled": Object {
+                                                                "bgcolor": "secondary.main",
+                                                                "color": "white",
+                                                              },
+                                                            },
                                                             "type": "submit",
                                                             "variant": "contained",
                                                           }
                                                         }
                                                         size="large"
+                                                        sx={
+                                                          Object {
+                                                            "&.Mui-disabled": Object {
+                                                              "bgcolor": "secondary.main",
+                                                              "color": "white",
+                                                            },
+                                                          }
+                                                        }
                                                         type="submit"
                                                         variant="contained"
                                                       >
                                                         <ForwardRef(Button)
-                                                          className="css-1g64sds-MuiLoadingButton-root"
+                                                          className="css-1je27za-MuiLoadingButton-root"
                                                           classes={
                                                             Object {
                                                               "endIcon": "",
@@ -7528,7 +7550,7 @@ exports[`MintingPage snapshot 1`] = `
                                                           variant="contained"
                                                         >
                                                           <MuiButtonRoot
-                                                            className="css-1g64sds-MuiLoadingButton-root"
+                                                            className="css-1je27za-MuiLoadingButton-root"
                                                             classes={
                                                               Object {
                                                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
@@ -7548,7 +7570,7 @@ exports[`MintingPage snapshot 1`] = `
                                                                   false,
                                                                   "Submit",
                                                                 ],
-                                                                "className": "css-1g64sds-MuiLoadingButton-root",
+                                                                "className": "css-1je27za-MuiLoadingButton-root",
                                                                 "classes": Object {
                                                                   "endIcon": "",
                                                                   "loadingIndicator": "MuiLoadingButton-loadingIndicator",
@@ -7570,7 +7592,7 @@ exports[`MintingPage snapshot 1`] = `
                                                             type="submit"
                                                           >
                                                             <ForwardRef(ButtonBase)
-                                                              className="css-180al1z-MuiButton-root-MuiLoadingButton-root"
+                                                              className="css-x7i5zk-MuiButton-root-MuiLoadingButton-root"
                                                               classes={
                                                                 Object {
                                                                   "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
@@ -7588,7 +7610,7 @@ exports[`MintingPage snapshot 1`] = `
                                                             >
                                                               <MuiButtonBaseRoot
                                                                 as="button"
-                                                                className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-180al1z-MuiButton-root-MuiLoadingButton-root"
+                                                                className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-x7i5zk-MuiButton-root-MuiLoadingButton-root"
                                                                 classes={
                                                                   Object {
                                                                     "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
@@ -7628,7 +7650,7 @@ exports[`MintingPage snapshot 1`] = `
                                                                               false,
                                                                               "Submit",
                                                                             ],
-                                                                            "className": "css-1g64sds-MuiLoadingButton-root",
+                                                                            "className": "css-1je27za-MuiLoadingButton-root",
                                                                             "classes": Object {
                                                                               "endIcon": "",
                                                                               "loadingIndicator": "MuiLoadingButton-loadingIndicator",
@@ -7651,7 +7673,7 @@ exports[`MintingPage snapshot 1`] = `
                                                                         <Memo />
                                                                       </MuiButtonEndIcon>,
                                                                     ],
-                                                                    "className": "css-180al1z-MuiButton-root-MuiLoadingButton-root",
+                                                                    "className": "css-x7i5zk-MuiButton-root-MuiLoadingButton-root",
                                                                     "classes": Object {
                                                                       "endIcon": "MuiButton-endIcon MuiButton-iconSizeLarge",
                                                                       "label": "MuiButton-label",
@@ -7674,7 +7696,7 @@ exports[`MintingPage snapshot 1`] = `
                                                                 type="submit"
                                                               >
                                                                 <button
-                                                                  className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-8hdand-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                                                                  className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-1gmsu7r-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                                                                   disabled={false}
                                                                   onBlur={[Function]}
                                                                   onContextMenu={[Function]}
@@ -7700,7 +7722,7 @@ exports[`MintingPage snapshot 1`] = `
                                                                           false,
                                                                           "Submit",
                                                                         ],
-                                                                        "className": "css-1g64sds-MuiLoadingButton-root",
+                                                                        "className": "css-1je27za-MuiLoadingButton-root",
                                                                         "classes": Object {
                                                                           "endIcon": "",
                                                                           "loadingIndicator": "MuiLoadingButton-loadingIndicator",
