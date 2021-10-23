@@ -42,6 +42,12 @@ const buttonsWrapperStyle = {
   display: "flex",
   gap: "10px",
 };
+const loadingButtonStyle = {
+  "&.Mui-disabled": {
+    bgcolor: "secondary.main",
+    color: "white",
+  },
+};
 
 const priceInputProps = (selectedNet: NetworkT) => ({
   inputProps: { min: "0", step: "any" },
@@ -57,15 +63,15 @@ const MintingForm = (): JSX.Element => {
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
 
   const startLoading = (message = "Loading...") => {
     setLoadingMessage(message);
-    setLoading(true);
+    setIsLoading(true);
   };
   const stopLoading = () => {
-    setLoading(false);
+    setIsLoading(false);
     setLoadingMessage("");
   };
 
@@ -117,14 +123,19 @@ const MintingForm = (): JSX.Element => {
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log(state);
-    startLoading("uploading");
-    const UPLOADING_DURATION = 5000;
-    setTimeout(() => setLoadingMessage("Minting NFT"), UPLOADING_DURATION);
-    const MINTING_DURATION = 5000;
+    startLoading("Uploading...");
+    const UPLOADING_DURATION = 3000;
+    setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
+    const SAVING_DURATION = 3000;
+    setTimeout(
+      () => setLoadingMessage("Deploying..."),
+      UPLOADING_DURATION + SAVING_DURATION
+    );
+    const DEPLOYING_DURATION = 3000;
     setTimeout(() => {
       stopLoading();
       showFormAlert("success", "Minting Successful");
-    }, UPLOADING_DURATION + MINTING_DURATION);
+    }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
   };
 
   const alertBox = (
@@ -155,19 +166,20 @@ const MintingForm = (): JSX.Element => {
         size="large"
         variant="contained"
         type="reset"
-        disabled={loading}
+        disabled={isLoading}
         onClick={handleStateReset}>
         Reset
       </Button>
       <LoadingButton
-        loading={loading}
+        sx={loadingButtonStyle}
+        loading={isLoading}
         loadingPosition="end"
         type="submit"
         endIcon={<DoneIcon />}
         color="success"
         size="large"
         variant="contained">
-        {loading ? loadingMessage : "Submit"}
+        {isLoading ? loadingMessage : "Submit"}
       </LoadingButton>
     </Box>
   );
