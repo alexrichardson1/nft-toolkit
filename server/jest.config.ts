@@ -1,7 +1,7 @@
-// eslint-disable-next-line tsdoc/syntax
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-// eslint-disable-next-line no-undef
-module.exports = {
+import type { Config } from "@jest/types";
+
+// Sync object
+const config: Config.InitialOptions = {
   preset: "ts-jest",
   testEnvironment: "node",
   modulePathIgnorePatterns: ["build"],
@@ -14,3 +14,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
