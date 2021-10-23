@@ -115,24 +115,24 @@ exports[`Input snapshot 1`] = `
             "main": "#00bcd4",
           },
           "secondary": Object {
-            "100": "#ffccbc",
-            "200": "#ffab91",
-            "300": "#ff8a65",
-            "400": "#ff7043",
-            "50": "#fbe9e7",
-            "500": "#ff5722",
-            "600": "#f4511e",
-            "700": "#e64a19",
-            "800": "#d84315",
-            "900": "#bf360c",
-            "A100": "#ff9e80",
-            "A200": "#ff6e40",
-            "A400": "#ff3d00",
-            "A700": "#dd2c00",
+            "100": "#f8bbd0",
+            "200": "#f48fb1",
+            "300": "#f06292",
+            "400": "#ec407a",
+            "50": "#fce4ec",
+            "500": "#e91e63",
+            "600": "#d81b60",
+            "700": "#c2185b",
+            "800": "#ad1457",
+            "900": "#880e4f",
+            "A100": "#ff80ab",
+            "A200": "#ff4081",
+            "A400": "#f50057",
+            "A700": "#c51162",
             "contrastText": "#fff",
-            "dark": "#dd2c00",
-            "light": "#ff6e40",
-            "main": "#ff3d00",
+            "dark": "#c51162",
+            "light": "#ff4081",
+            "main": "#f50057",
           },
           "success": Object {
             "contrastText": "#fff",
@@ -432,24 +432,24 @@ exports[`Input snapshot 1`] = `
               "main": "#00bcd4",
             },
             "secondary": Object {
-              "100": "#ffccbc",
-              "200": "#ffab91",
-              "300": "#ff8a65",
-              "400": "#ff7043",
-              "50": "#fbe9e7",
-              "500": "#ff5722",
-              "600": "#f4511e",
-              "700": "#e64a19",
-              "800": "#d84315",
-              "900": "#bf360c",
-              "A100": "#ff9e80",
-              "A200": "#ff6e40",
-              "A400": "#ff3d00",
-              "A700": "#dd2c00",
+              "100": "#f8bbd0",
+              "200": "#f48fb1",
+              "300": "#f06292",
+              "400": "#ec407a",
+              "50": "#fce4ec",
+              "500": "#e91e63",
+              "600": "#d81b60",
+              "700": "#c2185b",
+              "800": "#ad1457",
+              "900": "#880e4f",
+              "A100": "#ff80ab",
+              "A200": "#ff4081",
+              "A400": "#f50057",
+              "A700": "#c51162",
               "contrastText": "#fff",
-              "dark": "#dd2c00",
-              "light": "#ff6e40",
-              "main": "#ff3d00",
+              "dark": "#c51162",
+              "light": "#ff4081",
+              "main": "#f50057",
             },
             "success": Object {
               "contrastText": "#fff",
@@ -678,14 +678,15 @@ exports[`Input snapshot 1`] = `
                             <TransactionProvider>
                               <Input
                                 label="test"
+                                onChange={[Function]}
                                 placeholder="This is a test"
                                 value="test"
                               >
                                 <ForwardRef(TextField)
                                   fullWidth={true}
                                   label="test"
+                                  onChange={[Function]}
                                   placeholder="This is a test"
-                                  required={true}
                                   value="test"
                                   variant="outlined"
                                 >
@@ -706,9 +707,9 @@ exports[`Input snapshot 1`] = `
                                         "label": "test",
                                         "multiline": false,
                                         "name": undefined,
-                                        "onChange": undefined,
+                                        "onChange": [Function],
                                         "placeholder": "This is a test",
-                                        "required": true,
+                                        "required": false,
                                         "rows": undefined,
                                         "select": false,
                                         "sx": undefined,
@@ -717,7 +718,7 @@ exports[`Input snapshot 1`] = `
                                         "variant": "outlined",
                                       }
                                     }
-                                    required={true}
+                                    required={false}
                                     variant="outlined"
                                   >
                                     <ForwardRef(FormControl)
@@ -726,7 +727,7 @@ exports[`Input snapshot 1`] = `
                                       disabled={false}
                                       error={false}
                                       fullWidth={true}
-                                      required={true}
+                                      required={false}
                                       variant="outlined"
                                     >
                                       <MuiFormControlRoot
@@ -744,10 +745,10 @@ exports[`Input snapshot 1`] = `
                                                 label={
                                                   <React.Fragment>
                                                     test
-                                                     *
                                                   </React.Fragment>
                                                 }
                                                 multiline={false}
+                                                onChange={[Function]}
                                                 placeholder="This is a test"
                                                 value="test"
                                               />,
@@ -761,7 +762,7 @@ exports[`Input snapshot 1`] = `
                                             "fullWidth": true,
                                             "hiddenLabel": false,
                                             "margin": "none",
-                                            "required": true,
+                                            "required": false,
                                             "size": "medium",
                                             "variant": "outlined",
                                           }
@@ -774,7 +775,7 @@ exports[`Input snapshot 1`] = `
                                             <MuiInputLabelRoot
                                               classes={
                                                 Object {
-                                                  "asterisk": "MuiInputLabel-asterisk",
+                                                  "asterisk": "",
                                                   "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                                 }
                                               }
@@ -797,14 +798,14 @@ exports[`Input snapshot 1`] = `
                                                     "onFilled": [Function],
                                                     "onFocus": [Function],
                                                     "registerEffect": [Function],
-                                                    "required": true,
+                                                    "required": false,
                                                     "setAdornedStart": [Function],
                                                     "size": "medium",
                                                     "variant": "outlined",
                                                   },
                                                   "htmlFor": undefined,
                                                   "id": undefined,
-                                                  "required": true,
+                                                  "required": false,
                                                   "shrink": true,
                                                   "size": "medium",
                                                   "variant": "outlined",
@@ -815,7 +816,7 @@ exports[`Input snapshot 1`] = `
                                                 className="css-1bzvmy4-MuiInputLabel-root"
                                                 classes={
                                                   Object {
-                                                    "asterisk": "MuiInputLabel-asterisk",
+                                                    "asterisk": "",
                                                     "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                                   }
                                                 }
@@ -823,10 +824,10 @@ exports[`Input snapshot 1`] = `
                                               >
                                                 <MuiFormLabelRoot
                                                   as="label"
-                                                  className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-1bzvmy4-MuiInputLabel-root"
+                                                  className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1bzvmy4-MuiInputLabel-root"
                                                   classes={
                                                     Object {
-                                                      "asterisk": "MuiInputLabel-asterisk",
+                                                      "asterisk": "",
                                                       "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                                     }
                                                   }
@@ -836,7 +837,7 @@ exports[`Input snapshot 1`] = `
                                                       "children": "test",
                                                       "className": "css-1bzvmy4-MuiInputLabel-root",
                                                       "classes": Object {
-                                                        "asterisk": "MuiInputLabel-asterisk",
+                                                        "asterisk": "",
                                                         "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                                       },
                                                       "color": "primary",
@@ -848,47 +849,15 @@ exports[`Input snapshot 1`] = `
                                                       "focused": false,
                                                       "htmlFor": undefined,
                                                       "id": undefined,
-                                                      "required": true,
+                                                      "required": false,
                                                     }
                                                   }
                                                 >
                                                   <label
-                                                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
+                                                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
                                                     data-shrink={true}
                                                   >
                                                     test
-                                                    <MuiFormLabelAsterisk
-                                                      aria-hidden={true}
-                                                      className="MuiInputLabel-asterisk MuiFormLabel-asterisk"
-                                                      ownerState={
-                                                        Object {
-                                                          "children": "test",
-                                                          "className": "css-1bzvmy4-MuiInputLabel-root",
-                                                          "classes": Object {
-                                                            "asterisk": "MuiInputLabel-asterisk",
-                                                            "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
-                                                          },
-                                                          "color": "primary",
-                                                          "component": "label",
-                                                          "data-shrink": true,
-                                                          "disabled": false,
-                                                          "error": false,
-                                                          "filled": true,
-                                                          "focused": false,
-                                                          "htmlFor": undefined,
-                                                          "id": undefined,
-                                                          "required": true,
-                                                        }
-                                                      }
-                                                    >
-                                                      <span
-                                                        aria-hidden={true}
-                                                        className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
-                                                      >
-                                                         
-                                                        *
-                                                      </span>
-                                                    </MuiFormLabelAsterisk>
                                                   </label>
                                                 </MuiFormLabelRoot>
                                               </ForwardRef(FormLabel)>
@@ -900,10 +869,10 @@ exports[`Input snapshot 1`] = `
                                             label={
                                               <React.Fragment>
                                                 test
-                                                 *
                                               </React.Fragment>
                                             }
                                             multiline={false}
+                                            onChange={[Function]}
                                             placeholder="This is a test"
                                             value="test"
                                           >
@@ -963,6 +932,7 @@ exports[`Input snapshot 1`] = `
                                               fullWidth={true}
                                               inputComponent="input"
                                               multiline={false}
+                                              onChange={[Function]}
                                               placeholder="This is a test"
                                               renderSuffix={[Function]}
                                               type="text"
@@ -1386,7 +1356,7 @@ exports[`Input snapshot 1`] = `
                                                       "onFilled": [Function],
                                                       "onFocus": [Function],
                                                       "registerEffect": [Function],
-                                                      "required": true,
+                                                      "required": false,
                                                       "setAdornedStart": [Function],
                                                       "size": "medium",
                                                       "variant": "outlined",
@@ -1402,7 +1372,7 @@ exports[`Input snapshot 1`] = `
                                                     "multiline": false,
                                                     "name": undefined,
                                                     "onBlur": undefined,
-                                                    "onChange": undefined,
+                                                    "onChange": [Function],
                                                     "onFocus": undefined,
                                                     "placeholder": "This is a test",
                                                     "renderSuffix": [Function],
@@ -1525,24 +1495,24 @@ exports[`Input snapshot 1`] = `
                                                         "main": "#00bcd4",
                                                       },
                                                       "secondary": Object {
-                                                        "100": "#ffccbc",
-                                                        "200": "#ffab91",
-                                                        "300": "#ff8a65",
-                                                        "400": "#ff7043",
-                                                        "50": "#fbe9e7",
-                                                        "500": "#ff5722",
-                                                        "600": "#f4511e",
-                                                        "700": "#e64a19",
-                                                        "800": "#d84315",
-                                                        "900": "#bf360c",
-                                                        "A100": "#ff9e80",
-                                                        "A200": "#ff6e40",
-                                                        "A400": "#ff3d00",
-                                                        "A700": "#dd2c00",
+                                                        "100": "#f8bbd0",
+                                                        "200": "#f48fb1",
+                                                        "300": "#f06292",
+                                                        "400": "#ec407a",
+                                                        "50": "#fce4ec",
+                                                        "500": "#e91e63",
+                                                        "600": "#d81b60",
+                                                        "700": "#c2185b",
+                                                        "800": "#ad1457",
+                                                        "900": "#880e4f",
+                                                        "A100": "#ff80ab",
+                                                        "A200": "#ff4081",
+                                                        "A400": "#f50057",
+                                                        "A700": "#c51162",
                                                         "contrastText": "#fff",
-                                                        "dark": "#dd2c00",
-                                                        "light": "#ff6e40",
-                                                        "main": "#ff3d00",
+                                                        "dark": "#c51162",
+                                                        "light": "#ff4081",
+                                                        "main": "#f50057",
                                                       },
                                                       "success": Object {
                                                         "contrastText": "#fff",
@@ -1815,7 +1785,7 @@ exports[`Input snapshot 1`] = `
                                                           "onFilled": [Function],
                                                           "onFocus": [Function],
                                                           "registerEffect": [Function],
-                                                          "required": true,
+                                                          "required": false,
                                                           "setAdornedStart": [Function],
                                                           "size": "medium",
                                                           "variant": "outlined",
@@ -1831,7 +1801,7 @@ exports[`Input snapshot 1`] = `
                                                         "multiline": false,
                                                         "name": undefined,
                                                         "onBlur": undefined,
-                                                        "onChange": undefined,
+                                                        "onChange": [Function],
                                                         "onFocus": undefined,
                                                         "placeholder": "This is a test",
                                                         "renderSuffix": [Function],
@@ -1843,7 +1813,7 @@ exports[`Input snapshot 1`] = `
                                                       }
                                                     }
                                                     placeholder="This is a test"
-                                                    required={true}
+                                                    required={false}
                                                     theme={
                                                       Object {
                                                         "breakpoints": Object {
@@ -1956,24 +1926,24 @@ exports[`Input snapshot 1`] = `
                                                             "main": "#00bcd4",
                                                           },
                                                           "secondary": Object {
-                                                            "100": "#ffccbc",
-                                                            "200": "#ffab91",
-                                                            "300": "#ff8a65",
-                                                            "400": "#ff7043",
-                                                            "50": "#fbe9e7",
-                                                            "500": "#ff5722",
-                                                            "600": "#f4511e",
-                                                            "700": "#e64a19",
-                                                            "800": "#d84315",
-                                                            "900": "#bf360c",
-                                                            "A100": "#ff9e80",
-                                                            "A200": "#ff6e40",
-                                                            "A400": "#ff3d00",
-                                                            "A700": "#dd2c00",
+                                                            "100": "#f8bbd0",
+                                                            "200": "#f48fb1",
+                                                            "300": "#f06292",
+                                                            "400": "#ec407a",
+                                                            "50": "#fce4ec",
+                                                            "500": "#e91e63",
+                                                            "600": "#d81b60",
+                                                            "700": "#c2185b",
+                                                            "800": "#ad1457",
+                                                            "900": "#880e4f",
+                                                            "A100": "#ff80ab",
+                                                            "A200": "#ff4081",
+                                                            "A400": "#f50057",
+                                                            "A700": "#c51162",
                                                             "contrastText": "#fff",
-                                                            "dark": "#dd2c00",
-                                                            "light": "#ff6e40",
-                                                            "main": "#ff3d00",
+                                                            "dark": "#c51162",
+                                                            "light": "#ff4081",
+                                                            "main": "#f50057",
                                                           },
                                                           "success": Object {
                                                             "contrastText": "#fff",
@@ -2172,7 +2142,7 @@ exports[`Input snapshot 1`] = `
                                                       onChange={[Function]}
                                                       onFocus={[Function]}
                                                       placeholder="This is a test"
-                                                      required={true}
+                                                      required={false}
                                                       type="text"
                                                       value="test"
                                                     />
@@ -2182,7 +2152,6 @@ exports[`Input snapshot 1`] = `
                                                     label={
                                                       <React.Fragment>
                                                         test
-                                                         *
                                                       </React.Fragment>
                                                     }
                                                     notched={true}
@@ -2192,7 +2161,6 @@ exports[`Input snapshot 1`] = `
                                                       label={
                                                         <React.Fragment>
                                                           test
-                                                           *
                                                         </React.Fragment>
                                                       }
                                                       notched={true}
@@ -2205,7 +2173,6 @@ exports[`Input snapshot 1`] = `
                                                             "className": "MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline",
                                                             "label": <React.Fragment>
                                                               test
-                                                               *
                                                             </React.Fragment>,
                                                             "notched": true,
                                                           }
@@ -2221,7 +2188,6 @@ exports[`Input snapshot 1`] = `
                                                                 "className": "MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline",
                                                                 "label": <React.Fragment>
                                                                   test
-                                                                   *
                                                                 </React.Fragment>,
                                                                 "notched": true,
                                                               }
@@ -2232,7 +2198,6 @@ exports[`Input snapshot 1`] = `
                                                             >
                                                               <span>
                                                                 test
-                                                                 *
                                                               </span>
                                                             </legend>
                                                           </Styled(legend)>

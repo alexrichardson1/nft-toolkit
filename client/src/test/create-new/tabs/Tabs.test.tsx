@@ -1,5 +1,5 @@
 import { DAppProvider } from "@usedapp/core";
-import Tabs from "components/form/tabs/Tabs";
+import Tabs from "components/create-new/tabs/Tabs";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
