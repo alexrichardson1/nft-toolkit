@@ -8,12 +8,8 @@ import {
 
 const collectionRoutes = router();
 
-collectionRoutes.post(
-  "/",
-  uploadImagesLocal,
-  uploadImagesS3,
-  saveCollectionToDB,
-  deployContracts
-);
+collectionRoutes.post("/save", saveCollectionToDB, deployContracts);
+
+collectionRoutes.post("/images", uploadImagesLocal, uploadImagesS3);
 
 export default collectionRoutes;
