@@ -1,17 +1,21 @@
 import { DAppProvider } from "@usedapp/core";
-import TabPanel from "components/create-new/tabs/TabPanel";
+import Tabs from "components/minting-form/tabs/Tabs";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
 
-test("TabPanel snapshot", () => {
+test("Tabs snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <TabPanel index={0} value={0} />
+          <Tabs
+            imgObjs={[]}
+            handleImageDelete={() => console.log("Image deleted during test")}
+            handleNameChange={() => console.log("Name changed during test")}
+          />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>

@@ -13071,7 +13071,7 @@ exports[`App snapshot 1`] = `
                                                     exact={true}
                                                     path="/"
                                                   >
-                                                    <CreateNewPage
+                                                    <MintingForm
                                                       history={
                                                         Object {
                                                           "action": "POP",
@@ -20443,7 +20443,7 @@ exports[`App snapshot 1`] = `
                                                           </form>
                                                         </MuiStackRoot>
                                                       </ForwardRef(Stack)>
-                                                    </CreateNewPage>
+                                                    </MintingForm>
                                                   </Route>
                                                 </div>
                                               </MuiContainerRoot>
