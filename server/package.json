@@ -40,6 +40,24 @@
     "typechain": "^5.2.0",
     "typescript": "^4.4.4"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "modulePathIgnorePatterns": [
+      "build"
+    ],
+    "coveragePathIgnorePatterns": [
+      "smart-contracts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.37.0",
     "cors": "^2.8.5",
