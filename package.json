@@ -25,6 +25,7 @@
     "solium": "^1.2.5",
     "set-value": "^4.0.1",
     "glob-parent": "^5.1.2",
+    "diff": "^3.5.0",
     "tsdoc": "^0.0.4",
     "typedoc": "^0.22.5"
   }
