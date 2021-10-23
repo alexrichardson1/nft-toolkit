@@ -1,17 +1,17 @@
 import { DAppProvider } from "@usedapp/core";
-import MintingForm from "components/minting-form/MintingForm";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 import EnzymeToJson from "enzyme-to-json";
+import MintingPage from "pages/CreateCollectionPage";
 
-test("MintingForm snapshot", () => {
+test("MintingPage snapshot", () => {
   const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <DAppProvider config={{}}>
-          <MintingForm />
+          <MintingPage />
         </DAppProvider>
       </NetworkProvider>
     </ThemeProvider>
