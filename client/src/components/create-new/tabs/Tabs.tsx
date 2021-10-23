@@ -4,10 +4,12 @@ import IconButton from "@mui/material/IconButton";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Input from "components/common/Input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DEFAULT_MUI_DARK } from "utils/constants";
 import { getComponentByMode } from "utils/getComponentByMode";
 import TabPanel from "./TabPanel";
+
+const INITIAL_VALUE = 0;
 
 const tabsStyle = { borderRight: 1, borderColor: "divider" };
 const nameInputStyle = { flexGrow: 1 };
@@ -38,7 +40,16 @@ interface PropsT {
 }
 
 const VerticalTabs = (props: PropsT): JSX.Element => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(INITIAL_VALUE);
+
+  const NUMBER_OF_IMAGES = props.imgObjs.length;
+
+  useEffect(() => {
+    console.log(value);
+    if (value >= NUMBER_OF_IMAGES) {
+      setValue(NUMBER_OF_IMAGES - 1);
+    }
+  }, [NUMBER_OF_IMAGES]);
 
   return (
     <Box sx={vTabsContainerStyle}>
@@ -47,10 +58,8 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
         variant="scrollable"
         allowScrollButtonsMobile
         selectionFollowsFocus
-        value={value}
-        onChange={(_e, newValue) =>
-          setValue(newValue < props.imgObjs.length ? newValue : 0)
-        }
+        value={value < NUMBER_OF_IMAGES ? value : NUMBER_OF_IMAGES - 1}
+        onChange={(_e, newValue) => setValue(newValue)}
         TabScrollButtonProps={{
           sx: {
             color: (theme) =>
