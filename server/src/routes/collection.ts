@@ -4,10 +4,18 @@ import {
   saveCollectionToDB,
   uploadImages,
 } from "../controllers/collection";
+import { errorHandler } from "../controllers/common";
+import { collectionValidator } from "../validators/collection";
 
 const collectionRoutes = router();
 
-collectionRoutes.post("/save", saveCollectionToDB, deployContracts);
+collectionRoutes.post(
+  "/save",
+  collectionValidator(),
+  errorHandler,
+  saveCollectionToDB,
+  deployContracts
+);
 
 collectionRoutes.post("/images", uploadImages.any());
 
