@@ -1,6 +1,6 @@
 import { S3 } from "aws-sdk";
 import { BigNumber, ethers } from "ethers";
-import { NextFunction, Request, RequestHandler, Response } from "express";
+import { RequestHandler } from "express";
 import multer from "multer";
 import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
@@ -25,7 +25,7 @@ export const uploadImages = multer({
   }),
 });
 
-interface TokenT {
+export interface TokenT {
   name: string;
   description: string;
   image: string;
@@ -39,28 +39,15 @@ interface CollectionT {
   address?: string;
   tokens: TokenT[];
 }
+
 type address = `0x${string}`;
 interface UserT {
   fromAddress: address;
 }
 
-const isInvalidAddress = (addr: address) => {
-  const EVM_ADDRESS_SIZE = 42;
-  // Alphanumeric characters only valid for address
-  const reg = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
-  return addr.length !== EVM_ADDRESS_SIZE || reg.test(addr);
-};
-
-export const saveCollectionToDB: RequestHandler = async (
-  req: Request,
-  _res: Response,
-  next: NextFunction
-) => {
+export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT & UserT = req.body;
   const { fromAddress } = userCollection;
-  if (isInvalidAddress(fromAddress)) {
-    next(new Error("Invalid from address"));
-  }
   userCollection.tokens.map((token) => new Token(token));
   const collection = new Collection(userCollection);
   let user = await User.findOne({
@@ -78,11 +65,7 @@ export const saveCollectionToDB: RequestHandler = async (
   user.save().catch((err: Error) => next(err));
 };
 
-export const deployContracts: RequestHandler = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const deployContracts: RequestHandler = (req, res, next) => {
   const { name, symbol, tokens, price, fromAddress }: CollectionT & UserT =
     req.body;
   const signer = new ethers.VoidSigner(fromAddress);
