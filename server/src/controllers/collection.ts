@@ -1,5 +1,5 @@
 import { S3 } from "aws-sdk";
-import { ethers } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { NextFunction, Request, RequestHandler, Response } from "express";
 import multer from "multer";
 import multerS3 from "multer-s3";
@@ -35,14 +35,21 @@ interface CollectionT {
   name: string;
   symbol: string;
   description: string;
-  price: number;
+  price: string;
   address?: string;
   tokens: TokenT[];
 }
-
+type address = `0x${string}`;
 interface UserT {
-  fromAddress: string;
+  fromAddress: address;
 }
+
+const isInvalidAddress = (addr: address) => {
+  const EVM_ADDRESS_SIZE = 42;
+  // Alphanumeric characters only valid for address
+  const reg = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
+  return addr.length !== EVM_ADDRESS_SIZE || reg.test(addr);
+};
 
 export const saveCollectionToDB: RequestHandler = async (
   req: Request,
@@ -50,22 +57,25 @@ export const saveCollectionToDB: RequestHandler = async (
   next: NextFunction
 ) => {
   const userCollection: CollectionT & UserT = req.body;
+  const { fromAddress } = userCollection;
+  if (isInvalidAddress(fromAddress)) {
+    next(new Error("Invalid from address"));
+  }
   userCollection.tokens.map((token) => new Token(token));
   const collection = new Collection(userCollection);
   let user = await User.findOne({
-    fromAddress: userCollection.fromAddress,
+    fromAddress: fromAddress,
   }).exec();
+
   if (user) {
     user.collections.push(collection);
   } else {
     user = new User({
-      fromAddress: userCollection.fromAddress,
+      fromAddress: fromAddress,
       collections: [collection],
     });
   }
-  await user.save();
-  // TODO: Add error handling
-  next();
+  user.save().catch((err: Error) => next(err));
 };
 
 export const deployContracts: RequestHandler = (
@@ -73,16 +83,17 @@ export const deployContracts: RequestHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  const collection: CollectionT & UserT = req.body;
-  const signer = new ethers.VoidSigner(collection.fromAddress);
+  const { name, symbol, tokens, price, fromAddress }: CollectionT & UserT =
+    req.body;
+  const signer = new ethers.VoidSigner(fromAddress);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
-    collection.name,
-    collection.symbol,
+    name,
+    symbol,
     // TODO: baseURI link
     "",
-    collection.tokens.length,
-    collection.price
+    tokens.length,
+    BigNumber.from(price)
   );
   res.json({ transaction: tx });
   next();
