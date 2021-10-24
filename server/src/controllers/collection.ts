@@ -1,4 +1,5 @@
 import { S3 } from "aws-sdk";
+import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
 import { RequestHandler } from "express";
 import multer from "multer";
@@ -6,6 +7,8 @@ import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 import { Collection, Token } from "../models/collection";
 import { User } from "../models/user";
+
+dotenv.config();
 
 const s3 = new S3({
   credentials: {
@@ -20,7 +23,7 @@ export const uploadImages = multer({
     bucket: "nft-toolkit-collections",
     acl: "public-read",
     key: function (_req, file, cbKey) {
-      cbKey(null, `${file.originalname}`);
+      cbKey(null, `${file.fieldname}/images/${file.originalname}`);
     },
   }),
 });
