@@ -1,14 +1,29 @@
-import { PutObjectCommand, S3 } from "@aws-sdk/client-s3";
+import { S3 } from "aws-sdk";
 import { ethers } from "ethers";
 import { NextFunction, Request, RequestHandler, Response } from "express";
-import { createReadStream } from "fs";
 import multer from "multer";
-import path from "path";
+import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 import { Collection, Token } from "../models/collection";
 import { User } from "../models/user";
 
-export const uploadImagesLocal = multer({ dest: "uploads/" }).any();
+const s3 = new S3({
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
+});
+
+export const uploadImages = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "nft-toolkit-collections",
+    acl: "public-read",
+    key: function (_req, file, cbKey) {
+      cbKey(null, `${file.originalname}`);
+    },
+  }),
+});
 
 interface TokenT {
   name: string;
@@ -24,46 +39,6 @@ interface CollectionT {
   address?: string;
   tokens: TokenT[];
 }
-
-const s3 = new S3({
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  },
-});
-
-const uploadToBucket = (collection: string, filePath: string, id: number) => {
-  const fileStream = createReadStream(filePath);
-  const imageKey = `${collection}/${id}${path.extname(filePath)}`;
-  const uploadParams = {
-    Bucket: "nft-toolkit-collections",
-    // Save the image to the collection folder using id to name it.
-    Key: imageKey,
-    Body: fileStream,
-    ACL: "public-read",
-  };
-  s3.send(new PutObjectCommand(uploadParams));
-  const imageURL = `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${imageKey}`;
-  return imageURL;
-};
-
-export const uploadImagesS3: RequestHandler = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  const collection: CollectionT = req.body;
-  const { files } = req;
-  if (!files) {
-    return next(new Error("File array undefined"));
-  }
-  const fileArray = files as Express.Multer.File[];
-  const imageURLs = fileArray.map((file, id) =>
-    uploadToBucket(collection.name, file.path, id + 1)
-  );
-  res.json({ images: imageURLs });
-  return next();
-};
 
 interface UserT {
   fromAddress: string;
