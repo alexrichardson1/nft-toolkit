@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import collectionRoutes from "./routes/collection";
+import metadataRoutes from "./routes/metadata";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(
 
 // Routes to handle requests
 app.use("/collection", collectionRoutes);
+app.use("/metadata", metadataRoutes);
 
 // define a route handler for the default home page
 app.get("/", (_req, res) => {
