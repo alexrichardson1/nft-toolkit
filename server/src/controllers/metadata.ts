@@ -7,7 +7,6 @@ export const getTokenMetadata: RequestHandler = (req, res, next) => {
     return next(new Error("Invalid params"));
   }
   const tokenNumber = parseInt(tokenId, 10);
-  console.log(fromAddress, collectionName, tokenId);
   User.findOne({ fromAddress: fromAddress, collectionName: collectionName })
     .exec()
     .then((user) => {
@@ -23,6 +22,9 @@ export const getTokenMetadata: RequestHandler = (req, res, next) => {
       const token = collection.tokens[tokenNumber - 1];
       res.json(token);
       return next();
+    })
+    .catch((err) => {
+      return next(err);
     });
   return next();
 };
