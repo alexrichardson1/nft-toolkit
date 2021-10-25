@@ -7,6 +7,7 @@ import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 import { Collection, Token } from "../models/collection";
 import { User } from "../models/user";
+import db from "./database";
 
 dotenv.config();
 
@@ -26,7 +27,7 @@ export const uploadImages = multer({
       cbKey(null, `${file.fieldname}/images/${file.originalname}`);
     },
   }),
-});
+}).any();
 
 export interface TokenT {
   name: string;
@@ -53,6 +54,7 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const { fromAddress } = userCollection;
   userCollection.tokens.map((token) => new Token(token));
   const collection = new Collection(userCollection);
+  db.connect();
   let user = await User.findOne({
     fromAddress: fromAddress,
   }).exec();
@@ -65,7 +67,11 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
       collections: [collection],
     });
   }
-  user.save().catch((err: Error) => next(err));
+  user.save().catch((err: Error) => {
+    db.close();
+    next(err);
+  });
+  db.close();
 };
 
 export const deployContracts: RequestHandler = (req, res, next) => {
@@ -76,8 +82,7 @@ export const deployContracts: RequestHandler = (req, res, next) => {
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    // TODO: baseURI link
-    "",
+    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/${fromAddress}/${name}/`,
     tokens.length,
     BigNumber.from(price)
   );
