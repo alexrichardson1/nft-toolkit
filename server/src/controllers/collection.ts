@@ -5,7 +5,7 @@ import { RequestHandler } from "express";
 import multer from "multer";
 import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
-import { Collection, Token } from "../models/collection";
+import { Collection, CollectionT, Token } from "../models/collection";
 import { User } from "../models/user";
 import db from "./database";
 
@@ -28,21 +28,6 @@ export const uploadImages = multer({
     },
   }),
 }).any();
-
-export interface TokenT {
-  name: string;
-  description: string;
-  image: string;
-}
-
-interface CollectionT {
-  name: string;
-  symbol: string;
-  description: string;
-  price: string;
-  address?: string;
-  tokens: TokenT[];
-}
 
 type address = `0x${string}`;
 interface UserT {

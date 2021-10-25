@@ -1,5 +1,5 @@
-import { TokenT } from "controllers/collection";
 import { check, CustomValidator, ValidationChain } from "express-validator";
+import { TokenT } from "../models/collection";
 
 const isValidTokens: CustomValidator = (value: TokenT[]) => {
   return value.length > 0;
