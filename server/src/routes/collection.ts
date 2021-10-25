@@ -17,6 +17,6 @@ collectionRoutes.post(
   deployContracts
 );
 
-collectionRoutes.post("/images", uploadImages.any());
+collectionRoutes.post("/images", uploadImages);
 
 export default collectionRoutes;
