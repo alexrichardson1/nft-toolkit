@@ -35,6 +35,7 @@ def co_authors(last_line):
 
 def follows_convention(first_line):
     """Checks if `first_line` follows commit convention"""
+    first_line = first_line.strip()
     # located in the commit template
     types = ["feat", "fix", "style", "refactor",
              "perf", "test", "docs", "chore", "build", "ci"]
@@ -62,6 +63,7 @@ def update_commit_msg(file):
         lines = fp.readlines()
         if not lines:
             exit_failure("empty commit message.")
+        print(lines[0].lstrip())
         follows_convention(lines[0].lstrip())
         new_commit_message_append = new_commit_message.append
         for line in lines:
