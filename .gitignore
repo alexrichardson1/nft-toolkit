@@ -257,3 +257,5 @@ cython_debug/
 
 # Local db storage
 postgres-data
+
+*.idea
