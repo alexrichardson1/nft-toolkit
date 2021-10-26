@@ -154,6 +154,12 @@ describe("Generate Art", () => {
     expect(collection[1]).not.toMatchObject(expected);
   });
 
+  test("Trying to make more NFTs than there are possible combinations of features throws an error", () => {
+    testData.quantity = 100;
+
+    expect(() => generate(testData)).toThrowError();
+  });
+
   // test("TODO", () => {
   //   const vals = Array.from({ length: 30 }, (_, i) => i + 1);
   //   let i = 0;
