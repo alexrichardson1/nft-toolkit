@@ -16,7 +16,7 @@ import SnackbarContext from "context/snackbar/SnackbarContext";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
 import { NAVBAR_HEIGHT } from "utils/constants";
-import { getComponentByMode } from "utils/getComponentByMode";
+import getComponentByMode from "utils/getComponentByMode";
 import MobileMenu from "./common/MobileMenu";
 
 const MENU_ANCHOR_ORIGIN: PopoverOrigin = {

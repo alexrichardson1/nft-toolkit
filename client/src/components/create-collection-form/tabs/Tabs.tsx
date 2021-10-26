@@ -6,7 +6,7 @@ import Tabs from "@mui/material/Tabs";
 import Input from "components/common/Input";
 import { useEffect, useState } from "react";
 import { DEFAULT_MUI_DARK } from "utils/constants";
-import { getComponentByMode } from "utils/getComponentByMode";
+import getComponentByMode from "utils/getComponentByMode";
 import TabPanel from "./TabPanel";
 
 const INITIAL_VALUE = 0;
