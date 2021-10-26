@@ -46,16 +46,30 @@ function chooseLayerImage(images: ImageI[]): ImageI {
  */
 function generate(collection: GenCollectionI): ImageI[][] {
   const generatedCollection: ImageI[][] = [];
+  const generatedHashes = new Set();
+
   for (let i = 0; i < collection.quantity; i++) {
     const chosenLayerImages: ImageI[] = [];
+    let hash = "";
     let layerIndex = 0;
     collection.layers.forEach((layer) => {
       const includeLayer = generateRandomPercentage() <= layer.rarity;
       if (includeLayer) {
-        chosenLayerImages[layerIndex++] = chooseLayerImage(layer.images);
+        const chosenImage: ImageI = chooseLayerImage(layer.images);
+
+        hash += `${layer.name}/${chosenImage.name},`;
+        chosenLayerImages[layerIndex++] = chosenImage;
       }
     });
+
+    if (generatedHashes.has(hash)) {
+      // Repeat loop
+      i--;
+      continue;
+    }
+
     generatedCollection[i] = chosenLayerImages;
+    generatedHashes.add(hash);
   }
   return generatedCollection;
 }
