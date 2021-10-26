@@ -45,6 +45,17 @@ function chooseLayerImage(images: ImageI[]): ImageI {
  * @param collection - Collection of picture layers
  */
 function generate(collection: GenCollectionI): ImageI[][] {
+  let numPossibleCombinations = 1;
+  collection.layers.forEach((layer) => {
+    numPossibleCombinations *= layer.images.length;
+  });
+
+  if (numPossibleCombinations < collection.quantity) {
+    throw new Error(
+      "There are less possible combinations than quantity requested"
+    );
+  }
+
   const generatedCollection: ImageI[][] = [];
   const generatedHashes = new Set();
 
@@ -63,7 +74,7 @@ function generate(collection: GenCollectionI): ImageI[][] {
     });
 
     if (generatedHashes.has(hash)) {
-      // Repeat loop
+      // Duplicate made - repeat loop
       i--;
       continue;
     }
