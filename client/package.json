@@ -44,6 +44,9 @@
     "react-test-renderer": "^17.0.2"
   },
   "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,
