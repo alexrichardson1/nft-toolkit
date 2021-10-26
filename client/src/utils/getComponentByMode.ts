@@ -1,6 +1,6 @@
 import { PaletteMode } from "@mui/material";
 
-export const getComponentByMode = <T>(
+const getComponentByMode = <T>(
   mode: PaletteMode,
   lightComponent: T,
   darkComponent: T
@@ -10,3 +10,5 @@ export const getComponentByMode = <T>(
   }
   return darkComponent;
 };
+
+export default getComponentByMode;
