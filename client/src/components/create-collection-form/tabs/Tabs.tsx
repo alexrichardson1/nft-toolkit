@@ -34,7 +34,7 @@ const accessibilityProps = (index: number) => ({
 });
 
 interface PropsT {
-  imgObjs: ImageListT;
+  imgObjs: ImageT[];
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (e: InputEventT, id: string) => void;
 }

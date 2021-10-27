@@ -8,7 +8,7 @@ const labelStyle = (theme: Theme) => ({
   boxShadow: theme.shadows[2],
 });
 interface PropsT {
-  imgObjs: ImageListT;
+  imgObjs: ImageT[];
   handleImageDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
