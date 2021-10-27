@@ -1,6 +1,6 @@
-import getComponentByMode from "utils/getComponentByMode";
+import getComponentByMode from "../../utils/getComponentByMode";
 
-describe("test getComponentByMode", () => {
+describe("getComponentByMode", () => {
   const LIGHT_MODE = "light";
   const DARK_MODE = "dark";
 
