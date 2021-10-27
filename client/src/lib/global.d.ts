@@ -8,11 +8,11 @@ type AnchorT = null | HTMLElement;
 
 type InputEventT = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
-type ImageListT = { image: File; url: string; name: string; id: string }[];
+type ImageT = { image: File; url: string; name: string; id: string };
 interface FormStateI {
   collectionName: string;
   description: string;
-  images: ImageListT;
+  images: ImageT[];
   mintingPrice: number;
 }
 type FormActionT =
