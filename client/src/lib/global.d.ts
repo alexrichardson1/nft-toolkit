@@ -15,7 +15,7 @@ interface FormStateI {
   images: ImageListT;
   mintingPrice: number;
 }
-type FormActionIypeT =
+type FormActionT =
   | "CHANGE_NAME"
   | "CHANGE_PRICE"
   | "CHANGE_IMAGES"
@@ -33,6 +33,6 @@ interface FormActionPayloadI {
   initialState?: FormStateI;
 }
 interface FormActionI {
-  type: FormActionIypeT;
+  type: FormActionT;
   payload: FormActionPayloadI;
 }
