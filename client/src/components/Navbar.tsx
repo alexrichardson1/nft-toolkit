@@ -105,7 +105,9 @@ const Navbar = (): JSX.Element => {
         <Typography>{getAccountString()}</Typography>
       </Fab>
       <NetworkSpeedDial />
-      <Fab onClick={toggleColourMode}>{getThemeIcon()}</Fab>
+      <Fab id="theme-change-button" onClick={toggleColourMode}>
+        {getThemeIcon()}
+      </Fab>
     </Box>
   );
 
