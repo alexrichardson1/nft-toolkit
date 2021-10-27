@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar snapshot 1`] = `
+exports[`Navbar tests Navbar snapshot 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -1080,6 +1080,7 @@ exports[`Navbar snapshot 1`] = `
                                                   </ForwardRef(Fab)>
                                                   <NetworkSpeedDial />
                                                   <ForwardRef(Fab)
+                                                    id="theme-change-button"
                                                     onClick={[Function]}
                                                   >
                                                     <Memo
@@ -1207,6 +1208,7 @@ exports[`Navbar snapshot 1`] = `
                                                       </ForwardRef(Fab)>
                                                       <NetworkSpeedDial />
                                                       <ForwardRef(Fab)
+                                                        id="theme-change-button"
                                                         onClick={[Function]}
                                                       >
                                                         <Memo
@@ -1317,6 +1319,7 @@ exports[`Navbar snapshot 1`] = `
                                                             </ForwardRef(Fab)>
                                                             <NetworkSpeedDial />
                                                             <ForwardRef(Fab)
+                                                              id="theme-change-button"
                                                               onClick={[Function]}
                                                             >
                                                               <Memo
@@ -6364,6 +6367,7 @@ exports[`Navbar snapshot 1`] = `
                                                               </ForwardRef(Box)>
                                                             </NetworkSpeedDial>
                                                             <ForwardRef(Fab)
+                                                              id="theme-change-button"
                                                               onClick={[Function]}
                                                             >
                                                               <MuiFabRoot
@@ -6372,6 +6376,7 @@ exports[`Navbar snapshot 1`] = `
                                                                 disabled={false}
                                                                 focusRipple={true}
                                                                 focusVisibleClassName=""
+                                                                id="theme-change-button"
                                                                 onClick={[Function]}
                                                                 ownerState={
                                                                   Object {
@@ -6382,6 +6387,7 @@ exports[`Navbar snapshot 1`] = `
                                                                     "component": "button",
                                                                     "disableFocusRipple": false,
                                                                     "disabled": false,
+                                                                    "id": "theme-change-button",
                                                                     "onClick": [Function],
                                                                     "size": "large",
                                                                     "variant": "circular",
@@ -6394,12 +6400,14 @@ exports[`Navbar snapshot 1`] = `
                                                                   disabled={false}
                                                                   focusRipple={true}
                                                                   focusVisibleClassName=""
+                                                                  id="theme-change-button"
                                                                   onClick={[Function]}
                                                                 >
                                                                   <MuiButtonBaseRoot
                                                                     as="button"
                                                                     className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge css-xzu58u-MuiFab-root"
                                                                     disabled={false}
+                                                                    id="theme-change-button"
                                                                     onBlur={[Function]}
                                                                     onClick={[Function]}
                                                                     onContextMenu={[Function]}
@@ -6427,6 +6435,7 @@ exports[`Navbar snapshot 1`] = `
                                                                         "focusRipple": true,
                                                                         "focusVisible": false,
                                                                         "focusVisibleClassName": "",
+                                                                        "id": "theme-change-button",
                                                                         "onClick": [Function],
                                                                         "tabIndex": 0,
                                                                       }
@@ -6437,6 +6446,7 @@ exports[`Navbar snapshot 1`] = `
                                                                     <button
                                                                       className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge css-a8igs1-MuiButtonBase-root-MuiFab-root"
                                                                       disabled={false}
+                                                                      id="theme-change-button"
                                                                       onBlur={[Function]}
                                                                       onClick={[Function]}
                                                                       onContextMenu={[Function]}
