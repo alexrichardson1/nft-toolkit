@@ -1,4 +1,9 @@
-import { OutlinedInputProps, TextField, Theme } from "@mui/material";
+import {
+  InputBaseComponentProps,
+  OutlinedInputProps,
+  TextField,
+  Theme,
+} from "@mui/material";
 import { SxProps } from "@mui/system";
 
 interface InputPropsI {
@@ -15,6 +20,7 @@ interface InputPropsI {
   type?: React.HTMLInputTypeAttribute;
   sx?: SxProps<Theme>;
   defaultValue?: unknown;
+  inputProps?: InputBaseComponentProps;
 }
 
 const Input = (props: InputPropsI): JSX.Element => {
@@ -23,6 +29,7 @@ const Input = (props: InputPropsI): JSX.Element => {
       defaultValue={props.defaultValue}
       type={props.type}
       label={props.label}
+      inputProps={props.inputProps}
       InputProps={props.InputProps}
       value={props.value}
       placeholder={props.placeholder}
