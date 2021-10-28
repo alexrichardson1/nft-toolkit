@@ -31,6 +31,7 @@ describe("Test CreateCollectionForm", () => {
     const alert = tree.find("#formAlert").at(0);
     expect(alert.text().length).toEqual(0);
   });
+
   test("alert has text when reset button clicked", () => {
     const alert = tree.find("#formAlert").at(0);
     const resetButton = tree.find("#reset").at(0);

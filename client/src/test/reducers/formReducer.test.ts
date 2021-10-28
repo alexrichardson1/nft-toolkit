@@ -41,9 +41,34 @@ const TESTOBJ_IMG2 = getImageObj(
 );
 
 describe("formReducer", () => {
-  let initialState: FormStateI;
-  let payload: FormActionPayloadI;
-  let payloadUndefined: FormActionPayloadI;
+  let initialState: FormStateI = {
+    collectionName: "",
+    description: "",
+    images: [TESTOBJ_IMG0, TESTOBJ_IMG1],
+    mintingPrice: 0,
+  };
+
+  const payload: FormActionPayloadI = {
+    newName: "newCollectionName",
+    description: "newDescription",
+    images: [TESTOBJ_IMG2.image],
+    newImgObj: {
+      newImageName: "newImageName",
+      imageId: `${TESTOBJ_IMG1.id}`,
+    },
+    price: "1",
+    deleteId: TESTOBJ_IMG1.id,
+    initialState: initialState,
+  };
+
+  const payloadUndefined: FormActionPayloadI = {
+    newName: "",
+    description: "",
+    images: [],
+    newImgObj: { newImageName: "", imageId: "" },
+    price: "",
+    deleteId: "",
+  };
 
   beforeEach(() => {
     initialState = {
@@ -52,121 +77,84 @@ describe("formReducer", () => {
       images: [TESTOBJ_IMG0, TESTOBJ_IMG1],
       mintingPrice: 0,
     };
-
-    payload = {
-      newName: "newCollectionName",
-      description: "newDescription",
-      images: [TESTOBJ_IMG2.image],
-      newImgObj: {
-        newImageName: "newImageName",
-        imageId: `${TESTOBJ_IMG1.id}`,
-      },
-      price: "1",
-      deleteId: TESTOBJ_IMG1.id,
-      initialState: initialState,
-    };
-
-    payloadUndefined = {
-      newName: "",
-      description: "",
-      images: [],
-      newImgObj: { newImageName: "", imageId: "" },
-      price: "",
-      deleteId: "",
-    };
   });
 
-  describe("CHANGE_NAME", () => {
-    test("Collection Name is changed", () => {
+  test("Collection Name is changed", () => {
+    const expected = { ...initialState };
+    expected.collectionName = payload.newName ?? "";
+    expect(
+      formReducer(initialState, { type: "CHANGE_NAME", payload })
+    ).toMatchObject(expected);
+  });
+
+  test("Description is changed", () => {
+    const expected = { ...initialState };
+    expected.description = payload.description ?? "";
+    expect(
+      formReducer(initialState, { type: "CHANGE_DESCRIPTION", payload })
+    ).toMatchObject(expected);
+  });
+
+  test("New images are added", () => {
+    if (payload.images && payload.images[0]) {
       const expected = { ...initialState };
-      expected.collectionName = payload.newName ?? "";
-      expect(
-        formReducer(initialState, { type: "CHANGE_NAME", payload })
-      ).toMatchObject(expected);
-    });
-  });
-
-  describe("CHANGE_DESCRIPTION", () => {
-    test("payload.description should be returned", () => {
-      const expected = { ...initialState };
-      expected.description = payload.description ?? "";
-      expect(
-        formReducer(initialState, { type: "CHANGE_DESCRIPTION", payload })
-      ).toMatchObject(expected);
-    });
-  });
-
-  describe("CHANGE_IMAGES", () => {
-    test("payload.images should be returned", () => {
-      if (payload.images && payload.images[0]) {
-        const expected = { ...initialState };
-        expected.images = [...expected.images, TESTOBJ_IMG2];
-        if (!global.URL.createObjectURL) {
-          global.URL.createObjectURL = () => TESTOBJ_IMG2.url;
-        }
-        const result = formReducer(initialState, {
-          type: "CHANGE_IMAGES",
-          payload,
-        });
-        expect(result).toMatchObject(expected);
+      expected.images = [...expected.images, TESTOBJ_IMG2];
+      if (!global.URL.createObjectURL) {
+        global.URL.createObjectURL = () => TESTOBJ_IMG2.url;
       }
-    });
-  });
-
-  describe("CHANGE_IMAGE_NAME", () => {
-    test("name of DEFAULT_IMAGE should be changed", () => {
-      const expected = { ...initialState };
-      expected.images = [
-        TESTOBJ_IMG0,
-        getImageObj(
-          "newImageName",
-          TEST_IMG1_URL,
-          TEST_IMG1_FILE,
-          TEST_IMG1_ID
-        ),
-      ];
       const result = formReducer(initialState, {
-        type: "CHANGE_IMAGE_NAME",
+        type: "CHANGE_IMAGES",
         payload,
       });
       expect(result).toMatchObject(expected);
-    });
+    }
   });
 
-  describe("DELETE_IMAGE", () => {
-    test("state.images should have had an image removed", () => {
-      const expected = { ...initialState };
-      expected.images = [TESTOBJ_IMG0];
-      expect(
-        formReducer(initialState, { type: "DELETE_IMAGE", payload })
-      ).toMatchObject(expected);
+  test("Name of TESTOBJ_IMG1 is changed", () => {
+    const expected = { ...initialState };
+    expected.images = [
+      TESTOBJ_IMG0,
+      getImageObj("newImageName", TEST_IMG1_URL, TEST_IMG1_FILE, TEST_IMG1_ID),
+    ];
+    const result = formReducer(initialState, {
+      type: "CHANGE_IMAGE_NAME",
+      payload,
     });
+    expect(result).toMatchObject(expected);
   });
 
-  describe("CHANGE_PRICE", () => {
-    test("state.mintingPrice should be changed to payload.price", () => {
-      const expected = { ...initialState };
-      expected.mintingPrice = Number(payload.price);
-      expect(
-        formReducer(initialState, { type: "CHANGE_PRICE", payload })
-      ).toMatchObject(expected);
-    });
+  test("TESTOBJ_IMG1 is deleted", () => {
+    const expected = { ...initialState };
+    expected.images = [TESTOBJ_IMG0];
+    expect(
+      formReducer(initialState, { type: "DELETE_IMAGE", payload })
+    ).toMatchObject(expected);
   });
 
-  describe("RESET_STATE", () => {
-    test("payload.initialState should be returned", () => {
-      expect(
-        formReducer(initialState, { type: "RESET_STATE", payload })
-      ).toMatchObject(initialState);
-    });
+  test("Minting price is changed", () => {
+    const expected = { ...initialState };
+    expected.mintingPrice = Number(payload.price);
+    expect(
+      formReducer(initialState, { type: "CHANGE_PRICE", payload })
+    ).toMatchObject(expected);
+  });
 
-    test("state should be returned", () => {
-      expect(
-        formReducer(initialState, {
-          type: "RESET_STATE",
-          payload: payloadUndefined,
-        })
-      ).toMatchObject(initialState);
+  test("initialState is returned", () => {
+    expect(
+      formReducer(initialState, { type: "RESET_STATE", payload })
+    ).toMatchObject(initialState);
+  });
+
+  test("current state is returned when payload values are undefined", () => {
+    const currState = formReducer(initialState, {
+      type: "CHANGE_NAME",
+      payload,
     });
+    expect(
+      formReducer(currState, {
+        type: "RESET_STATE",
+        payload: payloadUndefined,
+      })
+    ).toMatchObject(currState);
   });
 });

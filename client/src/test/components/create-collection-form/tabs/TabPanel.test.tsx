@@ -3,10 +3,8 @@ import TabPanel from "components/create-collection-form/tabs/TabPanel";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
-import EnzymeToJson from "enzyme-to-json";
 
 test("TabPanel snapshot", () => {
-  const toJson = EnzymeToJson;
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
@@ -16,5 +14,5 @@ test("TabPanel snapshot", () => {
       </NetworkProvider>
     </ThemeProvider>
   );
-  expect(toJson(tree)).toMatchSnapshot();
+  expect(tree).toMatchSnapshot();
 });
