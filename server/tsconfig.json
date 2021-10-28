@@ -15,7 +15,14 @@
     "noPropertyAccessFromIndexSignature": true,
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@models/*": ["./models/*"],
+      "@routes/*": ["./routes/*"],
+      "@controllers/*": ["./controllers/*"],
+      "@validators/*": ["./validators/*"],
+      "@server/*": ["./*"]
+    }
   },
   "include": ["src", "smart-contracts/test", "smart-contracts/typechain"],
   "files": ["./hardhat.config.ts"],
