@@ -1,18 +1,29 @@
+import Queries from "@testing-library/dom/types/queries";
+import { fireEvent, render, RenderResult } from "@testing-library/react";
 import { DAppProvider } from "@usedapp/core";
 import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
-import { mount, ReactWrapper } from "enzyme";
+import { mount } from "enzyme";
 
-let tree: ReactWrapper<
-  unknown,
-  Readonly<unknown>,
-  React.Component<unknown, unknown, unknown>
->;
+test("CreateCollectionForm snapshot", () => {
+  const tree = mount(
+    <ThemeProvider>
+      <NetworkProvider>
+        <DAppProvider config={{}}>
+          <CreateCollectionForm />
+        </DAppProvider>
+      </NetworkProvider>
+    </ThemeProvider>
+  );
+  expect(tree).toMatchSnapshot();
+});
 
 describe("Test CreateCollectionForm", () => {
-  beforeAll(() => {
-    tree = mount(
+  let tree: RenderResult<typeof Queries, HTMLElement>;
+
+  beforeEach(() => {
+    tree = render(
       <ThemeProvider>
         <NetworkProvider>
           <DAppProvider config={{}}>
@@ -23,19 +34,11 @@ describe("Test CreateCollectionForm", () => {
     );
   });
 
-  test("CreateCollectionForm snapshot", () => {
-    expect(tree).toMatchSnapshot();
-  });
-
-  test("alert is initially empty", () => {
-    const alert = tree.find("#formAlert").at(0);
-    expect(alert.text().length).toEqual(0);
-  });
-
   test("alert has text when reset button clicked", () => {
-    const alert = tree.find("#formAlert").at(0);
-    const resetButton = tree.find("#reset").at(0);
-    resetButton.simulate("click");
-    expect(alert.text().length).toBeGreaterThan(0);
+    const alert = tree.getByTestId("formAlert");
+    const resetButton = tree.getByTestId("reset");
+    expect(alert).not.toHaveTextContent("reset");
+    fireEvent.click(resetButton);
+    expect(alert).toHaveTextContent("reset");
   });
 });
