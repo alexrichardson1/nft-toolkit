@@ -1,3 +1,4 @@
+import { addDeployedAddress } from "controllers/deployed";
 import { Router as router } from "express";
 import {
   deployContracts,
@@ -18,5 +19,10 @@ collectionRoutes.post(
 );
 
 collectionRoutes.post("/images", uploadImages);
+
+collectionRoutes.post(
+  "/deployed/:fromAddress/:collectionName/:deployedAddress",
+  addDeployedAddress
+);
 
 export default collectionRoutes;
