@@ -3,6 +3,8 @@ import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 
 describe("ThemeProvider", () => {
+  afterAll(() => localStorage.clear());
+
   test("local storage has dark theme background", () => {
     localStorage.setItem("theme", "dark");
     const box = mount(
