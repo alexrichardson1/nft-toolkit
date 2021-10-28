@@ -1,5 +1,5 @@
 import { DAppProvider } from "@usedapp/core";
-import Navbar from "components/Navbar";
+import Navbar from "components/navbar/Navbar";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount, ReactWrapper } from "enzyme";
