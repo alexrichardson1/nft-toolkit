@@ -1,9 +1,11 @@
 import cors from "cors";
 import express from "express";
+import db from "./controllers/database";
 import collectionRoutes from "./routes/collection";
 import metadataRoutes from "./routes/metadata";
 
 const app = express();
+db.connect();
 
 const corsOptions = {
   origin: "http://localhost:3000",
