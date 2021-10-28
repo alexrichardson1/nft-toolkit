@@ -1,13 +1,13 @@
-import { addDeployedAddress } from "controllers/deployed";
-import { Router as router } from "express";
 import {
   deployContracts,
   getCollections,
   saveCollectionToDB,
   uploadImages,
-} from "../controllers/collection";
-import { errorHandler } from "../controllers/common";
-import { collectionValidator } from "../validators/collection";
+} from "@controllers/collection";
+import { errorHandler } from "@controllers/common";
+import { addDeployedAddress } from "@controllers/deployed";
+import { collectionValidator } from "@validators/collection";
+import { Router as router } from "express";
 
 const collectionRoutes = router();
 

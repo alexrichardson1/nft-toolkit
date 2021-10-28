@@ -1,5 +1,5 @@
+import { collectionSchema, CollectionT } from "@models/collection";
 import { model, Schema } from "mongoose";
-import { collectionSchema, CollectionT } from "./collection";
 
 interface UserT {
   fromAddress: string;
