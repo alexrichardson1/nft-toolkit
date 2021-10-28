@@ -29,7 +29,7 @@ describe("Navbar tests", () => {
 
   test("Theme is toggled on toggle press", () => {
     localStorage.setItem("theme", "light");
-    tree.find("#theme-change-button").first().simulate("click");
+    tree.find("#theme-change-btn").first().simulate("click");
     expect(localStorage.getItem("theme")).toBe("dark");
   });
 });

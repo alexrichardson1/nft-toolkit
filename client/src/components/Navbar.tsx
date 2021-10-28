@@ -97,6 +97,7 @@ const Navbar = (): JSX.Element => {
     <Box sx={navOptionsStyle}>
       <Fab
         onClick={connectWallet}
+        id="connect-wallet-btn"
         variant="extended"
         color="primary"
         aria-label="connect wallet"
@@ -105,7 +106,7 @@ const Navbar = (): JSX.Element => {
         <Typography>{getAccountString()}</Typography>
       </Fab>
       <NetworkSpeedDial />
-      <Fab id="theme-change-button" onClick={toggleColourMode}>
+      <Fab id="theme-change-btn" onClick={toggleColourMode}>
         {getThemeIcon()}
       </Fab>
     </Box>
