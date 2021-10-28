@@ -1034,6 +1034,7 @@ exports[`Tabs snapshot 1`] = `
                                           }
                                         }
                                         allowScrollButtonsMobile={true}
+                                        data-testid="tabs"
                                         onChange={[Function]}
                                         orientation="vertical"
                                         selectionFollowsFocus={true}
@@ -1049,6 +1050,7 @@ exports[`Tabs snapshot 1`] = `
                                         <MuiTabsRoot
                                           as="div"
                                           className="MuiTabs-root MuiTabs-vertical"
+                                          data-testid="tabs"
                                           ownerState={
                                             Object {
                                               "TabScrollButtonProps": Object {
@@ -1060,6 +1062,7 @@ exports[`Tabs snapshot 1`] = `
                                               "centered": false,
                                               "children": Array [],
                                               "component": "div",
+                                              "data-testid": "tabs",
                                               "fixed": false,
                                               "hideScrollbar": true,
                                               "indicatorColor": "primary",
@@ -1090,6 +1093,7 @@ exports[`Tabs snapshot 1`] = `
                                         >
                                           <div
                                             className="MuiTabs-root MuiTabs-vertical css-2ynwu8-MuiTabs-root"
+                                            data-testid="tabs"
                                           >
                                             <MuiTabsScrollbarSize
                                               className="MuiTabs-hideScrollbar"
@@ -1127,6 +1131,7 @@ exports[`Tabs snapshot 1`] = `
                                                   "centered": false,
                                                   "children": Array [],
                                                   "component": "div",
+                                                  "data-testid": "tabs",
                                                   "fixed": false,
                                                   "hideScrollbar": true,
                                                   "indicatorColor": "primary",
@@ -1180,6 +1185,7 @@ exports[`Tabs snapshot 1`] = `
                                                       "centered": false,
                                                       "children": Array [],
                                                       "component": "div",
+                                                      "data-testid": "tabs",
                                                       "fixed": false,
                                                       "hideScrollbar": true,
                                                       "indicatorColor": "primary",
@@ -1223,6 +1229,7 @@ exports[`Tabs snapshot 1`] = `
                                                       "centered": false,
                                                       "children": Array [],
                                                       "component": "div",
+                                                      "data-testid": "tabs",
                                                       "fixed": false,
                                                       "hideScrollbar": true,
                                                       "indicatorColor": "primary",
