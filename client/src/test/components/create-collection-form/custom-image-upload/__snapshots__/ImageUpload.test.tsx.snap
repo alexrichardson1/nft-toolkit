@@ -677,11 +677,12 @@ exports[`ImageUpload snapshot 1`] = `
                           <NotificationsProvider>
                             <TransactionProvider>
                               <ImageUpload
-                                handleImageDrop={[Function]}
+                                handleImageDrop={[MockFunction]}
                                 imgObjs={Array []}
                               >
                                 <label
                                   className="img-upload-label"
+                                  data-testid="img-upload-label"
                                   htmlFor="upload-images"
                                   onDragEnter={[Function]}
                                   onDragLeave={[Function]}
@@ -795,6 +796,7 @@ exports[`ImageUpload snapshot 1`] = `
                                 <input
                                   accept="image/*"
                                   className="img-upload-input"
+                                  data-testid="img-upload-input"
                                   id="upload-images"
                                   multiple={true}
                                   onChange={[Function]}

@@ -1063,6 +1063,7 @@ exports[`App snapshot 1`] = `
                                                     <ForwardRef(Fab)
                                                       aria-label="connect wallet"
                                                       color="primary"
+                                                      id="connect-wallet-btn"
                                                       onClick={[Function]}
                                                       sx={
                                                         Object {
@@ -1081,7 +1082,7 @@ exports[`App snapshot 1`] = `
                                                     </ForwardRef(Fab)>
                                                     <NetworkSpeedDial />
                                                     <ForwardRef(Fab)
-                                                      id="theme-change-button"
+                                                      id="theme-change-btn"
                                                       onClick={[Function]}
                                                     >
                                                       <Memo
@@ -1191,6 +1192,7 @@ exports[`App snapshot 1`] = `
                                                         <ForwardRef(Fab)
                                                           aria-label="connect wallet"
                                                           color="primary"
+                                                          id="connect-wallet-btn"
                                                           onClick={[Function]}
                                                           sx={
                                                             Object {
@@ -1209,7 +1211,7 @@ exports[`App snapshot 1`] = `
                                                         </ForwardRef(Fab)>
                                                         <NetworkSpeedDial />
                                                         <ForwardRef(Fab)
-                                                          id="theme-change-button"
+                                                          id="theme-change-btn"
                                                           onClick={[Function]}
                                                         >
                                                           <Memo
@@ -1302,6 +1304,7 @@ exports[`App snapshot 1`] = `
                                                               <ForwardRef(Fab)
                                                                 aria-label="connect wallet"
                                                                 color="primary"
+                                                                id="connect-wallet-btn"
                                                                 onClick={[Function]}
                                                                 sx={
                                                                   Object {
@@ -1320,7 +1323,7 @@ exports[`App snapshot 1`] = `
                                                               </ForwardRef(Fab)>
                                                               <NetworkSpeedDial />
                                                               <ForwardRef(Fab)
-                                                                id="theme-change-button"
+                                                                id="theme-change-btn"
                                                                 onClick={[Function]}
                                                               >
                                                                 <Memo
@@ -2114,6 +2117,7 @@ exports[`App snapshot 1`] = `
                                                               <ForwardRef(Fab)
                                                                 aria-label="connect wallet"
                                                                 color="primary"
+                                                                id="connect-wallet-btn"
                                                                 onClick={[Function]}
                                                                 sx={
                                                                   Object {
@@ -2132,6 +2136,7 @@ exports[`App snapshot 1`] = `
                                                                   disabled={false}
                                                                   focusRipple={true}
                                                                   focusVisibleClassName=""
+                                                                  id="connect-wallet-btn"
                                                                   onClick={[Function]}
                                                                   ownerState={
                                                                     Object {
@@ -2146,6 +2151,7 @@ exports[`App snapshot 1`] = `
                                                                       "component": "button",
                                                                       "disableFocusRipple": false,
                                                                       "disabled": false,
+                                                                      "id": "connect-wallet-btn",
                                                                       "onClick": [Function],
                                                                       "size": "large",
                                                                       "sx": Object {
@@ -2173,6 +2179,7 @@ exports[`App snapshot 1`] = `
                                                                     disabled={false}
                                                                     focusRipple={true}
                                                                     focusVisibleClassName=""
+                                                                    id="connect-wallet-btn"
                                                                     onClick={[Function]}
                                                                   >
                                                                     <MuiButtonBaseRoot
@@ -2180,6 +2187,7 @@ exports[`App snapshot 1`] = `
                                                                       as="button"
                                                                       className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-115w0g1-MuiFab-root"
                                                                       disabled={false}
+                                                                      id="connect-wallet-btn"
                                                                       onBlur={[Function]}
                                                                       onClick={[Function]}
                                                                       onContextMenu={[Function]}
@@ -2211,6 +2219,7 @@ exports[`App snapshot 1`] = `
                                                                           "focusRipple": true,
                                                                           "focusVisible": false,
                                                                           "focusVisibleClassName": "",
+                                                                          "id": "connect-wallet-btn",
                                                                           "onClick": [Function],
                                                                           "tabIndex": 0,
                                                                         }
@@ -2222,6 +2231,7 @@ exports[`App snapshot 1`] = `
                                                                         aria-label="connect wallet"
                                                                         className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-6swd88-MuiButtonBase-root-MuiFab-root"
                                                                         disabled={false}
+                                                                        id="connect-wallet-btn"
                                                                         onBlur={[Function]}
                                                                         onClick={[Function]}
                                                                         onContextMenu={[Function]}
@@ -6368,7 +6378,7 @@ exports[`App snapshot 1`] = `
                                                                 </ForwardRef(Box)>
                                                               </NetworkSpeedDial>
                                                               <ForwardRef(Fab)
-                                                                id="theme-change-button"
+                                                                id="theme-change-btn"
                                                                 onClick={[Function]}
                                                               >
                                                                 <MuiFabRoot
@@ -6377,7 +6387,7 @@ exports[`App snapshot 1`] = `
                                                                   disabled={false}
                                                                   focusRipple={true}
                                                                   focusVisibleClassName=""
-                                                                  id="theme-change-button"
+                                                                  id="theme-change-btn"
                                                                   onClick={[Function]}
                                                                   ownerState={
                                                                     Object {
@@ -6388,7 +6398,7 @@ exports[`App snapshot 1`] = `
                                                                       "component": "button",
                                                                       "disableFocusRipple": false,
                                                                       "disabled": false,
-                                                                      "id": "theme-change-button",
+                                                                      "id": "theme-change-btn",
                                                                       "onClick": [Function],
                                                                       "size": "large",
                                                                       "variant": "circular",
@@ -6401,14 +6411,14 @@ exports[`App snapshot 1`] = `
                                                                     disabled={false}
                                                                     focusRipple={true}
                                                                     focusVisibleClassName=""
-                                                                    id="theme-change-button"
+                                                                    id="theme-change-btn"
                                                                     onClick={[Function]}
                                                                   >
                                                                     <MuiButtonBaseRoot
                                                                       as="button"
                                                                       className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge css-xzu58u-MuiFab-root"
                                                                       disabled={false}
-                                                                      id="theme-change-button"
+                                                                      id="theme-change-btn"
                                                                       onBlur={[Function]}
                                                                       onClick={[Function]}
                                                                       onContextMenu={[Function]}
@@ -6436,7 +6446,7 @@ exports[`App snapshot 1`] = `
                                                                           "focusRipple": true,
                                                                           "focusVisible": false,
                                                                           "focusVisibleClassName": "",
-                                                                          "id": "theme-change-button",
+                                                                          "id": "theme-change-btn",
                                                                           "onClick": [Function],
                                                                           "tabIndex": 0,
                                                                         }
@@ -6447,7 +6457,7 @@ exports[`App snapshot 1`] = `
                                                                       <button
                                                                         className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge css-a8igs1-MuiButtonBase-root-MuiFab-root"
                                                                         disabled={false}
-                                                                        id="theme-change-button"
+                                                                        id="theme-change-btn"
                                                                         onBlur={[Function]}
                                                                         onClick={[Function]}
                                                                         onContextMenu={[Function]}
@@ -16450,6 +16460,7 @@ exports[`App snapshot 1`] = `
                                                                   >
                                                                     <label
                                                                       className="img-upload-label"
+                                                                      data-testid="img-upload-label"
                                                                       htmlFor="upload-images"
                                                                       onDragEnter={[Function]}
                                                                       onDragLeave={[Function]}
@@ -16563,6 +16574,7 @@ exports[`App snapshot 1`] = `
                                                                     <input
                                                                       accept="image/*"
                                                                       className="img-upload-input"
+                                                                      data-testid="img-upload-input"
                                                                       id="upload-images"
                                                                       multiple={true}
                                                                       onChange={[Function]}

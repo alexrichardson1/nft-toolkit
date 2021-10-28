@@ -4008,6 +4008,7 @@ exports[`Test CreateCollectionForm CreateCollectionForm snapshot 1`] = `
                                             >
                                               <label
                                                 className="img-upload-label"
+                                                data-testid="img-upload-label"
                                                 htmlFor="upload-images"
                                                 onDragEnter={[Function]}
                                                 onDragLeave={[Function]}
@@ -4121,6 +4122,7 @@ exports[`Test CreateCollectionForm CreateCollectionForm snapshot 1`] = `
                                               <input
                                                 accept="image/*"
                                                 className="img-upload-input"
+                                                data-testid="img-upload-input"
                                                 id="upload-images"
                                                 multiple={true}
                                                 onChange={[Function]}
