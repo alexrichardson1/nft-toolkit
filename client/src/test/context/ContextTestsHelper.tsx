@@ -1,26 +1,28 @@
 import Button from "@mui/material/Button";
-import ThemeContext from "context/theme/ThemeContext";
 import { mount } from "enzyme";
-
-describe("ThemeContext", () => {
-  test("initial toggleColourMode", () => {
+const testContext = <T,>(
+  testName: string,
+  Context: React.Context<T>,
+  onClick: (value: T) => unknown
+): void =>
+  test(testName, () => {
     let fn;
     const tree = mount(
-      <ThemeContext.Consumer>
+      <Context.Consumer>
         {(value) => (
           <Button
             id="context-test-btn"
             onClick={() => {
-              fn = value.toggleColourMode;
-              value.toggleColourMode();
+              fn = onClick(value);
             }}>
             Click Me!
           </Button>
         )}
-      </ThemeContext.Consumer>
+      </Context.Consumer>
     );
     expect(fn).toBeUndefined();
     tree.find("#context-test-btn").first().simulate("click");
     expect(fn).toBeDefined();
   });
-});
+
+export default testContext;
