@@ -679,12 +679,14 @@ exports[`CreateCollectionForm snapshot 1`] = `
                               <CreateCollectionForm>
                                 <ForwardRef(Stack)
                                   component="form"
+                                  data-testid="create-form"
                                   justifyContent="center"
                                   onSubmit={[Function]}
                                   spacing={2}
                                 >
                                   <MuiStackRoot
                                     as="form"
+                                    data-testid="create-form"
                                     onSubmit={[Function]}
                                     ownerState={
                                       Object {
@@ -700,6 +702,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   >
                                     <form
                                       className="css-773myu-MuiStack-root"
+                                      data-testid="create-form"
                                       onSubmit={[Function]}
                                     >
                                       <ForwardRef(Paper)>
@@ -709,6 +712,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           ownerState={
                                             Object {
                                               "children": <Input
+                                                inputProps={
+                                                  Object {
+                                                    "data-testid": "collection-name-input",
+                                                  }
+                                                }
                                                 label="Collection Name"
                                                 onChange={[Function]}
                                                 placeholder="Enter a collection name"
@@ -726,6 +734,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                                           >
                                             <Input
+                                              inputProps={
+                                                Object {
+                                                  "data-testid": "collection-name-input",
+                                                }
+                                              }
                                               label="Collection Name"
                                               onChange={[Function]}
                                               placeholder="Enter a collection name"
@@ -734,6 +747,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             >
                                               <ForwardRef(TextField)
                                                 fullWidth={true}
+                                                inputProps={
+                                                  Object {
+                                                    "data-testid": "collection-name-input",
+                                                  }
+                                                }
                                                 label="Collection Name"
                                                 onChange={[Function]}
                                                 placeholder="Enter a collection name"
@@ -756,7 +774,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       "disabled": false,
                                                       "error": false,
                                                       "fullWidth": true,
-                                                      "inputProps": undefined,
+                                                      "inputProps": Object {
+                                                        "data-testid": "collection-name-input",
+                                                      },
                                                       "label": "Collection Name",
                                                       "multiline": false,
                                                       "name": undefined,
@@ -795,6 +815,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             <ForwardRef(OutlinedInput)
                                                               autoFocus={false}
                                                               fullWidth={true}
+                                                              inputProps={
+                                                                Object {
+                                                                  "data-testid": "collection-name-input",
+                                                                }
+                                                              }
                                                               label={
                                                                 <React.Fragment>
                                                                   Collection Name
@@ -952,6 +977,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         <ForwardRef(OutlinedInput)
                                                           autoFocus={false}
                                                           fullWidth={true}
+                                                          inputProps={
+                                                            Object {
+                                                              "data-testid": "collection-name-input",
+                                                            }
+                                                          }
                                                           label={
                                                             <React.Fragment>
                                                               Collection Name
@@ -1018,6 +1048,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             }
                                                             fullWidth={true}
                                                             inputComponent="input"
+                                                            inputProps={
+                                                              Object {
+                                                                "data-testid": "collection-name-input",
+                                                              }
+                                                            }
                                                             multiline={false}
                                                             onChange={[Function]}
                                                             placeholder="Enter a collection name"
@@ -1452,7 +1487,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   "hiddenLabel": false,
                                                                   "id": undefined,
                                                                   "inputComponent": "input",
-                                                                  "inputProps": undefined,
+                                                                  "inputProps": Object {
+                                                                    "data-testid": "collection-name-input",
+                                                                  },
                                                                   "inputRef": undefined,
                                                                   "maxRows": undefined,
                                                                   "minRows": undefined,
@@ -1795,6 +1832,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   as="input"
                                                                   autoFocus={false}
                                                                   className="MuiOutlinedInput-input MuiInputBase-input"
+                                                                  data-testid="collection-name-input"
                                                                   disabled={false}
                                                                   onAnimationStart={[Function]}
                                                                   onBlur={[Function]}
@@ -1881,7 +1919,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                       "hiddenLabel": false,
                                                                       "id": undefined,
                                                                       "inputComponent": "input",
-                                                                      "inputProps": undefined,
+                                                                      "inputProps": Object {
+                                                                        "data-testid": "collection-name-input",
+                                                                      },
                                                                       "inputRef": undefined,
                                                                       "maxRows": undefined,
                                                                       "minRows": undefined,
@@ -2223,6 +2263,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                     aria-invalid={false}
                                                                     autoFocus={false}
                                                                     className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                                                                    data-testid="collection-name-input"
                                                                     disabled={false}
                                                                     onAnimationStart={[Function]}
                                                                     onBlur={[Function]}
@@ -2317,6 +2358,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           ownerState={
                                             Object {
                                               "children": <Input
+                                                inputProps={
+                                                  Object {
+                                                    "data-testid": "description-input",
+                                                  }
+                                                }
                                                 label="Description"
                                                 multiline={true}
                                                 onChange={[Function]}
@@ -2336,6 +2382,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                                           >
                                             <Input
+                                              inputProps={
+                                                Object {
+                                                  "data-testid": "description-input",
+                                                }
+                                              }
                                               label="Description"
                                               multiline={true}
                                               onChange={[Function]}
@@ -2346,6 +2397,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             >
                                               <ForwardRef(TextField)
                                                 fullWidth={true}
+                                                inputProps={
+                                                  Object {
+                                                    "data-testid": "description-input",
+                                                  }
+                                                }
                                                 label="Description"
                                                 multiline={true}
                                                 onChange={[Function]}
@@ -2370,7 +2426,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       "disabled": false,
                                                       "error": false,
                                                       "fullWidth": true,
-                                                      "inputProps": undefined,
+                                                      "inputProps": Object {
+                                                        "data-testid": "description-input",
+                                                      },
                                                       "label": "Description",
                                                       "multiline": true,
                                                       "name": undefined,
@@ -2409,6 +2467,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             <ForwardRef(OutlinedInput)
                                                               autoFocus={false}
                                                               fullWidth={true}
+                                                              inputProps={
+                                                                Object {
+                                                                  "data-testid": "description-input",
+                                                                }
+                                                              }
                                                               label={
                                                                 <React.Fragment>
                                                                   Description
@@ -2567,6 +2630,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         <ForwardRef(OutlinedInput)
                                                           autoFocus={false}
                                                           fullWidth={true}
+                                                          inputProps={
+                                                            Object {
+                                                              "data-testid": "description-input",
+                                                            }
+                                                          }
                                                           label={
                                                             <React.Fragment>
                                                               Description
@@ -2634,6 +2702,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             }
                                                             fullWidth={true}
                                                             inputComponent="input"
+                                                            inputProps={
+                                                              Object {
+                                                                "data-testid": "description-input",
+                                                              }
+                                                            }
                                                             multiline={true}
                                                             onChange={[Function]}
                                                             placeholder="Enter a description"
@@ -3069,7 +3142,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   "hiddenLabel": false,
                                                                   "id": undefined,
                                                                   "inputComponent": "input",
-                                                                  "inputProps": undefined,
+                                                                  "inputProps": Object {
+                                                                    "data-testid": "description-input",
+                                                                  },
                                                                   "inputRef": undefined,
                                                                   "maxRows": undefined,
                                                                   "minRows": undefined,
@@ -3426,6 +3501,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   }
                                                                   autoFocus={false}
                                                                   className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputMultiline"
+                                                                  data-testid="description-input"
                                                                   disabled={false}
                                                                   maxRows={4}
                                                                   minRows={4}
@@ -3514,7 +3590,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                       "hiddenLabel": false,
                                                                       "id": undefined,
                                                                       "inputComponent": "input",
-                                                                      "inputProps": undefined,
+                                                                      "inputProps": Object {
+                                                                        "data-testid": "description-input",
+                                                                      },
                                                                       "inputRef": undefined,
                                                                       "maxRows": undefined,
                                                                       "minRows": undefined,
@@ -3856,6 +3934,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                     aria-invalid={false}
                                                                     autoFocus={false}
                                                                     className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input"
+                                                                    data-testid="description-input"
                                                                     disabled={false}
                                                                     maxRows={4}
                                                                     minRows={4}
@@ -3872,6 +3951,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                       aria-invalid={false}
                                                                       autoFocus={false}
                                                                       className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputMultiline css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input"
+                                                                      data-testid="description-input"
                                                                       disabled={false}
                                                                       onAnimationStart={[Function]}
                                                                       onBlur={[Function]}
@@ -6302,7 +6382,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         >
                                                           <div
                                                             class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
-                                                            data-testid="formAlert"
+                                                            data-testid="form-alert"
                                                             role="alert"
                                                           >
                                                             <div
@@ -6385,7 +6465,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             />
                                                           </ForwardRef(IconButton)>
                                                         }
-                                                        data-testid="formAlert"
+                                                        data-testid="form-alert"
                                                         elevation={6}
                                                         severity="success"
                                                         variant="filled"
@@ -6437,7 +6517,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                 />
                                                               </ForwardRef(IconButton)>
                                                             }
-                                                            data-testid="formAlert"
+                                                            data-testid="form-alert"
                                                             elevation={6}
                                                             severity="success"
                                                             variant="filled"
@@ -6474,7 +6554,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                     />
                                                                   </ForwardRef(IconButton)>
                                                                 }
-                                                                data-testid="formAlert"
+                                                                data-testid="form-alert"
                                                                 elevation={6}
                                                                 severity="success"
                                                                 variant="filled"
@@ -6507,14 +6587,14 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   />
                                                                 </ForwardRef(IconButton)>
                                                               }
-                                                              data-testid="formAlert"
+                                                              data-testid="form-alert"
                                                               elevation={6}
                                                               severity="success"
                                                               variant="filled"
                                                             >
                                                               <MuiAlertRoot
                                                                 className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled"
-                                                                data-testid="formAlert"
+                                                                data-testid="form-alert"
                                                                 elevation={6}
                                                                 ownerState={
                                                                   Object {
@@ -6530,7 +6610,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                     </ForwardRef(IconButton)>,
                                                                     "children": "",
                                                                     "color": undefined,
-                                                                    "data-testid": "formAlert",
+                                                                    "data-testid": "form-alert",
                                                                     "elevation": 6,
                                                                     "severity": "success",
                                                                     "variant": "filled",
@@ -6541,7 +6621,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                               >
                                                                 <ForwardRef(Paper)
                                                                   className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
-                                                                  data-testid="formAlert"
+                                                                  data-testid="form-alert"
                                                                   elevation={6}
                                                                   role="alert"
                                                                   square={true}
@@ -6549,7 +6629,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   <MuiPaperRoot
                                                                     as="div"
                                                                     className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
-                                                                    data-testid="formAlert"
+                                                                    data-testid="form-alert"
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
@@ -6569,7 +6649,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                                 </ForwardRef(IconButton)>,
                                                                                 "children": "",
                                                                                 "color": undefined,
-                                                                                "data-testid": "formAlert",
+                                                                                "data-testid": "form-alert",
                                                                                 "elevation": 6,
                                                                                 "severity": "success",
                                                                                 "variant": "filled",
@@ -6596,7 +6676,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                                 </ForwardRef(IconButton)>,
                                                                                 "children": "",
                                                                                 "color": undefined,
-                                                                                "data-testid": "formAlert",
+                                                                                "data-testid": "form-alert",
                                                                                 "elevation": 6,
                                                                                 "severity": "success",
                                                                                 "variant": "filled",
@@ -6623,7 +6703,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                         ],
                                                                         "className": "MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root",
                                                                         "component": "div",
-                                                                        "data-testid": "formAlert",
+                                                                        "data-testid": "form-alert",
                                                                         "elevation": 6,
                                                                         "role": "alert",
                                                                         "square": true,
@@ -6634,7 +6714,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   >
                                                                     <div
                                                                       className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
-                                                                      data-testid="formAlert"
+                                                                      data-testid="form-alert"
                                                                       role="alert"
                                                                     >
                                                                       <MuiAlertIcon
@@ -6653,7 +6733,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                             </ForwardRef(IconButton)>,
                                                                             "children": "",
                                                                             "color": undefined,
-                                                                            "data-testid": "formAlert",
+                                                                            "data-testid": "form-alert",
                                                                             "elevation": 6,
                                                                             "severity": "success",
                                                                             "variant": "filled",
@@ -6722,7 +6802,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                             </ForwardRef(IconButton)>,
                                                                             "children": "",
                                                                             "color": undefined,
-                                                                            "data-testid": "formAlert",
+                                                                            "data-testid": "form-alert",
                                                                             "elevation": 6,
                                                                             "severity": "success",
                                                                             "variant": "filled",
