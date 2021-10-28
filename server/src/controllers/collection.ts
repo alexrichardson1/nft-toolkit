@@ -7,7 +7,6 @@ import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 import { Collection, CollectionT, Token } from "../models/collection";
 import { User } from "../models/user";
-import db from "./database";
 
 dotenv.config();
 
@@ -39,7 +38,6 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const { fromAddress } = userCollection;
   userCollection.tokens.map((token) => new Token(token));
   const collection = new Collection(userCollection);
-  db.connect();
   let user = await User.findOne({
     fromAddress: fromAddress,
   }).exec();
@@ -53,10 +51,9 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
     });
   }
   user.save().catch((err: Error) => {
-    db.close();
     next(err);
   });
-  db.close();
+  next();
 };
 
 export const deployContracts: RequestHandler = (req, res, next) => {
