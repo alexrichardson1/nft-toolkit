@@ -143,7 +143,7 @@ const CreateCollectionForm = (): JSX.Element => {
       <Alert
         elevation={DEFAULT_ALERT_ELEVATION}
         variant="filled"
-        id="formAlert"
+        data-testid="formAlert"
         severity={alertSeverity}
         action={
           <IconButton
@@ -163,7 +163,7 @@ const CreateCollectionForm = (): JSX.Element => {
     <Box sx={buttonsWrapperStyle}>
       <Button
         startIcon={<ClearIcon />}
-        id="reset"
+        data-testid="reset"
         color="error"
         size="large"
         variant="contained"
