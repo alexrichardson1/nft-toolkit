@@ -54,11 +54,15 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
     <Box sx={vTabsContainerStyle}>
       <Tabs
         orientation="vertical"
+        data-testid="tabs"
         variant="scrollable"
         allowScrollButtonsMobile
         selectionFollowsFocus
         value={value < NUMBER_OF_IMAGES ? value : NUMBER_OF_IMAGES - 1}
-        onChange={(_e, newValue) => setValue(newValue)}
+        onChange={(e, newValue) => {
+          e.preventDefault();
+          setValue(newValue);
+        }}
         TabScrollButtonProps={{
           sx: {
             color: (theme) =>
@@ -84,9 +88,12 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               value={imgObj.name}
               placeholder="Enter a name for this NFT here"
               required
+              inputProps={{ "data-testid": "nft-name-input" }}
               onChange={(e) => props.handleNameChange(e, imgObj.id)}
             />
-            <IconButton onClick={() => props.handleImageDelete(imgObj.id)}>
+            <IconButton
+              data-testid="delete-icon"
+              onClick={() => props.handleImageDelete(imgObj.id)}>
               <DeleteIcon fontSize="large" color="error" />
             </IconButton>
           </Box>
