@@ -2,6 +2,7 @@ import { addDeployedAddress } from "controllers/deployed";
 import { Router as router } from "express";
 import {
   deployContracts,
+  getCollections,
   saveCollectionToDB,
   uploadImages,
 } from "../controllers/collection";
@@ -24,5 +25,7 @@ collectionRoutes.post(
   "/deployed/:fromAddress/:collectionName/:deployedAddress",
   addDeployedAddress
 );
+
+collectionRoutes.get("/:fromAddress", getCollections);
 
 export default collectionRoutes;
