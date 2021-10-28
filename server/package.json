@@ -53,6 +53,16 @@
     "modulePathIgnorePatterns": [
       "build"
     ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "moduleNameMapper": {
+      "@models/(.*)": "<rootDir>/src/models/$1",
+      "@routes/(.*)": "<rootDir>/src/routes/$1",
+      "@controllers/(.*)": "<rootDir>/src/controllers/$1",
+      "@validators/(.*)": "<rootDir>/src/validators/$1",
+      "@server/(.*)": "<rootDir>/src/$1"
+    },
     "coveragePathIgnorePatterns": [
       "smart-contracts"
     ],
