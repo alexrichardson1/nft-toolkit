@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import { mount } from "enzyme";
+import { fireEvent, render } from "@testing-library/react";
 const testContext = <T,>(
   testName: string,
   Context: React.Context<T>,
@@ -7,11 +7,11 @@ const testContext = <T,>(
 ): void =>
   test(testName, () => {
     let fn;
-    const tree = mount(
+    const tree = render(
       <Context.Consumer>
         {(value) => (
           <Button
-            id="context-test-btn"
+            data-testid="context-test-btn"
             onClick={() => {
               fn = onClick(value);
             }}>
@@ -21,7 +21,8 @@ const testContext = <T,>(
       </Context.Consumer>
     );
     expect(fn).toBeUndefined();
-    tree.find("#context-test-btn").first().simulate("click");
+    const button = tree.getByTestId("context-test-btn");
+    fireEvent.click(button);
     expect(fn).toBeDefined();
   });
 
