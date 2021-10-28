@@ -19,6 +19,7 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
+import { startLoading, stopLoading } from "./formUtils";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -65,15 +66,6 @@ const CreateCollectionForm = (): JSX.Element => {
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
-
-  const startLoading = (message = "Loading...") => {
-    setLoadingMessage(message);
-    setIsLoading(true);
-  };
-  const stopLoading = () => {
-    setIsLoading(false);
-    setLoadingMessage("");
-  };
 
   const closeAlert = () => setAlertMessage("");
 
@@ -122,20 +114,21 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(state);
-    startLoading("Uploading...");
-    const UPLOADING_DURATION = 3000;
-    setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
-    const SAVING_DURATION = 3000;
-    setTimeout(
-      () => setLoadingMessage("Deploying..."),
-      UPLOADING_DURATION + SAVING_DURATION
-    );
-    const DEPLOYING_DURATION = 3000;
-    setTimeout(() => {
-      stopLoading();
-      showFormAlert("success", "Minting Successful");
-    }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
+    startLoading(setLoadingMessage, setIsLoading, "Uploading...");
+    stopLoading(setLoadingMessage, setIsLoading);
+    // console.log(state);
+    // const UPLOADING_DURATION = 3000;
+    // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
+    // const SAVING_DURATION = 3000;
+    // setTimeout(
+    //   () => setLoadingMessage("Deploying..."),
+    //   UPLOADING_DURATION + SAVING_DURATION
+    // );
+    // const DEPLOYING_DURATION = 3000;
+    // setTimeout(() => {
+    //   stopLoading();
+    //   showFormAlert("success", "Minting Successful");
+    // }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
   };
 
   const alertBox = (
@@ -143,7 +136,7 @@ const CreateCollectionForm = (): JSX.Element => {
       <Alert
         elevation={DEFAULT_ALERT_ELEVATION}
         variant="filled"
-        data-testid="formAlert"
+        data-testid="form-alert"
         severity={alertSeverity}
         action={
           <IconButton
@@ -191,9 +184,11 @@ const CreateCollectionForm = (): JSX.Element => {
       onSubmit={handleFormSubmit}
       component="form"
       justifyContent="center"
-      spacing={2}>
+      spacing={2}
+      data-testid="create-form">
       <Paper>
         <Input
+          inputProps={{ "data-testid": "collection-name-input" }}
           value={state.collectionName}
           onChange={handleCollNameChange}
           placeholder="Enter a collection name"
@@ -204,6 +199,7 @@ const CreateCollectionForm = (): JSX.Element => {
 
       <Paper>
         <Input
+          inputProps={{ "data-testid": "description-input" }}
           value={state.description}
           multiline
           onChange={handleDescriptionChange}
