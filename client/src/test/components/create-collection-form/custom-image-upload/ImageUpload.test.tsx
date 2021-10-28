@@ -1,3 +1,4 @@
+import Queries from "@testing-library/dom/types/queries";
 import {
   createEvent,
   fireEvent,
@@ -24,16 +25,13 @@ test("ImageUpload snapshot", () => {
 });
 
 describe("ImageUpload unit tests", () => {
-  let tree: RenderResult<
-    typeof import("/home/aayush/NFT-Toolkit/client/node_modules/@testing-library/dom/types/queries"),
-    HTMLElement
-  >;
+  let tree: RenderResult<typeof Queries, HTMLElement>;
   let mockHandleImageDrop: jest.Mock<unknown, unknown[]>;
   const mockImgObj = {
-    url: "testUrk",
+    url: "testUrl",
     name: "testName",
-    id: "testName.png",
-    image: new File([""], "testImg", { type: "image/png" }),
+    id: "testName.png3",
+    image: new File(["foo"], "testImg", { type: "image/png" }),
   };
 
   beforeEach(() => {
