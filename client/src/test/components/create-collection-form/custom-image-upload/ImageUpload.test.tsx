@@ -57,10 +57,10 @@ describe("ImageUpload unit tests", () => {
 
   test("handleImageDrop is called on input change", () => {
     const input = tree.getByTestId("img-upload-input");
-    const dragEnterEvent = createEvent.change(input, {
+    const changeEvent = createEvent.change(input, {
       target: { files: [] },
     });
-    fireEvent(input, dragEnterEvent);
+    fireEvent(input, changeEvent);
     expect(mockHandleImageDrop).toHaveBeenCalled();
   });
 
@@ -76,27 +76,27 @@ describe("ImageUpload unit tests", () => {
   test("dragOver event prevents default", () => {
     const mockPreventDefault = jest.fn();
     const label = tree.getByTestId("img-upload-label");
-    const dragEnterEvent = createEvent.dragOver(label);
-    dragEnterEvent.preventDefault = mockPreventDefault;
-    fireEvent(label, dragEnterEvent);
+    const dragOverEvent = createEvent.dragOver(label);
+    dragOverEvent.preventDefault = mockPreventDefault;
+    fireEvent(label, dragOverEvent);
     expect(mockPreventDefault).toHaveBeenCalled();
   });
 
   test("dragLeave event prevents default", () => {
     const mockPreventDefault = jest.fn();
     const label = tree.getByTestId("img-upload-label");
-    const dragEnterEvent = createEvent.dragLeave(label);
-    dragEnterEvent.preventDefault = mockPreventDefault;
-    fireEvent(label, dragEnterEvent);
+    const dragLeaveEvent = createEvent.dragLeave(label);
+    dragLeaveEvent.preventDefault = mockPreventDefault;
+    fireEvent(label, dragLeaveEvent);
     expect(mockPreventDefault).toHaveBeenCalled();
   });
 
   test("drop event calls handleImageDrop", () => {
     const label = tree.getByTestId("img-upload-label");
-    const dragEnterEvent = createEvent.drop(label, {
+    const dropEvent = createEvent.drop(label, {
       dataTransfer: { files: [] },
     });
-    fireEvent(label, dragEnterEvent);
+    fireEvent(label, dropEvent);
     expect(mockHandleImageDrop).toHaveBeenCalled();
   });
 });

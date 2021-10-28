@@ -1,5 +1,366 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`NetworksSpeedDial network change 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiBox-root css-yqm9dt"
+      >
+        <div
+          class="MuiSpeedDial-root MuiSpeedDial-directionDown css-11u3b1d-MuiSpeedDial-root"
+          role="presentation"
+        >
+          <button
+            aria-controls="networkselection-actions"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-label="network selection"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1wyarrq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab"
+            style="transform: none; webkit-transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+            tabindex="0"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="avalanche-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <div
+            aria-orientation="vertical"
+            class="MuiSpeedDial-actions MuiSpeedDial-actionsClosed css-1s28u9o-MuiSpeedDial-actions"
+            id="networkselection-actions"
+            role="menu"
+          >
+            <button
+              aria-label="Ethereum"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+              data-mui-internal-clone-element="true"
+              data-testid="Ethereum"
+              role="menuitem"
+              style="transition-delay: 180ms;"
+              tabindex="-1"
+              type="button"
+            >
+              <img
+                height="70%"
+                src="ethereum-logo.svg"
+                width="70%"
+              />
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              aria-label="Cardano"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+              data-mui-internal-clone-element="true"
+              data-testid="Cardano"
+              role="menuitem"
+              style="transition-delay: 150ms;"
+              tabindex="-1"
+              type="button"
+            >
+              <img
+                height="70%"
+                src="cardano-logo.svg"
+                width="70%"
+              />
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              aria-label="Avalanche"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+              data-mui-internal-clone-element="true"
+              data-testid="Avalanche"
+              role="menuitem"
+              style="transition-delay: 120ms;"
+              tabindex="-1"
+              type="button"
+            >
+              <img
+                height="70%"
+                src="avalanche-logo.svg"
+                width="70%"
+              />
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              aria-label="Solana"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+              data-mui-internal-clone-element="true"
+              data-testid="Solana"
+              role="menuitem"
+              style="transition-delay: 90ms;"
+              tabindex="-1"
+              type="button"
+            >
+              <img
+                height="70%"
+                src="solana-logo.svg"
+                width="70%"
+              />
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              aria-label="Polygon"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+              data-mui-internal-clone-element="true"
+              data-testid="Polygon"
+              role="menuitem"
+              style="transition-delay: 60ms;"
+              tabindex="-1"
+              type="button"
+            >
+              <img
+                height="70%"
+                src="polygon-logo.svg"
+                width="70%"
+              />
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <button
+              aria-label="BSC"
+              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+              data-mui-internal-clone-element="true"
+              data-testid="BSC"
+              role="menuitem"
+              style="transition-delay: 30ms;"
+              tabindex="-1"
+              type="button"
+            >
+              <img
+                height="70%"
+                src="binance-logo.svg"
+                width="70%"
+              />
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiBox-root css-yqm9dt"
+    >
+      <div
+        class="MuiSpeedDial-root MuiSpeedDial-directionDown css-11u3b1d-MuiSpeedDial-root"
+        role="presentation"
+      >
+        <button
+          aria-controls="networkselection-actions"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-label="network selection"
+          class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge MuiFab-primary MuiSpeedDial-fab css-1wyarrq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab"
+          style="transform: none; webkit-transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+          tabindex="0"
+          type="button"
+        >
+          <img
+            height="70%"
+            src="avalanche-logo.svg"
+            width="70%"
+          />
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <div
+          aria-orientation="vertical"
+          class="MuiSpeedDial-actions MuiSpeedDial-actionsClosed css-1s28u9o-MuiSpeedDial-actions"
+          id="networkselection-actions"
+          role="menu"
+        >
+          <button
+            aria-label="Ethereum"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+            data-mui-internal-clone-element="true"
+            data-testid="Ethereum"
+            role="menuitem"
+            style="transition-delay: 180ms;"
+            tabindex="-1"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="ethereum-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Cardano"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+            data-mui-internal-clone-element="true"
+            data-testid="Cardano"
+            role="menuitem"
+            style="transition-delay: 150ms;"
+            tabindex="-1"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="cardano-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Avalanche"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+            data-mui-internal-clone-element="true"
+            data-testid="Avalanche"
+            role="menuitem"
+            style="transition-delay: 120ms;"
+            tabindex="-1"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="avalanche-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Solana"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+            data-mui-internal-clone-element="true"
+            data-testid="Solana"
+            role="menuitem"
+            style="transition-delay: 90ms;"
+            tabindex="-1"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="solana-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="Polygon"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+            data-mui-internal-clone-element="true"
+            data-testid="Polygon"
+            role="menuitem"
+            style="transition-delay: 60ms;"
+            tabindex="-1"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="polygon-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            aria-label="BSC"
+            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+            data-mui-internal-clone-element="true"
+            data-testid="BSC"
+            role="menuitem"
+            style="transition-delay: 30ms;"
+            tabindex="-1"
+            type="button"
+          >
+            <img
+              height="70%"
+              src="binance-logo.svg"
+              width="70%"
+            />
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`NetworksSpeedDial snapshot 1`] = `
 <ThemeProvider>
   <ThemeProvider
@@ -1067,6 +1428,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Ethereum"
                                                   icon={
                                                     <SvgLogo
                                                       height="70%"
@@ -1085,6 +1447,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Cardano"
                                                   icon={
                                                     <SvgLogo
                                                       height="70%"
@@ -1103,6 +1466,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Avalanche"
                                                   icon={
                                                     <SvgLogo
                                                       height="70%"
@@ -1121,6 +1485,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Solana"
                                                   icon={
                                                     <SvgLogo
                                                       height="70%"
@@ -1139,6 +1504,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Polygon"
                                                   icon={
                                                     <SvgLogo
                                                       height="70%"
@@ -1157,6 +1523,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="BSC"
                                                   icon={
                                                     <SvgLogo
                                                       height="70%"
@@ -1274,6 +1641,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               },
                                                             }
                                                           }
+                                                          data-testid="Ethereum"
                                                           icon={
                                                             <SvgLogo
                                                               height="70%"
@@ -1292,6 +1660,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               },
                                                             }
                                                           }
+                                                          data-testid="Cardano"
                                                           icon={
                                                             <SvgLogo
                                                               height="70%"
@@ -1310,6 +1679,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               },
                                                             }
                                                           }
+                                                          data-testid="Avalanche"
                                                           icon={
                                                             <SvgLogo
                                                               height="70%"
@@ -1328,6 +1698,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               },
                                                             }
                                                           }
+                                                          data-testid="Solana"
                                                           icon={
                                                             <SvgLogo
                                                               height="70%"
@@ -1346,6 +1717,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               },
                                                             }
                                                           }
+                                                          data-testid="Polygon"
                                                           icon={
                                                             <SvgLogo
                                                               height="70%"
@@ -1364,6 +1736,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               },
                                                             }
                                                           }
+                                                          data-testid="BSC"
                                                           icon={
                                                             <SvgLogo
                                                               height="70%"
@@ -1628,6 +2001,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           },
                                                         }
                                                       }
+                                                      data-testid="Ethereum"
                                                       icon={
                                                         <SvgLogo
                                                           height="70%"
@@ -1646,6 +2020,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           },
                                                         }
                                                       }
+                                                      data-testid="Cardano"
                                                       icon={
                                                         <SvgLogo
                                                           height="70%"
@@ -1664,6 +2039,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           },
                                                         }
                                                       }
+                                                      data-testid="Avalanche"
                                                       icon={
                                                         <SvgLogo
                                                           height="70%"
@@ -1682,6 +2058,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           },
                                                         }
                                                       }
+                                                      data-testid="Solana"
                                                       icon={
                                                         <SvgLogo
                                                           height="70%"
@@ -1700,6 +2077,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           },
                                                         }
                                                       }
+                                                      data-testid="Polygon"
                                                       icon={
                                                         <SvgLogo
                                                           height="70%"
@@ -1718,6 +2096,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           },
                                                         }
                                                       }
+                                                      data-testid="BSC"
                                                       icon={
                                                         <SvgLogo
                                                           height="70%"
@@ -1757,6 +2136,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Ethereum"
                                                   delay={180}
                                                   icon={
                                                     <SvgLogo
@@ -1773,6 +2153,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                   tooltipTitle="Ethereum"
                                                 >
                                                   <ForwardRef(Tooltip)
+                                                    data-testid="Ethereum"
                                                     id="networkselection-action-0"
                                                     onClick={[Function]}
                                                     onClose={[Function]}
@@ -1786,6 +2167,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       aria-labelledby={null}
                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                       data-mui-internal-clone-element={true}
+                                                      data-testid="Ethereum"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
                                                       onFocus={[Function]}
@@ -1803,6 +2185,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "borderColor": "primary.main",
                                                             },
                                                           },
+                                                          "data-testid": "Ethereum",
                                                           "delay": 180,
                                                           "icon": <SvgLogo
                                                             height="70%"
@@ -1837,6 +2220,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                         aria-labelledby={null}
                                                         className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-2jzuc1-MuiSpeedDialAction-fab"
                                                         data-mui-internal-clone-element={true}
+                                                        data-testid="Ethereum"
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
                                                         onFocus={[Function]}
@@ -1859,6 +2243,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-2jzuc1-MuiSpeedDialAction-fab"
                                                           component="button"
                                                           data-mui-internal-clone-element={true}
+                                                          data-testid="Ethereum"
                                                           disabled={false}
                                                           focusRipple={true}
                                                           focusVisibleClassName=""
@@ -1882,6 +2267,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "color": "default",
                                                               "component": "button",
                                                               "data-mui-internal-clone-element": true,
+                                                              "data-testid": "Ethereum",
                                                               "disableFocusRipple": false,
                                                               "disabled": false,
                                                               "onBlur": [Function],
@@ -1914,6 +2300,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1ov6rlx-MuiFab-root-MuiSpeedDialAction-fab"
                                                             component="button"
                                                             data-mui-internal-clone-element={true}
+                                                            data-testid="Ethereum"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -1938,6 +2325,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               as="button"
                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1ov6rlx-MuiFab-root-MuiSpeedDialAction-fab"
                                                               data-mui-internal-clone-element={true}
+                                                              data-testid="Ethereum"
                                                               disabled={false}
                                                               onBlur={[Function]}
                                                               onClick={[Function]}
@@ -1966,6 +2354,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                   "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1ov6rlx-MuiFab-root-MuiSpeedDialAction-fab",
                                                                   "component": "button",
                                                                   "data-mui-internal-clone-element": true,
+                                                                  "data-testid": "Ethereum",
                                                                   "disableRipple": false,
                                                                   "disableTouchRipple": false,
                                                                   "disabled": false,
@@ -2000,6 +2389,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                 aria-labelledby={null}
                                                                 className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                 data-mui-internal-clone-element={true}
+                                                                data-testid="Ethereum"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onClick={[Function]}
@@ -2064,6 +2454,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           aria-label="Ethereum"
                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                           data-mui-internal-clone-element="true"
+                                                          data-testid="Ethereum"
                                                           role="menuitem"
                                                           style="transition-delay: 180ms;"
                                                           tabindex="-1"
@@ -2122,6 +2513,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                     "borderColor": "primary.main",
                                                                   },
                                                                 },
+                                                                "data-testid": "Ethereum",
                                                                 "delay": 180,
                                                                 "icon": <SvgLogo
                                                                   height="70%"
@@ -2158,6 +2550,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             />
                                                           </MuiSpeedDialActionFab>,
                                                           "classes": undefined,
+                                                          "data-testid": "Ethereum",
                                                           "disableInteractive": false,
                                                           "id": "networkselection-action-0",
                                                           "isRtl": false,
@@ -2198,6 +2591,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             aria-label="Ethereum"
                                                             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                             data-mui-internal-clone-element="true"
+                                                            data-testid="Ethereum"
                                                             role="menuitem"
                                                             style="transition-delay: 180ms;"
                                                             tabindex="-1"
@@ -2254,6 +2648,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Cardano"
                                                   delay={150}
                                                   icon={
                                                     <SvgLogo
@@ -2270,6 +2665,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                   tooltipTitle="Cardano"
                                                 >
                                                   <ForwardRef(Tooltip)
+                                                    data-testid="Cardano"
                                                     id="networkselection-action-1"
                                                     onClick={[Function]}
                                                     onClose={[Function]}
@@ -2283,6 +2679,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       aria-labelledby={null}
                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                       data-mui-internal-clone-element={true}
+                                                      data-testid="Cardano"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
                                                       onFocus={[Function]}
@@ -2298,6 +2695,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "background": "white",
                                                             },
                                                           },
+                                                          "data-testid": "Cardano",
                                                           "delay": 150,
                                                           "icon": <SvgLogo
                                                             height="70%"
@@ -2330,6 +2728,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                         aria-labelledby={null}
                                                         className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                         data-mui-internal-clone-element={true}
+                                                        data-testid="Cardano"
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
                                                         onFocus={[Function]}
@@ -2352,6 +2751,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                           component="button"
                                                           data-mui-internal-clone-element={true}
+                                                          data-testid="Cardano"
                                                           disabled={false}
                                                           focusRipple={true}
                                                           focusVisibleClassName=""
@@ -2375,6 +2775,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "color": "default",
                                                               "component": "button",
                                                               "data-mui-internal-clone-element": true,
+                                                              "data-testid": "Cardano",
                                                               "disableFocusRipple": false,
                                                               "disabled": false,
                                                               "onBlur": [Function],
@@ -2407,6 +2808,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                             component="button"
                                                             data-mui-internal-clone-element={true}
+                                                            data-testid="Cardano"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -2431,6 +2833,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               as="button"
                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                               data-mui-internal-clone-element={true}
+                                                              data-testid="Cardano"
                                                               disabled={false}
                                                               onBlur={[Function]}
                                                               onClick={[Function]}
@@ -2459,6 +2862,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                   "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                   "component": "button",
                                                                   "data-mui-internal-clone-element": true,
+                                                                  "data-testid": "Cardano",
                                                                   "disableRipple": false,
                                                                   "disableTouchRipple": false,
                                                                   "disabled": false,
@@ -2493,6 +2897,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                 aria-labelledby={null}
                                                                 className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                 data-mui-internal-clone-element={true}
+                                                                data-testid="Cardano"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onClick={[Function]}
@@ -2557,6 +2962,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           aria-label="Cardano"
                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                           data-mui-internal-clone-element="true"
+                                                          data-testid="Cardano"
                                                           role="menuitem"
                                                           style="transition-delay: 150ms;"
                                                           tabindex="-1"
@@ -2613,6 +3019,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                     "background": "white",
                                                                   },
                                                                 },
+                                                                "data-testid": "Cardano",
                                                                 "delay": 150,
                                                                 "icon": <SvgLogo
                                                                   height="70%"
@@ -2647,6 +3054,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             />
                                                           </MuiSpeedDialActionFab>,
                                                           "classes": undefined,
+                                                          "data-testid": "Cardano",
                                                           "disableInteractive": false,
                                                           "id": "networkselection-action-1",
                                                           "isRtl": false,
@@ -2687,6 +3095,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             aria-label="Cardano"
                                                             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                             data-mui-internal-clone-element="true"
+                                                            data-testid="Cardano"
                                                             role="menuitem"
                                                             style="transition-delay: 150ms;"
                                                             tabindex="-1"
@@ -2743,6 +3152,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Avalanche"
                                                   delay={120}
                                                   icon={
                                                     <SvgLogo
@@ -2759,6 +3169,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                   tooltipTitle="Avalanche"
                                                 >
                                                   <ForwardRef(Tooltip)
+                                                    data-testid="Avalanche"
                                                     id="networkselection-action-2"
                                                     onClick={[Function]}
                                                     onClose={[Function]}
@@ -2772,6 +3183,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       aria-labelledby={null}
                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                       data-mui-internal-clone-element={true}
+                                                      data-testid="Avalanche"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
                                                       onFocus={[Function]}
@@ -2787,6 +3199,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "background": "white",
                                                             },
                                                           },
+                                                          "data-testid": "Avalanche",
                                                           "delay": 120,
                                                           "icon": <SvgLogo
                                                             height="70%"
@@ -2819,6 +3232,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                         aria-labelledby={null}
                                                         className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                         data-mui-internal-clone-element={true}
+                                                        data-testid="Avalanche"
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
                                                         onFocus={[Function]}
@@ -2841,6 +3255,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                           component="button"
                                                           data-mui-internal-clone-element={true}
+                                                          data-testid="Avalanche"
                                                           disabled={false}
                                                           focusRipple={true}
                                                           focusVisibleClassName=""
@@ -2864,6 +3279,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "color": "default",
                                                               "component": "button",
                                                               "data-mui-internal-clone-element": true,
+                                                              "data-testid": "Avalanche",
                                                               "disableFocusRipple": false,
                                                               "disabled": false,
                                                               "onBlur": [Function],
@@ -2896,6 +3312,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                             component="button"
                                                             data-mui-internal-clone-element={true}
+                                                            data-testid="Avalanche"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -2920,6 +3337,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               as="button"
                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                               data-mui-internal-clone-element={true}
+                                                              data-testid="Avalanche"
                                                               disabled={false}
                                                               onBlur={[Function]}
                                                               onClick={[Function]}
@@ -2948,6 +3366,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                   "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                   "component": "button",
                                                                   "data-mui-internal-clone-element": true,
+                                                                  "data-testid": "Avalanche",
                                                                   "disableRipple": false,
                                                                   "disableTouchRipple": false,
                                                                   "disabled": false,
@@ -2982,6 +3401,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                 aria-labelledby={null}
                                                                 className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                 data-mui-internal-clone-element={true}
+                                                                data-testid="Avalanche"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onClick={[Function]}
@@ -3046,6 +3466,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           aria-label="Avalanche"
                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                           data-mui-internal-clone-element="true"
+                                                          data-testid="Avalanche"
                                                           role="menuitem"
                                                           style="transition-delay: 120ms;"
                                                           tabindex="-1"
@@ -3102,6 +3523,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                     "background": "white",
                                                                   },
                                                                 },
+                                                                "data-testid": "Avalanche",
                                                                 "delay": 120,
                                                                 "icon": <SvgLogo
                                                                   height="70%"
@@ -3136,6 +3558,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             />
                                                           </MuiSpeedDialActionFab>,
                                                           "classes": undefined,
+                                                          "data-testid": "Avalanche",
                                                           "disableInteractive": false,
                                                           "id": "networkselection-action-2",
                                                           "isRtl": false,
@@ -3176,6 +3599,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             aria-label="Avalanche"
                                                             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                             data-mui-internal-clone-element="true"
+                                                            data-testid="Avalanche"
                                                             role="menuitem"
                                                             style="transition-delay: 120ms;"
                                                             tabindex="-1"
@@ -3232,6 +3656,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Solana"
                                                   delay={90}
                                                   icon={
                                                     <SvgLogo
@@ -3248,6 +3673,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                   tooltipTitle="Solana"
                                                 >
                                                   <ForwardRef(Tooltip)
+                                                    data-testid="Solana"
                                                     id="networkselection-action-3"
                                                     onClick={[Function]}
                                                     onClose={[Function]}
@@ -3261,6 +3687,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       aria-labelledby={null}
                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                       data-mui-internal-clone-element={true}
+                                                      data-testid="Solana"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
                                                       onFocus={[Function]}
@@ -3276,6 +3703,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "background": "white",
                                                             },
                                                           },
+                                                          "data-testid": "Solana",
                                                           "delay": 90,
                                                           "icon": <SvgLogo
                                                             height="70%"
@@ -3308,6 +3736,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                         aria-labelledby={null}
                                                         className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                         data-mui-internal-clone-element={true}
+                                                        data-testid="Solana"
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
                                                         onFocus={[Function]}
@@ -3330,6 +3759,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                           component="button"
                                                           data-mui-internal-clone-element={true}
+                                                          data-testid="Solana"
                                                           disabled={false}
                                                           focusRipple={true}
                                                           focusVisibleClassName=""
@@ -3353,6 +3783,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "color": "default",
                                                               "component": "button",
                                                               "data-mui-internal-clone-element": true,
+                                                              "data-testid": "Solana",
                                                               "disableFocusRipple": false,
                                                               "disabled": false,
                                                               "onBlur": [Function],
@@ -3385,6 +3816,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                             component="button"
                                                             data-mui-internal-clone-element={true}
+                                                            data-testid="Solana"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -3409,6 +3841,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               as="button"
                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                               data-mui-internal-clone-element={true}
+                                                              data-testid="Solana"
                                                               disabled={false}
                                                               onBlur={[Function]}
                                                               onClick={[Function]}
@@ -3437,6 +3870,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                   "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                   "component": "button",
                                                                   "data-mui-internal-clone-element": true,
+                                                                  "data-testid": "Solana",
                                                                   "disableRipple": false,
                                                                   "disableTouchRipple": false,
                                                                   "disabled": false,
@@ -3471,6 +3905,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                 aria-labelledby={null}
                                                                 className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                 data-mui-internal-clone-element={true}
+                                                                data-testid="Solana"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onClick={[Function]}
@@ -3535,6 +3970,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           aria-label="Solana"
                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                           data-mui-internal-clone-element="true"
+                                                          data-testid="Solana"
                                                           role="menuitem"
                                                           style="transition-delay: 90ms;"
                                                           tabindex="-1"
@@ -3591,6 +4027,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                     "background": "white",
                                                                   },
                                                                 },
+                                                                "data-testid": "Solana",
                                                                 "delay": 90,
                                                                 "icon": <SvgLogo
                                                                   height="70%"
@@ -3625,6 +4062,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             />
                                                           </MuiSpeedDialActionFab>,
                                                           "classes": undefined,
+                                                          "data-testid": "Solana",
                                                           "disableInteractive": false,
                                                           "id": "networkselection-action-3",
                                                           "isRtl": false,
@@ -3665,6 +4103,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             aria-label="Solana"
                                                             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                             data-mui-internal-clone-element="true"
+                                                            data-testid="Solana"
                                                             role="menuitem"
                                                             style="transition-delay: 90ms;"
                                                             tabindex="-1"
@@ -3721,6 +4160,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="Polygon"
                                                   delay={60}
                                                   icon={
                                                     <SvgLogo
@@ -3737,6 +4177,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                   tooltipTitle="Polygon"
                                                 >
                                                   <ForwardRef(Tooltip)
+                                                    data-testid="Polygon"
                                                     id="networkselection-action-4"
                                                     onClick={[Function]}
                                                     onClose={[Function]}
@@ -3750,6 +4191,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       aria-labelledby={null}
                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                       data-mui-internal-clone-element={true}
+                                                      data-testid="Polygon"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
                                                       onFocus={[Function]}
@@ -3765,6 +4207,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "background": "white",
                                                             },
                                                           },
+                                                          "data-testid": "Polygon",
                                                           "delay": 60,
                                                           "icon": <SvgLogo
                                                             height="70%"
@@ -3797,6 +4240,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                         aria-labelledby={null}
                                                         className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                         data-mui-internal-clone-element={true}
+                                                        data-testid="Polygon"
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
                                                         onFocus={[Function]}
@@ -3819,6 +4263,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                           component="button"
                                                           data-mui-internal-clone-element={true}
+                                                          data-testid="Polygon"
                                                           disabled={false}
                                                           focusRipple={true}
                                                           focusVisibleClassName=""
@@ -3842,6 +4287,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "color": "default",
                                                               "component": "button",
                                                               "data-mui-internal-clone-element": true,
+                                                              "data-testid": "Polygon",
                                                               "disableFocusRipple": false,
                                                               "disabled": false,
                                                               "onBlur": [Function],
@@ -3874,6 +4320,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                             component="button"
                                                             data-mui-internal-clone-element={true}
+                                                            data-testid="Polygon"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -3898,6 +4345,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               as="button"
                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                               data-mui-internal-clone-element={true}
+                                                              data-testid="Polygon"
                                                               disabled={false}
                                                               onBlur={[Function]}
                                                               onClick={[Function]}
@@ -3926,6 +4374,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                   "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                   "component": "button",
                                                                   "data-mui-internal-clone-element": true,
+                                                                  "data-testid": "Polygon",
                                                                   "disableRipple": false,
                                                                   "disableTouchRipple": false,
                                                                   "disabled": false,
@@ -3960,6 +4409,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                 aria-labelledby={null}
                                                                 className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                 data-mui-internal-clone-element={true}
+                                                                data-testid="Polygon"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onClick={[Function]}
@@ -4024,6 +4474,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           aria-label="Polygon"
                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                           data-mui-internal-clone-element="true"
+                                                          data-testid="Polygon"
                                                           role="menuitem"
                                                           style="transition-delay: 60ms;"
                                                           tabindex="-1"
@@ -4080,6 +4531,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                     "background": "white",
                                                                   },
                                                                 },
+                                                                "data-testid": "Polygon",
                                                                 "delay": 60,
                                                                 "icon": <SvgLogo
                                                                   height="70%"
@@ -4114,6 +4566,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             />
                                                           </MuiSpeedDialActionFab>,
                                                           "classes": undefined,
+                                                          "data-testid": "Polygon",
                                                           "disableInteractive": false,
                                                           "id": "networkselection-action-4",
                                                           "isRtl": false,
@@ -4154,6 +4607,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             aria-label="Polygon"
                                                             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                             data-mui-internal-clone-element="true"
+                                                            data-testid="Polygon"
                                                             role="menuitem"
                                                             style="transition-delay: 60ms;"
                                                             tabindex="-1"
@@ -4210,6 +4664,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       },
                                                     }
                                                   }
+                                                  data-testid="BSC"
                                                   delay={30}
                                                   icon={
                                                     <SvgLogo
@@ -4226,6 +4681,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                   tooltipTitle="BSC"
                                                 >
                                                   <ForwardRef(Tooltip)
+                                                    data-testid="BSC"
                                                     id="networkselection-action-5"
                                                     onClick={[Function]}
                                                     onClose={[Function]}
@@ -4239,6 +4695,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                       aria-labelledby={null}
                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                       data-mui-internal-clone-element={true}
+                                                      data-testid="BSC"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
                                                       onFocus={[Function]}
@@ -4254,6 +4711,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "background": "white",
                                                             },
                                                           },
+                                                          "data-testid": "BSC",
                                                           "delay": 30,
                                                           "icon": <SvgLogo
                                                             height="70%"
@@ -4286,6 +4744,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                         aria-labelledby={null}
                                                         className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                         data-mui-internal-clone-element={true}
+                                                        data-testid="BSC"
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
                                                         onFocus={[Function]}
@@ -4308,6 +4767,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                           component="button"
                                                           data-mui-internal-clone-element={true}
+                                                          data-testid="BSC"
                                                           disabled={false}
                                                           focusRipple={true}
                                                           focusVisibleClassName=""
@@ -4331,6 +4791,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               "color": "default",
                                                               "component": "button",
                                                               "data-mui-internal-clone-element": true,
+                                                              "data-testid": "BSC",
                                                               "disableFocusRipple": false,
                                                               "disabled": false,
                                                               "onBlur": [Function],
@@ -4363,6 +4824,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                             component="button"
                                                             data-mui-internal-clone-element={true}
+                                                            data-testid="BSC"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -4387,6 +4849,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                               as="button"
                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                               data-mui-internal-clone-element={true}
+                                                              data-testid="BSC"
                                                               disabled={false}
                                                               onBlur={[Function]}
                                                               onClick={[Function]}
@@ -4415,6 +4878,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                   "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                   "component": "button",
                                                                   "data-mui-internal-clone-element": true,
+                                                                  "data-testid": "BSC",
                                                                   "disableRipple": false,
                                                                   "disableTouchRipple": false,
                                                                   "disabled": false,
@@ -4449,6 +4913,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                 aria-labelledby={null}
                                                                 className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                 data-mui-internal-clone-element={true}
+                                                                data-testid="BSC"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onClick={[Function]}
@@ -4513,6 +4978,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                           aria-label="BSC"
                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                           data-mui-internal-clone-element="true"
+                                                          data-testid="BSC"
                                                           role="menuitem"
                                                           style="transition-delay: 30ms;"
                                                           tabindex="-1"
@@ -4569,6 +5035,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                                     "background": "white",
                                                                   },
                                                                 },
+                                                                "data-testid": "BSC",
                                                                 "delay": 30,
                                                                 "icon": <SvgLogo
                                                                   height="70%"
@@ -4603,6 +5070,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             />
                                                           </MuiSpeedDialActionFab>,
                                                           "classes": undefined,
+                                                          "data-testid": "BSC",
                                                           "disableInteractive": false,
                                                           "id": "networkselection-action-5",
                                                           "isRtl": false,
@@ -4643,6 +5111,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                             aria-label="BSC"
                                                             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                             data-mui-internal-clone-element="true"
+                                                            data-testid="BSC"
                                                             role="menuitem"
                                                             style="transition-delay: 30ms;"
                                                             tabindex="-1"
