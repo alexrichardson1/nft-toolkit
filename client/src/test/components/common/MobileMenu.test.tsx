@@ -4,12 +4,10 @@ import MobileMenu from "components/common/MobileMenu";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
-import EnzymeToJson from "enzyme-to-json";
 
 const anchorOrigin: PopoverOrigin = { vertical: "top", horizontal: "right" };
 
 test("MobileMenu snapshot", () => {
-  const toJson = EnzymeToJson;
   const mockAnchorEl = document.createElement("button");
   const tree = mount(
     <ThemeProvider>
@@ -27,5 +25,5 @@ test("MobileMenu snapshot", () => {
       </NetworkProvider>
     </ThemeProvider>
   );
-  expect(toJson(tree)).toMatchSnapshot();
+  expect(tree).toMatchSnapshot();
 });
