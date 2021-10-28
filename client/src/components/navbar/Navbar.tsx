@@ -17,7 +17,8 @@ import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
 import { NAVBAR_HEIGHT } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
-import MobileMenu from "./common/MobileMenu";
+import MobileMenu from "../common/MobileMenu";
+import { connectWallet } from "./navbarUtils";
 
 const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
   vertical: "top",
@@ -69,19 +70,6 @@ const Navbar = (): JSX.Element => {
       <LightModeIcon fontSize="large" />
     );
 
-  const connectWallet = () => {
-    if (account) {
-      deactivate();
-      return;
-    }
-    activateBrowserWallet();
-    if (account) {
-      showSnackbar("success", "Your wallet has been connected!");
-      return;
-    }
-    showSnackbar("error", "Your wallet was not connected. Please try again.");
-  };
-
   const getAccountString = () => {
     if (!account) {
       return "Connect Wallet";
@@ -96,7 +84,14 @@ const Navbar = (): JSX.Element => {
   const navOptions = (
     <Box sx={navOptionsStyle}>
       <Fab
-        onClick={connectWallet}
+        onClick={() =>
+          connectWallet(
+            deactivate,
+            showSnackbar,
+            activateBrowserWallet,
+            account
+          )
+        }
         id="connect-wallet-btn"
         variant="extended"
         color="primary"
