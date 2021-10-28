@@ -26,6 +26,7 @@ const tokenSchema = new Schema<TokenT>({
 export const collectionSchema = new Schema<CollectionT>({
   name: String,
   description: String,
+  address: String,
   symbol: String,
   price: String,
   tokens: [tokenSchema],
