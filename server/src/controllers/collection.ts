@@ -1,3 +1,6 @@
+import { ERROR_CODE } from "@controllers/common";
+import { Collection, CollectionT, Token } from "@models/collection";
+import { User } from "@models/user";
 import { S3 } from "aws-sdk";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
@@ -5,9 +8,6 @@ import { RequestHandler } from "express";
 import multer from "multer";
 import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
-import { Collection, CollectionT, Token } from "../models/collection";
-import { User } from "../models/user";
-import { ERROR_CODE } from "./common";
 
 dotenv.config();
 

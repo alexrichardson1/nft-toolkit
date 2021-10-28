@@ -1,5 +1,5 @@
+import app from "@server/index";
 import request from "supertest";
-import app from "../index";
 
 const HTTP_OK_STATUS = 200;
 

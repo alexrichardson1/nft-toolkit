@@ -1,4 +1,4 @@
-import app from "./index";
+import app from "@server/index";
 
 // default port to listen
 const port = 5000;

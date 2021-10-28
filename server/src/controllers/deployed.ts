@@ -1,6 +1,6 @@
+import { ERROR_CODE } from "@controllers/common";
+import { User } from "@models/user";
 import { RequestHandler } from "express";
-import { User } from "models/user";
-import { ERROR_CODE } from "./common";
 
 export const addDeployedAddress: RequestHandler = async (req, res) => {
   const { deployedAddress, fromAddress, collectionName } = req.params;

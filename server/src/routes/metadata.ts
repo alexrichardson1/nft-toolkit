@@ -1,5 +1,5 @@
+import { getTokenMetadata } from "@controllers/metadata";
 import { Router as router } from "express";
-import { getTokenMetadata } from "../controllers/metadata";
 
 const metadataRoutes = router();
 

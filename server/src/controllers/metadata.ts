@@ -1,5 +1,5 @@
+import { User } from "@models/user";
 import { RequestHandler } from "express";
-import { User } from "../models/user";
 
 export const getTokenMetadata: RequestHandler = (req, res, next) => {
   const { fromAddress, collectionName, tokenId } = req.params;
