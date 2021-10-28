@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { User } from "models/user";
+import { ERROR_CODE } from "./common";
 
 export const addDeployedAddress: RequestHandler = async (req, res) => {
   const { deployedAddress, fromAddress, collectionName } = req.params;
@@ -7,17 +8,17 @@ export const addDeployedAddress: RequestHandler = async (req, res) => {
     fromAddress: fromAddress,
   }).exec();
   if (!user) {
-    return res.json({ success: false, error: "Cannot find user" });
+    return res.status(ERROR_CODE).send("Sorry can't find that user");
   }
   const collection = user.collections.find(
     (col) => col.name === collectionName
   );
   if (!collection) {
-    return res.json({ success: false, error: "Cannot find collection" });
+    return res.status(ERROR_CODE).send("Sorry can't find that collection");
   }
   collection.address = deployedAddress;
   user.save().catch((err: Error) => {
-    return res.json({ success: false, error: err.message });
+    return res.status(ERROR_CODE).send(err.message);
   });
   return res.json({ success: true });
 };
