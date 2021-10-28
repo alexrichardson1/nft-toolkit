@@ -2744,6 +2744,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Ethereum"
                                                                                 icon={
                                                                                   <SvgLogo
                                                                                     height="70%"
@@ -2762,6 +2763,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Cardano"
                                                                                 icon={
                                                                                   <SvgLogo
                                                                                     height="70%"
@@ -2780,6 +2782,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Avalanche"
                                                                                 icon={
                                                                                   <SvgLogo
                                                                                     height="70%"
@@ -2798,6 +2801,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Solana"
                                                                                 icon={
                                                                                   <SvgLogo
                                                                                     height="70%"
@@ -2816,6 +2820,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Polygon"
                                                                                 icon={
                                                                                   <SvgLogo
                                                                                     height="70%"
@@ -2834,6 +2839,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="BSC"
                                                                                 icon={
                                                                                   <SvgLogo
                                                                                     height="70%"
@@ -2951,6 +2957,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             },
                                                                                           }
                                                                                         }
+                                                                                        data-testid="Ethereum"
                                                                                         icon={
                                                                                           <SvgLogo
                                                                                             height="70%"
@@ -2969,6 +2976,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             },
                                                                                           }
                                                                                         }
+                                                                                        data-testid="Cardano"
                                                                                         icon={
                                                                                           <SvgLogo
                                                                                             height="70%"
@@ -2987,6 +2995,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             },
                                                                                           }
                                                                                         }
+                                                                                        data-testid="Avalanche"
                                                                                         icon={
                                                                                           <SvgLogo
                                                                                             height="70%"
@@ -3005,6 +3014,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             },
                                                                                           }
                                                                                         }
+                                                                                        data-testid="Solana"
                                                                                         icon={
                                                                                           <SvgLogo
                                                                                             height="70%"
@@ -3023,6 +3033,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             },
                                                                                           }
                                                                                         }
+                                                                                        data-testid="Polygon"
                                                                                         icon={
                                                                                           <SvgLogo
                                                                                             height="70%"
@@ -3041,6 +3052,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             },
                                                                                           }
                                                                                         }
+                                                                                        data-testid="BSC"
                                                                                         icon={
                                                                                           <SvgLogo
                                                                                             height="70%"
@@ -3305,6 +3317,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
+                                                                                    data-testid="Ethereum"
                                                                                     icon={
                                                                                       <SvgLogo
                                                                                         height="70%"
@@ -3323,6 +3336,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
+                                                                                    data-testid="Cardano"
                                                                                     icon={
                                                                                       <SvgLogo
                                                                                         height="70%"
@@ -3341,6 +3355,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
+                                                                                    data-testid="Avalanche"
                                                                                     icon={
                                                                                       <SvgLogo
                                                                                         height="70%"
@@ -3359,6 +3374,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
+                                                                                    data-testid="Solana"
                                                                                     icon={
                                                                                       <SvgLogo
                                                                                         height="70%"
@@ -3377,6 +3393,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
+                                                                                    data-testid="Polygon"
                                                                                     icon={
                                                                                       <SvgLogo
                                                                                         height="70%"
@@ -3395,6 +3412,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
+                                                                                    data-testid="BSC"
                                                                                     icon={
                                                                                       <SvgLogo
                                                                                         height="70%"
@@ -3434,6 +3452,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Ethereum"
                                                                                 delay={180}
                                                                                 icon={
                                                                                   <SvgLogo
@@ -3450,6 +3469,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 tooltipTitle="Ethereum"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
+                                                                                  data-testid="Ethereum"
                                                                                   id="networkselection-action-0"
                                                                                   onClick={[Function]}
                                                                                   onClose={[Function]}
@@ -3463,6 +3483,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     aria-labelledby={null}
                                                                                     className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                                                     data-mui-internal-clone-element={true}
+                                                                                    data-testid="Ethereum"
                                                                                     onBlur={[Function]}
                                                                                     onClick={[Function]}
                                                                                     onFocus={[Function]}
@@ -3480,6 +3501,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "borderColor": "primary.main",
                                                                                           },
                                                                                         },
+                                                                                        "data-testid": "Ethereum",
                                                                                         "delay": 180,
                                                                                         "icon": <SvgLogo
                                                                                           height="70%"
@@ -3514,6 +3536,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       aria-labelledby={null}
                                                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-2jzuc1-MuiSpeedDialAction-fab"
                                                                                       data-mui-internal-clone-element={true}
+                                                                                      data-testid="Ethereum"
                                                                                       onBlur={[Function]}
                                                                                       onClick={[Function]}
                                                                                       onFocus={[Function]}
@@ -3536,6 +3559,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-2jzuc1-MuiSpeedDialAction-fab"
                                                                                         component="button"
                                                                                         data-mui-internal-clone-element={true}
+                                                                                        data-testid="Ethereum"
                                                                                         disabled={false}
                                                                                         focusRipple={true}
                                                                                         focusVisibleClassName=""
@@ -3559,6 +3583,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "color": "default",
                                                                                             "component": "button",
                                                                                             "data-mui-internal-clone-element": true,
+                                                                                            "data-testid": "Ethereum",
                                                                                             "disableFocusRipple": false,
                                                                                             "disabled": false,
                                                                                             "onBlur": [Function],
@@ -3591,6 +3616,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1ov6rlx-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           component="button"
                                                                                           data-mui-internal-clone-element={true}
+                                                                                          data-testid="Ethereum"
                                                                                           disabled={false}
                                                                                           focusRipple={true}
                                                                                           focusVisibleClassName=""
@@ -3615,6 +3641,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             as="button"
                                                                                             className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1ov6rlx-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                             data-mui-internal-clone-element={true}
+                                                                                            data-testid="Ethereum"
                                                                                             disabled={false}
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
@@ -3643,6 +3670,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1ov6rlx-MuiFab-root-MuiSpeedDialAction-fab",
                                                                                                 "component": "button",
                                                                                                 "data-mui-internal-clone-element": true,
+                                                                                                "data-testid": "Ethereum",
                                                                                                 "disableRipple": false,
                                                                                                 "disableTouchRipple": false,
                                                                                                 "disabled": false,
@@ -3677,6 +3705,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               aria-labelledby={null}
                                                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                               data-mui-internal-clone-element={true}
+                                                                                              data-testid="Ethereum"
                                                                                               disabled={false}
                                                                                               onBlur={[Function]}
                                                                                               onClick={[Function]}
@@ -3741,6 +3770,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         aria-label="Ethereum"
                                                                                         class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                         data-mui-internal-clone-element="true"
+                                                                                        data-testid="Ethereum"
                                                                                         role="menuitem"
                                                                                         style="transition-delay: 180ms;"
                                                                                         tabindex="-1"
@@ -3799,6 +3829,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "borderColor": "primary.main",
                                                                                                 },
                                                                                               },
+                                                                                              "data-testid": "Ethereum",
                                                                                               "delay": 180,
                                                                                               "icon": <SvgLogo
                                                                                                 height="70%"
@@ -3835,6 +3866,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           />
                                                                                         </MuiSpeedDialActionFab>,
                                                                                         "classes": undefined,
+                                                                                        "data-testid": "Ethereum",
                                                                                         "disableInteractive": false,
                                                                                         "id": "networkselection-action-0",
                                                                                         "isRtl": false,
@@ -3875,6 +3907,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           aria-label="Ethereum"
                                                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           data-mui-internal-clone-element="true"
+                                                                                          data-testid="Ethereum"
                                                                                           role="menuitem"
                                                                                           style="transition-delay: 180ms;"
                                                                                           tabindex="-1"
@@ -3931,6 +3964,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Cardano"
                                                                                 delay={150}
                                                                                 icon={
                                                                                   <SvgLogo
@@ -3947,6 +3981,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 tooltipTitle="Cardano"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
+                                                                                  data-testid="Cardano"
                                                                                   id="networkselection-action-1"
                                                                                   onClick={[Function]}
                                                                                   onClose={[Function]}
@@ -3960,6 +3995,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     aria-labelledby={null}
                                                                                     className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                                                     data-mui-internal-clone-element={true}
+                                                                                    data-testid="Cardano"
                                                                                     onBlur={[Function]}
                                                                                     onClick={[Function]}
                                                                                     onFocus={[Function]}
@@ -3975,6 +4011,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "background": "white",
                                                                                           },
                                                                                         },
+                                                                                        "data-testid": "Cardano",
                                                                                         "delay": 150,
                                                                                         "icon": <SvgLogo
                                                                                           height="70%"
@@ -4007,6 +4044,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       aria-labelledby={null}
                                                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                       data-mui-internal-clone-element={true}
+                                                                                      data-testid="Cardano"
                                                                                       onBlur={[Function]}
                                                                                       onClick={[Function]}
                                                                                       onFocus={[Function]}
@@ -4029,6 +4067,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                         component="button"
                                                                                         data-mui-internal-clone-element={true}
+                                                                                        data-testid="Cardano"
                                                                                         disabled={false}
                                                                                         focusRipple={true}
                                                                                         focusVisibleClassName=""
@@ -4052,6 +4091,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "color": "default",
                                                                                             "component": "button",
                                                                                             "data-mui-internal-clone-element": true,
+                                                                                            "data-testid": "Cardano",
                                                                                             "disableFocusRipple": false,
                                                                                             "disabled": false,
                                                                                             "onBlur": [Function],
@@ -4084,6 +4124,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           component="button"
                                                                                           data-mui-internal-clone-element={true}
+                                                                                          data-testid="Cardano"
                                                                                           disabled={false}
                                                                                           focusRipple={true}
                                                                                           focusVisibleClassName=""
@@ -4108,6 +4149,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             as="button"
                                                                                             className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                             data-mui-internal-clone-element={true}
+                                                                                            data-testid="Cardano"
                                                                                             disabled={false}
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
@@ -4136,6 +4178,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                                                 "component": "button",
                                                                                                 "data-mui-internal-clone-element": true,
+                                                                                                "data-testid": "Cardano",
                                                                                                 "disableRipple": false,
                                                                                                 "disableTouchRipple": false,
                                                                                                 "disabled": false,
@@ -4170,6 +4213,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               aria-labelledby={null}
                                                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                               data-mui-internal-clone-element={true}
+                                                                                              data-testid="Cardano"
                                                                                               disabled={false}
                                                                                               onBlur={[Function]}
                                                                                               onClick={[Function]}
@@ -4234,6 +4278,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         aria-label="Cardano"
                                                                                         class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                         data-mui-internal-clone-element="true"
+                                                                                        data-testid="Cardano"
                                                                                         role="menuitem"
                                                                                         style="transition-delay: 150ms;"
                                                                                         tabindex="-1"
@@ -4290,6 +4335,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "background": "white",
                                                                                                 },
                                                                                               },
+                                                                                              "data-testid": "Cardano",
                                                                                               "delay": 150,
                                                                                               "icon": <SvgLogo
                                                                                                 height="70%"
@@ -4324,6 +4370,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           />
                                                                                         </MuiSpeedDialActionFab>,
                                                                                         "classes": undefined,
+                                                                                        "data-testid": "Cardano",
                                                                                         "disableInteractive": false,
                                                                                         "id": "networkselection-action-1",
                                                                                         "isRtl": false,
@@ -4364,6 +4411,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           aria-label="Cardano"
                                                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           data-mui-internal-clone-element="true"
+                                                                                          data-testid="Cardano"
                                                                                           role="menuitem"
                                                                                           style="transition-delay: 150ms;"
                                                                                           tabindex="-1"
@@ -4420,6 +4468,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Avalanche"
                                                                                 delay={120}
                                                                                 icon={
                                                                                   <SvgLogo
@@ -4436,6 +4485,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 tooltipTitle="Avalanche"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
+                                                                                  data-testid="Avalanche"
                                                                                   id="networkselection-action-2"
                                                                                   onClick={[Function]}
                                                                                   onClose={[Function]}
@@ -4449,6 +4499,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     aria-labelledby={null}
                                                                                     className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                                                     data-mui-internal-clone-element={true}
+                                                                                    data-testid="Avalanche"
                                                                                     onBlur={[Function]}
                                                                                     onClick={[Function]}
                                                                                     onFocus={[Function]}
@@ -4464,6 +4515,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "background": "white",
                                                                                           },
                                                                                         },
+                                                                                        "data-testid": "Avalanche",
                                                                                         "delay": 120,
                                                                                         "icon": <SvgLogo
                                                                                           height="70%"
@@ -4496,6 +4548,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       aria-labelledby={null}
                                                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                       data-mui-internal-clone-element={true}
+                                                                                      data-testid="Avalanche"
                                                                                       onBlur={[Function]}
                                                                                       onClick={[Function]}
                                                                                       onFocus={[Function]}
@@ -4518,6 +4571,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                         component="button"
                                                                                         data-mui-internal-clone-element={true}
+                                                                                        data-testid="Avalanche"
                                                                                         disabled={false}
                                                                                         focusRipple={true}
                                                                                         focusVisibleClassName=""
@@ -4541,6 +4595,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "color": "default",
                                                                                             "component": "button",
                                                                                             "data-mui-internal-clone-element": true,
+                                                                                            "data-testid": "Avalanche",
                                                                                             "disableFocusRipple": false,
                                                                                             "disabled": false,
                                                                                             "onBlur": [Function],
@@ -4573,6 +4628,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           component="button"
                                                                                           data-mui-internal-clone-element={true}
+                                                                                          data-testid="Avalanche"
                                                                                           disabled={false}
                                                                                           focusRipple={true}
                                                                                           focusVisibleClassName=""
@@ -4597,6 +4653,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             as="button"
                                                                                             className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                             data-mui-internal-clone-element={true}
+                                                                                            data-testid="Avalanche"
                                                                                             disabled={false}
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
@@ -4625,6 +4682,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                                                 "component": "button",
                                                                                                 "data-mui-internal-clone-element": true,
+                                                                                                "data-testid": "Avalanche",
                                                                                                 "disableRipple": false,
                                                                                                 "disableTouchRipple": false,
                                                                                                 "disabled": false,
@@ -4659,6 +4717,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               aria-labelledby={null}
                                                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                               data-mui-internal-clone-element={true}
+                                                                                              data-testid="Avalanche"
                                                                                               disabled={false}
                                                                                               onBlur={[Function]}
                                                                                               onClick={[Function]}
@@ -4723,6 +4782,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         aria-label="Avalanche"
                                                                                         class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                         data-mui-internal-clone-element="true"
+                                                                                        data-testid="Avalanche"
                                                                                         role="menuitem"
                                                                                         style="transition-delay: 120ms;"
                                                                                         tabindex="-1"
@@ -4779,6 +4839,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "background": "white",
                                                                                                 },
                                                                                               },
+                                                                                              "data-testid": "Avalanche",
                                                                                               "delay": 120,
                                                                                               "icon": <SvgLogo
                                                                                                 height="70%"
@@ -4813,6 +4874,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           />
                                                                                         </MuiSpeedDialActionFab>,
                                                                                         "classes": undefined,
+                                                                                        "data-testid": "Avalanche",
                                                                                         "disableInteractive": false,
                                                                                         "id": "networkselection-action-2",
                                                                                         "isRtl": false,
@@ -4853,6 +4915,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           aria-label="Avalanche"
                                                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           data-mui-internal-clone-element="true"
+                                                                                          data-testid="Avalanche"
                                                                                           role="menuitem"
                                                                                           style="transition-delay: 120ms;"
                                                                                           tabindex="-1"
@@ -4909,6 +4972,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Solana"
                                                                                 delay={90}
                                                                                 icon={
                                                                                   <SvgLogo
@@ -4925,6 +4989,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 tooltipTitle="Solana"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
+                                                                                  data-testid="Solana"
                                                                                   id="networkselection-action-3"
                                                                                   onClick={[Function]}
                                                                                   onClose={[Function]}
@@ -4938,6 +5003,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     aria-labelledby={null}
                                                                                     className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                                                     data-mui-internal-clone-element={true}
+                                                                                    data-testid="Solana"
                                                                                     onBlur={[Function]}
                                                                                     onClick={[Function]}
                                                                                     onFocus={[Function]}
@@ -4953,6 +5019,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "background": "white",
                                                                                           },
                                                                                         },
+                                                                                        "data-testid": "Solana",
                                                                                         "delay": 90,
                                                                                         "icon": <SvgLogo
                                                                                           height="70%"
@@ -4985,6 +5052,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       aria-labelledby={null}
                                                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                       data-mui-internal-clone-element={true}
+                                                                                      data-testid="Solana"
                                                                                       onBlur={[Function]}
                                                                                       onClick={[Function]}
                                                                                       onFocus={[Function]}
@@ -5007,6 +5075,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                         component="button"
                                                                                         data-mui-internal-clone-element={true}
+                                                                                        data-testid="Solana"
                                                                                         disabled={false}
                                                                                         focusRipple={true}
                                                                                         focusVisibleClassName=""
@@ -5030,6 +5099,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "color": "default",
                                                                                             "component": "button",
                                                                                             "data-mui-internal-clone-element": true,
+                                                                                            "data-testid": "Solana",
                                                                                             "disableFocusRipple": false,
                                                                                             "disabled": false,
                                                                                             "onBlur": [Function],
@@ -5062,6 +5132,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           component="button"
                                                                                           data-mui-internal-clone-element={true}
+                                                                                          data-testid="Solana"
                                                                                           disabled={false}
                                                                                           focusRipple={true}
                                                                                           focusVisibleClassName=""
@@ -5086,6 +5157,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             as="button"
                                                                                             className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                             data-mui-internal-clone-element={true}
+                                                                                            data-testid="Solana"
                                                                                             disabled={false}
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
@@ -5114,6 +5186,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                                                 "component": "button",
                                                                                                 "data-mui-internal-clone-element": true,
+                                                                                                "data-testid": "Solana",
                                                                                                 "disableRipple": false,
                                                                                                 "disableTouchRipple": false,
                                                                                                 "disabled": false,
@@ -5148,6 +5221,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               aria-labelledby={null}
                                                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                               data-mui-internal-clone-element={true}
+                                                                                              data-testid="Solana"
                                                                                               disabled={false}
                                                                                               onBlur={[Function]}
                                                                                               onClick={[Function]}
@@ -5212,6 +5286,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         aria-label="Solana"
                                                                                         class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                         data-mui-internal-clone-element="true"
+                                                                                        data-testid="Solana"
                                                                                         role="menuitem"
                                                                                         style="transition-delay: 90ms;"
                                                                                         tabindex="-1"
@@ -5268,6 +5343,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "background": "white",
                                                                                                 },
                                                                                               },
+                                                                                              "data-testid": "Solana",
                                                                                               "delay": 90,
                                                                                               "icon": <SvgLogo
                                                                                                 height="70%"
@@ -5302,6 +5378,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           />
                                                                                         </MuiSpeedDialActionFab>,
                                                                                         "classes": undefined,
+                                                                                        "data-testid": "Solana",
                                                                                         "disableInteractive": false,
                                                                                         "id": "networkselection-action-3",
                                                                                         "isRtl": false,
@@ -5342,6 +5419,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           aria-label="Solana"
                                                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           data-mui-internal-clone-element="true"
+                                                                                          data-testid="Solana"
                                                                                           role="menuitem"
                                                                                           style="transition-delay: 90ms;"
                                                                                           tabindex="-1"
@@ -5398,6 +5476,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="Polygon"
                                                                                 delay={60}
                                                                                 icon={
                                                                                   <SvgLogo
@@ -5414,6 +5493,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 tooltipTitle="Polygon"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
+                                                                                  data-testid="Polygon"
                                                                                   id="networkselection-action-4"
                                                                                   onClick={[Function]}
                                                                                   onClose={[Function]}
@@ -5427,6 +5507,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     aria-labelledby={null}
                                                                                     className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                                                     data-mui-internal-clone-element={true}
+                                                                                    data-testid="Polygon"
                                                                                     onBlur={[Function]}
                                                                                     onClick={[Function]}
                                                                                     onFocus={[Function]}
@@ -5442,6 +5523,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "background": "white",
                                                                                           },
                                                                                         },
+                                                                                        "data-testid": "Polygon",
                                                                                         "delay": 60,
                                                                                         "icon": <SvgLogo
                                                                                           height="70%"
@@ -5474,6 +5556,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       aria-labelledby={null}
                                                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                       data-mui-internal-clone-element={true}
+                                                                                      data-testid="Polygon"
                                                                                       onBlur={[Function]}
                                                                                       onClick={[Function]}
                                                                                       onFocus={[Function]}
@@ -5496,6 +5579,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                         component="button"
                                                                                         data-mui-internal-clone-element={true}
+                                                                                        data-testid="Polygon"
                                                                                         disabled={false}
                                                                                         focusRipple={true}
                                                                                         focusVisibleClassName=""
@@ -5519,6 +5603,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "color": "default",
                                                                                             "component": "button",
                                                                                             "data-mui-internal-clone-element": true,
+                                                                                            "data-testid": "Polygon",
                                                                                             "disableFocusRipple": false,
                                                                                             "disabled": false,
                                                                                             "onBlur": [Function],
@@ -5551,6 +5636,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           component="button"
                                                                                           data-mui-internal-clone-element={true}
+                                                                                          data-testid="Polygon"
                                                                                           disabled={false}
                                                                                           focusRipple={true}
                                                                                           focusVisibleClassName=""
@@ -5575,6 +5661,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             as="button"
                                                                                             className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                             data-mui-internal-clone-element={true}
+                                                                                            data-testid="Polygon"
                                                                                             disabled={false}
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
@@ -5603,6 +5690,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                                                 "component": "button",
                                                                                                 "data-mui-internal-clone-element": true,
+                                                                                                "data-testid": "Polygon",
                                                                                                 "disableRipple": false,
                                                                                                 "disableTouchRipple": false,
                                                                                                 "disabled": false,
@@ -5637,6 +5725,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               aria-labelledby={null}
                                                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                               data-mui-internal-clone-element={true}
+                                                                                              data-testid="Polygon"
                                                                                               disabled={false}
                                                                                               onBlur={[Function]}
                                                                                               onClick={[Function]}
@@ -5701,6 +5790,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         aria-label="Polygon"
                                                                                         class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                         data-mui-internal-clone-element="true"
+                                                                                        data-testid="Polygon"
                                                                                         role="menuitem"
                                                                                         style="transition-delay: 60ms;"
                                                                                         tabindex="-1"
@@ -5757,6 +5847,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "background": "white",
                                                                                                 },
                                                                                               },
+                                                                                              "data-testid": "Polygon",
                                                                                               "delay": 60,
                                                                                               "icon": <SvgLogo
                                                                                                 height="70%"
@@ -5791,6 +5882,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           />
                                                                                         </MuiSpeedDialActionFab>,
                                                                                         "classes": undefined,
+                                                                                        "data-testid": "Polygon",
                                                                                         "disableInteractive": false,
                                                                                         "id": "networkselection-action-4",
                                                                                         "isRtl": false,
@@ -5831,6 +5923,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           aria-label="Polygon"
                                                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           data-mui-internal-clone-element="true"
+                                                                                          data-testid="Polygon"
                                                                                           role="menuitem"
                                                                                           style="transition-delay: 60ms;"
                                                                                           tabindex="-1"
@@ -5887,6 +5980,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     },
                                                                                   }
                                                                                 }
+                                                                                data-testid="BSC"
                                                                                 delay={30}
                                                                                 icon={
                                                                                   <SvgLogo
@@ -5903,6 +5997,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 tooltipTitle="BSC"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
+                                                                                  data-testid="BSC"
                                                                                   id="networkselection-action-5"
                                                                                   onClick={[Function]}
                                                                                   onClose={[Function]}
@@ -5916,6 +6011,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     aria-labelledby={null}
                                                                                     className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
                                                                                     data-mui-internal-clone-element={true}
+                                                                                    data-testid="BSC"
                                                                                     onBlur={[Function]}
                                                                                     onClick={[Function]}
                                                                                     onFocus={[Function]}
@@ -5931,6 +6027,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "background": "white",
                                                                                           },
                                                                                         },
+                                                                                        "data-testid": "BSC",
                                                                                         "delay": 30,
                                                                                         "icon": <SvgLogo
                                                                                           height="70%"
@@ -5963,6 +6060,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       aria-labelledby={null}
                                                                                       className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                       data-mui-internal-clone-element={true}
+                                                                                      data-testid="BSC"
                                                                                       onBlur={[Function]}
                                                                                       onClick={[Function]}
                                                                                       onFocus={[Function]}
@@ -5985,6 +6083,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
                                                                                         component="button"
                                                                                         data-mui-internal-clone-element={true}
+                                                                                        data-testid="BSC"
                                                                                         disabled={false}
                                                                                         focusRipple={true}
                                                                                         focusVisibleClassName=""
@@ -6008,6 +6107,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             "color": "default",
                                                                                             "component": "button",
                                                                                             "data-mui-internal-clone-element": true,
+                                                                                            "data-testid": "BSC",
                                                                                             "disableFocusRipple": false,
                                                                                             "disabled": false,
                                                                                             "onBlur": [Function],
@@ -6040,6 +6140,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           component="button"
                                                                                           data-mui-internal-clone-element={true}
+                                                                                          data-testid="BSC"
                                                                                           disabled={false}
                                                                                           focusRipple={true}
                                                                                           focusVisibleClassName=""
@@ -6064,6 +6165,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             as="button"
                                                                                             className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                             data-mui-internal-clone-element={true}
+                                                                                            data-testid="BSC"
                                                                                             disabled={false}
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
@@ -6092,6 +6194,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
                                                                                                 "component": "button",
                                                                                                 "data-mui-internal-clone-element": true,
+                                                                                                "data-testid": "BSC",
                                                                                                 "disableRipple": false,
                                                                                                 "disableTouchRipple": false,
                                                                                                 "disabled": false,
@@ -6126,6 +6229,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               aria-labelledby={null}
                                                                                               className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                               data-mui-internal-clone-element={true}
+                                                                                              data-testid="BSC"
                                                                                               disabled={false}
                                                                                               onBlur={[Function]}
                                                                                               onClick={[Function]}
@@ -6190,6 +6294,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         aria-label="BSC"
                                                                                         class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                         data-mui-internal-clone-element="true"
+                                                                                        data-testid="BSC"
                                                                                         role="menuitem"
                                                                                         style="transition-delay: 30ms;"
                                                                                         tabindex="-1"
@@ -6246,6 +6351,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "background": "white",
                                                                                                 },
                                                                                               },
+                                                                                              "data-testid": "BSC",
                                                                                               "delay": 30,
                                                                                               "icon": <SvgLogo
                                                                                                 height="70%"
@@ -6280,6 +6386,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           />
                                                                                         </MuiSpeedDialActionFab>,
                                                                                         "classes": undefined,
+                                                                                        "data-testid": "BSC",
                                                                                         "disableInteractive": false,
                                                                                         "id": "networkselection-action-5",
                                                                                         "isRtl": false,
@@ -6320,6 +6427,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           aria-label="BSC"
                                                                                           class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
                                                                                           data-mui-internal-clone-element="true"
+                                                                                          data-testid="BSC"
                                                                                           role="menuitem"
                                                                                           style="transition-delay: 30ms;"
                                                                                           tabindex="-1"
