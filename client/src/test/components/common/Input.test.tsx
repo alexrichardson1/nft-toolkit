@@ -21,3 +21,22 @@ test("Input snapshot", () => {
   );
   expect(tree).toMatchSnapshot();
 });
+
+test("Input snapshot with error", () => {
+  const tree = mount(
+    <ThemeProvider>
+      <NetworkProvider>
+        <DAppProvider config={{}}>
+          <Input
+            onChange={() => console.log("input change occurred")}
+            value="test"
+            label="test"
+            placeholder="This is a test"
+            error="This is an error"
+          />
+        </DAppProvider>
+      </NetworkProvider>
+    </ThemeProvider>
+  );
+  expect(tree).toMatchSnapshot();
+});
