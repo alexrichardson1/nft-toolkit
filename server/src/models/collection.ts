@@ -11,6 +11,7 @@ export interface CollectionT {
   symbol: string;
   description: string;
   price: string;
+  chainId: number;
   address?: string;
   tokens: TokenT[];
 }
@@ -22,13 +23,13 @@ const tokenSchema = new Schema<TokenT>({
   image: String,
 });
 
-// TODO: complete collection schema - contract address?
 export const collectionSchema = new Schema<CollectionT>({
   name: String,
   description: String,
   address: String,
   symbol: String,
   price: String,
+  chainId: Number,
   tokens: [tokenSchema],
 });
 
