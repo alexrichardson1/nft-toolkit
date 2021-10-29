@@ -1,11 +1,35 @@
 import { getTokenMetadata } from "@controllers/metadata";
 import { Collection, Token } from "@models/collection";
-import { User } from "@models/user";
+import { User, UserT } from "@models/user";
 import db from "@tests/testDB";
 import { NextFunction, Request, Response } from "express";
+import { Document, Types } from "mongoose";
 
 let mockResponse: Response;
 let mockNext: NextFunction;
+let mockUser: Document<unknown, unknown, UserT> &
+  UserT & {
+    _id: Types.ObjectId;
+  };
+
+const getMockRequest = ({
+  fromAddress = "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+  collectionName = "Monkeys",
+  tokenId = "1",
+}: {
+  fromAddress?: string;
+  collectionName?: string;
+  tokenId?: string;
+} = {}) => {
+  return {
+    params: {
+      fromAddress: fromAddress,
+      collectionName: collectionName,
+      tokenId: tokenId,
+    },
+  } as unknown as Request;
+};
+
 const mockTokenInfo = {
   name: "First NFT",
   description: "A simple not monkey",
@@ -32,6 +56,10 @@ beforeEach(() => {
     status: jest.fn(),
   } as unknown as Response;
   mockNext = jest.fn();
+  mockUser = new User({
+    fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+    collections: [mockCollection],
+  });
 });
 
 afterEach(async () => {
@@ -44,46 +72,23 @@ afterAll(async () => {
 });
 
 describe("Token Metadata", () => {
-  it("Should fail if called with invalid params", async () => {
+  it("Should fail if called with undefined params", async () => {
     const mockRequest = {
-      params: {
-        collectionName: "Monkeys",
-        tokenId: "1",
-      },
+      params: {},
     } as unknown as Request;
-
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
   });
 
   it("Should fail if user does not exist in db", async () => {
-    const mockRequest = {
-      params: {
-        fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        collectionName: "Monkeys",
-        tokenId: "1",
-      },
-    } as unknown as Request;
-
+    const mockRequest = getMockRequest();
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(new Error("User not found"));
   });
 
   it("Should fail if collection does not exist in db", async () => {
-    const mockRequest = {
-      params: {
-        fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        collectionName: "Monkeys",
-        tokenId: "1",
-      },
-    } as unknown as Request;
-
-    const user = new User({
-      fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-      collections: [mockCollection],
-    });
-    await user.save();
-
+    const mockRequest = getMockRequest();
+    await mockUser.save();
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(
       new Error("Collection name not found")
@@ -91,20 +96,11 @@ describe("Token Metadata", () => {
   });
 
   it("Should fail if token does not exist in collection", async () => {
-    const mockRequest = {
-      params: {
-        fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        collectionName: "NotMonkeys",
-        tokenId: "2",
-      },
-    } as unknown as Request;
-
-    const user = new User({
-      fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-      collections: [mockCollection],
+    const mockRequest = getMockRequest({
+      collectionName: "NotMonkeys",
+      tokenId: "2",
     });
-    await user.save();
-
+    await mockUser.save();
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(
       new Error("Token id not found in collection")
@@ -112,20 +108,10 @@ describe("Token Metadata", () => {
   });
 
   it("Should succeed if token does exist in collection", async () => {
-    const mockRequest = {
-      params: {
-        fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        collectionName: "NotMonkeys",
-        tokenId: "1",
-      },
-    } as unknown as Request;
-
-    const user = new User({
-      fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-      collections: [mockCollection],
+    const mockRequest = getMockRequest({
+      collectionName: "NotMonkeys",
     });
-    await user.save();
-
+    await mockUser.save();
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining(mockTokenInfo)
