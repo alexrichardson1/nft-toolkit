@@ -67,8 +67,7 @@ export const deployContracts: RequestHandler = (req, res, next) => {
     symbol,
     `http://nftoolkit.eu-west-2.elasticbeanstalk.com/${fromAddress}/${name}/`,
     tokens.length,
-    BigNumber.from(price),
-    { from: fromAddress }
+    BigNumber.from(price)
   );
   res.json({ transaction: tx });
   next();
