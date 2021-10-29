@@ -19,8 +19,6 @@ export const addDeployedAddress: RequestHandler = async (req, res, next) => {
     return next(new Error("Collection name not found"));
   }
   collection.address = deployedAddress;
-  user.save().catch((err: Error) => {
-    return next(err);
-  });
+  await user.save();
   return res.json({ success: true });
 };
