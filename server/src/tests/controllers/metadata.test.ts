@@ -1,6 +1,10 @@
 import { getTokenMetadata } from "@controllers/metadata";
-import { Collection, Token } from "@models/collection";
 import { User, UserT } from "@models/user";
+import {
+  mockCollection,
+  mockFromAddress,
+  mockTokenInfo,
+} from "@tests/mockCollectionInfo";
 import db from "@tests/testDB";
 import { NextFunction, Request, Response } from "express";
 import { Document, Types } from "mongoose";
@@ -13,7 +17,7 @@ let mockUser: Document<unknown, unknown, UserT> &
   };
 
 const getMockRequest = ({
-  fromAddress = "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+  fromAddress = mockFromAddress,
   collectionName = "Monkeys",
   tokenId = "1",
 }: {
@@ -30,22 +34,6 @@ const getMockRequest = ({
   } as unknown as Request;
 };
 
-const mockTokenInfo = {
-  name: "First NFT",
-  description: "A simple not monkey",
-  image:
-    "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png",
-};
-const mockToken = new Token(mockTokenInfo);
-const mockCollection = new Collection({
-  name: "NotMonkeys",
-  symbol: "MNKYS",
-  price: "1230000000000",
-  chainId: 1,
-  address: "0x1B156C5c75E9dF4CAAb2a5cc5999aC58ff4F9090",
-  tokens: [mockToken],
-});
-
 beforeAll(async () => {
   await db.connect();
 });
@@ -57,7 +45,7 @@ beforeEach(() => {
   } as unknown as Response;
   mockNext = jest.fn();
   mockUser = new User({
-    fromAddress: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+    fromAddress: mockFromAddress,
     collections: [mockCollection],
   });
 });
