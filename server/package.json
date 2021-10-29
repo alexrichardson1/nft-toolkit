@@ -38,6 +38,7 @@
     "jest": "^27.3.1",
     "lodash": "^4.17.21",
     "mocha": "^9.1.2",
+    "mongodb-memory-server": "^7.5.1",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.13",
     "set-value": "^4.0.1",
@@ -61,10 +62,12 @@
       "@routes/(.*)": "<rootDir>/src/routes/$1",
       "@controllers/(.*)": "<rootDir>/src/controllers/$1",
       "@validators/(.*)": "<rootDir>/src/validators/$1",
-      "@server/(.*)": "<rootDir>/src/$1"
+      "@server/(.*)": "<rootDir>/src/$1",
+      "@tests/(.*)": "<rootDir>/src/tests/$1"
     },
     "coveragePathIgnorePatterns": [
-      "smart-contracts"
+      "smart-contracts",
+      "tests"
     ],
     "coverageThreshold": {
       "global": {
