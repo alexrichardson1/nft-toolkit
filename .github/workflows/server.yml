@@ -28,6 +28,6 @@ jobs:
       - name: TSC Build
         run: cd server/ && yarn build
       - name: Test Server
-        run: cd server/ && yarn test
+        run: cd server/ && yarn test --coverage
       - name: Test Contracts
         run: cd server/ && yarn soltest
