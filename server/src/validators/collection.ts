@@ -1,7 +1,7 @@
 import { TokenT } from "@models/collection";
 import { check, CustomValidator, ValidationChain } from "express-validator";
 
-const isValidTokens: CustomValidator = (value: TokenT[]) => {
+const areTokensValid: CustomValidator = (value: TokenT[]) => {
   return value.length > 0;
 };
 
@@ -15,7 +15,7 @@ export const collectionValidator: () => ValidationChain[] = () => {
     check("description").notEmpty().escape(),
     check("price").isNumeric(),
     check("tokens")
-      .custom(isValidTokens)
+      .custom(areTokensValid)
       .withMessage("Must have at least one NFT in collection."),
     check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
   ];
