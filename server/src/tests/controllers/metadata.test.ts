@@ -3,7 +3,9 @@ import { User, UserT } from "@models/user";
 import {
   mockCollection,
   mockFromAddress,
+  mockInvalidCollectionName,
   mockTokenInfo,
+  mockValidCollectionName,
 } from "@tests/mockCollectionInfo";
 import db from "@tests/testDB";
 import { NextFunction, Request, Response } from "express";
@@ -18,7 +20,7 @@ let mockUser: Document<unknown, unknown, UserT> &
 
 const getMockRequest = ({
   fromAddress = mockFromAddress,
-  collectionName = "Monkeys",
+  collectionName = mockInvalidCollectionName,
   tokenId = "1",
 }: {
   fromAddress?: string;
@@ -85,7 +87,7 @@ describe("Token Metadata", () => {
 
   it("Should fail if token does not exist in collection", async () => {
     const mockRequest = getMockRequest({
-      collectionName: "NotMonkeys",
+      collectionName: mockValidCollectionName,
       tokenId: "2",
     });
     await mockUser.save();
@@ -97,7 +99,7 @@ describe("Token Metadata", () => {
 
   it("Should succeed if token does exist in collection", async () => {
     const mockRequest = getMockRequest({
-      collectionName: "NotMonkeys",
+      collectionName: mockValidCollectionName,
     });
     await mockUser.save();
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
