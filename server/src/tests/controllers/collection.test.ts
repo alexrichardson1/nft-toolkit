@@ -1,4 +1,8 @@
-import { deployContracts, getCollections } from "@controllers/collection";
+import {
+  deployContracts,
+  getCollections,
+  saveCollectionToDB,
+} from "@controllers/collection";
 import { User } from "@models/user";
 import {
   mockCollection,
@@ -32,13 +36,38 @@ afterAll(async () => {
   await db.close();
 });
 
-describe("Deploy contracts", () => {
-  it("Should successfully return a transaction request", async () => {
+describe("Save collection to db", () => {
+  it("Should successfully add a new user and collection", async () => {
     const mockRequest = {
       body: mockCollectionInfo,
     } as unknown as Request;
     mockRequest.body.fromAddress = mockFromAddress;
-    await deployContracts(mockRequest, mockResponse, mockNext);
+    await saveCollectionToDB(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith();
+  });
+
+  it("Should successfully add a collection to existing user", async () => {
+    const mockRequest = {
+      body: mockCollectionInfo,
+    } as unknown as Request;
+    mockRequest.body.fromAddress = mockFromAddress;
+    const mockUser = new User({
+      collections: [mockCollectionInfo],
+      fromAddress: mockFromAddress,
+    });
+    await mockUser.save();
+    await saveCollectionToDB(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith();
+  });
+});
+
+describe("Deploy contracts", () => {
+  it("Should successfully return a transaction request", () => {
+    const mockRequest = {
+      body: mockCollectionInfo,
+    } as unknown as Request;
+    mockRequest.body.fromAddress = mockFromAddress;
+    deployContracts(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         transaction: expect.any(Object),
