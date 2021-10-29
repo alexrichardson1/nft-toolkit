@@ -21,7 +21,8 @@
       "@routes/*": ["./routes/*"],
       "@controllers/*": ["./controllers/*"],
       "@validators/*": ["./validators/*"],
-      "@server/*": ["./*"]
+      "@server/*": ["./*"],
+      "@tests/*": ["./tests/*"]
     }
   },
   "include": ["src", "smart-contracts/test", "smart-contracts/typechain"],
