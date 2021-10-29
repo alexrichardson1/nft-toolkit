@@ -50,13 +50,11 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
       collections: [collection],
     });
   }
-  user.save().catch((err: Error) => {
-    next(err);
-  });
+  await user.save();
   next();
 };
 
-export const deployContracts: RequestHandler = (req, res, next) => {
+export const deployContracts: RequestHandler = (req, res) => {
   const { name, symbol, tokens, price, fromAddress }: CollectionT & UserT =
     req.body;
   const signer = new ethers.VoidSigner(fromAddress);
@@ -69,7 +67,6 @@ export const deployContracts: RequestHandler = (req, res, next) => {
     BigNumber.from(price)
   );
   res.json({ transaction: tx });
-  next();
 };
 
 export const getCollections: RequestHandler = async (req, res, next) => {
