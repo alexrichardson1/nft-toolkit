@@ -20,3 +20,20 @@ export const collectionValidator: () => ValidationChain[] = () => {
     check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
   ];
 };
+
+export const deployedValidator: () => ValidationChain[] = () => {
+  return [
+    check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
+    check("deployedAddress").isEthereumAddress().withMessage("Invalid address"),
+    check("collectionName")
+      .notEmpty()
+      .isAlphanumeric()
+      .withMessage("Invalid name, must be only alphanumeric"),
+  ];
+};
+
+export const getCollectionsValidator: () => ValidationChain[] = () => {
+  return [
+    check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
+  ];
+};
