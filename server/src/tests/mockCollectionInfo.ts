@@ -12,10 +12,11 @@ export const mockValidCollectionName = "NotMonkeys";
 export const mockInvalidCollectionName = "Monkeys";
 
 const mockToken = new Token(mockTokenInfo);
-export const mockCollection = new Collection({
+export const mockCollectionInfo = {
   name: mockValidCollectionName,
   symbol: "MNKYS",
   price: "1230000000000",
   chainId: 1,
   tokens: [mockToken],
-});
+};
+export const mockCollection = new Collection(mockCollectionInfo);
