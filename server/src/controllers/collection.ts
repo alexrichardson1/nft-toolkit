@@ -1,4 +1,3 @@
-import { ERROR_CODE } from "@controllers/common";
 import { Collection, CollectionT, Token } from "@models/collection";
 import { User } from "@models/user";
 import { S3 } from "aws-sdk";
@@ -73,13 +72,16 @@ export const deployContracts: RequestHandler = (req, res, next) => {
   next();
 };
 
-export const getCollections: RequestHandler = async (req, res) => {
+export const getCollections: RequestHandler = async (req, res, next) => {
   const { fromAddress } = req.params;
+  if (!fromAddress) {
+    return next(new Error("Invalid params"));
+  }
   const user = await User.findOne({
     fromAddress: fromAddress,
   }).exec();
   if (!user) {
-    return res.status(ERROR_CODE).send("Sorry can't find that");
+    return next(new Error("User not found"));
   }
   return res.json({ collections: user.collections });
 };
