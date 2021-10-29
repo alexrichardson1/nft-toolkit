@@ -1,7 +1,7 @@
 import { collectionSchema, CollectionT } from "@models/collection";
 import { model, Schema } from "mongoose";
 
-interface UserT {
+export interface UserT {
   fromAddress: string;
   collections: CollectionT[];
 }
