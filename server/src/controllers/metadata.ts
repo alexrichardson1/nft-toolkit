@@ -11,7 +11,6 @@ export const getTokenMetadata: RequestHandler = async (req, res, next) => {
   const tokenNumber = parseInt(tokenId, 10);
   const user = await User.findOne({
     fromAddress: fromAddress,
-    collectionName: collectionName,
   }).exec();
   if (!user) {
     return next(new Error("User not found"));
@@ -24,7 +23,7 @@ export const getTokenMetadata: RequestHandler = async (req, res, next) => {
   }
   const numTokens = collection.tokens.length;
   if (tokenNumber < FIRST_TOKEN_NO || tokenNumber > numTokens) {
-    return next(new Error("Token id not found"));
+    return next(new Error("Token id not found in collection"));
   }
   const token = collection.tokens[tokenNumber - 1];
   return res.json(token);
