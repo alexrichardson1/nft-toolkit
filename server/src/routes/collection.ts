@@ -6,7 +6,11 @@ import {
 } from "@controllers/collection";
 import { errorHandler } from "@controllers/common";
 import { addDeployedAddress } from "@controllers/deployed";
-import { collectionValidator } from "@validators/collection";
+import {
+  collectionValidator,
+  deployedValidator,
+  getCollectionsValidator,
+} from "@validators/collection";
 import { Router as router } from "express";
 
 const collectionRoutes = router();
@@ -23,9 +27,16 @@ collectionRoutes.post("/images", uploadImages);
 
 collectionRoutes.post(
   "/deployed/:fromAddress/:collectionName/:deployedAddress",
+  deployedValidator(),
+  errorHandler,
   addDeployedAddress
 );
 
-collectionRoutes.get("/:fromAddress", getCollections);
+collectionRoutes.get(
+  "/:fromAddress",
+  getCollectionsValidator(),
+  errorHandler,
+  getCollections
+);
 
 export default collectionRoutes;
