@@ -6,6 +6,7 @@ import SnackbarProvider from "context/snackbar/SnackbarProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import React from "react";
 import ReactDOM from "react-dom";
+import StoreProvider from "store/StoreProvider";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,9 +14,11 @@ ReactDOM.render(
     <ThemeProvider>
       <NetworkProvider>
         <SnackbarProvider>
-          <DAppProvider config={{}}>
-            <App />
-          </DAppProvider>
+          <StoreProvider>
+            <DAppProvider config={{}}>
+              <App />
+            </DAppProvider>
+          </StoreProvider>
         </SnackbarProvider>
       </NetworkProvider>
     </ThemeProvider>
