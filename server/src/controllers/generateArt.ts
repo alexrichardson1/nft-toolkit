@@ -18,6 +18,11 @@ interface GenCollectionI {
   layers: LayerI[];
 }
 
+interface GeneratedImageI {
+  hash: string;
+  images: ImageI[];
+}
+
 function generateRandomPercentage() {
   const MAX_RAND = 100;
   // TODO: make sure this is a uniform distribution with 0-100 inclusive
@@ -36,6 +41,26 @@ function chooseLayerImage(images: ImageI[]): ImageI {
   return {
     name: "fail",
     rarity: 0,
+  };
+}
+
+function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
+  const chosenLayerImages: ImageI[] = [];
+  let hash = "";
+  let layerIndex = 0;
+  collection.layers.forEach((layer) => {
+    const includeLayer = generateRandomPercentage() <= layer.rarity;
+    if (includeLayer) {
+      const chosenImage: ImageI = chooseLayerImage(layer.images);
+
+      hash += `${layer.name}/${chosenImage.name},`;
+      chosenLayerImages[layerIndex++] = chosenImage;
+    }
+  });
+
+  return {
+    hash: hash,
+    images: chosenLayerImages,
   };
 }
 
@@ -59,29 +84,21 @@ function generate(collection: GenCollectionI): ImageI[][] {
   const generatedCollection: ImageI[][] = [];
   const generatedHashes = new Set();
 
+  let counter = 0;
   for (let i = 0; i < collection.quantity; i++) {
-    const chosenLayerImages: ImageI[] = [];
-    let hash = "";
-    let layerIndex = 0;
-    collection.layers.forEach((layer) => {
-      const includeLayer = generateRandomPercentage() <= layer.rarity;
-      if (includeLayer) {
-        const chosenImage: ImageI = chooseLayerImage(layer.images);
+    const generatedImage = generateOneCombination(collection);
+    counter++;
 
-        hash += `${layer.name}/${chosenImage.name},`;
-        chosenLayerImages[layerIndex++] = chosenImage;
-      }
-    });
-
-    if (generatedHashes.has(hash)) {
+    if (generatedHashes.has(generatedImage.hash)) {
       // Duplicate made - repeat loop
       i--;
       continue;
     }
 
-    generatedCollection[i] = chosenLayerImages;
-    generatedHashes.add(hash);
+    generatedCollection[i] = generatedImage.images;
+    generatedHashes.add(generatedImage.hash);
   }
+  console.log(counter);
   return generatedCollection;
 }
 
