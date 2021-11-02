@@ -7,7 +7,7 @@ const tabPanelBoxStyle: SxProps<Theme> = {
   flexDirection: "column",
   alignItems: "center",
   overflowY: "scroll",
-  gap: 1,
+  gap: "10px",
   padding: 3,
   height: 1,
   width: 1,
