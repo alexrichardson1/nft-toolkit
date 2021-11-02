@@ -25,10 +25,3 @@ export const DEFAULT_NET = {
   icon: EthereumLogo,
   chainId: 1,
 };
-
-export const mainContainerStyle = {
-  py: 3,
-  width: 1,
-  minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
-  bgcolor: "background.default",
-};
