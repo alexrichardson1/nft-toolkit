@@ -102,6 +102,14 @@ describe("CreateCollectionForm unit tests", () => {
     expect(form.onsubmit).toHaveBeenCalledWith(submitEvent);
   });
 
+  test("form submission changes submit button text", () => {
+    const form = tree.getByTestId("create-form");
+    const submitEvent = createEvent.submit(form);
+    form.onsubmit = jest.fn();
+    fireEvent(form, submitEvent);
+    expect(tree.getByTestId("submit-btn").innerHTML).toContain("Uploading...");
+  });
+
   test("handleImageDrop is called", () => {
     global.URL.createObjectURL = jest.fn();
     const mockImgFile = new File(["foo"], "testImg", { type: "image/png" });
@@ -112,5 +120,46 @@ describe("CreateCollectionForm unit tests", () => {
     changeEvent.preventDefault = jest.fn();
     fireEvent(input, changeEvent);
     expect(changeEvent.preventDefault).toHaveBeenCalled();
+  });
+
+  test("handleImageDrop is called with null value", () => {
+    global.URL.createObjectURL = jest.fn();
+    const input = tree.getByTestId("img-upload-input");
+    const changeEvent = createEvent.change(input, {
+      target: { files: null },
+    });
+    changeEvent.preventDefault = jest.fn();
+    fireEvent(input, changeEvent);
+    expect(changeEvent.preventDefault).toHaveBeenCalled();
+  });
+
+  test("handleImageDelete is called", () => {
+    const mockImgFile = new File(["foo"], "testImg", { type: "image/png" });
+    const input = tree.getByTestId("img-upload-input");
+    const changeEvent = createEvent.change(input, {
+      target: { files: [mockImgFile] },
+    });
+    changeEvent.preventDefault = jest.fn();
+    fireEvent(input, changeEvent);
+    const deleteButton = tree.getByTestId("delete-icon");
+    const deleteEvent = createEvent.click(deleteButton);
+    fireEvent(deleteButton, deleteEvent);
+    expect(tree.queryByTestId("delete-icon")).toBeNull();
+  });
+
+  test("handleNameChange is called", () => {
+    const mockImgFile = new File(["foo"], "testImg", { type: "image/png" });
+    const input = tree.getByTestId("img-upload-input");
+    const changeEvent = createEvent.change(input, {
+      target: { files: [mockImgFile] },
+    });
+    changeEvent.preventDefault = jest.fn();
+    fireEvent(input, changeEvent);
+    const nameInput = tree.getByTestId("nft-name-input");
+    const nameInputChange = createEvent.change(nameInput, {
+      target: { value: "testName" },
+    });
+    fireEvent(nameInput, nameInputChange);
+    expect(nameInput.outerHTML).toContain('value="testName"');
   });
 });
