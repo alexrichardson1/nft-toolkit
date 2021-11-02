@@ -18,7 +18,7 @@ import { useContext, useState } from "react";
 import { NAVBAR_HEIGHT } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
 import MobileMenu from "../common/MobileMenu";
-import { connectWallet } from "./navbarUtils";
+import { connectWallet, getAccountString } from "./navbarUtils";
 
 const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
   vertical: "top",
@@ -70,15 +70,6 @@ const Navbar = (): JSX.Element => {
       <LightModeIcon fontSize="large" />
     );
 
-  const getAccountString = () => {
-    if (!account) {
-      return "Connect Wallet";
-    }
-    const START_CHARS = 8;
-    const END_CHARS = 4;
-    return `${account.slice(0, START_CHARS)}....${account.slice(-END_CHARS)}`;
-  };
-
   const IS_MOBILE_MENU_OPEN = Boolean(mobileAnchorEl);
 
   const navOptions = (
@@ -98,7 +89,7 @@ const Navbar = (): JSX.Element => {
         aria-label="connect wallet"
         sx={extendedFabStyle}>
         <AccountBalanceWalletIcon />
-        <Typography>{getAccountString()}</Typography>
+        <Typography>{getAccountString(account)}</Typography>
       </Fab>
       <NetworkSpeedDial />
       <Fab id="theme-change-btn" onClick={toggleColourMode}>
