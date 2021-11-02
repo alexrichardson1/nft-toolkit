@@ -42,14 +42,15 @@ const MobileMenu = (props: PropsT): JSX.Element => {
         keepMounted
         open={props.isOpen}
         onClose={props.handleClose}>
-        <MenuItem
-          sx={menuItemStyle}
-          onClick={() => console.log("Clicked this")}>
+        <MenuItem sx={menuItemStyle}>
           <AccountBalanceWalletIcon color="primary" />
           <Typography>Connect Wallet</Typography>
         </MenuItem>
 
-        <MenuItem sx={menuItemStyle} onClick={handleNetworkMenuOpen}>
+        <MenuItem
+          sx={menuItemStyle}
+          data-testid="menuItemMobile"
+          onClick={handleNetworkMenuOpen}>
           <SvgLogo
             icon={selectedNet.icon}
             width={DEFAULT_MUI_ICON_SIZE}
@@ -70,6 +71,7 @@ const MobileMenu = (props: PropsT): JSX.Element => {
           <MenuItem
             onClick={() => handleNetworkChange(network)}
             key={network.name}
+            data-testid={`${network.name.toLowerCase()}-mobile-option`}
             sx={menuItemStyle}>
             <SvgLogo
               icon={network.icon}
