@@ -1075,9 +1075,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     variant="extended"
                                                   >
                                                     <Memo />
-                                                    <ForwardRef(Typography)>
-                                                      Connect Wallet
-                                                    </ForwardRef(Typography)>
+                                                    <ForwardRef(Typography) />
                                                   </ForwardRef(Fab)>
                                                   <NetworkSpeedDial />
                                                   <ForwardRef(Fab)
@@ -1204,9 +1202,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         variant="extended"
                                                       >
                                                         <Memo />
-                                                        <ForwardRef(Typography)>
-                                                          Connect Wallet
-                                                        </ForwardRef(Typography)>
+                                                        <ForwardRef(Typography) />
                                                       </ForwardRef(Fab)>
                                                       <NetworkSpeedDial />
                                                       <ForwardRef(Fab)
@@ -1316,9 +1312,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                               variant="extended"
                                                             >
                                                               <Memo />
-                                                              <ForwardRef(Typography)>
-                                                                Connect Wallet
-                                                              </ForwardRef(Typography)>
+                                                              <ForwardRef(Typography) />
                                                             </ForwardRef(Fab)>
                                                             <NetworkSpeedDial />
                                                             <ForwardRef(Fab)
@@ -2142,9 +2136,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     "aria-label": "connect wallet",
                                                                     "children": Array [
                                                                       <Memo />,
-                                                                      <ForwardRef(Typography)>
-                                                                        Connect Wallet
-                                                                      </ForwardRef(Typography)>,
+                                                                      <ForwardRef(Typography) />,
                                                                     ],
                                                                     "color": "primary",
                                                                     "component": "button",
@@ -2206,9 +2198,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         "centerRipple": false,
                                                                         "children": Array [
                                                                           <Memo />,
-                                                                          <ForwardRef(Typography)>
-                                                                            Connect Wallet
-                                                                          </ForwardRef(Typography)>,
+                                                                          <ForwardRef(Typography) />,
                                                                         ],
                                                                         "className": "MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-115w0g1-MuiFab-root",
                                                                         "component": "button",
@@ -2292,7 +2282,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           ownerState={
                                                                             Object {
                                                                               "align": "inherit",
-                                                                              "children": "Connect Wallet",
+                                                                              "children": undefined,
                                                                               "className": undefined,
                                                                               "color": undefined,
                                                                               "component": undefined,
@@ -2326,9 +2316,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         >
                                                                           <p
                                                                             className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                                                          >
-                                                                            Connect Wallet
-                                                                          </p>
+                                                                          />
                                                                         </MuiTypographyRoot>
                                                                       </ForwardRef(Typography)>
                                                                       <ForwardRef(TouchRipple)
@@ -7418,7 +7406,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 "autoFocus": true,
                                                 "children": Array [
                                                   <ForwardRef(MenuItem)
-                                                    onClick={[Function]}
                                                     sx={
                                                       Object {
                                                         "display": "flex",
@@ -7434,6 +7421,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </ForwardRef(MenuItem)>,
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="menuItemMobile"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -7629,7 +7617,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       variant="selectedMenu"
                                                     >
                                                       <ForwardRef(MenuItem)
-                                                        onClick={[Function]}
                                                         sx={
                                                           Object {
                                                             "display": "flex",
@@ -7645,6 +7632,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         </ForwardRef(Typography)>
                                                       </ForwardRef(MenuItem)>
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="menuItemMobile"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -7831,6 +7819,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="menuItemMobile"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -7881,6 +7870,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 >
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="ethereum-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="0"
                                                                   >
@@ -7900,6 +7890,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="cardano-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -7919,6 +7910,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="avalanche-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -7938,6 +7930,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="solana-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -7957,6 +7950,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="polygon-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -7976,6 +7970,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="bsc-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -8107,7 +8102,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     variant="selectedMenu"
                                                                   >
                                                                     <ForwardRef(MenuItem)
-                                                                      onClick={[Function]}
                                                                       sx={
                                                                         Object {
                                                                           "display": "flex",
@@ -8123,6 +8117,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="menuItemMobile"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -8411,6 +8406,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           </li>
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="menuItemMobile"
                                                                             role="menuitem"
                                                                             tabindex="-1"
                                                                           >
@@ -8603,7 +8599,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               variant="selectedMenu"
                                                                             >
                                                                               <ForwardRef(MenuItem)
-                                                                                onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
                                                                                     "display": "flex",
@@ -8619,6 +8614,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 </ForwardRef(Typography)>
                                                                               </ForwardRef(MenuItem)>
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="menuItemMobile"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -8738,7 +8734,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     variant="selectedMenu"
                                                                                   >
                                                                                     <ForwardRef(MenuItem)
-                                                                                      onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
                                                                                           "display": "flex",
@@ -8754,6 +8749,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       </ForwardRef(Typography)>
                                                                                     </ForwardRef(MenuItem)>
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="menuItemMobile"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -8849,7 +8845,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           Object {
                                                                                             "children": Array [
                                                                                               <ForwardRef(MenuItem)
-                                                                                                onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
                                                                                                     "display": "flex",
@@ -8866,6 +8861,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 </ForwardRef(Typography)>
                                                                                               </ForwardRef(MenuItem)>,
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="menuItemMobile"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -8904,7 +8900,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                         >
                                                                                           <ForwardRef(MenuItem)
                                                                                             key=".0"
-                                                                                            onClick={[Function]}
                                                                                             sx={
                                                                                               Object {
                                                                                                 "display": "flex",
@@ -8921,7 +8916,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                               }
                                                                                               component="li"
                                                                                               focusVisibleClassName=""
-                                                                                              onClick={[Function]}
                                                                                               ownerState={
                                                                                                 Object {
                                                                                                   "children": Array [
@@ -8935,7 +8929,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
-                                                                                                  "onClick": [Function],
                                                                                                   "sx": Object {
                                                                                                     "display": "flex",
                                                                                                     "gap": "5px",
@@ -8961,7 +8954,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                                 component="li"
                                                                                                 focusVisibleClassName=""
-                                                                                                onClick={[Function]}
                                                                                                 role="menuitem"
                                                                                                 tabIndex={0}
                                                                                               >
@@ -8974,7 +8966,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                     }
                                                                                                   }
                                                                                                   onBlur={[Function]}
-                                                                                                  onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
                                                                                                   onDragLeave={[Function]}
                                                                                                   onFocus={[Function]}
@@ -9008,7 +8999,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "focusRipple": false,
                                                                                                       "focusVisible": false,
                                                                                                       "focusVisibleClassName": "",
-                                                                                                      "onClick": [Function],
                                                                                                       "role": "menuitem",
                                                                                                       "tabIndex": 0,
                                                                                                     }
@@ -9019,7 +9009,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                                     onBlur={[Function]}
-                                                                                                    onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
                                                                                                     onDragLeave={[Function]}
                                                                                                     onFocus={[Function]}
@@ -9144,6 +9133,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             </MuiMenuItemRoot>
                                                                                           </ForwardRef(MenuItem)>
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="menuItemMobile"
                                                                                             key=".1"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -9160,6 +9150,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="menuItemMobile"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -9174,6 +9165,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       Ethereum
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "menuItemMobile",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -9201,6 +9193,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="menuItemMobile"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -9214,6 +9207,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="menuItemMobile"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -9245,6 +9239,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "menuItemMobile",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -9261,6 +9256,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="menuItemMobile"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
@@ -9472,6 +9468,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 "autoFocus": true,
                                                 "children": Array [
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="ethereum-mobile-option"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -9490,6 +9487,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </ForwardRef(MenuItem)>,
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="cardano-mobile-option"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -9508,6 +9506,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </ForwardRef(MenuItem)>,
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="avalanche-mobile-option"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -9526,6 +9525,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </ForwardRef(MenuItem)>,
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="solana-mobile-option"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -9544,6 +9544,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </ForwardRef(MenuItem)>,
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="polygon-mobile-option"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -9562,6 +9563,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </ForwardRef(MenuItem)>,
                                                   <ForwardRef(MenuItem)
+                                                    data-testid="bsc-mobile-option"
                                                     onClick={[Function]}
                                                     sx={
                                                       Object {
@@ -9754,6 +9756,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       variant="selectedMenu"
                                                     >
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="ethereum-mobile-option"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -9772,6 +9775,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         </ForwardRef(Typography)>
                                                       </ForwardRef(MenuItem)>
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="cardano-mobile-option"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -9790,6 +9794,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         </ForwardRef(Typography)>
                                                       </ForwardRef(MenuItem)>
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="avalanche-mobile-option"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -9808,6 +9813,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         </ForwardRef(Typography)>
                                                       </ForwardRef(MenuItem)>
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="solana-mobile-option"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -9826,6 +9832,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         </ForwardRef(Typography)>
                                                       </ForwardRef(MenuItem)>
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="polygon-mobile-option"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -9844,6 +9851,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         </ForwardRef(Typography)>
                                                       </ForwardRef(MenuItem)>
                                                       <ForwardRef(MenuItem)
+                                                        data-testid="bsc-mobile-option"
                                                         onClick={[Function]}
                                                         sx={
                                                           Object {
@@ -10027,6 +10035,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="menuItemMobile"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -10077,6 +10086,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 >
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="ethereum-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="0"
                                                                   >
@@ -10096,6 +10106,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="cardano-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -10115,6 +10126,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="avalanche-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -10134,6 +10146,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="solana-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -10153,6 +10166,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="polygon-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -10172,6 +10186,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="bsc-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -10302,6 +10317,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     variant="selectedMenu"
                                                                   >
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="ethereum-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -10320,6 +10336,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="cardano-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -10338,6 +10355,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="avalanche-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -10356,6 +10374,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="solana-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -10374,6 +10393,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="polygon-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -10392,6 +10412,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>
                                                                     <ForwardRef(MenuItem)
+                                                                      data-testid="bsc-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
                                                                         Object {
@@ -10653,6 +10674,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         >
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="ethereum-mobile-option"
                                                                             role="menuitem"
                                                                             tabindex="0"
                                                                           >
@@ -10672,6 +10694,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           </li>
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="cardano-mobile-option"
                                                                             role="menuitem"
                                                                             tabindex="-1"
                                                                           >
@@ -10691,6 +10714,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           </li>
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="avalanche-mobile-option"
                                                                             role="menuitem"
                                                                             tabindex="-1"
                                                                           >
@@ -10710,6 +10734,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           </li>
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="solana-mobile-option"
                                                                             role="menuitem"
                                                                             tabindex="-1"
                                                                           >
@@ -10729,6 +10754,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           </li>
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="polygon-mobile-option"
                                                                             role="menuitem"
                                                                             tabindex="-1"
                                                                           >
@@ -10748,6 +10774,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           </li>
                                                                           <li
                                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                            data-testid="bsc-mobile-option"
                                                                             role="menuitem"
                                                                             tabindex="-1"
                                                                           >
@@ -10940,6 +10967,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               variant="selectedMenu"
                                                                             >
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="ethereum-mobile-option"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -10958,6 +10986,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 </ForwardRef(Typography)>
                                                                               </ForwardRef(MenuItem)>
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="cardano-mobile-option"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -10976,6 +11005,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 </ForwardRef(Typography)>
                                                                               </ForwardRef(MenuItem)>
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="avalanche-mobile-option"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -10994,6 +11024,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 </ForwardRef(Typography)>
                                                                               </ForwardRef(MenuItem)>
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="solana-mobile-option"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -11012,6 +11043,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 </ForwardRef(Typography)>
                                                                               </ForwardRef(MenuItem)>
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="polygon-mobile-option"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -11030,6 +11062,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                 </ForwardRef(Typography)>
                                                                               </ForwardRef(MenuItem)>
                                                                               <ForwardRef(MenuItem)
+                                                                                data-testid="bsc-mobile-option"
                                                                                 onClick={[Function]}
                                                                                 sx={
                                                                                   Object {
@@ -11149,6 +11182,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                     variant="selectedMenu"
                                                                                   >
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="ethereum-mobile-option"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -11167,6 +11201,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       </ForwardRef(Typography)>
                                                                                     </ForwardRef(MenuItem)>
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="cardano-mobile-option"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -11185,6 +11220,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       </ForwardRef(Typography)>
                                                                                     </ForwardRef(MenuItem)>
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="avalanche-mobile-option"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -11203,6 +11239,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       </ForwardRef(Typography)>
                                                                                     </ForwardRef(MenuItem)>
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="solana-mobile-option"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -11221,6 +11258,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       </ForwardRef(Typography)>
                                                                                     </ForwardRef(MenuItem)>
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="polygon-mobile-option"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -11239,6 +11277,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       </ForwardRef(Typography)>
                                                                                     </ForwardRef(MenuItem)>
                                                                                     <ForwardRef(MenuItem)
+                                                                                      data-testid="bsc-mobile-option"
                                                                                       onClick={[Function]}
                                                                                       sx={
                                                                                         Object {
@@ -11334,6 +11373,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           Object {
                                                                                             "children": Array [
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="ethereum-mobile-option"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -11353,6 +11393,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 </ForwardRef(Typography)>
                                                                                               </ForwardRef(MenuItem)>,
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="cardano-mobile-option"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -11371,6 +11412,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 </ForwardRef(Typography)>
                                                                                               </ForwardRef(MenuItem)>,
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="avalanche-mobile-option"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -11389,6 +11431,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 </ForwardRef(Typography)>
                                                                                               </ForwardRef(MenuItem)>,
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="solana-mobile-option"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -11407,6 +11450,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 </ForwardRef(Typography)>
                                                                                               </ForwardRef(MenuItem)>,
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="polygon-mobile-option"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -11425,6 +11469,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 </ForwardRef(Typography)>
                                                                                               </ForwardRef(MenuItem)>,
                                                                                               <ForwardRef(MenuItem)
+                                                                                                data-testid="bsc-mobile-option"
                                                                                                 onClick={[Function]}
                                                                                                 sx={
                                                                                                   Object {
@@ -11462,6 +11507,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                           tabIndex={-1}
                                                                                         >
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="ethereum-mobile-option"
                                                                                             key=".$Ethereum"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -11479,6 +11525,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="ethereum-mobile-option"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -11493,6 +11540,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       Ethereum
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "ethereum-mobile-option",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -11521,6 +11569,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="ethereum-mobile-option"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -11534,6 +11583,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="ethereum-mobile-option"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -11565,6 +11615,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "ethereum-mobile-option",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -11581,6 +11632,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="ethereum-mobile-option"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
@@ -11677,6 +11729,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             </MuiMenuItemRoot>
                                                                                           </ForwardRef(MenuItem)>
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="cardano-mobile-option"
                                                                                             key=".$Cardano"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -11693,6 +11746,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="cardano-mobile-option"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -11707,6 +11761,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       Cardano
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "cardano-mobile-option",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -11734,6 +11789,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="cardano-mobile-option"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -11747,6 +11803,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="cardano-mobile-option"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -11778,6 +11835,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "cardano-mobile-option",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -11794,6 +11852,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="cardano-mobile-option"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
@@ -11890,6 +11949,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             </MuiMenuItemRoot>
                                                                                           </ForwardRef(MenuItem)>
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="avalanche-mobile-option"
                                                                                             key=".$Avalanche"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -11906,6 +11966,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="avalanche-mobile-option"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -11920,6 +11981,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       Avalanche
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "avalanche-mobile-option",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -11947,6 +12009,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="avalanche-mobile-option"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -11960,6 +12023,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="avalanche-mobile-option"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -11991,6 +12055,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "avalanche-mobile-option",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -12007,6 +12072,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="avalanche-mobile-option"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
@@ -12103,6 +12169,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             </MuiMenuItemRoot>
                                                                                           </ForwardRef(MenuItem)>
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="solana-mobile-option"
                                                                                             key=".$Solana"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -12119,6 +12186,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="solana-mobile-option"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -12133,6 +12201,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       Solana
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "solana-mobile-option",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -12160,6 +12229,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="solana-mobile-option"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -12173,6 +12243,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="solana-mobile-option"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -12204,6 +12275,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "solana-mobile-option",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -12220,6 +12292,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="solana-mobile-option"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
@@ -12316,6 +12389,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             </MuiMenuItemRoot>
                                                                                           </ForwardRef(MenuItem)>
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="polygon-mobile-option"
                                                                                             key=".$Polygon"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -12332,6 +12406,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="polygon-mobile-option"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -12346,6 +12421,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       Polygon
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "polygon-mobile-option",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -12373,6 +12449,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="polygon-mobile-option"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -12386,6 +12463,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="polygon-mobile-option"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -12417,6 +12495,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "polygon-mobile-option",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -12433,6 +12512,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="polygon-mobile-option"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}
@@ -12529,6 +12609,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                             </MuiMenuItemRoot>
                                                                                           </ForwardRef(MenuItem)>
                                                                                           <ForwardRef(MenuItem)
+                                                                                            data-testid="bsc-mobile-option"
                                                                                             key=".$BSC"
                                                                                             onClick={[Function]}
                                                                                             sx={
@@ -12545,6 +12626,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 }
                                                                                               }
                                                                                               component="li"
+                                                                                              data-testid="bsc-mobile-option"
                                                                                               focusVisibleClassName=""
                                                                                               onClick={[Function]}
                                                                                               ownerState={
@@ -12559,6 +12641,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       BSC
                                                                                                     </ForwardRef(Typography)>,
                                                                                                   ],
+                                                                                                  "data-testid": "bsc-mobile-option",
                                                                                                   "dense": false,
                                                                                                   "disableGutters": false,
                                                                                                   "divider": false,
@@ -12586,6 +12669,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                   }
                                                                                                 }
                                                                                                 component="li"
+                                                                                                data-testid="bsc-mobile-option"
                                                                                                 focusVisibleClassName=""
                                                                                                 onClick={[Function]}
                                                                                                 role="menuitem"
@@ -12599,6 +12683,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                       "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                     }
                                                                                                   }
+                                                                                                  data-testid="bsc-mobile-option"
                                                                                                   onBlur={[Function]}
                                                                                                   onClick={[Function]}
                                                                                                   onContextMenu={[Function]}
@@ -12630,6 +12715,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                         "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                                       },
                                                                                                       "component": "li",
+                                                                                                      "data-testid": "bsc-mobile-option",
                                                                                                       "disableRipple": false,
                                                                                                       "disableTouchRipple": false,
                                                                                                       "disabled": false,
@@ -12646,6 +12732,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                                 >
                                                                                                   <li
                                                                                                     className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                                    data-testid="bsc-mobile-option"
                                                                                                     onBlur={[Function]}
                                                                                                     onClick={[Function]}
                                                                                                     onContextMenu={[Function]}

@@ -775,7 +775,6 @@ exports[`MobileMenu snapshot 1`] = `
                                         "autoFocus": true,
                                         "children": Array [
                                           <ForwardRef(MenuItem)
-                                            onClick={[Function]}
                                             sx={
                                               Object {
                                                 "display": "flex",
@@ -791,6 +790,7 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>,
                                           <ForwardRef(MenuItem)
+                                            data-testid="menuItemMobile"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -957,6 +957,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   </li>
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="menuItemMobile"
                                                     role="menuitem"
                                                     tabindex="-1"
                                                   >
@@ -1007,6 +1008,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 >
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="ethereum-mobile-option"
                                                     role="menuitem"
                                                     tabindex="0"
                                                   >
@@ -1026,6 +1028,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   </li>
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="cardano-mobile-option"
                                                     role="menuitem"
                                                     tabindex="-1"
                                                   >
@@ -1045,6 +1048,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   </li>
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="avalanche-mobile-option"
                                                     role="menuitem"
                                                     tabindex="-1"
                                                   >
@@ -1064,6 +1068,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   </li>
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="solana-mobile-option"
                                                     role="menuitem"
                                                     tabindex="-1"
                                                   >
@@ -1083,6 +1088,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   </li>
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="polygon-mobile-option"
                                                     role="menuitem"
                                                     tabindex="-1"
                                                   >
@@ -1102,6 +1108,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   </li>
                                                   <li
                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                    data-testid="bsc-mobile-option"
                                                     role="menuitem"
                                                     tabindex="-1"
                                                   >
@@ -1212,7 +1219,6 @@ exports[`MobileMenu snapshot 1`] = `
                                               variant="selectedMenu"
                                             >
                                               <ForwardRef(MenuItem)
-                                                onClick={[Function]}
                                                 sx={
                                                   Object {
                                                     "display": "flex",
@@ -1228,6 +1234,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(MenuItem)>
                                               <ForwardRef(MenuItem)
+                                                data-testid="menuItemMobile"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -1324,6 +1331,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     </li>
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="menuItemMobile"
                                                       role="menuitem"
                                                       tabindex="-1"
                                                     >
@@ -1374,6 +1382,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   >
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="ethereum-mobile-option"
                                                       role="menuitem"
                                                       tabindex="0"
                                                     >
@@ -1393,6 +1402,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     </li>
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="cardano-mobile-option"
                                                       role="menuitem"
                                                       tabindex="-1"
                                                     >
@@ -1412,6 +1422,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     </li>
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="avalanche-mobile-option"
                                                       role="menuitem"
                                                       tabindex="-1"
                                                     >
@@ -1431,6 +1442,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     </li>
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="solana-mobile-option"
                                                       role="menuitem"
                                                       tabindex="-1"
                                                     >
@@ -1450,6 +1462,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     </li>
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="polygon-mobile-option"
                                                       role="menuitem"
                                                       tabindex="-1"
                                                     >
@@ -1469,6 +1482,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     </li>
                                                     <li
                                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                      data-testid="bsc-mobile-option"
                                                       role="menuitem"
                                                       tabindex="-1"
                                                     >
@@ -1623,6 +1637,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </li>
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="menuItemMobile"
                                                         role="menuitem"
                                                         tabindex="-1"
                                                       >
@@ -1673,6 +1688,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     >
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="ethereum-mobile-option"
                                                         role="menuitem"
                                                         tabindex="0"
                                                       >
@@ -1692,6 +1708,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </li>
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="cardano-mobile-option"
                                                         role="menuitem"
                                                         tabindex="-1"
                                                       >
@@ -1711,6 +1728,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </li>
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="avalanche-mobile-option"
                                                         role="menuitem"
                                                         tabindex="-1"
                                                       >
@@ -1730,6 +1748,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </li>
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="solana-mobile-option"
                                                         role="menuitem"
                                                         tabindex="-1"
                                                       >
@@ -1749,6 +1768,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </li>
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="polygon-mobile-option"
                                                         role="menuitem"
                                                         tabindex="-1"
                                                       >
@@ -1768,6 +1788,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </li>
                                                       <li
                                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                        data-testid="bsc-mobile-option"
                                                         role="menuitem"
                                                         tabindex="-1"
                                                       >
@@ -1864,6 +1885,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         </li>
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="menuItemMobile"
                                                           role="menuitem"
                                                           tabindex="-1"
                                                         >
@@ -1914,6 +1936,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                       >
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="ethereum-mobile-option"
                                                           role="menuitem"
                                                           tabindex="0"
                                                         >
@@ -1933,6 +1956,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         </li>
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="cardano-mobile-option"
                                                           role="menuitem"
                                                           tabindex="-1"
                                                         >
@@ -1952,6 +1976,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         </li>
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="avalanche-mobile-option"
                                                           role="menuitem"
                                                           tabindex="-1"
                                                         >
@@ -1971,6 +1996,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         </li>
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="solana-mobile-option"
                                                           role="menuitem"
                                                           tabindex="-1"
                                                         >
@@ -1990,6 +2016,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         </li>
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="polygon-mobile-option"
                                                           role="menuitem"
                                                           tabindex="-1"
                                                         >
@@ -2009,6 +2036,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         </li>
                                                         <li
                                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                          data-testid="bsc-mobile-option"
                                                           role="menuitem"
                                                           tabindex="-1"
                                                         >
@@ -2093,6 +2121,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="menuItemMobile"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -2143,6 +2172,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         >
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="ethereum-mobile-option"
                                                             role="menuitem"
                                                             tabindex="0"
                                                           >
@@ -2162,6 +2192,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="cardano-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -2181,6 +2212,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="avalanche-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -2200,6 +2232,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="solana-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -2219,6 +2252,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="polygon-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -2238,6 +2272,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="bsc-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -2369,7 +2404,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                             variant="selectedMenu"
                                                           >
                                                             <ForwardRef(MenuItem)
-                                                              onClick={[Function]}
                                                               sx={
                                                                 Object {
                                                                   "display": "flex",
@@ -2385,6 +2419,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </ForwardRef(Typography)>
                                                             </ForwardRef(MenuItem)>
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="menuItemMobile"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -2485,6 +2520,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </li>
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="menuItemMobile"
                                                                 role="menuitem"
                                                                 tabindex="-1"
                                                               >
@@ -2535,6 +2571,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                             >
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="ethereum-mobile-option"
                                                                 role="menuitem"
                                                                 tabindex="0"
                                                               >
@@ -2554,6 +2591,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </li>
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="cardano-mobile-option"
                                                                 role="menuitem"
                                                                 tabindex="-1"
                                                               >
@@ -2573,6 +2611,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </li>
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="avalanche-mobile-option"
                                                                 role="menuitem"
                                                                 tabindex="-1"
                                                               >
@@ -2592,6 +2631,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </li>
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="solana-mobile-option"
                                                                 role="menuitem"
                                                                 tabindex="-1"
                                                               >
@@ -2611,6 +2651,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </li>
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="polygon-mobile-option"
                                                                 role="menuitem"
                                                                 tabindex="-1"
                                                               >
@@ -2630,6 +2671,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </li>
                                                               <li
                                                                 class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                data-testid="bsc-mobile-option"
                                                                 role="menuitem"
                                                                 tabindex="-1"
                                                               >
@@ -2896,6 +2938,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="menuItemMobile"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -3088,7 +3131,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                       variant="selectedMenu"
                                                                     >
                                                                       <ForwardRef(MenuItem)
-                                                                        onClick={[Function]}
                                                                         sx={
                                                                           Object {
                                                                             "display": "flex",
@@ -3104,6 +3146,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         </ForwardRef(Typography)>
                                                                       </ForwardRef(MenuItem)>
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="menuItemMobile"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -3223,7 +3266,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             variant="selectedMenu"
                                                                           >
                                                                             <ForwardRef(MenuItem)
-                                                                              onClick={[Function]}
                                                                               sx={
                                                                                 Object {
                                                                                   "display": "flex",
@@ -3239,6 +3281,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                               </ForwardRef(Typography)>
                                                                             </ForwardRef(MenuItem)>
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="menuItemMobile"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -3335,7 +3378,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     "children": Array [
                                                                                       <ForwardRef(MenuItem)
                                                                                         autoFocus={true}
-                                                                                        onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
                                                                                             "display": "flex",
@@ -3352,6 +3394,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         </ForwardRef(Typography)>
                                                                                       </ForwardRef(MenuItem)>,
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="menuItemMobile"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -3391,7 +3434,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                   <ForwardRef(MenuItem)
                                                                                     autoFocus={true}
                                                                                     key=".0"
-                                                                                    onClick={[Function]}
                                                                                     sx={
                                                                                       Object {
                                                                                         "display": "flex",
@@ -3408,7 +3450,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                       }
                                                                                       component="li"
                                                                                       focusVisibleClassName=""
-                                                                                      onClick={[Function]}
                                                                                       ownerState={
                                                                                         Object {
                                                                                           "autoFocus": true,
@@ -3423,7 +3464,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
-                                                                                          "onClick": [Function],
                                                                                           "sx": Object {
                                                                                             "display": "flex",
                                                                                             "gap": "5px",
@@ -3449,7 +3489,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                         component="li"
                                                                                         focusVisibleClassName=""
-                                                                                        onClick={[Function]}
                                                                                         role="menuitem"
                                                                                         tabIndex={0}
                                                                                       >
@@ -3462,7 +3501,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                             }
                                                                                           }
                                                                                           onBlur={[Function]}
-                                                                                          onClick={[Function]}
                                                                                           onContextMenu={[Function]}
                                                                                           onDragLeave={[Function]}
                                                                                           onFocus={[Function]}
@@ -3496,7 +3534,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "focusRipple": false,
                                                                                               "focusVisible": true,
                                                                                               "focusVisibleClassName": "",
-                                                                                              "onClick": [Function],
                                                                                               "role": "menuitem",
                                                                                               "tabIndex": 0,
                                                                                             }
@@ -3507,7 +3544,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root Mui-focusVisible css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                             onBlur={[Function]}
-                                                                                            onClick={[Function]}
                                                                                             onContextMenu={[Function]}
                                                                                             onDragLeave={[Function]}
                                                                                             onFocus={[Function]}
@@ -3632,6 +3668,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     </MuiMenuItemRoot>
                                                                                   </ForwardRef(MenuItem)>
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="menuItemMobile"
                                                                                     key=".1"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -3648,6 +3685,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="menuItemMobile"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -3662,6 +3700,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               Ethereum
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "menuItemMobile",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -3689,6 +3728,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="menuItemMobile"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -3702,6 +3742,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="menuItemMobile"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -3733,6 +3774,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "menuItemMobile",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -3749,6 +3791,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="menuItemMobile"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -3960,6 +4003,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         "autoFocus": true,
                                         "children": Array [
                                           <ForwardRef(MenuItem)
+                                            data-testid="ethereum-mobile-option"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -3978,6 +4022,7 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>,
                                           <ForwardRef(MenuItem)
+                                            data-testid="cardano-mobile-option"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -3996,6 +4041,7 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>,
                                           <ForwardRef(MenuItem)
+                                            data-testid="avalanche-mobile-option"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -4014,6 +4060,7 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>,
                                           <ForwardRef(MenuItem)
+                                            data-testid="solana-mobile-option"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -4032,6 +4079,7 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>,
                                           <ForwardRef(MenuItem)
+                                            data-testid="polygon-mobile-option"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -4050,6 +4098,7 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>,
                                           <ForwardRef(MenuItem)
+                                            data-testid="bsc-mobile-option"
                                             onClick={[Function]}
                                             sx={
                                               Object {
@@ -4242,6 +4291,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               variant="selectedMenu"
                                             >
                                               <ForwardRef(MenuItem)
+                                                data-testid="ethereum-mobile-option"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -4260,6 +4310,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(MenuItem)>
                                               <ForwardRef(MenuItem)
+                                                data-testid="cardano-mobile-option"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -4278,6 +4329,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(MenuItem)>
                                               <ForwardRef(MenuItem)
+                                                data-testid="avalanche-mobile-option"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -4296,6 +4348,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(MenuItem)>
                                               <ForwardRef(MenuItem)
+                                                data-testid="solana-mobile-option"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -4314,6 +4367,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(MenuItem)>
                                               <ForwardRef(MenuItem)
+                                                data-testid="polygon-mobile-option"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -4332,6 +4386,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(MenuItem)>
                                               <ForwardRef(MenuItem)
+                                                data-testid="bsc-mobile-option"
                                                 onClick={[Function]}
                                                 sx={
                                                   Object {
@@ -4516,6 +4571,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="menuItemMobile"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -4566,6 +4622,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         >
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="ethereum-mobile-option"
                                                             role="menuitem"
                                                             tabindex="0"
                                                           >
@@ -4585,6 +4642,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="cardano-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -4604,6 +4662,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="avalanche-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -4623,6 +4682,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="solana-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -4642,6 +4702,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="polygon-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -4661,6 +4722,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                           </li>
                                                           <li
                                                             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                            data-testid="bsc-mobile-option"
                                                             role="menuitem"
                                                             tabindex="-1"
                                                           >
@@ -4791,6 +4853,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                             variant="selectedMenu"
                                                           >
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="ethereum-mobile-option"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -4809,6 +4872,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </ForwardRef(Typography)>
                                                             </ForwardRef(MenuItem)>
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="cardano-mobile-option"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -4827,6 +4891,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </ForwardRef(Typography)>
                                                             </ForwardRef(MenuItem)>
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="avalanche-mobile-option"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -4845,6 +4910,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </ForwardRef(Typography)>
                                                             </ForwardRef(MenuItem)>
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="solana-mobile-option"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -4863,6 +4929,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </ForwardRef(Typography)>
                                                             </ForwardRef(MenuItem)>
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="polygon-mobile-option"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -4881,6 +4948,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               </ForwardRef(Typography)>
                                                             </ForwardRef(MenuItem)>
                                                             <ForwardRef(MenuItem)
+                                                              data-testid="bsc-mobile-option"
                                                               onClick={[Function]}
                                                               sx={
                                                                 Object {
@@ -5142,6 +5210,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                 >
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="ethereum-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="0"
                                                                   >
@@ -5161,6 +5230,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="cardano-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -5180,6 +5250,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="avalanche-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -5199,6 +5270,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="solana-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -5218,6 +5290,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="polygon-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -5237,6 +5310,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </li>
                                                                   <li
                                                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                    data-testid="bsc-mobile-option"
                                                                     role="menuitem"
                                                                     tabindex="-1"
                                                                   >
@@ -5429,6 +5503,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                       variant="selectedMenu"
                                                                     >
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="ethereum-mobile-option"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -5447,6 +5522,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         </ForwardRef(Typography)>
                                                                       </ForwardRef(MenuItem)>
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="cardano-mobile-option"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -5465,6 +5541,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         </ForwardRef(Typography)>
                                                                       </ForwardRef(MenuItem)>
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="avalanche-mobile-option"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -5483,6 +5560,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         </ForwardRef(Typography)>
                                                                       </ForwardRef(MenuItem)>
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="solana-mobile-option"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -5501,6 +5579,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         </ForwardRef(Typography)>
                                                                       </ForwardRef(MenuItem)>
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="polygon-mobile-option"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -5519,6 +5598,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         </ForwardRef(Typography)>
                                                                       </ForwardRef(MenuItem)>
                                                                       <ForwardRef(MenuItem)
+                                                                        data-testid="bsc-mobile-option"
                                                                         onClick={[Function]}
                                                                         sx={
                                                                           Object {
@@ -5638,6 +5718,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             variant="selectedMenu"
                                                                           >
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="ethereum-mobile-option"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -5656,6 +5737,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                               </ForwardRef(Typography)>
                                                                             </ForwardRef(MenuItem)>
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="cardano-mobile-option"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -5674,6 +5756,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                               </ForwardRef(Typography)>
                                                                             </ForwardRef(MenuItem)>
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="avalanche-mobile-option"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -5692,6 +5775,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                               </ForwardRef(Typography)>
                                                                             </ForwardRef(MenuItem)>
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="solana-mobile-option"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -5710,6 +5794,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                               </ForwardRef(Typography)>
                                                                             </ForwardRef(MenuItem)>
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="polygon-mobile-option"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -5728,6 +5813,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                               </ForwardRef(Typography)>
                                                                             </ForwardRef(MenuItem)>
                                                                             <ForwardRef(MenuItem)
+                                                                              data-testid="bsc-mobile-option"
                                                                               onClick={[Function]}
                                                                               sx={
                                                                                 Object {
@@ -5823,6 +5909,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                   Object {
                                                                                     "children": Array [
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="ethereum-mobile-option"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -5842,6 +5929,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         </ForwardRef(Typography)>
                                                                                       </ForwardRef(MenuItem)>,
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="cardano-mobile-option"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -5860,6 +5948,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         </ForwardRef(Typography)>
                                                                                       </ForwardRef(MenuItem)>,
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="avalanche-mobile-option"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -5878,6 +5967,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         </ForwardRef(Typography)>
                                                                                       </ForwardRef(MenuItem)>,
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="solana-mobile-option"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -5896,6 +5986,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         </ForwardRef(Typography)>
                                                                                       </ForwardRef(MenuItem)>,
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="polygon-mobile-option"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -5914,6 +6005,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         </ForwardRef(Typography)>
                                                                                       </ForwardRef(MenuItem)>,
                                                                                       <ForwardRef(MenuItem)
+                                                                                        data-testid="bsc-mobile-option"
                                                                                         onClick={[Function]}
                                                                                         sx={
                                                                                           Object {
@@ -5951,6 +6043,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                   tabIndex={-1}
                                                                                 >
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="ethereum-mobile-option"
                                                                                     key=".$Ethereum"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -5968,6 +6061,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="ethereum-mobile-option"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -5982,6 +6076,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               Ethereum
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "ethereum-mobile-option",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -6010,6 +6105,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="ethereum-mobile-option"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -6023,6 +6119,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="ethereum-mobile-option"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -6054,6 +6151,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "ethereum-mobile-option",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -6070,6 +6168,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="ethereum-mobile-option"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -6166,6 +6265,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     </MuiMenuItemRoot>
                                                                                   </ForwardRef(MenuItem)>
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="cardano-mobile-option"
                                                                                     key=".$Cardano"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -6182,6 +6282,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="cardano-mobile-option"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -6196,6 +6297,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               Cardano
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "cardano-mobile-option",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -6223,6 +6325,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="cardano-mobile-option"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -6236,6 +6339,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="cardano-mobile-option"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -6267,6 +6371,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "cardano-mobile-option",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -6283,6 +6388,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="cardano-mobile-option"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -6379,6 +6485,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     </MuiMenuItemRoot>
                                                                                   </ForwardRef(MenuItem)>
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="avalanche-mobile-option"
                                                                                     key=".$Avalanche"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -6395,6 +6502,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="avalanche-mobile-option"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -6409,6 +6517,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               Avalanche
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "avalanche-mobile-option",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -6436,6 +6545,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="avalanche-mobile-option"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -6449,6 +6559,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="avalanche-mobile-option"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -6480,6 +6591,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "avalanche-mobile-option",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -6496,6 +6608,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="avalanche-mobile-option"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -6592,6 +6705,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     </MuiMenuItemRoot>
                                                                                   </ForwardRef(MenuItem)>
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="solana-mobile-option"
                                                                                     key=".$Solana"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -6608,6 +6722,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="solana-mobile-option"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -6622,6 +6737,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               Solana
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "solana-mobile-option",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -6649,6 +6765,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="solana-mobile-option"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -6662,6 +6779,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="solana-mobile-option"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -6693,6 +6811,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "solana-mobile-option",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -6709,6 +6828,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="solana-mobile-option"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -6805,6 +6925,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     </MuiMenuItemRoot>
                                                                                   </ForwardRef(MenuItem)>
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="polygon-mobile-option"
                                                                                     key=".$Polygon"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -6821,6 +6942,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="polygon-mobile-option"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -6835,6 +6957,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               Polygon
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "polygon-mobile-option",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -6862,6 +6985,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="polygon-mobile-option"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -6875,6 +6999,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="polygon-mobile-option"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -6906,6 +7031,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "polygon-mobile-option",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -6922,6 +7048,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="polygon-mobile-option"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -7018,6 +7145,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                     </MuiMenuItemRoot>
                                                                                   </ForwardRef(MenuItem)>
                                                                                   <ForwardRef(MenuItem)
+                                                                                    data-testid="bsc-mobile-option"
                                                                                     key=".$BSC"
                                                                                     onClick={[Function]}
                                                                                     sx={
@@ -7034,6 +7162,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         }
                                                                                       }
                                                                                       component="li"
+                                                                                      data-testid="bsc-mobile-option"
                                                                                       focusVisibleClassName=""
                                                                                       onClick={[Function]}
                                                                                       ownerState={
@@ -7048,6 +7177,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               BSC
                                                                                             </ForwardRef(Typography)>,
                                                                                           ],
+                                                                                          "data-testid": "bsc-mobile-option",
                                                                                           "dense": false,
                                                                                           "disableGutters": false,
                                                                                           "divider": false,
@@ -7075,6 +7205,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                           }
                                                                                         }
                                                                                         component="li"
+                                                                                        data-testid="bsc-mobile-option"
                                                                                         focusVisibleClassName=""
                                                                                         onClick={[Function]}
                                                                                         role="menuitem"
@@ -7088,6 +7219,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                               "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                             }
                                                                                           }
+                                                                                          data-testid="bsc-mobile-option"
                                                                                           onBlur={[Function]}
                                                                                           onClick={[Function]}
                                                                                           onContextMenu={[Function]}
@@ -7119,6 +7251,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                                 "root": "MuiMenuItem-root MuiMenuItem-gutters",
                                                                                               },
                                                                                               "component": "li",
+                                                                                              "data-testid": "bsc-mobile-option",
                                                                                               "disableRipple": false,
                                                                                               "disableTouchRipple": false,
                                                                                               "disabled": false,
@@ -7135,6 +7268,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                         >
                                                                                           <li
                                                                                             className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+                                                                                            data-testid="bsc-mobile-option"
                                                                                             onBlur={[Function]}
                                                                                             onClick={[Function]}
                                                                                             onContextMenu={[Function]}
@@ -7276,4 +7410,816 @@ exports[`MobileMenu snapshot 1`] = `
     </ThemeProvider>
   </ThemeProvider>
 </ThemeProvider>
+`;
+
+exports[`MobileMenu unit tests changing network on mobile menu changes network 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    style="padding-right: 1024px; overflow: hidden;"
+  >
+    <div
+      class="MuiModal-root MuiPopover-root MuiMenu-root css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root"
+      id="primary-menu-mobile"
+      role="presentation"
+    >
+      <div
+        aria-hidden="true"
+        class="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+        style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      />
+      <div
+        data-test="sentinelStart"
+        tabindex="0"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
+        style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+        tabindex="-1"
+      >
+        <ul
+          class="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
+          role="menu"
+          tabindex="-1"
+        >
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            role="menuitem"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+              data-testid="AccountBalanceWalletIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+              />
+            </svg>
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Connect Wallet
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="menuItemMobile"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="cardano-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Cardano
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        data-test="sentinelEnd"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="MuiModal-root MuiPopover-root MuiMenu-root css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root"
+      role="presentation"
+    >
+      <div
+        aria-hidden="true"
+        class="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+        style="opacity: 0; webkit-transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      />
+      <div
+        data-test="sentinelStart"
+        tabindex="0"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
+        style="opacity: 0; transform: scale(0.75, 0.5625); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+        tabindex="-1"
+      >
+        <ul
+          class="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
+          role="menu"
+          tabindex="-1"
+        >
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="ethereum-mobile-option"
+            role="menuitem"
+            tabindex="0"
+          >
+            <img
+              height="24"
+              src="ethereum-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Ethereum
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="cardano-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="cardano-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Cardano
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="avalanche-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="avalanche-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Avalanche
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="solana-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="solana-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Solana
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="polygon-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="polygon-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Polygon
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="bsc-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="binance-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              BSC
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        data-test="sentinelEnd"
+        tabindex="0"
+      />
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`MobileMenu unit tests clicking mobile menu brings it up 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    style="padding-right: 1024px; overflow: hidden;"
+  >
+    <div
+      aria-hidden="true"
+      class="MuiModal-root MuiPopover-root MuiMenu-root css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root"
+      id="primary-menu-mobile"
+      role="presentation"
+    >
+      <div
+        aria-hidden="true"
+        class="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+        style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      />
+      <div
+        data-test="sentinelStart"
+        tabindex="0"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
+        style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+        tabindex="-1"
+      >
+        <ul
+          class="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
+          role="menu"
+          tabindex="-1"
+        >
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            role="menuitem"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+              data-testid="AccountBalanceWalletIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+              />
+            </svg>
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Connect Wallet
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="menuItemMobile"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="ethereum-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Ethereum
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        data-test="sentinelEnd"
+        tabindex="0"
+      />
+    </div>
+    <div
+      class="MuiModal-root MuiPopover-root MuiMenu-root css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root"
+      role="presentation"
+    >
+      <div
+        aria-hidden="true"
+        class="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+        style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      />
+      <div
+        data-test="sentinelStart"
+        tabindex="0"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
+        style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+        tabindex="-1"
+      >
+        <ul
+          class="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
+          role="menu"
+          tabindex="-1"
+        >
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="ethereum-mobile-option"
+            role="menuitem"
+            tabindex="0"
+          >
+            <img
+              height="24"
+              src="ethereum-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Ethereum
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="cardano-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="cardano-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Cardano
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="avalanche-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="avalanche-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Avalanche
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="solana-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="solana-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Solana
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="polygon-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="polygon-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Polygon
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="bsc-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="binance-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              BSC
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        data-test="sentinelEnd"
+        tabindex="0"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+    />
+    <div
+      aria-hidden="true"
+      class="MuiModal-root MuiPopover-root MuiMenu-root css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root"
+      id="primary-menu-mobile"
+      role="presentation"
+    >
+      <div
+        aria-hidden="true"
+        class="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+        style="opacity: 1; webkit-transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      />
+      <div
+        data-test="sentinelStart"
+        tabindex="0"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
+        style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
+        tabindex="-1"
+      >
+        <ul
+          class="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
+          role="menu"
+          tabindex="-1"
+        >
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            role="menuitem"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+              data-testid="AccountBalanceWalletIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"
+              />
+            </svg>
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Connect Wallet
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="menuItemMobile"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="ethereum-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Ethereum
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        data-test="sentinelEnd"
+        tabindex="0"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="MuiModal-root MuiModal-hidden MuiPopover-root MuiMenu-root css-6f6ff7-MuiModal-root-MuiPopover-root-MuiMenu-root"
+      role="presentation"
+    >
+      <div
+        aria-hidden="true"
+        class="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
+        style="opacity: 0; visibility: hidden;"
+      />
+      <div
+        data-test="sentinelStart"
+        tabindex="0"
+      />
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
+        style="opacity: 0; transform: scale(0.75, 0.5625); visibility: hidden;"
+        tabindex="-1"
+      >
+        <ul
+          class="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
+          role="menu"
+          tabindex="-1"
+        >
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="ethereum-mobile-option"
+            role="menuitem"
+            tabindex="0"
+          >
+            <img
+              height="24"
+              src="ethereum-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Ethereum
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="cardano-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="cardano-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Cardano
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="avalanche-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="avalanche-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Avalanche
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="solana-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="solana-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Solana
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="polygon-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="polygon-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              Polygon
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+          <li
+            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
+            data-testid="bsc-mobile-option"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <img
+              height="24"
+              src="binance-logo.svg"
+              width="24"
+            />
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+            >
+              BSC
+            </p>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </li>
+        </ul>
+      </div>
+      <div
+        data-test="sentinelEnd"
+        tabindex="0"
+      />
+    </div>
+  </body>,
+  "container": <div
+    aria-hidden="true"
+  />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
