@@ -79,7 +79,7 @@ class TestPrice:
         """
         Test that you get a price prediction value for an item within the range
         """
-        res = client_app.get('/api/price-prediction/0')
+        res = client_app.get('/api/price-prediction/-1')
         assert res.status == "200 OK"
         assert res.data == b"Failed"
 
