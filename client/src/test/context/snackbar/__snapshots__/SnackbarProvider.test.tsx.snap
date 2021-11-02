@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`alert snapshot 1`] = `
+<Alert>
+  <ForwardRef(Alert)
+    elevation={6}
+    variant="filled"
+  >
+    <MuiAlertRoot
+      className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled"
+      elevation={6}
+      ownerState={
+        Object {
+          "color": undefined,
+          "elevation": 6,
+          "severity": "success",
+          "variant": "filled",
+        }
+      }
+      role="alert"
+      square={true}
+    >
+      <ForwardRef(Paper)
+        className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
+        elevation={6}
+        role="alert"
+        square={true}
+      >
+        <MuiPaperRoot
+          as="div"
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
+          ownerState={
+            Object {
+              "children": Array [
+                <MuiAlertIcon
+                  className="MuiAlert-icon"
+                  ownerState={
+                    Object {
+                      "color": undefined,
+                      "elevation": 6,
+                      "severity": "success",
+                      "variant": "filled",
+                    }
+                  }
+                >
+                  <Memo
+                    fontSize="inherit"
+                  />
+                </MuiAlertIcon>,
+                <MuiAlertMessage
+                  className="MuiAlert-message"
+                  ownerState={
+                    Object {
+                      "color": undefined,
+                      "elevation": 6,
+                      "severity": "success",
+                      "variant": "filled",
+                    }
+                  }
+                />,
+                null,
+                null,
+              ],
+              "className": "MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root",
+              "component": "div",
+              "elevation": 6,
+              "role": "alert",
+              "square": true,
+              "variant": "elevation",
+            }
+          }
+          role="alert"
+        >
+          <div
+            className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
+            role="alert"
+          >
+            <MuiAlertIcon
+              className="MuiAlert-icon"
+              ownerState={
+                Object {
+                  "color": undefined,
+                  "elevation": 6,
+                  "severity": "success",
+                  "variant": "filled",
+                }
+              }
+            >
+              <div
+                className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+              >
+                <ForwardRef(SuccessOutlinedIcon)
+                  fontSize="inherit"
+                >
+                  <ForwardRef(SvgIcon)
+                    data-testid="SuccessOutlinedIcon"
+                    fontSize="inherit"
+                  >
+                    <MuiSvgIconRoot
+                      aria-hidden={true}
+                      as="svg"
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                      data-testid="SuccessOutlinedIcon"
+                      focusable="false"
+                      ownerState={
+                        Object {
+                          "children": <path
+                            d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                          />,
+                          "color": "inherit",
+                          "component": "svg",
+                          "data-testid": "SuccessOutlinedIcon",
+                          "fontSize": "inherit",
+                          "viewBox": "0 0 24 24",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                        data-testid="SuccessOutlinedIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                        />
+                      </svg>
+                    </MuiSvgIconRoot>
+                  </ForwardRef(SvgIcon)>
+                </ForwardRef(SuccessOutlinedIcon)>
+              </div>
+            </MuiAlertIcon>
+            <MuiAlertMessage
+              className="MuiAlert-message"
+              ownerState={
+                Object {
+                  "color": undefined,
+                  "elevation": 6,
+                  "severity": "success",
+                  "variant": "filled",
+                }
+              }
+            >
+              <div
+                className="MuiAlert-message css-acap47-MuiAlert-message"
+              />
+            </MuiAlertMessage>
+          </div>
+        </MuiPaperRoot>
+      </ForwardRef(Paper)>
+    </MuiAlertRoot>
+  </ForwardRef(Alert)>
+</Alert>
+`;

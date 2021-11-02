@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NetworkProvider unit tests preferred network set in local storage 1`] = `
+<NetworkProvider>
+  Test
+</NetworkProvider>
+`;

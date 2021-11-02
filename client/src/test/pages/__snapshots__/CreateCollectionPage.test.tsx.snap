@@ -7579,6 +7579,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                     </ForwardRef(Button)>
                                                     <ForwardRef(LoadingButton)
                                                       color="success"
+                                                      data-testid="submit-btn"
                                                       endIcon={<Memo />}
                                                       loading={false}
                                                       loadingPosition="end"
@@ -7604,12 +7605,14 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                           }
                                                         }
                                                         color="success"
+                                                        data-testid="submit-btn"
                                                         disabled={false}
                                                         endIcon={<Memo />}
                                                         ownerState={
                                                           Object {
                                                             "children": "Submit",
                                                             "color": "success",
+                                                            "data-testid": "submit-btn",
                                                             "disabled": false,
                                                             "endIcon": <Memo />,
                                                             "loading": false,
@@ -7652,6 +7655,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                             }
                                                           }
                                                           color="success"
+                                                          data-testid="submit-btn"
                                                           disabled={false}
                                                           endIcon={<Memo />}
                                                           size="large"
@@ -7670,6 +7674,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                               }
                                                             }
                                                             component="button"
+                                                            data-testid="submit-btn"
                                                             disabled={false}
                                                             focusRipple={true}
                                                             focusVisibleClassName=""
@@ -7688,6 +7693,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                                 },
                                                                 "color": "success",
                                                                 "component": "button",
+                                                                "data-testid": "submit-btn",
                                                                 "disableElevation": false,
                                                                 "disableFocusRipple": false,
                                                                 "disabled": false,
@@ -7712,6 +7718,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                                 }
                                                               }
                                                               component="button"
+                                                              data-testid="submit-btn"
                                                               disabled={false}
                                                               focusRipple={true}
                                                               focusVisibleClassName=""
@@ -7729,6 +7736,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                                     "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
                                                                   }
                                                                 }
+                                                                data-testid="submit-btn"
                                                                 disabled={false}
                                                                 onBlur={[Function]}
                                                                 onContextMenu={[Function]}
@@ -7768,6 +7776,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                                             },
                                                                             "color": "success",
                                                                             "component": "button",
+                                                                            "data-testid": "submit-btn",
                                                                             "disableElevation": false,
                                                                             "disableFocusRipple": false,
                                                                             "disabled": false,
@@ -7791,6 +7800,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                                       "startIcon": "MuiButton-startIcon MuiButton-iconSizeLarge",
                                                                     },
                                                                     "component": "button",
+                                                                    "data-testid": "submit-btn",
                                                                     "disableRipple": false,
                                                                     "disableTouchRipple": false,
                                                                     "disabled": false,
@@ -7806,6 +7816,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                               >
                                                                 <button
                                                                   className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-1gmsu7r-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                                                                  data-testid="submit-btn"
                                                                   disabled={false}
                                                                   onBlur={[Function]}
                                                                   onContextMenu={[Function]}
@@ -7840,6 +7851,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                                         },
                                                                         "color": "success",
                                                                         "component": "button",
+                                                                        "data-testid": "submit-btn",
                                                                         "disableElevation": false,
                                                                         "disableFocusRipple": false,
                                                                         "disabled": false,
