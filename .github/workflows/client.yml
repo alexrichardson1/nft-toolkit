@@ -28,4 +28,4 @@ jobs:
       - name: Build
         run: cd client/ && yarn build
       - name: Test
-        run: cd client/ && yarn test --ci
+        run: cd client/ && yarn test --coverage
