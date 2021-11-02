@@ -19,7 +19,7 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import { startLoading, stopLoading } from "./formUtils";
+import { startLoading } from "./formUtils";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -115,7 +115,6 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    stopLoading(setLoadingMessage, setIsLoading);
     // console.log(state);
     // const UPLOADING_DURATION = 3000;
     // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
@@ -173,6 +172,7 @@ const CreateCollectionForm = (): JSX.Element => {
         endIcon={<DoneIcon />}
         color="success"
         size="large"
+        data-testid="submit-btn"
         variant="contained">
         {isLoading ? loadingMessage : "Submit"}
       </LoadingButton>
