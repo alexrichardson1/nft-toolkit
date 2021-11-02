@@ -3,7 +3,6 @@ import {
   AlertProps,
   Slide,
   Snackbar,
-  SnackbarCloseReason,
   SnackbarOrigin,
 } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
@@ -20,7 +19,7 @@ const SBAR_ANCHOR_ORIGIN: SnackbarOrigin = {
 
 const snackbarStyle = { width: "100%" };
 
-const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
+export const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 Alert.displayName = "Alert";
@@ -35,13 +34,8 @@ const SnackbarProvider = (props: ProviderPropsI): JSX.Element => {
     setOpen(true);
   };
 
-  const handleSnackbarClose = (
-    _event?: React.SyntheticEvent<unknown, Event>,
-    reason?: SnackbarCloseReason
-  ): void => {
-    if (reason !== "clickaway") {
-      setOpen(false);
-    }
+  const handleSnackbarClose = (): void => {
+    setOpen(false);
   };
 
   return (
