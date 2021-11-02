@@ -35,6 +35,7 @@ def co_authors(last_line):
 
 def follows_convention(first_line):
     """Checks if `first_line` follows commit convention"""
+    first_line = first_line.strip()
     # located in the commit template
     types = ["feat", "fix", "style", "refactor",
              "perf", "test", "docs", "chore", "build", "ci"]

@@ -6,7 +6,7 @@ import {
   ThemeProvider as MUIThemeProvider,
 } from "@mui/material/styles";
 import { useEffect, useMemo, useState } from "react";
-import { getComponentByMode } from "utils/getComponentByMode";
+import getComponentByMode from "utils/getComponentByMode";
 import ThemeContext from "./ThemeContext";
 
 export const getDesign = (mode: PaletteMode): ThemeOptions => {

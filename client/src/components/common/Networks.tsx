@@ -61,6 +61,7 @@ const NetworkSpeedDial = (): JSX.Element => {
                 height={NETWORK_DIMENSIONS}
               />
             }
+            data-testid={`${network.name}`}
             tooltipTitle={network.name}
             onClick={() => setSelectedNet(network)}
           />

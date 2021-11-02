@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 import Box from "@mui/system/Box";
 import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
-import Navbar from "components/Navbar";
+import Navbar from "components/navbar/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { mainContainerStyle } from "utils/constants";
 

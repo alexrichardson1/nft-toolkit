@@ -1,29 +1,14 @@
-import { PutObjectCommand, S3 } from "@aws-sdk/client-s3";
-import { ethers } from "ethers";
-import { NextFunction, Request, RequestHandler, Response } from "express";
-import { createReadStream } from "fs";
+import { Collection, CollectionT, Token } from "@models/collection";
+import { User } from "@models/user";
+import { S3 } from "aws-sdk";
+import dotenv from "dotenv";
+import { BigNumber, ethers } from "ethers";
+import { RequestHandler } from "express";
 import multer from "multer";
-import path from "path";
+import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
-import { Collection, Token } from "../models/collection";
-import { User } from "../models/user";
 
-export const uploadImagesLocal = multer({ dest: "uploads/" }).any();
-
-interface TokenT {
-  name: string;
-  description: string;
-  image: string;
-}
-
-interface CollectionT {
-  name: string;
-  symbol: string;
-  description: string;
-  price: number;
-  address?: string;
-  tokens: TokenT[];
-}
+dotenv.config();
 
 const s3 = new S3({
   credentials: {
@@ -32,86 +17,68 @@ const s3 = new S3({
   },
 });
 
-const uploadToBucket = (collection: string, filePath: string, id: number) => {
-  const fileStream = createReadStream(filePath);
-  const imageKey = `${collection}/${id}${path.extname(filePath)}`;
-  const uploadParams = {
-    Bucket: "nft-toolkit-collections",
-    // Save the image to the collection folder using id to name it.
-    Key: imageKey,
-    Body: fileStream,
-    ACL: "public-read",
-  };
-  s3.send(new PutObjectCommand(uploadParams));
-  const imageURL = `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${imageKey}`;
-  return imageURL;
-};
+export const uploadImages = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: "nft-toolkit-collections",
+    acl: "public-read",
+    key: function (_req, file, cbKey) {
+      cbKey(null, `${file.fieldname}/images/${file.originalname}`);
+    },
+  }),
+}).any();
 
-export const uploadImagesS3: RequestHandler = (
-  req: Request,
-  _res: Response,
-  next: NextFunction
-) => {
-  const collection: CollectionT = req.body;
-  const { files } = req;
-  if (!files) {
-    return next(new Error("File array undefined"));
-  }
-  const fileArray = files as Express.Multer.File[];
-  fileArray.map((file, id) => {
-    const imageURL = uploadToBucket(collection.name, file.path, id + 1);
-    const currentToken = collection.tokens[id];
-    if (currentToken) {
-      currentToken.image = imageURL;
-    }
-  });
-  return next();
-};
-
+type address = `0x${string}`;
 interface UserT {
-  fromAddress: string;
+  fromAddress: address;
 }
 
-export const saveCollectionToDB: RequestHandler = async (
-  req: Request,
-  _res: Response,
-  next: NextFunction
-) => {
+export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT & UserT = req.body;
+  const { fromAddress } = userCollection;
   userCollection.tokens.map((token) => new Token(token));
   const collection = new Collection(userCollection);
   let user = await User.findOne({
-    fromAddress: userCollection.fromAddress,
+    fromAddress: fromAddress,
   }).exec();
+
   if (user) {
     user.collections.push(collection);
   } else {
     user = new User({
-      fromAddress: userCollection.fromAddress,
+      fromAddress: fromAddress,
       collections: [collection],
     });
   }
   await user.save();
-  // TODO: Add error handling
   next();
 };
 
-export const deployContracts: RequestHandler = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  const collection: CollectionT & UserT = req.body;
-  const signer = new ethers.VoidSigner(collection.fromAddress);
+export const deployContracts: RequestHandler = (req, res) => {
+  const { name, symbol, tokens, price, fromAddress }: CollectionT & UserT =
+    req.body;
+  const signer = new ethers.VoidSigner(fromAddress);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
-    collection.name,
-    collection.symbol,
-    // TODO: baseURI link
-    "",
-    collection.tokens.length,
-    collection.price
+    name,
+    symbol,
+    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/${fromAddress}/${name}/`,
+    tokens.length,
+    BigNumber.from(price)
   );
   res.json({ transaction: tx });
-  next();
+};
+
+export const getCollections: RequestHandler = async (req, res, next) => {
+  const { fromAddress } = req.params;
+  if (!fromAddress) {
+    return next(new Error("Invalid params"));
+  }
+  const user = await User.findOne({
+    fromAddress: fromAddress,
+  }).exec();
+  if (!user) {
+    return next(new Error("User not found"));
+  }
+  return res.json({ collections: user.collections });
 };

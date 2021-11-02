@@ -8,7 +8,7 @@ const labelStyle = (theme: Theme) => ({
   boxShadow: theme.shadows[2],
 });
 interface PropsT {
-  imgObjs: ImageListT;
+  imgObjs: ImageT[];
   handleImageDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
@@ -34,7 +34,8 @@ const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
         onDragLeave={preventDefault}
         onDragEnter={preventDefault}
         onDrop={(e) => handleImageDrop(e, e.dataTransfer.files)}
-        htmlFor={UPLOAD_INPUT_ID}>
+        htmlFor={UPLOAD_INPUT_ID}
+        data-testid="img-upload-label">
         <CloudUploadIcon
           className="img-upload-cloud"
           color="primary"
@@ -52,6 +53,7 @@ const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
         id={UPLOAD_INPUT_ID}
         className="img-upload-input"
         type="file"
+        data-testid="img-upload-input"
         multiple
       />
     </>
