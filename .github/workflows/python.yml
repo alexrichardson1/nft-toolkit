@@ -26,3 +26,5 @@ jobs:
         run: python3 git-hooks/commit_checker.py
       - name: ESLint disabled warnings
         run: python3 git-hooks/pre-push.py
+      - name: Run pytest
+        run: pipenv run pytest
