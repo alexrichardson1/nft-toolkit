@@ -1,29 +1,25 @@
 import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import InputAdornment from "@mui/material/InputAdornment";
-import Paper from "@mui/material/Paper";
 import { SxProps } from "@mui/system";
-import Input from "components/common/Input";
-import SvgLogo from "components/common/SvgLogo";
-import NetworkContext from "context/network/NetworkContext";
-import { FormEvent, useContext, useReducer, useState } from "react";
+import { FormEvent, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
 import {
   DEFAULT_ALERT_DURATION,
   DEFAULT_ALERT_ELEVATION,
 } from "utils/constants";
 import showAlert from "utils/showAlert";
-import ImageUpload from "./custom-image-upload/ImageUpload";
-import { startLoading } from "./formUtils";
-import Tabs from "./tabs/Tabs";
+import GeneralInfoStep from "./form-steps/GeneralInfoStep";
+import StaticArtStep from "./form-steps/StaticArtStep";
+import TypeOfArtStep from "./form-steps/TypeOfArtStep";
+import { startLoading, stopLoading } from "./formUtils";
 
-const ICON_SIZE = 25;
-const DESCRIPTION_ROWS = 4;
+const NUMBER_OF_PAGES = 2;
 const INITIAL_STATE = {
   collectionName: "",
   description: "",
@@ -50,22 +46,35 @@ const loadingButtonStyle = {
   },
 };
 
-const priceInputProps = (selectedNet: NetworkT) => ({
-  inputProps: { min: "0", step: "any" },
-  endAdornment: (
-    <InputAdornment position="end">
-      <SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />
-    </InputAdornment>
-  ),
-});
+const INITIAL_PAGE_NUMBER = 0;
 
+const getButtonText = (
+  isLoading: boolean,
+  isLastPage: boolean,
+  loadingMessage: string
+) => {
+  if (isLoading) {
+    return loadingMessage;
+  }
+  if (isLastPage) {
+    return "Submit";
+  }
+  return "Next";
+};
+
+const PAGE_2 = 2;
 const CreateCollectionForm = (): JSX.Element => {
-  const { selectedNet } = useContext(NetworkContext);
+  const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
+
+  const IS_LAST_PAGE = pageNumber === NUMBER_OF_PAGES - 1;
+
+  const handleNextPage = () => setPageNumber((prev) => prev + 1);
+  const handlePrevPage = () => setPageNumber((prev) => prev - 1);
 
   const closeAlert = () => setAlertMessage("");
 
@@ -107,27 +116,31 @@ const CreateCollectionForm = (): JSX.Element => {
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
 
-  const handleStateReset = () => {
-    dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
-    showFormAlert("info", "Form has been reset");
-  };
+  // const handleStateReset = () => {
+  //   dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
+  //   showFormAlert("info", "Form has been reset");
+  // };
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (!IS_LAST_PAGE) {
+      handleNextPage();
+      return;
+    }
+    console.log(state);
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    // console.log(state);
-    // const UPLOADING_DURATION = 3000;
-    // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
-    // const SAVING_DURATION = 3000;
-    // setTimeout(
-    //   () => setLoadingMessage("Deploying..."),
-    //   UPLOADING_DURATION + SAVING_DURATION
-    // );
-    // const DEPLOYING_DURATION = 3000;
-    // setTimeout(() => {
-    //   stopLoading();
-    //   showFormAlert("success", "Minting Successful");
-    // }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
+    const UPLOADING_DURATION = 3000;
+    setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
+    const SAVING_DURATION = 3000;
+    setTimeout(
+      () => setLoadingMessage("Deploying..."),
+      UPLOADING_DURATION + SAVING_DURATION
+    );
+    const DEPLOYING_DURATION = 3000;
+    setTimeout(() => {
+      stopLoading(setLoadingMessage, setIsLoading);
+      showFormAlert("success", "Minting Successful");
+    }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
   };
 
   const alertBox = (
@@ -156,25 +169,25 @@ const CreateCollectionForm = (): JSX.Element => {
       <Button
         startIcon={<ClearIcon />}
         data-testid="reset"
+        disabled={isLoading || pageNumber === INITIAL_PAGE_NUMBER}
         color="error"
         size="large"
         variant="contained"
         type="reset"
-        disabled={isLoading}
-        onClick={handleStateReset}>
-        Reset
+        onClick={handlePrevPage}>
+        Back
       </Button>
       <LoadingButton
         sx={loadingButtonStyle}
         loading={isLoading}
         loadingPosition="end"
         type="submit"
-        endIcon={<DoneIcon />}
+        endIcon={IS_LAST_PAGE ? <DoneIcon /> : <NavigateNextIcon />}
         color="success"
         size="large"
         data-testid="submit-btn"
         variant="contained">
-        {isLoading ? loadingMessage : "Submit"}
+        {getButtonText(isLoading, IS_LAST_PAGE, loadingMessage)}
       </LoadingButton>
     </Box>
   );
@@ -186,56 +199,24 @@ const CreateCollectionForm = (): JSX.Element => {
       justifyContent="center"
       spacing={2}
       data-testid="create-form">
-      <Paper>
-        <Input
-          inputProps={{ "data-testid": "collection-name-input" }}
-          value={state.collectionName}
-          onChange={handleCollNameChange}
-          placeholder="Enter a collection name"
-          label="Collection Name"
-          required
+      {pageNumber === 0 && (
+        <GeneralInfoStep
+          state={state}
+          handleCollNameChange={handleCollNameChange}
+          handleDescriptionChange={handleDescriptionChange}
+          handleMintPriceChange={handleMintPriceChange}
         />
-      </Paper>
-
-      <Paper>
-        <Input
-          inputProps={{ "data-testid": "description-input" }}
-          value={state.description}
-          multiline
-          onChange={handleDescriptionChange}
-          placeholder="Enter a description"
-          rows={DESCRIPTION_ROWS}
-          label="Description"
-          required
-        />
-      </Paper>
-
-      <Paper>
-        <ImageUpload handleImageDrop={handleImageDrop} imgObjs={state.images} />
-      </Paper>
-
-      {state.images.length > 0 && (
-        <Paper>
-          <Tabs
-            handleImageDelete={handleImageDelete}
-            handleNameChange={handleImgNameChange}
-            imgObjs={state.images}
-          />
-        </Paper>
       )}
-
-      <Paper>
-        <Input
-          value={state.mintingPrice}
-          onChange={handleMintPriceChange}
-          placeholder="Enter a minting price"
-          label="Minting Price"
-          type="number"
-          InputProps={priceInputProps(selectedNet)}
-          required
+      {pageNumber === 1 && <TypeOfArtStep />}
+      {pageNumber === PAGE_2 && (
+        <StaticArtStep
+          state={state}
+          isLoading={isLoading}
+          handleImageDrop={handleImageDrop}
+          handleImageDelete={handleImageDelete}
+          handleImgNameChange={handleImgNameChange}
         />
-      </Paper>
-
+      )}
       <Box sx={formFooterStyle}>
         {alertBox}
         {formButtons}
