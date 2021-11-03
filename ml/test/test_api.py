@@ -5,7 +5,7 @@ import os
 import tempfile
 import json
 import pytest
-from app import create_app
+from api import create_app
 
 
 @pytest.fixture(name="client_app")

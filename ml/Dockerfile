@@ -10,4 +10,5 @@ COPY . .
 
 EXPOSE 4000
 
+CMD [ "export", "FLASK_APP=api/__init__.py"]
 CMD [ "python3", "-m" , "flask", "run" ]
