@@ -638,181 +638,137 @@ exports[`ImageUpload snapshot 1`] = `
     >
       <InnerThemeProvider>
         <NetworkProvider>
-          <DAppProvider
-            config={Object {}}
+          <Web3ReactProvider
+            getLibrary={[Function]}
           >
-            <ConfigProvider
-              config={Object {}}
+            <ImageUpload
+              handleImageDrop={[MockFunction]}
+              imgObjs={Array []}
             >
-              <DAppProviderWithConfig>
-                <EthersProvider>
-                  <Web3ReactProvider
-                    getLibrary={[Function]}
+              <label
+                className="img-upload-label"
+                data-testid="img-upload-label"
+                htmlFor="upload-images"
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#00bcd4",
+                    "borderRadius": 4,
+                    "boxShadow": "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+                  }
+                }
+                tabIndex={0}
+              >
+                <ForwardRef(CloudUploadIcon)
+                  className="img-upload-cloud"
+                  color="primary"
+                  fontSize="large"
+                >
+                  <ForwardRef(SvgIcon)
+                    className="img-upload-cloud"
+                    color="primary"
+                    data-testid="CloudUploadIcon"
+                    fontSize="large"
                   >
-                    <BlockNumberProvider>
-                      <NetworkActivator />
-                      <LocalMulticallProvider>
-                        <ChainStateProvider
-                          multicallAddresses={
-                            Object {
-                              "1": "0xeefba1e63905ef1d7acba5a8513c70307c1ce441",
-                              "100": "0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a",
-                              "11297108109": "0x99a73dfE34578348fb81BD078201C0BA84E9c840",
-                              "1285": "0xa9177F8d98DAaB74C24715Ba0A81b73654710523",
-                              "137": "0x11ce4B23bD875D7F5C6a31084f55fDe1e9A87507",
-                              "1666600000": "0xFE4980f62D708c2A84D3929859Ea226340759320",
-                              "250": "0xdc85396592f0F466224390771C861EE3957a3ff4",
-                              "3": "0x53c43764255c17bd724f74c4ef150724ac50a3ed",
-                              "361": "0xe2ec58a54f3ab2714eddbae87533793011f1e14e",
-                              "365": "0xf822bf2e728e264c58d7618022addd9cbc780350",
-                              "4": "0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821",
-                              "42": "0x2cc8688c5f75e365aaeeb4ea8d6a480405a48d2a",
-                              "5": "0x77dca2c955b15e9de4dbbcf1246b4b85b651e50e",
-                              "56": "0x41263cba59eb80dc200f3e2544eda4ed6a90e76c",
-                              "80001": "0x08411ADd0b5AA8ee47563b146743C13b3556c9Cc",
-                              "97": "0xae11C5B5f29A6a25e955F0CB8ddCc416f522AF5C",
-                            }
-                          }
-                        >
-                          <NotificationsProvider>
-                            <TransactionProvider>
-                              <ImageUpload
-                                handleImageDrop={[MockFunction]}
-                                imgObjs={Array []}
-                              >
-                                <label
-                                  className="img-upload-label"
-                                  data-testid="img-upload-label"
-                                  htmlFor="upload-images"
-                                  onDragEnter={[Function]}
-                                  onDragLeave={[Function]}
-                                  onDragOver={[Function]}
-                                  onDrop={[Function]}
-                                  style={
-                                    Object {
-                                      "borderColor": "#00bcd4",
-                                      "borderRadius": 4,
-                                      "boxShadow": "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-                                    }
-                                  }
-                                  tabIndex={0}
-                                >
-                                  <ForwardRef(CloudUploadIcon)
-                                    className="img-upload-cloud"
-                                    color="primary"
-                                    fontSize="large"
-                                  >
-                                    <ForwardRef(SvgIcon)
-                                      className="img-upload-cloud"
-                                      color="primary"
-                                      data-testid="CloudUploadIcon"
-                                      fontSize="large"
-                                    >
-                                      <MuiSvgIconRoot
-                                        aria-hidden={true}
-                                        as="svg"
-                                        className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud"
-                                        data-testid="CloudUploadIcon"
-                                        focusable="false"
-                                        ownerState={
-                                          Object {
-                                            "children": <path
-                                              d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
-                                            />,
-                                            "className": "img-upload-cloud",
-                                            "color": "primary",
-                                            "component": "svg",
-                                            "data-testid": "CloudUploadIcon",
-                                            "fontSize": "large",
-                                            "viewBox": "0 0 24 24",
-                                          }
-                                        }
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <svg
-                                          aria-hidden={true}
-                                          className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud css-5cbsdu-MuiSvgIcon-root"
-                                          data-testid="CloudUploadIcon"
-                                          focusable="false"
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <path
-                                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
-                                          />
-                                        </svg>
-                                      </MuiSvgIconRoot>
-                                    </ForwardRef(SvgIcon)>
-                                  </ForwardRef(CloudUploadIcon)>
-                                  <ForwardRef(Typography)
-                                    align="center"
-                                    variant="h5"
-                                  >
-                                    <MuiTypographyRoot
-                                      as="h5"
-                                      className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter"
-                                      ownerState={
-                                        Object {
-                                          "align": "center",
-                                          "children": "Upload your NFT collection image(s) here",
-                                          "className": undefined,
-                                          "color": undefined,
-                                          "component": undefined,
-                                          "gutterBottom": false,
-                                          "noWrap": false,
-                                          "paragraph": false,
-                                          "sx": Object {
-                                            "color": undefined,
-                                          },
-                                          "variant": "h5",
-                                          "variantMapping": Object {
-                                            "body1": "p",
-                                            "body2": "p",
-                                            "h1": "h1",
-                                            "h2": "h2",
-                                            "h3": "h3",
-                                            "h4": "h4",
-                                            "h5": "h5",
-                                            "h6": "h6",
-                                            "inherit": "p",
-                                            "subtitle1": "h6",
-                                            "subtitle2": "h6",
-                                          },
-                                        }
-                                      }
-                                      sx={
-                                        Object {
-                                          "color": undefined,
-                                        }
-                                      }
-                                    >
-                                      <h5
-                                        className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter css-ph2xsj-MuiTypography-root"
-                                      >
-                                        Upload your NFT collection image(s) here
-                                      </h5>
-                                    </MuiTypographyRoot>
-                                  </ForwardRef(Typography)>
-                                </label>
-                                <input
-                                  accept="image/*"
-                                  className="img-upload-input"
-                                  data-testid="img-upload-input"
-                                  id="upload-images"
-                                  multiple={true}
-                                  onChange={[Function]}
-                                  type="file"
-                                />
-                              </ImageUpload>
-                            </TransactionProvider>
-                          </NotificationsProvider>
-                        </ChainStateProvider>
-                      </LocalMulticallProvider>
-                    </BlockNumberProvider>
-                  </Web3ReactProvider>
-                </EthersProvider>
-              </DAppProviderWithConfig>
-            </ConfigProvider>
-          </DAppProvider>
+                    <MuiSvgIconRoot
+                      aria-hidden={true}
+                      as="svg"
+                      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud"
+                      data-testid="CloudUploadIcon"
+                      focusable="false"
+                      ownerState={
+                        Object {
+                          "children": <path
+                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+                          />,
+                          "className": "img-upload-cloud",
+                          "color": "primary",
+                          "component": "svg",
+                          "data-testid": "CloudUploadIcon",
+                          "fontSize": "large",
+                          "viewBox": "0 0 24 24",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud css-5cbsdu-MuiSvgIcon-root"
+                        data-testid="CloudUploadIcon"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+                        />
+                      </svg>
+                    </MuiSvgIconRoot>
+                  </ForwardRef(SvgIcon)>
+                </ForwardRef(CloudUploadIcon)>
+                <ForwardRef(Typography)
+                  align="center"
+                  variant="h5"
+                >
+                  <MuiTypographyRoot
+                    as="h5"
+                    className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter"
+                    ownerState={
+                      Object {
+                        "align": "center",
+                        "children": "Upload your NFT collection image(s) here",
+                        "className": undefined,
+                        "color": undefined,
+                        "component": undefined,
+                        "gutterBottom": false,
+                        "noWrap": false,
+                        "paragraph": false,
+                        "sx": Object {
+                          "color": undefined,
+                        },
+                        "variant": "h5",
+                        "variantMapping": Object {
+                          "body1": "p",
+                          "body2": "p",
+                          "h1": "h1",
+                          "h2": "h2",
+                          "h3": "h3",
+                          "h4": "h4",
+                          "h5": "h5",
+                          "h6": "h6",
+                          "inherit": "p",
+                          "subtitle1": "h6",
+                          "subtitle2": "h6",
+                        },
+                      }
+                    }
+                    sx={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                  >
+                    <h5
+                      className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter css-ph2xsj-MuiTypography-root"
+                    >
+                      Upload your NFT collection image(s) here
+                    </h5>
+                  </MuiTypographyRoot>
+                </ForwardRef(Typography)>
+              </label>
+              <input
+                accept="image/*"
+                className="img-upload-input"
+                data-testid="img-upload-input"
+                id="upload-images"
+                multiple={true}
+                onChange={[Function]}
+                type="file"
+              />
+            </ImageUpload>
+          </Web3ReactProvider>
         </NetworkProvider>
       </InnerThemeProvider>
     </ThemeProvider>

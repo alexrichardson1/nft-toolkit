@@ -5,8 +5,9 @@ import {
   render,
   RenderResult,
 } from "@testing-library/react";
-import { DAppProvider } from "@usedapp/core";
+import { Web3ReactProvider } from "@web3-react/core";
 import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
+import { getLibrary } from "components/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
@@ -15,9 +16,9 @@ test("CreateCollectionForm snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <CreateCollectionForm />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );
@@ -31,9 +32,9 @@ describe("CreateCollectionForm unit tests", () => {
     tree = render(
       <ThemeProvider>
         <NetworkProvider>
-          <DAppProvider config={{}}>
+          <Web3ReactProvider getLibrary={getLibrary}>
             <CreateCollectionForm />
-          </DAppProvider>
+          </Web3ReactProvider>
         </NetworkProvider>
       </ThemeProvider>
     );
