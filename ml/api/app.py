@@ -6,7 +6,43 @@ Routes:
     - /api/price-prediction/{RARITY} : returns json of price or string Failed
 """
 import os
-from flask import Flask
+from flask import Flask, Blueprint
+
+price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
+
+
+@price_blueprint.route('/api/price-prediction/<string:rarity>')
+def get_price_prediction(rarity):
+    """
+    Route:
+        /api/price-prediction
+
+    Args:
+        rarity: rarity of the asset (between 0 - 100)
+
+    Returns:
+        Json file:
+            {
+                projected-price: int
+            }
+    """
+    rarity = float(rarity)
+    if 0 <= rarity <= 100:
+        return {"price": rarity * 100}
+    return "Failed"
+
+
+@price_blueprint.route('/')
+def home_page():
+    """
+    Route:
+        /
+
+    Returns:
+        Empty Page.
+    """
+
+    return "This is the ML API server"
 
 
 def create_app(test_config=None):
@@ -33,35 +69,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/api/price-prediction/<float:rarity>')
-    def get_price_prediction(rarity):
-        """
-        Route:
-            /api/price-prediction
-
-        Args:
-            rarity: rarity of the asset (between 0 - 100)
-
-        Returns:
-            Json file:
-                {
-                    projected-price: int
-                }
-        """
-        if 0 < rarity < 100:
-            return {"price": rarity * 100}
-        return "Failed"
-
-    @app.route('/')
-    def home_page():
-        """
-        Route:
-            /
-
-        Returns:
-            Empty Page.
-        """
-
-        return "This is the ML API server"
+    app.register_blueprint(price_blueprint)
 
     return app
