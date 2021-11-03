@@ -9,8 +9,11 @@ import { useWeb3React } from "@web3-react/core";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useEffect } from "react";
-import { NETWORKS } from "utils/constants";
-import { getAccountString, supportedChains } from "./walletUtils";
+import {
+  getAccountString,
+  supportedChains,
+  updateNetwork,
+} from "./walletUtils";
 
 export function getLibrary(
   provider: ExternalProvider | JsonRpcFetchFunc
@@ -34,11 +37,10 @@ const Wallet = (): JSX.Element => {
     supportedChainIds: supportedChains,
   });
   const connectWallet = () => {
-    activate(connector, (err) => {
-      // TODO: Show snackbar error
-      // const { showSnackbar } = useContext(SnackbarContext);
-      console.error(err);
-    });
+    activate(connector);
+    // TODO: Show snackbar error
+    // const { showSnackbar } = useContext(SnackbarContext);
+    // console.log(err);
   };
 
   useEffect(() => {
@@ -46,10 +48,7 @@ const Wallet = (): JSX.Element => {
       return;
     }
 
-    const selectedNet = NETWORKS.find((net) => net.chainId === chainId);
-    if (selectedNet) {
-      setSelectedNet(selectedNet);
-    }
+    updateNetwork(chainId, setSelectedNet);
   }, [chainId]);
 
   return (
