@@ -35,6 +35,7 @@ const accessibilityProps = (index: number) => ({
 
 interface PropsT {
   imgObjs: ImageT[];
+  isLoading: boolean;
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (e: InputEventT, id: string) => void;
 }
@@ -92,9 +93,13 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
               onChange={(e) => props.handleNameChange(e, imgObj.id)}
             />
             <IconButton
+              disabled={props.isLoading}
               data-testid="delete-icon"
               onClick={() => props.handleImageDelete(imgObj.id)}>
-              <DeleteIcon fontSize="large" color="error" />
+              <DeleteIcon
+                fontSize="large"
+                color={props.isLoading ? "disabled" : "error"}
+              />
             </IconButton>
           </Box>
           <img width="100%" src={imgObj.url} alt={imgObj.image.name} />
