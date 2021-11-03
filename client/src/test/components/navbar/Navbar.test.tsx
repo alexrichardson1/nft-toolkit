@@ -3,11 +3,6 @@ import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount, ReactWrapper } from "enzyme";
 
-// jest.mock("components/navbar/navbarUtils", () => ({
-//   connectWallet: jest.fn(),
-//   getAccountString: jest.fn(),
-// }));
-
 describe("Navbar tests", () => {
   let tree: ReactWrapper<
     unknown,
