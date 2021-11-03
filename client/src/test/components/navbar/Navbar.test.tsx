@@ -1,14 +1,12 @@
-import { DAppProvider } from "@usedapp/core";
 import Navbar from "components/navbar/Navbar";
-import * as utils from "components/navbar/navbarUtils";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount, ReactWrapper } from "enzyme";
 
-jest.mock("components/navbar/navbarUtils", () => ({
-  connectWallet: jest.fn(),
-  getAccountString: jest.fn(),
-}));
+// jest.mock("components/navbar/navbarUtils", () => ({
+//   connectWallet: jest.fn(),
+//   getAccountString: jest.fn(),
+// }));
 
 describe("Navbar tests", () => {
   let tree: ReactWrapper<
@@ -21,9 +19,7 @@ describe("Navbar tests", () => {
     tree = mount(
       <ThemeProvider>
         <NetworkProvider>
-          <DAppProvider config={{}}>
-            <Navbar />
-          </DAppProvider>
+          <Navbar />
         </NetworkProvider>
       </ThemeProvider>
     );
@@ -38,10 +34,5 @@ describe("Navbar tests", () => {
     tree.find("#theme-change-btn").first().simulate("click");
     expect(localStorage.getItem("theme")).toBe("dark");
     localStorage.clear();
-  });
-
-  test("connectWallet is called", () => {
-    tree.find("#connect-wallet-btn").first().simulate("click");
-    expect(utils.connectWallet).toHaveBeenCalled();
   });
 });
