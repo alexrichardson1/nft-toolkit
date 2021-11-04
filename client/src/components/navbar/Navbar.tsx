@@ -10,7 +10,7 @@ import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import NetworkSpeedDial from "components/common/Networks";
-import Wallet from "components/Wallet";
+import Wallet from "components/wallet/Wallet";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
 import { NAVBAR_HEIGHT } from "utils/constants";

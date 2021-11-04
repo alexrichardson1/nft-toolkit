@@ -7,7 +7,7 @@ import {
 } from "@testing-library/react";
 import { Web3ReactProvider } from "@web3-react/core";
 import Tabs from "components/create-collection-form/tabs/Tabs";
-import { getLibrary } from "components/Wallet";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
