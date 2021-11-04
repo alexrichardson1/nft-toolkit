@@ -1,5 +1,10 @@
 import { Web3Provider } from "@ethersproject/providers";
 import { NETWORKS } from "utils/constants";
+import {
+  HEXADECIMAL,
+  NOT_ADDED_NETWORK_ERROR,
+  RPC_URLS,
+} from "./networkConstants";
 
 export const getAccountString = (account?: string | null): string => {
   if (!account) {
@@ -10,14 +15,6 @@ export const getAccountString = (account?: string | null): string => {
   return `${account.slice(0, START_CHARS)}....${account.slice(-END_CHARS)}`;
 };
 
-// TODO: Testnet chain ids
-const ETH_ID = 1;
-const MATIC_ID = 137;
-const AVAX_ID = 43114;
-const BSC_ID = 56;
-
-export const supportedChains = [ETH_ID, MATIC_ID, AVAX_ID, BSC_ID];
-
 export const updateNetwork = (
   chainId: number,
   setSelectedNet: (newNetwork: NetworkT) => void
@@ -27,8 +24,6 @@ export const updateNetwork = (
     setSelectedNet(selectedNet);
   }
 };
-
-const HEXADECIMAL = 16;
 
 export const switchChain = (
   network: NetworkT,
@@ -45,11 +40,15 @@ export const switchChain = (
   if (!chainId) {
     return;
   }
+  const hexChainId = `0x${chainId.toString(HEXADECIMAL)}`;
   library
-    .send("wallet_switchEthereumChain", [
-      { chainId: `0x${chainId.toString(HEXADECIMAL)}` },
-    ])
+    .send("wallet_switchEthereumChain", [{ chainId: hexChainId }])
     .catch((err) => {
+      if (err.code === NOT_ADDED_NETWORK_ERROR) {
+        // Adds network to metamask
+        const rpcInfo = RPC_URLS[chainId];
+        library.send("wallet_addEthereumChain", [rpcInfo]);
+      }
       // TODO: Add network if not in metamask
       // TODO: Error snackbar
       console.log(err);

@@ -9,11 +9,8 @@ import { useWeb3React } from "@web3-react/core";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useEffect } from "react";
-import {
-  getAccountString,
-  supportedChains,
-  updateNetwork,
-} from "./walletUtils";
+import { supportedChains } from "./networkConstants";
+import { getAccountString, updateNetwork } from "./walletUtils";
 
 export function getLibrary(
   provider: ExternalProvider | JsonRpcFetchFunc
