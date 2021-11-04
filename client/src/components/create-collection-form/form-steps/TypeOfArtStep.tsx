@@ -37,10 +37,9 @@ const TypeOfArtStep = (): JSX.Element => {
                   />
                   <Typography variant="body1" component="div">
                     Dynamically generate an NFT collection of multi-layered
-                    images. Select the layers you want each image to include,
-                    Upload your pictures with a rarity for each one. Finally,
-                    let us generate your NFTs via smart contracts and deploy the
-                    collection!
+                    images. Provide layers you want each NFT to include, upload
+                    your images with respective rarities. Let us generate your
+                    NFTs via smart contracts and deploy the collection!
                   </Typography>
                 </Box>
               </LinkContainer>
