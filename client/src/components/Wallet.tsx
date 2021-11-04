@@ -30,6 +30,34 @@ const extendedFabStyle = {
   justifyCotnent: "center",
 };
 
+const HEXADECIMAL = 16;
+
+export const switchChain = (
+  network: NetworkT,
+  library: Web3Provider,
+  setNetwork: (network: NetworkT) => void
+): void => {
+  const { chainId } = network;
+  // Able to change network freely if wallet not connected
+  if (!library) {
+    setNetwork(network);
+    return;
+  }
+  // TODO: Solana and Cardano
+  if (!chainId) {
+    return;
+  }
+  library
+    .send("wallet_switchEthereumChain", [
+      { chainId: `0x${chainId.toString(HEXADECIMAL)}` },
+    ])
+    .catch((err) => {
+      // TODO: Add network if not in metamask
+      // TODO: Error snackbar
+      console.log(err);
+    });
+};
+
 const Wallet = (): JSX.Element => {
   const { activate, account, chainId } = useWeb3React();
   const { setSelectedNet } = useContext(NetworkContext);
