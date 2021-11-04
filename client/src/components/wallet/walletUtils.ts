@@ -58,8 +58,8 @@ export const switchChain = (
         library.send("wallet_addEthereumChain", [rpcInfo]).catch((err) => {
           showSnackbar("error", err.message);
         });
-      } else {
-        showSnackbar("error", err.message);
+        return;
       }
+      showSnackbar("error", err.message);
     });
 };
