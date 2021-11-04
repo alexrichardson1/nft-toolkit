@@ -1,6 +1,6 @@
 import * as ethers from "@ethersproject/providers";
 import { Web3ReactProvider } from "@web3-react/core";
-import Wallet, { getLibrary } from "components/Wallet";
+import Wallet, { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount, ReactWrapper } from "enzyme";

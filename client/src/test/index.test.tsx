@@ -1,7 +1,7 @@
 import { CssBaseline } from "@mui/material";
 import { Web3ReactProvider } from "@web3-react/core";
 import App from "App";
-import { getLibrary } from "components/Wallet";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import SnackbarProvider from "context/snackbar/SnackbarProvider";
 import ThemeProvider from "context/theme/ThemeProvider";

@@ -1,5 +1,5 @@
 import { Web3ReactProvider } from "@web3-react/core";
-import { getLibrary } from "components/Wallet";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
