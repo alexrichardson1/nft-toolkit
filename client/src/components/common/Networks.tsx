@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import { useWeb3React } from "@web3-react/core";
-import { switchChain } from "components/Wallet";
+import { switchChain } from "components/walletUtils";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext } from "react";
 import { NETWORKS } from "utils/constants";
