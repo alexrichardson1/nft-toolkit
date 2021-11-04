@@ -62,6 +62,7 @@ const getButtonText = (
   return "Next";
 };
 
+const PAGE_1 = 1;
 const PAGE_2 = 2;
 const CreateCollectionForm = (): JSX.Element => {
   const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
@@ -207,7 +208,7 @@ const CreateCollectionForm = (): JSX.Element => {
           handleMintPriceChange={handleMintPriceChange}
         />
       )}
-      {pageNumber === 1 && <TypeOfArtStep />}
+      {pageNumber === PAGE_1 && <TypeOfArtStep />}
       {pageNumber === PAGE_2 && (
         <StaticArtStep
           state={state}
