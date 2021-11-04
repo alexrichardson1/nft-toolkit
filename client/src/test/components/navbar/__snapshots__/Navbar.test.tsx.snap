@@ -2029,7 +2029,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 "alignItems": "center",
                                                 "display": "flex",
                                                 "gap": "7px",
-                                                "justifyCotnent": "center",
+                                                "justifyContent": "center",
                                               }
                                             }
                                             variant="extended"
@@ -2063,7 +2063,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     "alignItems": "center",
                                                     "display": "flex",
                                                     "gap": "7px",
-                                                    "justifyCotnent": "center",
+                                                    "justifyContent": "center",
                                                   },
                                                   "variant": "extended",
                                                 }
@@ -2073,13 +2073,13 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                   "alignItems": "center",
                                                   "display": "flex",
                                                   "gap": "7px",
-                                                  "justifyCotnent": "center",
+                                                  "justifyContent": "center",
                                                 }
                                               }
                                             >
                                               <ForwardRef(ButtonBase)
                                                 aria-label="connect wallet"
-                                                className="MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-115w0g1-MuiFab-root"
+                                                className="MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-cqxrh4-MuiFab-root"
                                                 component="button"
                                                 disabled={false}
                                                 focusRipple={true}
@@ -2090,7 +2090,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 <MuiButtonBaseRoot
                                                   aria-label="connect wallet"
                                                   as="button"
-                                                  className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-115w0g1-MuiFab-root"
+                                                  className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-cqxrh4-MuiFab-root"
                                                   disabled={false}
                                                   id="connect-wallet-btn"
                                                   onBlur={[Function]}
@@ -2116,7 +2116,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                           Connect Wallet
                                                         </ForwardRef(Typography)>,
                                                       ],
-                                                      "className": "MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-115w0g1-MuiFab-root",
+                                                      "className": "MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-cqxrh4-MuiFab-root",
                                                       "component": "button",
                                                       "disableRipple": false,
                                                       "disableTouchRipple": false,
@@ -2134,7 +2134,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 >
                                                   <button
                                                     aria-label="connect wallet"
-                                                    className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-6swd88-MuiButtonBase-root-MuiFab-root"
+                                                    className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-gsolpa-MuiButtonBase-root-MuiFab-root"
                                                     disabled={false}
                                                     id="connect-wallet-btn"
                                                     onBlur={[Function]}
