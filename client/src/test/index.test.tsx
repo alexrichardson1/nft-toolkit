@@ -7,6 +7,7 @@ import SnackbarProvider from "context/snackbar/SnackbarProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import React from "react";
 import ReactDOM from "react-dom";
+import StoreProvider from "store/StoreProvider";
 
 jest.mock("react-dom", () => ({ render: jest.fn() }));
 
@@ -22,9 +23,11 @@ describe("Test index.tsx", () => {
         <ThemeProvider>
           <NetworkProvider>
             <SnackbarProvider>
-              <Web3ReactProvider getLibrary={getLibrary}>
-                <App />
-              </Web3ReactProvider>
+              <StoreProvider>
+                <Web3ReactProvider getLibrary={getLibrary}>
+                  <App />
+                </Web3ReactProvider>
+              </StoreProvider>
             </SnackbarProvider>
           </NetworkProvider>
         </ThemeProvider>

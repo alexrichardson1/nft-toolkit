@@ -5890,6 +5890,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       <img
                                                         height={25}
                                                         src="ethereum-logo.svg"
+                                                        style={
+                                                          Object {
+                                                            "margin": "0",
+                                                          }
+                                                        }
                                                         width={25}
                                                       />
                                                     </SvgLogo>

@@ -7,6 +7,7 @@ import SnackbarProvider from "context/snackbar/SnackbarProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import React from "react";
 import ReactDOM from "react-dom";
+import StoreProvider from "store/StoreProvider";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,9 +15,11 @@ ReactDOM.render(
     <ThemeProvider>
       <NetworkProvider>
         <SnackbarProvider>
-          <Web3ReactProvider getLibrary={getLibrary}>
-            <App />
-          </Web3ReactProvider>
+          <StoreProvider>
+            <Web3ReactProvider getLibrary={getLibrary}>
+              <App />
+            </Web3ReactProvider>
+          </StoreProvider>
         </SnackbarProvider>
       </NetworkProvider>
     </ThemeProvider>
