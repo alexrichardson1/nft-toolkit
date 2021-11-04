@@ -1,3 +1,4 @@
+import { Web3Provider } from "@ethersproject/providers";
 import { NETWORKS } from "utils/constants";
 
 export const getAccountString = (account?: string | null): string => {
@@ -25,4 +26,32 @@ export const updateNetwork = (
   if (selectedNet) {
     setSelectedNet(selectedNet);
   }
+};
+
+const HEXADECIMAL = 16;
+
+export const switchChain = (
+  network: NetworkT,
+  library: Web3Provider | undefined,
+  setNetwork: (network: NetworkT) => void
+): void => {
+  const { chainId } = network;
+  // Able to change network freely if wallet not connected
+  if (!library) {
+    setNetwork(network);
+    return;
+  }
+  // TODO: Solana and Cardano
+  if (!chainId) {
+    return;
+  }
+  library
+    .send("wallet_switchEthereumChain", [
+      { chainId: `0x${chainId.toString(HEXADECIMAL)}` },
+    ])
+    .catch((err) => {
+      // TODO: Add network if not in metamask
+      // TODO: Error snackbar
+      console.log(err);
+    });
 };
