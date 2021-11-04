@@ -11,13 +11,13 @@ import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useEthers } from "@usedapp/core";
+import MobileMenu from "components/common/MobileMenu";
 import NetworkSpeedDial from "components/common/Networks";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
 import { NAVBAR_HEIGHT } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
-import MobileMenu from "../common/MobileMenu";
 import { connectWallet, getAccountString } from "./navbarUtils";
 
 const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
