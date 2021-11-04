@@ -178,6 +178,7 @@ const MintingPage = (): JSX.Element => {
                   </Typography>
                   <ButtonGroup fullWidth>
                     <Button
+                      id="decrease-quantity"
                       disabled={mintingQuantity === MIN_AMOUNT_ALLOWED}
                       onClick={handleQuantityDecrease}
                       variant="contained">
@@ -190,6 +191,7 @@ const MintingPage = (): JSX.Element => {
                       {mintingQuantity}
                     </Button>
                     <Button
+                      id="increase-quantity"
                       disabled={mintingQuantity === MAX_AMOUNT_ALLOWED}
                       onClick={handleQuantityIncrease}
                       variant="contained">
