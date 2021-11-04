@@ -1,6 +1,8 @@
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
+import { useWeb3React } from "@web3-react/core";
+import { switchChain } from "components/Wallet";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext } from "react";
 import { NETWORKS } from "utils/constants";
@@ -34,6 +36,7 @@ const getSmallFabStyle = (network: NetworkT, selectedNetwork: NetworkT) => {
 
 const NetworkSpeedDial = (): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
+  const { library } = useWeb3React();
 
   const speedDialIcon = (
     <SvgLogo
@@ -63,7 +66,7 @@ const NetworkSpeedDial = (): JSX.Element => {
             }
             data-testid={`${network.name}`}
             tooltipTitle={network.name}
-            onClick={() => setSelectedNet(network)}
+            onClick={() => switchChain(network, library, setSelectedNet)}
           />
         ))}
       </SpeedDial>
