@@ -8,6 +8,7 @@ import { Fab, Typography } from "@mui/material";
 import { useWeb3React } from "@web3-react/core";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import NetworkContext from "context/network/NetworkContext";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import { useContext, useEffect } from "react";
 import { supportedChains } from "./networkConstants";
 import { getAccountString, updateNetwork } from "./walletUtils";
@@ -24,20 +25,22 @@ const extendedFabStyle = {
   display: "flex",
   gap: "7px",
   alignItems: "center",
-  justifyCotnent: "center",
+  justifyContent: "center",
 };
 
 const Wallet = (): JSX.Element => {
   const { activate, account, chainId } = useWeb3React();
   const { setSelectedNet } = useContext(NetworkContext);
+  const { showSnackbar } = useContext(SnackbarContext);
+
   const connector = new InjectedConnector({
     supportedChainIds: supportedChains,
   });
+
   const connectWallet = () => {
-    activate(connector);
-    // TODO: Show snackbar error
-    // const { showSnackbar } = useContext(SnackbarContext);
-    // console.log(err);
+    activate(connector, (err) => {
+      showSnackbar("error", err.message);
+    });
   };
 
   useEffect(() => {
@@ -45,7 +48,7 @@ const Wallet = (): JSX.Element => {
       return;
     }
 
-    updateNetwork(chainId, setSelectedNet);
+    updateNetwork(chainId, setSelectedNet, showSnackbar);
   }, [chainId]);
 
   return (
