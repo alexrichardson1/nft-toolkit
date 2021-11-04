@@ -860,23 +860,6 @@ exports[`Wallet tests Wallet snapshot 1`] = `
                             </p>
                           </MuiTypographyRoot>
                         </ForwardRef(Typography)>
-                        <ForwardRef(TouchRipple)
-                          center={false}
-                        >
-                          <MuiTouchRippleRoot
-                            className="MuiTouchRipple-root"
-                          >
-                            <span
-                              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                            >
-                              <TransitionGroup
-                                childFactory={[Function]}
-                                component={null}
-                                exit={true}
-                              />
-                            </span>
-                          </MuiTouchRippleRoot>
-                        </ForwardRef(TouchRipple)>
                       </button>
                     </MuiButtonBaseRoot>
                   </ForwardRef(ButtonBase)>
