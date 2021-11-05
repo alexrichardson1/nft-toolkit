@@ -7,7 +7,7 @@ import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { SxProps } from "@mui/system";
-import { FormEvent, useReducer, useState } from "react";
+import { FormEvent, useEffect, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
 import {
   DEFAULT_ALERT_DURATION,
@@ -19,7 +19,7 @@ import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import { startLoading, stopLoading } from "./formUtils";
 
-const NUMBER_OF_PAGES = 2;
+const NUMBER_OF_PAGES = 3;
 const INITIAL_STATE = {
   collectionName: "",
   description: "",
@@ -62,8 +62,6 @@ const getButtonText = (
   return "Next";
 };
 
-const PAGE_1 = 1;
-const PAGE_2 = 2;
 const CreateCollectionForm = (): JSX.Element => {
   const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
@@ -71,6 +69,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
+  const [generative, setGenerative] = useState(false);
 
   const IS_LAST_PAGE = pageNumber === NUMBER_OF_PAGES - 1;
 
@@ -121,6 +120,12 @@ const CreateCollectionForm = (): JSX.Element => {
   //   dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
   //   showFormAlert("info", "Form has been reset");
   // };
+
+  useEffect(() => {
+    if (pageNumber <= 1) {
+      setGenerative(false);
+    }
+  }, [pageNumber]);
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -178,18 +183,20 @@ const CreateCollectionForm = (): JSX.Element => {
         onClick={handlePrevPage}>
         Back
       </Button>
-      <LoadingButton
-        sx={loadingButtonStyle}
-        loading={isLoading}
-        loadingPosition="end"
-        type="submit"
-        endIcon={IS_LAST_PAGE ? <DoneIcon /> : <NavigateNextIcon />}
-        color="success"
-        size="large"
-        data-testid="submit-btn"
-        variant="contained">
-        {getButtonText(isLoading, IS_LAST_PAGE, loadingMessage)}
-      </LoadingButton>
+      {pageNumber !== 1 && (
+        <LoadingButton
+          sx={loadingButtonStyle}
+          loading={isLoading}
+          loadingPosition="end"
+          type="submit"
+          endIcon={IS_LAST_PAGE ? <DoneIcon /> : <NavigateNextIcon />}
+          color="success"
+          size="large"
+          data-testid="submit-btn"
+          variant="contained">
+          {getButtonText(isLoading, IS_LAST_PAGE, loadingMessage)}
+        </LoadingButton>
+      )}
     </Box>
   );
 
@@ -200,24 +207,28 @@ const CreateCollectionForm = (): JSX.Element => {
       justifyContent="center"
       spacing={2}
       data-testid="create-form">
-      {pageNumber === 0 && (
-        <GeneralInfoStep
-          state={state}
-          handleCollNameChange={handleCollNameChange}
-          handleDescriptionChange={handleDescriptionChange}
-          handleMintPriceChange={handleMintPriceChange}
-        />
-      )}
-      {pageNumber === PAGE_1 && <TypeOfArtStep />}
-      {pageNumber === PAGE_2 && (
-        <StaticArtStep
-          state={state}
-          isLoading={isLoading}
-          handleImageDrop={handleImageDrop}
-          handleImageDelete={handleImageDelete}
-          handleImgNameChange={handleImgNameChange}
-        />
-      )}
+      <GeneralInfoStep
+        pageNumber={pageNumber}
+        state={state}
+        handleCollNameChange={handleCollNameChange}
+        handleDescriptionChange={handleDescriptionChange}
+        handleMintPriceChange={handleMintPriceChange}
+      />
+      <TypeOfArtStep
+        handleNextPage={handleNextPage}
+        setGenerative={setGenerative}
+        pageNumber={pageNumber}
+      />
+      <StaticArtStep
+        generative={generative}
+        pageNumber={pageNumber}
+        state={state}
+        isLoading={isLoading}
+        handleImageDrop={handleImageDrop}
+        handleImageDelete={handleImageDelete}
+        handleImgNameChange={handleImgNameChange}
+      />
+
       <Box sx={formFooterStyle}>
         {alertBox}
         {formButtons}

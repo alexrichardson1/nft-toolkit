@@ -9,6 +9,7 @@ const DESCRIPTION_ROWS = 4;
 const ICON_SIZE = 25;
 
 interface PropsT {
+  pageNumber: number;
   state: FormStateI;
   handleCollNameChange: (e: InputEventT) => void;
   handleDescriptionChange: (e: InputEventT) => void;
@@ -25,11 +26,16 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 });
 
 const GeneralInfo = ({
+  pageNumber,
   state,
   handleCollNameChange,
   handleMintPriceChange,
   handleDescriptionChange,
 }: PropsT): JSX.Element => {
+  if (pageNumber !== 0) {
+    return <></>;
+  }
+
   const { selectedNet } = useContext(NetworkContext);
   return (
     <>
