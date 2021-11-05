@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
@@ -8,9 +9,11 @@ import Button from "@mui/material/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import { SxProps } from "@mui/system";
+import { useWeb3React } from "@web3-react/core";
 import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
 import {
@@ -60,7 +63,9 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 });
 
 const CreateCollectionForm = (): JSX.Element => {
+  const { active } = useWeb3React();
   const { selectedNet } = useContext(NetworkContext);
+  const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
@@ -114,8 +119,11 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
+    if (!active) {
+      showSnackbar("warning", "Please connect your wallet first!");
+      return;
+    }
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    // console.log(state);
     // const UPLOADING_DURATION = 3000;
     // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
     // const SAVING_DURATION = 3000;
