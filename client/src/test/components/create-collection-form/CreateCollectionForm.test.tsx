@@ -9,8 +9,18 @@ import { Web3ReactProvider } from "@web3-react/core";
 import CreateCollectionForm from "components/create-collection-form/CreateCollectionForm";
 import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
+import SnackbarProvider from "context/snackbar/SnackbarProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
+
+jest.mock("@web3-react/core", () => ({
+  ...jest.requireActual("@web3-react/core"),
+  useWeb3React: () =>
+    new (jest.fn().mockReturnValue({
+      active: true,
+      account: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+    }))(),
+}));
 
 test("CreateCollectionForm snapshot", () => {
   const tree = mount(
@@ -32,9 +42,11 @@ describe("CreateCollectionForm unit tests", () => {
     tree = render(
       <ThemeProvider>
         <NetworkProvider>
-          <Web3ReactProvider getLibrary={getLibrary}>
-            <CreateCollectionForm />
-          </Web3ReactProvider>
+          <SnackbarProvider>
+            <Web3ReactProvider getLibrary={getLibrary}>
+              <CreateCollectionForm />
+            </Web3ReactProvider>
+          </SnackbarProvider>
         </NetworkProvider>
       </ThemeProvider>
     );
