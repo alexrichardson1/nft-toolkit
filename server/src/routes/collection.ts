@@ -23,7 +23,9 @@ collectionRoutes.post(
   deployContracts
 );
 
-collectionRoutes.post("/images", uploadImages);
+collectionRoutes.post("/images", uploadImages, (_req, res) =>
+  res.json({ success: true })
+);
 
 collectionRoutes.post(
   "/deployed/:fromAddress/:collectionName/:deployedAddress",
