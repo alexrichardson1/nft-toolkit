@@ -2,6 +2,7 @@ import {
   deployContracts,
   getCollections,
   saveCollectionToDB,
+  successHandler,
   uploadImages,
 } from "@controllers/collection";
 import { errorHandler } from "@controllers/common";
@@ -23,9 +24,7 @@ collectionRoutes.post(
   deployContracts
 );
 
-collectionRoutes.post("/images", uploadImages, (_req, res) =>
-  res.json({ success: true })
-);
+collectionRoutes.post("/images", uploadImages, successHandler);
 
 collectionRoutes.post(
   "/deployed/:fromAddress/:collectionName/:deployedAddress",
