@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
 import DoneIcon from "@mui/icons-material/Done";
