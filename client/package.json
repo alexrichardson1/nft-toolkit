@@ -26,6 +26,7 @@
     "@web3-react/injected-connector": "^6.0.7",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "ansi-regex": "^5.0.1",
+    "axios": "^0.24.0",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "ethers": "^5.5.1",
