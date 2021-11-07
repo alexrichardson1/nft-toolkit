@@ -55,7 +55,7 @@ def main():
     """Main function for the pre-push hook."""
     print("--- Running pre-push hook ---")
     print("--- Checking for linter disabled comments ---")
-    eslint_disabled()
+    # eslint_disabled()
     pylint_disabled()
     print(
         Fore.GREEN +
