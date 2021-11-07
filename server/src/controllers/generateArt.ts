@@ -18,9 +18,13 @@ interface GenCollectionI {
   layers: LayerI[];
 }
 
+interface GeneratedImageI {
+  hash: string;
+  images: ImageI[];
+}
+
 function generateRandomPercentage() {
   const MAX_RAND = 100;
-  // TODO: make sure this is a uniform distribution with 0-100 inclusive
   return Math.random() * MAX_RAND;
 }
 
@@ -39,23 +43,57 @@ function chooseLayerImage(images: ImageI[]): ImageI {
   };
 }
 
+function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
+  const chosenLayerImages: ImageI[] = [];
+  let hash = "";
+  let layerIndex = 0;
+  collection.layers.forEach((layer) => {
+    const includeLayer = generateRandomPercentage() <= layer.rarity;
+    if (includeLayer) {
+      const chosenImage: ImageI = chooseLayerImage(layer.images);
+
+      hash += `${layer.name}/${chosenImage.name},`;
+      chosenLayerImages[layerIndex++] = chosenImage;
+    }
+  });
+
+  return {
+    hash: hash,
+    images: chosenLayerImages,
+  };
+}
+
 /**
  * PRE: Layer images are assumed to be of equal dimensions, so that we don't
  * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
 function generate(collection: GenCollectionI): ImageI[][] {
+  let numPossibleCombinations = 1;
+  collection.layers.forEach((layer) => {
+    numPossibleCombinations *= layer.images.length;
+  });
+
+  if (numPossibleCombinations < collection.quantity) {
+    throw new Error(
+      "There are less possible combinations than quantity requested"
+    );
+  }
+
   const generatedCollection: ImageI[][] = [];
+  const generatedHashes = new Set();
+
   for (let i = 0; i < collection.quantity; i++) {
-    const chosenLayerImages: ImageI[] = [];
-    let layerIndex = 0;
-    collection.layers.forEach((layer) => {
-      const includeLayer = generateRandomPercentage() <= layer.rarity;
-      if (includeLayer) {
-        chosenLayerImages[layerIndex++] = chooseLayerImage(layer.images);
-      }
-    });
-    generatedCollection[i] = chosenLayerImages;
+    const generatedImage = generateOneCombination(collection);
+
+    if (generatedHashes.has(generatedImage.hash)) {
+      // Duplicate made - repeat loop
+      i--;
+      continue;
+    }
+
+    generatedCollection[i] = generatedImage.images;
+    generatedHashes.add(generatedImage.hash);
   }
   return generatedCollection;
 }

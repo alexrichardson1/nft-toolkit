@@ -113,14 +113,50 @@ describe("Generate Art", () => {
     ]);
   });
 
-  // test("TODO", () => {
-  //   const vals = Array.from({ length: 30 }, (_, i) => i + 1);
-  //   let i = 0;
-  //   Math.random = () => {
-  //     return vals[i++] || 0;
-  //   };
-  //   console.log(generate(testData));
-  // });
+  test("No duplicates can exist in the collection", () => {
+    testData.quantity = 2;
+    const PROB1 = 0.0;
+    const PROB2 = 0.3;
+    const PROB3 = 0.0;
+    const PROB4 = 0.905;
+    const PROB5 = 0.0;
+    const PROB6 = 0.6999;
+    const PROB7 = 0.0;
+    const PROB8 = 0.3;
+    const PROB9 = 0.0;
+    const PROB10 = 0.905;
+    const PROB11 = 0.0;
+    const PROB12 = 0.6999;
 
-  // TODO: Write a test for duplicates
+    setMathRandomReturn([
+      PROB1,
+      PROB2,
+      PROB3,
+      PROB4,
+      PROB5,
+      PROB6,
+      PROB7,
+      PROB8,
+      PROB9,
+      PROB10,
+      PROB11,
+      PROB12,
+    ]);
+
+    const expected = [
+      { name: "red", rarity: 30 },
+      { name: "normal", rarity: 10 },
+      { name: "bald", rarity: 70 },
+    ];
+
+    const collection = generate(testData);
+    expect(collection[0]).toMatchObject(expected);
+    expect(collection[1]).not.toMatchObject(expected);
+  });
+
+  test("Trying to make more NFTs than there are possible combinations of features throws an error", () => {
+    testData.quantity = 100;
+
+    expect(() => generate(testData)).toThrowError();
+  });
 });
