@@ -47,7 +47,6 @@ def eslint_disabled():
 def pylint_disabled():
     """Counts the number of pylint disabled comments in a project"""
     files = glob("ml/**/*.py", recursive=True)
-    print(files)
     check_disable_linter(files, 0, "pylint: disable")
 
 
@@ -55,7 +54,7 @@ def main():
     """Main function for the pre-push hook."""
     print("--- Running pre-push hook ---")
     print("--- Checking for linter disabled comments ---")
-    # eslint_disabled()
+    eslint_disabled()
     pylint_disabled()
     print(
         Fore.GREEN +
