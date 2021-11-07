@@ -25,7 +25,6 @@ interface GeneratedImageI {
 
 function generateRandomPercentage() {
   const MAX_RAND = 100;
-  // TODO: make sure this is a uniform distribution with 0-100 inclusive
   return Math.random() * MAX_RAND;
 }
 
@@ -84,10 +83,8 @@ function generate(collection: GenCollectionI): ImageI[][] {
   const generatedCollection: ImageI[][] = [];
   const generatedHashes = new Set();
 
-  let counter = 0;
   for (let i = 0; i < collection.quantity; i++) {
     const generatedImage = generateOneCombination(collection);
-    counter++;
 
     if (generatedHashes.has(generatedImage.hash)) {
       // Duplicate made - repeat loop
@@ -98,7 +95,6 @@ function generate(collection: GenCollectionI): ImageI[][] {
     generatedCollection[i] = generatedImage.images;
     generatedHashes.add(generatedImage.hash);
   }
-  console.log(counter);
   return generatedCollection;
 }
 
