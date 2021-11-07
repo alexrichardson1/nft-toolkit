@@ -17,7 +17,6 @@ def count_disabled_comments(file, DISABLE_LINTER_COMMENT):
         lines = f.readlines()
         for line in lines:
             if DISABLE_LINTER_COMMENT in line:
-                print(line)
                 counter += 1
     f.close()
     return counter
