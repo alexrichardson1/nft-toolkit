@@ -159,15 +159,4 @@ describe("Generate Art", () => {
 
     expect(() => generate(testData)).toThrowError();
   });
-
-  // test("TODO", () => {
-  //   const vals = Array.from({ length: 30 }, (_, i) => i + 1);
-  //   let i = 0;
-  //   Math.random = () => {
-  //     return vals[i++] || 0;
-  //   };
-  //   console.log(generate(testData));
-  // });
-
-  // TODO: Write a test for duplicates
 });
