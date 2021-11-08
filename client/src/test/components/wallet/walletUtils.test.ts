@@ -7,10 +7,6 @@ import {
 import EthereumLogo from "images/ethereum-logo.svg";
 
 describe("walletUtils unit tests", () => {
-  // afterEach(() => {
-  //   jest.clearAllMocks();
-  // });
-
   test("getAccountString account==null", () => {
     const account = null;
     expect(getAccountString(account)).toBe("Connect Wallet");
@@ -62,7 +58,8 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows snackbar error when switch chain returns an error other than network not found", () => {
-    const send = jest.fn((): Promise<void> => {
+    const send = jest.fn(async (): Promise<void> => {
+      await void 0;
       const error = {
         message: "Error",
         code: -1,
@@ -80,7 +77,8 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows snackbar error when switch chain returns an error other than network not found", () => {
-    const send = jest.fn((): Promise<void> => {
+    const send = jest.fn(async (): Promise<void> => {
+      await void 0;
       const error = {
         message: "Error",
         code: -1,
@@ -112,7 +110,8 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows switch in metamask when switch chain returns an error of network not found", () => {
-    const send = jest.fn((): Promise<void> => {
+    const send = jest.fn(async (): Promise<void> => {
+      await void 0;
       const error = {
         message: "Error",
         code: 4902,
