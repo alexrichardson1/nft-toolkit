@@ -49,5 +49,12 @@ describe("NFT Collection Contract", () => {
         })
       ).to.be.revertedWith("Not enough in the collection left to mint amount");
     });
+
+    it("should increment tokenIdTracker after minting", async () => {
+      await nftContract.mint(1, {
+        value: collectionWeiPrice,
+      });
+      expect(await nftContract.tokenIdTracker()).to.equal("1");
+    });
   });
 });
