@@ -11,7 +11,7 @@ contract NFT is ERC721Enumerable {
   uint256 private _limit;
   string private _baseURIString;
   using Counters for Counters.Counter;
-  Counters.Counter public _tokenIdTracker;
+  Counters.Counter public tokenIdTracker;
 
   constructor(
     string memory name,
@@ -32,12 +32,12 @@ contract NFT is ERC721Enumerable {
   function mint(uint256 amount) public payable {
     require(msg.value == _price * amount, "Must send correct price");
     require(
-      _tokenIdTracker.current() + amount <= _limit,
+      tokenIdTracker.current() + amount <= _limit,
       "Not enough in the collection left to mint amount"
     );
     for (uint256 i = 0; i < amount; i++) {
-      _mint(msg.sender, _tokenIdTracker.current());
-      _tokenIdTracker.increment();
+      _mint(msg.sender, tokenIdTracker.current());
+      tokenIdTracker.increment();
     }
   }
 }
