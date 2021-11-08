@@ -26,9 +26,12 @@ export const DEFAULT_NET = {
   chainId: 1,
 };
 
-export const mainContainerStyle = {
-  py: 3,
-  width: 1,
-  minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
-  bgcolor: "background.default",
+export const getLogoByChainId = (id: number): string => {
+  const NETWORK_LOGOS: { [id: number]: string } = {
+    1: EthereumLogo,
+    56: BinanceLogo,
+    137: PolygonLogo,
+    43114: AvalancheLogo,
+  };
+  return NETWORK_LOGOS[id] || EthereumLogo;
 };

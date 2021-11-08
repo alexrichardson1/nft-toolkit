@@ -10,42 +10,51 @@ from colorama import Fore, Style
 from util import exit_failure
 
 
-def count_disabled_comments(file):
+def count_disabled_comments(file, DISABLE_LINTER_COMMENT):
     """Checks how many warnings disabled in a file"""
     counter = 0
-    DISABLE_LINTER_COMMENT = "eslint-disable"
     with open(file, "r") as f:
         lines = f.readlines()
         for line in lines:
-            line_startswith = line.startswith
-            if (line_startswith("//") or line_startswith("/*")
-                ) and DISABLE_LINTER_COMMENT in line:
+            if DISABLE_LINTER_COMMENT in line:
                 counter += 1
     f.close()
     return counter
 
 
-def check_disable_linter():
+def check_disable_linter(
+        files, MAX_DISABLES, DISABLE_LINTER_COMMENT):
     """Counts the number of linter disabled comments in a project"""
-    print("--- Checking for linter disabled comments ---")
-    files = glob("client/src/**/*.js", recursive=True)
-    files = glob("client/src/**/*.ts", recursive=True)
-    files += glob("client/src/**/*.tsx", recursive=True)
-    files += glob("server/src/**/*.js", recursive=True)
-    files += glob("server/src/**/*.ts", recursive=True)
     counter = 0
     for file in files:
-        counter += count_disabled_comments(file)
-    MAX_DISABLES = 1
+        counter += count_disabled_comments(file, DISABLE_LINTER_COMMENT)
     if counter > MAX_DISABLES:
         exit_failure(
             f"too many linter disable comments (+{counter - MAX_DISABLES})")
 
 
+def eslint_disabled():
+    """Counts the number of eslint disabled comments in a project"""
+    files = glob("client/src/**/*.js", recursive=True)
+    files = glob("client/src/**/*.ts", recursive=True)
+    files += glob("client/src/**/*.tsx", recursive=True)
+    files += glob("server/src/**/*.js", recursive=True)
+    files += glob("server/src/**/*.ts", recursive=True)
+    check_disable_linter(files, 0, "eslint-disable")
+
+
+def pylint_disabled():
+    """Counts the number of pylint disabled comments in a project"""
+    files = glob("ml/**/*.py", recursive=True)
+    check_disable_linter(files, 0, "pylint: disable")
+
+
 def main():
     """Main function for the pre-push hook."""
     print("--- Running pre-push hook ---")
-    check_disable_linter()
+    print("--- Checking for linter disabled comments ---")
+    eslint_disabled()
+    pylint_disabled()
     print(
         Fore.GREEN +
         Style.BRIGHT +

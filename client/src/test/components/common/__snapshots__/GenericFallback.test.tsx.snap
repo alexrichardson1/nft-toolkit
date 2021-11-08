@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Generic fallback 1`] = `
+<GenericFallback
+  error={true}
+>
+   
+  404
+</GenericFallback>
+`;

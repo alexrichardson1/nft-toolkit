@@ -1,4 +1,3 @@
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import MoreIcon from "@mui/icons-material/MoreVert";
@@ -10,15 +9,13 @@ import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { useEthers } from "@usedapp/core";
-import MobileMenu from "components/common/MobileMenu";
 import NetworkSpeedDial from "components/common/Networks";
-import SnackbarContext from "context/snackbar/SnackbarContext";
+import Wallet from "components/wallet/Wallet";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
 import { NAVBAR_HEIGHT } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
-import { connectWallet, getAccountString } from "./navbarUtils";
+import MobileMenu from "../common/MobileMenu";
 
 const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
   vertical: "top",
@@ -26,12 +23,7 @@ const MENU_ANCHOR_ORIGIN: PopoverOrigin = {
 };
 
 const moreIconContainerStyle = { display: { xs: "flex", md: "none" } };
-const extendedFabStyle = {
-  display: "flex",
-  gap: "7px",
-  alignItems: "center",
-  justifyCotnent: "center",
-};
+
 const toolbarStyle = {
   width: 1,
   height: 1,
@@ -55,8 +47,6 @@ const appBarStyle = {
 const Navbar = (): JSX.Element => {
   const theme = useTheme();
   const { toggleColourMode } = useContext(ThemeContext);
-  const { showSnackbar } = useContext(SnackbarContext);
-  const { activateBrowserWallet, account, deactivate } = useEthers();
   const [mobileAnchorEl, setMobileAnchorEl] = useState<AnchorT>(null);
 
   const handleMobileMenuClose = () => setMobileAnchorEl(null);
@@ -74,23 +64,7 @@ const Navbar = (): JSX.Element => {
 
   const navOptions = (
     <Box sx={navOptionsStyle}>
-      <Fab
-        onClick={() =>
-          connectWallet(
-            deactivate,
-            showSnackbar,
-            activateBrowserWallet,
-            account
-          )
-        }
-        id="connect-wallet-btn"
-        variant="extended"
-        color="primary"
-        aria-label="connect wallet"
-        sx={extendedFabStyle}>
-        <AccountBalanceWalletIcon />
-        <Typography>{getAccountString(account)}</Typography>
-      </Fab>
+      <Wallet />
       <NetworkSpeedDial />
       <Fab id="theme-change-btn" onClick={toggleColourMode}>
         {getThemeIcon()}

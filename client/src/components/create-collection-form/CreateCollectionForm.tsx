@@ -7,17 +7,15 @@ import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { SxProps } from "@mui/system";
-import { FormEvent, useEffect, useReducer, useState } from "react";
+import { useWeb3React } from "@web3-react/core";
+import SnackbarContext from "context/snackbar/SnackbarContext";
+import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
-import {
-  DEFAULT_ALERT_DURATION,
-  DEFAULT_ALERT_ELEVATION,
-} from "utils/constants";
-import showAlert from "utils/showAlert";
+import { DEFAULT_ALERT_ELEVATION } from "utils/constants";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
-import { startLoading, stopLoading } from "./formUtils";
+import { startLoading, uploadImages } from "./formUtils";
 
 const NUMBER_OF_PAGES = 3;
 const INITIAL_STATE = {
@@ -64,9 +62,11 @@ const getButtonText = (
 
 const CreateCollectionForm = (): JSX.Element => {
   const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
+  const { active, account } = useWeb3React();
+  const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
-  const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
+  const [alertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
@@ -111,15 +111,15 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleMintPriceChange = (e: InputEventT) =>
     dispatch({ type: "CHANGE_PRICE", payload: { price: e.target.value } });
 
-  const showFormAlert = (severity: AlertColor, message: string) => {
+  /*   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
-  };
+  }; */
 
-  // const handleStateReset = () => {
-  //   dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
-  //   showFormAlert("info", "Form has been reset");
-  // };
+  /*  const handleStateReset = () => {
+    dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
+    showFormAlert("info", "Form has been reset");
+  }; */
 
   useEffect(() => {
     if (pageNumber <= 1) {
@@ -127,26 +127,35 @@ const CreateCollectionForm = (): JSX.Element => {
     }
   }, [pageNumber]);
 
-  const handleFormSubmit = (e: FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!IS_LAST_PAGE) {
       handleNextPage();
       return;
     }
-    console.log(state);
+
+    if (!(active && account)) {
+      showSnackbar("warning", "Please connect your wallet first!");
+      return;
+    }
+
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    const UPLOADING_DURATION = 3000;
-    setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
-    const SAVING_DURATION = 3000;
-    setTimeout(
-      () => setLoadingMessage("Deploying..."),
-      UPLOADING_DURATION + SAVING_DURATION
-    );
-    const DEPLOYING_DURATION = 3000;
-    setTimeout(() => {
-      stopLoading(setLoadingMessage, setIsLoading);
-      showFormAlert("success", "Minting Successful");
-    }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
+    // TODO: Handle error from uploadImages
+    await uploadImages(state.images, account, state.collectionName);
+    setLoadingMessage("Saving...");
+    // TODO: Link saving collection & deploying to server
+    // const UPLOADING_DURATION = 3000;
+    // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
+    // const SAVING_DURATION = 3000;
+    // setTimeout(
+    //   () => setLoadingMessage("Deploying..."),
+    //   UPLOADING_DURATION + SAVING_DURATION
+    // );
+    // const DEPLOYING_DURATION = 3000;
+    // setTimeout(() => {
+    //   stopLoading();
+    //   showFormAlert("success", "Minting Successful");
+    // }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
   };
 
   const alertBox = (

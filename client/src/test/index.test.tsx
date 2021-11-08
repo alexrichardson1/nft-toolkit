@@ -1,11 +1,13 @@
 import { CssBaseline } from "@mui/material";
-import { DAppProvider } from "@usedapp/core";
+import { Web3ReactProvider } from "@web3-react/core";
 import App from "App";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import SnackbarProvider from "context/snackbar/SnackbarProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import React from "react";
 import ReactDOM from "react-dom";
+import StoreProvider from "store/StoreProvider";
 
 jest.mock("react-dom", () => ({ render: jest.fn() }));
 
@@ -21,9 +23,11 @@ describe("Test index.tsx", () => {
         <ThemeProvider>
           <NetworkProvider>
             <SnackbarProvider>
-              <DAppProvider config={{}}>
-                <App />
-              </DAppProvider>
+              <StoreProvider>
+                <Web3ReactProvider getLibrary={getLibrary}>
+                  <App />
+                </Web3ReactProvider>
+              </StoreProvider>
             </SnackbarProvider>
           </NetworkProvider>
         </ThemeProvider>

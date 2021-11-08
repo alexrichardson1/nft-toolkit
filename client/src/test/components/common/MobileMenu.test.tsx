@@ -6,8 +6,9 @@ import {
   render,
   RenderResult,
 } from "@testing-library/react";
-import { DAppProvider } from "@usedapp/core";
+import { Web3ReactProvider } from "@web3-react/core";
 import MobileMenu from "components/common/MobileMenu";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
@@ -19,7 +20,7 @@ test("MobileMenu snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <MobileMenu
             isOpen={true}
             anchorEl={mockAnchorEl}
@@ -28,7 +29,7 @@ test("MobileMenu snapshot", () => {
               console.log("test");
             }}
           />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );
@@ -43,7 +44,7 @@ describe("MobileMenu unit tests", () => {
     tree = render(
       <ThemeProvider>
         <NetworkProvider>
-          <DAppProvider config={{}}>
+          <Web3ReactProvider getLibrary={getLibrary}>
             <MobileMenu
               isOpen={true}
               anchorEl={mockAnchorEl}
@@ -52,7 +53,7 @@ describe("MobileMenu unit tests", () => {
                 console.log("test");
               }}
             />
-          </DAppProvider>
+          </Web3ReactProvider>
         </NetworkProvider>
       </ThemeProvider>
     );

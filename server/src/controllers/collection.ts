@@ -28,6 +28,9 @@ export const uploadImages = multer({
   }),
 }).any();
 
+export const successHandler: RequestHandler = (_req, res) =>
+  res.json({ success: true });
+
 type address = `0x${string}`;
 interface UserT {
   fromAddress: address;

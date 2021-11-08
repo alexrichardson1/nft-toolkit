@@ -1,5 +1,6 @@
-import { DAppProvider } from "@usedapp/core";
+import { Web3ReactProvider } from "@web3-react/core";
 import Input from "components/common/Input";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
@@ -8,14 +9,14 @@ test("Input snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <Input
             onChange={() => console.log("input change occurred")}
             value="test"
             label="test"
             placeholder="This is a test"
           />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );
@@ -26,7 +27,7 @@ test("Input snapshot with error", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <Input
             onChange={() => console.log("input change occurred")}
             value="test"
@@ -34,7 +35,7 @@ test("Input snapshot with error", () => {
             placeholder="This is a test"
             error="This is an error"
           />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );

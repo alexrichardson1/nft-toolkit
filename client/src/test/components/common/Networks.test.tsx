@@ -1,6 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
-import { DAppProvider } from "@usedapp/core";
+import { Web3ReactProvider } from "@web3-react/core";
 import NetworkSpeedDial from "components/common/Networks";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
@@ -9,9 +10,9 @@ test("NetworksSpeedDial snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <NetworkSpeedDial />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );
@@ -22,9 +23,9 @@ test("NetworksSpeedDial network changes", () => {
   const tree = render(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <NetworkSpeedDial />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );

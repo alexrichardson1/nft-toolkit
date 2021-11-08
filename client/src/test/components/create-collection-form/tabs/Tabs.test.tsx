@@ -5,8 +5,9 @@ import {
   render,
   RenderResult,
 } from "@testing-library/react";
-import { DAppProvider } from "@usedapp/core";
+import { Web3ReactProvider } from "@web3-react/core";
 import Tabs from "components/create-collection-form/tabs/Tabs";
+import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
@@ -15,13 +16,13 @@ test("Tabs snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <DAppProvider config={{}}>
+        <Web3ReactProvider getLibrary={getLibrary}>
           <Tabs
             imgObjs={[]}
             handleImageDelete={() => console.log("Image deleted during test")}
             handleNameChange={() => console.log("Name changed during test")}
           />
-        </DAppProvider>
+        </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
   );
@@ -52,13 +53,13 @@ describe("Tabs unit tests", () => {
     tree = render(
       <ThemeProvider>
         <NetworkProvider>
-          <DAppProvider config={{}}>
+          <Web3ReactProvider getLibrary={getLibrary}>
             <Tabs
               imgObjs={[mockImgObj1, mockImgObj2]}
               handleImageDelete={mockHandleImageDelete}
               handleNameChange={mockHandleNameChange}
             />
-          </DAppProvider>
+          </Web3ReactProvider>
         </NetworkProvider>
       </ThemeProvider>
     );
