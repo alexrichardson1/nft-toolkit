@@ -127,7 +127,7 @@ const CreateCollectionForm = (): JSX.Element => {
     // TODO: Handle error from uploadImages
     await uploadImages(state.images, account, state.collectionName);
     setLoadingMessage("Saving...");
-
+    // TODO: Link saving collection & deploying to server
     // const UPLOADING_DURATION = 3000;
     // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
     // const SAVING_DURATION = 3000;
