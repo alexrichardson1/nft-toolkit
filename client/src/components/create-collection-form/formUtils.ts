@@ -34,11 +34,7 @@ export const uploadImages = async (
   });
 
   try {
-    await axios({
-      method: "post",
-      url: "http://localhost:5000/collection/images",
-      // eslint-disable-next-line id-denylist
-      data: formData,
+    await axios.post("http://localhost:5000/collection/images", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
   } catch (error) {
