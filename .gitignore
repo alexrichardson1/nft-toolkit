@@ -259,3 +259,7 @@ cython_debug/
 postgres-data
 
 *.idea
+
+
+# smart contract coverage report
+coverage.json
