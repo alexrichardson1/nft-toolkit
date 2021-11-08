@@ -88,7 +88,7 @@
     "prefer-spread": "error",
     "prefer-template": "error",
     "require-await": "error",
-    "spaced-comment": "error",
+    "spaced-comment": ["error", "always", { "line": { "markers": ["/"] } }],
     "yoda": ["warn", "never", { "exceptRange": true }],
     // Layout & Formatting
     "arrow-parens": "warn",
