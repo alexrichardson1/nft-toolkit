@@ -9,6 +9,11 @@ exports[`SvgLogo snapshot 1`] = `
   <img
     height="50"
     src="avalanche-logo.svg"
+    style={
+      Object {
+        "margin": "0",
+      }
+    }
     width="50"
   />
 </SvgLogo>

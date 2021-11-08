@@ -7,10 +7,6 @@ import {
 import EthereumLogo from "images/ethereum-logo.svg";
 
 describe("walletUtils unit tests", () => {
-  // afterEach(() => {
-  //   jest.clearAllMocks();
-  // });
-
   test("getAccountString account==null", () => {
     const account = null;
     expect(getAccountString(account)).toBe("Connect Wallet");
@@ -49,8 +45,7 @@ describe("walletUtils unit tests", () => {
     const setNetwork = jest.fn();
     const showSnackbar = jest.fn();
     const mockNetwork = { name: "Polygon", chainId: 137 } as NetworkT;
-    // eslint-disable-next-line no-undefined
-    switchChain(mockNetwork, undefined, setNetwork, showSnackbar);
+    switchChain(mockNetwork, void 0, setNetwork, showSnackbar);
     expect(setNetwork).toHaveBeenCalledWith(mockNetwork);
   });
 
@@ -63,8 +58,8 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows snackbar error when switch chain returns an error other than network not found", () => {
-    // eslint-disable-next-line require-await
     const send = jest.fn(async (): Promise<void> => {
+      await void 0;
       const error = {
         message: "Error",
         code: -1,
@@ -82,8 +77,8 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows snackbar error when switch chain returns an error other than network not found", () => {
-    // eslint-disable-next-line require-await
     const send = jest.fn(async (): Promise<void> => {
+      await void 0;
       const error = {
         message: "Error",
         code: -1,
@@ -101,8 +96,9 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows snackbar success when switch chain is successful", () => {
-    // eslint-disable-next-line require-await
-    const send = jest.fn(async (): Promise<void> => void 0);
+    const send = jest.fn(
+      (): Promise<void> => new Promise((resolve) => resolve())
+    );
     const mockNetwork = { name: "Polygon", chainId: 137 } as NetworkT;
     switchChain(
       mockNetwork,
@@ -114,8 +110,8 @@ describe("walletUtils unit tests", () => {
   });
 
   test("Shows switch in metamask when switch chain returns an error of network not found", () => {
-    // eslint-disable-next-line require-await
     const send = jest.fn(async (): Promise<void> => {
+      await void 0;
       const error = {
         message: "Error",
         code: 4902,

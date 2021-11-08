@@ -16,7 +16,7 @@ describe("Wallet tests", () => {
     React.Component<unknown, unknown, unknown>
   >;
 
-  beforeAll(() => {
+  beforeEach(() => {
     tree = mount(
       <ThemeProvider>
         <NetworkProvider>
@@ -34,7 +34,7 @@ describe("Wallet tests", () => {
 
   test("Wallet is connected on button click", () => {
     tree.find("#connect-wallet-btn").first().simulate("click");
-    expect(true);
+    expect(tree).toMatchSnapshot();
   });
 
   test("GetLibrary function returns a Web3Provider", () => {

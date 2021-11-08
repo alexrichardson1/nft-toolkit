@@ -4,14 +4,17 @@ import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
+import StoreProvider from "store/StoreProvider";
 
 test("App snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
-        <Web3ReactProvider getLibrary={getLibrary}>
-          <App />
-        </Web3ReactProvider>
+        <StoreProvider>
+          <Web3ReactProvider getLibrary={getLibrary}>
+            <App />
+          </Web3ReactProvider>
+        </StoreProvider>
       </NetworkProvider>
     </ThemeProvider>
   );

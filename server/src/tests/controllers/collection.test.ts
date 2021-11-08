@@ -2,6 +2,7 @@ import {
   deployContracts,
   getCollections,
   saveCollectionToDB,
+  successHandler,
 } from "@controllers/collection";
 import { User } from "@models/user";
 import {
@@ -34,6 +35,13 @@ afterEach(async () => {
 
 afterAll(async () => {
   await db.close();
+});
+
+describe("Success Handler", () => {
+  it("Should successfully return success", () => {
+    successHandler({} as unknown as Request, mockResponse, mockNext);
+    expect(mockResponse.json).toHaveBeenCalledWith({ success: true });
+  });
 });
 
 describe("Save collection to db", () => {

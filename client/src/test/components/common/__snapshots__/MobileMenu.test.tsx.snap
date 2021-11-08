@@ -929,6 +929,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="ethereum-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -980,6 +981,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="ethereum-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -1000,6 +1002,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="cardano-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -1020,6 +1023,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="avalanche-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -1040,6 +1044,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="solana-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -1060,6 +1065,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="polygon-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -1080,6 +1086,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   <img
                                     height="24"
                                     src="binance-logo.svg"
+                                    style="margin: 0px;"
                                     width="24"
                                   />
                                   <p
@@ -1303,6 +1310,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="ethereum-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1354,6 +1362,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="ethereum-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1374,6 +1383,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="cardano-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1394,6 +1404,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="avalanche-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1414,6 +1425,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="solana-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1434,6 +1446,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="polygon-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1454,6 +1467,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     <img
                                       height="24"
                                       src="binance-logo.svg"
+                                      style="margin: 0px;"
                                       width="24"
                                     />
                                     <p
@@ -1609,6 +1623,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="ethereum-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1660,6 +1675,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="ethereum-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1680,6 +1696,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="cardano-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1700,6 +1717,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="avalanche-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1720,6 +1738,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="solana-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1740,6 +1759,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="polygon-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1760,6 +1780,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       <img
                                         height="24"
                                         src="binance-logo.svg"
+                                        style="margin: 0px;"
                                         width="24"
                                       />
                                       <p
@@ -1857,6 +1878,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="ethereum-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -1908,6 +1930,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="ethereum-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -1928,6 +1951,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="cardano-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -1948,6 +1972,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="avalanche-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -1968,6 +1993,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="solana-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -1988,6 +2014,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="polygon-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -2008,6 +2035,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         <img
                                           height="24"
                                           src="binance-logo.svg"
+                                          style="margin: 0px;"
                                           width="24"
                                         />
                                         <p
@@ -2093,6 +2121,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="ethereum-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2144,6 +2173,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="ethereum-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2164,6 +2194,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="cardano-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2184,6 +2215,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="avalanche-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2204,6 +2236,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="solana-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2224,6 +2257,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="polygon-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2244,6 +2278,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="binance-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -2492,6 +2527,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="ethereum-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2543,6 +2579,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="ethereum-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2563,6 +2600,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="cardano-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2583,6 +2621,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="avalanche-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2603,6 +2642,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="solana-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2623,6 +2663,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="polygon-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2643,6 +2684,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               <img
                                                 height="24"
                                                 src="binance-logo.svg"
+                                                style="margin: 0px;"
                                                 width="24"
                                               />
                                               <p
@@ -2910,6 +2952,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="ethereum-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -3781,6 +3824,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="ethereum-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -4543,6 +4591,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="ethereum-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -4594,6 +4643,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="ethereum-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -4614,6 +4664,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="cardano-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -4634,6 +4685,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="avalanche-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -4654,6 +4706,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="solana-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -4674,6 +4727,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="polygon-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -4694,6 +4748,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           <img
                                             height="24"
                                             src="binance-logo.svg"
+                                            style="margin: 0px;"
                                             width="24"
                                           />
                                           <p
@@ -5182,6 +5237,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="ethereum-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -5202,6 +5258,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="cardano-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -5222,6 +5279,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="avalanche-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -5242,6 +5300,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="solana-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -5262,6 +5321,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="polygon-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -5282,6 +5342,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   <img
                                                     height="24"
                                                     src="binance-logo.svg"
+                                                    style="margin: 0px;"
                                                     width="24"
                                                   />
                                                   <p
@@ -6158,6 +6219,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="ethereum-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -6378,6 +6444,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="cardano-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -6598,6 +6669,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="avalanche-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -6818,6 +6894,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="solana-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -7038,6 +7119,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="polygon-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -7258,6 +7344,11 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <img
                                                                               height={24}
                                                                               src="binance-logo.svg"
+                                                                              style={
+                                                                                Object {
+                                                                                  "margin": "0",
+                                                                                }
+                                                                              }
                                                                               width={24}
                                                                             />
                                                                           </SvgLogo>
@@ -7432,6 +7523,7 @@ Object {
             <img
               height="24"
               src="cardano-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7482,6 +7574,7 @@ Object {
             <img
               height="24"
               src="ethereum-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7502,6 +7595,7 @@ Object {
             <img
               height="24"
               src="cardano-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7522,6 +7616,7 @@ Object {
             <img
               height="24"
               src="avalanche-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7542,6 +7637,7 @@ Object {
             <img
               height="24"
               src="solana-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7562,6 +7658,7 @@ Object {
             <img
               height="24"
               src="polygon-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7582,6 +7679,7 @@ Object {
             <img
               height="24"
               src="binance-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7723,6 +7821,7 @@ Object {
             <img
               height="24"
               src="ethereum-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7773,6 +7872,7 @@ Object {
             <img
               height="24"
               src="ethereum-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7793,6 +7893,7 @@ Object {
             <img
               height="24"
               src="cardano-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7813,6 +7914,7 @@ Object {
             <img
               height="24"
               src="avalanche-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7833,6 +7935,7 @@ Object {
             <img
               height="24"
               src="solana-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7853,6 +7956,7 @@ Object {
             <img
               height="24"
               src="polygon-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7873,6 +7977,7 @@ Object {
             <img
               height="24"
               src="binance-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -7953,6 +8058,7 @@ Object {
             <img
               height="24"
               src="ethereum-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -8004,6 +8110,7 @@ Object {
             <img
               height="24"
               src="ethereum-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -8024,6 +8131,7 @@ Object {
             <img
               height="24"
               src="cardano-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -8044,6 +8152,7 @@ Object {
             <img
               height="24"
               src="avalanche-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -8064,6 +8173,7 @@ Object {
             <img
               height="24"
               src="solana-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -8084,6 +8194,7 @@ Object {
             <img
               height="24"
               src="polygon-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p
@@ -8104,6 +8215,7 @@ Object {
             <img
               height="24"
               src="binance-logo.svg"
+              style="margin: 0px;"
               width="24"
             />
             <p

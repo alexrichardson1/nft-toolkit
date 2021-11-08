@@ -8,9 +8,11 @@ import Button from "@mui/material/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import { SxProps } from "@mui/system";
+import { useWeb3React } from "@web3-react/core";
 import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
 import {
@@ -19,7 +21,7 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import { startLoading } from "./formUtils";
+import { startLoading, uploadImages } from "./formUtils";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -60,7 +62,9 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 });
 
 const CreateCollectionForm = (): JSX.Element => {
+  const { active, account } = useWeb3React();
   const { selectedNet } = useContext(NetworkContext);
+  const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
@@ -112,10 +116,17 @@ const CreateCollectionForm = (): JSX.Element => {
     showFormAlert("info", "Form has been reset");
   };
 
-  const handleFormSubmit = (e: FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!active || !account) {
+      showSnackbar("warning", "Please connect your wallet first!");
+      return;
+    }
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    // console.log(state);
+    // TODO: Handle error from uploadImages
+    await uploadImages(state.images, account, state.collectionName);
+    setLoadingMessage("Saving...");
+    // TODO: Link saving collection & deploying to server
     // const UPLOADING_DURATION = 3000;
     // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
     // const SAVING_DURATION = 3000;

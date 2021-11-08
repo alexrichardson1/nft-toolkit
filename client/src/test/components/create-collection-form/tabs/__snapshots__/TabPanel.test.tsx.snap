@@ -999,7 +999,7 @@ exports[`TabPanel snapshot 1`] = `
                           "alignItems": "center",
                           "display": "flex",
                           "flexDirection": "column",
-                          "gap": 1,
+                          "gap": "10px",
                           "height": 1,
                           "overflowY": "scroll",
                           "padding": 3,
@@ -1015,7 +1015,7 @@ exports[`TabPanel snapshot 1`] = `
                             "alignItems": "center",
                             "display": "flex",
                             "flexDirection": "column",
-                            "gap": 1,
+                            "gap": "10px",
                             "height": 1,
                             "overflowY": "scroll",
                             "padding": 3,
@@ -1339,7 +1339,7 @@ exports[`TabPanel snapshot 1`] = `
                         }
                       >
                         <div
-                          className="MuiBox-root css-1t3clom"
+                          className="MuiBox-root css-5rn9gd"
                         />
                       </Styled(div)>
                     </ForwardRef(Box)>
