@@ -123,7 +123,6 @@ const CreateCollectionForm = (): JSX.Element => {
       return;
     }
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    console.log(state);
     // TODO: Handle error from uploadImages
     await uploadImages(state.images, account, state.collectionName);
     setLoadingMessage("Saving...");
