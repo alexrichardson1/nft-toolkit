@@ -4,6 +4,7 @@ services:
     depends_on:
       - client
       - server
+      - ml
     image: jmp119/nft-toolkit-nginx
     restart: always
     ports:
@@ -15,4 +16,7 @@ services:
     image: jmp119/nft-toolkit-server
     env_file:
       - .env
+    restart: on-failure
+  ml:
+    image: jmp119/nft-toolkit-ml
     restart: on-failure
