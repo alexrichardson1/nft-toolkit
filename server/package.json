@@ -10,7 +10,7 @@
     "start-production": "node build/src/server.js",
     "compile": "yarn hardhat compile",
     "console": "yarn hardhat console",
-    "soltest": "yarn hardhat test"
+    "soltest": "yarn hardhat coverage"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.0.0",
