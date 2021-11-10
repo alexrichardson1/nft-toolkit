@@ -1,7 +1,10 @@
+import { assert } from "console";
+import images from "images";
+
 interface ImageI {
   name: string;
   rarity: number;
-  image?: Express.Multer.File;
+  image?: Buffer;
 }
 
 interface LayerI {
@@ -98,4 +101,38 @@ function generate(collection: GenCollectionI): ImageI[][] {
   return generatedCollection;
 }
 
-export { generate, GenCollectionI };
+function compileOneImage(generatedImage: GeneratedImageI): ImageI {
+  let resultImage = null;
+
+  for (let i = 0; i < generatedImage.images.length; i++) {
+    const image = generatedImage.images[i];
+    if (!image?.image) {
+      throw new Error("Cannot compile image when none is given");
+    }
+    const thisImage = images.loadFromBuffer(image.image);
+    if (resultImage) {
+      resultImage.drawImage(thisImage, 0, 0);
+    } else {
+      resultImage = thisImage;
+    }
+  }
+
+  // resultImage?.save("out.png");
+
+  assert(resultImage !== null);
+  if (resultImage) {
+    const buffer = resultImage.toBuffer("png");
+    return {
+      name: "generated one",
+      rarity: 20,
+      image: buffer,
+    };
+  }
+
+  return {
+    name: "",
+    rarity: 0,
+  };
+}
+
+export { generate, GenCollectionI, compileOneImage };
