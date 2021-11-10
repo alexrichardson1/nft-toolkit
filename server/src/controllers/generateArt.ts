@@ -4,7 +4,7 @@ import images from "images";
 interface ImageI {
   name: string;
   rarity: number;
-  image?: Buffer;
+  image?: Express.Multer.File;
 }
 
 interface LayerI {
@@ -24,6 +24,11 @@ interface GenCollectionI {
 interface GeneratedImageI {
   hash: string;
   images: ImageI[];
+}
+
+interface CompiledImageI {
+  hash: string;
+  image: Buffer;
 }
 
 function generateRandomPercentage() {
@@ -101,7 +106,7 @@ function generate(collection: GenCollectionI): ImageI[][] {
   return generatedCollection;
 }
 
-function compileOneImage(generatedImage: GeneratedImageI): ImageI {
+function compileOneImage(generatedImage: GeneratedImageI): CompiledImageI {
   let resultImage = null;
 
   for (let i = 0; i < generatedImage.images.length; i++) {
@@ -109,7 +114,7 @@ function compileOneImage(generatedImage: GeneratedImageI): ImageI {
     if (!image?.image) {
       throw new Error("Cannot compile image when none is given");
     }
-    const thisImage = images.loadFromBuffer(image.image);
+    const thisImage = images.loadFromBuffer(image.image.buffer);
     if (resultImage) {
       resultImage.drawImage(thisImage, 0, 0);
     } else {
@@ -123,16 +128,12 @@ function compileOneImage(generatedImage: GeneratedImageI): ImageI {
   if (resultImage) {
     const buffer = resultImage.toBuffer("png");
     return {
-      name: "generated one",
-      rarity: 20,
+      hash: generatedImage.hash,
       image: buffer,
     };
   }
 
-  return {
-    name: "",
-    rarity: 0,
-  };
+  throw new Error("Result image is null");
 }
 
 export { generate, GenCollectionI, compileOneImage };
