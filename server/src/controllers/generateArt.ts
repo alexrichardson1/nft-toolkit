@@ -1,10 +1,10 @@
 import { assert } from "console";
-import images from "images";
+import sharp from "sharp";
 
 interface ImageI {
   name: string;
   rarity: number;
-  image?: Express.Multer.File;
+  image?: Buffer;
 }
 
 interface LayerI {
@@ -106,7 +106,9 @@ function generate(collection: GenCollectionI): ImageI[][] {
   return generatedCollection;
 }
 
-function compileOneImage(generatedImage: GeneratedImageI): CompiledImageI {
+async function compileOneImage(
+  generatedImage: GeneratedImageI
+): Promise<CompiledImageI> {
   let resultImage = null;
 
   for (let i = 0; i < generatedImage.images.length; i++) {
@@ -114,26 +116,23 @@ function compileOneImage(generatedImage: GeneratedImageI): CompiledImageI {
     if (!image?.image) {
       throw new Error("Cannot compile image when none is given");
     }
-    const thisImage = images.loadFromBuffer(image.image.buffer);
     if (resultImage) {
-      resultImage.drawImage(thisImage, 0, 0);
+      resultImage.composite([{ input: image.image }]);
     } else {
-      resultImage = thisImage;
+      resultImage = sharp(image.image);
     }
   }
 
-  // resultImage?.save("out.png");
-
   assert(resultImage !== null);
   if (resultImage) {
-    const buffer = resultImage.toBuffer("png");
+    const buffer = await resultImage.toBuffer({ resolveWithObject: true });
     return {
       hash: generatedImage.hash,
-      image: buffer,
+      image: buffer.data,
     };
   }
 
   throw new Error("Result image is null");
 }
 
-export { generate, GenCollectionI, compileOneImage };
+export { generate, GenCollectionI, compileOneImage, GeneratedImageI, ImageI };
