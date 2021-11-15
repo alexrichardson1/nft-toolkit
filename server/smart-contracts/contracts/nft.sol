@@ -44,21 +44,4 @@ contract NFT is ERC721Enumerable, Ownable {
       tokenIdTracker.increment();
     }
   }
-
-  /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE
-  ///  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE
-  ///  THEY MAY BE PERMANENTLY LOST
-  /// @param _from The current owner of the NFT
-  /// @param _to The new owner
-  /// @param _tokenId The NFT to transfer
-  function transferFrom(
-    address _from,
-    address _to,
-    uint256 _tokenId
-  ) external payable {
-    require(msg.sender == ownerOf(_tokenId), "You do not own this NFT");
-    require(_from == ownerOf(_tokenId), "You do not own this NFT");
-    // TODO: royalty for artist
-    // TODO: transfer ownership
-  }
 }
