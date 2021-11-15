@@ -8,7 +8,7 @@ chai.use(solidity);
 const COLLECTION_SIZE = 10;
 const COLLECTION_WEI_PRICE = ethers.utils.parseEther("1");
 const BASE_URI = "";
-const ARTIST_ADDRESS = "";
+const ARTIST_ADDRESS = "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752";
 
 describe("NFT Collection Contract", () => {
   let nftContract: NFT;
