@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract NFT is ERC721Enumerable, Ownable {
-  address public artist;
+  address payable public artist;
   uint256 private _price;
   uint256 private _limit;
   string private _baseURIString;
@@ -18,7 +18,7 @@ contract NFT is ERC721Enumerable, Ownable {
   constructor(
     string memory name,
     string memory symbol,
-    address _artist,
+    address payable _artist,
     string memory baseURI,
     uint256 limit,
     uint256 price
