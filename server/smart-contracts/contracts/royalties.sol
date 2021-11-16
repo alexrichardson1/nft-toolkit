@@ -23,7 +23,7 @@ contract Royalty {
   }
 
   function buy(uint256 tokenId) public payable {
-    require(msg.value == listings[tokenId]);
+    require(msg.value == listings[tokenId], "Must send correct price");
     uint256 royalty = (msg.value * _royalty) / 100;
     address payable artist = _collection.artist();
     address payable seller = payable(_collection.ownerOf(tokenId));
