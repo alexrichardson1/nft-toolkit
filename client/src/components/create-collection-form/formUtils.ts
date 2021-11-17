@@ -1,5 +1,6 @@
 import axios from "axios";
 import { UnsignedTransaction } from "ethers";
+import { API_URL } from "utils/constants";
 
 export const startLoading = (
   setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
@@ -34,7 +35,7 @@ export const uploadImages = async (
     formData.append(`${account}/${collectionName}`, newFile);
   });
 
-  await axios.post("http://localhost:5000/collection/images", formData, {
+  await axios.post(`${API_URL}/collection/images`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
 };
@@ -73,10 +74,7 @@ export const uploadCollection = async (
     fromAddress: account,
   };
 
-  const res = await axios.post(
-    "http://localhost:5000/collection/save",
-    collection
-  );
+  const res = await axios.post(`${API_URL}/collection/save`, collection);
   const tx: TransactionT = res.data;
   return tx.transaction;
 };
