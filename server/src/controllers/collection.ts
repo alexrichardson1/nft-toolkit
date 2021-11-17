@@ -58,8 +58,14 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
 };
 
 export const deployContracts: RequestHandler = (req, res) => {
-  const { name, symbol, tokens, price, fromAddress }: CollectionT & UserT =
-    req.body;
+  const {
+    name,
+    symbol,
+    tokens,
+    price,
+    fromAddress,
+    chainId,
+  }: CollectionT & UserT = req.body;
   const signer = new ethers.VoidSigner(fromAddress);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
@@ -69,6 +75,8 @@ export const deployContracts: RequestHandler = (req, res) => {
     tokens.length,
     BigNumber.from(price)
   );
+  tx.chainId = chainId;
+  tx.from = fromAddress;
   res.json({ transaction: tx });
 };
 
