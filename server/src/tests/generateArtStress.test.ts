@@ -81,7 +81,7 @@ describe("Generate Art", () => {
     jest.clearAllMocks();
   });
 
-  test("Testing how long it takes to generate this collection", () => {
+  test("Testing that 10,000 images are generated", () => {
     const generated = generate(testData);
     expect(generated.length).toBe(testData.quantity);
   });
