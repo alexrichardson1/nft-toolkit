@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  addDeployedAddress,
   startLoading,
   stopLoading,
   uploadCollection,
@@ -82,6 +83,17 @@ describe("formUtils unit tests", () => {
         mockState,
         "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
         1
+      )
+    ).resolves.not.toThrow();
+  });
+
+  test("Adding deployed contract", () => {
+    axios.post.mockResolvedValue(true);
+    expect(
+      addDeployedAddress(
+        "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+        "Test Collection",
+        "0x81b7E08F65Bdf5648606c89998A9CC8164397647"
       )
     ).resolves.not.toThrow();
   });
