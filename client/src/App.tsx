@@ -41,7 +41,7 @@ const App = (): JSX.Element => {
               </Collapse>
               <Route
                 exact
-                path="/:address([0-9a-zA-Z]{26,})/:collectionName"
+                path="/:fromAddress([0-9a-zA-Z]{26,})/:collectionName"
                 component={MintingPage}
               />
               <Route exact path="/" component={CreateCollectionPage} />
