@@ -111,13 +111,14 @@ async function compileOneImage(
 ): Promise<CompiledImageI> {
   let resultImage = null;
 
+  const composites = [];
   for (let i = 0; i < generatedImage.images.length; i++) {
     const image = generatedImage.images[i];
     if (!image?.image) {
       throw new Error("Cannot compile image when none is given");
     }
     if (resultImage) {
-      resultImage.composite([{ input: image.image }]);
+      composites.push({ input: image.image });
     } else {
       resultImage = sharp(image.image);
     }
@@ -125,6 +126,7 @@ async function compileOneImage(
 
   assert(resultImage !== null);
   if (resultImage) {
+    resultImage.composite(composites);
     const buffer = await resultImage.toBuffer({ resolveWithObject: true });
     return {
       hash: generatedImage.hash,
