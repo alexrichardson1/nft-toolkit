@@ -22,6 +22,7 @@ import {
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
 import {
+  addDeployedAddress,
   startLoading,
   stopLoading,
   uploadCollection,
@@ -136,7 +137,14 @@ const CreateCollectionForm = (): JSX.Element => {
       const tx = await uploadCollection(state, account, chainId);
       const signer = library.getSigner();
       setLoadingMessage("Deploying...");
-      await signer.sendTransaction(tx);
+      const txResponse = await signer.sendTransaction(tx);
+      setLoadingMessage("Confirming...");
+      const txReceipt = await txResponse.wait();
+      addDeployedAddress(
+        account,
+        state.collectionName,
+        txReceipt.contractAddress
+      );
       showFormAlert("success", "Collection Creation Successful");
     } catch (error) {
       console.error(error);
