@@ -1,4 +1,5 @@
 import axios from "axios";
+import { UnsignedTransaction } from "ethers";
 
 export const startLoading = (
   setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
@@ -46,14 +47,14 @@ interface StateT {
 }
 
 interface TransactionT {
-  transaction: string;
+  transaction: UnsignedTransaction;
 }
 
 export const uploadCollection = async (
   state: StateT,
   account: string,
   chainId: number
-): Promise<TransactionT> => {
+): Promise<UnsignedTransaction> => {
   const tokens = state.images.map((image, index) => ({
     name: image.name,
     description: "",
@@ -77,5 +78,5 @@ export const uploadCollection = async (
     collection
   );
   const tx: TransactionT = res.data;
-  return tx;
+  return tx.transaction;
 };
