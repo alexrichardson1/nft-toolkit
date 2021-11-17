@@ -115,14 +115,6 @@ describe("CreateCollectionForm unit tests", () => {
     expect(form.onsubmit).toHaveBeenCalledWith(submitEvent);
   });
 
-  test("form submission changes submit button text", () => {
-    const form = tree.getByTestId("create-form");
-    const submitEvent = createEvent.submit(form);
-    form.onsubmit = jest.fn();
-    fireEvent(form, submitEvent);
-    expect(tree.getByTestId("submit-btn").innerHTML).toContain("Uploading...");
-  });
-
   test("handleImageDrop is called", () => {
     global.URL.createObjectURL = jest.fn();
     const mockImgFile = new File(["foo"], "testImg", { type: "image/png" });
