@@ -19,6 +19,7 @@ jest.mock("@web3-react/core", () => ({
     new (jest.fn().mockReturnValue({
       active: true,
       account: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+      chainId: 1,
     }))(),
 }));
 
