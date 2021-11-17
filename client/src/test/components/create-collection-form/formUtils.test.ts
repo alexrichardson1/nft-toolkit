@@ -1,7 +1,12 @@
+import axios from "axios";
 import {
   startLoading,
   stopLoading,
+  uploadCollection,
+  uploadImages,
 } from "components/create-collection-form/formUtils";
+
+jest.mock("axios");
 
 describe("formUtils unit tests", () => {
   test("loading starts", () => {
@@ -47,5 +52,37 @@ describe("formUtils unit tests", () => {
     } else {
       fail("setLoading should be called BEFORE setLoadingMessage");
     }
+  });
+
+  test("Uploading images", () => {
+    axios.post.mockResolvedValue(true);
+    const mockFile = new File([], "testFileName.jpg", { type: "image/jpeg" });
+    const mockImages = [{ image: mockFile, url: "", name: "test", id: "1" }];
+    expect(
+      uploadImages(
+        mockImages,
+        "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+        "Test Collection"
+      )
+    ).resolves.not.toThrow();
+  });
+
+  test("Saving collection", () => {
+    axios.post.mockResolvedValue({ data: { transaction: {} } });
+    const mockFile = new File([], "testFileName.jpg", { type: "image/jpeg" });
+    const mockImages = [{ image: mockFile, url: "", name: "test", id: "1" }];
+    const mockState = {
+      collectionName: "Test Collection",
+      description: "Example description",
+      images: mockImages,
+      mintingPrice: 0,
+    };
+    expect(
+      uploadCollection(
+        mockState,
+        "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+        1
+      )
+    ).resolves.not.toThrow();
   });
 });
