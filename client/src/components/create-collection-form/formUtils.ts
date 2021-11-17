@@ -33,13 +33,9 @@ export const uploadImages = async (
     formData.append(`${account}/${collectionName}`, newFile);
   });
 
-  try {
-    await axios.post("http://localhost:5000/collection/images", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  await axios.post("http://localhost:5000/collection/images", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
 };
 
 interface StateT {

@@ -21,7 +21,12 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import { startLoading, uploadCollection, uploadImages } from "./formUtils";
+import {
+  startLoading,
+  stopLoading,
+  uploadCollection,
+  uploadImages,
+} from "./formUtils";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -122,15 +127,20 @@ const CreateCollectionForm = (): JSX.Element => {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
+
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    // TODO: Handle error from uploadImages
-    await uploadImages(state.images, account, state.collectionName);
-    setLoadingMessage("Saving...");
-    await uploadCollection(state, account, chainId);
-    // TODO: Link saving collection & deploying to server
-    // const UPLOADING_DURATION = 3000;
-    // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
-    // const SAVING_DURATION = 3000;
+
+    try {
+      await uploadImages(state.images, account, state.collectionName);
+      setLoadingMessage("Saving...");
+      await uploadCollection(state, account, chainId);
+      setLoadingMessage("Deploying...");
+    } catch (error) {
+      console.error(error);
+      stopLoading(setLoadingMessage, setIsLoading);
+      showFormAlert("error", "Unable to create collection");
+    }
+
     // setTimeout(
     //   () => setLoadingMessage("Deploying..."),
     //   UPLOADING_DURATION + SAVING_DURATION
