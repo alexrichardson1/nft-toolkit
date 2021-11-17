@@ -80,16 +80,44 @@ export const deployContracts: RequestHandler = (req, res) => {
   res.json({ transaction: tx });
 };
 
+const getCollectionsFromDB = async (
+  fromAddress: string
+): Promise<CollectionT[]> => {
+  const user = await User.findOne({
+    fromAddress: fromAddress,
+  }).exec();
+  if (!user) {
+    throw new Error("User not found");
+  }
+  return user.collections;
+};
+
 export const getCollections: RequestHandler = async (req, res, next) => {
   const { fromAddress } = req.params;
   if (!fromAddress) {
     return next(new Error("Invalid params"));
   }
-  const user = await User.findOne({
-    fromAddress: fromAddress,
-  }).exec();
-  if (!user) {
-    return next(new Error("User not found"));
+  try {
+    const collections = await getCollectionsFromDB(fromAddress);
+    return res.json({ collections });
+  } catch (error) {
+    return next(error);
   }
-  return res.json({ collections: user.collections });
+};
+
+export const getCollection: RequestHandler = async (req, res, next) => {
+  const { fromAddress, collectionName } = req.params;
+  if (!fromAddress || !collectionName) {
+    return next(new Error("Invalid params"));
+  }
+  try {
+    const collections = await getCollectionsFromDB(fromAddress);
+    const collection = collections.filter((col) => col.name === collectionName);
+    if (collection.length === 0) {
+      return next(new Error("Collection not found"));
+    }
+    return res.json({ collection: collection[0] });
+  } catch (error) {
+    return next(error);
+  }
 };
