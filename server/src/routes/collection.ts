@@ -1,5 +1,6 @@
 import {
   deployContracts,
+  getCollection,
   getCollections,
   saveCollectionToDB,
   successHandler,
@@ -11,6 +12,7 @@ import {
   collectionValidator,
   deployedValidator,
   getCollectionsValidator,
+  getCollectionValidator,
 } from "@validators/collection";
 import { Router as router } from "express";
 
@@ -38,6 +40,13 @@ collectionRoutes.get(
   getCollectionsValidator(),
   errorHandler,
   getCollections
+);
+
+collectionRoutes.get(
+  "/:fromAddress/:collectionName",
+  getCollectionValidator(),
+  errorHandler,
+  getCollection
 );
 
 export default collectionRoutes;
