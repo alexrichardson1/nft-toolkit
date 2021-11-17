@@ -41,3 +41,45 @@ export const uploadImages = async (
     console.log(error);
   }
 };
+
+interface StateT {
+  collectionName: string;
+  description: string;
+  images: ImageT[];
+  mintingPrice: number;
+}
+
+interface TransactionT {
+  transaction: string;
+}
+
+export const uploadCollection = async (
+  state: StateT,
+  account: string,
+  chainId: number
+): Promise<TransactionT> => {
+  const tokens = state.images.map((image, index) => ({
+    name: image.name,
+    description: "",
+    image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${account}/${
+      state.collectionName
+    }/images/${index + 1}.${image.image.name.split(".").pop()}`,
+  }));
+
+  const collection = {
+    name: state.collectionName,
+    symbol: "TODO",
+    description: state.description,
+    price: `${state.mintingPrice}`,
+    chainId: chainId,
+    tokens: tokens,
+    fromAddress: account,
+  };
+
+  const res = await axios.post(
+    "http://localhost:5000/collection/save",
+    collection
+  );
+  const tx: TransactionT = res.data;
+  return tx;
+};
