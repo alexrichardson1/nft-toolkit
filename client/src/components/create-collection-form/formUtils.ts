@@ -78,3 +78,13 @@ export const uploadCollection = async (
   const tx: TransactionT = res.data;
   return tx.transaction;
 };
+
+export const addDeployedAddress = async (
+  fromAddress: string,
+  collectionName: string,
+  deployedAddress: string
+): Promise<void> => {
+  await axios.post(
+    `${API_URL}/collection/deployed/${fromAddress}/${collectionName}/${deployedAddress}`
+  );
+};
