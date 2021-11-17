@@ -35,3 +35,7 @@ export const getLogoByChainId = (id: number): string => {
   };
   return NETWORK_LOGOS[id] || EthereumLogo;
 };
+
+export const API_URL = process.env.REACT_APP_API_LOCAL
+  ? "http://localhost:5000"
+  : "http://nftoolkit.eu-west-2.elasticbeanstalk.com/server";
