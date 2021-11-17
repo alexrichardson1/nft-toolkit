@@ -9,7 +9,7 @@ export const collectionValidator: () => ValidationChain[] = () => {
   return [
     check("name")
       .notEmpty()
-      .isAlphanumeric()
+      .isAlphanumeric(void 0, { ignore: " " })
       .withMessage("Invalid name, must be only alphanumeric"),
     check("symbol").notEmpty().isAlphanumeric(),
     check("description").notEmpty().escape(),
