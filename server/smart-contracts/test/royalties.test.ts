@@ -11,7 +11,7 @@ const TOKEN_ID = 0;
 const COLLECTION_SIZE = 10;
 const COLLECTION_WEI_PRICE = ethers.utils.parseEther("1");
 const BASE_URI = "";
-const ARTIST_ADDRESS = "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752";
+// const ARTIST_ADDRESS = "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752";
 // Royalty Contract
 const CUT = 20;
 
@@ -27,7 +27,6 @@ describe("Royalties Contract", () => {
     nftContract = await NFTContract.deploy(
       "Monkeys",
       "MNKY",
-      ARTIST_ADDRESS,
       BASE_URI,
       COLLECTION_SIZE,
       COLLECTION_WEI_PRICE

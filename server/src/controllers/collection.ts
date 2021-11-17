@@ -65,8 +65,6 @@ export const deployContracts: RequestHandler = (req, res) => {
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    // TODO: provide address
-    "",
     `http://nftoolkit.eu-west-2.elasticbeanstalk.com/${fromAddress}/${name}/`,
     tokens.length,
     BigNumber.from(price)

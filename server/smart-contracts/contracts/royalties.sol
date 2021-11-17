@@ -33,7 +33,7 @@ contract Royalty {
       "This NFT is not approved"
     );
     uint256 royalty = (msg.value * _royalty) / 100;
-    address payable artist = _collection.artist();
+    address payable artist = payable(_collection.artist());
     address payable seller = payable(_collection.ownerOf(tokenId));
     _collection.transferFrom(seller, address(this), tokenId);
     artist.transfer(royalty);
