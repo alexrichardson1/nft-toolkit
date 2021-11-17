@@ -21,7 +21,7 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
-import { startLoading, uploadImages } from "./formUtils";
+import { startLoading, uploadCollection, uploadImages } from "./formUtils";
 import Tabs from "./tabs/Tabs";
 
 const ICON_SIZE = 25;
@@ -62,7 +62,7 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 });
 
 const CreateCollectionForm = (): JSX.Element => {
-  const { active, account } = useWeb3React();
+  const { active, account, chainId } = useWeb3React();
   const { selectedNet } = useContext(NetworkContext);
   const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
@@ -118,7 +118,7 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!active || !account) {
+    if (!active || !account || !chainId) {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
@@ -126,6 +126,7 @@ const CreateCollectionForm = (): JSX.Element => {
     // TODO: Handle error from uploadImages
     await uploadImages(state.images, account, state.collectionName);
     setLoadingMessage("Saving...");
+    await uploadCollection(state, account, chainId);
     // TODO: Link saving collection & deploying to server
     // const UPLOADING_DURATION = 3000;
     // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
