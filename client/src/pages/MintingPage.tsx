@@ -8,12 +8,12 @@ import {
 } from "@mui/material";
 import { SxProps } from "@mui/system";
 import { ProgressActions } from "actions/progressActions";
-import GenericFallback from "components/common/GenericFallback";
 import SvgLogo from "components/common/SvgLogo";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Redirect, useParams } from "react-router";
 import { getLogoByChainId } from "utils/constants";
+import { getCollection } from "utils/mintingPageUtils";
 
 const DUMMY_DATA = {
   name: "COLLECTION_NAME",
@@ -23,18 +23,6 @@ const DUMMY_DATA = {
   limit: 10000,
   gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
   chainId: 1,
-  price: 1,
-};
-
-const DUMMY_DATA_2 = {
-  name: "COLLECTION_NAME_HUGE",
-  symbol: "AVAX",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur undesuscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit.Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos  blanditiis tenetur unde suscipit. Lorem ipsum dolor sit amet.",
-  mintedAmount: 5,
-  limit: 10000,
-  gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
-  chainId: 43114,
   price: 1,
 };
 
@@ -63,18 +51,18 @@ const mintingCardStyle: SxProps = {
 
 interface CollectionI {
   name: string;
-  mintedAmount: number;
+  mintedAmount?: number;
   symbol: string;
   description: string;
-  limit: number;
-  gifSrc: string;
+  limit?: number;
+  gifSrc?: string;
   chainId: number;
-  price: number;
+  price?: number;
 }
 
 interface ParamsI {
   collectionName: string;
-  address: string;
+  fromAddress: string;
 }
 
 const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
@@ -99,8 +87,8 @@ const mintingQuantityStyle = {
 };
 const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const { collectionName } = useParams<ParamsI>();
-  const [error, setError] = useState("");
+  const { collectionName, fromAddress } = useParams<ParamsI>();
+  const [error, setError] = useState(false);
   const [mintingData, setMintingData] = useState<CollectionI>(DUMMY_DATA);
   const [mintingQuantity, setMintingQuantity] = useState(MIN_AMOUNT_ALLOWED);
 
@@ -122,99 +110,106 @@ const MintingPage = (): JSX.Element => {
       dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
       await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
-      // error
-      setError("");
-      // success
-      setMintingData(DUMMY_DATA_2);
+
+      try {
+        const collection = await getCollection(fromAddress, collectionName);
+        setMintingData(collection);
+      } catch (error) {
+        // TODO: handle invalid collection
+        setError(true);
+      }
     }
     getCollectionData();
   }, []);
 
+  if (error) {
+    // TODO: handle invalid collection
+    return <Redirect to="/" />;
+  }
+
   return (
-    <GenericFallback error={error.length !== 0}>
-      <Box sx={mintingBoxStyle}>
-        <Collapse sx={{ width: 1 }} in={mintingData !== DUMMY_DATA}>
-          <Box
-            display="flex"
-            flexDirection={{ xs: "column", lg: "row" }}
-            gap="10px">
-            <Box display="flex" flexDirection="column" gap="10px" flexGrow={1}>
-              <Box display="flex" flexDirection="column">
-                <Typography
-                  textAlign={{ xs: "center", lg: "left" }}
-                  sx={textStyle}
-                  variant="h3"
-                  color="secondary">
-                  {collectionName.replaceAll("-", " ")}
-                </Typography>
-                <Typography
-                  textAlign={{ xs: "center", lg: "left" }}
-                  color="primary"
-                  sx={textStyle}>
-                  {mintingData.symbol}
-                </Typography>
-              </Box>
-              <Typography textAlign={{ xs: "center", lg: "left" }}>
-                {mintingData.description}
+    <Box sx={mintingBoxStyle}>
+      <Collapse sx={{ width: 1 }} in={mintingData !== DUMMY_DATA}>
+        <Box
+          display="flex"
+          flexDirection={{ xs: "column", lg: "row" }}
+          gap="10px">
+          <Box display="flex" flexDirection="column" gap="10px" flexGrow={1}>
+            <Box display="flex" flexDirection="column">
+              <Typography
+                textAlign={{ xs: "center", lg: "left" }}
+                sx={textStyle}
+                variant="h3"
+                color="secondary">
+                {collectionName.replaceAll("-", " ")}
+              </Typography>
+              <Typography
+                textAlign={{ xs: "center", lg: "left" }}
+                color="primary"
+                sx={textStyle}>
+                {mintingData.symbol}
               </Typography>
             </Box>
-
-            <Box display="flex" alignItems="center" justifyContent="center">
-              <Paper sx={mintingCardStyle} elevation={6}>
-                <Paper sx={mintingCardImgStyle(mintingData)} />
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  gap="10px"
-                  padding={3}
-                  alignItems="center">
-                  <Typography
-                    sx={textStyle}
-                    textAlign="center"
-                    variant="h6"
-                    color="primary">
-                    {mintingData.mintedAmount}/{mintingData.limit}{" "}
-                    {collectionName.replaceAll("-", " ")} MINTED
-                  </Typography>
-                  <ButtonGroup fullWidth>
-                    <Button
-                      id="decrease-quantity"
-                      disabled={mintingQuantity === MIN_AMOUNT_ALLOWED}
-                      onClick={handleQuantityDecrease}
-                      variant="contained">
-                      -
-                    </Button>
-                    <Button
-                      sx={mintingQuantityStyle}
-                      variant="contained"
-                      disabled>
-                      {mintingQuantity}
-                    </Button>
-                    <Button
-                      id="increase-quantity"
-                      disabled={mintingQuantity === MAX_AMOUNT_ALLOWED}
-                      onClick={handleQuantityIncrease}
-                      variant="contained">
-                      +
-                    </Button>
-                  </ButtonGroup>
-                  <Button fullWidth variant="contained">
-                    Mint now for {mintingData.price}
-                    <SvgLogo
-                      icon={getLogoByChainId(mintingData.chainId)}
-                      width="20px"
-                      height="20px"
-                      margins
-                    />
-                    each!
-                  </Button>
-                </Box>
-              </Paper>
-            </Box>
+            <Typography textAlign={{ xs: "center", lg: "left" }}>
+              {mintingData.description}
+            </Typography>
           </Box>
-        </Collapse>
-      </Box>
-    </GenericFallback>
+
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Paper sx={mintingCardStyle} elevation={6}>
+              <Paper sx={mintingCardImgStyle(mintingData)} />
+              <Box
+                display="flex"
+                flexDirection="column"
+                gap="10px"
+                padding={3}
+                alignItems="center">
+                <Typography
+                  sx={textStyle}
+                  textAlign="center"
+                  variant="h6"
+                  color="primary">
+                  {mintingData.mintedAmount}/{mintingData.limit}{" "}
+                  {collectionName.replaceAll("-", " ")} MINTED
+                </Typography>
+                <ButtonGroup fullWidth>
+                  <Button
+                    id="decrease-quantity"
+                    disabled={mintingQuantity === MIN_AMOUNT_ALLOWED}
+                    onClick={handleQuantityDecrease}
+                    variant="contained">
+                    -
+                  </Button>
+                  <Button
+                    sx={mintingQuantityStyle}
+                    variant="contained"
+                    disabled>
+                    {mintingQuantity}
+                  </Button>
+                  <Button
+                    id="increase-quantity"
+                    disabled={mintingQuantity === MAX_AMOUNT_ALLOWED}
+                    onClick={handleQuantityIncrease}
+                    variant="contained">
+                    +
+                  </Button>
+                </ButtonGroup>
+                <Button fullWidth variant="contained">
+                  Mint now for {mintingData.price}
+                  <SvgLogo
+                    icon={getLogoByChainId(mintingData.chainId)}
+                    width="20px"
+                    height="20px"
+                    margins
+                  />
+                  each!
+                </Button>
+              </Box>
+            </Paper>
+          </Box>
+        </Box>
+      </Collapse>
+    </Box>
   );
 };
 
