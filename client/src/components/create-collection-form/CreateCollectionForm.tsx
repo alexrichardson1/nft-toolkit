@@ -67,7 +67,7 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 });
 
 const CreateCollectionForm = (): JSX.Element => {
-  const { active, account, chainId } = useWeb3React();
+  const { active, account, chainId, library } = useWeb3React();
   const { selectedNet } = useContext(NetworkContext);
   const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
@@ -133,23 +133,16 @@ const CreateCollectionForm = (): JSX.Element => {
     try {
       await uploadImages(state.images, account, state.collectionName);
       setLoadingMessage("Saving...");
-      await uploadCollection(state, account, chainId);
+      const tx = await uploadCollection(state, account, chainId);
+      const signer = library.getSigner();
       setLoadingMessage("Deploying...");
+      await signer.sendTransaction(tx);
+      showFormAlert("success", "Collection Creation Successful");
     } catch (error) {
       console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
       showFormAlert("error", "Unable to create collection");
     }
-
-    // setTimeout(
-    //   () => setLoadingMessage("Deploying..."),
-    //   UPLOADING_DURATION + SAVING_DURATION
-    // );
-    // const DEPLOYING_DURATION = 3000;
-    // setTimeout(() => {
-    //   stopLoading();
-    //   showFormAlert("success", "Minting Successful");
-    // }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
   };
 
   const alertBox = (
