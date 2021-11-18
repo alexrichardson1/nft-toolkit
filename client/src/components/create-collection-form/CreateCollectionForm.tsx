@@ -12,6 +12,7 @@ import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
 import { DEFAULT_ALERT_ELEVATION } from "utils/constants";
+import GenArtOrdering from "./form-steps/GenArtOrdering";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
@@ -236,6 +237,11 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImageDrop={handleImageDrop}
         handleImageDelete={handleImageDelete}
         handleImgNameChange={handleImgNameChange}
+      />
+      <GenArtOrdering
+        generative={generative}
+        pageNumber={pageNumber}
+        state={state}
       />
 
       <Box sx={formFooterStyle}>
