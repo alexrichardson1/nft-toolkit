@@ -4,6 +4,7 @@ import {
   GeneratedCollectionI,
 } from "@controllers/generateArt";
 
+// eslint-disable-next-line max-lines-per-function
 describe("Generate Art", () => {
   const testData: GenCollectionI = {
     name: "Monkeys",
@@ -27,7 +28,7 @@ describe("Generate Art", () => {
           { name: "skinny", rarity: 70 },
           { name: "normal", rarity: 10 },
         ],
-        rarity: 100,
+        rarity: 50,
       },
       {
         name: "head",
@@ -75,6 +76,7 @@ describe("Generate Art", () => {
             { name: "fat", rarity: 20 },
             { name: "durag", rarity: 5 },
           ],
+          rarity: 0.15,
         },
       ],
     });
@@ -125,6 +127,7 @@ describe("Generate Art", () => {
             { name: "normal", rarity: 10 },
             { name: "bald", rarity: 70 },
           ],
+          rarity: 1.05,
         },
         {
           hash: "background/black,body/skinny,head/spiky,",
@@ -133,6 +136,7 @@ describe("Generate Art", () => {
             { name: "skinny", rarity: 70 },
             { name: "spiky", rarity: 25 },
           ],
+          rarity: 2.625,
         },
       ],
     });
@@ -186,5 +190,32 @@ describe("Generate Art", () => {
     testData.quantity = 100;
 
     expect(() => generate(testData)).toThrowError();
+  });
+
+  test("Non-100 rarity layers have a change of not being included", () => {
+    testData.quantity = 1;
+    const PROB1 = 0.02;
+    const PROB2 = 0.45;
+    const PROB3 = 0.58;
+    const PROB4 = 0.08;
+    const PROB5 = 0.96;
+    setMathRandomReturn([PROB1, PROB2, PROB3, PROB4, PROB5]);
+    const result = generate(testData);
+    expect(result).toMatchObject({
+      name: "Monkeys",
+      symbol: "MNKY",
+      description: "Test data thingy",
+      quantity: 1,
+      images: [
+        {
+          hash: "background/black,head/durag,",
+          images: [
+            { name: "black", rarity: 30 },
+            { name: "durag", rarity: 5 },
+          ],
+          rarity: 0.75,
+        },
+      ],
+    });
   });
 });
