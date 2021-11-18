@@ -3,7 +3,7 @@ export const NOT_ADDED_NETWORK_ERROR = 4902;
 export const CURRENCY_DECIMALS = 18;
 
 // TODO: Testnet chain ids
-const ETH_ID = 1;
+const ETH_ID = 4;
 const MATIC_ID = 137;
 const AVAX_ID = 43114;
 const BSC_ID = 56;
@@ -25,11 +25,11 @@ interface rpcInfoT {
 }
 
 export const RPC_URLS: rpcInfoT = {
-  1: {
-    chainId: "0x1",
-    chainName: "Ethereum Mainnet",
-    rpcUrls: ["https://api.mycryptoapi.com/eth"],
-    blockExplorerUrls: ["https://etherscan.io/"],
+  4: {
+    chainId: "0x4",
+    chainName: "Rinkeby Testnet",
+    rpcUrls: ["https://rinkeby-light.eth.linkpool.io/"],
+    blockExplorerUrls: ["https://rinkeby.etherscan.io/"],
     nativeCurrency: {
       name: "Ethereum",
       symbol: "ETH",
