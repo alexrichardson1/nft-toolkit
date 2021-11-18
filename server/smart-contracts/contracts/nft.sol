@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract NFT is ERC721Enumerable, Ownable {
   address public artist;
   uint256 private _price;
-  uint256 private _limit;
+  uint256 public collectionLimit;
   string private _baseURIString;
   using Counters for Counters.Counter;
   Counters.Counter public tokenIdTracker;
@@ -23,7 +23,7 @@ contract NFT is ERC721Enumerable, Ownable {
     uint256 price
   ) ERC721(name, symbol) {
     artist = msg.sender;
-    _limit = limit;
+    collectionLimit = limit;
     _price = price;
     _baseURIString = baseURI;
   }
@@ -35,7 +35,7 @@ contract NFT is ERC721Enumerable, Ownable {
   function mint(uint256 amount) public payable {
     require(msg.value == _price * amount, "Must send correct price");
     require(
-      tokenIdTracker.current() + amount <= _limit,
+      tokenIdTracker.current() + amount <= collectionLimit,
       "Not enough in the collection left to mint amount"
     );
     for (uint256 i = 0; i < amount; i++) {
