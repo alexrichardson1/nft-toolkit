@@ -12,7 +12,7 @@ export const DEFAULT_MUI_DARK = "#121212";
 export const NAVBAR_HEIGHT = 90;
 
 export const NETWORKS: NetworkT[] = [
-  { name: "Ethereum", icon: EthereumLogo, chainId: 1 },
+  { name: "Ethereum", icon: EthereumLogo, chainId: 4 },
   { name: "Cardano", icon: CardanoLogo },
   { name: "Avalanche", icon: AvalancheLogo, chainId: 43114 },
   { name: "Solana", icon: SolanaLogo },
@@ -23,12 +23,12 @@ export const NETWORKS: NetworkT[] = [
 export const DEFAULT_NET = {
   name: "Ethereum",
   icon: EthereumLogo,
-  chainId: 1,
+  chainId: 4,
 };
 
 export const getLogoByChainId = (id: number): string => {
   const NETWORK_LOGOS: { [id: number]: string } = {
-    1: EthereumLogo,
+    4: EthereumLogo,
     56: BinanceLogo,
     137: PolygonLogo,
     43114: AvalancheLogo,
