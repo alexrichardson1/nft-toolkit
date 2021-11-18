@@ -92,7 +92,7 @@ const mintingQuantityStyle = {
 };
 const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const { active, library } = useWeb3React();
+  const { active, library, chainId } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
   const { collectionName, fromAddress } = useParams<ParamsI>();
   const [error, setError] = useState(false);
@@ -107,6 +107,10 @@ const MintingPage = (): JSX.Element => {
   const handleMint = () => {
     if (!active) {
       showSnackbar("warning", "Please connect your wallet first!");
+      return;
+    }
+    if (chainId !== mintingData.chainId) {
+      showSnackbar("warning", "Please connect to correct chain!");
       return;
     }
     const NFTContract = NftFactory.connect(
