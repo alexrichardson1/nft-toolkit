@@ -24,11 +24,13 @@ interface GenCollectionI {
 interface GeneratedImageI {
   hash: string;
   images: ImageI[];
+  rarity: number;
 }
 
 interface CompiledImageI {
   hash: string;
   image: Buffer;
+  rarity: number;
 }
 
 interface GeneratedCollectionI {
@@ -63,6 +65,8 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
   const chosenLayerImages: ImageI[] = [];
   let hash = "";
   let layerIndex = 0;
+  let rarity = 1;
+  const oneHundred = 100;
   collection.layers.forEach((layer) => {
     const includeLayer = generateRandomPercentage() <= layer.rarity;
     if (includeLayer) {
@@ -70,12 +74,17 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
 
       hash += `${layer.name}/${chosenImage.name},`;
       chosenLayerImages[layerIndex++] = chosenImage;
+      rarity *= layer.rarity;
+      rarity *= chosenImage.rarity / (oneHundred * oneHundred);
+    } else {
+      rarity *= (oneHundred - layer.rarity) / oneHundred;
     }
   });
 
   return {
     hash: hash,
     images: chosenLayerImages,
+    rarity: rarity * oneHundred,
   };
 }
 
@@ -145,6 +154,7 @@ async function compileOneImage(
     return {
       hash: generatedImage.hash,
       image: buffer.data,
+      rarity: generatedImage.rarity,
     };
   }
 
