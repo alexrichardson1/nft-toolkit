@@ -40,7 +40,7 @@ def eslint_disabled():
     files += glob("client/src/**/*.tsx", recursive=True)
     files += glob("server/src/**/*.js", recursive=True)
     files += glob("server/src/**/*.ts", recursive=True)
-    check_disable_linter(files, 1, "eslint-disable")
+    check_disable_linter(files, 0, "eslint-disable")
 
 
 def pylint_disabled():
