@@ -94,6 +94,7 @@
     }
   },
   "dependencies": {
+    "@types/sharp": "^0.29.4",
     "ansi-regex": "^5.0.1",
     "aws-sdk": "^2.1013.0",
     "cors": "^2.8.5",
