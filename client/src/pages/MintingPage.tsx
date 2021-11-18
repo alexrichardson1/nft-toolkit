@@ -7,11 +7,14 @@ import {
   Typography,
 } from "@mui/material";
 import { SxProps } from "@mui/system";
+import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import SvgLogo from "components/common/SvgLogo";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import useAppDispatch from "hooks/useAppDispatch";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Redirect, useParams } from "react-router";
+import { NFT__factory as NftFactory } from "typechain";
 import { getLogoByChainId } from "utils/constants";
 import { getCollection } from "utils/mintingPageUtils";
 
@@ -19,6 +22,7 @@ const DUMMY_DATA = {
   name: "COLLECTION_NAME",
   symbol: "COL",
   description: "THIS IS THE DESCRIPTION",
+  address: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
   mintedAmount: 5,
   limit: 10000,
   gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
@@ -51,6 +55,7 @@ const mintingCardStyle: SxProps = {
 
 interface CollectionI {
   name: string;
+  address: string;
   mintedAmount?: number;
   symbol: string;
   description: string;
@@ -87,6 +92,8 @@ const mintingQuantityStyle = {
 };
 const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
+  const { active, library } = useWeb3React();
+  const { showSnackbar } = useContext(SnackbarContext);
   const { collectionName, fromAddress } = useParams<ParamsI>();
   const [error, setError] = useState(false);
   const [mintingData, setMintingData] = useState<CollectionI>(DUMMY_DATA);
@@ -96,6 +103,18 @@ const MintingPage = (): JSX.Element => {
     setMintingQuantity((prev) => Math.min(prev + 1, MAX_AMOUNT_ALLOWED));
   const handleQuantityDecrease = () =>
     setMintingQuantity((prev) => Math.max(prev - 1, MIN_AMOUNT_ALLOWED));
+
+  const handleMint = () => {
+    if (!active) {
+      showSnackbar("warning", "Please connect your wallet first!");
+      return;
+    }
+    const NFTContract = NftFactory.connect(
+      mintingData.address,
+      library.getSigner()
+    );
+    NFTContract.mint(mintingQuantity, {});
+  };
 
   useEffect(() => {
     async function getCollectionData() {
@@ -194,7 +213,7 @@ const MintingPage = (): JSX.Element => {
                     +
                   </Button>
                 </ButtonGroup>
-                <Button fullWidth variant="contained">
+                <Button fullWidth variant="contained" onClick={handleMint}>
                   Mint now for {mintingData.price}
                   <SvgLogo
                     icon={getLogoByChainId(mintingData.chainId)}
