@@ -201,8 +201,8 @@ describe("Generate Art", () => {
   test("Generating and compiling large collection works", async () => {
     const generated = generate(collection);
     console.log(generated);
-    const oneHundred = 100;
-    let rarest = oneHundred;
+    const initialRarity = 100;
+    let rarest = initialRarity;
     let rarestIndex = 0;
     for (let i = 0; i < generated.images.length; i++) {
       const image = generated.images[i];
