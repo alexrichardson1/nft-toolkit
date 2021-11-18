@@ -150,7 +150,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
             "contrastText": "#fff",
             "dark": "#e65100",
             "light": "#ff9800",
-            "main": "#ED6C02",
+            "main": "#ed6c02",
           },
         },
         "shadows": Array [
@@ -467,7 +467,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
               "contrastText": "#fff",
               "dark": "#e65100",
               "light": "#ff9800",
-              "main": "#ED6C02",
+              "main": "#ed6c02",
             },
           },
           "shadows": Array [
@@ -824,7 +824,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                 "contrastText": "#fff",
                                 "dark": "#e65100",
                                 "light": "#ff9800",
-                                "main": "#ED6C02",
+                                "main": "#ed6c02",
                               },
                             },
                             "shadows": Array [
@@ -1072,7 +1072,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                    MINTED
                                                 </h6>
                                                 <div
-                                                  class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-6layd9-MuiButtonGroup-root"
+                                                  class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                   role="group"
                                                 >
                                                   <button
@@ -1107,7 +1107,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                   </button>
                                                 </div>
                                                 <button
-                                                  class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
+                                                  class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                   tabindex="0"
                                                   type="button"
                                                 >
@@ -1923,7 +1923,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                       "contrastText": "#fff",
                                                       "dark": "#e65100",
                                                       "light": "#ff9800",
-                                                      "main": "#ED6C02",
+                                                      "main": "#ed6c02",
                                                     },
                                                   },
                                                   "shadows": Array [
@@ -2259,7 +2259,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                             "contrastText": "#fff",
                                                             "dark": "#e65100",
                                                             "light": "#ff9800",
-                                                            "main": "#ED6C02",
+                                                            "main": "#ed6c02",
                                                           },
                                                         },
                                                         "shadows": Array [
@@ -2591,7 +2591,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                   "contrastText": "#fff",
                                                                   "dark": "#e65100",
                                                                   "light": "#ff9800",
-                                                                  "main": "#ED6C02",
+                                                                  "main": "#ed6c02",
                                                                 },
                                                               },
                                                               "shadows": Array [
@@ -3137,7 +3137,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                             "contrastText": "#fff",
                                                             "dark": "#e65100",
                                                             "light": "#ff9800",
-                                                            "main": "#ED6C02",
+                                                            "main": "#ed6c02",
                                                           },
                                                         },
                                                         "shadows": Array [
@@ -3680,7 +3680,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                         "contrastText": "#fff",
                                                                         "dark": "#e65100",
                                                                         "light": "#ff9800",
-                                                                        "main": "#ED6C02",
+                                                                        "main": "#ed6c02",
                                                                       },
                                                                     },
                                                                     "shadows": Array [
@@ -3981,21 +3981,13 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                       role="group"
                                                                     >
                                                                       <div
-                                                                        className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-6layd9-MuiButtonGroup-root"
+                                                                        className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                                         role="group"
                                                                       >
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={false}
-                                                                          fullWidth={true}
                                                                           id="decrease-quantity"
-                                                                          key=".0"
                                                                           onClick={[Function]}
-                                                                          size="medium"
                                                                           variant="contained"
                                                                         >
                                                                           <MuiButtonRoot
@@ -4018,12 +4010,10 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": "-",
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": false,
                                                                                 "fullWidth": true,
                                                                                 "id": "decrease-quantity",
@@ -4153,15 +4143,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                           </MuiButtonRoot>
                                                                         </ForwardRef(Button)>
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={true}
-                                                                          fullWidth={true}
-                                                                          key=".1"
-                                                                          size="medium"
                                                                           sx={
                                                                             Object {
                                                                               "&.Mui-disabled": Object {
@@ -4190,12 +4172,10 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": 3,
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": true,
                                                                                 "fullWidth": true,
                                                                                 "size": "medium",
@@ -4312,17 +4292,9 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                           </MuiButtonRoot>
                                                                         </ForwardRef(Button)>
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={false}
-                                                                          fullWidth={true}
                                                                           id="increase-quantity"
-                                                                          key=".2"
                                                                           onClick={[Function]}
-                                                                          size="medium"
                                                                           variant="contained"
                                                                         >
                                                                           <MuiButtonRoot
@@ -4345,12 +4317,10 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": "+",
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": false,
                                                                                 "fullWidth": true,
                                                                                 "id": "increase-quantity",
@@ -4487,6 +4457,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                     variant="contained"
                                                                   >
                                                                     <MuiButtonRoot
+                                                                      className=""
                                                                       classes={
                                                                         Object {
                                                                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -4496,6 +4467,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                         }
                                                                       }
                                                                       component="button"
+                                                                      disableRipple={false}
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       focusVisibleClassName=""
@@ -4525,7 +4497,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                       }
                                                                     >
                                                                       <ForwardRef(ButtonBase)
-                                                                        className="css-18e294b-MuiButton-root"
+                                                                        className=" css-18e294b-MuiButton-root"
                                                                         classes={
                                                                           Object {
                                                                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -4535,13 +4507,14 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                           }
                                                                         }
                                                                         component="button"
+                                                                        disableRipple={false}
                                                                         disabled={false}
                                                                         focusRipple={true}
                                                                         focusVisibleClassName=""
                                                                       >
                                                                         <MuiButtonBaseRoot
                                                                           as="button"
-                                                                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-18e294b-MuiButton-root"
+                                                                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-18e294b-MuiButton-root"
                                                                           classes={
                                                                             Object {
                                                                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -4581,7 +4554,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                                 ],
                                                                                 undefined,
                                                                               ],
-                                                                              "className": "css-18e294b-MuiButton-root",
+                                                                              "className": " css-18e294b-MuiButton-root",
                                                                               "classes": Object {
                                                                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                                                                 "label": "MuiButton-label",
@@ -4603,7 +4576,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                           type="button"
                                                                         >
                                                                           <button
-                                                                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
+                                                                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                             disabled={false}
                                                                             onBlur={[Function]}
                                                                             onContextMenu={[Function]}
@@ -4847,7 +4820,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
             "contrastText": "#fff",
             "dark": "#e65100",
             "light": "#ff9800",
-            "main": "#ED6C02",
+            "main": "#ed6c02",
           },
         },
         "shadows": Array [
@@ -5164,7 +5137,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
               "contrastText": "#fff",
               "dark": "#e65100",
               "light": "#ff9800",
-              "main": "#ED6C02",
+              "main": "#ed6c02",
             },
           },
           "shadows": Array [
@@ -5521,7 +5494,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                 "contrastText": "#fff",
                                 "dark": "#e65100",
                                 "light": "#ff9800",
-                                "main": "#ED6C02",
+                                "main": "#ed6c02",
                               },
                             },
                             "shadows": Array [
@@ -5769,7 +5742,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                    MINTED
                                                 </h6>
                                                 <div
-                                                  class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-6layd9-MuiButtonGroup-root"
+                                                  class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                   role="group"
                                                 >
                                                   <button
@@ -5804,7 +5777,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                   </button>
                                                 </div>
                                                 <button
-                                                  class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
+                                                  class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                   tabindex="0"
                                                   type="button"
                                                 >
@@ -6620,7 +6593,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                       "contrastText": "#fff",
                                                       "dark": "#e65100",
                                                       "light": "#ff9800",
-                                                      "main": "#ED6C02",
+                                                      "main": "#ed6c02",
                                                     },
                                                   },
                                                   "shadows": Array [
@@ -6956,7 +6929,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                             "contrastText": "#fff",
                                                             "dark": "#e65100",
                                                             "light": "#ff9800",
-                                                            "main": "#ED6C02",
+                                                            "main": "#ed6c02",
                                                           },
                                                         },
                                                         "shadows": Array [
@@ -7288,7 +7261,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                   "contrastText": "#fff",
                                                                   "dark": "#e65100",
                                                                   "light": "#ff9800",
-                                                                  "main": "#ED6C02",
+                                                                  "main": "#ed6c02",
                                                                 },
                                                               },
                                                               "shadows": Array [
@@ -7834,7 +7807,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                             "contrastText": "#fff",
                                                             "dark": "#e65100",
                                                             "light": "#ff9800",
-                                                            "main": "#ED6C02",
+                                                            "main": "#ed6c02",
                                                           },
                                                         },
                                                         "shadows": Array [
@@ -8377,7 +8350,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                         "contrastText": "#fff",
                                                                         "dark": "#e65100",
                                                                         "light": "#ff9800",
-                                                                        "main": "#ED6C02",
+                                                                        "main": "#ed6c02",
                                                                       },
                                                                     },
                                                                     "shadows": Array [
@@ -8678,21 +8651,13 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                       role="group"
                                                                     >
                                                                       <div
-                                                                        className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-6layd9-MuiButtonGroup-root"
+                                                                        className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                                         role="group"
                                                                       >
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={false}
-                                                                          fullWidth={true}
                                                                           id="decrease-quantity"
-                                                                          key=".0"
                                                                           onClick={[Function]}
-                                                                          size="medium"
                                                                           variant="contained"
                                                                         >
                                                                           <MuiButtonRoot
@@ -8715,12 +8680,10 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": "-",
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": false,
                                                                                 "fullWidth": true,
                                                                                 "id": "decrease-quantity",
@@ -8850,15 +8813,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                           </MuiButtonRoot>
                                                                         </ForwardRef(Button)>
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={true}
-                                                                          fullWidth={true}
-                                                                          key=".1"
-                                                                          size="medium"
                                                                           sx={
                                                                             Object {
                                                                               "&.Mui-disabled": Object {
@@ -8887,12 +8842,10 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": 2,
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": true,
                                                                                 "fullWidth": true,
                                                                                 "size": "medium",
@@ -9009,17 +8962,9 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                           </MuiButtonRoot>
                                                                         </ForwardRef(Button)>
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={false}
-                                                                          fullWidth={true}
                                                                           id="increase-quantity"
-                                                                          key=".2"
                                                                           onClick={[Function]}
-                                                                          size="medium"
                                                                           variant="contained"
                                                                         >
                                                                           <MuiButtonRoot
@@ -9042,12 +8987,10 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": "+",
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": false,
                                                                                 "fullWidth": true,
                                                                                 "id": "increase-quantity",
@@ -9184,6 +9127,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                     variant="contained"
                                                                   >
                                                                     <MuiButtonRoot
+                                                                      className=""
                                                                       classes={
                                                                         Object {
                                                                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -9193,6 +9137,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                         }
                                                                       }
                                                                       component="button"
+                                                                      disableRipple={false}
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       focusVisibleClassName=""
@@ -9222,7 +9167,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                       }
                                                                     >
                                                                       <ForwardRef(ButtonBase)
-                                                                        className="css-18e294b-MuiButton-root"
+                                                                        className=" css-18e294b-MuiButton-root"
                                                                         classes={
                                                                           Object {
                                                                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -9232,13 +9177,14 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                           }
                                                                         }
                                                                         component="button"
+                                                                        disableRipple={false}
                                                                         disabled={false}
                                                                         focusRipple={true}
                                                                         focusVisibleClassName=""
                                                                       >
                                                                         <MuiButtonBaseRoot
                                                                           as="button"
-                                                                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-18e294b-MuiButton-root"
+                                                                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-18e294b-MuiButton-root"
                                                                           classes={
                                                                             Object {
                                                                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -9278,7 +9224,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                                 ],
                                                                                 undefined,
                                                                               ],
-                                                                              "className": "css-18e294b-MuiButton-root",
+                                                                              "className": " css-18e294b-MuiButton-root",
                                                                               "classes": Object {
                                                                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                                                                 "label": "MuiButton-label",
@@ -9300,7 +9246,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                           type="button"
                                                                         >
                                                                           <button
-                                                                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
+                                                                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                             disabled={false}
                                                                             onBlur={[Function]}
                                                                             onContextMenu={[Function]}
@@ -9544,7 +9490,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
             "contrastText": "#fff",
             "dark": "#e65100",
             "light": "#ff9800",
-            "main": "#ED6C02",
+            "main": "#ed6c02",
           },
         },
         "shadows": Array [
@@ -9861,7 +9807,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
               "contrastText": "#fff",
               "dark": "#e65100",
               "light": "#ff9800",
-              "main": "#ED6C02",
+              "main": "#ed6c02",
             },
           },
           "shadows": Array [
@@ -10218,7 +10164,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                 "contrastText": "#fff",
                                 "dark": "#e65100",
                                 "light": "#ff9800",
-                                "main": "#ED6C02",
+                                "main": "#ed6c02",
                               },
                             },
                             "shadows": Array [
@@ -10466,7 +10412,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                    MINTED
                                                 </h6>
                                                 <div
-                                                  class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-6layd9-MuiButtonGroup-root"
+                                                  class="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                   role="group"
                                                 >
                                                   <button
@@ -10499,7 +10445,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                   </button>
                                                 </div>
                                                 <button
-                                                  class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
+                                                  class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                   tabindex="0"
                                                   type="button"
                                                 >
@@ -11315,7 +11261,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                       "contrastText": "#fff",
                                                       "dark": "#e65100",
                                                       "light": "#ff9800",
-                                                      "main": "#ED6C02",
+                                                      "main": "#ed6c02",
                                                     },
                                                   },
                                                   "shadows": Array [
@@ -11651,7 +11597,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                             "contrastText": "#fff",
                                                             "dark": "#e65100",
                                                             "light": "#ff9800",
-                                                            "main": "#ED6C02",
+                                                            "main": "#ed6c02",
                                                           },
                                                         },
                                                         "shadows": Array [
@@ -11983,7 +11929,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                   "contrastText": "#fff",
                                                                   "dark": "#e65100",
                                                                   "light": "#ff9800",
-                                                                  "main": "#ED6C02",
+                                                                  "main": "#ed6c02",
                                                                 },
                                                               },
                                                               "shadows": Array [
@@ -12529,7 +12475,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                             "contrastText": "#fff",
                                                             "dark": "#e65100",
                                                             "light": "#ff9800",
-                                                            "main": "#ED6C02",
+                                                            "main": "#ed6c02",
                                                           },
                                                         },
                                                         "shadows": Array [
@@ -13072,7 +13018,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                         "contrastText": "#fff",
                                                                         "dark": "#e65100",
                                                                         "light": "#ff9800",
-                                                                        "main": "#ED6C02",
+                                                                        "main": "#ed6c02",
                                                                       },
                                                                     },
                                                                     "shadows": Array [
@@ -13373,21 +13319,13 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                       role="group"
                                                                     >
                                                                       <div
-                                                                        className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-6layd9-MuiButtonGroup-root"
+                                                                        className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                                         role="group"
                                                                       >
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={true}
-                                                                          fullWidth={true}
                                                                           id="decrease-quantity"
-                                                                          key=".0"
                                                                           onClick={[Function]}
-                                                                          size="medium"
                                                                           variant="contained"
                                                                         >
                                                                           <MuiButtonRoot
@@ -13410,12 +13348,10 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": "-",
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": true,
                                                                                 "fullWidth": true,
                                                                                 "id": "decrease-quantity",
@@ -13528,15 +13464,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           </MuiButtonRoot>
                                                                         </ForwardRef(Button)>
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={true}
-                                                                          fullWidth={true}
-                                                                          key=".1"
-                                                                          size="medium"
                                                                           sx={
                                                                             Object {
                                                                               "&.Mui-disabled": Object {
@@ -13565,12 +13493,10 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": 1,
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": true,
                                                                                 "fullWidth": true,
                                                                                 "size": "medium",
@@ -13687,17 +13613,9 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           </MuiButtonRoot>
                                                                         </ForwardRef(Button)>
                                                                         <ForwardRef(Button)
-                                                                          className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary"
-                                                                          color="primary"
-                                                                          disableElevation={false}
-                                                                          disableFocusRipple={false}
-                                                                          disableRipple={false}
                                                                           disabled={false}
-                                                                          fullWidth={true}
                                                                           id="increase-quantity"
-                                                                          key=".2"
                                                                           onClick={[Function]}
-                                                                          size="medium"
                                                                           variant="contained"
                                                                         >
                                                                           <MuiButtonRoot
@@ -13720,12 +13638,10 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": "+",
-                                                                                "className": "MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary",
                                                                                 "color": "primary",
                                                                                 "component": "button",
                                                                                 "disableElevation": false,
                                                                                 "disableFocusRipple": false,
-                                                                                "disableRipple": false,
                                                                                 "disabled": false,
                                                                                 "fullWidth": true,
                                                                                 "id": "increase-quantity",
@@ -13862,6 +13778,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                     variant="contained"
                                                                   >
                                                                     <MuiButtonRoot
+                                                                      className=""
                                                                       classes={
                                                                         Object {
                                                                           "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -13871,6 +13788,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                         }
                                                                       }
                                                                       component="button"
+                                                                      disableRipple={false}
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       focusVisibleClassName=""
@@ -13900,7 +13818,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                       }
                                                                     >
                                                                       <ForwardRef(ButtonBase)
-                                                                        className="css-18e294b-MuiButton-root"
+                                                                        className=" css-18e294b-MuiButton-root"
                                                                         classes={
                                                                           Object {
                                                                             "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -13910,13 +13828,14 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         component="button"
+                                                                        disableRipple={false}
                                                                         disabled={false}
                                                                         focusRipple={true}
                                                                         focusVisibleClassName=""
                                                                       >
                                                                         <MuiButtonBaseRoot
                                                                           as="button"
-                                                                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-18e294b-MuiButton-root"
+                                                                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-18e294b-MuiButton-root"
                                                                           classes={
                                                                             Object {
                                                                               "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
@@ -13956,7 +13875,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                 ],
                                                                                 undefined,
                                                                               ],
-                                                                              "className": "css-18e294b-MuiButton-root",
+                                                                              "className": " css-18e294b-MuiButton-root",
                                                                               "classes": Object {
                                                                                 "endIcon": "MuiButton-endIcon MuiButton-iconSizeMedium",
                                                                                 "label": "MuiButton-label",
@@ -13978,7 +13897,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           type="button"
                                                                         >
                                                                           <button
-                                                                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
+                                                                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                             disabled={false}
                                                                             onBlur={[Function]}
                                                                             onContextMenu={[Function]}

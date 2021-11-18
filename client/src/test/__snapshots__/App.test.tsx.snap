@@ -16910,6 +16910,18 @@ exports[`App snapshot 1`] = `
                                                     }
                                                   }
                                                 />
+                                                <SortableList
+                                                  generative={false}
+                                                  pageNumber={0}
+                                                  state={
+                                                    Object {
+                                                      "collectionName": "",
+                                                      "description": "",
+                                                      "images": Array [],
+                                                      "mintingPrice": 0,
+                                                    }
+                                                  }
+                                                />
                                                 <ForwardRef(Box)
                                                   sx={
                                                     Object {
