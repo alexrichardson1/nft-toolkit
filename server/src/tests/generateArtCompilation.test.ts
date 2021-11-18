@@ -39,6 +39,7 @@ describe("Generate Art", () => {
         image: readFileSync(join(__dirname, "../../examples/mouth/4.2.png")),
       },
     ],
+    rarity: 10,
   };
 
   test("Image gets compiled", async () => {
@@ -62,6 +63,7 @@ describe("Generate Art", () => {
           rarity: 100,
         },
       ],
+      rarity: 10,
     };
 
     expect(() => compileOneImage(image)).rejects.toThrowError();
