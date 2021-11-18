@@ -60,7 +60,10 @@
         "lines": 90,
         "statements": 90
       }
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/typechain/"
+    ]
   },
   "browserslist": {
     "production": [
