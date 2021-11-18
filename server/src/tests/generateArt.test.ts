@@ -4,7 +4,13 @@ import {
   GeneratedCollectionI,
 } from "@controllers/generateArt";
 
-// eslint-disable-next-line max-lines-per-function
+function setMathRandomReturn(vals: number[]): void {
+  let i = 0;
+  Math.random = () => {
+    return vals[i++] || 0;
+  };
+}
+
 describe("Generate Art", () => {
   const testData: GenCollectionI = {
     name: "Monkeys",
@@ -45,13 +51,6 @@ describe("Generate Art", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
-
-  function setMathRandomReturn(vals: number[]): void {
-    let i = 0;
-    Math.random = () => {
-      return vals[i++] || 0;
-    };
-  }
 
   test("Produces black background, fat body, durag head", () => {
     testData.quantity = 1;
@@ -190,6 +189,48 @@ describe("Generate Art", () => {
     testData.quantity = 100;
 
     expect(() => generate(testData)).toThrowError();
+  });
+});
+
+describe("Generate art rarity checking", () => {
+  const testData: GenCollectionI = {
+    name: "Monkeys",
+    symbol: "MNKY",
+    description: "Test data thingy",
+    quantity: 10,
+    layers: [
+      {
+        name: "background",
+        images: [
+          { name: "red", rarity: 30 },
+          { name: "black", rarity: 30 },
+          { name: "blue", rarity: 40 },
+        ],
+        rarity: 100,
+      },
+      {
+        name: "body",
+        images: [
+          { name: "fat", rarity: 20 },
+          { name: "skinny", rarity: 70 },
+          { name: "normal", rarity: 10 },
+        ],
+        rarity: 50,
+      },
+      {
+        name: "head",
+        images: [
+          { name: "bald", rarity: 70 },
+          { name: "spiky", rarity: 25 },
+          { name: "durag", rarity: 5 },
+        ],
+        rarity: 100,
+      },
+    ],
+  };
+
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
   test("Non-100 rarity layers have a change of not being included", () => {
