@@ -31,6 +31,14 @@ interface CompiledImageI {
   image: Buffer;
 }
 
+interface GeneratedCollectionI {
+  name: string;
+  symbol: string;
+  description: string;
+  quantity: number;
+  images: GeneratedImageI[];
+}
+
 function generateRandomPercentage() {
   const MAX_RAND = 100;
   return Math.random() * MAX_RAND;
@@ -76,7 +84,7 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
  * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
-function generate(collection: GenCollectionI): ImageI[][] {
+function generate(collection: GenCollectionI): GeneratedCollectionI {
   let numPossibleCombinations = 1;
   collection.layers.forEach((layer) => {
     numPossibleCombinations *= layer.images.length;
@@ -88,7 +96,7 @@ function generate(collection: GenCollectionI): ImageI[][] {
     );
   }
 
-  const generatedCollection: ImageI[][] = [];
+  const generatedImages: GeneratedImageI[] = [];
   const generatedHashes = new Set();
 
   for (let i = 0; i < collection.quantity; i++) {
@@ -100,10 +108,16 @@ function generate(collection: GenCollectionI): ImageI[][] {
       continue;
     }
 
-    generatedCollection[i] = generatedImage.images;
+    generatedImages.push(generatedImage);
     generatedHashes.add(generatedImage.hash);
   }
-  return generatedCollection;
+  return {
+    name: collection.name,
+    symbol: collection.symbol,
+    description: collection.description,
+    quantity: collection.quantity,
+    images: generatedImages,
+  };
 }
 
 async function compileOneImage(
@@ -137,4 +151,11 @@ async function compileOneImage(
   throw new Error("Result image is null");
 }
 
-export { generate, GenCollectionI, compileOneImage, GeneratedImageI, ImageI };
+export {
+  generate,
+  GenCollectionI,
+  compileOneImage,
+  GeneratedImageI,
+  ImageI,
+  GeneratedCollectionI,
+};
