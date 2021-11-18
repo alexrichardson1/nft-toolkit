@@ -71,7 +71,7 @@ export const deployContracts: RequestHandler = (req, res) => {
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/${fromAddress}/${name}/`,
+    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${fromAddress}/${name}/`,
     tokens.length,
     BigNumber.from(price)
   );
