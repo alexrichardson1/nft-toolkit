@@ -1311,6 +1311,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                           </ForwardRef(ButtonGroup)>
                                           <ForwardRef(Button)
                                             fullWidth={true}
+                                            onClick={[Function]}
                                             variant="contained"
                                           >
                                             Mint now for 
@@ -1523,6 +1524,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                               </ForwardRef(ButtonGroup)>
                                               <ForwardRef(Button)
                                                 fullWidth={true}
+                                                onClick={[Function]}
                                                 variant="contained"
                                               >
                                                 Mint now for 
@@ -1720,6 +1722,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                   </ForwardRef(ButtonGroup)>
                                                   <ForwardRef(Button)
                                                     fullWidth={true}
+                                                    onClick={[Function]}
                                                     variant="contained"
                                                   >
                                                     Mint now for 
@@ -3403,6 +3406,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                 </ForwardRef(ButtonGroup)>
                                                                 <ForwardRef(Button)
                                                                   fullWidth={true}
+                                                                  onClick={[Function]}
                                                                   variant="contained"
                                                                 >
                                                                   Mint now for 
@@ -4480,6 +4484,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                 </ForwardRef(ButtonGroup)>
                                                                 <ForwardRef(Button)
                                                                   fullWidth={true}
+                                                                  onClick={[Function]}
                                                                   variant="contained"
                                                                 >
                                                                   <MuiButtonRoot
@@ -4495,6 +4500,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                     disabled={false}
                                                                     focusRipple={true}
                                                                     focusVisibleClassName=""
+                                                                    onClick={[Function]}
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
@@ -4514,6 +4520,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                         "disableFocusRipple": false,
                                                                         "disabled": false,
                                                                         "fullWidth": true,
+                                                                        "onClick": [Function],
                                                                         "size": "medium",
                                                                         "type": undefined,
                                                                         "variant": "contained",
@@ -4534,6 +4541,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       focusVisibleClassName=""
+                                                                      onClick={[Function]}
                                                                     >
                                                                       <MuiButtonBaseRoot
                                                                         as="button"
@@ -4548,6 +4556,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                         }
                                                                         disabled={false}
                                                                         onBlur={[Function]}
+                                                                        onClick={[Function]}
                                                                         onContextMenu={[Function]}
                                                                         onDragLeave={[Function]}
                                                                         onFocus={[Function]}
@@ -4591,6 +4600,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                             "focusRipple": true,
                                                                             "focusVisible": false,
                                                                             "focusVisibleClassName": "",
+                                                                            "onClick": [Function],
                                                                             "tabIndex": 0,
                                                                             "type": undefined,
                                                                           }
@@ -4602,6 +4612,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                           className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                           disabled={false}
                                                                           onBlur={[Function]}
+                                                                          onClick={[Function]}
                                                                           onContextMenu={[Function]}
                                                                           onDragLeave={[Function]}
                                                                           onFocus={[Function]}
@@ -6003,6 +6014,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                           </ForwardRef(ButtonGroup)>
                                           <ForwardRef(Button)
                                             fullWidth={true}
+                                            onClick={[Function]}
                                             variant="contained"
                                           >
                                             Mint now for 
@@ -6215,6 +6227,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                               </ForwardRef(ButtonGroup)>
                                               <ForwardRef(Button)
                                                 fullWidth={true}
+                                                onClick={[Function]}
                                                 variant="contained"
                                               >
                                                 Mint now for 
@@ -6412,6 +6425,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                   </ForwardRef(ButtonGroup)>
                                                   <ForwardRef(Button)
                                                     fullWidth={true}
+                                                    onClick={[Function]}
                                                     variant="contained"
                                                   >
                                                     Mint now for 
@@ -8095,6 +8109,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                 </ForwardRef(ButtonGroup)>
                                                                 <ForwardRef(Button)
                                                                   fullWidth={true}
+                                                                  onClick={[Function]}
                                                                   variant="contained"
                                                                 >
                                                                   Mint now for 
@@ -9172,6 +9187,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                 </ForwardRef(ButtonGroup)>
                                                                 <ForwardRef(Button)
                                                                   fullWidth={true}
+                                                                  onClick={[Function]}
                                                                   variant="contained"
                                                                 >
                                                                   <MuiButtonRoot
@@ -9187,6 +9203,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                     disabled={false}
                                                                     focusRipple={true}
                                                                     focusVisibleClassName=""
+                                                                    onClick={[Function]}
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
@@ -9206,6 +9223,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                         "disableFocusRipple": false,
                                                                         "disabled": false,
                                                                         "fullWidth": true,
+                                                                        "onClick": [Function],
                                                                         "size": "medium",
                                                                         "type": undefined,
                                                                         "variant": "contained",
@@ -9226,6 +9244,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       focusVisibleClassName=""
+                                                                      onClick={[Function]}
                                                                     >
                                                                       <MuiButtonBaseRoot
                                                                         as="button"
@@ -9240,6 +9259,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                         }
                                                                         disabled={false}
                                                                         onBlur={[Function]}
+                                                                        onClick={[Function]}
                                                                         onContextMenu={[Function]}
                                                                         onDragLeave={[Function]}
                                                                         onFocus={[Function]}
@@ -9283,6 +9303,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                             "focusRipple": true,
                                                                             "focusVisible": false,
                                                                             "focusVisibleClassName": "",
+                                                                            "onClick": [Function],
                                                                             "tabIndex": 0,
                                                                             "type": undefined,
                                                                           }
@@ -9294,6 +9315,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                           className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                           disabled={false}
                                                                           onBlur={[Function]}
+                                                                          onClick={[Function]}
                                                                           onContextMenu={[Function]}
                                                                           onDragLeave={[Function]}
                                                                           onFocus={[Function]}
@@ -10693,6 +10715,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                           </ForwardRef(ButtonGroup)>
                                           <ForwardRef(Button)
                                             fullWidth={true}
+                                            onClick={[Function]}
                                             variant="contained"
                                           >
                                             Mint now for 
@@ -10905,6 +10928,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               </ForwardRef(ButtonGroup)>
                                               <ForwardRef(Button)
                                                 fullWidth={true}
+                                                onClick={[Function]}
                                                 variant="contained"
                                               >
                                                 Mint now for 
@@ -11102,6 +11126,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                   </ForwardRef(ButtonGroup)>
                                                   <ForwardRef(Button)
                                                     fullWidth={true}
+                                                    onClick={[Function]}
                                                     variant="contained"
                                                   >
                                                     Mint now for 
@@ -12785,6 +12810,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                 </ForwardRef(ButtonGroup)>
                                                                 <ForwardRef(Button)
                                                                   fullWidth={true}
+                                                                  onClick={[Function]}
                                                                   variant="contained"
                                                                 >
                                                                   Mint now for 
@@ -13845,6 +13871,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                 </ForwardRef(ButtonGroup)>
                                                                 <ForwardRef(Button)
                                                                   fullWidth={true}
+                                                                  onClick={[Function]}
                                                                   variant="contained"
                                                                 >
                                                                   <MuiButtonRoot
@@ -13860,6 +13887,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                     disabled={false}
                                                                     focusRipple={true}
                                                                     focusVisibleClassName=""
+                                                                    onClick={[Function]}
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
@@ -13879,6 +13907,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                         "disableFocusRipple": false,
                                                                         "disabled": false,
                                                                         "fullWidth": true,
+                                                                        "onClick": [Function],
                                                                         "size": "medium",
                                                                         "type": undefined,
                                                                         "variant": "contained",
@@ -13899,6 +13928,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       focusVisibleClassName=""
+                                                                      onClick={[Function]}
                                                                     >
                                                                       <MuiButtonBaseRoot
                                                                         as="button"
@@ -13913,6 +13943,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                         }
                                                                         disabled={false}
                                                                         onBlur={[Function]}
+                                                                        onClick={[Function]}
                                                                         onContextMenu={[Function]}
                                                                         onDragLeave={[Function]}
                                                                         onFocus={[Function]}
@@ -13956,6 +13987,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             "focusRipple": true,
                                                                             "focusVisible": false,
                                                                             "focusVisibleClassName": "",
+                                                                            "onClick": [Function],
                                                                             "tabIndex": 0,
                                                                             "type": undefined,
                                                                           }
@@ -13967,6 +13999,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                           disabled={false}
                                                                           onBlur={[Function]}
+                                                                          onClick={[Function]}
                                                                           onContextMenu={[Function]}
                                                                           onDragLeave={[Function]}
                                                                           onFocus={[Function]}
