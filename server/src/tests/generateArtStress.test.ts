@@ -83,6 +83,6 @@ describe("Generate Art", () => {
 
   test("Testing that 10,000 images are generated", () => {
     const generated = generate(testData);
-    expect(generated.length).toBe(testData.quantity);
+    expect(generated.images.length).toBe(testData.quantity);
   });
 });
