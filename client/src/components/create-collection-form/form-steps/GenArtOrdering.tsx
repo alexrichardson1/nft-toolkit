@@ -19,6 +19,9 @@ import {
 
 const PAGE_2 = 2;
 
+/**
+ * The interface used for each `SortableItem`
+ */
 interface ItemI {
   id: string;
   text: string;
@@ -29,12 +32,18 @@ interface IndexI {
   newIndex: number;
 }
 
+/**
+ * Drag icon used for `SortableItem`
+ */
 const DragHandle = sortableHandle(() => (
   <ListItemIcon>
     <DragHandleIcon />
   </ListItemIcon>
 ));
 
+/**
+ * List item for each layer
+ */
 const SortableItem = sortableElement(({ text }: { text: string }) => (
   <ListItem ContainerComponent="div">
     <ListItemText primary={text} />
@@ -44,6 +53,9 @@ const SortableItem = sortableElement(({ text }: { text: string }) => (
   </ListItem>
 ));
 
+/**
+ * Sortable container for `SortableItem`
+ */
 const SortableListContainer = sortableContainer(
   ({ items }: { items: ItemI[] }) => (
     <List component="div">
@@ -60,6 +72,11 @@ interface PropsT {
   state: FormStateI;
 }
 
+/**
+ * Sortable list for each layer of the NFT collection
+ * @param props - props required for the `JSX.Element`
+ * @returns the corresponding `JSX.Element`
+ */
 const SortableList = ({ generative, pageNumber }: PropsT): JSX.Element => {
   if (!(generative && pageNumber === PAGE_2)) {
     return <></>;
