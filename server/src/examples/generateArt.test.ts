@@ -211,6 +211,9 @@ describe("Generate Art", () => {
     const generated = generate(collection);
     console.log(generated);
 
+    const oneHundred = 100;
+    let rarest = oneHundred;
+    let rarestIndex = 0;
     for (let i = 0; i < generated.images.length; i++) {
       const image = generated.images[i];
       if (!image) {
@@ -221,6 +224,12 @@ describe("Generate Art", () => {
         join(__dirname, `../../examples/output/${i}.png`),
         compiled.image
       );
+      if (image.rarity < rarest) {
+        rarest = image.rarity;
+        rarestIndex = i;
+      }
+      console.log(`${i}.png rarity: ${image.rarity}%`);
     }
+    console.log(`Rarest: Image ${rarestIndex}.png rarity: ${rarest}`);
   });
 });
