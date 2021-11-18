@@ -12,6 +12,10 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "Ownable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Ownable__factory>;
+    getContractFactory(
       name: "ERC721",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ERC721__factory>;
@@ -51,7 +55,16 @@ declare module "hardhat/types/runtime" {
       name: "NFT",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.NFT__factory>;
+    getContractFactory(
+      name: "Royalty",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Royalty__factory>;
 
+    getContractAt(
+      name: "Ownable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Ownable>;
     getContractAt(
       name: "ERC721",
       address: string,
@@ -102,6 +115,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.NFT>;
+    getContractAt(
+      name: "Royalty",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Royalty>;
 
     // default types
     getContractFactory(
