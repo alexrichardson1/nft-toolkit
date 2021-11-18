@@ -1,7 +1,7 @@
 import { User } from "@models/user";
 import { RequestHandler } from "express";
 
-const FIRST_TOKEN_NO = 1;
+const FIRST_TOKEN_NO = 0;
 
 export const getTokenMetadata: RequestHandler = async (req, res, next) => {
   const { fromAddress, collectionName, tokenId } = req.params;
@@ -25,6 +25,6 @@ export const getTokenMetadata: RequestHandler = async (req, res, next) => {
   if (tokenNumber < FIRST_TOKEN_NO || tokenNumber > numTokens) {
     return next(new Error("Token id not found in collection"));
   }
-  const token = collection.tokens[tokenNumber - 1];
+  const token = collection.tokens[tokenNumber];
   return res.json(token);
 };
