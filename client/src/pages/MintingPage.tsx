@@ -35,6 +35,8 @@ const DUMMY_DATA = {
   gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
   chainId: 1,
   price: "1",
+  mintedAmount: BigNumber.from("1"),
+  limit: BigNumber.from("3"),
 };
 
 const MAX_AMOUNT_ALLOWED = 20;
@@ -131,16 +133,10 @@ const MintingPage = (): JSX.Element => {
   };
 
   const getTokenTracking = () => {
-    if (!mintingData.mintedAmount || !mintingData.limit) {
-      return "";
-    }
     return `${mintingData.mintedAmount.toString()}/${mintingData.limit.toString()} MINTED`;
   };
 
   const getMaxTokensLeft = () => {
-    if (!mintingData.mintedAmount || !mintingData.limit) {
-      return MAX_AMOUNT_ALLOWED;
-    }
     return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
   };
 
@@ -251,6 +247,7 @@ const MintingPage = (): JSX.Element => {
                 </ButtonGroup>
                 <LoadingButton
                   fullWidth
+                  id="mint-button"
                   variant="contained"
                   onClick={handleMint}
                   loading={isMinting}
