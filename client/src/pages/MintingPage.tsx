@@ -1,3 +1,4 @@
+import LoadingButton from "@mui/lab/LoadingButton";
 import {
   Box,
   Button,
@@ -92,13 +93,14 @@ const MintingPage = (): JSX.Element => {
   const [error, setError] = useState(false);
   const [mintingData, setMintingData] = useState<CollectionI>(DUMMY_DATA);
   const [mintingQuantity, setMintingQuantity] = useState(MIN_AMOUNT_ALLOWED);
+  const [isMinting, setIsMinting] = useState(false);
 
   const handleQuantityIncrease = () =>
     setMintingQuantity((prev) => Math.min(prev + 1, MAX_AMOUNT_ALLOWED));
   const handleQuantityDecrease = () =>
     setMintingQuantity((prev) => Math.max(prev - 1, MIN_AMOUNT_ALLOWED));
 
-  const handleMint = () => {
+  const handleMint = async () => {
     if (!active) {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
@@ -111,11 +113,21 @@ const MintingPage = (): JSX.Element => {
       mintingData.address,
       library.getSigner()
     );
-    NFTContract.mint(mintingQuantity, {
-      value: BigNumber.from(mintingData.price).mul(
-        BigNumber.from(mintingQuantity)
-      ),
-    });
+
+    try {
+      setIsMinting(true);
+      const txResp = await NFTContract.mint(mintingQuantity, {
+        value: BigNumber.from(mintingData.price).mul(
+          BigNumber.from(mintingQuantity)
+        ),
+      });
+      await txResp.wait();
+      setIsMinting(false);
+      showSnackbar("success", "NFTs minted!");
+    } catch (err) {
+      setIsMinting(false);
+      showSnackbar("error", "Unable to mint NFT");
+    }
   };
 
   const getTokenTracking = () => {
@@ -218,7 +230,7 @@ const MintingPage = (): JSX.Element => {
                 <ButtonGroup fullWidth>
                   <Button
                     id="decrease-quantity"
-                    disabled={mintingQuantity === MIN_AMOUNT_ALLOWED}
+                    disabled={mintingQuantity <= MIN_AMOUNT_ALLOWED}
                     onClick={handleQuantityDecrease}
                     variant="contained">
                     -
@@ -231,14 +243,21 @@ const MintingPage = (): JSX.Element => {
                   </Button>
                   <Button
                     id="increase-quantity"
-                    disabled={mintingQuantity === getMaxTokensLeft()}
+                    disabled={mintingQuantity >= getMaxTokensLeft()}
                     onClick={handleQuantityIncrease}
                     variant="contained">
                     +
                   </Button>
                 </ButtonGroup>
-                <Button fullWidth variant="contained" onClick={handleMint}>
-                  Mint now for {formatEther(BigNumber.from(mintingData.price))}
+                <LoadingButton
+                  fullWidth
+                  variant="contained"
+                  onClick={handleMint}
+                  loading={isMinting}
+                  disabled={getMaxTokensLeft() === 0}>
+                  {`Mint now for ${formatEther(
+                    BigNumber.from(mintingData.price)
+                  )}`}
                   <SvgLogo
                     icon={getLogoByChainId(mintingData.chainId)}
                     width="20px"
@@ -246,7 +265,7 @@ const MintingPage = (): JSX.Element => {
                     margins
                   />
                   each!
-                </Button>
+                </LoadingButton>
               </Box>
             </Paper>
           </Box>
