@@ -22,16 +22,11 @@ import type { TypedEvent, TypedEventFilter, TypedListener } from "./common";
 interface RoyaltyInterface extends ethers.utils.Interface {
   functions: {
     "buy(uint256)": FunctionFragment;
-    "c_0xf05f41c1(bytes32)": FunctionFragment;
     "listings(uint256)": FunctionFragment;
     "sellListing(uint256,uint256)": FunctionFragment;
   };
 
   encodeFunctionData(functionFragment: "buy", values: [BigNumberish]): string;
-  encodeFunctionData(
-    functionFragment: "c_0xf05f41c1",
-    values: [BytesLike]
-  ): string;
   encodeFunctionData(
     functionFragment: "listings",
     values: [BigNumberish]
@@ -42,10 +37,6 @@ interface RoyaltyInterface extends ethers.utils.Interface {
   ): string;
 
   decodeFunctionResult(functionFragment: "buy", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "c_0xf05f41c1",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "listings", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "sellListing",
@@ -104,11 +95,6 @@ export class Royalty extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    c_0xf05f41c1(
-      c__0xf05f41c1: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<[void]>;
-
     listings(
       arg0: BigNumberish,
       overrides?: CallOverrides
@@ -126,11 +112,6 @@ export class Royalty extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  c_0xf05f41c1(
-    c__0xf05f41c1: BytesLike,
-    overrides?: CallOverrides
-  ): Promise<void>;
-
   listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
   sellListing(
@@ -141,11 +122,6 @@ export class Royalty extends BaseContract {
 
   callStatic: {
     buy(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
-
-    c_0xf05f41c1(
-      c__0xf05f41c1: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<void>;
 
     listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -164,11 +140,6 @@ export class Royalty extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    c_0xf05f41c1(
-      c__0xf05f41c1: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
     listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
     sellListing(
@@ -182,11 +153,6 @@ export class Royalty extends BaseContract {
     buy(
       tokenId: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    c_0xf05f41c1(
-      c__0xf05f41c1: BytesLike,
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     listings(
