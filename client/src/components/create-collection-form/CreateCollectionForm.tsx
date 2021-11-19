@@ -146,6 +146,7 @@ const CreateCollectionForm = (): JSX.Element => {
         txReceipt.contractAddress
       );
       showFormAlert("success", "Collection Creation Successful");
+      stopLoading(setLoadingMessage, setIsLoading);
     } catch (error) {
       console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
