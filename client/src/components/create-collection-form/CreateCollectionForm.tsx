@@ -14,6 +14,7 @@ import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useReducer, useState } from "react";
+import { Redirect } from "react-router";
 import formReducer from "reducers/formReducer";
 import {
   DEFAULT_ALERT_DURATION,
@@ -76,6 +77,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const closeAlert = () => setAlertMessage("");
 
@@ -147,6 +149,7 @@ const CreateCollectionForm = (): JSX.Element => {
       );
       showFormAlert("success", "Collection Creation Successful");
       stopLoading(setLoadingMessage, setIsLoading);
+      setSuccess(true);
     } catch (error) {
       console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
@@ -202,6 +205,9 @@ const CreateCollectionForm = (): JSX.Element => {
       </LoadingButton>
     </Box>
   );
+  if (success) {
+    return <Redirect to={`/${account}/${state.collectionName}`} />;
+  }
 
   return (
     <Stack
@@ -220,7 +226,6 @@ const CreateCollectionForm = (): JSX.Element => {
           required
         />
       </Paper>
-
       <Paper>
         <Input
           inputProps={{ "data-testid": "description-input" }}
@@ -233,11 +238,9 @@ const CreateCollectionForm = (): JSX.Element => {
           required
         />
       </Paper>
-
       <Paper>
         <ImageUpload handleImageDrop={handleImageDrop} imgObjs={state.images} />
       </Paper>
-
       {state.images.length > 0 && (
         <Paper>
           <Tabs
@@ -247,7 +250,6 @@ const CreateCollectionForm = (): JSX.Element => {
           />
         </Paper>
       )}
-
       <Paper>
         <Input
           value={state.mintingPrice}
@@ -259,7 +261,6 @@ const CreateCollectionForm = (): JSX.Element => {
           required
         />
       </Paper>
-
       <Box sx={formFooterStyle}>
         {alertBox}
         {formButtons}
