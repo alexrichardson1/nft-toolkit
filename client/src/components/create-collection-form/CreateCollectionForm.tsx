@@ -13,12 +13,12 @@ import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import formReducer from "reducers/formReducer";
 import { DEFAULT_ALERT_ELEVATION } from "utils/constants";
 import GenArtOrdering from "./form-steps/GenArtOrdering";
+import GenArtStep from "./form-steps/GenArtStep";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import { startLoading, uploadImages } from "./formUtils";
 
-const NUMBER_OF_PAGES = 3;
 const INITIAL_STATE = {
   collectionName: "",
   description: "",
@@ -46,6 +46,8 @@ const loadingButtonStyle = {
 };
 
 const INITIAL_PAGE_NUMBER = 0;
+const STATIC_PAGES = 3;
+const GEN_PAGES = 4;
 
 const getButtonText = (
   isLoading: boolean,
@@ -72,7 +74,8 @@ const CreateCollectionForm = (): JSX.Element => {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
 
-  const IS_LAST_PAGE = pageNumber === NUMBER_OF_PAGES - 1;
+  const IS_LAST_PAGE =
+    pageNumber === (generative ? GEN_PAGES - 1 : STATIC_PAGES - 1);
 
   const handleNextPage = () => setPageNumber((prev) => prev + 1);
   const handlePrevPage = () => setPageNumber((prev) => prev - 1);
@@ -239,6 +242,11 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgNameChange={handleImgNameChange}
       />
       <GenArtOrdering
+        generative={generative}
+        pageNumber={pageNumber}
+        state={state}
+      />
+      <GenArtStep
         generative={generative}
         pageNumber={pageNumber}
         state={state}
