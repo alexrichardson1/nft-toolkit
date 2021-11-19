@@ -1101,14 +1101,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                 tabindex="0"
                                                 type="button"
                                               >
-                                                Mint now for 0.000000000000000001
+                                                Mint for 0.000000000000000001
                                                 <img
                                                   height="20px"
                                                   src="ethereum-logo.svg"
                                                   style="margin: 0px 5px;"
                                                   width="20px"
                                                 />
-                                                each!
+                                                 
+                                                $0.00
                                                 <span
                                                   class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                 />
@@ -1305,14 +1306,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                             onClick={[Function]}
                                             variant="contained"
                                           >
-                                            Mint now for 0.000000000000000001
+                                            Mint for 0.000000000000000001
                                             <SvgLogo
                                               height="20px"
                                               icon="ethereum-logo.svg"
                                               margins={true}
                                               width="20px"
                                             />
-                                            each!
+                                             
+                                            $0.00
                                           </ForwardRef(LoadingButton)>
                                         </ForwardRef(Box)>
                                       </ForwardRef(Paper)>
@@ -1515,14 +1517,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                 onClick={[Function]}
                                                 variant="contained"
                                               >
-                                                Mint now for 0.000000000000000001
+                                                Mint for 0.000000000000000001
                                                 <SvgLogo
                                                   height="20px"
                                                   icon="ethereum-logo.svg"
                                                   margins={true}
                                                   width="20px"
                                                 />
-                                                each!
+                                                 
+                                                $0.00
                                               </ForwardRef(LoadingButton)>
                                             </ForwardRef(Box)>
                                           </ForwardRef(Paper)>
@@ -1710,14 +1713,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                     onClick={[Function]}
                                                     variant="contained"
                                                   >
-                                                    Mint now for 0.000000000000000001
+                                                    Mint for 0.000000000000000001
                                                     <SvgLogo
                                                       height="20px"
                                                       icon="ethereum-logo.svg"
                                                       margins={true}
                                                       width="20px"
                                                     />
-                                                    each!
+                                                     
+                                                    $0.00
                                                   </ForwardRef(LoadingButton)>
                                                 </ForwardRef(Box)>
                                               </ForwardRef(Paper)>
@@ -3391,14 +3395,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                   onClick={[Function]}
                                                                   variant="contained"
                                                                 >
-                                                                  Mint now for 0.000000000000000001
+                                                                  Mint for 0.000000000000000001
                                                                   <SvgLogo
                                                                     height="20px"
                                                                     icon="ethereum-logo.svg"
                                                                     margins={true}
                                                                     width="20px"
                                                                   />
-                                                                  each!
+                                                                   
+                                                                  $0.00
                                                                 </ForwardRef(LoadingButton)>
                                                               </ForwardRef(Box)>,
                                                             ],
@@ -4458,14 +4463,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          "Mint now for 0.000000000000000001",
+                                                                          "Mint for 0.000000000000000001",
                                                                           <SvgLogo
                                                                             height="20px"
                                                                             icon="ethereum-logo.svg"
                                                                             margins={true}
                                                                             width="20px"
                                                                           />,
-                                                                          "each!",
+                                                                          " ",
+                                                                          "$0.00",
                                                                         ],
                                                                         "disabled": false,
                                                                         "fullWidth": true,
@@ -4520,14 +4526,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                             "children": Array [
                                                                               false,
                                                                               Array [
-                                                                                "Mint now for 0.000000000000000001",
+                                                                                "Mint for 0.000000000000000001",
                                                                                 <SvgLogo
                                                                                   height="20px"
                                                                                   icon="ethereum-logo.svg"
                                                                                   margins={true}
                                                                                   width="20px"
                                                                                 />,
-                                                                                "each!",
+                                                                                " ",
+                                                                                "$0.00",
                                                                               ],
                                                                             ],
                                                                             "className": "css-1xfsam3-MuiLoadingButton-root",
@@ -4604,14 +4611,15 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                                   Array [
                                                                                     false,
                                                                                     Array [
-                                                                                      "Mint now for 0.000000000000000001",
+                                                                                      "Mint for 0.000000000000000001",
                                                                                       <SvgLogo
                                                                                         height="20px"
                                                                                         icon="ethereum-logo.svg"
                                                                                         margins={true}
                                                                                         width="20px"
                                                                                       />,
-                                                                                      "each!",
+                                                                                      " ",
+                                                                                      "$0.00",
                                                                                     ],
                                                                                   ],
                                                                                   undefined,
@@ -4660,7 +4668,7 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                               tabIndex={0}
                                                                               type="button"
                                                                             >
-                                                                              Mint now for 0.000000000000000001
+                                                                              Mint for 0.000000000000000001
                                                                               <SvgLogo
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
@@ -4678,7 +4686,8 @@ exports[`MintingPage tests Decreasing minting quantity 1`] = `
                                                                                   width="20px"
                                                                                 />
                                                                               </SvgLogo>
-                                                                              each!
+                                                                               
+                                                                              $0.00
                                                                               <ForwardRef(TouchRipple)
                                                                                 center={false}
                                                                               >
@@ -5838,14 +5847,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                 tabindex="0"
                                                 type="button"
                                               >
-                                                Mint now for 0.000000000000000001
+                                                Mint for 0.000000000000000001
                                                 <img
                                                   height="20px"
                                                   src="ethereum-logo.svg"
                                                   style="margin: 0px 5px;"
                                                   width="20px"
                                                 />
-                                                each!
+                                                 
+                                                $0.00
                                                 <span
                                                   class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                 />
@@ -6042,14 +6052,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                             onClick={[Function]}
                                             variant="contained"
                                           >
-                                            Mint now for 0.000000000000000001
+                                            Mint for 0.000000000000000001
                                             <SvgLogo
                                               height="20px"
                                               icon="ethereum-logo.svg"
                                               margins={true}
                                               width="20px"
                                             />
-                                            each!
+                                             
+                                            $0.00
                                           </ForwardRef(LoadingButton)>
                                         </ForwardRef(Box)>
                                       </ForwardRef(Paper)>
@@ -6252,14 +6263,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                 onClick={[Function]}
                                                 variant="contained"
                                               >
-                                                Mint now for 0.000000000000000001
+                                                Mint for 0.000000000000000001
                                                 <SvgLogo
                                                   height="20px"
                                                   icon="ethereum-logo.svg"
                                                   margins={true}
                                                   width="20px"
                                                 />
-                                                each!
+                                                 
+                                                $0.00
                                               </ForwardRef(LoadingButton)>
                                             </ForwardRef(Box)>
                                           </ForwardRef(Paper)>
@@ -6447,14 +6459,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                     onClick={[Function]}
                                                     variant="contained"
                                                   >
-                                                    Mint now for 0.000000000000000001
+                                                    Mint for 0.000000000000000001
                                                     <SvgLogo
                                                       height="20px"
                                                       icon="ethereum-logo.svg"
                                                       margins={true}
                                                       width="20px"
                                                     />
-                                                    each!
+                                                     
+                                                    $0.00
                                                   </ForwardRef(LoadingButton)>
                                                 </ForwardRef(Box)>
                                               </ForwardRef(Paper)>
@@ -8128,14 +8141,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                   onClick={[Function]}
                                                                   variant="contained"
                                                                 >
-                                                                  Mint now for 0.000000000000000001
+                                                                  Mint for 0.000000000000000001
                                                                   <SvgLogo
                                                                     height="20px"
                                                                     icon="ethereum-logo.svg"
                                                                     margins={true}
                                                                     width="20px"
                                                                   />
-                                                                  each!
+                                                                   
+                                                                  $0.00
                                                                 </ForwardRef(LoadingButton)>
                                                               </ForwardRef(Box)>,
                                                             ],
@@ -9195,14 +9209,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          "Mint now for 0.000000000000000001",
+                                                                          "Mint for 0.000000000000000001",
                                                                           <SvgLogo
                                                                             height="20px"
                                                                             icon="ethereum-logo.svg"
                                                                             margins={true}
                                                                             width="20px"
                                                                           />,
-                                                                          "each!",
+                                                                          " ",
+                                                                          "$0.00",
                                                                         ],
                                                                         "disabled": false,
                                                                         "fullWidth": true,
@@ -9257,14 +9272,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                             "children": Array [
                                                                               false,
                                                                               Array [
-                                                                                "Mint now for 0.000000000000000001",
+                                                                                "Mint for 0.000000000000000001",
                                                                                 <SvgLogo
                                                                                   height="20px"
                                                                                   icon="ethereum-logo.svg"
                                                                                   margins={true}
                                                                                   width="20px"
                                                                                 />,
-                                                                                "each!",
+                                                                                " ",
+                                                                                "$0.00",
                                                                               ],
                                                                             ],
                                                                             "className": "css-1xfsam3-MuiLoadingButton-root",
@@ -9341,14 +9357,15 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                                   Array [
                                                                                     false,
                                                                                     Array [
-                                                                                      "Mint now for 0.000000000000000001",
+                                                                                      "Mint for 0.000000000000000001",
                                                                                       <SvgLogo
                                                                                         height="20px"
                                                                                         icon="ethereum-logo.svg"
                                                                                         margins={true}
                                                                                         width="20px"
                                                                                       />,
-                                                                                      "each!",
+                                                                                      " ",
+                                                                                      "$0.00",
                                                                                     ],
                                                                                   ],
                                                                                   undefined,
@@ -9397,7 +9414,7 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                               tabIndex={0}
                                                                               type="button"
                                                                             >
-                                                                              Mint now for 0.000000000000000001
+                                                                              Mint for 0.000000000000000001
                                                                               <SvgLogo
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
@@ -9415,7 +9432,8 @@ exports[`MintingPage tests Increasing minting quantity 1`] = `
                                                                                   width="20px"
                                                                                 />
                                                                               </SvgLogo>
-                                                                              each!
+                                                                               
+                                                                              $0.00
                                                                               <ForwardRef(TouchRipple)
                                                                                 center={false}
                                                                               >
@@ -10575,14 +10593,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                 tabindex="0"
                                                 type="button"
                                               >
-                                                Mint now for 0.000000000000000001
+                                                Mint for 0.000000000000000001
                                                 <img
                                                   height="20px"
                                                   src="ethereum-logo.svg"
                                                   style="margin: 0px 5px;"
                                                   width="20px"
                                                 />
-                                                each!
+                                                 
+                                                $0.00
                                                 <span
                                                   class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                 />
@@ -10779,14 +10798,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             onClick={[Function]}
                                             variant="contained"
                                           >
-                                            Mint now for 0.000000000000000001
+                                            Mint for 0.000000000000000001
                                             <SvgLogo
                                               height="20px"
                                               icon="ethereum-logo.svg"
                                               margins={true}
                                               width="20px"
                                             />
-                                            each!
+                                             
+                                            $0.00
                                           </ForwardRef(LoadingButton)>
                                         </ForwardRef(Box)>
                                       </ForwardRef(Paper)>
@@ -10989,14 +11009,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                 onClick={[Function]}
                                                 variant="contained"
                                               >
-                                                Mint now for 0.000000000000000001
+                                                Mint for 0.000000000000000001
                                                 <SvgLogo
                                                   height="20px"
                                                   icon="ethereum-logo.svg"
                                                   margins={true}
                                                   width="20px"
                                                 />
-                                                each!
+                                                 
+                                                $0.00
                                               </ForwardRef(LoadingButton)>
                                             </ForwardRef(Box)>
                                           </ForwardRef(Paper)>
@@ -11184,14 +11205,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                     onClick={[Function]}
                                                     variant="contained"
                                                   >
-                                                    Mint now for 0.000000000000000001
+                                                    Mint for 0.000000000000000001
                                                     <SvgLogo
                                                       height="20px"
                                                       icon="ethereum-logo.svg"
                                                       margins={true}
                                                       width="20px"
                                                     />
-                                                    each!
+                                                     
+                                                    $0.00
                                                   </ForwardRef(LoadingButton)>
                                                 </ForwardRef(Box)>
                                               </ForwardRef(Paper)>
@@ -12865,14 +12887,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                   onClick={[Function]}
                                                                   variant="contained"
                                                                 >
-                                                                  Mint now for 0.000000000000000001
+                                                                  Mint for 0.000000000000000001
                                                                   <SvgLogo
                                                                     height="20px"
                                                                     icon="ethereum-logo.svg"
                                                                     margins={true}
                                                                     width="20px"
                                                                   />
-                                                                  each!
+                                                                   
+                                                                  $0.00
                                                                 </ForwardRef(LoadingButton)>
                                                               </ForwardRef(Box)>,
                                                             ],
@@ -13932,14 +13955,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          "Mint now for 0.000000000000000001",
+                                                                          "Mint for 0.000000000000000001",
                                                                           <SvgLogo
                                                                             height="20px"
                                                                             icon="ethereum-logo.svg"
                                                                             margins={true}
                                                                             width="20px"
                                                                           />,
-                                                                          "each!",
+                                                                          " ",
+                                                                          "$0.00",
                                                                         ],
                                                                         "disabled": false,
                                                                         "fullWidth": true,
@@ -13994,14 +14018,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             "children": Array [
                                                                               false,
                                                                               Array [
-                                                                                "Mint now for 0.000000000000000001",
+                                                                                "Mint for 0.000000000000000001",
                                                                                 <SvgLogo
                                                                                   height="20px"
                                                                                   icon="ethereum-logo.svg"
                                                                                   margins={true}
                                                                                   width="20px"
                                                                                 />,
-                                                                                "each!",
+                                                                                " ",
+                                                                                "$0.00",
                                                                               ],
                                                                             ],
                                                                             "className": "css-1xfsam3-MuiLoadingButton-root",
@@ -14078,14 +14103,15 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                   Array [
                                                                                     false,
                                                                                     Array [
-                                                                                      "Mint now for 0.000000000000000001",
+                                                                                      "Mint for 0.000000000000000001",
                                                                                       <SvgLogo
                                                                                         height="20px"
                                                                                         icon="ethereum-logo.svg"
                                                                                         margins={true}
                                                                                         width="20px"
                                                                                       />,
-                                                                                      "each!",
+                                                                                      " ",
+                                                                                      "$0.00",
                                                                                     ],
                                                                                   ],
                                                                                   undefined,
@@ -14134,7 +14160,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                               tabIndex={0}
                                                                               type="button"
                                                                             >
-                                                                              Mint now for 0.000000000000000001
+                                                                              Mint for 0.000000000000000001
                                                                               <SvgLogo
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
@@ -14152,7 +14178,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                   width="20px"
                                                                                 />
                                                                               </SvgLogo>
-                                                                              each!
+                                                                               
+                                                                              $0.00
                                                                               <ForwardRef(TouchRipple)
                                                                                 center={false}
                                                                               >
