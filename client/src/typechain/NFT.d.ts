@@ -24,7 +24,6 @@ interface NFTInterface extends ethers.utils.Interface {
     "approve(address,uint256)": FunctionFragment;
     "artist()": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
-    "c_0x16109922(bytes32)": FunctionFragment;
     "collectionLimit()": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
@@ -52,10 +51,6 @@ interface NFTInterface extends ethers.utils.Interface {
   ): string;
   encodeFunctionData(functionFragment: "artist", values?: undefined): string;
   encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
-  encodeFunctionData(
-    functionFragment: "c_0x16109922",
-    values: [BytesLike]
-  ): string;
   encodeFunctionData(
     functionFragment: "collectionLimit",
     values?: undefined
@@ -124,10 +119,6 @@ interface NFTInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "artist", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "c_0x16109922",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(
     functionFragment: "collectionLimit",
     data: BytesLike
@@ -278,11 +269,6 @@ export class NFT extends BaseContract {
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    c_0x16109922(
-      c__0x16109922: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<[void]>;
-
     collectionLimit(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     getApproved(
@@ -387,11 +373,6 @@ export class NFT extends BaseContract {
 
   balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-  c_0x16109922(
-    c__0x16109922: BytesLike,
-    overrides?: CallOverrides
-  ): Promise<void>;
-
   collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
 
   getApproved(
@@ -487,11 +468,6 @@ export class NFT extends BaseContract {
     artist(overrides?: CallOverrides): Promise<string>;
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
-
-    c_0x16109922(
-      c__0x16109922: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<void>;
 
     collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -657,11 +633,6 @@ export class NFT extends BaseContract {
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    c_0x16109922(
-      c__0x16109922: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
     collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
 
     getApproved(
@@ -765,11 +736,6 @@ export class NFT extends BaseContract {
 
     balanceOf(
       owner: string,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    c_0x16109922(
-      c__0x16109922: BytesLike,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
