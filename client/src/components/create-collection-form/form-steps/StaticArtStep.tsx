@@ -1,6 +1,4 @@
-import Paper from "@mui/material/Paper";
-import ImageUpload from "../custom-image-upload/ImageUpload";
-import Tabs from "../tabs/Tabs";
+import ImageUploadTabs from "components/common/ImageUploadTabs";
 
 interface PropsT {
   pageNumber: number;
@@ -30,24 +28,14 @@ const StaticArtForm = ({
     return <></>;
   }
 
-  return (
-    <>
-      <Paper>
-        <ImageUpload handleImageDrop={handleImageDrop} imgObjs={state.images} />
-      </Paper>
-
-      {state.images.length > 0 && (
-        <Paper>
-          <Tabs
-            isLoading={isLoading}
-            handleImageDelete={handleImageDelete}
-            handleNameChange={handleImgNameChange}
-            imgObjs={state.images}
-          />
-        </Paper>
-      )}
-    </>
-  );
+  const children = {
+    state,
+    handleImageDelete,
+    handleImageDrop,
+    handleImgNameChange,
+    isLoading,
+  };
+  return <ImageUploadTabs {...children} />;
 };
 
 export default StaticArtForm;
