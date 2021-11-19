@@ -19,7 +19,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Redirect } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
-import { getUSDValue } from "utils/coinGecko";
+import { getDollarValue } from "utils/coinGecko";
 import { getLogoByChainId } from "utils/constants";
 import {
   CollectionI,
@@ -140,14 +140,6 @@ const MintingPage = (): JSX.Element => {
 
   const getMaxTokensLeft = () => {
     return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
-  };
-
-  const getDollarValue = async (price: string, chainId: number) => {
-    const num =
-      parseFloat(formatEther(BigNumber.from(price))) *
-      (await getUSDValue(chainId));
-    const DECIMALS = 2;
-    return `($${num.toFixed(DECIMALS)})`;
   };
 
   useEffect(() => {

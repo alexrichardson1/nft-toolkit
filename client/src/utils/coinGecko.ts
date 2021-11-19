@@ -1,4 +1,6 @@
 import axios from "axios";
+import { BigNumber } from "ethers";
+import { formatEther } from "ethers/lib/utils";
 
 interface IdToStrI {
   [key: number]: string;
@@ -11,7 +13,7 @@ const chainIDToCoinGecko: IdToStrI = {
   56: "binancecoin",
 };
 
-export const getUSDValue = async (chainId: number): Promise<number> => {
+const getUSDValue = async (chainId: number): Promise<number> => {
   const network = chainIDToCoinGecko[chainId];
   if (!network) {
     throw new Error(`Unsupported chain id: ${chainId}`);
@@ -20,4 +22,15 @@ export const getUSDValue = async (chainId: number): Promise<number> => {
     `https://api.coingecko.com/api/v3/simple/price?ids=${network}&vs_currencies=USD`
   );
   return res.data[network].usd;
+};
+
+export const getDollarValue = async (
+  price: string,
+  chainId: number
+): Promise<string> => {
+  const num =
+    parseFloat(formatEther(BigNumber.from(price))) *
+    (await getUSDValue(chainId));
+  const DECIMALS = 2;
+  return `($${num.toFixed(DECIMALS)})`;
 };
