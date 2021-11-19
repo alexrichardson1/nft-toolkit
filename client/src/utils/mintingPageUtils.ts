@@ -10,10 +10,10 @@ interface TokenI {
 export interface CollectionI {
   name: string;
   address: string;
-  mintedAmount?: BigNumber;
+  mintedAmount: BigNumber;
   symbol: string;
   description: string;
-  limit?: BigNumber;
+  limit: BigNumber;
   tokens: TokenI[];
   gifSrc?: string;
   chainId: number;
