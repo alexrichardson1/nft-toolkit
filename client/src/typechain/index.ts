@@ -4,10 +4,8 @@
 export type { ERC165 } from "./ERC165";
 export type { ERC721 } from "./ERC721";
 export type { ERC721Enumerable } from "./ERC721Enumerable";
-export type { ERC721URIStorage } from "./ERC721URIStorage";
 export { ERC165__factory } from "./factories/ERC165__factory";
 export { ERC721Enumerable__factory } from "./factories/ERC721Enumerable__factory";
-export { ERC721URIStorage__factory } from "./factories/ERC721URIStorage__factory";
 export { ERC721__factory } from "./factories/ERC721__factory";
 export { IERC165__factory } from "./factories/IERC165__factory";
 export { IERC721Enumerable__factory } from "./factories/IERC721Enumerable__factory";
