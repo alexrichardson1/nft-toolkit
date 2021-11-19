@@ -11,23 +11,29 @@ import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import SvgLogo from "components/common/SvgLogo";
 import SnackbarContext from "context/snackbar/SnackbarContext";
+import { BigNumber } from "ethers";
+import { formatEther } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useContext, useEffect, useState } from "react";
-import { Redirect, useParams } from "react-router";
+import { useParams } from "react-router";
+import { Redirect } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
 import { getLogoByChainId } from "utils/constants";
-import { getCollection } from "utils/mintingPageUtils";
+import {
+  CollectionI,
+  getCollection,
+  getRPCProvider,
+} from "utils/mintingPageUtils";
 
 const DUMMY_DATA = {
   name: "COLLECTION_NAME",
   symbol: "COL",
   description: "THIS IS THE DESCRIPTION",
   address: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-  mintedAmount: 5,
-  limit: 10000,
+  tokens: [],
   gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
   chainId: 1,
-  price: 1,
+  price: "1",
 };
 
 const MAX_AMOUNT_ALLOWED = 20;
@@ -52,18 +58,6 @@ const mintingCardStyle: SxProps = {
   flexDirection: "column",
   justifyContent: "flex-end",
 };
-
-interface CollectionI {
-  name: string;
-  address: string;
-  mintedAmount?: number;
-  symbol: string;
-  description: string;
-  limit?: number;
-  gifSrc?: string;
-  chainId: number;
-  price?: number;
-}
 
 interface ParamsI {
   collectionName: string;
@@ -117,7 +111,25 @@ const MintingPage = (): JSX.Element => {
       mintingData.address,
       library.getSigner()
     );
-    NFTContract.mint(mintingQuantity, {});
+    NFTContract.mint(mintingQuantity, {
+      value: BigNumber.from(mintingData.price).mul(
+        BigNumber.from(mintingQuantity)
+      ),
+    });
+  };
+
+  const getTokenTracking = () => {
+    if (!mintingData.mintedAmount || !mintingData.limit) {
+      return "";
+    }
+    return `${mintingData.mintedAmount.toString()}/${mintingData.limit.toString()} MINTED`;
+  };
+
+  const getMaxTokensLeft = () => {
+    if (!mintingData.mintedAmount || !mintingData.limit) {
+      return MAX_AMOUNT_ALLOWED;
+    }
+    return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
   };
 
   useEffect(() => {
@@ -136,6 +148,15 @@ const MintingPage = (): JSX.Element => {
 
       try {
         const collection = await getCollection(fromAddress, collectionName);
+        const NFTContract = NftFactory.connect(
+          collection.address,
+          getRPCProvider(collection.chainId)
+        );
+        collection.limit = await NFTContract.collectionLimit();
+        collection.mintedAmount = await NFTContract.tokenIdTracker();
+        collection.tokens.forEach((token) => {
+          collection.gifSrc = token.image;
+        });
         setMintingData(collection);
       } catch (error) {
         // TODO: handle invalid collection
@@ -192,8 +213,7 @@ const MintingPage = (): JSX.Element => {
                   textAlign="center"
                   variant="h6"
                   color="primary">
-                  {mintingData.mintedAmount}/{mintingData.limit}{" "}
-                  {collectionName.replaceAll("-", " ")} MINTED
+                  {getTokenTracking()}
                 </Typography>
                 <ButtonGroup fullWidth>
                   <Button
@@ -211,14 +231,14 @@ const MintingPage = (): JSX.Element => {
                   </Button>
                   <Button
                     id="increase-quantity"
-                    disabled={mintingQuantity === MAX_AMOUNT_ALLOWED}
+                    disabled={mintingQuantity === getMaxTokensLeft()}
                     onClick={handleQuantityIncrease}
                     variant="contained">
                     +
                   </Button>
                 </ButtonGroup>
                 <Button fullWidth variant="contained" onClick={handleMint}>
-                  Mint now for {mintingData.price}
+                  Mint now for {formatEther(BigNumber.from(mintingData.price))}
                   <SvgLogo
                     icon={getLogoByChainId(mintingData.chainId)}
                     width="20px"
