@@ -19,6 +19,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Redirect } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
+import { getUSDValue } from "utils/coinGecko";
 import { getLogoByChainId } from "utils/constants";
 import {
   CollectionI,
@@ -96,6 +97,7 @@ const MintingPage = (): JSX.Element => {
   const [mintingData, setMintingData] = useState<CollectionI>(DUMMY_DATA);
   const [mintingQuantity, setMintingQuantity] = useState(MIN_AMOUNT_ALLOWED);
   const [isMinting, setIsMinting] = useState(false);
+  const [usdValue, setUsdValue] = useState("$0.00");
 
   const handleQuantityIncrease = () =>
     setMintingQuantity((prev) => Math.min(prev + 1, MAX_AMOUNT_ALLOWED));
@@ -140,6 +142,14 @@ const MintingPage = (): JSX.Element => {
     return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
   };
 
+  const getDollarValue = async (price: string, chainId: number) => {
+    const num =
+      parseFloat(formatEther(BigNumber.from(price))) *
+      (await getUSDValue(chainId));
+    const DECIMALS = 2;
+    return `($${num.toFixed(DECIMALS)})`;
+  };
+
   useEffect(() => {
     async function getCollectionData() {
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
@@ -166,6 +176,7 @@ const MintingPage = (): JSX.Element => {
           collection.gifSrc = token.image;
         });
         setMintingData(collection);
+        setUsdValue(await getDollarValue(collection.price, collection.chainId));
       } catch (error) {
         // TODO: handle invalid collection
         setError(true);
@@ -252,16 +263,14 @@ const MintingPage = (): JSX.Element => {
                   onClick={handleMint}
                   loading={isMinting}
                   disabled={getMaxTokensLeft() === 0}>
-                  {`Mint now for ${formatEther(
-                    BigNumber.from(mintingData.price)
-                  )}`}
+                  {`Mint for ${formatEther(BigNumber.from(mintingData.price))}`}
                   <SvgLogo
                     icon={getLogoByChainId(mintingData.chainId)}
                     width="20px"
                     height="20px"
                     margins
-                  />
-                  each!
+                  />{" "}
+                  {usdValue}
                 </LoadingButton>
               </Box>
             </Paper>
