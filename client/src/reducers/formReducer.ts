@@ -14,6 +14,11 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
       };
+    case "CHANGE_SYMBOL":
+      return {
+        ...state,
+        symbol: action.payload.symbol ?? DEFAULT_STRING,
+      };
     case "CHANGE_IMAGES":
       return {
         ...state,
