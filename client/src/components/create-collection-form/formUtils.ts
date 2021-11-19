@@ -45,6 +45,7 @@ interface StateT {
   collectionName: string;
   description: string;
   images: ImageT[];
+  symbol: string;
   mintingPrice: number;
 }
 
@@ -67,7 +68,7 @@ export const uploadCollection = async (
 
   const collection = {
     name: state.collectionName,
-    symbol: "TODO",
+    symbol: state.symbol,
     description: state.description,
     price: parseUnits(`${state.mintingPrice}`).toString(),
     chainId: chainId,

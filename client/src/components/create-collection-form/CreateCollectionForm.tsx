@@ -1,10 +1,6 @@
-import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
-import DoneIcon from "@mui/icons-material/Done";
-import LoadingButton from "@mui/lab/LoadingButton";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import { SxProps } from "@mui/system";
@@ -22,6 +18,7 @@ import {
 } from "utils/constants";
 import showAlert from "utils/showAlert";
 import ImageUpload from "./custom-image-upload/ImageUpload";
+import FormButtons from "./FormButtons";
 import {
   addDeployedAddress,
   startLoading,
@@ -36,6 +33,7 @@ const DESCRIPTION_ROWS = 4;
 const INITIAL_STATE = {
   collectionName: "",
   description: "",
+  symbol: "",
   images: [],
   mintingPrice: 0,
 };
@@ -46,17 +44,6 @@ const formFooterStyle: SxProps = {
   gap: "10px",
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
-};
-const buttonsWrapperStyle = {
-  justifyContent: "flex-end",
-  display: "flex",
-  gap: "10px",
-};
-const loadingButtonStyle = {
-  "&.Mui-disabled": {
-    bgcolor: "secondary.main",
-    color: "white",
-  },
 };
 
 const priceInputProps = (selectedNet: NetworkT) => ({
@@ -178,33 +165,6 @@ const CreateCollectionForm = (): JSX.Element => {
     </Collapse>
   );
 
-  const formButtons = (
-    <Box sx={buttonsWrapperStyle}>
-      <Button
-        startIcon={<ClearIcon />}
-        data-testid="reset"
-        color="error"
-        size="large"
-        variant="contained"
-        type="reset"
-        disabled={isLoading}
-        onClick={handleStateReset}>
-        Reset
-      </Button>
-      <LoadingButton
-        sx={loadingButtonStyle}
-        loading={isLoading}
-        loadingPosition="end"
-        type="submit"
-        endIcon={<DoneIcon />}
-        color="success"
-        size="large"
-        data-testid="submit-btn"
-        variant="contained">
-        {isLoading ? loadingMessage : "Submit"}
-      </LoadingButton>
-    </Box>
-  );
   if (success) {
     return <Redirect to={`/${account}/${state.collectionName}`} />;
   }
@@ -223,6 +183,21 @@ const CreateCollectionForm = (): JSX.Element => {
           onChange={handleCollNameChange}
           placeholder="Enter a collection name"
           label="Collection Name"
+          required
+        />
+      </Paper>
+      <Paper>
+        <Input
+          inputProps={{ "data-testid": "symbol-input" }}
+          value={state.symbol}
+          onChange={(e) =>
+            dispatch({
+              type: "CHANGE_SYMBOL",
+              payload: { symbol: e.target.value },
+            })
+          }
+          placeholder="Enter a symbol"
+          label="Symbol"
           required
         />
       </Paper>
@@ -263,7 +238,11 @@ const CreateCollectionForm = (): JSX.Element => {
       </Paper>
       <Box sx={formFooterStyle}>
         {alertBox}
-        {formButtons}
+        <FormButtons
+          isLoading={isLoading}
+          loadingMessage={loadingMessage}
+          handleStateReset={handleStateReset}
+        />
       </Box>
     </Stack>
   );

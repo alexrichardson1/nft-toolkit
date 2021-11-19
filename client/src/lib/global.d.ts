@@ -12,6 +12,7 @@ type ImageT = { image: File; url: string; name: string; id: string };
 interface FormStateI {
   collectionName: string;
   description: string;
+  symbol: string;
   images: ImageT[];
   mintingPrice: number;
 }
@@ -19,6 +20,7 @@ type FormActionT =
   | "CHANGE_NAME"
   | "CHANGE_PRICE"
   | "CHANGE_IMAGES"
+  | "CHANGE_SYMBOL"
   | "CHANGE_DESCRIPTION"
   | "CHANGE_IMAGE_NAME"
   | "DELETE_IMAGE"
@@ -30,6 +32,7 @@ interface FormActionPayloadI {
   newImgObj?: { newImageName: string; imageId: string };
   price?: string;
   deleteId?: string;
+  symbol?: string;
   initialState?: FormStateI;
 }
 interface FormActionI {
