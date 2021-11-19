@@ -1,5 +1,6 @@
 import axios from "axios";
 import { UnsignedTransaction } from "ethers";
+import { parseUnits } from "ethers/lib/utils";
 import { API_URL } from "utils/constants";
 
 export const startLoading = (
@@ -68,7 +69,7 @@ export const uploadCollection = async (
     name: state.collectionName,
     symbol: "TODO",
     description: state.description,
-    price: `${state.mintingPrice}`,
+    price: parseUnits(`${state.mintingPrice}`).toString(),
     chainId: chainId,
     tokens: tokens,
     fromAddress: account,
