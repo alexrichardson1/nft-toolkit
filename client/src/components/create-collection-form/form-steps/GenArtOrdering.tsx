@@ -117,7 +117,10 @@ const SortableList = ({ generative, pageNumber }: PropsT): JSX.Element => {
       <IconButton
         color="primary"
         aria-label="Add to list"
-        onClick={() => addItem(text)}>
+        onClick={() => {
+          addItem(text);
+          setText("");
+        }}>
         <AddIcon />
       </IconButton>
     </Box>
