@@ -1,4 +1,5 @@
 import ImageUploadTabs from "components/common/ImageUploadTabs";
+import { wrongPageStatic } from "utils/pages";
 
 interface PropsT {
   pageNumber: number;
@@ -13,7 +14,7 @@ interface PropsT {
   ) => void;
 }
 
-const PAGE_2 = 2;
+const STATIC_UPLOAD_PAGE = 2;
 
 const StaticArtForm = ({
   pageNumber,
@@ -24,7 +25,7 @@ const StaticArtForm = ({
   handleImgNameChange,
   isLoading,
 }: PropsT): JSX.Element => {
-  if (pageNumber !== PAGE_2 || generative) {
+  if (wrongPageStatic(generative, pageNumber, STATIC_UPLOAD_PAGE)) {
     return <></>;
   }
 

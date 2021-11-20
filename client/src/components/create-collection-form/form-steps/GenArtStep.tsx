@@ -1,4 +1,4 @@
-import { wrongPage } from "utils/pages";
+import { wrongPageGenerative } from "utils/pages";
 
 interface PropsT {
   pageNumber: number;
@@ -6,10 +6,10 @@ interface PropsT {
   state: FormStateI;
 }
 
-const PAGE_3 = 3;
+const LAYER_UPLOAD_PAGE = 3;
 
 const GenArtStep = ({ generative, pageNumber }: PropsT): JSX.Element => {
-  if (wrongPage(generative, pageNumber, PAGE_3)) {
+  if (wrongPageGenerative(generative, pageNumber, LAYER_UPLOAD_PAGE)) {
     return <></>;
   }
 

@@ -3,9 +3,22 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import { SxProps } from "@mui/system";
 import genArtImg from "images/generativeIcon.svg";
 import staticArtImg from "images/staticIcon.svg";
+import { wrongPage } from "utils/pages";
 
+const choiceCardBoxStyle = { height: 200, width: 300 };
+const imgStyle = { height: "100%", width: "100%" };
+const descriptionStyle: SxProps = { textAlign: "left", textTransform: "none" };
+const choiceCardStyle: SxProps = {
+  padding: 3,
+  height: 600,
+  alignItems: "center",
+  display: "flex",
+  flexDirection: "column",
+  gap: "25px",
+};
 interface CardPropsT {
   title: string;
   imgSrc: string;
@@ -18,37 +31,18 @@ const ChoiceCard = (props: CardPropsT) => {
     <Grid item xs={12} md={6}>
       <Box>
         <Button onClick={props.handleCardClick}>
-          <Paper
-            sx={{
-              padding: 3,
-              height: 600,
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-              gap: "25px",
-            }}
-            elevation={5}>
+          <Paper sx={choiceCardStyle} elevation={5}>
             <Typography color="secondary" align="center" variant="h3">
               {props.title}
             </Typography>
-            <Box
-              sx={{
-                height: 200,
-                width: 300,
-              }}>
+            <Box sx={choiceCardBoxStyle}>
               <img
-                style={{
-                  height: "100%",
-                  width: "100%",
-                }}
+                style={imgStyle}
                 src={props.imgSrc}
                 alt={`${props.title}-img`}
               />
             </Box>
-            <Typography
-              variant="h6"
-              color="primary"
-              sx={{ textAlign: "left", textTransform: "none" }}>
+            <Typography variant="h6" color="primary" sx={descriptionStyle}>
               {props.description}
             </Typography>
           </Paper>
@@ -92,14 +86,14 @@ interface PropsT {
   setGenerative: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const PAGE_1 = 1;
+const TYPE_OF_ART_PAGE = 1;
 
 const TypeOfArtStep = ({
   setGenerative,
   handleNextPage,
   pageNumber,
 }: PropsT): JSX.Element => {
-  if (pageNumber !== PAGE_1) {
+  if (wrongPage(pageNumber, TYPE_OF_ART_PAGE)) {
     return <></>;
   }
 

@@ -16,9 +16,9 @@ import {
   SortableElement as sortableElement,
   SortableHandle as sortableHandle,
 } from "react-sortable-hoc";
-import { wrongPage } from "utils/pages";
+import { wrongPageGenerative } from "utils/pages";
 
-const PAGE_2 = 2;
+const LAYER_SELECTION_PAGE = 2;
 
 /**
  * The interface used for each `SortableItem`
@@ -79,7 +79,7 @@ interface PropsT {
  * @returns the corresponding `JSX.Element`
  */
 const SortableList = ({ generative, pageNumber }: PropsT): JSX.Element => {
-  if (wrongPage(generative, pageNumber, PAGE_2)) {
+  if (wrongPageGenerative(generative, pageNumber, LAYER_SELECTION_PAGE)) {
     return <></>;
   }
 

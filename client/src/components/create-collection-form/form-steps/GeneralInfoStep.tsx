@@ -4,6 +4,7 @@ import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext } from "react";
+import { wrongPage } from "utils/pages";
 
 const DESCRIPTION_ROWS = 4;
 const ICON_SIZE = 25;
@@ -26,6 +27,8 @@ const priceInputProps = (selectedNet: NetworkT) => ({
   ),
 });
 
+const GENERAL_INFO_PAGE = 0;
+
 const GeneralInfo = ({
   pageNumber,
   state,
@@ -34,7 +37,7 @@ const GeneralInfo = ({
   handleDescriptionChange,
   handleSymbolChange,
 }: PropsT): JSX.Element => {
-  if (pageNumber !== 0) {
+  if (wrongPage(pageNumber, GENERAL_INFO_PAGE)) {
     return <></>;
   }
 
