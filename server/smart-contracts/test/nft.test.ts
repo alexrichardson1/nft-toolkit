@@ -5,9 +5,9 @@ import { NFT } from "../typechain";
 
 chai.use(solidity);
 
-const collectionSize = 10;
-const collectionWeiPrice = ethers.utils.parseEther("1");
-const baseURI = "";
+const COLLECTION_SIZE = 10;
+const COLLECTION_WEI_PRICE = ethers.utils.parseEther("1");
+const BASE_URI = "";
 
 describe("NFT Collection Contract", () => {
   let nftContract: NFT;
@@ -16,9 +16,9 @@ describe("NFT Collection Contract", () => {
     nftContract = await NFTContract.deploy(
       "Monkeys",
       "MNKY",
-      baseURI,
-      collectionSize,
-      collectionWeiPrice
+      BASE_URI,
+      COLLECTION_SIZE,
+      COLLECTION_WEI_PRICE
     );
     await nftContract.deployed();
   });
@@ -44,10 +44,18 @@ describe("NFT Collection Contract", () => {
 
     it("Should not allow minting more than the collection size", () => {
       expect(
-        nftContract.mint(collectionSize + 1, {
-          value: collectionWeiPrice.mul(collectionSize + 1),
+        nftContract.mint(COLLECTION_SIZE + 1, {
+          value: COLLECTION_WEI_PRICE.mul(COLLECTION_SIZE + 1),
         })
       ).to.be.revertedWith("Not enough in the collection left to mint amount");
+    });
+
+    it("should increment tokenIdTracker by number of minted", async () => {
+      expect(await nftContract.tokenIdTracker()).to.equal("0");
+      await nftContract.mint(1, {
+        value: COLLECTION_WEI_PRICE,
+      });
+      expect(await nftContract.tokenIdTracker()).to.equal("1");
     });
   });
 });

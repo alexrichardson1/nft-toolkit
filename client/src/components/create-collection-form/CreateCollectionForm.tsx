@@ -1,27 +1,35 @@
-import ClearIcon from "@mui/icons-material/Clear";
 import CloseIcon from "@mui/icons-material/Close";
-import DoneIcon from "@mui/icons-material/Done";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import LoadingButton from "@mui/lab/LoadingButton";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
+import { Redirect } from "react-router";
 import formReducer from "reducers/formReducer";
-import { DEFAULT_ALERT_ELEVATION } from "utils/constants";
+import {
+  DEFAULT_ALERT_DURATION,
+  DEFAULT_ALERT_ELEVATION,
+} from "utils/constants";
+import showAlert from "utils/showAlert";
 import GenArtOrdering from "./form-steps/GenArtOrdering";
 import GenArtStep from "./form-steps/GenArtStep";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
-import { startLoading, uploadImages } from "./formUtils";
+import FormButtons from "./FormButtons";
+import {
+  addDeployedAddress,
+  startLoading,
+  stopLoading,
+  uploadCollection,
+  uploadImages,
+} from "./formUtils";
 
 const INITIAL_STATE = {
   collectionName: "",
   description: "",
+  symbol: "",
   images: [],
   mintingPrice: 0,
 };
@@ -33,46 +41,22 @@ const formFooterStyle: SxProps = {
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
 };
-const buttonsWrapperStyle = {
-  justifyContent: "flex-end",
-  display: "flex",
-  gap: "10px",
-};
-const loadingButtonStyle = {
-  "&.Mui-disabled": {
-    bgcolor: "secondary.main",
-    color: "white",
-  },
-};
 
 const INITIAL_PAGE_NUMBER = 0;
 const STATIC_PAGES = 3;
 const GEN_PAGES = 4;
 
-const getButtonText = (
-  isLoading: boolean,
-  isLastPage: boolean,
-  loadingMessage: string
-) => {
-  if (isLoading) {
-    return loadingMessage;
-  }
-  if (isLastPage) {
-    return "Submit";
-  }
-  return "Next";
-};
-
 const CreateCollectionForm = (): JSX.Element => {
   const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
-  const { active, account } = useWeb3React();
+  const { active, account, chainId, library } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const [alertMessage, setAlertMessage] = useState("");
-  const [alertSeverity] = useState<AlertColor>("success");
+  const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const IS_LAST_PAGE =
     pageNumber === (generative ? GEN_PAGES - 1 : STATIC_PAGES - 1);
@@ -81,6 +65,12 @@ const CreateCollectionForm = (): JSX.Element => {
   const handlePrevPage = () => setPageNumber((prev) => prev - 1);
 
   const closeAlert = () => setAlertMessage("");
+
+  const handleSymbolChange = (e: InputEventT) =>
+    dispatch({
+      type: "CHANGE_SYMBOL",
+      payload: { symbol: e.target.value },
+    });
 
   const handleImageDelete = (deleteId: string) => {
     dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
@@ -115,15 +105,10 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleMintPriceChange = (e: InputEventT) =>
     dispatch({ type: "CHANGE_PRICE", payload: { price: e.target.value } });
 
-  /*   const showFormAlert = (severity: AlertColor, message: string) => {
+  const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
-  }; */
-
-  /*  const handleStateReset = () => {
-    dispatch({ type: "RESET_STATE", payload: { initialState: INITIAL_STATE } });
-    showFormAlert("info", "Form has been reset");
-  }; */
+  };
 
   useEffect(() => {
     if (pageNumber <= 1) {
@@ -138,28 +123,35 @@ const CreateCollectionForm = (): JSX.Element => {
       return;
     }
 
-    if (!(active && account)) {
+    if (!active || !account || !chainId) {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
 
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-    // TODO: Handle error from uploadImages
-    await uploadImages(state.images, account, state.collectionName);
-    setLoadingMessage("Saving...");
-    // TODO: Link saving collection & deploying to server
-    // const UPLOADING_DURATION = 3000;
-    // setTimeout(() => setLoadingMessage("Saving..."), UPLOADING_DURATION);
-    // const SAVING_DURATION = 3000;
-    // setTimeout(
-    //   () => setLoadingMessage("Deploying..."),
-    //   UPLOADING_DURATION + SAVING_DURATION
-    // );
-    // const DEPLOYING_DURATION = 3000;
-    // setTimeout(() => {
-    //   stopLoading();
-    //   showFormAlert("success", "Minting Successful");
-    // }, UPLOADING_DURATION + SAVING_DURATION + DEPLOYING_DURATION);
+
+    try {
+      await uploadImages(state.images, account, state.collectionName);
+      setLoadingMessage("Saving...");
+      const tx = await uploadCollection(state, account, chainId);
+      const signer = library.getSigner();
+      setLoadingMessage("Deploying...");
+      const txResponse = await signer.sendTransaction(tx);
+      setLoadingMessage("Confirming...");
+      const txReceipt = await txResponse.wait();
+      addDeployedAddress(
+        account,
+        state.collectionName,
+        txReceipt.contractAddress
+      );
+      showFormAlert("success", "Collection Creation Successful");
+      stopLoading(setLoadingMessage, setIsLoading);
+      setSuccess(true);
+    } catch (error) {
+      console.error(error);
+      stopLoading(setLoadingMessage, setIsLoading);
+      showFormAlert("error", "Unable to create collection");
+    }
   };
 
   const alertBox = (
@@ -183,35 +175,9 @@ const CreateCollectionForm = (): JSX.Element => {
     </Collapse>
   );
 
-  const formButtons = (
-    <Box sx={buttonsWrapperStyle}>
-      <Button
-        startIcon={<ClearIcon />}
-        data-testid="reset"
-        disabled={isLoading || pageNumber === INITIAL_PAGE_NUMBER}
-        color="error"
-        size="large"
-        variant="contained"
-        type="reset"
-        onClick={handlePrevPage}>
-        Back
-      </Button>
-      {pageNumber !== 1 && (
-        <LoadingButton
-          sx={loadingButtonStyle}
-          loading={isLoading}
-          loadingPosition="end"
-          type="submit"
-          endIcon={IS_LAST_PAGE ? <DoneIcon /> : <NavigateNextIcon />}
-          color="success"
-          size="large"
-          data-testid="submit-btn"
-          variant="contained">
-          {getButtonText(isLoading, IS_LAST_PAGE, loadingMessage)}
-        </LoadingButton>
-      )}
-    </Box>
-  );
+  if (success) {
+    return <Redirect to={`/${account}/${state.collectionName}`} />;
+  }
 
   return (
     <Stack
@@ -226,6 +192,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleCollNameChange={handleCollNameChange}
         handleDescriptionChange={handleDescriptionChange}
         handleMintPriceChange={handleMintPriceChange}
+        handleSymbolChange={handleSymbolChange}
       />
       <TypeOfArtStep
         handleNextPage={handleNextPage}
@@ -251,10 +218,15 @@ const CreateCollectionForm = (): JSX.Element => {
         pageNumber={pageNumber}
         state={state}
       />
-
       <Box sx={formFooterStyle}>
         {alertBox}
-        {formButtons}
+        <FormButtons
+          isLoading={isLoading}
+          loadingMessage={loadingMessage}
+          handlePrevPage={handlePrevPage}
+          isLastPage={IS_LAST_PAGE}
+          pageNumber={pageNumber}
+        />
       </Box>
     </Stack>
   );

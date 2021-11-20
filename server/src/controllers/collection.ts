@@ -58,18 +58,38 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
 };
 
 export const deployContracts: RequestHandler = (req, res) => {
-  const { name, symbol, tokens, price, fromAddress }: CollectionT & UserT =
-    req.body;
+  const {
+    name,
+    symbol,
+    tokens,
+    price,
+    fromAddress,
+    chainId,
+  }: CollectionT & UserT = req.body;
   const signer = new ethers.VoidSigner(fromAddress);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/${fromAddress}/${name}/`,
+    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${fromAddress}/${name}/`,
     tokens.length,
     BigNumber.from(price)
   );
+  tx.chainId = chainId;
+  tx.from = fromAddress;
   res.json({ transaction: tx });
+};
+
+const getCollectionsFromDB = async (
+  fromAddress: string
+): Promise<CollectionT[]> => {
+  const user = await User.findOne({
+    fromAddress: fromAddress,
+  }).exec();
+  if (!user) {
+    throw new Error("User not found");
+  }
+  return user.collections;
 };
 
 export const getCollections: RequestHandler = async (req, res, next) => {
@@ -77,11 +97,27 @@ export const getCollections: RequestHandler = async (req, res, next) => {
   if (!fromAddress) {
     return next(new Error("Invalid params"));
   }
-  const user = await User.findOne({
-    fromAddress: fromAddress,
-  }).exec();
-  if (!user) {
-    return next(new Error("User not found"));
+  try {
+    const collections = await getCollectionsFromDB(fromAddress);
+    return res.json({ collections });
+  } catch (error) {
+    return next(error);
   }
-  return res.json({ collections: user.collections });
+};
+
+export const getCollection: RequestHandler = async (req, res, next) => {
+  const { fromAddress, collectionName } = req.params;
+  if (!fromAddress || !collectionName) {
+    return next(new Error("Invalid params"));
+  }
+  try {
+    const collections = await getCollectionsFromDB(fromAddress);
+    const collection = collections.filter((col) => col.name === collectionName);
+    if (collection.length === 0) {
+      return next(new Error("Collection not found"));
+    }
+    return res.json({ collection: collection[0] });
+  } catch (error) {
+    return next(error);
+  }
 };

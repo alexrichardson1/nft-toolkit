@@ -9,7 +9,7 @@ export const collectionValidator: () => ValidationChain[] = () => {
   return [
     check("name")
       .notEmpty()
-      .isAlphanumeric()
+      .isAlphanumeric(void 0, { ignore: " " })
       .withMessage("Invalid name, must be only alphanumeric"),
     check("symbol").notEmpty().isAlphanumeric(),
     check("description").notEmpty().escape(),
@@ -21,19 +21,27 @@ export const collectionValidator: () => ValidationChain[] = () => {
   ];
 };
 
+const invalidFromAddress = check("fromAddress")
+  .isEthereumAddress()
+  .withMessage("Invalid address");
+
+const invalidCollectionName = check("collectionName")
+  .notEmpty()
+  .isAlphanumeric(void 0, { ignore: " " })
+  .withMessage("Invalid name, must be only alphanumeric");
+
 export const deployedValidator: () => ValidationChain[] = () => {
   return [
-    check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
+    invalidFromAddress,
     check("deployedAddress").isEthereumAddress().withMessage("Invalid address"),
-    check("collectionName")
-      .notEmpty()
-      .isAlphanumeric()
-      .withMessage("Invalid name, must be only alphanumeric"),
+    invalidCollectionName,
   ];
 };
 
 export const getCollectionsValidator: () => ValidationChain[] = () => {
-  return [
-    check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
-  ];
+  return [invalidFromAddress];
+};
+
+export const getCollectionValidator: () => ValidationChain[] = () => {
+  return [invalidFromAddress, invalidCollectionName];
 };

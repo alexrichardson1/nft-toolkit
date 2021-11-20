@@ -14,6 +14,7 @@ interface PropsT {
   handleCollNameChange: (e: InputEventT) => void;
   handleDescriptionChange: (e: InputEventT) => void;
   handleMintPriceChange: (e: InputEventT) => void;
+  handleSymbolChange: (e: InputEventT) => void;
 }
 
 const priceInputProps = (selectedNet: NetworkT) => ({
@@ -31,6 +32,7 @@ const GeneralInfo = ({
   handleCollNameChange,
   handleMintPriceChange,
   handleDescriptionChange,
+  handleSymbolChange,
 }: PropsT): JSX.Element => {
   if (pageNumber !== 0) {
     return <></>;
@@ -49,7 +51,16 @@ const GeneralInfo = ({
           required
         />
       </Paper>
-
+      <Paper>
+        <Input
+          inputProps={{ "data-testid": "symbol-input" }}
+          value={state.symbol}
+          onChange={handleSymbolChange}
+          placeholder="Enter a symbol"
+          label="Symbol"
+          required
+        />
+      </Paper>
       <Paper>
         <Input
           inputProps={{ "data-testid": "description-input" }}

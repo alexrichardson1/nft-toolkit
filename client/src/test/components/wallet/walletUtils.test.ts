@@ -20,16 +20,16 @@ describe("walletUtils unit tests", () => {
   test("Check that updateNetwork updates network based on chainId", () => {
     const setSelectedNet = jest.fn();
     const showSnackbar = jest.fn();
-    const ETH_ID = 1;
+    const ETH_ID = 4;
     updateNetwork(ETH_ID, setSelectedNet, showSnackbar);
     expect(setSelectedNet).toHaveBeenCalledWith({
       name: "Ethereum",
       icon: EthereumLogo,
-      chainId: 1,
+      chainId: 4,
     });
     expect(showSnackbar).toHaveBeenCalledWith(
       "success",
-      "Connected to Ethereum Mainnet"
+      "Connected to Rinkeby Testnet"
     );
   });
 

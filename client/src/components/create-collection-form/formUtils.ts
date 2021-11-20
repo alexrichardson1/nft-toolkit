@@ -1,4 +1,7 @@
 import axios from "axios";
+import { UnsignedTransaction } from "ethers";
+import { parseUnits } from "ethers/lib/utils";
+import { API_URL } from "utils/constants";
 
 export const startLoading = (
   setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
@@ -33,11 +36,57 @@ export const uploadImages = async (
     formData.append(`${account}/${collectionName}`, newFile);
   });
 
-  try {
-    await axios.post("http://localhost:5000/collection/images", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  await axios.post(`${API_URL}/collection/images`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+};
+
+interface StateT {
+  collectionName: string;
+  description: string;
+  images: ImageT[];
+  symbol: string;
+  mintingPrice: number;
+}
+
+interface TransactionT {
+  transaction: UnsignedTransaction;
+}
+
+export const uploadCollection = async (
+  state: StateT,
+  account: string,
+  chainId: number
+): Promise<UnsignedTransaction> => {
+  const tokens = state.images.map((image, index) => ({
+    name: image.name,
+    description: "",
+    image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${account}/${
+      state.collectionName
+    }/images/${index + 1}.${image.image.name.split(".").pop()}`,
+  }));
+
+  const collection = {
+    name: state.collectionName,
+    symbol: state.symbol,
+    description: state.description,
+    price: parseUnits(`${state.mintingPrice}`).toString(),
+    chainId: chainId,
+    tokens: tokens,
+    fromAddress: account,
+  };
+
+  const res = await axios.post(`${API_URL}/collection/save`, collection);
+  const tx: TransactionT = res.data;
+  return tx.transaction;
+};
+
+export const addDeployedAddress = async (
+  fromAddress: string,
+  collectionName: string,
+  deployedAddress: string
+): Promise<void> => {
+  await axios.post(
+    `${API_URL}/collection/deployed/${fromAddress}/${collectionName}/${deployedAddress}`
+  );
 };

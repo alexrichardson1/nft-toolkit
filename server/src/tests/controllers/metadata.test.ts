@@ -21,7 +21,7 @@ let mockUser: Document<unknown, unknown, UserT> &
 const getMockRequest = ({
   fromAddress = mockFromAddress,
   collectionName = mockInvalidCollectionName,
-  tokenId = "1",
+  tokenId = "0",
 }: {
   fromAddress?: string;
   collectionName?: string;

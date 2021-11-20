@@ -33,6 +33,15 @@ def check_disable_linter(
             f"too many linter disable comments (+{counter - MAX_DISABLES})")
 
 
+def remove_typechain(files):
+    """Removes typechain files from the files list"""
+    result = []
+    for f in files:
+        if "typechain" not in f:
+            result.append(f)
+    return result
+
+
 def eslint_disabled():
     """Counts the number of eslint disabled comments in a project"""
     files = glob("client/src/**/*.js", recursive=True)
@@ -40,7 +49,7 @@ def eslint_disabled():
     files += glob("client/src/**/*.tsx", recursive=True)
     files += glob("server/src/**/*.js", recursive=True)
     files += glob("server/src/**/*.ts", recursive=True)
-    check_disable_linter(files, 0, "eslint-disable")
+    check_disable_linter(remove_typechain(files), 0, "eslint-disable")
 
 
 def pylint_disabled():

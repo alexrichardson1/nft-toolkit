@@ -39,7 +39,7 @@
     "default-case-last": "error",
     "dot-notation": "error",
     "eqeqeq": "error",
-    "id-denylist": ["error", "data", "cb", "callback", "temp", "foo", "bar"],
+    "id-denylist": ["error", "cb", "callback", "temp", "foo", "bar"],
     "id-length": [
       "error",
       { "max": 25, "exceptions": ["i", "j", "e", "coveragePathIgnorePatterns"] }

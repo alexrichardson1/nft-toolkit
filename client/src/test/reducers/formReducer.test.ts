@@ -44,6 +44,7 @@ describe("formReducer", () => {
   let initialState: FormStateI = {
     collectionName: "",
     description: "",
+    symbol: "",
     images: [TESTOBJ_IMG0, TESTOBJ_IMG1],
     mintingPrice: 0,
   };
@@ -57,6 +58,7 @@ describe("formReducer", () => {
       imageId: `${TESTOBJ_IMG1.id}`,
     },
     price: "1",
+    symbol: "APES",
     deleteId: TESTOBJ_IMG1.id,
     initialState: initialState,
   };
@@ -65,6 +67,7 @@ describe("formReducer", () => {
     newName: "",
     description: "",
     images: [],
+    symbol: "",
     newImgObj: { newImageName: "", imageId: "" },
     price: "",
     deleteId: "",
@@ -74,6 +77,7 @@ describe("formReducer", () => {
     initialState = {
       collectionName: "",
       description: "",
+      symbol: "",
       images: [TESTOBJ_IMG0, TESTOBJ_IMG1],
       mintingPrice: 0,
     };
@@ -92,6 +96,14 @@ describe("formReducer", () => {
     expected.description = payload.description ?? "";
     expect(
       formReducer(initialState, { type: "CHANGE_DESCRIPTION", payload })
+    ).toMatchObject(expected);
+  });
+
+  test("Symbol is changed", () => {
+    const expected = { ...initialState };
+    expected.symbol = payload.symbol ?? "";
+    expect(
+      formReducer(initialState, { type: "CHANGE_SYMBOL", payload })
     ).toMatchObject(expected);
   });
 
@@ -142,6 +154,12 @@ describe("formReducer", () => {
   test("initialState is returned", () => {
     expect(
       formReducer(initialState, { type: "RESET_STATE", payload })
+    ).toMatchObject(initialState);
+  });
+
+  test("default case", () => {
+    expect(
+      formReducer(initialState, { type: "", payload } as unknown as FormActionI)
     ).toMatchObject(initialState);
   });
 

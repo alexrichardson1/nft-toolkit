@@ -8,3 +8,16 @@ exports[`Generic fallback 1`] = `
   404
 </GenericFallback>
 `;
+
+exports[`Generic fallback false 1`] = `
+<GenericFallback
+  error={false}
+>
+   
+  <div>
+    <p>
+      Hello
+    </p>
+  </div>
+</GenericFallback>
+`;
