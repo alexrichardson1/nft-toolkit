@@ -8,20 +8,22 @@ const labelStyle = (theme: Theme) => ({
   boxShadow: theme.shadows[2],
 });
 interface PropsT {
-  imgObjs: ImageT[];
+  NUMBER_OF_IMAGES: number;
   handleImageDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
   ) => void;
 }
 
-const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
+const ImageUpload = ({
+  NUMBER_OF_IMAGES,
+  handleImageDrop,
+}: PropsT): JSX.Element => {
   const theme = useTheme();
 
   const preventDefault = (e: React.DragEvent<HTMLLabelElement>) =>
     e.preventDefault();
 
-  const NUMBER_OF_IMAGES = imgObjs.length;
   const UPLOAD_INPUT_ID = "upload-images";
 
   return (

@@ -21,7 +21,7 @@ export const stopLoading = (
 };
 
 export const uploadImages = async (
-  images: ImageT[],
+  images: ImageI[],
   account: string,
   collectionName: string
 ): Promise<void> => {
@@ -44,7 +44,7 @@ export const uploadImages = async (
 interface StateT {
   collectionName: string;
   description: string;
-  images: ImageT[];
+  images: ImageI[];
   symbol: string;
   mintingPrice: number;
 }

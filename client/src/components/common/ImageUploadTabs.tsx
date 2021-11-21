@@ -13,7 +13,7 @@ interface PropsT {
   ) => void;
 }
 
-const StaticArtForm = ({
+const ImageUploadTabs = ({
   state,
   handleImageDelete,
   handleImageDrop,
@@ -23,16 +23,20 @@ const StaticArtForm = ({
   return (
     <>
       <Paper>
-        <ImageUpload handleImageDrop={handleImageDrop} imgObjs={state.images} />
+        <ImageUpload
+          handleImageDrop={handleImageDrop}
+          NUMBER_OF_IMAGES={state.static.numberOfImages}
+        />
       </Paper>
 
-      {state.images.length > 0 && (
+      {state.static.numberOfImages > 0 && (
         <Paper>
           <Tabs
+            NUMBER_OF_IMAGES={state.static.numberOfImages}
             isLoading={isLoading}
             handleImageDelete={handleImageDelete}
             handleNameChange={handleImgNameChange}
-            imgObjs={state.images}
+            imgObjs={state.static.images}
           />
         </Paper>
       )}
@@ -40,4 +44,4 @@ const StaticArtForm = ({
   );
 };
 
-export default StaticArtForm;
+export default ImageUploadTabs;
