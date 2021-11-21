@@ -1,9 +1,7 @@
-FROM node:16 as build
+FROM node:16-alpine as build
 WORKDIR /app
-COPY package.json .
-COPY yarn.lock .
-RUN yarn
 COPY . .
+RUN yarn
 RUN yarn run build
 
 FROM nginx
