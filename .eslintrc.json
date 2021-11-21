@@ -91,7 +91,6 @@
     "line-comment-position": ["warn", { "position": "above" }],
     "no-multi-spaces": "error",
     // Other
-    "react/react-in-jsx-scope": "off",
     "tsdoc/syntax": "warn"
   },
   "root": true
