@@ -11,6 +11,7 @@ const SvgLogo = (props: PropsT): JSX.Element => (
     width={props.width}
     height={props.height}
     src={props.icon}
+    alt="logo"
   />
 );
 

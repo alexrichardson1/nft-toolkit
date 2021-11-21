@@ -76,5 +76,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    }
   }
 }

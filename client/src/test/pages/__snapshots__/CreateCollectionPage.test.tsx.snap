@@ -7535,6 +7535,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                                                         width={25}
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height={25}
                                                           src="ethereum-logo.svg"
                                                           style={

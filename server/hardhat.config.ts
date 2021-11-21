@@ -1,3 +1,4 @@
+import "@nomiclabs/hardhat-ethers";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "solidity-coverage";
@@ -17,5 +18,9 @@ export default {
   },
   paths: {
     root: "./smart-contracts",
+  },
+  typechain: {
+    target: "ethers-v5",
+    alwaysGenerateOverloads: false,
   },
 };
