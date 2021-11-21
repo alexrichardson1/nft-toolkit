@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import CloseIcon from "@mui/icons-material/Close";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -5,7 +6,6 @@ import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
-import { Redirect } from "react-router";
 import formReducer from "reducers/formReducer";
 import {
   DEFAULT_ALERT_DURATION,
@@ -18,20 +18,15 @@ import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormButtons from "./FormButtons";
-import {
-  addDeployedAddress,
-  startLoading,
-  stopLoading,
-  uploadCollection,
-  uploadImages,
-} from "./formUtils";
+import { startLoading, stopLoading } from "./formUtils";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  images: [],
   mintingPrice: 0,
+  static: { images: {}, numberOfImages: 0 },
+  generative: { layers: {}, numberOfLayers: 0 },
 };
 
 const alertContainerStyle = { flexGrow: 1 };
@@ -47,10 +42,10 @@ const STATIC_PAGES = 3;
 const GEN_PAGES = 4;
 
 const CreateCollectionForm = (): JSX.Element => {
-  const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
   const { active, account, chainId, library } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
+  const [pageNumber, setPageNumber] = useState(INITIAL_PAGE_NUMBER);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
@@ -66,6 +61,18 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const closeAlert = () => setAlertMessage("");
 
+  const handleLayerAddition = (newLayerName: string) => {
+    dispatch({
+      type: "ADD_LAYER",
+      payload: { newLayer: { name: newLayerName } },
+    });
+  };
+  const handleLayerReorder = (oldIndex: number, newIndex: number) => {
+    dispatch({
+      type: "CHANGE_PRECEDENCE",
+      payload: { precedence: { oldIndex, newIndex } },
+    });
+  };
   const handleSymbolChange = (e: InputEventT) =>
     dispatch({
       type: "CHANGE_SYMBOL",
@@ -79,7 +86,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleImgNameChange = (e: InputEventT, id: string) =>
     dispatch({
       type: "CHANGE_IMAGE_NAME",
-      payload: { newImgObj: { newImageName: e.target.value, imageId: id } },
+      payload: { modifyImgObj: { newImageName: e.target.value, imageId: id } },
     });
 
   const handleImageDrop = (
@@ -89,7 +96,7 @@ const CreateCollectionForm = (): JSX.Element => {
     e.preventDefault();
     dispatch({
       type: "CHANGE_IMAGES",
-      payload: { images: Array.from(imgObjs ?? []) },
+      payload: { newImagesStatic: Array.from(imgObjs ?? []) },
     });
   };
 
@@ -116,7 +123,7 @@ const CreateCollectionForm = (): JSX.Element => {
     }
   }, [pageNumber]);
 
-  const handleFormSubmit = async (e: FormEvent) => {
+  const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!IS_LAST_PAGE) {
       handleNextPage();
@@ -129,21 +136,22 @@ const CreateCollectionForm = (): JSX.Element => {
     }
 
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
+    console.log(state);
 
     try {
-      await uploadImages(state.images, account, state.collectionName);
+      // await uploadImages(state.static.images, account, state.collectionName);
       setLoadingMessage("Saving...");
-      const tx = await uploadCollection(state, account, chainId);
-      const signer = library.getSigner();
+      // const tx = await uploadCollection(state, account, chainId);
+      // const signer = library.getSigner();
       setLoadingMessage("Deploying...");
-      const txResponse = await signer.sendTransaction(tx);
+      // const txResponse = await signer.sendTransaction(tx);
       setLoadingMessage("Confirming...");
-      const txReceipt = await txResponse.wait();
-      addDeployedAddress(
-        account,
-        state.collectionName,
-        txReceipt.contractAddress
-      );
+      // const txReceipt = await txResponse.wait();
+      // addDeployedAddress(
+      //   account,
+      //   state.collectionName,
+      //   txReceipt.contractAddress
+      // );
       showFormAlert("success", "Collection Creation Successful");
       stopLoading(setLoadingMessage, setIsLoading);
       setSuccess(true);
@@ -175,9 +183,9 @@ const CreateCollectionForm = (): JSX.Element => {
     </Collapse>
   );
 
-  if (success) {
-    return <Redirect to={`/${account}/${state.collectionName}`} />;
-  }
+  // if (success) {
+  //   return <Redirect to={`/${account}/${state.collectionName}`} />;
+  // }
 
   return (
     <Stack
@@ -209,9 +217,11 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgNameChange={handleImgNameChange}
       />
       <GenArtOrdering
+        handleLayerReorder={handleLayerReorder}
         generative={generative}
         pageNumber={pageNumber}
         state={state}
+        handleLayerAddition={handleLayerAddition}
       />
       <GenArtStep
         generative={generative}
