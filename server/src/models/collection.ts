@@ -50,4 +50,5 @@ export const collectionSchema = new Schema<CollectionT>({
 });
 
 export const Token = model("Token", tokenSchema);
+export const Layer = model("Layer", layerSchema);
 export const Collection = model("Collection", collectionSchema);
