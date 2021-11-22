@@ -175,7 +175,7 @@ const MintingPage = (): JSX.Element => {
       }
     }
     getCollectionData();
-  });
+  }, [collectionName, dispatch, fromAddress]);
 
   if (error) {
     // TODO: handle invalid collection
