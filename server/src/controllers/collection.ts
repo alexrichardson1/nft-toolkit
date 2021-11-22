@@ -31,11 +31,6 @@ export const uploadImages = multer({
 export const successHandler: RequestHandler = (_req, res) =>
   res.json({ success: true });
 
-type address = `0x${string}`;
-interface UserT {
-  fromAddress: address;
-}
-
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT = req.body;
   userCollection.tokens.map((token) => new Token(token));
@@ -45,26 +40,32 @@ export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   next();
 };
 
+interface CollectionInfo {
+  name: string;
+  symbol: string;
+  price: string;
+}
+
 export const deployContracts: RequestHandler = (req, res) => {
   const {
     name,
     symbol,
     tokens,
     price,
-    fromAddress,
+    creator,
     chainId,
-  }: CollectionT & UserT = req.body;
-  const signer = new ethers.VoidSigner(fromAddress);
+  }: CollectionT & CollectionInfo = req.body;
+  const signer = new ethers.VoidSigner(creator);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${fromAddress}/${name}/`,
+    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${chainId}/`,
     tokens.length,
     BigNumber.from(price)
   );
   tx.chainId = chainId;
-  tx.from = fromAddress;
+  tx.from = creator;
   res.json({ transaction: tx });
 };
 
