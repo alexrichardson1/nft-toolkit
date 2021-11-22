@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { DragEndEvent } from "@dnd-kit/core";
 import CloseIcon from "@mui/icons-material/Close";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -26,7 +27,7 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: 0,
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: {}, numberOfLayers: 0 },
+  generative: { layers: [], numberOfLayers: 0 },
 };
 
 const alertContainerStyle = { flexGrow: 1 };
@@ -58,19 +59,23 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const handleNextPage = () => setPageNumber((prev) => prev + 1);
   const handlePrevPage = () => setPageNumber((prev) => prev - 1);
-
   const closeAlert = () => setAlertMessage("");
-
   const handleLayerAddition = (newLayerName: string) => {
     dispatch({
       type: "ADD_LAYER",
       payload: { newLayer: { name: newLayerName } },
     });
   };
-  const handleLayerReorder = (oldIndex: number, newIndex: number) => {
+  const handleLayerReorder = (e: DragEndEvent) => {
     dispatch({
       type: "CHANGE_PRECEDENCE",
-      payload: { precedence: { oldIndex, newIndex } },
+      payload: { dragEndEvent: e },
+    });
+  };
+  const handleLayerRemoval = (layerId: string) => {
+    dispatch({
+      type: "REMOVE_LAYER",
+      payload: { deleteLayerId: layerId },
     });
   };
   const handleSymbolChange = (e: InputEventT) =>
@@ -78,17 +83,14 @@ const CreateCollectionForm = (): JSX.Element => {
       type: "CHANGE_SYMBOL",
       payload: { symbol: e.target.value },
     });
-
   const handleImageDelete = (deleteId: string) => {
     dispatch({ type: "DELETE_IMAGE", payload: { deleteId } });
   };
-
   const handleImgNameChange = (e: InputEventT, id: string) =>
     dispatch({
       type: "CHANGE_IMAGE_NAME",
       payload: { modifyImgObj: { newImageName: e.target.value, imageId: id } },
     });
-
   const handleImageDrop = (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
@@ -99,19 +101,15 @@ const CreateCollectionForm = (): JSX.Element => {
       payload: { newImagesStatic: Array.from(imgObjs ?? []) },
     });
   };
-
   const handleCollNameChange = (e: InputEventT) =>
     dispatch({ type: "CHANGE_NAME", payload: { newName: e.target.value } });
-
   const handleDescriptionChange = (e: InputEventT) =>
     dispatch({
       type: "CHANGE_DESCRIPTION",
       payload: { description: e.target.value },
     });
-
   const handleMintPriceChange = (e: InputEventT) =>
     dispatch({ type: "CHANGE_PRICE", payload: { price: e.target.value } });
-
   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
@@ -217,6 +215,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgNameChange={handleImgNameChange}
       />
       <GenArtOrdering
+        handleLayerRemoval={handleLayerRemoval}
         handleLayerReorder={handleLayerReorder}
         generative={generative}
         pageNumber={pageNumber}

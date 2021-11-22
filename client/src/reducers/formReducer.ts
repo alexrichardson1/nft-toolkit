@@ -1,6 +1,34 @@
+/* eslint-disable no-case-declarations */
+import { arrayMove } from "@dnd-kit/sortable";
+
 const FILE_EXTENSION = /\.[^/.]+$/;
 const DEFAULT_STRING = "";
-const DEFAULT_FILE_ARRAY: File[] = [];
+
+const getImgId = (name: string, size: number) => size + name;
+
+const getImgObj = (image: File) => ({
+  name: image.name.replace(FILE_EXTENSION, ""),
+  url: URL.createObjectURL(image),
+  image: image,
+});
+
+const getLayerId = (name: string) => name;
+
+const getLayerObj = (name: string): LayerI => ({
+  layerId: getLayerId(name),
+  name: name,
+  images: {},
+  numberOfImages: 0,
+});
+
+const INITIAL_STATE: FormStateI = {
+  collectionName: "",
+  description: "",
+  symbol: "",
+  mintingPrice: 0,
+  static: { images: {}, numberOfImages: 0 },
+  generative: { layers: [], numberOfLayers: 0 },
+};
 
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   switch (action.type) {
@@ -15,53 +43,78 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         description: action.payload.description ?? DEFAULT_STRING,
       };
     case "CHANGE_SYMBOL":
-      return {
-        ...state,
-        symbol: action.payload.symbol ?? DEFAULT_STRING,
-      };
+      return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
     case "CHANGE_IMAGES":
-      return {
-        ...state,
-        images: [
-          ...state.images,
-          ...(action.payload.images ?? DEFAULT_FILE_ARRAY).map((newImage) => ({
-            image: newImage,
-            url: URL.createObjectURL(newImage),
-            name: newImage.name.replace(FILE_EXTENSION, ""),
-            id: newImage.name + newImage.size,
-          })),
-        ],
-      };
+      action.payload.newImagesStatic?.forEach((newImg) => {
+        state.static.images[getImgId(newImg.name, newImg.size)] =
+          getImgObj(newImg);
+        state.static.numberOfImages++;
+      });
+      return { ...state };
     case "CHANGE_IMAGE_NAME":
-      return {
-        ...state,
-        images: state.images.map((imgObj) => {
-          if (
-            action.payload.newImgObj &&
-            imgObj.id === action.payload.newImgObj.imageId
-          ) {
-            return {
-              ...imgObj,
-              name: action.payload.newImgObj.newImageName,
-            };
-          }
-          return imgObj;
-        }),
-      };
+      if (!action.payload.modifyImgObj) {
+        throw new Error("modifyImgObj required");
+      }
+
+      const img = state.static.images[action.payload.modifyImgObj.imageId];
+      if (!img) {
+        throw new Error("Image does not exist");
+      }
+      img.name = action.payload.modifyImgObj.newImageName;
+      return { ...state };
+    case "ADD_LAYER":
+      if (!action.payload.newLayer) {
+        throw new Error("newLayer required");
+      }
+      state.generative.layers = [
+        ...state.generative.layers,
+        getLayerObj(action.payload.newLayer.name),
+      ];
+      state.generative.numberOfLayers++;
+      return { ...state };
+    case "REMOVE_LAYER":
+      if (!action.payload.deleteLayerId) {
+        throw new Error("deleteLayerId required");
+      }
+      state.generative.layers = state.generative.layers.filter(
+        (layer) => layer.layerId !== action.payload.deleteLayerId
+      );
+      return { ...state };
+    case "CHANGE_IMAGES_GEN":
+      return { ...state };
+    case "CHANGE_PRECEDENCE":
+      if (!action.payload.dragEndEvent) {
+        throw new Error("dragEndEvent required");
+      }
+      const { active, over } = action.payload.dragEndEvent;
+      if (active.id !== over.id) {
+        const oldIdx = state.generative.layers.findIndex(
+          (layer) => layer.layerId === active.id
+        );
+        const newIdx = state.generative.layers.findIndex(
+          (layer) => layer.layerId === over.id
+        );
+        state.generative.layers = arrayMove(
+          state.generative.layers,
+          oldIdx,
+          newIdx
+        );
+      }
+      return { ...state };
     case "DELETE_IMAGE":
-      return {
-        ...state,
-        images: state.images.filter(
-          (imgObj) => imgObj.id !== action.payload.deleteId
-        ),
-      };
+      if (!action.payload.deleteId) {
+        throw new Error("deleteId required");
+      }
+      delete state.static.images[action.payload.deleteId];
+      state.static.numberOfImages--;
+      return { ...state };
     case "CHANGE_PRICE":
       return {
         ...state,
         mintingPrice: Number(action.payload.price ?? DEFAULT_STRING),
       };
     case "RESET_STATE":
-      return action.payload.initialState ?? state;
+      return INITIAL_STATE;
     default:
       return state;
   }

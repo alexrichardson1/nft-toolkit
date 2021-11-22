@@ -19,16 +19,12 @@ type ImageT = { [imageId: string]: ImageI };
 
 type LayerImageT = { [imageId: string]: ImageI & { rarity?: number } };
 interface LayerI {
+  layerId: string;
   name: string;
   description?: string;
   images: LayerImageT;
   numberOfImages: number;
-  precedence: number;
 }
-
-type LayerT = {
-  [layerId: string]: LayerI;
-};
 
 interface FormStateI {
   collectionName: string;
@@ -36,7 +32,7 @@ interface FormStateI {
   symbol: string;
   mintingPrice: number;
   static: { numberOfImages: number; images: ImageT };
-  generative: { numberOfLayers: number; layers: LayerT };
+  generative: { numberOfLayers: number; layers: LayerI[] };
 }
 
 type FormActionT =
@@ -52,7 +48,8 @@ type FormActionT =
   | "CHANGE_IMAGE_NAME_GEN"
   | "DELETE_IMAGE_GEN"
   | "ADD_LAYER"
-  | "CHANGE_PRECEDENCE";
+  | "CHANGE_PRECEDENCE"
+  | "REMOVE_LAYER";
 
 interface FormActionPayloadI {
   newName?: string;
@@ -64,7 +61,8 @@ interface FormActionPayloadI {
   newImagesStatic?: File[];
   modifyImgObj?: { newImageName: string; imageId: string };
   deleteId?: string;
-  precedence?: { oldIndex: number; newIndex: number };
+  dragEndEvent?: DragEndEvent;
+  deleteLayerId?: string;
 }
 
 interface FormActionI {
