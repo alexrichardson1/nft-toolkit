@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 import { arrayMove } from "@dnd-kit/sortable";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
@@ -37,13 +36,16 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         collectionName: action.payload.newName ?? DEFAULT_STRING,
       };
+
     case "CHANGE_DESCRIPTION":
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
       };
+
     case "CHANGE_SYMBOL":
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
+
     case "CHANGE_IMAGES":
       action.payload.newImagesStatic?.forEach((newImg) => {
         state.static.images[getImgId(newImg.name, newImg.size)] =
@@ -51,17 +53,20 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         state.static.numberOfImages++;
       });
       return { ...state };
-    case "CHANGE_IMAGE_NAME":
+
+    case "CHANGE_IMAGE_NAME": {
       if (!action.payload.modifyImgObj) {
         throw new Error("modifyImgObj required");
       }
 
       const img = state.static.images[action.payload.modifyImgObj.imageId];
-      if (!img) {
+      if (img) {
+        img.name = action.payload.modifyImgObj.newImageName;
         throw new Error("Image does not exist");
       }
-      img.name = action.payload.modifyImgObj.newImageName;
       return { ...state };
+    }
+
     case "ADD_LAYER":
       if (!action.payload.newLayer) {
         throw new Error("newLayer required");
@@ -72,6 +77,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       ];
       state.generative.numberOfLayers++;
       return { ...state };
+
     case "REMOVE_LAYER":
       if (!action.payload.deleteLayerId) {
         throw new Error("deleteLayerId required");
@@ -80,9 +86,11 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         (layer) => layer.layerId !== action.payload.deleteLayerId
       );
       return { ...state };
+
     case "CHANGE_IMAGES_GEN":
       return { ...state };
-    case "CHANGE_PRECEDENCE":
+
+    case "CHANGE_PRECEDENCE": {
       if (!action.payload.dragEndEvent) {
         throw new Error("dragEndEvent required");
       }
@@ -101,6 +109,8 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         );
       }
       return { ...state };
+    }
+
     case "DELETE_IMAGE":
       if (!action.payload.deleteId) {
         throw new Error("deleteId required");
@@ -108,13 +118,16 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       delete state.static.images[action.payload.deleteId];
       state.static.numberOfImages--;
       return { ...state };
+
     case "CHANGE_PRICE":
       return {
         ...state,
         mintingPrice: Number(action.payload.price ?? DEFAULT_STRING),
       };
+
     case "RESET_STATE":
       return INITIAL_STATE;
+
     default:
       throw new Error("Invalid action provided");
   }
