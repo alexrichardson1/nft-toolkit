@@ -13385,6 +13385,7 @@ exports[`App snapshot 1`] = `
                               "display": "flex",
                               "minHeight": "calc(100vh - 90px)",
                               "py": 3,
+                              "width": 1,
                             }
                           }
                         >
@@ -13414,6 +13415,7 @@ exports[`App snapshot 1`] = `
                                 "display": "flex",
                                 "minHeight": "calc(100vh - 90px)",
                                 "py": 3,
+                                "width": 1,
                               }
                             }
                             theme={
@@ -13734,7 +13736,7 @@ exports[`App snapshot 1`] = `
                           >
                             <Noop />
                             <div
-                              className="MuiBox-root css-10trh4a"
+                              className="MuiBox-root css-15y6hkg"
                             >
                               <ForwardRef(Container)
                                 sx={

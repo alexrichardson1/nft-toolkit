@@ -652,11 +652,13 @@ exports[`GeneralInfoStep Page Number does not match 1`] = `
                   "collectionName": "",
                   "description": "",
                   "generative": Object {
-                    "layers": Object {},
+                    "layers": Array [],
+                    "numberOfLayers": 0,
                   },
                   "mintingPrice": 0,
                   "static": Object {
                     "images": Object {},
+                    "numberOfImages": 0,
                   },
                   "symbol": "",
                 }
@@ -1322,11 +1324,13 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                   "collectionName": "",
                   "description": "",
                   "generative": Object {
-                    "layers": Object {},
+                    "layers": Array [],
+                    "numberOfLayers": 0,
                   },
                   "mintingPrice": 0,
                   "static": Object {
                     "images": Object {},
+                    "numberOfImages": 0,
                   },
                   "symbol": "",
                 }

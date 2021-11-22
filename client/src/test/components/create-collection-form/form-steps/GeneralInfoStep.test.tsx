@@ -10,8 +10,8 @@ const INITIAL_STATE: FormStateI = {
   description: "",
   symbol: "",
   mintingPrice: 0,
-  static: { images: {} },
-  generative: { layers: {} },
+  static: { images: {}, numberOfImages: 0 },
+  generative: { layers: [], numberOfLayers: 0 },
 };
 
 describe("GeneralInfoStep", () => {

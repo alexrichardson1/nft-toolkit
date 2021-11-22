@@ -642,8 +642,8 @@ exports[`ImageUpload snapshot 1`] = `
             getLibrary={[Function]}
           >
             <ImageUpload
+              NUMBER_OF_IMAGES={0}
               handleImageDrop={[MockFunction]}
-              imgObjs={Array []}
             >
               <label
                 className="img-upload-label"

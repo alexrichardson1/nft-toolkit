@@ -653,7 +653,7 @@ exports[`StaticArtStep generative does not match 1`] = `
                   "collectionName": "",
                   "description": "",
                   "generative": Object {
-                    "layers": Object {},
+                    "layers": Array [],
                     "numberOfLayers": 0,
                   },
                   "mintingPrice": 0,
@@ -1326,7 +1326,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                   "collectionName": "",
                   "description": "",
                   "generative": Object {
-                    "layers": Object {},
+                    "layers": Array [],
                     "numberOfLayers": 0,
                   },
                   "mintingPrice": 0,
@@ -1348,7 +1348,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     "collectionName": "",
                     "description": "",
                     "generative": Object {
-                      "layers": Object {},
+                      "layers": Array [],
                       "numberOfLayers": 0,
                     },
                     "mintingPrice": 0,
@@ -2176,7 +2176,7 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                   "collectionName": "",
                   "description": "",
                   "generative": Object {
-                    "layers": Object {},
+                    "layers": Array [],
                     "numberOfLayers": 0,
                   },
                   "mintingPrice": 0,

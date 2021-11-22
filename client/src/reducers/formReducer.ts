@@ -4,17 +4,17 @@ import { arrayMove } from "@dnd-kit/sortable";
 const FILE_EXTENSION = /\.[^/.]+$/;
 const DEFAULT_STRING = "";
 
-const getImgId = (name: string, size: number) => size + name;
+export const getImgId = (name: string, size: number): string => size + name;
 
-const getImgObj = (image: File) => ({
+export const getImgObj = (image: File): ImageI => ({
   name: image.name.replace(FILE_EXTENSION, ""),
   url: URL.createObjectURL(image),
   image: image,
 });
 
-const getLayerId = (name: string) => name;
+export const getLayerId = (name: string): string => name;
 
-const getLayerObj = (name: string): LayerI => ({
+export const getLayerObj = (name: string): LayerI => ({
   layerId: getLayerId(name),
   name: name,
   images: {},
@@ -116,7 +116,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     case "RESET_STATE":
       return INITIAL_STATE;
     default:
-      return state;
+      throw new Error("Invalid action provided");
   }
 };
 

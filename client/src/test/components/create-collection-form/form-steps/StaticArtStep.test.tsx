@@ -11,7 +11,7 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: 0,
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: {}, numberOfLayers: 0 },
+  generative: { layers: [], numberOfLayers: 0 },
 };
 
 describe("StaticArtStep", () => {

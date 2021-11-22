@@ -17,7 +17,7 @@ test("ImageUpload snapshot", () => {
     <ThemeProvider>
       <NetworkProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
-          <ImageUpload imgObjs={[]} handleImageDrop={jest.fn()} />
+          <ImageUpload NUMBER_OF_IMAGES={0} handleImageDrop={jest.fn()} />
         </Web3ReactProvider>
       </NetworkProvider>
     </ThemeProvider>
@@ -28,12 +28,6 @@ test("ImageUpload snapshot", () => {
 describe("ImageUpload unit tests", () => {
   let tree: RenderResult<typeof Queries, HTMLElement>;
   let mockHandleImageDrop: jest.Mock<unknown, unknown[]>;
-  const mockImgObj = {
-    url: "testUrl",
-    name: "testName",
-    id: "testName.png3",
-    image: new File(["foo"], "testImg", { type: "image/png" }),
-  };
 
   beforeEach(() => {
     mockHandleImageDrop = jest.fn();
@@ -42,7 +36,7 @@ describe("ImageUpload unit tests", () => {
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
             <ImageUpload
-              imgObjs={[mockImgObj]}
+              NUMBER_OF_IMAGES={1}
               handleImageDrop={mockHandleImageDrop}
             />
           </Web3ReactProvider>
