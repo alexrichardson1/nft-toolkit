@@ -1,14 +1,22 @@
-import { collectionSchema, CollectionT } from "@models/collection";
 import { model, Schema } from "mongoose";
 
-export interface UserT {
-  fromAddress: string;
-  collections: CollectionT[];
+interface CollectionI {
+  address: string;
+  chainId: number;
 }
 
-// TODO: add attributes to collectible schema
+export interface UserT {
+  _id: string;
+  collections: CollectionI[];
+}
+
+const collectionSchema = new Schema<CollectionI>({
+  address: String,
+  chainId: Number,
+});
+
 const userSchema = new Schema<UserT>({
-  fromAddress: String,
+  _id: String,
   collections: [collectionSchema],
 });
 
