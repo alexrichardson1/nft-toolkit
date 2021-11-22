@@ -1,4 +1,4 @@
-import { Collection, CollectionT, Token } from "@models/collection";
+import { Collection, CollectionT, Layer, Token } from "@models/collection";
 import { User } from "@models/user";
 import { S3 } from "aws-sdk";
 import dotenv from "dotenv";
@@ -37,23 +37,11 @@ interface UserT {
 }
 
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
-  const userCollection: CollectionT & UserT = req.body;
-  const { fromAddress } = userCollection;
+  const userCollection: CollectionT = req.body;
   userCollection.tokens.map((token) => new Token(token));
+  userCollection.layers.map((layer) => new Layer(layer));
   const collection = new Collection(userCollection);
-  let user = await User.findOne({
-    fromAddress: fromAddress,
-  }).exec();
-
-  if (user) {
-    user.collections.push(collection);
-  } else {
-    user = new User({
-      fromAddress: fromAddress,
-      collections: [collection],
-    });
-  }
-  await user.save();
+  await collection.save();
   next();
 };
 
