@@ -694,6 +694,7 @@ exports[`ImageUpload snapshot 1`] = `
                       }
                       viewBox="0 0 24 24"
                     >
+                      <Noop />
                       <svg
                         aria-hidden={true}
                         className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud css-5cbsdu-MuiSvgIcon-root"
@@ -750,6 +751,7 @@ exports[`ImageUpload snapshot 1`] = `
                       }
                     }
                   >
+                    <Noop />
                     <h5
                       className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter css-ph2xsj-MuiTypography-root"
                     >

@@ -665,6 +665,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                     }
                   }
                 >
+                  <Noop />
                   <form
                     className="css-773myu-MuiStack-root"
                     data-testid="create-form"
@@ -680,8 +681,15 @@ exports[`CreateCollectionForm snapshot 1`] = `
                         Object {
                           "collectionName": "",
                           "description": "",
-                          "images": Array [],
+                          "generative": Object {
+                            "layers": Array [],
+                            "numberOfLayers": 0,
+                          },
                           "mintingPrice": 0,
+                          "static": Object {
+                            "images": Object {},
+                            "numberOfImages": 0,
+                          },
                           "symbol": "",
                         }
                       }
@@ -711,6 +719,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             }
                           }
                         >
+                          <Noop />
                           <div
                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                           >
@@ -775,6 +784,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   required={true}
                                   variant="outlined"
                                 >
+                                  <Noop />
                                   <ForwardRef(FormControl)
                                     className="MuiTextField-root css-1xj1k15-MuiTextField-root"
                                     color="primary"
@@ -828,6 +838,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
                                       >
@@ -872,6 +883,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(FormLabel)
                                               className="css-1x92c1k-MuiInputLabel-root"
                                               classes={
@@ -913,6 +925,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                 }
                                               >
+                                                <Noop />
                                                 <label
                                                   className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-12o5nb6-MuiFormLabel-root-MuiInputLabel-root"
                                                   data-shrink={false}
@@ -942,6 +955,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <span
                                                       aria-hidden={true}
                                                       className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
@@ -1489,6 +1503,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
                                                 onClick={[Function]}
@@ -1610,6 +1625,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   type="text"
                                                   value=""
                                                 >
+                                                  <Noop />
                                                   <input
                                                     aria-invalid={false}
                                                     autoFocus={false}
@@ -1636,6 +1652,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                   notched={false}
                                                 >
+                                                  <Noop />
                                                   <NotchedOutline
                                                     className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
                                                     label={
@@ -1660,6 +1677,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         }
                                                       }
                                                     >
+                                                      <Noop />
                                                       <fieldset
                                                         aria-hidden={true}
                                                         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
@@ -1676,6 +1694,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             }
                                                           }
                                                         >
+                                                          <Noop />
                                                           <legend
                                                             className="css-173wfxe"
                                                           >
@@ -1727,6 +1746,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             }
                           }
                         >
+                          <Noop />
                           <div
                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                           >
@@ -1791,6 +1811,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   required={true}
                                   variant="outlined"
                                 >
+                                  <Noop />
                                   <ForwardRef(FormControl)
                                     className="MuiTextField-root css-1xj1k15-MuiTextField-root"
                                     color="primary"
@@ -1844,6 +1865,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
                                       >
@@ -1888,6 +1910,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(FormLabel)
                                               className="css-1x92c1k-MuiInputLabel-root"
                                               classes={
@@ -1929,6 +1952,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                 }
                                               >
+                                                <Noop />
                                                 <label
                                                   className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-12o5nb6-MuiFormLabel-root-MuiInputLabel-root"
                                                   data-shrink={false}
@@ -1958,6 +1982,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <span
                                                       aria-hidden={true}
                                                       className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
@@ -2505,6 +2530,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
                                                 onClick={[Function]}
@@ -2626,6 +2652,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   type="text"
                                                   value=""
                                                 >
+                                                  <Noop />
                                                   <input
                                                     aria-invalid={false}
                                                     autoFocus={false}
@@ -2652,6 +2679,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                   notched={false}
                                                 >
+                                                  <Noop />
                                                   <NotchedOutline
                                                     className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
                                                     label={
@@ -2676,6 +2704,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         }
                                                       }
                                                     >
+                                                      <Noop />
                                                       <fieldset
                                                         aria-hidden={true}
                                                         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
@@ -2692,6 +2721,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             }
                                                           }
                                                         >
+                                                          <Noop />
                                                           <legend
                                                             className="css-173wfxe"
                                                           >
@@ -2745,6 +2775,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             }
                           }
                         >
+                          <Noop />
                           <div
                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                           >
@@ -2813,6 +2844,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   required={true}
                                   variant="outlined"
                                 >
+                                  <Noop />
                                   <ForwardRef(FormControl)
                                     className="MuiTextField-root css-1xj1k15-MuiTextField-root"
                                     color="primary"
@@ -2867,6 +2899,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
                                       >
@@ -2911,6 +2944,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(FormLabel)
                                               className="css-1x92c1k-MuiInputLabel-root"
                                               classes={
@@ -2952,6 +2986,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                 }
                                               >
+                                                <Noop />
                                                 <label
                                                   className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-12o5nb6-MuiFormLabel-root-MuiInputLabel-root"
                                                   data-shrink={false}
@@ -2981,6 +3016,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <span
                                                       aria-hidden={true}
                                                       className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
@@ -3530,6 +3566,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline css-rixlp9-MuiInputBase-root-MuiOutlinedInput-root"
                                                 onClick={[Function]}
@@ -3667,6 +3704,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   rows={4}
                                                   value=""
                                                 >
+                                                  <Noop />
                                                   <ForwardRef(TextareaAutosize)
                                                     aria-invalid={false}
                                                     autoFocus={false}
@@ -3735,6 +3773,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                   notched={false}
                                                 >
+                                                  <Noop />
                                                   <NotchedOutline
                                                     className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
                                                     label={
@@ -3759,6 +3798,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         }
                                                       }
                                                     >
+                                                      <Noop />
                                                       <fieldset
                                                         aria-hidden={true}
                                                         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
@@ -3775,6 +3815,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             }
                                                           }
                                                         >
+                                                          <Noop />
                                                           <legend
                                                             className="css-173wfxe"
                                                           >
@@ -3839,6 +3880,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             }
                           }
                         >
+                          <Noop />
                           <div
                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
                           >
@@ -3941,6 +3983,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   required={true}
                                   variant="outlined"
                                 >
+                                  <Noop />
                                   <ForwardRef(FormControl)
                                     className="MuiTextField-root css-1xj1k15-MuiTextField-root"
                                     color="primary"
@@ -4007,6 +4050,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
                                       >
@@ -4051,6 +4095,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(FormLabel)
                                               className="css-1bzvmy4-MuiInputLabel-root"
                                               classes={
@@ -4092,6 +4137,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                 }
                                               >
+                                                <Noop />
                                                 <label
                                                   className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
                                                   data-shrink={true}
@@ -4121,6 +4167,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <span
                                                       aria-hidden={true}
                                                       className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
@@ -4702,6 +4749,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-1gvv60k-MuiInputBase-root-MuiOutlinedInput-root"
                                                 onClick={[Function]}
@@ -4833,6 +4881,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   type="number"
                                                   value={0}
                                                 >
+                                                  <Noop />
                                                   <input
                                                     aria-invalid={false}
                                                     autoFocus={false}
@@ -4871,6 +4920,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <div
                                                       className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                                     >
@@ -4903,6 +4953,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                   notched={true}
                                                 >
+                                                  <Noop />
                                                   <NotchedOutline
                                                     className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
                                                     label={
@@ -4927,6 +4978,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         }
                                                       }
                                                     >
+                                                      <Noop />
                                                       <fieldset
                                                         aria-hidden={true}
                                                         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
@@ -4943,6 +4995,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             }
                                                           }
                                                         >
+                                                          <Noop />
                                                           <legend
                                                             className="css-1z7n62"
                                                           >
@@ -4986,21 +5039,38 @@ exports[`CreateCollectionForm snapshot 1`] = `
                         Object {
                           "collectionName": "",
                           "description": "",
-                          "images": Array [],
+                          "generative": Object {
+                            "layers": Array [],
+                            "numberOfLayers": 0,
+                          },
                           "mintingPrice": 0,
+                          "static": Object {
+                            "images": Object {},
+                            "numberOfImages": 0,
+                          },
                           "symbol": "",
                         }
                       }
                     />
                     <SortableList
                       generative={false}
+                      handleLayerAddition={[Function]}
+                      handleLayerRemoval={[Function]}
+                      handleLayerReorder={[Function]}
                       pageNumber={0}
                       state={
                         Object {
                           "collectionName": "",
                           "description": "",
-                          "images": Array [],
+                          "generative": Object {
+                            "layers": Array [],
+                            "numberOfLayers": 0,
+                          },
                           "mintingPrice": 0,
+                          "static": Object {
+                            "images": Object {},
+                            "numberOfImages": 0,
+                          },
                           "symbol": "",
                         }
                       }
@@ -5012,8 +5082,15 @@ exports[`CreateCollectionForm snapshot 1`] = `
                         Object {
                           "collectionName": "",
                           "description": "",
-                          "images": Array [],
+                          "generative": Object {
+                            "layers": Array [],
+                            "numberOfLayers": 0,
+                          },
                           "mintingPrice": 0,
+                          "static": Object {
+                            "images": Object {},
+                            "numberOfImages": 0,
+                          },
                           "symbol": "",
                         }
                       }
@@ -5361,6 +5438,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           }
                         }
                       >
+                        <Noop />
                         <div
                           className="MuiBox-root css-50gf6y"
                         >
@@ -5503,6 +5581,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <div
                                   className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
                                   style={
@@ -5545,6 +5624,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       }
                                     }
                                   >
+                                    <Noop />
                                     <div
                                       className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
                                     >
@@ -5582,6 +5662,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           }
                                         }
                                       >
+                                        <Noop />
                                         <div
                                           className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                                         >
@@ -5630,6 +5711,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               role="alert"
                                               square={true}
                                             >
+                                              <Noop />
                                               <ForwardRef(Paper)
                                                 className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
                                                 data-testid="form-alert"
@@ -5723,6 +5805,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   }
                                                   role="alert"
                                                 >
+                                                  <Noop />
                                                   <div
                                                     className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
                                                     data-testid="form-alert"
@@ -5751,6 +5834,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         }
                                                       }
                                                     >
+                                                      <Noop />
                                                       <div
                                                         className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
                                                       >
@@ -5781,6 +5865,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                               }
                                                               viewBox="0 0 24 24"
                                                             >
+                                                              <Noop />
                                                               <svg
                                                                 aria-hidden={true}
                                                                 className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
@@ -5820,6 +5905,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         }
                                                       }
                                                     >
+                                                      <Noop />
                                                       <div
                                                         className="MuiAlert-message css-acap47-MuiAlert-message"
                                                       />
@@ -5827,6 +5913,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     <MuiAlertAction
                                                       className="MuiAlert-action"
                                                     >
+                                                      <Noop />
                                                       <div
                                                         className="MuiAlert-action css-ki1hdl-MuiAlert-action"
                                                       >
@@ -5858,6 +5945,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                               }
                                                             }
                                                           >
+                                                            <Noop />
                                                             <ForwardRef(ButtonBase)
                                                               aria-label="close"
                                                               centerRipple={true}
@@ -5905,6 +5993,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                 tabIndex={0}
                                                                 type="button"
                                                               >
+                                                                <Noop />
                                                                 <button
                                                                   aria-label="close"
                                                                   className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
@@ -5952,6 +6041,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                         }
                                                                         viewBox="0 0 24 24"
                                                                       >
+                                                                        <Noop />
                                                                         <svg
                                                                           aria-hidden={true}
                                                                           className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
@@ -5972,6 +6062,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                     <MuiTouchRippleRoot
                                                                       className="MuiTouchRipple-root"
                                                                     >
+                                                                      <Noop />
                                                                       <span
                                                                         className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                       >
@@ -6345,6 +6436,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <div
                                   className="MuiBox-root css-qilq07"
                                 >
@@ -6392,6 +6484,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <ForwardRef(ButtonBase)
                                         className=" css-oonr1p-MuiButton-root"
                                         classes={
@@ -6488,6 +6581,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           tabIndex={-1}
                                           type="button"
                                         >
+                                          <Noop />
                                           <button
                                             className="MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root Mui-disabled  css-1i749hr-MuiButtonBase-root-MuiButton-root"
                                             data-testid="previous-page"
@@ -6528,6 +6622,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <span
                                                 className="MuiButton-startIcon MuiButton-iconSizeLarge css-htszrh-MuiButton-startIcon"
                                               >
@@ -6555,6 +6650,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       }
                                                       viewBox="0 0 24 24"
                                                     >
+                                                      <Noop />
                                                       <svg
                                                         aria-hidden={true}
                                                         className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -6644,6 +6740,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       type="submit"
                                       variant="contained"
                                     >
+                                      <Noop />
                                       <ForwardRef(Button)
                                         className="css-1je27za-MuiLoadingButton-root"
                                         classes={
@@ -6706,6 +6803,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           }
                                           type="submit"
                                         >
+                                          <Noop />
                                           <ForwardRef(ButtonBase)
                                             className="css-x7i5zk-MuiButton-root-MuiLoadingButton-root"
                                             classes={
@@ -6813,6 +6911,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               tabIndex={0}
                                               type="submit"
                                             >
+                                              <Noop />
                                               <button
                                                 className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root css-1gmsu7r-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                                                 data-testid="submit-btn"
@@ -6861,6 +6960,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     }
                                                   }
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiButton-endIcon MuiButton-iconSizeLarge css-z4rqyd-MuiButton-endIcon"
                                                   >
@@ -6888,6 +6988,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                           }
                                                           viewBox="0 0 24 24"
                                                         >
+                                                          <Noop />
                                                           <svg
                                                             aria-hidden={true}
                                                             className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -6910,6 +7011,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   <MuiTouchRippleRoot
                                                     className="MuiTouchRipple-root"
                                                   >
+                                                    <Noop />
                                                     <span
                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                     >

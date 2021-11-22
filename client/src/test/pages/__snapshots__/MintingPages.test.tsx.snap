@@ -10431,6 +10431,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                         }
                       }
                     >
+                      <Noop />
                       <div
                         className="MuiBox-root css-v20fs0"
                       >
@@ -10784,6 +10785,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                 }
                               }
                             >
+                              <Noop />
                               <div
                                 className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-11uq76c-MuiCollapse-root"
                                 style={
@@ -10986,6 +10988,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                     }
                                   }
                                 >
+                                  <Noop />
                                   <div
                                     className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
                                   >
@@ -11183,6 +11186,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                                       >
@@ -11525,6 +11529,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <div
                                               className="MuiBox-root css-cbn2lq"
                                             >
@@ -11861,6 +11866,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                     }
                                                   }
                                                 >
+                                                  <Noop />
                                                   <div
                                                     className="MuiBox-root css-f2ohnt"
                                                   >
@@ -12193,6 +12199,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                           }
                                                         }
                                                       >
+                                                        <Noop />
                                                         <div
                                                           className="MuiBox-root css-j7qwjs"
                                                         >
@@ -12262,6 +12269,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                 }
                                                               }
                                                             >
+                                                              <Noop />
                                                               <h3
                                                                 className="MuiTypography-root MuiTypography-h3 css-tfjsvx-MuiTypography-root"
                                                               >
@@ -12334,6 +12342,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                 }
                                                               }
                                                             >
+                                                              <Noop />
                                                               <p
                                                                 className="MuiTypography-root MuiTypography-body1 css-1mjdjo4-MuiTypography-root"
                                                               >
@@ -12398,6 +12407,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                           }
                                                         }
                                                       >
+                                                        <Noop />
                                                         <p
                                                           className="MuiTypography-root MuiTypography-body1 css-1xfy0bh-MuiTypography-root"
                                                         >
@@ -12739,6 +12749,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                     }
                                                   }
                                                 >
+                                                  <Noop />
                                                   <div
                                                     className="MuiBox-root css-gmuwbf"
                                                   >
@@ -12879,6 +12890,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                           }
                                                         }
                                                       >
+                                                        <Noop />
                                                         <div
                                                           className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation6 css-p61zj5-MuiPaper-root"
                                                         >
@@ -12942,6 +12954,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                 }
                                                               }
                                                             >
+                                                              <Noop />
                                                               <div
                                                                 className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-n2obw4-MuiPaper-root"
                                                               />
@@ -13282,6 +13295,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                 }
                                                               }
                                                             >
+                                                              <Noop />
                                                               <div
                                                                 className="MuiBox-root css-6md8xp"
                                                               >
@@ -13340,6 +13354,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                       }
                                                                     }
                                                                   >
+                                                                    <Noop />
                                                                     <h6
                                                                       className="MuiTypography-root MuiTypography-h6 css-5najlh-MuiTypography-root"
                                                                     >
@@ -13401,6 +13416,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                     }
                                                                     role="group"
                                                                   >
+                                                                    <Noop />
                                                                     <div
                                                                       className="MuiButtonGroup-root MuiButtonGroup-outlined MuiButtonGroup-fullWidth css-qzmzlp-MuiButtonGroup-root"
                                                                       role="group"
@@ -13445,6 +13461,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             }
                                                                           }
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary css-18e294b-MuiButton-root"
                                                                             classes={
@@ -13520,6 +13537,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                               tabIndex={-1}
                                                                               type="button"
                                                                             >
+                                                                              <Noop />
                                                                               <button
                                                                                 className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root Mui-disabled MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                                 disabled={true}
@@ -13602,6 +13620,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             }
                                                                           }
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary css-w6qrn8-MuiButton-root"
                                                                             classes={
@@ -13671,6 +13690,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                               tabIndex={-1}
                                                                               type="button"
                                                                             >
+                                                                              <Noop />
                                                                               <button
                                                                                 className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root Mui-disabled MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary css-1vvb2wx-MuiButtonBase-root-MuiButton-root"
                                                                                 disabled={true}
@@ -13735,6 +13755,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             }
                                                                           }
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary css-18e294b-MuiButton-root"
                                                                             classes={
@@ -13810,6 +13831,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                               tabIndex={0}
                                                                               type="button"
                                                                             >
+                                                                              <Noop />
                                                                               <button
                                                                                 className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlinedPrimary css-1ztn6w-MuiButtonBase-root-MuiButton-root"
                                                                                 disabled={false}
@@ -13837,6 +13859,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -13906,6 +13929,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                     }
                                                                     variant="contained"
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(Button)
                                                                       className="css-1xfsam3-MuiLoadingButton-root"
                                                                       classes={
@@ -13975,6 +13999,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           }
                                                                         }
                                                                       >
+                                                                        <Noop />
                                                                         <ForwardRef(ButtonBase)
                                                                           className="css-owlv1z-MuiButton-root-MuiLoadingButton-root"
                                                                           classes={
@@ -14064,6 +14089,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                             tabIndex={0}
                                                                             type="button"
                                                                           >
+                                                                            <Noop />
                                                                             <button
                                                                               className="MuiLoadingButton-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-10odi2j-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                                                                               disabled={false}
@@ -14111,6 +14137,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                 <MuiTouchRippleRoot
                                                                                   className="MuiTouchRipple-root"
                                                                                 >
+                                                                                  <Noop />
                                                                                   <span
                                                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                   >

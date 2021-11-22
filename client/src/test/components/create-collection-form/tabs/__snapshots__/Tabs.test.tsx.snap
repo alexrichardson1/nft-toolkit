@@ -987,6 +987,7 @@ exports[`Tabs snapshot 1`] = `
                     }
                   }
                 >
+                  <Noop />
                   <div
                     className="MuiBox-root css-hpyfyy"
                   >
@@ -1009,7 +1010,7 @@ exports[`Tabs snapshot 1`] = `
                           "borderRight": 1,
                         }
                       }
-                      value={-1}
+                      value={NaN}
                       variant="scrollable"
                     >
                       <MuiTabsRoot
@@ -1043,7 +1044,7 @@ exports[`Tabs snapshot 1`] = `
                               "borderRight": 1,
                             },
                             "textColor": "primary",
-                            "value": -1,
+                            "value": NaN,
                             "variant": "scrollable",
                             "vertical": true,
                             "visibleScrollbar": false,
@@ -1056,6 +1057,7 @@ exports[`Tabs snapshot 1`] = `
                           }
                         }
                       >
+                        <Noop />
                         <div
                           className="MuiTabs-root MuiTabs-vertical css-2ynwu8-MuiTabs-root"
                           data-testid="tabs"
@@ -1064,6 +1066,7 @@ exports[`Tabs snapshot 1`] = `
                             className="MuiTabs-hideScrollbar"
                             onChange={[Function]}
                           >
+                            <Noop />
                             <ScrollbarSize
                               className="MuiTabs-hideScrollbar css-agdkjh-MuiTabs-scrollbarSize"
                               onChange={[Function]}
@@ -1112,7 +1115,7 @@ exports[`Tabs snapshot 1`] = `
                                   "borderRight": 1,
                                 },
                                 "textColor": "primary",
-                                "value": -1,
+                                "value": NaN,
                                 "variant": "scrollable",
                                 "vertical": true,
                                 "visibleScrollbar": false,
@@ -1125,6 +1128,7 @@ exports[`Tabs snapshot 1`] = `
                               }
                             }
                           >
+                            <Noop />
                             <div
                               className="MuiTabs-scroller MuiTabs-hideScrollbar MuiTabs-scrollableY css-1cgx7kx-MuiTabs-scroller"
                               onScroll={[Function]}
@@ -1166,7 +1170,7 @@ exports[`Tabs snapshot 1`] = `
                                       "borderRight": 1,
                                     },
                                     "textColor": "primary",
-                                    "value": -1,
+                                    "value": NaN,
                                     "variant": "scrollable",
                                     "vertical": true,
                                     "visibleScrollbar": false,
@@ -1174,6 +1178,7 @@ exports[`Tabs snapshot 1`] = `
                                 }
                                 role="tablist"
                               >
+                                <Noop />
                                 <div
                                   aria-orientation="vertical"
                                   className="MuiTabs-flexContainer MuiTabs-flexContainerVertical css-lfwcke-MuiTabs-flexContainer"
@@ -1210,7 +1215,7 @@ exports[`Tabs snapshot 1`] = `
                                       "borderRight": 1,
                                     },
                                     "textColor": "primary",
-                                    "value": -1,
+                                    "value": NaN,
                                     "variant": "scrollable",
                                     "vertical": true,
                                     "visibleScrollbar": false,
@@ -1223,6 +1228,7 @@ exports[`Tabs snapshot 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <span
                                   className="MuiTabs-indicator css-1bctjhm-MuiTabs-indicator"
                                   style={

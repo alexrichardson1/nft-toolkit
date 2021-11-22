@@ -986,6 +986,7 @@ exports[`TabPanel snapshot 1`] = `
                     }
                   }
                 >
+                  <Noop />
                   <div
                     aria-labelledby="vertical-tab-0"
                     className="MuiBox-root css-uwwqev"
@@ -1338,6 +1339,7 @@ exports[`TabPanel snapshot 1`] = `
                           }
                         }
                       >
+                        <Noop />
                         <div
                           className="MuiBox-root css-5rn9gd"
                         />

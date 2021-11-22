@@ -966,6 +966,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                   }
                 }
               >
+                <Noop />
                 <div
                   className="MuiBox-root css-i9gxme"
                 >
@@ -1086,6 +1087,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                         }
                       }
                     >
+                      <Noop />
                       <ForwardRef(Paper)
                         className="MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-609ghd-MuiAppBar-root"
                         component="header"
@@ -1181,6 +1183,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                             }
                           }
                         >
+                          <Noop />
                           <header
                             className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-ysie1z-MuiPaper-root-MuiAppBar-root"
                           >
@@ -1286,6 +1289,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <div
                                   className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-4n6f7h-MuiToolbar-root"
                                 >
@@ -1333,6 +1337,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiTypography-root MuiTypography-h3 MuiTypography-noWrap css-1dp0l5u-MuiTypography-root"
                                       >
@@ -1667,6 +1672,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiBox-root css-i9gxme"
                                       />
@@ -2015,6 +2021,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiBox-root css-gjgo6p"
                                       >
@@ -2077,6 +2084,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <ForwardRef(ButtonBase)
                                                 aria-label="connect wallet"
                                                 className="MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-cqxrh4-MuiFab-root"
@@ -2132,6 +2140,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                   tabIndex={0}
                                                   type="button"
                                                 >
+                                                  <Noop />
                                                   <button
                                                     aria-label="connect wallet"
                                                     className="MuiButtonBase-root MuiFab-root MuiFab-extended MuiFab-sizeLarge MuiFab-primary css-gsolpa-MuiButtonBase-root-MuiFab-root"
@@ -2177,6 +2186,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                           }
                                                           viewBox="0 0 24 24"
                                                         >
+                                                          <Noop />
                                                           <svg
                                                             aria-hidden={true}
                                                             className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
@@ -2230,6 +2240,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                           }
                                                         }
                                                       >
+                                                        <Noop />
                                                         <p
                                                           className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                         >
@@ -2243,6 +2254,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       <MuiTouchRippleRoot
                                                         className="MuiTouchRipple-root"
                                                       >
+                                                        <Noop />
                                                         <span
                                                           className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                         >
@@ -2594,6 +2606,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 className="MuiBox-root css-yqm9dt"
                                               >
@@ -2769,6 +2782,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     }
                                                     role="presentation"
                                                   >
+                                                    <Noop />
                                                     <div
                                                       className="MuiSpeedDial-root MuiSpeedDial-directionDown css-11u3b1d-MuiSpeedDial-root"
                                                       onBlur={[Function]}
@@ -2998,6 +3012,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                               }
                                                             }
                                                           >
+                                                            <Noop />
                                                             <ForwardRef(Fab)
                                                               aria-controls="networkselection-actions"
                                                               aria-expanded={false}
@@ -3056,6 +3071,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                   }
                                                                 }
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(ButtonBase)
                                                                   aria-controls="networkselection-actions"
                                                                   aria-expanded={false}
@@ -3132,6 +3148,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     tabIndex={0}
                                                                     type="button"
                                                                   >
+                                                                    <Noop />
                                                                     <button
                                                                       aria-controls="networkselection-actions"
                                                                       aria-expanded={false}
@@ -3183,6 +3200,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         <MuiTouchRippleRoot
                                                                           className="MuiTouchRipple-root"
                                                                         >
+                                                                          <Noop />
                                                                           <span
                                                                             className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                           >
@@ -3348,6 +3366,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         }
                                                         role="menu"
                                                       >
+                                                        <Noop />
                                                         <div
                                                           aria-orientation="vertical"
                                                           className="MuiSpeedDial-actions MuiSpeedDial-actionsClosed css-1s28u9o-MuiSpeedDial-actions"
@@ -3444,6 +3463,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 tabIndex={-1}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Fab)
                                                                   aria-label="Ethereum"
                                                                   aria-labelledby={null}
@@ -3523,6 +3543,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       aria-label="Ethereum"
                                                                       aria-labelledby={null}
@@ -3613,6 +3634,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         tabIndex={-1}
                                                                         type="button"
                                                                       >
+                                                                        <Noop />
                                                                         <button
                                                                           aria-label="Ethereum"
                                                                           aria-labelledby={null}
@@ -3665,6 +3687,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -3719,7 +3742,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       "placement": [Function],
                                                                       "popperOptions": [Function],
                                                                       "popperRef": [Function],
-                                                                      "style": [Function],
                                                                       "transition": [Function],
                                                                     },
                                                                     "render": [Function],
@@ -3820,6 +3842,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 transition={true}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Popper)
                                                                   anchorEl={
                                                                     <button
@@ -3871,7 +3894,61 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                   }
                                                                   transition={true}
-                                                                />
+                                                                >
+                                                                  <ForwardRef(PopperUnstyled)
+                                                                    anchorEl={
+                                                                      <button
+                                                                        aria-label="Ethereum"
+                                                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                                                        data-mui-internal-clone-element="true"
+                                                                        data-testid="Ethereum"
+                                                                        role="menuitem"
+                                                                        style="transition-delay: 180ms;"
+                                                                        tabindex="-1"
+                                                                        type="button"
+                                                                      >
+                                                                        <img
+                                                                          height="70%"
+                                                                          src="ethereum-logo.svg"
+                                                                          style="margin: 0px;"
+                                                                          width="70%"
+                                                                        />
+                                                                        <span
+                                                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        />
+                                                                      </button>
+                                                                    }
+                                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                    direction="ltr"
+                                                                    id="networkselection-action-0"
+                                                                    onBlur={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseOver={[Function]}
+                                                                    open={false}
+                                                                    placement="left"
+                                                                    popperOptions={
+                                                                      Object {
+                                                                        "modifiers": Array [
+                                                                          Object {
+                                                                            "enabled": false,
+                                                                            "name": "arrow",
+                                                                            "options": Object {
+                                                                              "element": null,
+                                                                              "padding": 4,
+                                                                            },
+                                                                          },
+                                                                        ],
+                                                                      }
+                                                                    }
+                                                                    popperRef={
+                                                                      Object {
+                                                                        "current": undefined,
+                                                                      }
+                                                                    }
+                                                                    transition={true}
+                                                                  />
+                                                                </ForwardRef(Popper)>
                                                               </MuiTooltipPopper>
                                                             </ForwardRef(Tooltip)>
                                                           </ForwardRef(SpeedDialAction)>
@@ -3959,6 +4036,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 tabIndex={-1}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Fab)
                                                                   aria-label="Cardano"
                                                                   aria-labelledby={null}
@@ -4038,6 +4116,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       aria-label="Cardano"
                                                                       aria-labelledby={null}
@@ -4128,6 +4207,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         tabIndex={-1}
                                                                         type="button"
                                                                       >
+                                                                        <Noop />
                                                                         <button
                                                                           aria-label="Cardano"
                                                                           aria-labelledby={null}
@@ -4180,6 +4260,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -4234,7 +4315,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       "placement": [Function],
                                                                       "popperOptions": [Function],
                                                                       "popperRef": [Function],
-                                                                      "style": [Function],
                                                                       "transition": [Function],
                                                                     },
                                                                     "render": [Function],
@@ -4331,6 +4411,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 transition={true}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Popper)
                                                                   anchorEl={
                                                                     <button
@@ -4382,7 +4463,61 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                   }
                                                                   transition={true}
-                                                                />
+                                                                >
+                                                                  <ForwardRef(PopperUnstyled)
+                                                                    anchorEl={
+                                                                      <button
+                                                                        aria-label="Cardano"
+                                                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                                                        data-mui-internal-clone-element="true"
+                                                                        data-testid="Cardano"
+                                                                        role="menuitem"
+                                                                        style="transition-delay: 150ms;"
+                                                                        tabindex="-1"
+                                                                        type="button"
+                                                                      >
+                                                                        <img
+                                                                          height="70%"
+                                                                          src="cardano-logo.svg"
+                                                                          style="margin: 0px;"
+                                                                          width="70%"
+                                                                        />
+                                                                        <span
+                                                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        />
+                                                                      </button>
+                                                                    }
+                                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                    direction="ltr"
+                                                                    id="networkselection-action-1"
+                                                                    onBlur={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseOver={[Function]}
+                                                                    open={false}
+                                                                    placement="left"
+                                                                    popperOptions={
+                                                                      Object {
+                                                                        "modifiers": Array [
+                                                                          Object {
+                                                                            "enabled": false,
+                                                                            "name": "arrow",
+                                                                            "options": Object {
+                                                                              "element": null,
+                                                                              "padding": 4,
+                                                                            },
+                                                                          },
+                                                                        ],
+                                                                      }
+                                                                    }
+                                                                    popperRef={
+                                                                      Object {
+                                                                        "current": undefined,
+                                                                      }
+                                                                    }
+                                                                    transition={true}
+                                                                  />
+                                                                </ForwardRef(Popper)>
                                                               </MuiTooltipPopper>
                                                             </ForwardRef(Tooltip)>
                                                           </ForwardRef(SpeedDialAction)>
@@ -4470,6 +4605,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 tabIndex={-1}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Fab)
                                                                   aria-label="Avalanche"
                                                                   aria-labelledby={null}
@@ -4549,6 +4685,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       aria-label="Avalanche"
                                                                       aria-labelledby={null}
@@ -4639,6 +4776,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         tabIndex={-1}
                                                                         type="button"
                                                                       >
+                                                                        <Noop />
                                                                         <button
                                                                           aria-label="Avalanche"
                                                                           aria-labelledby={null}
@@ -4691,6 +4829,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -4745,7 +4884,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       "placement": [Function],
                                                                       "popperOptions": [Function],
                                                                       "popperRef": [Function],
-                                                                      "style": [Function],
                                                                       "transition": [Function],
                                                                     },
                                                                     "render": [Function],
@@ -4842,6 +4980,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 transition={true}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Popper)
                                                                   anchorEl={
                                                                     <button
@@ -4893,7 +5032,61 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                   }
                                                                   transition={true}
-                                                                />
+                                                                >
+                                                                  <ForwardRef(PopperUnstyled)
+                                                                    anchorEl={
+                                                                      <button
+                                                                        aria-label="Avalanche"
+                                                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                                                        data-mui-internal-clone-element="true"
+                                                                        data-testid="Avalanche"
+                                                                        role="menuitem"
+                                                                        style="transition-delay: 120ms;"
+                                                                        tabindex="-1"
+                                                                        type="button"
+                                                                      >
+                                                                        <img
+                                                                          height="70%"
+                                                                          src="avalanche-logo.svg"
+                                                                          style="margin: 0px;"
+                                                                          width="70%"
+                                                                        />
+                                                                        <span
+                                                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        />
+                                                                      </button>
+                                                                    }
+                                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                    direction="ltr"
+                                                                    id="networkselection-action-2"
+                                                                    onBlur={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseOver={[Function]}
+                                                                    open={false}
+                                                                    placement="left"
+                                                                    popperOptions={
+                                                                      Object {
+                                                                        "modifiers": Array [
+                                                                          Object {
+                                                                            "enabled": false,
+                                                                            "name": "arrow",
+                                                                            "options": Object {
+                                                                              "element": null,
+                                                                              "padding": 4,
+                                                                            },
+                                                                          },
+                                                                        ],
+                                                                      }
+                                                                    }
+                                                                    popperRef={
+                                                                      Object {
+                                                                        "current": undefined,
+                                                                      }
+                                                                    }
+                                                                    transition={true}
+                                                                  />
+                                                                </ForwardRef(Popper)>
                                                               </MuiTooltipPopper>
                                                             </ForwardRef(Tooltip)>
                                                           </ForwardRef(SpeedDialAction)>
@@ -4981,6 +5174,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 tabIndex={-1}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Fab)
                                                                   aria-label="Solana"
                                                                   aria-labelledby={null}
@@ -5060,6 +5254,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       aria-label="Solana"
                                                                       aria-labelledby={null}
@@ -5150,6 +5345,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         tabIndex={-1}
                                                                         type="button"
                                                                       >
+                                                                        <Noop />
                                                                         <button
                                                                           aria-label="Solana"
                                                                           aria-labelledby={null}
@@ -5202,6 +5398,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -5256,7 +5453,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       "placement": [Function],
                                                                       "popperOptions": [Function],
                                                                       "popperRef": [Function],
-                                                                      "style": [Function],
                                                                       "transition": [Function],
                                                                     },
                                                                     "render": [Function],
@@ -5353,6 +5549,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 transition={true}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Popper)
                                                                   anchorEl={
                                                                     <button
@@ -5404,7 +5601,61 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                   }
                                                                   transition={true}
-                                                                />
+                                                                >
+                                                                  <ForwardRef(PopperUnstyled)
+                                                                    anchorEl={
+                                                                      <button
+                                                                        aria-label="Solana"
+                                                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                                                        data-mui-internal-clone-element="true"
+                                                                        data-testid="Solana"
+                                                                        role="menuitem"
+                                                                        style="transition-delay: 90ms;"
+                                                                        tabindex="-1"
+                                                                        type="button"
+                                                                      >
+                                                                        <img
+                                                                          height="70%"
+                                                                          src="solana-logo.svg"
+                                                                          style="margin: 0px;"
+                                                                          width="70%"
+                                                                        />
+                                                                        <span
+                                                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        />
+                                                                      </button>
+                                                                    }
+                                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                    direction="ltr"
+                                                                    id="networkselection-action-3"
+                                                                    onBlur={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseOver={[Function]}
+                                                                    open={false}
+                                                                    placement="left"
+                                                                    popperOptions={
+                                                                      Object {
+                                                                        "modifiers": Array [
+                                                                          Object {
+                                                                            "enabled": false,
+                                                                            "name": "arrow",
+                                                                            "options": Object {
+                                                                              "element": null,
+                                                                              "padding": 4,
+                                                                            },
+                                                                          },
+                                                                        ],
+                                                                      }
+                                                                    }
+                                                                    popperRef={
+                                                                      Object {
+                                                                        "current": undefined,
+                                                                      }
+                                                                    }
+                                                                    transition={true}
+                                                                  />
+                                                                </ForwardRef(Popper)>
                                                               </MuiTooltipPopper>
                                                             </ForwardRef(Tooltip)>
                                                           </ForwardRef(SpeedDialAction)>
@@ -5492,6 +5743,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 tabIndex={-1}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Fab)
                                                                   aria-label="Polygon"
                                                                   aria-labelledby={null}
@@ -5571,6 +5823,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       aria-label="Polygon"
                                                                       aria-labelledby={null}
@@ -5661,6 +5914,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         tabIndex={-1}
                                                                         type="button"
                                                                       >
+                                                                        <Noop />
                                                                         <button
                                                                           aria-label="Polygon"
                                                                           aria-labelledby={null}
@@ -5713,6 +5967,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -5767,7 +6022,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       "placement": [Function],
                                                                       "popperOptions": [Function],
                                                                       "popperRef": [Function],
-                                                                      "style": [Function],
                                                                       "transition": [Function],
                                                                     },
                                                                     "render": [Function],
@@ -5864,6 +6118,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 transition={true}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Popper)
                                                                   anchorEl={
                                                                     <button
@@ -5915,7 +6170,61 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                   }
                                                                   transition={true}
-                                                                />
+                                                                >
+                                                                  <ForwardRef(PopperUnstyled)
+                                                                    anchorEl={
+                                                                      <button
+                                                                        aria-label="Polygon"
+                                                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                                                        data-mui-internal-clone-element="true"
+                                                                        data-testid="Polygon"
+                                                                        role="menuitem"
+                                                                        style="transition-delay: 60ms;"
+                                                                        tabindex="-1"
+                                                                        type="button"
+                                                                      >
+                                                                        <img
+                                                                          height="70%"
+                                                                          src="polygon-logo.svg"
+                                                                          style="margin: 0px;"
+                                                                          width="70%"
+                                                                        />
+                                                                        <span
+                                                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        />
+                                                                      </button>
+                                                                    }
+                                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                    direction="ltr"
+                                                                    id="networkselection-action-4"
+                                                                    onBlur={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseOver={[Function]}
+                                                                    open={false}
+                                                                    placement="left"
+                                                                    popperOptions={
+                                                                      Object {
+                                                                        "modifiers": Array [
+                                                                          Object {
+                                                                            "enabled": false,
+                                                                            "name": "arrow",
+                                                                            "options": Object {
+                                                                              "element": null,
+                                                                              "padding": 4,
+                                                                            },
+                                                                          },
+                                                                        ],
+                                                                      }
+                                                                    }
+                                                                    popperRef={
+                                                                      Object {
+                                                                        "current": undefined,
+                                                                      }
+                                                                    }
+                                                                    transition={true}
+                                                                  />
+                                                                </ForwardRef(Popper)>
                                                               </MuiTooltipPopper>
                                                             </ForwardRef(Tooltip)>
                                                           </ForwardRef(SpeedDialAction)>
@@ -6003,6 +6312,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 tabIndex={-1}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Fab)
                                                                   aria-label="BSC"
                                                                   aria-labelledby={null}
@@ -6082,6 +6392,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       aria-label="BSC"
                                                                       aria-labelledby={null}
@@ -6172,6 +6483,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                         tabIndex={-1}
                                                                         type="button"
                                                                       >
+                                                                        <Noop />
                                                                         <button
                                                                           aria-label="BSC"
                                                                           aria-labelledby={null}
@@ -6224,6 +6536,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -6278,7 +6591,6 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                       "placement": [Function],
                                                                       "popperOptions": [Function],
                                                                       "popperRef": [Function],
-                                                                      "style": [Function],
                                                                       "transition": [Function],
                                                                     },
                                                                     "render": [Function],
@@ -6375,6 +6687,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                 }
                                                                 transition={true}
                                                               >
+                                                                <Noop />
                                                                 <ForwardRef(Popper)
                                                                   anchorEl={
                                                                     <button
@@ -6426,7 +6739,61 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     }
                                                                   }
                                                                   transition={true}
-                                                                />
+                                                                >
+                                                                  <ForwardRef(PopperUnstyled)
+                                                                    anchorEl={
+                                                                      <button
+                                                                        aria-label="BSC"
+                                                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                                                        data-mui-internal-clone-element="true"
+                                                                        data-testid="BSC"
+                                                                        role="menuitem"
+                                                                        style="transition-delay: 30ms;"
+                                                                        tabindex="-1"
+                                                                        type="button"
+                                                                      >
+                                                                        <img
+                                                                          height="70%"
+                                                                          src="binance-logo.svg"
+                                                                          style="margin: 0px;"
+                                                                          width="70%"
+                                                                        />
+                                                                        <span
+                                                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        />
+                                                                      </button>
+                                                                    }
+                                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                                                    direction="ltr"
+                                                                    id="networkselection-action-5"
+                                                                    onBlur={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseOver={[Function]}
+                                                                    open={false}
+                                                                    placement="left"
+                                                                    popperOptions={
+                                                                      Object {
+                                                                        "modifiers": Array [
+                                                                          Object {
+                                                                            "enabled": false,
+                                                                            "name": "arrow",
+                                                                            "options": Object {
+                                                                              "element": null,
+                                                                              "padding": 4,
+                                                                            },
+                                                                          },
+                                                                        ],
+                                                                      }
+                                                                    }
+                                                                    popperRef={
+                                                                      Object {
+                                                                        "current": undefined,
+                                                                      }
+                                                                    }
+                                                                    transition={true}
+                                                                  />
+                                                                </ForwardRef(Popper)>
                                                               </MuiTooltipPopper>
                                                             </ForwardRef(Tooltip)>
                                                           </ForwardRef(SpeedDialAction)>
@@ -6467,6 +6834,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(ButtonBase)
                                               className="MuiFab-root MuiFab-circular MuiFab-sizeLarge css-xzu58u-MuiFab-root"
                                               component="button"
@@ -6516,6 +6884,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 tabIndex={0}
                                                 type="button"
                                               >
+                                                <Noop />
                                                 <button
                                                   className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeLarge css-a8igs1-MuiButtonBase-root-MuiFab-root"
                                                   disabled={false}
@@ -6563,6 +6932,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         }
                                                         viewBox="0 0 24 24"
                                                       >
+                                                        <Noop />
                                                         <svg
                                                           aria-hidden={true}
                                                           className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
@@ -6583,6 +6953,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     <MuiTouchRippleRoot
                                                       className="MuiTouchRipple-root"
                                                     >
+                                                      <Noop />
                                                       <span
                                                         className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                       >
@@ -6939,6 +7310,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiBox-root css-1m04nb5"
                                       >
@@ -6965,6 +7337,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(ButtonBase)
                                               centerRipple={true}
                                               className="MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root"
@@ -7009,6 +7382,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 tabIndex={0}
                                                 type="button"
                                               >
+                                                <Noop />
                                                 <button
                                                   className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
                                                   disabled={false}
@@ -7055,6 +7429,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         }
                                                         viewBox="0 0 24 24"
                                                       >
+                                                        <Noop />
                                                         <svg
                                                           aria-hidden={true}
                                                           className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
@@ -7075,6 +7450,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     <MuiTouchRippleRoot
                                                       className="MuiTouchRipple-root"
                                                     >
+                                                      <Noop />
                                                       <span
                                                         className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                       >
@@ -7125,6 +7501,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                               }
                                             }
                                           >
+                                            <Noop />
                                             <ForwardRef(ButtonBase)
                                               aria-controls="primary-menu-mobile"
                                               aria-haspopup="true"
@@ -7178,6 +7555,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 tabIndex={0}
                                                 type="button"
                                               >
+                                                <Noop />
                                                 <button
                                                   aria-controls="primary-menu-mobile"
                                                   aria-haspopup="true"
@@ -7227,6 +7605,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                         }
                                                         viewBox="0 0 24 24"
                                                       >
+                                                        <Noop />
                                                         <svg
                                                           aria-hidden={true}
                                                           className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-tzssek-MuiSvgIcon-root"
@@ -7247,6 +7626,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     <MuiTouchRippleRoot
                                                       className="MuiTouchRipple-root"
                                                     >
+                                                      <Noop />
                                                       <span
                                                         className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                       >
@@ -7429,6 +7809,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                         }
                         transitionDuration="auto"
                       >
+                        <Noop />
                         <ForwardRef(Popover)
                           PaperProps={
                             Object {
@@ -7634,6 +8015,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                               }
                             }
                           >
+                            <Noop />
                             <ForwardRef(Modal)
                               BackdropProps={
                                 Object {
@@ -8157,6 +8539,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                       }
                                       role="presentation"
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiModal-root MuiModal-hidden MuiPopover-root MuiMenu-root css-6f6ff7-MuiModal-root-MuiPopover-root-MuiMenu-root"
                                         id="primary-menu-mobile"
@@ -8168,6 +8551,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                           onClick={[Function]}
                                           open={false}
                                         >
+                                          <Noop />
                                           <ForwardRef(Backdrop)
                                             className="css-1rfr5hw-MuiModal-backdrop"
                                             invisible={true}
@@ -8295,6 +8679,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <div
                                                       aria-hidden={true}
                                                       className="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
@@ -8465,6 +8850,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 }
                                                 tabIndex="-1"
                                               >
+                                                <Noop />
                                                 <ForwardRef(Paper)
                                                   className="MuiPopover-paper css-1axini2-MuiPopover-paper"
                                                   classes={
@@ -8664,6 +9050,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     }
                                                     tabIndex="-1"
                                                   >
+                                                    <Noop />
                                                     <MuiMenuPaper
                                                       className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-3bmhjh-MuiPaper-root-MuiPopover-paper"
                                                       onFocus={[Function]}
@@ -8676,6 +9063,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       }
                                                       tabIndex="-1"
                                                     >
+                                                      <Noop />
                                                       <ForwardRef(Paper)
                                                         className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1eevtzc-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                         onFocus={[Function]}
@@ -8766,6 +9154,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                           }
                                                           tabIndex="-1"
                                                         >
+                                                          <Noop />
                                                           <div
                                                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                             onFocus={[Function]}
@@ -8792,6 +9181,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                               onKeyDown={[Function]}
                                                               variant="selectedMenu"
                                                             >
+                                                              <Noop />
                                                               <ForwardRef(MenuList)
                                                                 actions={
                                                                   Object {
@@ -8867,6 +9257,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     role="menu"
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ul
                                                                       className="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
                                                                       onKeyDown={[Function]}
@@ -8920,6 +9311,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={0}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -8981,6 +9373,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={0}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 onBlur={[Function]}
@@ -9025,6 +9418,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                       viewBox="0 0 24 24"
                                                                                     >
+                                                                                      <Noop />
                                                                                       <svg
                                                                                         aria-hidden={true}
                                                                                         className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
@@ -9078,6 +9472,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -9091,6 +9486,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -9160,6 +9556,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={-1}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -9229,6 +9626,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={-1}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="menuItemMobile"
@@ -9303,6 +9701,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -9316,6 +9715,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -9583,6 +9983,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                         }
                         transitionDuration="auto"
                       >
+                        <Noop />
                         <ForwardRef(Popover)
                           PaperProps={
                             Object {
@@ -9865,6 +10266,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                               }
                             }
                           >
+                            <Noop />
                             <ForwardRef(Modal)
                               BackdropProps={
                                 Object {
@@ -10464,6 +10866,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                       }
                                       role="presentation"
                                     >
+                                      <Noop />
                                       <div
                                         className="MuiModal-root MuiModal-hidden MuiPopover-root MuiMenu-root css-6f6ff7-MuiModal-root-MuiPopover-root-MuiMenu-root"
                                         onKeyDown={[Function]}
@@ -10474,6 +10877,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                           onClick={[Function]}
                                           open={false}
                                         >
+                                          <Noop />
                                           <ForwardRef(Backdrop)
                                             className="css-1rfr5hw-MuiModal-backdrop"
                                             invisible={true}
@@ -10601,6 +11005,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       }
                                                     }
                                                   >
+                                                    <Noop />
                                                     <div
                                                       aria-hidden={true}
                                                       className="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
@@ -10851,6 +11256,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                 }
                                                 tabIndex="-1"
                                               >
+                                                <Noop />
                                                 <ForwardRef(Paper)
                                                   className="MuiPopover-paper css-1axini2-MuiPopover-paper"
                                                   classes={
@@ -11130,6 +11536,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                     }
                                                     tabIndex="-1"
                                                   >
+                                                    <Noop />
                                                     <MuiMenuPaper
                                                       className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-3bmhjh-MuiPaper-root-MuiPopover-paper"
                                                       onFocus={[Function]}
@@ -11142,6 +11549,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                       }
                                                       tabIndex="-1"
                                                     >
+                                                      <Noop />
                                                       <ForwardRef(Paper)
                                                         className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1eevtzc-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                         onFocus={[Function]}
@@ -11312,6 +11720,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                           }
                                                           tabIndex="-1"
                                                         >
+                                                          <Noop />
                                                           <div
                                                             className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                             onFocus={[Function]}
@@ -11338,6 +11747,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                               onKeyDown={[Function]}
                                                               variant="selectedMenu"
                                                             >
+                                                              <Noop />
                                                               <ForwardRef(MenuList)
                                                                 actions={
                                                                   Object {
@@ -11493,6 +11903,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                     role="menu"
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ul
                                                                       className="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
                                                                       onKeyDown={[Function]}
@@ -11554,6 +11965,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={0}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -11623,6 +12035,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={0}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="ethereum-mobile-option"
@@ -11697,6 +12110,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -11710,6 +12124,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -11779,6 +12194,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={-1}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -11848,6 +12264,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={-1}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="cardano-mobile-option"
@@ -11922,6 +12339,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -11935,6 +12353,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -12004,6 +12423,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={-1}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -12073,6 +12493,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={-1}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="avalanche-mobile-option"
@@ -12147,6 +12568,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -12160,6 +12582,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -12229,6 +12652,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={-1}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -12298,6 +12722,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={-1}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="solana-mobile-option"
@@ -12372,6 +12797,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -12385,6 +12811,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -12454,6 +12881,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={-1}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -12523,6 +12951,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={-1}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="polygon-mobile-option"
@@ -12597,6 +13026,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -12610,6 +13040,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >
@@ -12679,6 +13110,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                           }
                                                                           tabIndex={-1}
                                                                         >
+                                                                          <Noop />
                                                                           <ForwardRef(ButtonBase)
                                                                             className="css-13i87ox-MuiMenuItem-root"
                                                                             classes={
@@ -12748,6 +13180,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                               role="menuitem"
                                                                               tabIndex={-1}
                                                                             >
+                                                                              <Noop />
                                                                               <li
                                                                                 className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                                 data-testid="bsc-mobile-option"
@@ -12822,6 +13255,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                       }
                                                                                     }
                                                                                   >
+                                                                                    <Noop />
                                                                                     <p
                                                                                       className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                                     >
@@ -12835,6 +13269,7 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                                                                   <MuiTouchRippleRoot
                                                                                     className="MuiTouchRipple-root"
                                                                                   >
+                                                                                    <Noop />
                                                                                     <span
                                                                                       className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                                     >

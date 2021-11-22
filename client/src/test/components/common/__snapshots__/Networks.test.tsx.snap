@@ -1350,6 +1350,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                     }
                   }
                 >
+                  <Noop />
                   <div
                     className="MuiBox-root css-yqm9dt"
                   >
@@ -1525,6 +1526,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                         }
                         role="presentation"
                       >
+                        <Noop />
                         <div
                           className="MuiSpeedDial-root MuiSpeedDial-directionDown css-11u3b1d-MuiSpeedDial-root"
                           onBlur={[Function]}
@@ -1754,6 +1756,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <ForwardRef(Fab)
                                   aria-controls="networkselection-actions"
                                   aria-expanded={false}
@@ -1812,6 +1815,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       }
                                     }
                                   >
+                                    <Noop />
                                     <ForwardRef(ButtonBase)
                                       aria-controls="networkselection-actions"
                                       aria-expanded={false}
@@ -1888,6 +1892,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         tabIndex={0}
                                         type="button"
                                       >
+                                        <Noop />
                                         <button
                                           aria-controls="networkselection-actions"
                                           aria-expanded={false}
@@ -1939,6 +1944,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             <MuiTouchRippleRoot
                                               className="MuiTouchRipple-root"
                                             >
+                                              <Noop />
                                               <span
                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                               >
@@ -2104,6 +2110,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                             }
                             role="menu"
                           >
+                            <Noop />
                             <div
                               aria-orientation="vertical"
                               className="MuiSpeedDial-actions MuiSpeedDial-actionsClosed css-1s28u9o-MuiSpeedDial-actions"
@@ -2200,6 +2207,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     tabIndex={-1}
                                   >
+                                    <Noop />
                                     <ForwardRef(Fab)
                                       aria-label="Ethereum"
                                       aria-labelledby={null}
@@ -2279,6 +2287,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         tabIndex={-1}
                                       >
+                                        <Noop />
                                         <ForwardRef(ButtonBase)
                                           aria-label="Ethereum"
                                           aria-labelledby={null}
@@ -2369,6 +2378,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             tabIndex={-1}
                                             type="button"
                                           >
+                                            <Noop />
                                             <button
                                               aria-label="Ethereum"
                                               aria-labelledby={null}
@@ -2421,6 +2431,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 <MuiTouchRippleRoot
                                                   className="MuiTouchRipple-root"
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                   >
@@ -2475,7 +2486,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           "placement": [Function],
                                           "popperOptions": [Function],
                                           "popperRef": [Function],
-                                          "style": [Function],
                                           "transition": [Function],
                                         },
                                         "render": [Function],
@@ -2576,6 +2586,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     transition={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <button
@@ -2627,7 +2638,61 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                       }
                                       transition={true}
-                                    />
+                                    >
+                                      <ForwardRef(PopperUnstyled)
+                                        anchorEl={
+                                          <button
+                                            aria-label="Ethereum"
+                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                            data-mui-internal-clone-element="true"
+                                            data-testid="Ethereum"
+                                            role="menuitem"
+                                            style="transition-delay: 180ms;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <img
+                                              height="70%"
+                                              src="ethereum-logo.svg"
+                                              style="margin: 0px;"
+                                              width="70%"
+                                            />
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        }
+                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="networkselection-action-0"
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="left"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      />
+                                    </ForwardRef(Popper)>
                                   </MuiTooltipPopper>
                                 </ForwardRef(Tooltip)>
                               </ForwardRef(SpeedDialAction)>
@@ -2715,6 +2780,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     tabIndex={-1}
                                   >
+                                    <Noop />
                                     <ForwardRef(Fab)
                                       aria-label="Cardano"
                                       aria-labelledby={null}
@@ -2794,6 +2860,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         tabIndex={-1}
                                       >
+                                        <Noop />
                                         <ForwardRef(ButtonBase)
                                           aria-label="Cardano"
                                           aria-labelledby={null}
@@ -2884,6 +2951,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             tabIndex={-1}
                                             type="button"
                                           >
+                                            <Noop />
                                             <button
                                               aria-label="Cardano"
                                               aria-labelledby={null}
@@ -2936,6 +3004,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 <MuiTouchRippleRoot
                                                   className="MuiTouchRipple-root"
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                   >
@@ -2990,7 +3059,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           "placement": [Function],
                                           "popperOptions": [Function],
                                           "popperRef": [Function],
-                                          "style": [Function],
                                           "transition": [Function],
                                         },
                                         "render": [Function],
@@ -3087,6 +3155,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     transition={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <button
@@ -3138,7 +3207,61 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                       }
                                       transition={true}
-                                    />
+                                    >
+                                      <ForwardRef(PopperUnstyled)
+                                        anchorEl={
+                                          <button
+                                            aria-label="Cardano"
+                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                            data-mui-internal-clone-element="true"
+                                            data-testid="Cardano"
+                                            role="menuitem"
+                                            style="transition-delay: 150ms;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <img
+                                              height="70%"
+                                              src="cardano-logo.svg"
+                                              style="margin: 0px;"
+                                              width="70%"
+                                            />
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        }
+                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="networkselection-action-1"
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="left"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      />
+                                    </ForwardRef(Popper)>
                                   </MuiTooltipPopper>
                                 </ForwardRef(Tooltip)>
                               </ForwardRef(SpeedDialAction)>
@@ -3226,6 +3349,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     tabIndex={-1}
                                   >
+                                    <Noop />
                                     <ForwardRef(Fab)
                                       aria-label="Avalanche"
                                       aria-labelledby={null}
@@ -3305,6 +3429,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         tabIndex={-1}
                                       >
+                                        <Noop />
                                         <ForwardRef(ButtonBase)
                                           aria-label="Avalanche"
                                           aria-labelledby={null}
@@ -3395,6 +3520,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             tabIndex={-1}
                                             type="button"
                                           >
+                                            <Noop />
                                             <button
                                               aria-label="Avalanche"
                                               aria-labelledby={null}
@@ -3447,6 +3573,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 <MuiTouchRippleRoot
                                                   className="MuiTouchRipple-root"
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                   >
@@ -3501,7 +3628,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           "placement": [Function],
                                           "popperOptions": [Function],
                                           "popperRef": [Function],
-                                          "style": [Function],
                                           "transition": [Function],
                                         },
                                         "render": [Function],
@@ -3598,6 +3724,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     transition={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <button
@@ -3649,7 +3776,61 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                       }
                                       transition={true}
-                                    />
+                                    >
+                                      <ForwardRef(PopperUnstyled)
+                                        anchorEl={
+                                          <button
+                                            aria-label="Avalanche"
+                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                            data-mui-internal-clone-element="true"
+                                            data-testid="Avalanche"
+                                            role="menuitem"
+                                            style="transition-delay: 120ms;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <img
+                                              height="70%"
+                                              src="avalanche-logo.svg"
+                                              style="margin: 0px;"
+                                              width="70%"
+                                            />
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        }
+                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="networkselection-action-2"
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="left"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      />
+                                    </ForwardRef(Popper)>
                                   </MuiTooltipPopper>
                                 </ForwardRef(Tooltip)>
                               </ForwardRef(SpeedDialAction)>
@@ -3737,6 +3918,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     tabIndex={-1}
                                   >
+                                    <Noop />
                                     <ForwardRef(Fab)
                                       aria-label="Solana"
                                       aria-labelledby={null}
@@ -3816,6 +3998,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         tabIndex={-1}
                                       >
+                                        <Noop />
                                         <ForwardRef(ButtonBase)
                                           aria-label="Solana"
                                           aria-labelledby={null}
@@ -3906,6 +4089,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             tabIndex={-1}
                                             type="button"
                                           >
+                                            <Noop />
                                             <button
                                               aria-label="Solana"
                                               aria-labelledby={null}
@@ -3958,6 +4142,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 <MuiTouchRippleRoot
                                                   className="MuiTouchRipple-root"
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                   >
@@ -4012,7 +4197,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           "placement": [Function],
                                           "popperOptions": [Function],
                                           "popperRef": [Function],
-                                          "style": [Function],
                                           "transition": [Function],
                                         },
                                         "render": [Function],
@@ -4109,6 +4293,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     transition={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <button
@@ -4160,7 +4345,61 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                       }
                                       transition={true}
-                                    />
+                                    >
+                                      <ForwardRef(PopperUnstyled)
+                                        anchorEl={
+                                          <button
+                                            aria-label="Solana"
+                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                            data-mui-internal-clone-element="true"
+                                            data-testid="Solana"
+                                            role="menuitem"
+                                            style="transition-delay: 90ms;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <img
+                                              height="70%"
+                                              src="solana-logo.svg"
+                                              style="margin: 0px;"
+                                              width="70%"
+                                            />
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        }
+                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="networkselection-action-3"
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="left"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      />
+                                    </ForwardRef(Popper)>
                                   </MuiTooltipPopper>
                                 </ForwardRef(Tooltip)>
                               </ForwardRef(SpeedDialAction)>
@@ -4248,6 +4487,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     tabIndex={-1}
                                   >
+                                    <Noop />
                                     <ForwardRef(Fab)
                                       aria-label="Polygon"
                                       aria-labelledby={null}
@@ -4327,6 +4567,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         tabIndex={-1}
                                       >
+                                        <Noop />
                                         <ForwardRef(ButtonBase)
                                           aria-label="Polygon"
                                           aria-labelledby={null}
@@ -4417,6 +4658,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             tabIndex={-1}
                                             type="button"
                                           >
+                                            <Noop />
                                             <button
                                               aria-label="Polygon"
                                               aria-labelledby={null}
@@ -4469,6 +4711,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 <MuiTouchRippleRoot
                                                   className="MuiTouchRipple-root"
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                   >
@@ -4523,7 +4766,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           "placement": [Function],
                                           "popperOptions": [Function],
                                           "popperRef": [Function],
-                                          "style": [Function],
                                           "transition": [Function],
                                         },
                                         "render": [Function],
@@ -4620,6 +4862,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     transition={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <button
@@ -4671,7 +4914,61 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                       }
                                       transition={true}
-                                    />
+                                    >
+                                      <ForwardRef(PopperUnstyled)
+                                        anchorEl={
+                                          <button
+                                            aria-label="Polygon"
+                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                            data-mui-internal-clone-element="true"
+                                            data-testid="Polygon"
+                                            role="menuitem"
+                                            style="transition-delay: 60ms;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <img
+                                              height="70%"
+                                              src="polygon-logo.svg"
+                                              style="margin: 0px;"
+                                              width="70%"
+                                            />
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        }
+                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="networkselection-action-4"
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="left"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      />
+                                    </ForwardRef(Popper)>
                                   </MuiTooltipPopper>
                                 </ForwardRef(Tooltip)>
                               </ForwardRef(SpeedDialAction)>
@@ -4759,6 +5056,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     tabIndex={-1}
                                   >
+                                    <Noop />
                                     <ForwardRef(Fab)
                                       aria-label="BSC"
                                       aria-labelledby={null}
@@ -4838,6 +5136,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         tabIndex={-1}
                                       >
+                                        <Noop />
                                         <ForwardRef(ButtonBase)
                                           aria-label="BSC"
                                           aria-labelledby={null}
@@ -4928,6 +5227,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             tabIndex={-1}
                                             type="button"
                                           >
+                                            <Noop />
                                             <button
                                               aria-label="BSC"
                                               aria-labelledby={null}
@@ -4980,6 +5280,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 <MuiTouchRippleRoot
                                                   className="MuiTouchRipple-root"
                                                 >
+                                                  <Noop />
                                                   <span
                                                     className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                   >
@@ -5034,7 +5335,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           "placement": [Function],
                                           "popperOptions": [Function],
                                           "popperRef": [Function],
-                                          "style": [Function],
                                           "transition": [Function],
                                         },
                                         "render": [Function],
@@ -5131,6 +5431,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     transition={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Popper)
                                       anchorEl={
                                         <button
@@ -5182,7 +5483,61 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                       }
                                       transition={true}
-                                    />
+                                    >
+                                      <ForwardRef(PopperUnstyled)
+                                        anchorEl={
+                                          <button
+                                            aria-label="BSC"
+                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
+                                            data-mui-internal-clone-element="true"
+                                            data-testid="BSC"
+                                            role="menuitem"
+                                            style="transition-delay: 30ms;"
+                                            tabindex="-1"
+                                            type="button"
+                                          >
+                                            <img
+                                              height="70%"
+                                              src="binance-logo.svg"
+                                              style="margin: 0px;"
+                                              width="70%"
+                                            />
+                                            <span
+                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                            />
+                                          </button>
+                                        }
+                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
+                                        direction="ltr"
+                                        id="networkselection-action-5"
+                                        onBlur={[Function]}
+                                        onFocus={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseOver={[Function]}
+                                        open={false}
+                                        placement="left"
+                                        popperOptions={
+                                          Object {
+                                            "modifiers": Array [
+                                              Object {
+                                                "enabled": false,
+                                                "name": "arrow",
+                                                "options": Object {
+                                                  "element": null,
+                                                  "padding": 4,
+                                                },
+                                              },
+                                            ],
+                                          }
+                                        }
+                                        popperRef={
+                                          Object {
+                                            "current": undefined,
+                                          }
+                                        }
+                                        transition={true}
+                                      />
+                                    </ForwardRef(Popper)>
                                   </MuiTooltipPopper>
                                 </ForwardRef(Tooltip)>
                               </ForwardRef(SpeedDialAction)>

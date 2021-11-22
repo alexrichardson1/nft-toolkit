@@ -688,6 +688,7 @@ exports[`Input snapshot 1`] = `
                   required={false}
                   variant="outlined"
                 >
+                  <Noop />
                   <ForwardRef(FormControl)
                     className="MuiTextField-root css-1xj1k15-MuiTextField-root"
                     color="primary"
@@ -735,6 +736,7 @@ exports[`Input snapshot 1`] = `
                         }
                       }
                     >
+                      <Noop />
                       <div
                         className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
                       >
@@ -779,6 +781,7 @@ exports[`Input snapshot 1`] = `
                               }
                             }
                           >
+                            <Noop />
                             <ForwardRef(FormLabel)
                               className="css-1bzvmy4-MuiInputLabel-root"
                               classes={
@@ -820,6 +823,7 @@ exports[`Input snapshot 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <label
                                   className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
                                   data-shrink={true}
@@ -1351,6 +1355,7 @@ exports[`Input snapshot 1`] = `
                                 }
                               }
                             >
+                              <Noop />
                               <div
                                 className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
                                 onClick={[Function]}
@@ -1469,6 +1474,7 @@ exports[`Input snapshot 1`] = `
                                   type="text"
                                   value="test"
                                 >
+                                  <Noop />
                                   <input
                                     aria-invalid={false}
                                     autoFocus={false}
@@ -1493,6 +1499,7 @@ exports[`Input snapshot 1`] = `
                                   }
                                   notched={true}
                                 >
+                                  <Noop />
                                   <NotchedOutline
                                     className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
                                     label={
@@ -1515,6 +1522,7 @@ exports[`Input snapshot 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <fieldset
                                         aria-hidden={true}
                                         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
@@ -1530,6 +1538,7 @@ exports[`Input snapshot 1`] = `
                                             }
                                           }
                                         >
+                                          <Noop />
                                           <legend
                                             className="css-1z7n62"
                                           >
@@ -2252,6 +2261,7 @@ exports[`Input snapshot with error 1`] = `
                   required={false}
                   variant="outlined"
                 >
+                  <Noop />
                   <ForwardRef(FormControl)
                     className="MuiTextField-root css-1xj1k15-MuiTextField-root"
                     color="primary"
@@ -2301,6 +2311,7 @@ exports[`Input snapshot with error 1`] = `
                         }
                       }
                     >
+                      <Noop />
                       <div
                         className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
                       >
@@ -2345,6 +2356,7 @@ exports[`Input snapshot with error 1`] = `
                               }
                             }
                           >
+                            <Noop />
                             <ForwardRef(FormLabel)
                               className="css-1bzvmy4-MuiInputLabel-root"
                               classes={
@@ -2386,6 +2398,7 @@ exports[`Input snapshot with error 1`] = `
                                   }
                                 }
                               >
+                                <Noop />
                                 <label
                                   className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-error MuiFormLabel-filled css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
                                   data-shrink={true}
@@ -2917,6 +2930,7 @@ exports[`Input snapshot with error 1`] = `
                                 }
                               }
                             >
+                              <Noop />
                               <div
                                 className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary Mui-error MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
                                 onClick={[Function]}
@@ -3035,6 +3049,7 @@ exports[`Input snapshot with error 1`] = `
                                   type="text"
                                   value="test"
                                 >
+                                  <Noop />
                                   <input
                                     aria-invalid={true}
                                     autoFocus={false}
@@ -3059,6 +3074,7 @@ exports[`Input snapshot with error 1`] = `
                                   }
                                   notched={true}
                                 >
+                                  <Noop />
                                   <NotchedOutline
                                     className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
                                     label={
@@ -3081,6 +3097,7 @@ exports[`Input snapshot with error 1`] = `
                                         }
                                       }
                                     >
+                                      <Noop />
                                       <fieldset
                                         aria-hidden={true}
                                         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
@@ -3096,6 +3113,7 @@ exports[`Input snapshot with error 1`] = `
                                             }
                                           }
                                         >
+                                          <Noop />
                                           <legend
                                             className="css-1z7n62"
                                           >
@@ -3132,6 +3150,7 @@ exports[`Input snapshot with error 1`] = `
                               }
                             }
                           >
+                            <Noop />
                             <p
                               className="MuiFormHelperText-root Mui-error MuiFormHelperText-sizeMedium MuiFormHelperText-contained MuiFormHelperText-filled css-1wc848c-MuiFormHelperText-root"
                             >

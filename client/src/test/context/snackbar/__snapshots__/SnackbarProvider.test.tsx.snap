@@ -20,6 +20,7 @@ exports[`alert snapshot 1`] = `
       role="alert"
       square={true}
     >
+      <Noop />
       <ForwardRef(Paper)
         className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
         elevation={6}
@@ -71,6 +72,7 @@ exports[`alert snapshot 1`] = `
           }
           role="alert"
         >
+          <Noop />
           <div
             className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
             role="alert"
@@ -86,6 +88,7 @@ exports[`alert snapshot 1`] = `
                 }
               }
             >
+              <Noop />
               <div
                 className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
               >
@@ -116,6 +119,7 @@ exports[`alert snapshot 1`] = `
                       }
                       viewBox="0 0 24 24"
                     >
+                      <Noop />
                       <svg
                         aria-hidden={true}
                         className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
@@ -143,6 +147,7 @@ exports[`alert snapshot 1`] = `
                 }
               }
             >
+              <Noop />
               <div
                 className="MuiAlert-message css-acap47-MuiAlert-message"
               />
