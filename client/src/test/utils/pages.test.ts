@@ -40,6 +40,7 @@ describe("Pages Checks", () => {
       );
     });
   });
+
   describe("wrongPageStatic", () => {
     test("wrongPageStatic returns true when PAGE_NUMBER !== pageNumber", () => {
       const pageNumber = 0;
