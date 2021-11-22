@@ -44,7 +44,7 @@ export const uploadImages = async (
 interface StateT {
   collectionName: string;
   description: string;
-  images: ImageI[];
+  static: { images: ImageT };
   symbol: string;
   mintingPrice: number;
 }
@@ -58,7 +58,7 @@ export const uploadCollection = async (
   account: string,
   chainId: number
 ): Promise<UnsignedTransaction> => {
-  const tokens = state.images.map((image, index) => ({
+  const tokens = Object.values(state.static.images).map((image, index) => ({
     name: image.name,
     description: "",
     image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${account}/${

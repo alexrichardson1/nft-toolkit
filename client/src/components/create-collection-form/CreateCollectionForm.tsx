@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { DragEndEvent } from "@dnd-kit/core";
 import CloseIcon from "@mui/icons-material/Close";
 import { Alert, AlertColor, Collapse, IconButton, Stack } from "@mui/material";
@@ -7,6 +6,7 @@ import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
+import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
 import {
   DEFAULT_ALERT_DURATION,
@@ -19,7 +19,13 @@ import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormButtons from "./FormButtons";
-import { startLoading, stopLoading } from "./formUtils";
+import {
+  addDeployedAddress,
+  startLoading,
+  stopLoading,
+  uploadCollection,
+  uploadImages,
+} from "./formUtils";
 
 const INITIAL_STATE: FormStateI = {
   collectionName: "",
@@ -121,7 +127,7 @@ const CreateCollectionForm = (): JSX.Element => {
     }
   }, [pageNumber]);
 
-  const handleFormSubmit = (e: FormEvent) => {
+  const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!IS_LAST_PAGE) {
       handleNextPage();
@@ -132,24 +138,26 @@ const CreateCollectionForm = (): JSX.Element => {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
-
     startLoading(setLoadingMessage, setIsLoading, "Uploading...");
     console.log(state);
-
     try {
-      // await uploadImages(state.static.images, account, state.collectionName);
+      await uploadImages(
+        Object.values(state.static.images),
+        account,
+        state.collectionName
+      );
       setLoadingMessage("Saving...");
-      // const tx = await uploadCollection(state, account, chainId);
-      // const signer = library.getSigner();
+      const tx = await uploadCollection(state, account, chainId);
+      const signer = library.getSigner();
       setLoadingMessage("Deploying...");
-      // const txResponse = await signer.sendTransaction(tx);
+      const txResponse = await signer.sendTransaction(tx);
       setLoadingMessage("Confirming...");
-      // const txReceipt = await txResponse.wait();
-      // addDeployedAddress(
-      //   account,
-      //   state.collectionName,
-      //   txReceipt.contractAddress
-      // );
+      const txReceipt = await txResponse.wait();
+      addDeployedAddress(
+        account,
+        state.collectionName,
+        txReceipt.contractAddress
+      );
       showFormAlert("success", "Collection Creation Successful");
       stopLoading(setLoadingMessage, setIsLoading);
       setSuccess(true);
@@ -181,9 +189,9 @@ const CreateCollectionForm = (): JSX.Element => {
     </Collapse>
   );
 
-  // if (success) {
-  //   return <Redirect to={`/${account}/${state.collectionName}`} />;
-  // }
+  if (success) {
+    return <Redirect to={`/${account}/${state.collectionName}`} />;
+  }
 
   return (
     <Stack

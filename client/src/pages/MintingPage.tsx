@@ -74,11 +74,11 @@ const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
     left: "50%",
     transform: "translateX(-50%)",
     position: "absolute",
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     background: `url(${mintingData.gifSrc})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "200px 200px",
+    backgroundSize: "250px 250px",
   };
 };
 
@@ -261,13 +261,15 @@ const MintingPage = (): JSX.Element => {
                   {`Mint for ${formatEther(
                     BigNumber.from(mintingData.price).mul(mintingQuantity)
                   )}`}
-                  <SvgLogo
-                    icon={getLogoByChainId(mintingData.chainId)}
-                    width="20px"
-                    height="20px"
-                    margins
-                  />{" "}
-                  ${(mintingQuantity * usdValue).toFixed(DECIMALS)}
+                  {!isMinting && (
+                    <SvgLogo
+                      icon={getLogoByChainId(mintingData.chainId)}
+                      width="20px"
+                      height="20px"
+                      margins
+                    />
+                  )}{" "}
+                  ${`(${(mintingQuantity * usdValue).toFixed(DECIMALS)})`}
                 </LoadingButton>
               </Box>
             </Paper>
