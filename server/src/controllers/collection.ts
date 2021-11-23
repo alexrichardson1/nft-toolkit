@@ -70,10 +70,10 @@ export const deployContracts: RequestHandler = (req, res) => {
 };
 
 const getCollectionsFromDB = async (
-  fromAddress: string
+  creator: string
 ): Promise<UserCollectionI[]> => {
   const user = await User.findOne({
-    _id: fromAddress,
+    _id: creator,
   }).exec();
   if (!user) {
     throw new Error("User not found");
@@ -81,31 +81,41 @@ const getCollectionsFromDB = async (
   return user.collections;
 };
 
-export const getCollections: RequestHandler = async (req, res, next) => {
-  const { fromAddress } = req.params;
-  if (!fromAddress) {
+export const getUserCollections: RequestHandler = async (req, res, next) => {
+  const { creator } = req.params;
+  if (!creator) {
     return next(new Error("Invalid params"));
   }
   try {
-    const collections = await getCollectionsFromDB(fromAddress);
+    const collections = await getCollectionsFromDB(creator);
     return res.json({ collections });
   } catch (error) {
     return next(error);
   }
 };
 
+const getCollectionFromDB = async (
+  address: string,
+  chainId: number
+): Promise<CollectionT> => {
+  const collection = await Collection.findOne({
+    address,
+    chainId,
+  }).exec();
+  if (!collection) {
+    throw new Error("Collection not found");
+  }
+  return collection;
+};
+
 export const getCollection: RequestHandler = async (req, res, next) => {
-  const { fromAddress, collectionName } = req.params;
-  if (!fromAddress || !collectionName) {
+  const { chainId, address } = req.params;
+  if (!chainId || !address) {
     return next(new Error("Invalid params"));
   }
   try {
-    const collections = await getCollectionsFromDB(fromAddress);
-    const collection = collections.filter((col) => col.name === collectionName);
-    if (collection.length === 0) {
-      return next(new Error("Collection not found"));
-    }
-    return res.json({ collection: collection[0] });
+    const collection = await getCollectionFromDB(address, parseInt(chainId));
+    return res.json({ collection });
   } catch (error) {
     return next(error);
   }
