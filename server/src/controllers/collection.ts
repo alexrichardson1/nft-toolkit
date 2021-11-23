@@ -72,9 +72,7 @@ export const deployContracts: RequestHandler = (req, res) => {
 const getCollectionsFromDB = async (
   creator: string
 ): Promise<UserCollectionI[]> => {
-  const user = await User.findOne({
-    _id: creator,
-  }).exec();
+  const user = await User.findById(creator).exec();
   if (!user) {
     throw new Error("User not found");
   }
