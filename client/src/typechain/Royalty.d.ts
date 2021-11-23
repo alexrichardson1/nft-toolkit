@@ -22,22 +22,31 @@ import type { TypedEvent, TypedEventFilter, TypedListener } from "./common";
 interface RoyaltyInterface extends ethers.utils.Interface {
   functions: {
     "buy(uint256)": FunctionFragment;
+    "delist(uint256)": FunctionFragment;
     "listings(uint256)": FunctionFragment;
+    "royalty()": FunctionFragment;
     "sellListing(uint256,uint256)": FunctionFragment;
   };
 
   encodeFunctionData(functionFragment: "buy", values: [BigNumberish]): string;
   encodeFunctionData(
+    functionFragment: "delist",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "listings",
     values: [BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "royalty", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "sellListing",
     values: [BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(functionFragment: "buy", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "delist", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "listings", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "royalty", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "sellListing",
     data: BytesLike
@@ -95,10 +104,17 @@ export class Royalty extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    delist(
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     listings(
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
+
+    royalty(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     sellListing(
       tokenId: BigNumberish,
@@ -112,7 +128,14 @@ export class Royalty extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  delist(
+    tokenId: BigNumberish,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
   listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
+
+  royalty(overrides?: CallOverrides): Promise<BigNumber>;
 
   sellListing(
     tokenId: BigNumberish,
@@ -123,7 +146,11 @@ export class Royalty extends BaseContract {
   callStatic: {
     buy(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
 
+    delist(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
+
     listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
+
+    royalty(overrides?: CallOverrides): Promise<BigNumber>;
 
     sellListing(
       tokenId: BigNumberish,
@@ -140,7 +167,14 @@ export class Royalty extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    delist(
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
+
+    royalty(overrides?: CallOverrides): Promise<BigNumber>;
 
     sellListing(
       tokenId: BigNumberish,
@@ -155,10 +189,17 @@ export class Royalty extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
+    delist(
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
     listings(
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    royalty(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     sellListing(
       tokenId: BigNumberish,
