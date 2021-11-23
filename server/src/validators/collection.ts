@@ -5,6 +5,13 @@ const areTokensValid: CustomValidator = (value: TokenT[]) => {
   return value.length > 0;
 };
 
+const invalidAddress = (address: string) =>
+  check(address).isEthereumAddress().withMessage("Invalid address");
+
+const invalidChainId = check("chainId")
+  .isNumeric()
+  .withMessage("Invalid chainId");
+
 export const collectionValidator: () => ValidationChain[] = () => {
   return [
     check("name")
@@ -17,13 +24,11 @@ export const collectionValidator: () => ValidationChain[] = () => {
     check("tokens")
       .custom(areTokensValid)
       .withMessage("Must have at least one NFT in collection."),
-    check("fromAddress").isEthereumAddress().withMessage("Invalid address"),
+    invalidAddress("creator"),
+    invalidChainId,
+    check("layers").isArray(),
   ];
 };
-
-const invalidFromAddress = check("fromAddress")
-  .isEthereumAddress()
-  .withMessage("Invalid address");
 
 const invalidCollectionName = check("collectionName")
   .notEmpty()
@@ -32,16 +37,19 @@ const invalidCollectionName = check("collectionName")
 
 export const deployedValidator: () => ValidationChain[] = () => {
   return [
-    invalidFromAddress,
+    invalidAddress("fromAddress"),
     check("deployedAddress").isEthereumAddress().withMessage("Invalid address"),
     invalidCollectionName,
   ];
 };
 
 export const getCollectionsValidator: () => ValidationChain[] = () => {
-  return [invalidFromAddress];
+  return [invalidAddress("creator")];
 };
 
 export const getCollectionValidator: () => ValidationChain[] = () => {
-  return [invalidFromAddress, invalidCollectionName];
+  return [
+    invalidAddress("address"),
+    check("chainId").isNumeric().withMessage("Invalid chainId"),
+  ];
 };
