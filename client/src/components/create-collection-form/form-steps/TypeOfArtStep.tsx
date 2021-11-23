@@ -1,57 +1,11 @@
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import { SxProps } from "@mui/system";
+import ChoiceCard from "components/common/ChoiceCard";
 import genArtImg from "images/generativeIcon.svg";
 import staticArtImg from "images/staticIcon.svg";
+import { useCallback } from "react";
 import { wrongPage } from "utils/pages";
 
-const choiceCardBoxStyle = { height: 200, width: 300 };
-const imgStyle = { height: "100%", width: "100%" };
-const descriptionStyle: SxProps = { textAlign: "left", textTransform: "none" };
-const choiceCardStyle: SxProps = {
-  padding: 3,
-  height: 600,
-  alignItems: "center",
-  display: "flex",
-  flexDirection: "column",
-  gap: "25px",
-};
-interface CardPropsT {
-  title: string;
-  imgSrc: string;
-  description: JSX.Element;
-  handleCardClick: () => void;
-}
-
-const ChoiceCard = (props: CardPropsT) => {
-  return (
-    <Grid item xs={12} md={6}>
-      <Box>
-        <Button onClick={props.handleCardClick}>
-          <Paper sx={choiceCardStyle} elevation={5}>
-            <Typography color="secondary" align="center" variant="h3">
-              {props.title}
-            </Typography>
-            <Box sx={choiceCardBoxStyle}>
-              <img
-                style={imgStyle}
-                src={props.imgSrc}
-                alt={`${props.title}-img`}
-              />
-            </Box>
-            <Typography variant="h6" color="primary" sx={descriptionStyle}>
-              {props.description}
-            </Typography>
-          </Paper>
-        </Button>
-      </Box>
-    </Grid>
-  );
-};
-
+const ART_TYPE_STEP_NUMBER = 1;
 const GEN_ART_DESC = (
   <>
     Dynamically generate an NFT collection using multi-layered images
@@ -65,7 +19,6 @@ const GEN_ART_DESC = (
     </ul>
   </>
 );
-
 const STATIC_ART_DESC = (
   <>
     Create a static NFT collection
@@ -81,35 +34,44 @@ const STATIC_ART_DESC = (
 );
 
 interface PropsT {
-  pageNumber: number;
-  handleNextPage: () => void;
+  stepNumber: number;
+  handleNextStep: () => void;
   setGenerative: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const TYPE_OF_ART_PAGE = 1;
-
+/**
+ *  Step of the form which allows users to select which type of art they want to
+ * upload (static or generative) and takes them to the next step based on this
+ * choice
+ *
+ * @param setGenerative - sets the `generative` boolean true if generative type
+ * of art selected by user
+ * @param handleNextPage - go to next step based on user choice
+ * @param stepNumber - current step the form is on (must equal
+ * ART_TYPE_STEP_NUMBER for this step to render)
+ */
 const TypeOfArtStep = ({
   setGenerative,
-  handleNextPage,
-  pageNumber,
+  handleNextStep,
+  stepNumber,
 }: PropsT): JSX.Element => {
-  if (wrongPage(pageNumber, TYPE_OF_ART_PAGE)) {
-    return <></>;
-  }
+  const handleGenerativeCardClick = useCallback(() => {
+    setGenerative(true);
+    handleNextStep();
+  }, []);
 
-  return (
+  return wrongPage(stepNumber, ART_TYPE_STEP_NUMBER) ? (
+    <></>
+  ) : (
     <Grid container spacing={2}>
       <ChoiceCard
-        handleCardClick={() => {
-          setGenerative(true);
-          handleNextPage();
-        }}
+        handleCardClick={handleGenerativeCardClick}
         imgSrc={genArtImg}
         description={GEN_ART_DESC}
         title="Generative Art"
       />
       <ChoiceCard
-        handleCardClick={handleNextPage}
+        handleCardClick={handleNextStep}
         imgSrc={staticArtImg}
         description={STATIC_ART_DESC}
         title="Static Art"

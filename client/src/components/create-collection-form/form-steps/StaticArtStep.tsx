@@ -1,42 +1,58 @@
-import ImageUploadTabs from "components/common/ImageUploadTabs";
 import { wrongPageStatic } from "utils/pages";
+import ImageUploadWithTabs from "../ImageUploadWithTabs";
+
+const STATIC_ART_STEP_NUMBER = 2;
 
 interface PropsT {
-  pageNumber: number;
+  stepNumber: number;
   generative: boolean;
   state: FormStateI;
   isLoading: boolean;
-  handleImageDelete: (deleteId: string) => void;
+  handleImgDelete: (deleteId: string) => void;
   handleImgNameChange: (e: InputEventT, id: string) => void;
-  handleImageDrop: (
+  handleImgDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
   ) => void;
 }
 
-const STATIC_UPLOAD_PAGE = 2;
-
-const StaticArtForm = ({
-  pageNumber,
+/**
+ * Step of the form which the user can only reach if they chose to upload static
+ * images rather than using generative art
+ *
+ * @param stepNumber - current step the form is on (must equal
+ * STATIC_ART_STEP_NUMBER for this step to render)
+ * @param generative - false if the user wants to upload static art, True
+ * otherwise (must be true for this step to render)
+ * @param state - state of the form
+ * @param handleImgDelete - handle deletion of Static Images
+ * @param handleImgDrop - handle drop of images into image upload area
+ * @param handleImgNameChange - handle name change for uploaded static images
+ * @param isLoading - true if the form is in a loading state, False otherwise
+ */
+const StaticArtStep = ({
+  stepNumber,
   generative,
   state,
-  handleImageDelete,
-  handleImageDrop,
+  handleImgDelete,
+  handleImgDrop,
   handleImgNameChange,
   isLoading,
 }: PropsT): JSX.Element => {
-  if (wrongPageStatic(generative, pageNumber, STATIC_UPLOAD_PAGE)) {
+  if (wrongPageStatic(generative, stepNumber, STATIC_ART_STEP_NUMBER)) {
     return <></>;
   }
 
   const children = {
-    state,
-    handleImageDelete,
-    handleImageDrop,
+    NUMBER_OF_IMAGES: state.static.numberOfImages,
+    imgObjs: state.static.images,
+    handleImgDelete,
+    handleImgDrop,
     handleImgNameChange,
     isLoading,
   };
-  return <ImageUploadTabs {...children} />;
+
+  return <ImageUploadWithTabs {...children} />;
 };
 
-export default StaticArtForm;
+export default StaticArtStep;

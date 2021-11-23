@@ -3,14 +3,15 @@ import Paper from "@mui/material/Paper";
 import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { wrongPage } from "utils/pages";
 
 const DESCRIPTION_ROWS = 4;
 const ICON_SIZE = 25;
+const GENERAL_INFO_STEP_NUMBER = 0;
 
 interface PropsT {
-  pageNumber: number;
+  stepNumber: number;
   state: FormStateI;
   handleCollNameChange: (e: InputEventT) => void;
   handleDescriptionChange: (e: InputEventT) => void;
@@ -18,6 +19,11 @@ interface PropsT {
   handleSymbolChange: (e: InputEventT) => void;
 }
 
+/**
+ *
+ * @param selectedNet - The network currently selected by the user
+ * @returns props for the `mintinPrice` input field
+ */
 const priceInputProps = (selectedNet: NetworkT) => ({
   inputProps: { min: "0", step: "any" },
   endAdornment: (
@@ -27,21 +33,38 @@ const priceInputProps = (selectedNet: NetworkT) => ({
   ),
 });
 
-const GENERAL_INFO_PAGE = 0;
-
-const GeneralInfo = ({
-  pageNumber,
+/**
+ *
+ *
+ *
+ * @param stepNumber - current step the form is on (must equal
+ * GENERAL_INFO_STEP_NUMBER for this step to render)
+ * @param state - state of the form
+ * @param handleCollNameChange - handle change in the name of the collection
+ * @param handleMintPriceChange - handle change in the minting price of the
+ *  collection
+ * @param handleDescriptionChange - handle change in the description of the
+ * collection
+ * @param handleSymbolChange - handle change in the symbol of the collection
+ */
+const GeneralInfoStep = ({
+  stepNumber,
   state,
   handleCollNameChange,
   handleMintPriceChange,
   handleDescriptionChange,
   handleSymbolChange,
 }: PropsT): JSX.Element => {
-  if (wrongPage(pageNumber, GENERAL_INFO_PAGE)) {
+  if (wrongPage(stepNumber, GENERAL_INFO_STEP_NUMBER)) {
     return <></>;
   }
 
   const { selectedNet } = useContext(NetworkContext);
+  const priceInputPropsMemo = useMemo(
+    () => priceInputProps(selectedNet),
+    [selectedNet]
+  );
+
   return (
     <>
       <Paper>
@@ -84,7 +107,7 @@ const GeneralInfo = ({
           placeholder="Enter a minting price"
           label="Minting Price"
           type="number"
-          InputProps={priceInputProps(selectedNet)}
+          InputProps={priceInputPropsMemo}
           required
         />
       </Paper>
@@ -92,4 +115,4 @@ const GeneralInfo = ({
   );
 };
 
-export default GeneralInfo;
+export default GeneralInfoStep;
