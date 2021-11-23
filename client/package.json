@@ -15,6 +15,7 @@
     "@dnd-kit/core": "^4.0.2",
     "@dnd-kit/sortable": "^5.1.0",
     "@dnd-kit/utilities": "^3.0.0",
+    "browserslist": "^4.16.5",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.4",
