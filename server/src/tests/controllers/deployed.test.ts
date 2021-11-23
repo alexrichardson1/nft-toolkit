@@ -58,7 +58,8 @@ describe("Add contract address to collection", () => {
     const mockCollection = new Collection(mockCollectionInfo);
     await mockCollection.save();
     await addDeployedAddress(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith(new Error("User not found"));
+    const user = await User.findOne({ _id: mockCreator });
+    expect(user).toBeDefined();
   });
 
   it("Should succeed to set deployed address", async () => {
@@ -71,9 +72,7 @@ describe("Add contract address to collection", () => {
     await mockUser.save();
     await addDeployedAddress(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith({ success: true });
-    const user = await User.findOne({
-      _id: mockCreator,
-    });
+    const user = await User.findOne({ _id: mockCreator });
     expect(user).toBeDefined();
   });
 });
