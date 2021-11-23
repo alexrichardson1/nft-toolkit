@@ -653,6 +653,7 @@ exports[`ImageUpload snapshot 1`] = `
                 onDragLeave={[Function]}
                 onDragOver={[Function]}
                 onDrop={[Function]}
+                onKeyPress={[Function]}
                 style={
                   Object {
                     "borderColor": "#00bcd4",

@@ -5104,6 +5104,30 @@ exports[`CreateCollectionPage snapshot 1`] = `
                         }
                         stepNumber={0}
                       />
+                      <LayerImageUpload
+                        generative={false}
+                        handleLayerImgDelete={[Function]}
+                        handleLayerImgDrop={[Function]}
+                        handleLayerImgNameChange={[Function]}
+                        isLoading={false}
+                        state={
+                          Object {
+                            "collectionName": "",
+                            "description": "",
+                            "generative": Object {
+                              "layers": Array [],
+                              "numberOfLayers": 0,
+                            },
+                            "mintingPrice": 0,
+                            "static": Object {
+                              "images": Object {},
+                              "numberOfImages": 0,
+                            },
+                            "symbol": "",
+                          }
+                        }
+                        stepNumber={0}
+                      />
                       <ForwardRef(Box)
                         sx={
                           Object {
@@ -6110,11 +6134,11 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               </ForwardRef(Collapse)>
                             </FormAlert>
                             <FormButtons
-                              handlePrevPage={[Function]}
-                              isLastPage={false}
+                              handlePrevStep={[Function]}
+                              isLastStep={false}
                               isLoading={false}
                               loadingMessage=""
-                              pageNumber={0}
+                              stepNumber={0}
                             >
                               <ForwardRef(Box)
                                 sx={

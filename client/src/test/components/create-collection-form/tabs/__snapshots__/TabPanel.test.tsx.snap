@@ -1002,7 +1002,7 @@ exports[`TabPanel snapshot 1`] = `
                           "flexDirection": "column",
                           "gap": "10px",
                           "height": 1,
-                          "overflowY": "scroll",
+                          "overflowY": "auto",
                           "padding": 3,
                           "width": 1,
                         }
@@ -1018,7 +1018,7 @@ exports[`TabPanel snapshot 1`] = `
                             "flexDirection": "column",
                             "gap": "10px",
                             "height": 1,
-                            "overflowY": "scroll",
+                            "overflowY": "auto",
                             "padding": 3,
                             "width": 1,
                           }
@@ -1341,7 +1341,7 @@ exports[`TabPanel snapshot 1`] = `
                       >
                         <Noop />
                         <div
-                          className="MuiBox-root css-5rn9gd"
+                          className="MuiBox-root css-wnhb9v"
                         />
                       </Styled(div)>
                     </ForwardRef(Box)>

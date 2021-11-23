@@ -1346,7 +1346,13 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                 imgObjs={Object {}}
                 isLoading={false}
               >
-                <ForwardRef(Paper)>
+                <ForwardRef(Paper)
+                  sx={
+                    Object {
+                      "width": 1,
+                    }
+                  }
+                >
                   <MuiPaperRoot
                     as="div"
                     className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1"
@@ -1359,13 +1365,21 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                         "component": "div",
                         "elevation": 1,
                         "square": false,
+                        "sx": Object {
+                          "width": 1,
+                        },
                         "variant": "elevation",
+                      }
+                    }
+                    sx={
+                      Object {
+                        "width": 1,
                       }
                     }
                   >
                     <Noop />
                     <div
-                      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
+                      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-u06erh-MuiPaper-root"
                     >
                       <ImageUpload
                         NUMBER_OF_IMAGES={0}
@@ -1379,6 +1393,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                           onDragLeave={[Function]}
                           onDragOver={[Function]}
                           onDrop={[Function]}
+                          onKeyPress={[Function]}
                           style={
                             Object {
                               "borderColor": "#00bcd4",
