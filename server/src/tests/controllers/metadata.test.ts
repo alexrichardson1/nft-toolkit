@@ -1,11 +1,9 @@
 import { getTokenMetadata } from "@controllers/metadata";
-import { User, UserT } from "@models/user";
+import { Collection, CollectionT } from "@models/collection";
 import {
-  mockCollection,
-  mockFromAddress,
-  mockInvalidCollectionName,
+  mockCollectionInfo,
+  mockDeployedAddress,
   mockTokenInfo,
-  mockValidCollectionName,
 } from "@tests/mockCollectionInfo";
 import db from "@tests/testDB";
 import { NextFunction, Request, Response } from "express";
@@ -13,24 +11,24 @@ import { Document, Types } from "mongoose";
 
 let mockResponse: Response;
 let mockNext: NextFunction;
-let mockUser: Document<unknown, unknown, UserT> &
-  UserT & {
+let mockCollection: Document<unknown, unknown, CollectionT> &
+  CollectionT & {
     _id: Types.ObjectId;
   };
 
 const getMockRequest = ({
-  fromAddress = mockFromAddress,
-  collectionName = mockInvalidCollectionName,
+  chainId = "4",
+  address = mockDeployedAddress,
   tokenId = "0",
 }: {
-  fromAddress?: string;
-  collectionName?: string;
+  chainId?: string;
+  address?: string;
   tokenId?: string;
 } = {}) => {
   return {
     params: {
-      fromAddress: fromAddress,
-      collectionName: collectionName,
+      chainId: chainId,
+      address: address,
       tokenId: tokenId,
     },
   } as unknown as Request;
@@ -46,9 +44,9 @@ beforeEach(() => {
     status: jest.fn(),
   } as unknown as Response;
   mockNext = jest.fn();
-  mockUser = new User({
-    fromAddress: mockFromAddress,
-    collections: [mockCollection],
+  mockCollection = new Collection({
+    ...mockCollectionInfo,
+    ...{ address: mockDeployedAddress },
   });
 });
 
@@ -70,27 +68,16 @@ describe("Token Metadata", () => {
     expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
   });
 
-  it("Should fail if user does not exist in db", async () => {
-    const mockRequest = getMockRequest();
-    await getTokenMetadata(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith(new Error("User not found"));
-  });
-
   it("Should fail if collection does not exist in db", async () => {
-    const mockRequest = getMockRequest();
-    await mockUser.save();
-    await getTokenMetadata(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith(
-      new Error("Collection name not found")
-    );
+    await getTokenMetadata(getMockRequest(), mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Collection not found"));
   });
 
   it("Should fail if token does not exist in collection", async () => {
     const mockRequest = getMockRequest({
-      collectionName: mockValidCollectionName,
       tokenId: "2",
     });
-    await mockUser.save();
+    await mockCollection.save();
     await getTokenMetadata(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(
       new Error("Token id not found in collection")
@@ -98,11 +85,8 @@ describe("Token Metadata", () => {
   });
 
   it("Should succeed if token does exist in collection", async () => {
-    const mockRequest = getMockRequest({
-      collectionName: mockValidCollectionName,
-    });
-    await mockUser.save();
-    await getTokenMetadata(mockRequest, mockResponse, mockNext);
+    await mockCollection.save();
+    await getTokenMetadata(getMockRequest(), mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining(mockTokenInfo)
     );
