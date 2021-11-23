@@ -1,29 +1,23 @@
 import { addDeployedAddress } from "@controllers/deployed";
-import { User, UserT } from "@models/user";
+import { Collection } from "@models/collection";
+import { User } from "@models/user";
+import {
+  mockCollectionInfo,
+  mockCreator,
+  mockDeployedAddress,
+} from "@tests/mockCollectionInfo";
 import db from "@tests/testDB";
 import { NextFunction, Request, Response } from "express";
-import { Document, Types } from "mongoose";
-import {
-  mockCollection,
-  mockDeployedAddress,
-  mockFromAddress,
-  mockInvalidCollectionName,
-  mockValidCollectionName,
-} from "../mockCollectionInfo";
 
 const mockRequest = {
   params: {
-    fromAddress: mockFromAddress,
-    collectionName: mockInvalidCollectionName,
-    deployedAddress: mockDeployedAddress,
+    creator: mockCreator,
+    chainId: "4",
+    address: mockDeployedAddress,
   },
 } as unknown as Request;
 let mockResponse: Response;
 let mockNext: NextFunction;
-let mockUser: Document<unknown, unknown, UserT> &
-  UserT & {
-    _id: Types.ObjectId;
-  };
 
 beforeAll(async () => {
   await db.connect();
@@ -35,10 +29,6 @@ beforeEach(() => {
     status: jest.fn(),
   } as unknown as Response;
   mockNext = jest.fn();
-  mockUser = new User({
-    fromAddress: mockFromAddress,
-    collections: [mockCollection],
-  });
 });
 
 afterEach(async () => {
@@ -59,34 +49,31 @@ describe("Add contract address to collection", () => {
     expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
   });
 
+  it("Should fail if collection does not exist in db", async () => {
+    await addDeployedAddress(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Collection not found"));
+  });
+
   it("Should fail if user does not exist in db", async () => {
+    const mockCollection = new Collection(mockCollectionInfo);
+    await mockCollection.save();
     await addDeployedAddress(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(new Error("User not found"));
   });
 
-  it("Should fail if collection does not exist in db", async () => {
-    await mockUser.save();
-    await addDeployedAddress(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith(
-      new Error("Collection name not found")
-    );
-  });
-
   it("Should succeed to set deployed address", async () => {
-    const mockRequest = {
-      params: {
-        fromAddress: mockFromAddress,
-        collectionName: mockValidCollectionName,
-        deployedAddress: mockDeployedAddress,
-      },
-    } as unknown as Request;
+    const mockCollection = new Collection(mockCollectionInfo);
+    await mockCollection.save();
+    const mockUser = new User({
+      _id: mockCreator,
+      collections: [],
+    });
     await mockUser.save();
     await addDeployedAddress(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith({ success: true });
     const user = await User.findOne({
-      fromAddress: mockFromAddress,
-      "collections.address": mockDeployedAddress,
+      _id: mockCreator,
     });
-    expect(user).toBeTruthy();
+    expect(user).toBeDefined();
   });
 });
