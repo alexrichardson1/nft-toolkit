@@ -9,6 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "immer": "^9.0.6",
     "@babel/core": "^7.0.0",
     "@dnd-kit/core": "^4.0.2",
     "@dnd-kit/sortable": "^5.1.0",
