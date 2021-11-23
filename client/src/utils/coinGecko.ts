@@ -27,10 +27,9 @@ const getUSDValue = async (chainId: number): Promise<number> => {
 export const getDollarValue = async (
   price: string,
   chainId: number
-): Promise<string> => {
+): Promise<number> => {
   const num =
     parseFloat(formatEther(BigNumber.from(price))) *
     (await getUSDValue(chainId));
-  const DECIMALS = 2;
-  return `($${num.toFixed(DECIMALS)})`;
+  return num;
 };

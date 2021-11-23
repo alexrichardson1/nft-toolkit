@@ -150,7 +150,7 @@ exports[`TabPanel snapshot 1`] = `
             "contrastText": "#fff",
             "dark": "#e65100",
             "light": "#ff9800",
-            "main": "#ED6C02",
+            "main": "#ed6c02",
           },
         },
         "shadows": Array [
@@ -467,7 +467,7 @@ exports[`TabPanel snapshot 1`] = `
               "contrastText": "#fff",
               "dark": "#e65100",
               "light": "#ff9800",
-              "main": "#ED6C02",
+              "main": "#ed6c02",
             },
           },
           "shadows": Array [
@@ -817,7 +817,7 @@ exports[`TabPanel snapshot 1`] = `
                           "contrastText": "#fff",
                           "dark": "#e65100",
                           "light": "#ff9800",
-                          "main": "#ED6C02",
+                          "main": "#ed6c02",
                         },
                       },
                       "shadows": Array [
@@ -986,6 +986,7 @@ exports[`TabPanel snapshot 1`] = `
                     }
                   }
                 >
+                  <Noop />
                   <div
                     aria-labelledby="vertical-tab-0"
                     className="MuiBox-root css-uwwqev"
@@ -1001,7 +1002,7 @@ exports[`TabPanel snapshot 1`] = `
                           "flexDirection": "column",
                           "gap": "10px",
                           "height": 1,
-                          "overflowY": "scroll",
+                          "overflowY": "auto",
                           "padding": 3,
                           "width": 1,
                         }
@@ -1017,7 +1018,7 @@ exports[`TabPanel snapshot 1`] = `
                             "flexDirection": "column",
                             "gap": "10px",
                             "height": 1,
-                            "overflowY": "scroll",
+                            "overflowY": "auto",
                             "padding": 3,
                             "width": 1,
                           }
@@ -1169,7 +1170,7 @@ exports[`TabPanel snapshot 1`] = `
                                 "contrastText": "#fff",
                                 "dark": "#e65100",
                                 "light": "#ff9800",
-                                "main": "#ED6C02",
+                                "main": "#ed6c02",
                               },
                             },
                             "shadows": Array [
@@ -1338,8 +1339,9 @@ exports[`TabPanel snapshot 1`] = `
                           }
                         }
                       >
+                        <Noop />
                         <div
-                          className="MuiBox-root css-5rn9gd"
+                          className="MuiBox-root css-wnhb9v"
                         />
                       </Styled(div)>
                     </ForwardRef(Box)>

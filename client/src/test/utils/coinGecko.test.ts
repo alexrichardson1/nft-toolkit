@@ -12,6 +12,6 @@ describe("getUSDValue", () => {
   test("Gets usd value of native token from chainId", () => {
     axios.get.mockResolvedValue({ data: { ethereum: { usd: 0.0 } } });
     const RINKEBY_ETH = 4;
-    expect(getDollarValue("100", RINKEBY_ETH)).resolves.toEqual("($0.00)");
+    expect(getDollarValue("100", RINKEBY_ETH)).resolves.toEqual(0);
   });
 });

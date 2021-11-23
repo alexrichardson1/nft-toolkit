@@ -21,11 +21,13 @@ interface InputPropsI {
   sx?: SxProps<Theme>;
   defaultValue?: unknown;
   inputProps?: InputBaseComponentProps;
+  onKeyPress?: React.KeyboardEventHandler<HTMLDivElement>;
 }
 
 const Input = (props: InputPropsI): JSX.Element => {
   return (
     <TextField
+      onKeyPress={props.onKeyPress}
       defaultValue={props.defaultValue}
       type={props.type}
       label={props.label}

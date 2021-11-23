@@ -150,7 +150,7 @@ exports[`MobileMenu snapshot 1`] = `
             "contrastText": "#fff",
             "dark": "#e65100",
             "light": "#ff9800",
-            "main": "#ED6C02",
+            "main": "#ed6c02",
           },
         },
         "shadows": Array [
@@ -467,7 +467,7 @@ exports[`MobileMenu snapshot 1`] = `
               "contrastText": "#fff",
               "dark": "#e65100",
               "light": "#ff9800",
-              "main": "#ED6C02",
+              "main": "#ed6c02",
             },
           },
           "shadows": Array [
@@ -796,6 +796,7 @@ exports[`MobileMenu snapshot 1`] = `
                   }
                   transitionDuration="auto"
                 >
+                  <Noop />
                   <ForwardRef(Popover)
                     PaperProps={
                       Object {
@@ -1248,6 +1249,7 @@ exports[`MobileMenu snapshot 1`] = `
                         }
                       }
                     >
+                      <Noop />
                       <ForwardRef(Modal)
                         BackdropProps={
                           Object {
@@ -2764,6 +2766,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                                 role="presentation"
                               >
+                                <Noop />
                                 <div
                                   className="MuiModal-root MuiPopover-root MuiMenu-root css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root"
                                   id="primary-menu-mobile"
@@ -2775,6 +2778,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     onClick={[Function]}
                                     open={true}
                                   >
+                                    <Noop />
                                     <ForwardRef(Backdrop)
                                       className="css-1rfr5hw-MuiModal-backdrop"
                                       invisible={true}
@@ -2902,6 +2906,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 aria-hidden={true}
                                                 className="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
@@ -3073,6 +3078,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           }
                                           tabIndex="-1"
                                         >
+                                          <Noop />
                                           <ForwardRef(Paper)
                                             className="MuiPopover-paper css-1axini2-MuiPopover-paper"
                                             classes={
@@ -3272,6 +3278,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                               tabIndex="-1"
                                             >
+                                              <Noop />
                                               <MuiMenuPaper
                                                 className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-3bmhjh-MuiPaper-root-MuiPopover-paper"
                                                 onFocus={[Function]}
@@ -3284,6 +3291,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 }
                                                 tabIndex="-1"
                                               >
+                                                <Noop />
                                                 <ForwardRef(Paper)
                                                   className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1eevtzc-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                   onFocus={[Function]}
@@ -3374,6 +3382,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     }
                                                     tabIndex="-1"
                                                   >
+                                                    <Noop />
                                                     <div
                                                       className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                       onFocus={[Function]}
@@ -3400,6 +3409,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         onKeyDown={[Function]}
                                                         variant="selectedMenu"
                                                       >
+                                                        <Noop />
                                                         <ForwardRef(MenuList)
                                                           actions={
                                                             Object {
@@ -3476,6 +3486,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               role="menu"
                                                               tabIndex={-1}
                                                             >
+                                                              <Noop />
                                                               <ul
                                                                 className="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
                                                                 onKeyDown={[Function]}
@@ -3531,6 +3542,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={0}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -3592,6 +3604,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={0}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root Mui-focusVisible css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           onBlur={[Function]}
@@ -3636,6 +3649,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 viewBox="0 0 24 24"
                                                                               >
+                                                                                <Noop />
                                                                                 <svg
                                                                                   aria-hidden={true}
                                                                                   className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
@@ -3689,6 +3703,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -3702,6 +3717,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -3771,6 +3787,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -3840,6 +3857,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={-1}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="menuItemMobile"
@@ -3915,6 +3933,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -3928,6 +3947,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -4195,6 +4215,7 @@ exports[`MobileMenu snapshot 1`] = `
                   }
                   transitionDuration="auto"
                 >
+                  <Noop />
                   <ForwardRef(Popover)
                     PaperProps={
                       Object {
@@ -4477,6 +4498,7 @@ exports[`MobileMenu snapshot 1`] = `
                         }
                       }
                     >
+                      <Noop />
                       <ForwardRef(Modal)
                         BackdropProps={
                           Object {
@@ -5084,6 +5106,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                                 role="presentation"
                               >
+                                <Noop />
                                 <div
                                   className="MuiModal-root MuiModal-hidden MuiPopover-root MuiMenu-root css-6f6ff7-MuiModal-root-MuiPopover-root-MuiMenu-root"
                                   onKeyDown={[Function]}
@@ -5094,6 +5117,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     onClick={[Function]}
                                     open={false}
                                   >
+                                    <Noop />
                                     <ForwardRef(Backdrop)
                                       className="css-1rfr5hw-MuiModal-backdrop"
                                       invisible={true}
@@ -5221,6 +5245,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 }
                                               }
                                             >
+                                              <Noop />
                                               <div
                                                 aria-hidden={true}
                                                 className="MuiBackdrop-root MuiBackdrop-invisible css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop"
@@ -5477,6 +5502,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           }
                                           tabIndex="-1"
                                         >
+                                          <Noop />
                                           <ForwardRef(Paper)
                                             className="MuiPopover-paper css-1axini2-MuiPopover-paper"
                                             classes={
@@ -5756,6 +5782,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                               tabIndex="-1"
                                             >
+                                              <Noop />
                                               <MuiMenuPaper
                                                 className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-3bmhjh-MuiPaper-root-MuiPopover-paper"
                                                 onFocus={[Function]}
@@ -5768,6 +5795,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                 }
                                                 tabIndex="-1"
                                               >
+                                                <Noop />
                                                 <ForwardRef(Paper)
                                                   className="MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1eevtzc-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                   onFocus={[Function]}
@@ -5938,6 +5966,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                     }
                                                     tabIndex="-1"
                                                   >
+                                                    <Noop />
                                                     <div
                                                       className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiMenu-paper MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper"
                                                       onFocus={[Function]}
@@ -5964,6 +5993,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         onKeyDown={[Function]}
                                                         variant="selectedMenu"
                                                       >
+                                                        <Noop />
                                                         <ForwardRef(MenuList)
                                                           actions={
                                                             Object {
@@ -6119,6 +6149,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               role="menu"
                                                               tabIndex={-1}
                                                             >
+                                                              <Noop />
                                                               <ul
                                                                 className="MuiList-root MuiList-padding MuiMenu-list css-6hp17o-MuiList-root-MuiMenu-list"
                                                                 onKeyDown={[Function]}
@@ -6180,6 +6211,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={0}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -6249,6 +6281,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={0}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="ethereum-mobile-option"
@@ -6324,6 +6357,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -6337,6 +6371,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -6406,6 +6441,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -6475,6 +6511,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={-1}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="cardano-mobile-option"
@@ -6550,6 +6587,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -6563,6 +6601,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -6632,6 +6671,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -6701,6 +6741,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={-1}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="avalanche-mobile-option"
@@ -6776,6 +6817,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -6789,6 +6831,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -6858,6 +6901,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -6927,6 +6971,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={-1}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="solana-mobile-option"
@@ -7002,6 +7047,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -7015,6 +7061,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -7084,6 +7131,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -7153,6 +7201,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={-1}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="polygon-mobile-option"
@@ -7228,6 +7277,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -7241,6 +7291,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >
@@ -7310,6 +7361,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     }
                                                                     tabIndex={-1}
                                                                   >
+                                                                    <Noop />
                                                                     <ForwardRef(ButtonBase)
                                                                       className="css-13i87ox-MuiMenuItem-root"
                                                                       classes={
@@ -7379,6 +7431,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         role="menuitem"
                                                                         tabIndex={-1}
                                                                       >
+                                                                        <Noop />
                                                                         <li
                                                                           className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                                           data-testid="bsc-mobile-option"
@@ -7454,6 +7507,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                               }
                                                                             >
+                                                                              <Noop />
                                                                               <p
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
@@ -7467,6 +7521,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             <MuiTouchRippleRoot
                                                                               className="MuiTouchRipple-root"
                                                                             >
+                                                                              <Noop />
                                                                               <span
                                                                                 className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                                                                               >

@@ -1,5 +1,6 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Theme, Typography, useTheme } from "@mui/material";
+import { useRef } from "react";
 import "./imageUpload.css";
 
 const labelStyle = (theme: Theme) => ({
@@ -7,27 +8,51 @@ const labelStyle = (theme: Theme) => ({
   borderColor: theme.palette.primary.main,
   boxShadow: theme.shadows[2],
 });
+
 interface PropsT {
-  imgObjs: ImageT[];
+  NUMBER_OF_IMAGES: number;
   handleImageDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
   ) => void;
 }
 
-const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
+/**
+ * Image upload component that allows users to drag and drop images or add
+ * images manually from their file browser in order to upload them
+ *
+ * @param NUMBER_OF_IMAGES - the number of images uploaded by the user
+ * @param handleImageDrop - handle images being dropped or added
+ */
+
+const ImageUpload = ({
+  NUMBER_OF_IMAGES,
+  handleImageDrop,
+}: PropsT): JSX.Element => {
   const theme = useTheme();
+
+  const ref = useRef<HTMLInputElement>(null);
 
   const preventDefault = (e: React.DragEvent<HTMLLabelElement>) =>
     e.preventDefault();
+  const handleLabelEnterPress: React.KeyboardEventHandler<HTMLLabelElement> = (
+    e
+  ) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (ref.current) {
+        ref.current.click();
+      }
+    }
+  };
 
-  const NUMBER_OF_IMAGES = imgObjs.length;
   const UPLOAD_INPUT_ID = "upload-images";
 
   return (
     <>
       <label
         tabIndex={0}
+        onKeyPress={handleLabelEnterPress}
         style={labelStyle(theme)}
         className="img-upload-label"
         onDragOver={preventDefault}
@@ -48,6 +73,7 @@ const ImageUpload = ({ imgObjs, handleImageDrop }: PropsT): JSX.Element => {
       </label>
 
       <input
+        ref={ref}
         accept="image/*"
         onChange={(e) => handleImageDrop(e, e.target.files)}
         id={UPLOAD_INPUT_ID}

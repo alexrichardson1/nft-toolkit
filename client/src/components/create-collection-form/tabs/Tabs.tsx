@@ -34,15 +34,21 @@ const accessibilityProps = (index: number) => ({
 });
 
 interface PropsT {
-  imgObjs: ImageT[];
+  imgObjs: ImageT;
+  NUMBER_OF_IMAGES: number;
+  isLoading: boolean;
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (e: InputEventT, id: string) => void;
 }
 
-const VerticalTabs = (props: PropsT): JSX.Element => {
+const VerticalTabs = ({
+  NUMBER_OF_IMAGES,
+  imgObjs,
+  isLoading,
+  handleImageDelete,
+  handleNameChange,
+}: PropsT): JSX.Element => {
   const [value, setValue] = useState(INITIAL_VALUE);
-
-  const NUMBER_OF_IMAGES = props.imgObjs.length;
 
   useEffect(() => {
     if (value >= NUMBER_OF_IMAGES) {
@@ -70,34 +76,37 @@ const VerticalTabs = (props: PropsT): JSX.Element => {
           },
         }}
         sx={tabsStyle}>
-        {props.imgObjs.map((imgObj, idx) => (
+        {Object.keys(imgObjs).map((imgId, idx) => (
           <Tab
-            key={imgObj.id}
+            key={imgId}
             label={`Image ${idx + 1}`}
             {...accessibilityProps(idx)}
           />
         ))}
       </Tabs>
-
-      {props.imgObjs.map((imgObj, idx) => (
-        <TabPanel key={imgObj.id} value={value} index={idx}>
+      {Object.entries(imgObjs).map(([imgId, img], idx) => (
+        <TabPanel key={imgId} value={value} index={idx}>
           <Box sx={inputAndDeleteContainer}>
             <Input
               sx={nameInputStyle}
               label="Name"
-              value={imgObj.name}
+              value={img.name}
               placeholder="Enter a name for this NFT here"
               required
               inputProps={{ "data-testid": "nft-name-input" }}
-              onChange={(e) => props.handleNameChange(e, imgObj.id)}
+              onChange={(e) => handleNameChange(e, imgId)}
             />
             <IconButton
+              disabled={isLoading}
               data-testid="delete-icon"
-              onClick={() => props.handleImageDelete(imgObj.id)}>
-              <DeleteIcon fontSize="large" color="error" />
+              onClick={() => handleImageDelete(imgId)}>
+              <DeleteIcon
+                fontSize="large"
+                color={isLoading ? "disabled" : "error"}
+              />
             </IconButton>
           </Box>
-          <img width="100%" src={imgObj.url} alt={imgObj.image.name} />
+          <img width="100%" src={img.url} alt={img.image.name} />
         </TabPanel>
       ))}
     </Box>
