@@ -1,5 +1,5 @@
 import { Collection, CollectionT, Layer, Token } from "@models/collection";
-import { User } from "@models/user";
+import { User, UserCollectionI } from "@models/user";
 import { S3 } from "aws-sdk";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
@@ -71,9 +71,9 @@ export const deployContracts: RequestHandler = (req, res) => {
 
 const getCollectionsFromDB = async (
   fromAddress: string
-): Promise<CollectionT[]> => {
+): Promise<UserCollectionI[]> => {
   const user = await User.findOne({
-    fromAddress: fromAddress,
+    _id: fromAddress,
   }).exec();
   if (!user) {
     throw new Error("User not found");
