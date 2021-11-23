@@ -29,7 +29,7 @@ collectionRoutes.post(
 collectionRoutes.post("/images", uploadImages, successHandler);
 
 collectionRoutes.post(
-  "/deployed/:fromAddress/:collectionName/:deployedAddress",
+  "/deployed/:creator/:chainId/:address",
   deployedValidator(),
   errorHandler,
   addDeployedAddress
