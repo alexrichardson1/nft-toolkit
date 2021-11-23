@@ -1,5 +1,6 @@
 import { getCollectionFromDB } from "@controllers/collection";
 import { CollectionT } from "@models/collection";
+import { utils } from "ethers";
 import { RequestHandler } from "express";
 
 const FIRST_TOKEN_NO = 0;
@@ -12,7 +13,10 @@ export const getTokenMetadata: RequestHandler = async (req, res, next) => {
 
   let collection: CollectionT;
   try {
-    collection = await getCollectionFromDB(address, parseInt(chainId));
+    collection = await getCollectionFromDB(
+      utils.getAddress(address),
+      parseInt(chainId)
+    );
   } catch (error) {
     return next(error);
   }
