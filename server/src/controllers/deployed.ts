@@ -9,18 +9,24 @@ export const addDeployedAddress: RequestHandler = async (req, res, next) => {
   }
 
   try {
-    await Collection.findOneAndUpdate(
+    const collection = await Collection.findOneAndUpdate(
       { creator },
       { address },
       { sort: { _id: -1 } }
     ).exec();
+    if (!collection) {
+      throw new Error("Collection not found");
+    }
     const userCollection = new UserCollection({
       address,
       chainId: parseInt(chainId),
     });
-    await User.findByIdAndUpdate(creator, {
+    const user = await User.findByIdAndUpdate(creator, {
       $push: { collections: userCollection },
     }).exec();
+    if (!user) {
+      throw new Error("User not found");
+    }
   } catch (error) {
     return next(error);
   }
