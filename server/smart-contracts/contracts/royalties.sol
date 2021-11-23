@@ -14,6 +14,14 @@ contract Royalty {
     _royalty = cut;
   }
 
+  function delist(uint256 tokenId) public {
+    require(
+      msg.sender == _collection.ownerOf(tokenId),
+      "You do not own this NFT"
+    );
+    delete listings[tokenId];
+  }
+
   function sellListing(uint256 tokenId, uint256 price) public {
     require(
       msg.sender == _collection.ownerOf(tokenId),
