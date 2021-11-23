@@ -30,17 +30,8 @@ export const collectionValidator: () => ValidationChain[] = () => {
   ];
 };
 
-const invalidCollectionName = check("collectionName")
-  .notEmpty()
-  .isAlphanumeric(void 0, { ignore: " " })
-  .withMessage("Invalid name, must be only alphanumeric");
-
 export const deployedValidator: () => ValidationChain[] = () => {
-  return [
-    invalidAddress("fromAddress"),
-    check("deployedAddress").isEthereumAddress().withMessage("Invalid address"),
-    invalidCollectionName,
-  ];
+  return [invalidAddress("creator"), invalidChainId, invalidAddress("address")];
 };
 
 export const getCollectionsValidator: () => ValidationChain[] = () => {
