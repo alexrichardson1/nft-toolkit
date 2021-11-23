@@ -1,4 +1,4 @@
-import { wrongPageStatic } from "utils/pages";
+import { wrongStepStatic } from "utils/pages";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 
 const STATIC_ART_STEP_NUMBER = 2;
@@ -39,7 +39,7 @@ const StaticArtStep = ({
   handleImgNameChange,
   isLoading,
 }: PropsT): JSX.Element => {
-  if (wrongPageStatic(generative, stepNumber, STATIC_ART_STEP_NUMBER)) {
+  if (wrongStepStatic(generative, stepNumber, STATIC_ART_STEP_NUMBER)) {
     return <></>;
   }
 

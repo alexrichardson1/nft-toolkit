@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { DragEndEvent } from "@dnd-kit/core";
 import { AlertColor, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -19,6 +20,7 @@ import {
 } from "../../utils/formUtils";
 import GenArtStep from "./form-steps/GenArtStep";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
+import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
@@ -63,15 +65,28 @@ const CreateCollectionForm = (): JSX.Element => {
     }
   }, [stepNumber]);
 
-  const IS_LAST_PAGE =
+  const IS_LAST_STEP =
     stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEP - 1);
 
   const handleNextStep = () => setStepNumber((prev) => prev + 1);
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
 
-  const handleImageDelete = (deleteId: string) => {
-    dispatch({ type: FormActions.DELETE_IMAGE, payload: { deleteId } });
+  const handleImageDelete = (deleteId: string, layerId = "") => {
+    let payload;
+
+    if (generative) {
+      payload = { deleteGen: { deleteId, layerId } };
+    } else {
+      payload = { deleteId };
+    }
+
+    dispatch({
+      type: generative
+        ? FormActions.DELETE_IMAGE_GEN
+        : FormActions.DELETE_IMAGE,
+      payload,
+    });
   };
 
   const handleCollNameChange = (e: InputEventT) =>
@@ -116,23 +131,53 @@ const CreateCollectionForm = (): JSX.Element => {
       payload: { symbol: e.target.value },
     });
 
-  const handleImgNameChange = (e: InputEventT, id: string) =>
+  const handleImgNameChange = (
+    e: InputEventT,
+    imageid: string,
+    layerId = ""
+  ) => {
+    let payload;
+    if (generative) {
+      payload = {
+        modifyImgObjGen: {
+          newImageName: e.target.value,
+          imageId: imageid,
+          layerId,
+        },
+      };
+    } else {
+      payload = {
+        modifyImgObjStatic: { newImageName: e.target.value, imageId: imageid },
+      };
+    }
     dispatch({
-      type: FormActions.CHANGE_IMAGE_NAME,
-      payload: { modifyImgObj: { newImageName: e.target.value, imageId: id } },
+      type: generative
+        ? FormActions.CHANGE_IMAGE_NAME_GEN
+        : FormActions.CHANGE_IMAGE_NAME,
+      payload,
     });
+  };
 
   const handleImageDrop = (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
-    imgObjs: FileList | null
+    imgObjs: FileList | null,
+    layerId = ""
   ) => {
     e.preventDefault();
     if (!imgObjs) {
       return;
     }
+    let payload;
+    if (generative) {
+      payload = { newImagesGen: { images: Array.from(imgObjs), layerId } };
+    } else {
+      payload = { newImagesStatic: Array.from(imgObjs) };
+    }
     dispatch({
-      type: FormActions.CHANGE_IMAGES,
-      payload: { newImagesStatic: Array.from(imgObjs) },
+      type: generative
+        ? FormActions.CHANGE_IMAGES_GEN
+        : FormActions.CHANGE_IMAGES,
+      payload,
     });
   };
 
@@ -144,7 +189,7 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!IS_LAST_PAGE) {
+    if (!IS_LAST_STEP) {
       handleNextStep();
       return;
     }
@@ -152,6 +197,7 @@ const CreateCollectionForm = (): JSX.Element => {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
+
     try {
       startLoading(setLoadingMessage, setIsLoading, "Uploading...");
       await uploadImages(
@@ -227,6 +273,15 @@ const CreateCollectionForm = (): JSX.Element => {
         stepNumber={stepNumber}
         state={state}
       />
+      <LayerImageUpload
+        isLoading={isLoading}
+        state={state}
+        generative={generative}
+        handleLayerImgDrop={handleImageDrop}
+        handleLayerImgDelete={handleImageDelete}
+        handleLayerImgNameChange={handleImgNameChange}
+        stepNumber={stepNumber}
+      />
       <Box sx={formFooterStyle}>
         <FormAlert
           closeAlert={closeAlert}
@@ -236,9 +291,9 @@ const CreateCollectionForm = (): JSX.Element => {
         <FormButtons
           isLoading={isLoading}
           loadingMessage={loadingMessage}
-          handlePrevPage={handlePrevStep}
-          isLastPage={IS_LAST_PAGE}
-          pageNumber={stepNumber}
+          handlePrevStep={handlePrevStep}
+          isLastStep={IS_LAST_STEP}
+          stepNumber={stepNumber}
         />
       </Box>
     </Stack>
