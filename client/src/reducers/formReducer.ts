@@ -1,4 +1,6 @@
+import { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
+import FormActions from "actions/formActions";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
 const DEFAULT_STRING = "";
@@ -29,24 +31,43 @@ const INITIAL_STATE: FormStateI = {
   generative: { layers: [], numberOfLayers: 0 },
 };
 
+interface FormActionPayloadI {
+  newName?: string;
+  description?: string;
+  price?: string;
+  symbol?: string;
+  newLayer?: { name: string };
+  newImagesGen?: { images: File[]; layerId: string };
+  newImagesStatic?: File[];
+  modifyImgObj?: { newImageName: string; imageId: string };
+  deleteId?: string;
+  dragEndEvent?: DragEndEvent;
+  deleteLayerId?: string;
+}
+
+interface FormActionI {
+  type: FormActions;
+  payload: FormActionPayloadI;
+}
+
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   switch (action.type) {
-    case "CHANGE_NAME":
+    case FormActions.CHANGE_NAME:
       return {
         ...state,
         collectionName: action.payload.newName ?? DEFAULT_STRING,
       };
 
-    case "CHANGE_DESCRIPTION":
+    case FormActions.CHANGE_DESCRIPTION:
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
       };
 
-    case "CHANGE_SYMBOL":
+    case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
 
-    case "CHANGE_IMAGES":
+    case FormActions.CHANGE_IMAGES:
       action.payload.newImagesStatic?.forEach((newImg) => {
         state.static.images[getImgId(newImg.name, newImg.size)] =
           getImgObj(newImg);
@@ -54,20 +75,20 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       });
       return { ...state };
 
-    case "CHANGE_IMAGE_NAME": {
+    case FormActions.CHANGE_IMAGE_NAME: {
       if (!action.payload.modifyImgObj) {
         throw new Error("modifyImgObj required");
       }
 
       const img = state.static.images[action.payload.modifyImgObj.imageId];
-      if (img) {
-        img.name = action.payload.modifyImgObj.newImageName;
+      if (!img) {
         throw new Error("Image does not exist");
       }
+      img.name = action.payload.modifyImgObj.newImageName;
       return { ...state };
     }
 
-    case "ADD_LAYER":
+    case FormActions.ADD_LAYER:
       if (!action.payload.newLayer) {
         throw new Error("newLayer required");
       }
@@ -78,7 +99,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       state.generative.numberOfLayers++;
       return { ...state };
 
-    case "REMOVE_LAYER":
+    case FormActions.REMOVE_LAYER:
       if (!action.payload.deleteLayerId) {
         throw new Error("deleteLayerId required");
       }
@@ -87,14 +108,17 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       );
       return { ...state };
 
-    case "CHANGE_IMAGES_GEN":
+    case FormActions.CHANGE_IMAGES_GEN:
       return { ...state };
 
-    case "CHANGE_PRECEDENCE": {
+    case FormActions.CHANGE_PRECEDENCE: {
       if (!action.payload.dragEndEvent) {
         throw new Error("dragEndEvent required");
       }
       const { active, over } = action.payload.dragEndEvent;
+      if (!over) {
+        return { ...state };
+      }
       if (active.id !== over.id) {
         const oldIdx = state.generative.layers.findIndex(
           (layer) => layer.layerId === active.id
@@ -111,7 +135,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       return { ...state };
     }
 
-    case "DELETE_IMAGE":
+    case FormActions.DELETE_IMAGE:
       if (!action.payload.deleteId) {
         throw new Error("deleteId required");
       }
@@ -119,14 +143,21 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       state.static.numberOfImages--;
       return { ...state };
 
-    case "CHANGE_PRICE":
+    case FormActions.CHANGE_PRICE:
       return {
         ...state,
         mintingPrice: Number(action.payload.price ?? DEFAULT_STRING),
       };
 
-    case "RESET_STATE":
+    case FormActions.RESET_STATE:
       return INITIAL_STATE;
+
+    case FormActions.RESET_TYPE_OF_ART:
+      return {
+        ...state,
+        static: { images: {}, numberOfImages: 0 },
+        generative: { layers: [], numberOfLayers: 0 },
+      };
 
     default:
       throw new Error("Invalid action provided");

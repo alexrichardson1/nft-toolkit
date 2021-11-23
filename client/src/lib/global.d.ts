@@ -34,38 +34,3 @@ interface FormStateI {
   static: { numberOfImages: number; images: ImageT };
   generative: { numberOfLayers: number; layers: LayerI[] };
 }
-
-type FormActionT =
-  | "CHANGE_NAME"
-  | "CHANGE_PRICE"
-  | "CHANGE_SYMBOL"
-  | "CHANGE_DESCRIPTION"
-  | "RESET_STATE"
-  | "CHANGE_IMAGES"
-  | "CHANGE_IMAGE_NAME"
-  | "DELETE_IMAGE"
-  | "CHANGE_IMAGES_GEN"
-  | "CHANGE_IMAGE_NAME_GEN"
-  | "DELETE_IMAGE_GEN"
-  | "ADD_LAYER"
-  | "CHANGE_PRECEDENCE"
-  | "REMOVE_LAYER";
-
-interface FormActionPayloadI {
-  newName?: string;
-  description?: string;
-  price?: string;
-  symbol?: string;
-  newLayer?: { name: string };
-  newImagesGen?: { images: File[]; layerId: string };
-  newImagesStatic?: File[];
-  modifyImgObj?: { newImageName: string; imageId: string };
-  deleteId?: string;
-  dragEndEvent?: DragEndEvent;
-  deleteLayerId?: string;
-}
-
-interface FormActionI {
-  type: FormActionT;
-  payload: FormActionPayloadI;
-}
