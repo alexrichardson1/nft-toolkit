@@ -21,11 +21,7 @@ import { Redirect } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
 import { getDollarValue } from "utils/coinGecko";
 import { getLogoByChainId } from "utils/constants";
-import {
-  CollectionI,
-  getCollection,
-  getRPCProvider,
-} from "utils/mintingPageUtils";
+import { CollectionI, getCollection } from "utils/mintingPageUtils";
 
 const DUMMY_DATA = {
   name: "COLLECTION_NAME",
@@ -35,7 +31,7 @@ const DUMMY_DATA = {
   tokens: [],
   gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
   chainId: 1,
-  price: "1",
+  price: BigNumber.from("1"),
   mintedAmount: BigNumber.from("1"),
   limit: BigNumber.from("3"),
 };
@@ -64,8 +60,8 @@ const mintingCardStyle: SxProps = {
 };
 
 interface ParamsI {
-  collectionName: string;
-  fromAddress: string;
+  paramChainId: string;
+  address: string;
 }
 
 const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
@@ -94,7 +90,7 @@ const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const { active, library, chainId } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
-  const { collectionName, fromAddress } = useParams<ParamsI>();
+  const { paramChainId, address } = useParams<ParamsI>();
   const [error, setError] = useState(false);
   const [mintingData, setMintingData] = useState<CollectionI>(DUMMY_DATA);
   const [mintingQuantity, setMintingQuantity] = useState(MIN_AMOUNT_ALLOWED);
@@ -159,25 +155,18 @@ const MintingPage = (): JSX.Element => {
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
 
       try {
-        const collection = await getCollection(fromAddress, collectionName);
-        const NFTContract = NftFactory.connect(
-          collection.address,
-          getRPCProvider(collection.chainId)
-        );
-        collection.limit = await NFTContract.collectionLimit();
-        collection.mintedAmount = await NFTContract.tokenIdTracker();
-        collection.tokens.forEach((token) => {
-          collection.gifSrc = token.image;
-        });
+        const collection = await getCollection(paramChainId, address);
         setMintingData(collection);
-        setUsdValue(await getDollarValue(collection.price, collection.chainId));
+        setUsdValue(
+          await getDollarValue(collection.price.toString(), collection.chainId)
+        );
       } catch (error) {
         // TODO: handle invalid collection
         setError(true);
       }
     }
     getCollectionData();
-  }, [collectionName, fromAddress]);
+  }, [paramChainId, address, isMinting]);
 
   if (error) {
     // TODO: handle invalid collection
@@ -198,7 +187,7 @@ const MintingPage = (): JSX.Element => {
                 sx={textStyle}
                 variant="h3"
                 color="secondary">
-                {collectionName.replaceAll("-", " ")}
+                {mintingData.name}
               </Typography>
               <Typography
                 textAlign={{ xs: "center", lg: "left" }}
