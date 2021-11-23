@@ -3,7 +3,7 @@ import ChoiceCard from "components/common/ChoiceCard";
 import genArtImg from "images/generativeIcon.svg";
 import staticArtImg from "images/staticIcon.svg";
 import { useCallback } from "react";
-import { wrongPage } from "utils/pages";
+import { wrongStep } from "utils/pages";
 
 const ART_TYPE_STEP_NUMBER = 1;
 const GEN_ART_DESC = (
@@ -46,7 +46,7 @@ interface PropsT {
  *
  * @param setGenerative - sets the `generative` boolean true if generative type
  * of art selected by user
- * @param handleNextPage - go to next step based on user choice
+ * @param handleNextStep - go to next step based on user choice
  * @param stepNumber - current step the form is on (must equal
  * ART_TYPE_STEP_NUMBER for this step to render)
  */
@@ -60,7 +60,7 @@ const TypeOfArtStep = ({
     handleNextStep();
   }, []);
 
-  return wrongPage(stepNumber, ART_TYPE_STEP_NUMBER) ? (
+  return wrongStep(stepNumber, ART_TYPE_STEP_NUMBER) ? (
     <></>
   ) : (
     <Grid container spacing={2}>

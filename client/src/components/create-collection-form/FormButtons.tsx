@@ -8,33 +8,33 @@ import Button from "@mui/material/Button";
 interface PropsI {
   isLoading: boolean;
   loadingMessage: string;
-  pageNumber: number;
-  isLastPage: boolean;
-  handlePrevPage: () => void;
+  stepNumber: number;
+  isLastStep: boolean;
+  handlePrevStep: () => void;
 }
 
 const getButtonText = (
   isLoading: boolean,
-  isLastPage: boolean,
+  isLastStep: boolean,
   loadingMessage: string
 ) => {
   if (isLoading) {
     return loadingMessage;
   }
-  if (isLastPage) {
+  if (isLastStep) {
     return "Submit";
   }
   return "Next";
 };
 
-const INITIAL_PAGE_NUMBER = 0;
+const INITIAL_STEP_NUMBER = 0;
 
 const FormButtons = ({
   isLoading,
   loadingMessage,
-  pageNumber,
-  isLastPage,
-  handlePrevPage,
+  stepNumber,
+  isLastStep,
+  handlePrevStep,
 }: PropsI): JSX.Element => {
   const buttonsWrapperStyle = {
     justifyContent: "flex-end",
@@ -54,25 +54,25 @@ const FormButtons = ({
       <Button
         startIcon={<ClearIcon />}
         data-testid="previous-page"
-        disabled={isLoading || pageNumber === INITIAL_PAGE_NUMBER}
+        disabled={isLoading || stepNumber === INITIAL_STEP_NUMBER}
         color="error"
         size="large"
         variant="contained"
-        onClick={handlePrevPage}>
+        onClick={handlePrevStep}>
         Back
       </Button>
-      {pageNumber !== 1 && (
+      {stepNumber !== 1 && (
         <LoadingButton
           sx={loadingButtonStyle}
           loading={isLoading}
           loadingPosition="end"
           type="submit"
-          endIcon={isLastPage ? <DoneIcon /> : <NavigateNextIcon />}
+          endIcon={isLastStep ? <DoneIcon /> : <NavigateNextIcon />}
           color="success"
           size="large"
           data-testid="submit-btn"
           variant="contained">
-          {getButtonText(isLoading, isLastPage, loadingMessage)}
+          {getButtonText(isLoading, isLastStep, loadingMessage)}
         </LoadingButton>
       )}
     </Box>

@@ -24,7 +24,7 @@ const ImageUploadWithTabs = ({
 }: PropsT): JSX.Element => {
   return (
     <>
-      <Paper>
+      <Paper sx={{ width: 1 }}>
         <ImageUpload
           handleImageDrop={handleImgDrop}
           NUMBER_OF_IMAGES={NUMBER_OF_IMAGES}
@@ -32,7 +32,7 @@ const ImageUploadWithTabs = ({
       </Paper>
 
       {NUMBER_OF_IMAGES > 0 && (
-        <Paper>
+        <Paper sx={{ width: 1 }}>
           <Tabs
             NUMBER_OF_IMAGES={NUMBER_OF_IMAGES}
             isLoading={isLoading}

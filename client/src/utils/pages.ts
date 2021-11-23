@@ -1,21 +1,19 @@
-const wrongPageGenerative = (
+export const wrongStepGenerative = (
   generative: boolean,
-  pageNumber: number,
-  PAGE_NUMBER: number
+  stepNumber: number,
+  STEP_NUMBER: number
 ): boolean => {
-  return !(generative && pageNumber === PAGE_NUMBER);
+  return !(generative && stepNumber === STEP_NUMBER);
 };
 
-const wrongPageStatic = (
+export const wrongStepStatic = (
   generative: boolean,
-  pageNumber: number,
-  PAGE_NUMBER: number
+  stepNumber: number,
+  STEP_NUMBER: number
 ): boolean => {
-  return generative || pageNumber !== PAGE_NUMBER;
+  return generative || stepNumber !== STEP_NUMBER;
 };
 
-const wrongPage = (pageNumber: number, PAGE_NUMBER: number): boolean => {
-  return pageNumber !== PAGE_NUMBER;
+export const wrongStep = (stepNumber: number, STEP_NUMBER: number): boolean => {
+  return stepNumber !== STEP_NUMBER;
 };
-
-export { wrongPageGenerative, wrongPageStatic, wrongPage };

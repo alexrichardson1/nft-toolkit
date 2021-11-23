@@ -4,7 +4,7 @@ import Input from "components/common/Input";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useMemo } from "react";
-import { wrongPage } from "utils/pages";
+import { wrongStep } from "utils/pages";
 
 const DESCRIPTION_ROWS = 4;
 const ICON_SIZE = 25;
@@ -55,7 +55,7 @@ const GeneralInfoStep = ({
   handleDescriptionChange,
   handleSymbolChange,
 }: PropsT): JSX.Element => {
-  if (wrongPage(stepNumber, GENERAL_INFO_STEP_NUMBER)) {
+  if (wrongStep(stepNumber, GENERAL_INFO_STEP_NUMBER)) {
     return <></>;
   }
 

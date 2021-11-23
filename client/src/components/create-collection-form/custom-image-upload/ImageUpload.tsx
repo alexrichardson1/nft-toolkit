@@ -8,6 +8,7 @@ const labelStyle = (theme: Theme) => ({
   borderColor: theme.palette.primary.main,
   boxShadow: theme.shadows[2],
 });
+
 interface PropsT {
   NUMBER_OF_IMAGES: number;
   handleImageDrop: (

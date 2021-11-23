@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Input from "components/common/Input";
 import { useState } from "react";
-import { wrongPageGenerative } from "utils/pages";
+import { wrongStepGenerative } from "utils/pages";
 import OrderableList from "../OrderableList";
 
 const LAYER_UPLOAD_STEP_NUMBER = 2;
@@ -26,7 +26,7 @@ interface PropsT {
  * @param generative - true if the user wants to upload generative art, false
  *  otherwise (must equal true for this step to render)
  * @param stepNumber - current step the form is on (must equal
- * LAYER_UPLOAD_PAGE_NUMBER for this step to render)
+ * LAYER_UPLOAD_STEP_NUMBER for this step to render)
  * @param state - state of the form
  * @param handleLayerReorder - handles reordering of layers and their precedence
  * @param handleLayerAddition - handles addition of new layers to the collection
@@ -40,7 +40,7 @@ const LayerSelectionStep = ({
   handleLayerAddition,
   handleLayerRemoval,
 }: PropsT): JSX.Element => {
-  if (wrongPageGenerative(generative, stepNumber, LAYER_UPLOAD_STEP_NUMBER)) {
+  if (wrongStepGenerative(generative, stepNumber, LAYER_UPLOAD_STEP_NUMBER)) {
     return <></>;
   }
 
