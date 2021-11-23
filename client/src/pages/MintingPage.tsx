@@ -74,11 +74,11 @@ const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
     left: "50%",
     transform: "translateX(-50%)",
     position: "absolute",
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     background: `url(${mintingData.gifSrc})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: 200,
+    backgroundSize: "250px 250px",
   };
 };
 
@@ -88,6 +88,8 @@ const mintingQuantityStyle = {
     bgcolor: "secondary.main",
   },
 };
+const DECIMALS = 2;
+
 const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const { active, library, chainId } = useWeb3React();
@@ -97,7 +99,7 @@ const MintingPage = (): JSX.Element => {
   const [mintingData, setMintingData] = useState<CollectionI>(DUMMY_DATA);
   const [mintingQuantity, setMintingQuantity] = useState(MIN_AMOUNT_ALLOWED);
   const [isMinting, setIsMinting] = useState(false);
-  const [usdValue, setUsdValue] = useState("$0.00");
+  const [usdValue, setUsdValue] = useState(0.0);
 
   const handleQuantityIncrease = () =>
     setMintingQuantity((prev) => Math.min(prev + 1, MAX_AMOUNT_ALLOWED));
@@ -175,7 +177,7 @@ const MintingPage = (): JSX.Element => {
       }
     }
     getCollectionData();
-  });
+  }, [collectionName, dispatch, fromAddress]);
 
   if (error) {
     // TODO: handle invalid collection
@@ -210,7 +212,7 @@ const MintingPage = (): JSX.Element => {
             </Typography>
           </Box>
 
-          <Box display="flex" alignItems="center" justifyContent="center">
+          <Box pt={10} pl={2} display="flex" justifyContent="center">
             <Paper sx={mintingCardStyle} elevation={6}>
               <Paper sx={mintingCardImgStyle(mintingData)} />
               <Box
@@ -255,14 +257,18 @@ const MintingPage = (): JSX.Element => {
                   onClick={handleMint}
                   loading={isMinting}
                   disabled={getMaxTokensLeft() === 0}>
-                  {`Mint for ${formatEther(BigNumber.from(mintingData.price))}`}
-                  <SvgLogo
-                    icon={getLogoByChainId(mintingData.chainId)}
-                    width="20px"
-                    height="20px"
-                    margins
-                  />{" "}
-                  {usdValue}
+                  {`Mint for ${formatEther(
+                    BigNumber.from(mintingData.price).mul(mintingQuantity)
+                  )}`}
+                  {!isMinting && (
+                    <SvgLogo
+                      icon={getLogoByChainId(mintingData.chainId)}
+                      width="20px"
+                      height="20px"
+                      margins
+                    />
+                  )}{" "}
+                  ${`(${(mintingQuantity * usdValue).toFixed(DECIMALS)})`}
                 </LoadingButton>
               </Box>
             </Paper>

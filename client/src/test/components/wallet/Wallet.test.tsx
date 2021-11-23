@@ -32,10 +32,10 @@ describe("Wallet tests", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("Wallet is connected on button click", () => {
-    tree.find("#connect-wallet-btn").first().simulate("click");
-    expect(tree).toMatchSnapshot();
-  });
+  // test("Wallet is connected on button click", () => {
+  //   tree.find("#connect-wallet-btn").first().simulate("click");
+  //   expect(tree).toMatchSnapshot();
+  // });
 
   test("GetLibrary function returns a Web3Provider", () => {
     getLibrary(jest.fn());

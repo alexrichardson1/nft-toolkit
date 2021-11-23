@@ -1,3 +1,4 @@
+import { BigNumber } from "@ethersproject/bignumber";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import chai, { expect } from "chai";
 import { solidity } from "ethereum-waffle";
@@ -6,7 +7,10 @@ import { NFT, Royalty } from "../typechain";
 
 chai.use(solidity);
 
-const TOKEN_ID = 0;
+const TOKEN_ONE_ID = 0;
+const TOKEN_TWO_ID = 1;
+const NUM_NFTS = 2;
+const DEFAULT_MAPPING_VALUE = BigNumber.from("0");
 // NFT Contract
 const COLLECTION_SIZE = 10;
 const COLLECTION_WEI_PRICE = ethers.utils.parseEther("1");
@@ -31,8 +35,8 @@ describe("Royalties Contract", () => {
       COLLECTION_WEI_PRICE
     );
     await nftContract.deployed();
-    await nftContract.mint(1, {
-      value: COLLECTION_WEI_PRICE,
+    await nftContract.mint(NUM_NFTS, {
+      value: COLLECTION_WEI_PRICE.mul(NUM_NFTS),
     });
     // Royalty Contract
     const RoyaltiesContract = await ethers.getContractFactory("Royalty");
@@ -49,20 +53,20 @@ describe("Royalties Contract", () => {
       expect(
         royaltiesContract
           .connect(signerTwo || "")
-          .sellListing(TOKEN_ID, COLLECTION_WEI_PRICE)
+          .sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE)
       ).to.be.revertedWith("You do not own this NFT");
     });
 
     it("Should not allow to list NFT if not approved", () => {
       expect(
-        royaltiesContract.sellListing(TOKEN_ID, COLLECTION_WEI_PRICE)
+        royaltiesContract.sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE)
       ).to.be.revertedWith("This NFT is not approved");
     });
 
     it("Should update listings with the correct price", async () => {
-      await nftContract.approve(royaltiesContract.address, TOKEN_ID);
-      await royaltiesContract.sellListing(TOKEN_ID, COLLECTION_WEI_PRICE);
-      expect(await royaltiesContract.listings(TOKEN_ID)).to.equal(
+      await nftContract.approve(royaltiesContract.address, TOKEN_ONE_ID);
+      await royaltiesContract.sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE);
+      expect(await royaltiesContract.listings(TOKEN_ONE_ID)).to.equal(
         COLLECTION_WEI_PRICE
       );
     });
@@ -71,7 +75,7 @@ describe("Royalties Contract", () => {
   describe("buy", () => {
     it("Should not allow buying without the correct funds", () => {
       expect(
-        royaltiesContract.buy(TOKEN_ID, {
+        royaltiesContract.buy(TOKEN_ONE_ID, {
           value: ethers.utils.parseEther("0"),
         })
       ).to.be.revertedWith("Must send correct price");
@@ -80,10 +84,10 @@ describe("Royalties Contract", () => {
     it("Should not allow buying without the correct approval", async () => {
       await nftContract.approve(
         "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        TOKEN_ID
+        TOKEN_ONE_ID
       );
       expect(
-        royaltiesContract.buy(TOKEN_ID, {
+        royaltiesContract.buy(TOKEN_ONE_ID, {
           value: COLLECTION_WEI_PRICE,
         })
       ).to.be.revertedWith("This NFT is not approved");
@@ -93,15 +97,39 @@ describe("Royalties Contract", () => {
       if (!signerOne || !signerTwo) {
         return;
       }
-      await nftContract.approve(royaltiesContract.address, TOKEN_ID);
+      await nftContract.approve(royaltiesContract.address, TOKEN_ONE_ID);
       const sellerBalanceBefore = await nftContract.balanceOf(
         signerOne.address
       );
-      await royaltiesContract.connect(signerTwo).buy(TOKEN_ID, {
+      await royaltiesContract.connect(signerTwo).buy(TOKEN_ONE_ID, {
         value: COLLECTION_WEI_PRICE,
       });
       const sellerBalanceAfter = await nftContract.balanceOf(signerOne.address);
       expect(sellerBalanceBefore).to.equal(sellerBalanceAfter.add(1));
+    });
+  });
+
+  describe("delist", () => {
+    it("Should not allow to list NFT if not the owner", () => {
+      expect(
+        royaltiesContract
+          .connect(signerTwo || "")
+          .sellListing(TOKEN_TWO_ID, COLLECTION_WEI_PRICE)
+      ).to.be.revertedWith("You do not own this NFT");
+    });
+
+    it("Should delist a tokenId", async () => {
+      await nftContract.approve(royaltiesContract.address, TOKEN_TWO_ID);
+      await royaltiesContract.sellListing(TOKEN_TWO_ID, COLLECTION_WEI_PRICE);
+      // safety check
+      expect(await royaltiesContract.listings(TOKEN_TWO_ID)).to.equal(
+        COLLECTION_WEI_PRICE
+      );
+      await royaltiesContract.delist(TOKEN_TWO_ID);
+      // expect to be correctly removed
+      expect(await royaltiesContract.listings(TOKEN_TWO_ID)).to.equal(
+        DEFAULT_MAPPING_VALUE
+      );
     });
   });
 });

@@ -1,18 +1,40 @@
 import ClearIcon from "@mui/icons-material/Clear";
 import DoneIcon from "@mui/icons-material/Done";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { LoadingButton } from "@mui/lab";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
+import Button from "@mui/material/Button";
 
 interface PropsI {
   isLoading: boolean;
   loadingMessage: string;
-  handleStateReset: () => void;
+  stepNumber: number;
+  isLastStep: boolean;
+  handlePrevStep: () => void;
 }
+
+const getButtonText = (
+  isLoading: boolean,
+  isLastStep: boolean,
+  loadingMessage: string
+) => {
+  if (isLoading) {
+    return loadingMessage;
+  }
+  if (isLastStep) {
+    return "Submit";
+  }
+  return "Next";
+};
+
+const INITIAL_STEP_NUMBER = 0;
 
 const FormButtons = ({
   isLoading,
   loadingMessage,
-  handleStateReset,
+  stepNumber,
+  isLastStep,
+  handlePrevStep,
 }: PropsI): JSX.Element => {
   const buttonsWrapperStyle = {
     justifyContent: "flex-end",
@@ -31,27 +53,28 @@ const FormButtons = ({
     <Box sx={buttonsWrapperStyle}>
       <Button
         startIcon={<ClearIcon />}
-        data-testid="reset"
+        data-testid="previous-page"
+        disabled={isLoading || stepNumber === INITIAL_STEP_NUMBER}
         color="error"
         size="large"
         variant="contained"
-        type="reset"
-        disabled={isLoading}
-        onClick={handleStateReset}>
-        Reset
+        onClick={handlePrevStep}>
+        Back
       </Button>
-      <LoadingButton
-        sx={loadingButtonStyle}
-        loading={isLoading}
-        loadingPosition="end"
-        type="submit"
-        endIcon={<DoneIcon />}
-        color="success"
-        size="large"
-        data-testid="submit-btn"
-        variant="contained">
-        {isLoading ? loadingMessage : "Submit"}
-      </LoadingButton>
+      {stepNumber !== 1 && (
+        <LoadingButton
+          sx={loadingButtonStyle}
+          loading={isLoading}
+          loadingPosition="end"
+          type="submit"
+          endIcon={isLastStep ? <DoneIcon /> : <NavigateNextIcon />}
+          color="success"
+          size="large"
+          data-testid="submit-btn"
+          variant="contained">
+          {getButtonText(isLoading, isLastStep, loadingMessage)}
+        </LoadingButton>
+      )}
     </Box>
   );
 };

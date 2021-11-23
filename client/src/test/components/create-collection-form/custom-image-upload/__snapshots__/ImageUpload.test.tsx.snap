@@ -150,7 +150,7 @@ exports[`ImageUpload snapshot 1`] = `
             "contrastText": "#fff",
             "dark": "#e65100",
             "light": "#ff9800",
-            "main": "#ED6C02",
+            "main": "#ed6c02",
           },
         },
         "shadows": Array [
@@ -467,7 +467,7 @@ exports[`ImageUpload snapshot 1`] = `
               "contrastText": "#fff",
               "dark": "#e65100",
               "light": "#ff9800",
-              "main": "#ED6C02",
+              "main": "#ed6c02",
             },
           },
           "shadows": Array [
@@ -642,8 +642,8 @@ exports[`ImageUpload snapshot 1`] = `
             getLibrary={[Function]}
           >
             <ImageUpload
+              NUMBER_OF_IMAGES={0}
               handleImageDrop={[MockFunction]}
-              imgObjs={Array []}
             >
               <label
                 className="img-upload-label"
@@ -653,6 +653,7 @@ exports[`ImageUpload snapshot 1`] = `
                 onDragLeave={[Function]}
                 onDragOver={[Function]}
                 onDrop={[Function]}
+                onKeyPress={[Function]}
                 style={
                   Object {
                     "borderColor": "#00bcd4",
@@ -694,6 +695,7 @@ exports[`ImageUpload snapshot 1`] = `
                       }
                       viewBox="0 0 24 24"
                     >
+                      <Noop />
                       <svg
                         aria-hidden={true}
                         className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeLarge img-upload-cloud css-5cbsdu-MuiSvgIcon-root"
@@ -750,6 +752,7 @@ exports[`ImageUpload snapshot 1`] = `
                       }
                     }
                   >
+                    <Noop />
                     <h5
                       className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter css-ph2xsj-MuiTypography-root"
                     >

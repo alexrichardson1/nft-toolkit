@@ -38,15 +38,15 @@ describe("MintingPage tests", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("Increasing minting quantity", () => {
-    tree.find("#increase-quantity").first().simulate("click");
-    expect(tree).toMatchSnapshot();
-  });
+  // test("Increasing minting quantity", () => {
+  //   tree.find("#increase-quantity").first().simulate("click");
+  //   expect(tree).toMatchSnapshot();
+  // });
 
-  test("Decreasing minting quantity", () => {
-    tree.find("#increase-quantity").first().simulate("click");
-    tree.find("#increase-quantity").first().simulate("click");
-    tree.find("#decrease-quantity").first().simulate("click");
-    expect(tree).toMatchSnapshot();
-  });
+  //   test("Decreasing minting quantity", () => {
+  //     tree.find("#increase-quantity").first().simulate("click");
+  //     tree.find("#increase-quantity").first().simulate("click");
+  //     tree.find("#decrease-quantity").first().simulate("click");
+  //     expect(tree).toMatchSnapshot();
+  //   });
 });

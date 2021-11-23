@@ -12,13 +12,34 @@ import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 
-test("Tabs snapshot", () => {
+test("empty objects", () => {
   const tree = mount(
     <ThemeProvider>
       <NetworkProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Tabs
-            imgObjs={[]}
+            NUMBER_OF_IMAGES={0}
+            isLoading={false}
+            imgObjs={{}}
+            handleImageDelete={() => console.log("Image deleted during test")}
+            handleNameChange={() => console.log("Name changed during test")}
+          />
+        </Web3ReactProvider>
+      </NetworkProvider>
+    </ThemeProvider>
+  );
+  expect(tree).toMatchSnapshot();
+});
+
+test("loading in progres", () => {
+  const tree = mount(
+    <ThemeProvider>
+      <NetworkProvider>
+        <Web3ReactProvider getLibrary={getLibrary}>
+          <Tabs
+            NUMBER_OF_IMAGES={0}
+            isLoading={true}
+            imgObjs={{}}
             handleImageDelete={() => console.log("Image deleted during test")}
             handleNameChange={() => console.log("Name changed during test")}
           />
@@ -37,13 +58,11 @@ describe("Tabs unit tests", () => {
   const mockImgObj1 = {
     url: "testUrl",
     name: "testName",
-    id: "testName.png",
     image: new File([""], "testImg", { type: "image/png" }),
   };
   const mockImgObj2 = {
     url: "testUrl",
     name: "testName",
-    id: "testName2.png",
     image: new File([""], "testImg", { type: "image/png" }),
   };
 
@@ -55,7 +74,12 @@ describe("Tabs unit tests", () => {
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
             <Tabs
-              imgObjs={[mockImgObj1, mockImgObj2]}
+              isLoading={false}
+              NUMBER_OF_IMAGES={2}
+              imgObjs={{
+                "testName.png": mockImgObj1,
+                "testName2.png": mockImgObj2,
+              }}
               handleImageDelete={mockHandleImageDelete}
               handleNameChange={mockHandleNameChange}
             />

@@ -5,6 +5,8 @@ import EthereumLogo from "images/ethereum-logo.svg";
 import PolygonLogo from "images/polygon-logo.svg";
 import SolanaLogo from "images/solana-logo.svg";
 
+export const DEFAULT_PADDING = 3;
+export const DEFAULT_GAP = "10px";
 export const DEFAULT_MUI_ICON_SIZE = 24;
 export const DEFAULT_ALERT_DURATION = 6000;
 export const DEFAULT_ALERT_ELEVATION = 6;
