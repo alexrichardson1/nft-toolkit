@@ -6,12 +6,12 @@ import "./nft.sol";
 
 contract Royalty {
   NFT private _collection;
-  uint256 private _royalty;
+  uint256 public royalty;
   mapping(uint256 => uint256) public listings;
 
   constructor(uint256 cut, address addr) {
     _collection = NFT(addr);
-    _royalty = cut;
+    royalty = cut;
   }
 
   function delist(uint256 tokenId) public {
@@ -40,7 +40,7 @@ contract Royalty {
       _collection.getApproved(tokenId) == address(this),
       "This NFT is not approved"
     );
-    uint256 royalty = (msg.value * _royalty) / 100;
+    uint256 royalty = (msg.value * royalty) / 100;
     address payable artist = payable(_collection.artist());
     address payable seller = payable(_collection.ownerOf(tokenId));
     _collection.transferFrom(seller, address(this), tokenId);
