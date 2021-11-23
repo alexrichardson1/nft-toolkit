@@ -1,5 +1,6 @@
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { Theme, Typography, useTheme } from "@mui/material";
+import { useRef } from "react";
 import "./imageUpload.css";
 
 const labelStyle = (theme: Theme) => ({
@@ -29,8 +30,20 @@ const ImageUpload = ({
 }: PropsT): JSX.Element => {
   const theme = useTheme();
 
+  const ref = useRef<HTMLInputElement>(null);
+
   const preventDefault = (e: React.DragEvent<HTMLLabelElement>) =>
     e.preventDefault();
+  const handleLabelEnterPress: React.KeyboardEventHandler<HTMLLabelElement> = (
+    e
+  ) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (ref.current) {
+        ref.current.click();
+      }
+    }
+  };
 
   const UPLOAD_INPUT_ID = "upload-images";
 
@@ -38,6 +51,7 @@ const ImageUpload = ({
     <>
       <label
         tabIndex={0}
+        onKeyPress={handleLabelEnterPress}
         style={labelStyle(theme)}
         className="img-upload-label"
         onDragOver={preventDefault}
@@ -58,6 +72,7 @@ const ImageUpload = ({
       </label>
 
       <input
+        ref={ref}
         accept="image/*"
         onChange={(e) => handleImageDrop(e, e.target.files)}
         id={UPLOAD_INPUT_ID}
