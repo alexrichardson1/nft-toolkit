@@ -2838,6 +2838,7 @@ exports[`App snapshot 1`] = `
                                                                         type="button"
                                                                       >
                                                                         <img
+                                                                          alt="logo"
                                                                           height="70%"
                                                                           src="ethereum-logo.svg"
                                                                           style="margin: 0px;"
@@ -3200,6 +3201,7 @@ exports[`App snapshot 1`] = `
                                                                                 width="70%"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="ethereum-logo.svg"
                                                                                   style={
@@ -3687,6 +3689,7 @@ exports[`App snapshot 1`] = `
                                                                                     width="70%"
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height="70%"
                                                                                       src="ethereum-logo.svg"
                                                                                       style={
@@ -3734,6 +3737,7 @@ exports[`App snapshot 1`] = `
                                                                             type="button"
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height="70%"
                                                                               src="ethereum-logo.svg"
                                                                               style="margin: 0px;"
@@ -3872,6 +3876,7 @@ exports[`App snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               <img
+                                                                                alt="logo"
                                                                                 height="70%"
                                                                                 src="ethereum-logo.svg"
                                                                                 style="margin: 0px;"
@@ -3924,6 +3929,7 @@ exports[`App snapshot 1`] = `
                                                                                 type="button"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="ethereum-logo.svg"
                                                                                   style="margin: 0px;"
@@ -4260,6 +4266,7 @@ exports[`App snapshot 1`] = `
                                                                                     width="70%"
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height="70%"
                                                                                       src="cardano-logo.svg"
                                                                                       style={
@@ -4307,6 +4314,7 @@ exports[`App snapshot 1`] = `
                                                                             type="button"
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height="70%"
                                                                               src="cardano-logo.svg"
                                                                               style="margin: 0px;"
@@ -4441,6 +4449,7 @@ exports[`App snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               <img
+                                                                                alt="logo"
                                                                                 height="70%"
                                                                                 src="cardano-logo.svg"
                                                                                 style="margin: 0px;"
@@ -4493,6 +4502,7 @@ exports[`App snapshot 1`] = `
                                                                                 type="button"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="cardano-logo.svg"
                                                                                   style="margin: 0px;"
@@ -4829,6 +4839,7 @@ exports[`App snapshot 1`] = `
                                                                                     width="70%"
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height="70%"
                                                                                       src="avalanche-logo.svg"
                                                                                       style={
@@ -4876,6 +4887,7 @@ exports[`App snapshot 1`] = `
                                                                             type="button"
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height="70%"
                                                                               src="avalanche-logo.svg"
                                                                               style="margin: 0px;"
@@ -5010,6 +5022,7 @@ exports[`App snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               <img
+                                                                                alt="logo"
                                                                                 height="70%"
                                                                                 src="avalanche-logo.svg"
                                                                                 style="margin: 0px;"
@@ -5062,6 +5075,7 @@ exports[`App snapshot 1`] = `
                                                                                 type="button"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="avalanche-logo.svg"
                                                                                   style="margin: 0px;"
@@ -5398,6 +5412,7 @@ exports[`App snapshot 1`] = `
                                                                                     width="70%"
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height="70%"
                                                                                       src="solana-logo.svg"
                                                                                       style={
@@ -5445,6 +5460,7 @@ exports[`App snapshot 1`] = `
                                                                             type="button"
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height="70%"
                                                                               src="solana-logo.svg"
                                                                               style="margin: 0px;"
@@ -5579,6 +5595,7 @@ exports[`App snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               <img
+                                                                                alt="logo"
                                                                                 height="70%"
                                                                                 src="solana-logo.svg"
                                                                                 style="margin: 0px;"
@@ -5631,6 +5648,7 @@ exports[`App snapshot 1`] = `
                                                                                 type="button"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="solana-logo.svg"
                                                                                   style="margin: 0px;"
@@ -5967,6 +5985,7 @@ exports[`App snapshot 1`] = `
                                                                                     width="70%"
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height="70%"
                                                                                       src="polygon-logo.svg"
                                                                                       style={
@@ -6014,6 +6033,7 @@ exports[`App snapshot 1`] = `
                                                                             type="button"
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height="70%"
                                                                               src="polygon-logo.svg"
                                                                               style="margin: 0px;"
@@ -6148,6 +6168,7 @@ exports[`App snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               <img
+                                                                                alt="logo"
                                                                                 height="70%"
                                                                                 src="polygon-logo.svg"
                                                                                 style="margin: 0px;"
@@ -6200,6 +6221,7 @@ exports[`App snapshot 1`] = `
                                                                                 type="button"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="polygon-logo.svg"
                                                                                   style="margin: 0px;"
@@ -6536,6 +6558,7 @@ exports[`App snapshot 1`] = `
                                                                                     width="70%"
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height="70%"
                                                                                       src="binance-logo.svg"
                                                                                       style={
@@ -6583,6 +6606,7 @@ exports[`App snapshot 1`] = `
                                                                             type="button"
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height="70%"
                                                                               src="binance-logo.svg"
                                                                               style="margin: 0px;"
@@ -6717,6 +6741,7 @@ exports[`App snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               <img
+                                                                                alt="logo"
                                                                                 height="70%"
                                                                                 src="binance-logo.svg"
                                                                                 style="margin: 0px;"
@@ -6769,6 +6794,7 @@ exports[`App snapshot 1`] = `
                                                                                 type="button"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="70%"
                                                                                   src="binance-logo.svg"
                                                                                   style="margin: 0px;"
@@ -8189,6 +8215,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="ethereum-logo.svg"
                                                           style="margin: 0px;"
@@ -8241,6 +8268,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="0"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="ethereum-logo.svg"
                                                           style="margin: 0px;"
@@ -8262,6 +8290,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="cardano-logo.svg"
                                                           style="margin: 0px;"
@@ -8283,6 +8312,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="avalanche-logo.svg"
                                                           style="margin: 0px;"
@@ -8304,6 +8334,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="solana-logo.svg"
                                                           style="margin: 0px;"
@@ -8325,6 +8356,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="polygon-logo.svg"
                                                           style="margin: 0px;"
@@ -8346,6 +8378,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="binance-logo.svg"
                                                           style="margin: 0px;"
@@ -8786,6 +8819,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="-1"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="ethereum-logo.svg"
                                                                   style="margin: 0px;"
@@ -9668,6 +9702,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="ethereum-logo.svg"
                                                                                             style={
@@ -10438,6 +10473,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="ethereum-logo.svg"
                                                           style="margin: 0px;"
@@ -10490,6 +10526,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="0"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="ethereum-logo.svg"
                                                           style="margin: 0px;"
@@ -10511,6 +10548,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="cardano-logo.svg"
                                                           style="margin: 0px;"
@@ -10532,6 +10570,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="avalanche-logo.svg"
                                                           style="margin: 0px;"
@@ -10553,6 +10592,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="solana-logo.svg"
                                                           style="margin: 0px;"
@@ -10574,6 +10614,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="polygon-logo.svg"
                                                           style="margin: 0px;"
@@ -10595,6 +10636,7 @@ exports[`App snapshot 1`] = `
                                                         tabindex="-1"
                                                       >
                                                         <img
+                                                          alt="logo"
                                                           height="24"
                                                           src="binance-logo.svg"
                                                           style="margin: 0px;"
@@ -11087,6 +11129,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="0"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="ethereum-logo.svg"
                                                                   style="margin: 0px;"
@@ -11108,6 +11151,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="-1"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="cardano-logo.svg"
                                                                   style="margin: 0px;"
@@ -11129,6 +11173,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="-1"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="avalanche-logo.svg"
                                                                   style="margin: 0px;"
@@ -11150,6 +11195,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="-1"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="solana-logo.svg"
                                                                   style="margin: 0px;"
@@ -11171,6 +11217,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="-1"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="polygon-logo.svg"
                                                                   style="margin: 0px;"
@@ -11192,6 +11239,7 @@ exports[`App snapshot 1`] = `
                                                                 tabindex="-1"
                                                               >
                                                                 <img
+                                                                  alt="logo"
                                                                   height="24"
                                                                   src="binance-logo.svg"
                                                                   style="margin: 0px;"
@@ -12077,6 +12125,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="ethereum-logo.svg"
                                                                                             style={
@@ -12306,6 +12355,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="cardano-logo.svg"
                                                                                             style={
@@ -12535,6 +12585,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="avalanche-logo.svg"
                                                                                             style={
@@ -12764,6 +12815,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="solana-logo.svg"
                                                                                             style={
@@ -12993,6 +13045,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="polygon-logo.svg"
                                                                                             style={
@@ -13222,6 +13275,7 @@ exports[`App snapshot 1`] = `
                                                                                           width={24}
                                                                                         >
                                                                                           <img
+                                                                                            alt="logo"
                                                                                             height={24}
                                                                                             src="binance-logo.svg"
                                                                                             style={
@@ -18317,6 +18371,7 @@ exports[`App snapshot 1`] = `
                                                                                     width={25}
                                                                                   >
                                                                                     <img
+                                                                                      alt="logo"
                                                                                       height={25}
                                                                                       src="ethereum-logo.svg"
                                                                                       style={

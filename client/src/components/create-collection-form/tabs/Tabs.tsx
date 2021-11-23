@@ -54,7 +54,7 @@ const VerticalTabs = ({
     if (value >= NUMBER_OF_IMAGES) {
       setValue(NUMBER_OF_IMAGES - 1);
     }
-  }, [NUMBER_OF_IMAGES]);
+  }, [NUMBER_OF_IMAGES, value]);
 
   return (
     <Box sx={vTabsContainerStyle}>

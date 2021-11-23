@@ -928,6 +928,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="ethereum-logo.svg"
                                     style="margin: 0px;"
@@ -980,6 +981,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="0"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="ethereum-logo.svg"
                                     style="margin: 0px;"
@@ -1001,6 +1003,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="cardano-logo.svg"
                                     style="margin: 0px;"
@@ -1022,6 +1025,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="avalanche-logo.svg"
                                     style="margin: 0px;"
@@ -1043,6 +1047,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="solana-logo.svg"
                                     style="margin: 0px;"
@@ -1064,6 +1069,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="polygon-logo.svg"
                                     style="margin: 0px;"
@@ -1085,6 +1091,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
+                                    alt="logo"
                                     height="24"
                                     src="binance-logo.svg"
                                     style="margin: 0px;"
@@ -1310,6 +1317,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="ethereum-logo.svg"
                                       style="margin: 0px;"
@@ -1362,6 +1370,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="0"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="ethereum-logo.svg"
                                       style="margin: 0px;"
@@ -1383,6 +1392,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="cardano-logo.svg"
                                       style="margin: 0px;"
@@ -1404,6 +1414,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="avalanche-logo.svg"
                                       style="margin: 0px;"
@@ -1425,6 +1436,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="solana-logo.svg"
                                       style="margin: 0px;"
@@ -1446,6 +1458,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="polygon-logo.svg"
                                       style="margin: 0px;"
@@ -1467,6 +1480,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
+                                      alt="logo"
                                       height="24"
                                       src="binance-logo.svg"
                                       style="margin: 0px;"
@@ -1623,6 +1637,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="ethereum-logo.svg"
                                         style="margin: 0px;"
@@ -1675,6 +1690,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="0"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="ethereum-logo.svg"
                                         style="margin: 0px;"
@@ -1696,6 +1712,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="cardano-logo.svg"
                                         style="margin: 0px;"
@@ -1717,6 +1734,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="avalanche-logo.svg"
                                         style="margin: 0px;"
@@ -1738,6 +1756,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="solana-logo.svg"
                                         style="margin: 0px;"
@@ -1759,6 +1778,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="polygon-logo.svg"
                                         style="margin: 0px;"
@@ -1780,6 +1800,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
+                                        alt="logo"
                                         height="24"
                                         src="binance-logo.svg"
                                         style="margin: 0px;"
@@ -1878,6 +1899,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="ethereum-logo.svg"
                                           style="margin: 0px;"
@@ -1930,6 +1952,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="0"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="ethereum-logo.svg"
                                           style="margin: 0px;"
@@ -1951,6 +1974,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="cardano-logo.svg"
                                           style="margin: 0px;"
@@ -1972,6 +1996,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="avalanche-logo.svg"
                                           style="margin: 0px;"
@@ -1993,6 +2018,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="solana-logo.svg"
                                           style="margin: 0px;"
@@ -2014,6 +2040,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="polygon-logo.svg"
                                           style="margin: 0px;"
@@ -2035,6 +2062,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
+                                          alt="logo"
                                           height="24"
                                           src="binance-logo.svg"
                                           style="margin: 0px;"
@@ -2121,6 +2149,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -2173,6 +2202,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="0"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -2194,6 +2224,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="cardano-logo.svg"
                                             style="margin: 0px;"
@@ -2215,6 +2246,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="avalanche-logo.svg"
                                             style="margin: 0px;"
@@ -2236,6 +2268,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="solana-logo.svg"
                                             style="margin: 0px;"
@@ -2257,6 +2290,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="polygon-logo.svg"
                                             style="margin: 0px;"
@@ -2278,6 +2312,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="binance-logo.svg"
                                             style="margin: 0px;"
@@ -2527,6 +2562,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="ethereum-logo.svg"
                                                 style="margin: 0px;"
@@ -2579,6 +2615,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="0"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="ethereum-logo.svg"
                                                 style="margin: 0px;"
@@ -2600,6 +2637,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="cardano-logo.svg"
                                                 style="margin: 0px;"
@@ -2621,6 +2659,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="avalanche-logo.svg"
                                                 style="margin: 0px;"
@@ -2642,6 +2681,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="solana-logo.svg"
                                                 style="margin: 0px;"
@@ -2663,6 +2703,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="polygon-logo.svg"
                                                 style="margin: 0px;"
@@ -2684,6 +2725,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
+                                                alt="logo"
                                                 height="24"
                                                 src="binance-logo.svg"
                                                 style="margin: 0px;"
@@ -2955,6 +2997,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="ethereum-logo.svg"
                                                     style="margin: 0px;"
@@ -3840,6 +3883,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="ethereum-logo.svg"
                                                                               style={
@@ -4611,6 +4655,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -4663,6 +4708,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="0"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -4684,6 +4730,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="cardano-logo.svg"
                                             style="margin: 0px;"
@@ -4705,6 +4752,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="avalanche-logo.svg"
                                             style="margin: 0px;"
@@ -4726,6 +4774,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="solana-logo.svg"
                                             style="margin: 0px;"
@@ -4747,6 +4796,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="polygon-logo.svg"
                                             style="margin: 0px;"
@@ -4768,6 +4818,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
+                                            alt="logo"
                                             height="24"
                                             src="binance-logo.svg"
                                             style="margin: 0px;"
@@ -5260,6 +5311,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="0"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="ethereum-logo.svg"
                                                     style="margin: 0px;"
@@ -5281,6 +5333,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="cardano-logo.svg"
                                                     style="margin: 0px;"
@@ -5302,6 +5355,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="avalanche-logo.svg"
                                                     style="margin: 0px;"
@@ -5323,6 +5377,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="solana-logo.svg"
                                                     style="margin: 0px;"
@@ -5344,6 +5399,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="polygon-logo.svg"
                                                     style="margin: 0px;"
@@ -5365,6 +5421,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
+                                                    alt="logo"
                                                     height="24"
                                                     src="binance-logo.svg"
                                                     style="margin: 0px;"
@@ -6250,6 +6307,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="ethereum-logo.svg"
                                                                               style={
@@ -6479,6 +6537,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="cardano-logo.svg"
                                                                               style={
@@ -6708,6 +6767,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="avalanche-logo.svg"
                                                                               style={
@@ -6937,6 +6997,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="solana-logo.svg"
                                                                               style={
@@ -7166,6 +7227,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="polygon-logo.svg"
                                                                               style={
@@ -7395,6 +7457,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                             width={24}
                                                                           >
                                                                             <img
+                                                                              alt="logo"
                                                                               height={24}
                                                                               src="binance-logo.svg"
                                                                               style={
@@ -7576,6 +7639,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -7627,6 +7691,7 @@ Object {
             tabindex="0"
           >
             <img
+              alt="logo"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -7648,6 +7713,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -7669,6 +7735,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -7690,6 +7757,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -7711,6 +7779,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -7732,6 +7801,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="binance-logo.svg"
               style="margin: 0px;"
@@ -7874,6 +7944,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -7925,6 +7996,7 @@ Object {
             tabindex="0"
           >
             <img
+              alt="logo"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -7946,6 +8018,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -7967,6 +8040,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -7988,6 +8062,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -8009,6 +8084,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -8030,6 +8106,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="binance-logo.svg"
               style="margin: 0px;"
@@ -8111,6 +8188,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -8163,6 +8241,7 @@ Object {
             tabindex="0"
           >
             <img
+              alt="logo"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -8184,6 +8263,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -8205,6 +8285,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -8226,6 +8307,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -8247,6 +8329,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -8268,6 +8351,7 @@ Object {
             tabindex="-1"
           >
             <img
+              alt="logo"
               height="24"
               src="binance-logo.svg"
               style="margin: 0px;"

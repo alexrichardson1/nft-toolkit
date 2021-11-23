@@ -1104,6 +1104,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               >
                                                 Mint for 0.000000000000000001
                                                 <img
+                                                  alt="logo"
                                                   height="20px"
                                                   src="ethereum-logo.svg"
                                                   style="margin: 0px 5px;"
@@ -4681,6 +4682,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                 width="20px"
                                                                               >
                                                                                 <img
+                                                                                  alt="logo"
                                                                                   height="20px"
                                                                                   src="ethereum-logo.svg"
                                                                                   style={
