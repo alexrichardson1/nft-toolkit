@@ -25,7 +25,8 @@ export const addDeployedAddress: RequestHandler = async (req, res, next) => {
       $push: { collections: userCollection },
     }).exec();
     if (!user) {
-      throw new Error("User not found");
+      const newUser = new User({ _id: creator, collections: [userCollection] });
+      await newUser.save();
     }
   } catch (error) {
     return next(error);
