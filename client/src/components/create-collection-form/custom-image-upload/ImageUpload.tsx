@@ -15,6 +15,14 @@ interface PropsT {
   ) => void;
 }
 
+/**
+ * Image upload component that allows users to drag and drop images or add
+ * images manually from their file browser in order to upload them
+ *
+ * @param NUMBER_OF_IMAGES - the number of images uploaded by the user
+ * @param handleImageDrop - handle images being dropped or added
+ */
+
 const ImageUpload = ({
   NUMBER_OF_IMAGES,
   handleImageDrop,

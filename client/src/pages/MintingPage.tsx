@@ -169,7 +169,6 @@ const MintingPage = (): JSX.Element => {
         collection.tokens.forEach((token) => {
           collection.gifSrc = token.image;
         });
-        console.log(collection.gifSrc);
         setMintingData(collection);
         setUsdValue(await getDollarValue(collection.price, collection.chainId));
       } catch (error) {
@@ -213,7 +212,7 @@ const MintingPage = (): JSX.Element => {
             </Typography>
           </Box>
 
-          <Box display="flex" alignItems="center" justifyContent="center">
+          <Box pt={10} pl={2} display="flex" justifyContent="center">
             <Paper sx={mintingCardStyle} elevation={6}>
               <Paper sx={mintingCardImgStyle(mintingData)} />
               <Box
