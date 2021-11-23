@@ -3,20 +3,22 @@ import ImageUpload from "components/create-collection-form/custom-image-upload/I
 import Tabs from "components/create-collection-form/tabs/Tabs";
 
 interface PropsT {
-  state: FormStateI;
+  imgObjs: ImageT;
+  NUMBER_OF_IMAGES: number;
   isLoading: boolean;
-  handleImageDelete: (deleteId: string) => void;
+  handleImgDelete: (deleteId: string) => void;
   handleImgNameChange: (e: InputEventT, id: string) => void;
-  handleImageDrop: (
+  handleImgDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
   ) => void;
 }
 
-const ImageUploadTabs = ({
-  state,
-  handleImageDelete,
-  handleImageDrop,
+const ImageUploadWithTabs = ({
+  NUMBER_OF_IMAGES,
+  imgObjs,
+  handleImgDelete,
+  handleImgDrop,
   handleImgNameChange,
   isLoading,
 }: PropsT): JSX.Element => {
@@ -24,19 +26,19 @@ const ImageUploadTabs = ({
     <>
       <Paper>
         <ImageUpload
-          handleImageDrop={handleImageDrop}
-          NUMBER_OF_IMAGES={state.static.numberOfImages}
+          handleImageDrop={handleImgDrop}
+          NUMBER_OF_IMAGES={NUMBER_OF_IMAGES}
         />
       </Paper>
 
-      {state.static.numberOfImages > 0 && (
+      {NUMBER_OF_IMAGES > 0 && (
         <Paper>
           <Tabs
-            NUMBER_OF_IMAGES={state.static.numberOfImages}
+            NUMBER_OF_IMAGES={NUMBER_OF_IMAGES}
             isLoading={isLoading}
-            handleImageDelete={handleImageDelete}
+            handleImageDelete={handleImgDelete}
             handleNameChange={handleImgNameChange}
-            imgObjs={state.static.images}
+            imgObjs={imgObjs}
           />
         </Paper>
       )}
@@ -44,4 +46,4 @@ const ImageUploadTabs = ({
   );
 };
 
-export default ImageUploadTabs;
+export default ImageUploadWithTabs;
