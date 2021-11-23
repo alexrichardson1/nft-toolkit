@@ -1,7 +1,7 @@
 import {
   deployContracts,
   getCollection,
-  getCollections,
+  getUserCollections,
   saveCollectionToDB,
   successHandler,
   uploadImages,
@@ -36,14 +36,14 @@ collectionRoutes.post(
 );
 
 collectionRoutes.get(
-  "/:fromAddress",
+  "/:creator",
   getCollectionsValidator(),
   errorHandler,
-  getCollections
+  getUserCollections
 );
 
 collectionRoutes.get(
-  "/:fromAddress/:collectionName",
+  "/:chainId/:address",
   getCollectionValidator(),
   errorHandler,
   getCollection
