@@ -36,11 +36,11 @@ const LayerImageUpload = ({
   stepNumber,
   isLoading,
 }: PropsT): JSX.Element => {
+  const [value, setValue] = useState(INITIAL_VALUE);
+
   if (wrongStepGenerative(generative, stepNumber, LAYER_UPLOAD_PAGE_NUMBER)) {
     return <></>;
   }
-
-  const [value, setValue] = useState(INITIAL_VALUE);
 
   return (
     <Box sx={{ width: "100%" }}>

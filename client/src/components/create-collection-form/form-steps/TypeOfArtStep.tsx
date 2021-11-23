@@ -58,7 +58,7 @@ const TypeOfArtStep = ({
   const handleGenerativeCardClick = useCallback(() => {
     setGenerative(true);
     handleNextStep();
-  }, []);
+  }, [handleNextStep, setGenerative]);
 
   return wrongStep(stepNumber, ART_TYPE_STEP_NUMBER) ? (
     <></>

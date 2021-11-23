@@ -55,15 +55,15 @@ const GeneralInfoStep = ({
   handleDescriptionChange,
   handleSymbolChange,
 }: PropsT): JSX.Element => {
-  if (wrongStep(stepNumber, GENERAL_INFO_STEP_NUMBER)) {
-    return <></>;
-  }
-
   const { selectedNet } = useContext(NetworkContext);
   const priceInputPropsMemo = useMemo(
     () => priceInputProps(selectedNet),
     [selectedNet]
   );
+
+  if (wrongStep(stepNumber, GENERAL_INFO_STEP_NUMBER)) {
+    return <></>;
+  }
 
   return (
     <>

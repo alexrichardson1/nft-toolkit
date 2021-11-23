@@ -40,11 +40,11 @@ const LayerSelectionStep = ({
   handleLayerAddition,
   handleLayerRemoval,
 }: PropsT): JSX.Element => {
+  const [text, setText] = useState(INITIAL_TEXT);
+
   if (wrongStepGenerative(generative, stepNumber, LAYER_UPLOAD_STEP_NUMBER)) {
     return <></>;
   }
-
-  const [text, setText] = useState(INITIAL_TEXT);
 
   const handleListAdd = () => {
     if (text !== "") {
