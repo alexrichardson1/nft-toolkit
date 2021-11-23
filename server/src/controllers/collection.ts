@@ -94,7 +94,7 @@ export const getUserCollections: RequestHandler = async (req, res, next) => {
   }
 };
 
-const getCollectionFromDB = async (
+export const getCollectionFromDB = async (
   address: string,
   chainId: number
 ): Promise<CollectionT> => {
