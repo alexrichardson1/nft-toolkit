@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import { DragEndEvent } from "@dnd-kit/core";
 import { AlertColor, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -46,6 +45,7 @@ const formFooterStyle: SxProps = {
   flexDirection: { xs: "column", sm: "row" },
 };
 
+// eslint-disable-next-line max-lines-per-function
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
