@@ -1,5 +1,5 @@
 import { Web3ReactProvider } from "@web3-react/core";
-import StaticArtForm from "components/create-collection-form/form-steps/StaticArtStep";
+import StaticArtStep from "components/create-collection-form/form-steps/StaticArtStep";
 import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
@@ -20,14 +20,14 @@ describe("StaticArtStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <StaticArtForm
-              pageNumber={0}
+            <StaticArtStep
+              stepNumber={0}
               state={INITIAL_STATE}
               generative={false}
               isLoading={false}
-              handleImageDelete={jest.fn()}
+              handleImgDelete={jest.fn()}
               handleImgNameChange={jest.fn()}
-              handleImageDrop={jest.fn()}
+              handleImgDrop={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -41,14 +41,14 @@ describe("StaticArtStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <StaticArtForm
-              pageNumber={2}
+            <StaticArtStep
+              stepNumber={2}
               state={INITIAL_STATE}
               generative={true}
               isLoading={false}
-              handleImageDelete={jest.fn()}
+              handleImgDelete={jest.fn()}
               handleImgNameChange={jest.fn()}
-              handleImageDrop={jest.fn()}
+              handleImgDrop={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -62,14 +62,14 @@ describe("StaticArtStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <StaticArtForm
-              pageNumber={2}
+            <StaticArtStep
+              stepNumber={2}
               state={INITIAL_STATE}
               generative={false}
               isLoading={false}
-              handleImageDelete={jest.fn()}
+              handleImgDelete={jest.fn()}
               handleImgNameChange={jest.fn()}
-              handleImageDrop={jest.fn()}
+              handleImgDrop={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>

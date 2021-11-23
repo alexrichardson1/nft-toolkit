@@ -671,12 +671,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                     data-testid="create-form"
                     onSubmit={[Function]}
                   >
-                    <GeneralInfo
+                    <GeneralInfoStep
                       handleCollNameChange={[Function]}
                       handleDescriptionChange={[Function]}
                       handleMintPriceChange={[Function]}
                       handleSymbolChange={[Function]}
-                      pageNumber={0}
                       state={
                         Object {
                           "collectionName": "",
@@ -693,6 +692,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "symbol": "",
                         }
                       }
+                      stepNumber={0}
                     >
                       <ForwardRef(Paper)>
                         <MuiPaperRoot
@@ -771,6 +771,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       "multiline": false,
                                       "name": undefined,
                                       "onChange": [Function],
+                                      "onKeyPress": undefined,
                                       "placeholder": "Enter a collection name",
                                       "required": true,
                                       "rows": undefined,
@@ -832,6 +833,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           "fullWidth": true,
                                           "hiddenLabel": false,
                                           "margin": "none",
+                                          "onKeyPress": undefined,
                                           "required": true,
                                           "size": "medium",
                                           "variant": "outlined",
@@ -1798,6 +1800,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       "multiline": false,
                                       "name": undefined,
                                       "onChange": [Function],
+                                      "onKeyPress": undefined,
                                       "placeholder": "Enter a symbol",
                                       "required": true,
                                       "rows": undefined,
@@ -1859,6 +1862,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           "fullWidth": true,
                                           "hiddenLabel": false,
                                           "margin": "none",
+                                          "onKeyPress": undefined,
                                           "required": true,
                                           "size": "medium",
                                           "variant": "outlined",
@@ -2831,6 +2835,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       "multiline": true,
                                       "name": undefined,
                                       "onChange": [Function],
+                                      "onKeyPress": undefined,
                                       "placeholder": "Enter a description",
                                       "required": true,
                                       "rows": 4,
@@ -2893,6 +2898,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           "fullWidth": true,
                                           "hiddenLabel": false,
                                           "margin": "none",
+                                          "onKeyPress": undefined,
                                           "required": true,
                                           "size": "medium",
                                           "variant": "outlined",
@@ -3970,6 +3976,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       "multiline": false,
                                       "name": undefined,
                                       "onChange": [Function],
+                                      "onKeyPress": undefined,
                                       "placeholder": "Enter a minting price",
                                       "required": true,
                                       "rows": undefined,
@@ -4044,6 +4051,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           "fullWidth": true,
                                           "hiddenLabel": false,
                                           "margin": "none",
+                                          "onKeyPress": undefined,
                                           "required": true,
                                           "size": "medium",
                                           "variant": "outlined",
@@ -5022,19 +5030,18 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           </div>
                         </MuiPaperRoot>
                       </ForwardRef(Paper)>
-                    </GeneralInfo>
+                    </GeneralInfoStep>
                     <TypeOfArtStep
-                      handleNextPage={[Function]}
-                      pageNumber={0}
+                      handleNextStep={[Function]}
                       setGenerative={[Function]}
+                      stepNumber={0}
                     />
-                    <StaticArtForm
+                    <StaticArtStep
                       generative={false}
-                      handleImageDelete={[Function]}
-                      handleImageDrop={[Function]}
+                      handleImgDelete={[Function]}
+                      handleImgDrop={[Function]}
                       handleImgNameChange={[Function]}
                       isLoading={false}
-                      pageNumber={0}
                       state={
                         Object {
                           "collectionName": "",
@@ -5051,13 +5058,13 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "symbol": "",
                         }
                       }
+                      stepNumber={0}
                     />
-                    <SortableList
+                    <LayerSelectionStep
                       generative={false}
                       handleLayerAddition={[Function]}
                       handleLayerRemoval={[Function]}
                       handleLayerReorder={[Function]}
-                      pageNumber={0}
                       state={
                         Object {
                           "collectionName": "",
@@ -5074,10 +5081,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "symbol": "",
                         }
                       }
+                      stepNumber={0}
                     />
                     <GenArtStep
                       generative={false}
-                      pageNumber={0}
                       state={
                         Object {
                           "collectionName": "",
@@ -5094,6 +5101,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "symbol": "",
                         }
                       }
+                      stepNumber={0}
                     />
                     <ForwardRef(Box)
                       sx={
@@ -5442,231 +5450,164 @@ exports[`CreateCollectionForm snapshot 1`] = `
                         <div
                           className="MuiBox-root css-50gf6y"
                         >
-                          <ForwardRef(Collapse)
-                            in={false}
-                            sx={
-                              Object {
-                                "flexGrow": 1,
-                              }
-                            }
+                          <FormAlert
+                            alertMessage=""
+                            alertSeverity="success"
+                            closeAlert={[Function]}
                           >
-                            <Transition
-                              addEndListener={[Function]}
-                              appear={false}
-                              enter={true}
-                              exit={true}
+                            <ForwardRef(Collapse)
                               in={false}
-                              mountOnEnter={false}
-                              nodeRef={
-                                Object {
-                                  "current": <div
-                                    class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
-                                    style="min-height: 0px;"
-                                  >
-                                    <div
-                                      class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                                    >
-                                      <div
-                                        class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                                      >
-                                        <div
-                                          class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
-                                          data-testid="form-alert"
-                                          role="alert"
-                                        >
-                                          <div
-                                            class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
-                                          >
-                                            <svg
-                                              aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                              data-testid="SuccessOutlinedIcon"
-                                              focusable="false"
-                                              viewBox="0 0 24 24"
-                                            >
-                                              <path
-                                                d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                                              />
-                                            </svg>
-                                          </div>
-                                          <div
-                                            class="MuiAlert-message css-acap47-MuiAlert-message"
-                                          />
-                                          <div
-                                            class="MuiAlert-action css-ki1hdl-MuiAlert-action"
-                                          >
-                                            <button
-                                              aria-label="close"
-                                              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
-                                              tabindex="0"
-                                              type="button"
-                                            >
-                                              <svg
-                                                aria-hidden="true"
-                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                                data-testid="CloseIcon"
-                                                focusable="false"
-                                                viewBox="0 0 24 24"
-                                              >
-                                                <path
-                                                  d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                                />
-                                              </svg>
-                                              <span
-                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                              />
-                                            </button>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>,
-                                }
-                              }
-                              onEnter={[Function]}
-                              onEntered={[Function]}
-                              onEntering={[Function]}
-                              onExit={[Function]}
-                              onExited={[Function]}
-                              onExiting={[Function]}
                               sx={
                                 Object {
                                   "flexGrow": 1,
                                 }
                               }
-                              timeout={300}
-                              unmountOnExit={false}
                             >
-                              <MuiCollapseRoot
-                                className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
-                                ownerState={
+                              <Transition
+                                addEndListener={[Function]}
+                                appear={false}
+                                enter={true}
+                                exit={true}
+                                in={false}
+                                mountOnEnter={false}
+                                nodeRef={
                                   Object {
-                                    "children": <ForwardRef(Alert)
-                                      action={
-                                        <ForwardRef(IconButton)
-                                          aria-label="close"
-                                          color="inherit"
-                                          onClick={[Function]}
-                                          size="small"
-                                        >
-                                          <Memo
-                                            fontSize="inherit"
-                                          />
-                                        </ForwardRef(IconButton)>
-                                      }
-                                      data-testid="form-alert"
-                                      elevation={6}
-                                      severity="success"
-                                      variant="filled"
+                                    "current": <div
+                                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
+                                      style="min-height: 0px;"
                                     >
-                                      
-                                    </ForwardRef(Alert)>,
-                                    "collapsedSize": "0px",
-                                    "in": false,
-                                    "orientation": "vertical",
-                                    "state": "exited",
-                                    "sx": Object {
-                                      "flexGrow": 1,
-                                    },
+                                      <div
+                                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                                      >
+                                        <div
+                                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                        >
+                                          <div
+                                            class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
+                                            data-testid="form-alert"
+                                            role="alert"
+                                          >
+                                            <div
+                                              class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+                                            >
+                                              <svg
+                                                aria-hidden="true"
+                                                class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                data-testid="SuccessOutlinedIcon"
+                                                focusable="false"
+                                                viewBox="0 0 24 24"
+                                              >
+                                                <path
+                                                  d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                />
+                                              </svg>
+                                            </div>
+                                            <div
+                                              class="MuiAlert-message css-acap47-MuiAlert-message"
+                                            />
+                                            <div
+                                              class="MuiAlert-action css-ki1hdl-MuiAlert-action"
+                                            >
+                                              <button
+                                                aria-label="close"
+                                                class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
+                                                tabindex="0"
+                                                type="button"
+                                              >
+                                                <svg
+                                                  aria-hidden="true"
+                                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                  data-testid="CloseIcon"
+                                                  focusable="false"
+                                                  viewBox="0 0 24 24"
+                                                >
+                                                  <path
+                                                    d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                  />
+                                                </svg>
+                                                <span
+                                                  class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                />
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>,
                                   }
                                 }
-                                style={
-                                  Object {
-                                    "minHeight": "0px",
-                                  }
-                                }
+                                onEnter={[Function]}
+                                onEntered={[Function]}
+                                onEntering={[Function]}
+                                onExit={[Function]}
+                                onExited={[Function]}
+                                onExiting={[Function]}
                                 sx={
                                   Object {
                                     "flexGrow": 1,
                                   }
                                 }
+                                timeout={300}
+                                unmountOnExit={false}
                               >
-                                <Noop />
-                                <div
-                                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
+                                <MuiCollapseRoot
+                                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                                  ownerState={
+                                    Object {
+                                      "children": <ForwardRef(Alert)
+                                        action={
+                                          <ForwardRef(IconButton)
+                                            aria-label="close"
+                                            color="inherit"
+                                            onClick={[Function]}
+                                            size="small"
+                                          >
+                                            <Memo
+                                              fontSize="inherit"
+                                            />
+                                          </ForwardRef(IconButton)>
+                                        }
+                                        data-testid="form-alert"
+                                        elevation={6}
+                                        severity="success"
+                                        variant="filled"
+                                      >
+                                        
+                                      </ForwardRef(Alert)>,
+                                      "collapsedSize": "0px",
+                                      "in": false,
+                                      "orientation": "vertical",
+                                      "state": "exited",
+                                      "sx": Object {
+                                        "flexGrow": 1,
+                                      },
+                                    }
+                                  }
                                   style={
                                     Object {
                                       "minHeight": "0px",
                                     }
                                   }
+                                  sx={
+                                    Object {
+                                      "flexGrow": 1,
+                                    }
+                                  }
                                 >
-                                  <MuiCollapseWrapper
-                                    className="MuiCollapse-wrapper MuiCollapse-vertical"
-                                    ownerState={
+                                  <Noop />
+                                  <div
+                                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-x3e97n-MuiCollapse-root"
+                                    style={
                                       Object {
-                                        "children": <ForwardRef(Alert)
-                                          action={
-                                            <ForwardRef(IconButton)
-                                              aria-label="close"
-                                              color="inherit"
-                                              onClick={[Function]}
-                                              size="small"
-                                            >
-                                              <Memo
-                                                fontSize="inherit"
-                                              />
-                                            </ForwardRef(IconButton)>
-                                          }
-                                          data-testid="form-alert"
-                                          elevation={6}
-                                          severity="success"
-                                          variant="filled"
-                                        >
-                                          
-                                        </ForwardRef(Alert)>,
-                                        "collapsedSize": "0px",
-                                        "in": false,
-                                        "orientation": "vertical",
-                                        "state": "exited",
-                                        "sx": Object {
-                                          "flexGrow": 1,
-                                        },
+                                        "minHeight": "0px",
                                       }
                                     }
                                   >
-                                    <Noop />
-                                    <div
-                                      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                                    >
-                                      <MuiCollapseWrapperInner
-                                        className="MuiCollapse-wrapperInner MuiCollapse-vertical"
-                                        ownerState={
-                                          Object {
-                                            "children": <ForwardRef(Alert)
-                                              action={
-                                                <ForwardRef(IconButton)
-                                                  aria-label="close"
-                                                  color="inherit"
-                                                  onClick={[Function]}
-                                                  size="small"
-                                                >
-                                                  <Memo
-                                                    fontSize="inherit"
-                                                  />
-                                                </ForwardRef(IconButton)>
-                                              }
-                                              data-testid="form-alert"
-                                              elevation={6}
-                                              severity="success"
-                                              variant="filled"
-                                            >
-                                              
-                                            </ForwardRef(Alert)>,
-                                            "collapsedSize": "0px",
-                                            "in": false,
-                                            "orientation": "vertical",
-                                            "state": "exited",
-                                            "sx": Object {
-                                              "flexGrow": 1,
-                                            },
-                                          }
-                                        }
-                                      >
-                                        <Noop />
-                                        <div
-                                          className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                                        >
-                                          <ForwardRef(Alert)
+                                    <MuiCollapseWrapper
+                                      className="MuiCollapse-wrapper MuiCollapse-vertical"
+                                      ownerState={
+                                        Object {
+                                          "children": <ForwardRef(Alert)
                                             action={
                                               <ForwardRef(IconButton)
                                                 aria-label="close"
@@ -5684,13 +5625,29 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             severity="success"
                                             variant="filled"
                                           >
-                                            <MuiAlertRoot
-                                              className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled"
-                                              data-testid="form-alert"
-                                              elevation={6}
-                                              ownerState={
-                                                Object {
-                                                  "action": <ForwardRef(IconButton)
+                                            
+                                          </ForwardRef(Alert)>,
+                                          "collapsedSize": "0px",
+                                          "in": false,
+                                          "orientation": "vertical",
+                                          "state": "exited",
+                                          "sx": Object {
+                                            "flexGrow": 1,
+                                          },
+                                        }
+                                      }
+                                    >
+                                      <Noop />
+                                      <div
+                                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                                      >
+                                        <MuiCollapseWrapperInner
+                                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                                          ownerState={
+                                            Object {
+                                              "children": <ForwardRef(Alert)
+                                                action={
+                                                  <ForwardRef(IconButton)
                                                     aria-label="close"
                                                     color="inherit"
                                                     onClick={[Function]}
@@ -5699,87 +5656,279 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     <Memo
                                                       fontSize="inherit"
                                                     />
-                                                  </ForwardRef(IconButton)>,
-                                                  "children": "",
-                                                  "color": undefined,
-                                                  "data-testid": "form-alert",
-                                                  "elevation": 6,
-                                                  "severity": "success",
-                                                  "variant": "filled",
+                                                  </ForwardRef(IconButton)>
                                                 }
-                                              }
-                                              role="alert"
-                                              square={true}
-                                            >
-                                              <Noop />
-                                              <ForwardRef(Paper)
-                                                className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
                                                 data-testid="form-alert"
                                                 elevation={6}
+                                                severity="success"
+                                                variant="filled"
+                                              >
+                                                
+                                              </ForwardRef(Alert)>,
+                                              "collapsedSize": "0px",
+                                              "in": false,
+                                              "orientation": "vertical",
+                                              "state": "exited",
+                                              "sx": Object {
+                                                "flexGrow": 1,
+                                              },
+                                            }
+                                          }
+                                        >
+                                          <Noop />
+                                          <div
+                                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                          >
+                                            <ForwardRef(Alert)
+                                              action={
+                                                <ForwardRef(IconButton)
+                                                  aria-label="close"
+                                                  color="inherit"
+                                                  onClick={[Function]}
+                                                  size="small"
+                                                >
+                                                  <Memo
+                                                    fontSize="inherit"
+                                                  />
+                                                </ForwardRef(IconButton)>
+                                              }
+                                              data-testid="form-alert"
+                                              elevation={6}
+                                              severity="success"
+                                              variant="filled"
+                                            >
+                                              <MuiAlertRoot
+                                                className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled"
+                                                data-testid="form-alert"
+                                                elevation={6}
+                                                ownerState={
+                                                  Object {
+                                                    "action": <ForwardRef(IconButton)
+                                                      aria-label="close"
+                                                      color="inherit"
+                                                      onClick={[Function]}
+                                                      size="small"
+                                                    >
+                                                      <Memo
+                                                        fontSize="inherit"
+                                                      />
+                                                    </ForwardRef(IconButton)>,
+                                                    "children": "",
+                                                    "color": undefined,
+                                                    "data-testid": "form-alert",
+                                                    "elevation": 6,
+                                                    "severity": "success",
+                                                    "variant": "filled",
+                                                  }
+                                                }
                                                 role="alert"
                                                 square={true}
                                               >
-                                                <MuiPaperRoot
-                                                  as="div"
-                                                  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
+                                                <Noop />
+                                                <ForwardRef(Paper)
+                                                  className="MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
                                                   data-testid="form-alert"
-                                                  ownerState={
-                                                    Object {
-                                                      "children": Array [
-                                                        <MuiAlertIcon
-                                                          className="MuiAlert-icon"
-                                                          ownerState={
-                                                            Object {
-                                                              "action": <ForwardRef(IconButton)
-                                                                aria-label="close"
-                                                                color="inherit"
-                                                                onClick={[Function]}
-                                                                size="small"
-                                                              >
-                                                                <Memo
-                                                                  fontSize="inherit"
-                                                                />
-                                                              </ForwardRef(IconButton)>,
-                                                              "children": "",
-                                                              "color": undefined,
-                                                              "data-testid": "form-alert",
-                                                              "elevation": 6,
-                                                              "severity": "success",
-                                                              "variant": "filled",
+                                                  elevation={6}
+                                                  role="alert"
+                                                  square={true}
+                                                >
+                                                  <MuiPaperRoot
+                                                    as="div"
+                                                    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root"
+                                                    data-testid="form-alert"
+                                                    ownerState={
+                                                      Object {
+                                                        "children": Array [
+                                                          <MuiAlertIcon
+                                                            className="MuiAlert-icon"
+                                                            ownerState={
+                                                              Object {
+                                                                "action": <ForwardRef(IconButton)
+                                                                  aria-label="close"
+                                                                  color="inherit"
+                                                                  onClick={[Function]}
+                                                                  size="small"
+                                                                >
+                                                                  <Memo
+                                                                    fontSize="inherit"
+                                                                  />
+                                                                </ForwardRef(IconButton)>,
+                                                                "children": "",
+                                                                "color": undefined,
+                                                                "data-testid": "form-alert",
+                                                                "elevation": 6,
+                                                                "severity": "success",
+                                                                "variant": "filled",
+                                                              }
                                                             }
+                                                          >
+                                                            <Memo
+                                                              fontSize="inherit"
+                                                            />
+                                                          </MuiAlertIcon>,
+                                                          <MuiAlertMessage
+                                                            className="MuiAlert-message"
+                                                            ownerState={
+                                                              Object {
+                                                                "action": <ForwardRef(IconButton)
+                                                                  aria-label="close"
+                                                                  color="inherit"
+                                                                  onClick={[Function]}
+                                                                  size="small"
+                                                                >
+                                                                  <Memo
+                                                                    fontSize="inherit"
+                                                                  />
+                                                                </ForwardRef(IconButton)>,
+                                                                "children": "",
+                                                                "color": undefined,
+                                                                "data-testid": "form-alert",
+                                                                "elevation": 6,
+                                                                "severity": "success",
+                                                                "variant": "filled",
+                                                              }
+                                                            }
+                                                          >
+                                                            
+                                                          </MuiAlertMessage>,
+                                                          <MuiAlertAction
+                                                            className="MuiAlert-action"
+                                                          >
+                                                            <ForwardRef(IconButton)
+                                                              aria-label="close"
+                                                              color="inherit"
+                                                              onClick={[Function]}
+                                                              size="small"
+                                                            >
+                                                              <Memo
+                                                                fontSize="inherit"
+                                                              />
+                                                            </ForwardRef(IconButton)>
+                                                          </MuiAlertAction>,
+                                                          null,
+                                                        ],
+                                                        "className": "MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root",
+                                                        "component": "div",
+                                                        "data-testid": "form-alert",
+                                                        "elevation": 6,
+                                                        "role": "alert",
+                                                        "square": true,
+                                                        "variant": "elevation",
+                                                      }
+                                                    }
+                                                    role="alert"
+                                                  >
+                                                    <Noop />
+                                                    <div
+                                                      className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
+                                                      data-testid="form-alert"
+                                                      role="alert"
+                                                    >
+                                                      <MuiAlertIcon
+                                                        className="MuiAlert-icon"
+                                                        ownerState={
+                                                          Object {
+                                                            "action": <ForwardRef(IconButton)
+                                                              aria-label="close"
+                                                              color="inherit"
+                                                              onClick={[Function]}
+                                                              size="small"
+                                                            >
+                                                              <Memo
+                                                                fontSize="inherit"
+                                                              />
+                                                            </ForwardRef(IconButton)>,
+                                                            "children": "",
+                                                            "color": undefined,
+                                                            "data-testid": "form-alert",
+                                                            "elevation": 6,
+                                                            "severity": "success",
+                                                            "variant": "filled",
                                                           }
+                                                        }
+                                                      >
+                                                        <Noop />
+                                                        <div
+                                                          className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
                                                         >
-                                                          <Memo
+                                                          <ForwardRef(SuccessOutlinedIcon)
                                                             fontSize="inherit"
-                                                          />
-                                                        </MuiAlertIcon>,
-                                                        <MuiAlertMessage
-                                                          className="MuiAlert-message"
-                                                          ownerState={
-                                                            Object {
-                                                              "action": <ForwardRef(IconButton)
-                                                                aria-label="close"
-                                                                color="inherit"
-                                                                onClick={[Function]}
-                                                                size="small"
+                                                          >
+                                                            <ForwardRef(SvgIcon)
+                                                              data-testid="SuccessOutlinedIcon"
+                                                              fontSize="inherit"
+                                                            >
+                                                              <MuiSvgIconRoot
+                                                                aria-hidden={true}
+                                                                as="svg"
+                                                                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                                                                data-testid="SuccessOutlinedIcon"
+                                                                focusable="false"
+                                                                ownerState={
+                                                                  Object {
+                                                                    "children": <path
+                                                                      d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                                    />,
+                                                                    "color": "inherit",
+                                                                    "component": "svg",
+                                                                    "data-testid": "SuccessOutlinedIcon",
+                                                                    "fontSize": "inherit",
+                                                                    "viewBox": "0 0 24 24",
+                                                                  }
+                                                                }
+                                                                viewBox="0 0 24 24"
                                                               >
-                                                                <Memo
-                                                                  fontSize="inherit"
-                                                                />
-                                                              </ForwardRef(IconButton)>,
-                                                              "children": "",
-                                                              "color": undefined,
-                                                              "data-testid": "form-alert",
-                                                              "elevation": 6,
-                                                              "severity": "success",
-                                                              "variant": "filled",
-                                                            }
+                                                                <Noop />
+                                                                <svg
+                                                                  aria-hidden={true}
+                                                                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                  data-testid="SuccessOutlinedIcon"
+                                                                  focusable="false"
+                                                                  viewBox="0 0 24 24"
+                                                                >
+                                                                  <path
+                                                                    d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+                                                                  />
+                                                                </svg>
+                                                              </MuiSvgIconRoot>
+                                                            </ForwardRef(SvgIcon)>
+                                                          </ForwardRef(SuccessOutlinedIcon)>
+                                                        </div>
+                                                      </MuiAlertIcon>
+                                                      <MuiAlertMessage
+                                                        className="MuiAlert-message"
+                                                        ownerState={
+                                                          Object {
+                                                            "action": <ForwardRef(IconButton)
+                                                              aria-label="close"
+                                                              color="inherit"
+                                                              onClick={[Function]}
+                                                              size="small"
+                                                            >
+                                                              <Memo
+                                                                fontSize="inherit"
+                                                              />
+                                                            </ForwardRef(IconButton)>,
+                                                            "children": "",
+                                                            "color": undefined,
+                                                            "data-testid": "form-alert",
+                                                            "elevation": 6,
+                                                            "severity": "success",
+                                                            "variant": "filled",
                                                           }
-                                                        >
-                                                          
-                                                        </MuiAlertMessage>,
-                                                        <MuiAlertAction
-                                                          className="MuiAlert-action"
+                                                        }
+                                                      >
+                                                        <Noop />
+                                                        <div
+                                                          className="MuiAlert-message css-acap47-MuiAlert-message"
+                                                        />
+                                                      </MuiAlertMessage>
+                                                      <MuiAlertAction
+                                                        className="MuiAlert-action"
+                                                      >
+                                                        <Noop />
+                                                        <div
+                                                          className="MuiAlert-action css-ki1hdl-MuiAlert-action"
                                                         >
                                                           <ForwardRef(IconButton)
                                                             aria-label="close"
@@ -5787,216 +5936,41 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             onClick={[Function]}
                                                             size="small"
                                                           >
-                                                            <Memo
-                                                              fontSize="inherit"
-                                                            />
-                                                          </ForwardRef(IconButton)>
-                                                        </MuiAlertAction>,
-                                                        null,
-                                                      ],
-                                                      "className": "MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-19s02ur-MuiAlert-root",
-                                                      "component": "div",
-                                                      "data-testid": "form-alert",
-                                                      "elevation": 6,
-                                                      "role": "alert",
-                                                      "square": true,
-                                                      "variant": "elevation",
-                                                    }
-                                                  }
-                                                  role="alert"
-                                                >
-                                                  <Noop />
-                                                  <div
-                                                    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation6 MuiAlert-root MuiAlert-filledSuccess MuiAlert-filled css-secft3-MuiPaper-root-MuiAlert-root"
-                                                    data-testid="form-alert"
-                                                    role="alert"
-                                                  >
-                                                    <MuiAlertIcon
-                                                      className="MuiAlert-icon"
-                                                      ownerState={
-                                                        Object {
-                                                          "action": <ForwardRef(IconButton)
-                                                            aria-label="close"
-                                                            color="inherit"
-                                                            onClick={[Function]}
-                                                            size="small"
-                                                          >
-                                                            <Memo
-                                                              fontSize="inherit"
-                                                            />
-                                                          </ForwardRef(IconButton)>,
-                                                          "children": "",
-                                                          "color": undefined,
-                                                          "data-testid": "form-alert",
-                                                          "elevation": 6,
-                                                          "severity": "success",
-                                                          "variant": "filled",
-                                                        }
-                                                      }
-                                                    >
-                                                      <Noop />
-                                                      <div
-                                                        className="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
-                                                      >
-                                                        <ForwardRef(SuccessOutlinedIcon)
-                                                          fontSize="inherit"
-                                                        >
-                                                          <ForwardRef(SvgIcon)
-                                                            data-testid="SuccessOutlinedIcon"
-                                                            fontSize="inherit"
-                                                          >
-                                                            <MuiSvgIconRoot
-                                                              aria-hidden={true}
-                                                              as="svg"
-                                                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
-                                                              data-testid="SuccessOutlinedIcon"
-                                                              focusable="false"
-                                                              ownerState={
-                                                                Object {
-                                                                  "children": <path
-                                                                    d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                                                                  />,
-                                                                  "color": "inherit",
-                                                                  "component": "svg",
-                                                                  "data-testid": "SuccessOutlinedIcon",
-                                                                  "fontSize": "inherit",
-                                                                  "viewBox": "0 0 24 24",
-                                                                }
-                                                              }
-                                                              viewBox="0 0 24 24"
-                                                            >
-                                                              <Noop />
-                                                              <svg
-                                                                aria-hidden={true}
-                                                                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
-                                                                data-testid="SuccessOutlinedIcon"
-                                                                focusable="false"
-                                                                viewBox="0 0 24 24"
-                                                              >
-                                                                <path
-                                                                  d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2, 4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0, 0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-                                                                />
-                                                              </svg>
-                                                            </MuiSvgIconRoot>
-                                                          </ForwardRef(SvgIcon)>
-                                                        </ForwardRef(SuccessOutlinedIcon)>
-                                                      </div>
-                                                    </MuiAlertIcon>
-                                                    <MuiAlertMessage
-                                                      className="MuiAlert-message"
-                                                      ownerState={
-                                                        Object {
-                                                          "action": <ForwardRef(IconButton)
-                                                            aria-label="close"
-                                                            color="inherit"
-                                                            onClick={[Function]}
-                                                            size="small"
-                                                          >
-                                                            <Memo
-                                                              fontSize="inherit"
-                                                            />
-                                                          </ForwardRef(IconButton)>,
-                                                          "children": "",
-                                                          "color": undefined,
-                                                          "data-testid": "form-alert",
-                                                          "elevation": 6,
-                                                          "severity": "success",
-                                                          "variant": "filled",
-                                                        }
-                                                      }
-                                                    >
-                                                      <Noop />
-                                                      <div
-                                                        className="MuiAlert-message css-acap47-MuiAlert-message"
-                                                      />
-                                                    </MuiAlertMessage>
-                                                    <MuiAlertAction
-                                                      className="MuiAlert-action"
-                                                    >
-                                                      <Noop />
-                                                      <div
-                                                        className="MuiAlert-action css-ki1hdl-MuiAlert-action"
-                                                      >
-                                                        <ForwardRef(IconButton)
-                                                          aria-label="close"
-                                                          color="inherit"
-                                                          onClick={[Function]}
-                                                          size="small"
-                                                        >
-                                                          <MuiIconButtonRoot
-                                                            aria-label="close"
-                                                            centerRipple={true}
-                                                            className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
-                                                            disabled={false}
-                                                            focusRipple={true}
-                                                            onClick={[Function]}
-                                                            ownerState={
-                                                              Object {
-                                                                "aria-label": "close",
-                                                                "children": <Memo
-                                                                  fontSize="inherit"
-                                                                />,
-                                                                "color": "inherit",
-                                                                "disableFocusRipple": false,
-                                                                "disabled": false,
-                                                                "edge": false,
-                                                                "onClick": [Function],
-                                                                "size": "small",
-                                                              }
-                                                            }
-                                                          >
-                                                            <Noop />
-                                                            <ForwardRef(ButtonBase)
+                                                            <MuiIconButtonRoot
                                                               aria-label="close"
                                                               centerRipple={true}
-                                                              className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
+                                                              className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall"
                                                               disabled={false}
                                                               focusRipple={true}
                                                               onClick={[Function]}
-                                                            >
-                                                              <MuiButtonBaseRoot
-                                                                aria-label="close"
-                                                                as="button"
-                                                                className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
-                                                                disabled={false}
-                                                                onBlur={[Function]}
-                                                                onClick={[Function]}
-                                                                onContextMenu={[Function]}
-                                                                onDragLeave={[Function]}
-                                                                onFocus={[Function]}
-                                                                onKeyDown={[Function]}
-                                                                onKeyUp={[Function]}
-                                                                onMouseDown={[Function]}
-                                                                onMouseLeave={[Function]}
-                                                                onMouseUp={[Function]}
-                                                                onTouchEnd={[Function]}
-                                                                onTouchMove={[Function]}
-                                                                onTouchStart={[Function]}
-                                                                ownerState={
-                                                                  Object {
-                                                                    "aria-label": "close",
-                                                                    "centerRipple": true,
-                                                                    "children": <Memo
-                                                                      fontSize="inherit"
-                                                                    />,
-                                                                    "className": "MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root",
-                                                                    "component": "button",
-                                                                    "disableRipple": false,
-                                                                    "disableTouchRipple": false,
-                                                                    "disabled": false,
-                                                                    "focusRipple": true,
-                                                                    "focusVisible": false,
-                                                                    "onClick": [Function],
-                                                                    "tabIndex": 0,
-                                                                  }
+                                                              ownerState={
+                                                                Object {
+                                                                  "aria-label": "close",
+                                                                  "children": <Memo
+                                                                    fontSize="inherit"
+                                                                  />,
+                                                                  "color": "inherit",
+                                                                  "disableFocusRipple": false,
+                                                                  "disabled": false,
+                                                                  "edge": false,
+                                                                  "onClick": [Function],
+                                                                  "size": "small",
                                                                 }
-                                                                tabIndex={0}
-                                                                type="button"
+                                                              }
+                                                            >
+                                                              <Noop />
+                                                              <ForwardRef(ButtonBase)
+                                                                aria-label="close"
+                                                                centerRipple={true}
+                                                                className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
+                                                                disabled={false}
+                                                                focusRipple={true}
+                                                                onClick={[Function]}
                                                               >
-                                                                <Noop />
-                                                                <button
+                                                                <MuiButtonBaseRoot
                                                                   aria-label="close"
-                                                                  className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
+                                                                  as="button"
+                                                                  className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root"
                                                                   disabled={false}
                                                                   onBlur={[Function]}
                                                                   onClick={[Function]}
@@ -6011,89 +5985,129 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                   onTouchEnd={[Function]}
                                                                   onTouchMove={[Function]}
                                                                   onTouchStart={[Function]}
+                                                                  ownerState={
+                                                                    Object {
+                                                                      "aria-label": "close",
+                                                                      "centerRipple": true,
+                                                                      "children": <Memo
+                                                                        fontSize="inherit"
+                                                                      />,
+                                                                      "className": "MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-8mu34q-MuiIconButton-root",
+                                                                      "component": "button",
+                                                                      "disableRipple": false,
+                                                                      "disableTouchRipple": false,
+                                                                      "disabled": false,
+                                                                      "focusRipple": true,
+                                                                      "focusVisible": false,
+                                                                      "onClick": [Function],
+                                                                      "tabIndex": 0,
+                                                                    }
+                                                                  }
                                                                   tabIndex={0}
                                                                   type="button"
                                                                 >
-                                                                  <ForwardRef(CloseIcon)
-                                                                    fontSize="inherit"
+                                                                  <Noop />
+                                                                  <button
+                                                                    aria-label="close"
+                                                                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeSmall css-1e0d89p-MuiButtonBase-root-MuiIconButton-root"
+                                                                    disabled={false}
+                                                                    onBlur={[Function]}
+                                                                    onClick={[Function]}
+                                                                    onContextMenu={[Function]}
+                                                                    onDragLeave={[Function]}
+                                                                    onFocus={[Function]}
+                                                                    onKeyDown={[Function]}
+                                                                    onKeyUp={[Function]}
+                                                                    onMouseDown={[Function]}
+                                                                    onMouseLeave={[Function]}
+                                                                    onMouseUp={[Function]}
+                                                                    onTouchEnd={[Function]}
+                                                                    onTouchMove={[Function]}
+                                                                    onTouchStart={[Function]}
+                                                                    tabIndex={0}
+                                                                    type="button"
                                                                   >
-                                                                    <ForwardRef(SvgIcon)
-                                                                      data-testid="CloseIcon"
+                                                                    <ForwardRef(CloseIcon)
                                                                       fontSize="inherit"
                                                                     >
-                                                                      <MuiSvgIconRoot
-                                                                        aria-hidden={true}
-                                                                        as="svg"
-                                                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                                                                      <ForwardRef(SvgIcon)
                                                                         data-testid="CloseIcon"
-                                                                        focusable="false"
-                                                                        ownerState={
-                                                                          Object {
-                                                                            "children": <path
-                                                                              d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                                                            />,
-                                                                            "color": "inherit",
-                                                                            "component": "svg",
-                                                                            "data-testid": "CloseIcon",
-                                                                            "fontSize": "inherit",
-                                                                            "viewBox": "0 0 24 24",
-                                                                          }
-                                                                        }
-                                                                        viewBox="0 0 24 24"
+                                                                        fontSize="inherit"
                                                                       >
-                                                                        <Noop />
-                                                                        <svg
+                                                                        <MuiSvgIconRoot
                                                                           aria-hidden={true}
-                                                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                          as="svg"
+                                                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
                                                                           data-testid="CloseIcon"
                                                                           focusable="false"
+                                                                          ownerState={
+                                                                            Object {
+                                                                              "children": <path
+                                                                                d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                                              />,
+                                                                              "color": "inherit",
+                                                                              "component": "svg",
+                                                                              "data-testid": "CloseIcon",
+                                                                              "fontSize": "inherit",
+                                                                              "viewBox": "0 0 24 24",
+                                                                            }
+                                                                          }
                                                                           viewBox="0 0 24 24"
                                                                         >
-                                                                          <path
-                                                                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                                                          />
-                                                                        </svg>
-                                                                      </MuiSvgIconRoot>
-                                                                    </ForwardRef(SvgIcon)>
-                                                                  </ForwardRef(CloseIcon)>
-                                                                  <ForwardRef(TouchRipple)
-                                                                    center={true}
-                                                                  >
-                                                                    <MuiTouchRippleRoot
-                                                                      className="MuiTouchRipple-root"
+                                                                          <Noop />
+                                                                          <svg
+                                                                            aria-hidden={true}
+                                                                            className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                                                                            data-testid="CloseIcon"
+                                                                            focusable="false"
+                                                                            viewBox="0 0 24 24"
+                                                                          >
+                                                                            <path
+                                                                              d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                                                            />
+                                                                          </svg>
+                                                                        </MuiSvgIconRoot>
+                                                                      </ForwardRef(SvgIcon)>
+                                                                    </ForwardRef(CloseIcon)>
+                                                                    <ForwardRef(TouchRipple)
+                                                                      center={true}
                                                                     >
-                                                                      <Noop />
-                                                                      <span
-                                                                        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                      <MuiTouchRippleRoot
+                                                                        className="MuiTouchRipple-root"
                                                                       >
-                                                                        <TransitionGroup
-                                                                          childFactory={[Function]}
-                                                                          component={null}
-                                                                          exit={true}
-                                                                        />
-                                                                      </span>
-                                                                    </MuiTouchRippleRoot>
-                                                                  </ForwardRef(TouchRipple)>
-                                                                </button>
-                                                              </MuiButtonBaseRoot>
-                                                            </ForwardRef(ButtonBase)>
-                                                          </MuiIconButtonRoot>
-                                                        </ForwardRef(IconButton)>
-                                                      </div>
-                                                    </MuiAlertAction>
-                                                  </div>
-                                                </MuiPaperRoot>
-                                              </ForwardRef(Paper)>
-                                            </MuiAlertRoot>
-                                          </ForwardRef(Alert)>
-                                        </div>
-                                      </MuiCollapseWrapperInner>
-                                    </div>
-                                  </MuiCollapseWrapper>
-                                </div>
-                              </MuiCollapseRoot>
-                            </Transition>
-                          </ForwardRef(Collapse)>
+                                                                        <Noop />
+                                                                        <span
+                                                                          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                                        >
+                                                                          <TransitionGroup
+                                                                            childFactory={[Function]}
+                                                                            component={null}
+                                                                            exit={true}
+                                                                          />
+                                                                        </span>
+                                                                      </MuiTouchRippleRoot>
+                                                                    </ForwardRef(TouchRipple)>
+                                                                  </button>
+                                                                </MuiButtonBaseRoot>
+                                                              </ForwardRef(ButtonBase)>
+                                                            </MuiIconButtonRoot>
+                                                          </ForwardRef(IconButton)>
+                                                        </div>
+                                                      </MuiAlertAction>
+                                                    </div>
+                                                  </MuiPaperRoot>
+                                                </ForwardRef(Paper)>
+                                              </MuiAlertRoot>
+                                            </ForwardRef(Alert)>
+                                          </div>
+                                        </MuiCollapseWrapperInner>
+                                      </div>
+                                    </MuiCollapseWrapper>
+                                  </div>
+                                </MuiCollapseRoot>
+                              </Transition>
+                            </ForwardRef(Collapse)>
+                          </FormAlert>
                           <FormButtons
                             handlePrevPage={[Function]}
                             isLastPage={false}

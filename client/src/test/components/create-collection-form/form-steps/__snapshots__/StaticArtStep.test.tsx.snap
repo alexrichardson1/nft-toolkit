@@ -641,13 +641,12 @@ exports[`StaticArtStep generative does not match 1`] = `
           <Web3ReactProvider
             getLibrary={[Function]}
           >
-            <StaticArtForm
+            <StaticArtStep
               generative={true}
-              handleImageDelete={[MockFunction]}
-              handleImageDrop={[MockFunction]}
+              handleImgDelete={[MockFunction]}
+              handleImgDrop={[MockFunction]}
               handleImgNameChange={[MockFunction]}
               isLoading={false}
-              pageNumber={2}
               state={
                 Object {
                   "collectionName": "",
@@ -664,6 +663,7 @@ exports[`StaticArtStep generative does not match 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={2}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -1314,13 +1314,12 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
           <Web3ReactProvider
             getLibrary={[Function]}
           >
-            <StaticArtForm
+            <StaticArtStep
               generative={false}
-              handleImageDelete={[MockFunction]}
-              handleImageDrop={[MockFunction]}
+              handleImgDelete={[MockFunction]}
+              handleImgDrop={[MockFunction]}
               handleImgNameChange={[MockFunction]}
               isLoading={false}
-              pageNumber={2}
               state={
                 Object {
                   "collectionName": "",
@@ -1337,28 +1336,15 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={2}
             >
-              <ImageUploadTabs
-                handleImageDelete={[MockFunction]}
-                handleImageDrop={[MockFunction]}
+              <ImageUploadWithTabs
+                NUMBER_OF_IMAGES={0}
+                handleImgDelete={[MockFunction]}
+                handleImgDrop={[MockFunction]}
                 handleImgNameChange={[MockFunction]}
+                imgObjs={Object {}}
                 isLoading={false}
-                state={
-                  Object {
-                    "collectionName": "",
-                    "description": "",
-                    "generative": Object {
-                      "layers": Array [],
-                      "numberOfLayers": 0,
-                    },
-                    "mintingPrice": 0,
-                    "static": Object {
-                      "images": Object {},
-                      "numberOfImages": 0,
-                    },
-                    "symbol": "",
-                  }
-                }
               >
                 <ForwardRef(Paper)>
                   <MuiPaperRoot
@@ -1513,8 +1499,8 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     </div>
                   </MuiPaperRoot>
                 </ForwardRef(Paper)>
-              </ImageUploadTabs>
-            </StaticArtForm>
+              </ImageUploadWithTabs>
+            </StaticArtStep>
           </Web3ReactProvider>
         </NetworkProvider>
       </InnerThemeProvider>
@@ -2164,13 +2150,12 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
           <Web3ReactProvider
             getLibrary={[Function]}
           >
-            <StaticArtForm
+            <StaticArtStep
               generative={false}
-              handleImageDelete={[MockFunction]}
-              handleImageDrop={[MockFunction]}
+              handleImgDelete={[MockFunction]}
+              handleImgDrop={[MockFunction]}
               handleImgNameChange={[MockFunction]}
               isLoading={false}
-              pageNumber={0}
               state={
                 Object {
                   "collectionName": "",
@@ -2187,6 +2172,7 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={0}
             />
           </Web3ReactProvider>
         </NetworkProvider>

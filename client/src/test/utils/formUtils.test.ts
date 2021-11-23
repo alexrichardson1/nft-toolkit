@@ -5,7 +5,7 @@ import {
   stopLoading,
   uploadCollection,
   uploadImages,
-} from "components/create-collection-form/formUtils";
+} from "utils/formUtils";
 
 jest.mock("axios");
 

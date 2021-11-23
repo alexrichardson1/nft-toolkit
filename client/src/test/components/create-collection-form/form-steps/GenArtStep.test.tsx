@@ -20,7 +20,7 @@ describe("GenArtStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <GenArtStep pageNumber={3} state={INITIAL_STATE} generative />
+            <GenArtStep stepNumber={3} state={INITIAL_STATE} generative />
           </Web3ReactProvider>
         </NetworkProvider>
       </ThemeProvider>
@@ -32,7 +32,7 @@ describe("GenArtStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <GenArtStep pageNumber={0} state={INITIAL_STATE} generative />
+            <GenArtStep stepNumber={0} state={INITIAL_STATE} generative />
           </Web3ReactProvider>
         </NetworkProvider>
       </ThemeProvider>
@@ -45,7 +45,7 @@ describe("GenArtStep", () => {
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
             <GenArtStep
-              pageNumber={0}
+              stepNumber={0}
               state={INITIAL_STATE}
               generative={false}
             />

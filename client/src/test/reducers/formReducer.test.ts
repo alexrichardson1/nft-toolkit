@@ -1,3 +1,4 @@
+import FormActions from "actions/formActions";
 import formReducer from "../../reducers/formReducer";
 
 const EMPTY_STATE: FormStateI = {
@@ -36,7 +37,7 @@ const TESTOBJ_IMG2 = getImageObj(TEST_IMG2_NAME, TEST_IMG2_URL, TEST_IMG2_FILE);
 describe("formReducer", () => {
   let initialState: FormStateI;
 
-  const payload: FormActionPayloadI = {
+  const payload = {
     newName: "newCollectionName",
     description: "newDescription",
     newImagesStatic: [TESTOBJ_IMG2.image],
@@ -70,7 +71,7 @@ describe("formReducer", () => {
     const expected = { ...initialState };
     expected.collectionName = payload.newName ?? "";
     expect(
-      formReducer(initialState, { type: "CHANGE_NAME", payload })
+      formReducer(initialState, { type: FormActions.CHANGE_NAME, payload })
     ).toMatchObject(expected);
   });
 
@@ -78,7 +79,10 @@ describe("formReducer", () => {
     const expected = { ...initialState };
     expected.description = payload.description ?? "";
     expect(
-      formReducer(initialState, { type: "CHANGE_DESCRIPTION", payload })
+      formReducer(initialState, {
+        type: FormActions.CHANGE_DESCRIPTION,
+        payload,
+      })
     ).toMatchObject(expected);
   });
 
@@ -86,7 +90,7 @@ describe("formReducer", () => {
     const expected = { ...initialState };
     expected.symbol = payload.symbol ?? "";
     expect(
-      formReducer(initialState, { type: "CHANGE_SYMBOL", payload })
+      formReducer(initialState, { type: FormActions.CHANGE_SYMBOL, payload })
     ).toMatchObject(expected);
   });
 
@@ -98,7 +102,7 @@ describe("formReducer", () => {
         global.URL.createObjectURL = () => TESTOBJ_IMG2.url;
       }
       const result = formReducer(initialState, {
-        type: "CHANGE_IMAGES",
+        type: FormActions.CHANGE_IMAGES,
         payload,
       });
       expect(result).toMatchObject(expected);
@@ -114,7 +118,7 @@ describe("formReducer", () => {
       TEST_IMG1_FILE
     );
     const result = formReducer(initialState, {
-      type: "CHANGE_IMAGE_NAME",
+      type: FormActions.CHANGE_IMAGE_NAME,
       payload,
     });
     expect(result).toMatchObject(expected);
@@ -124,7 +128,7 @@ describe("formReducer", () => {
     const expected = { ...initialState };
     expected.static.images[TEST_IMG0_ID] = TESTOBJ_IMG0;
     expect(
-      formReducer(initialState, { type: "DELETE_IMAGE", payload })
+      formReducer(initialState, { type: FormActions.DELETE_IMAGE, payload })
     ).toMatchObject(expected);
   });
 
@@ -132,22 +136,22 @@ describe("formReducer", () => {
     const expected = { ...initialState };
     expected.mintingPrice = Number(payload.price);
     expect(
-      formReducer(initialState, { type: "CHANGE_PRICE", payload })
+      formReducer(initialState, { type: FormActions.CHANGE_PRICE, payload })
     ).toMatchObject(expected);
   });
 
   test("initialState is returned", () => {
     expect(
-      formReducer(initialState, { type: "RESET_STATE", payload })
+      formReducer(initialState, { type: FormActions.RESET_STATE, payload })
     ).toMatchObject(EMPTY_STATE);
   });
 
   test("default case", () => {
     try {
       formReducer(initialState, {
-        type: "",
+        type: "" as unknown as FormActions,
         payload,
-      } as unknown as FormActionI);
+      });
       fail("Error should have been thrown on invalid action");
     } catch (ignored) {
       expect(true);

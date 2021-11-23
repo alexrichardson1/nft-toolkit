@@ -641,12 +641,11 @@ exports[`GeneralInfoStep Page Number does not match 1`] = `
           <Web3ReactProvider
             getLibrary={[Function]}
           >
-            <GeneralInfo
+            <GeneralInfoStep
               handleCollNameChange={[MockFunction]}
               handleDescriptionChange={[MockFunction]}
               handleMintPriceChange={[MockFunction]}
               handleSymbolChange={[MockFunction]}
-              pageNumber={1}
               state={
                 Object {
                   "collectionName": "",
@@ -663,6 +662,7 @@ exports[`GeneralInfoStep Page Number does not match 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={1}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -1313,12 +1313,11 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
           <Web3ReactProvider
             getLibrary={[Function]}
           >
-            <GeneralInfo
+            <GeneralInfoStep
               handleCollNameChange={[MockFunction]}
               handleDescriptionChange={[MockFunction]}
               handleMintPriceChange={[MockFunction]}
               handleSymbolChange={[MockFunction]}
-              pageNumber={0}
               state={
                 Object {
                   "collectionName": "",
@@ -1335,6 +1334,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={0}
             >
               <ForwardRef(Paper)>
                 <MuiPaperRoot
@@ -1413,6 +1413,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                               "multiline": false,
                               "name": undefined,
                               "onChange": [MockFunction],
+                              "onKeyPress": undefined,
                               "placeholder": "Enter a collection name",
                               "required": true,
                               "rows": undefined,
@@ -1474,6 +1475,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                                   "fullWidth": true,
                                   "hiddenLabel": false,
                                   "margin": "none",
+                                  "onKeyPress": undefined,
                                   "required": true,
                                   "size": "medium",
                                   "variant": "outlined",
@@ -2440,6 +2442,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                               "multiline": false,
                               "name": undefined,
                               "onChange": [MockFunction],
+                              "onKeyPress": undefined,
                               "placeholder": "Enter a symbol",
                               "required": true,
                               "rows": undefined,
@@ -2501,6 +2504,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                                   "fullWidth": true,
                                   "hiddenLabel": false,
                                   "margin": "none",
+                                  "onKeyPress": undefined,
                                   "required": true,
                                   "size": "medium",
                                   "variant": "outlined",
@@ -3473,6 +3477,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                               "multiline": true,
                               "name": undefined,
                               "onChange": [MockFunction],
+                              "onKeyPress": undefined,
                               "placeholder": "Enter a description",
                               "required": true,
                               "rows": 4,
@@ -3535,6 +3540,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                                   "fullWidth": true,
                                   "hiddenLabel": false,
                                   "margin": "none",
+                                  "onKeyPress": undefined,
                                   "required": true,
                                   "size": "medium",
                                   "variant": "outlined",
@@ -4612,6 +4618,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                               "multiline": false,
                               "name": undefined,
                               "onChange": [MockFunction],
+                              "onKeyPress": undefined,
                               "placeholder": "Enter a minting price",
                               "required": true,
                               "rows": undefined,
@@ -4686,6 +4693,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                                   "fullWidth": true,
                                   "hiddenLabel": false,
                                   "margin": "none",
+                                  "onKeyPress": undefined,
                                   "required": true,
                                   "size": "medium",
                                   "variant": "outlined",
@@ -5664,7 +5672,7 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                   </div>
                 </MuiPaperRoot>
               </ForwardRef(Paper)>
-            </GeneralInfo>
+            </GeneralInfoStep>
           </Web3ReactProvider>
         </NetworkProvider>
       </InnerThemeProvider>

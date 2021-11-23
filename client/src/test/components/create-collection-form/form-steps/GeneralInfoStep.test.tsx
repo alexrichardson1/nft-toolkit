@@ -1,5 +1,5 @@
 import { Web3ReactProvider } from "@web3-react/core";
-import GeneralInfo from "components/create-collection-form/form-steps/GeneralInfoStep";
+import GeneralInfoStep from "components/create-collection-form/form-steps/GeneralInfoStep";
 import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
@@ -20,8 +20,8 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <GeneralInfo
-              pageNumber={0}
+            <GeneralInfoStep
+              stepNumber={0}
               state={INITIAL_STATE}
               handleCollNameChange={jest.fn()}
               handleDescriptionChange={jest.fn()}
@@ -39,8 +39,8 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <GeneralInfo
-              pageNumber={1}
+            <GeneralInfoStep
+              stepNumber={1}
               state={INITIAL_STATE}
               handleCollNameChange={jest.fn()}
               handleDescriptionChange={jest.fn()}

@@ -643,7 +643,6 @@ exports[`GenArtStep Page Number does not match 1`] = `
           >
             <GenArtStep
               generative={true}
-              pageNumber={0}
               state={
                 Object {
                   "collectionName": "",
@@ -660,6 +659,7 @@ exports[`GenArtStep Page Number does not match 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={0}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -1312,7 +1312,6 @@ exports[`GenArtStep Page Number matches 1`] = `
           >
             <GenArtStep
               generative={true}
-              pageNumber={3}
               state={
                 Object {
                   "collectionName": "",
@@ -1329,6 +1328,7 @@ exports[`GenArtStep Page Number matches 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={3}
             >
               <div />
             </GenArtStep>
@@ -1983,7 +1983,6 @@ exports[`GenArtStep generative does not match 1`] = `
           >
             <GenArtStep
               generative={false}
-              pageNumber={0}
               state={
                 Object {
                   "collectionName": "",
@@ -2000,6 +1999,7 @@ exports[`GenArtStep generative does not match 1`] = `
                   "symbol": "",
                 }
               }
+              stepNumber={0}
             />
           </Web3ReactProvider>
         </NetworkProvider>
