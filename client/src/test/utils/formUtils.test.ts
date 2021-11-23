@@ -71,12 +71,13 @@ describe("formUtils unit tests", () => {
   test("Saving collection", () => {
     axios.post.mockResolvedValue({ data: { transaction: {} } });
     const mockFile = new File([], "testFileName.jpg", { type: "image/jpeg" });
-    const mockImages = [{ image: mockFile, url: "", name: "test", id: "1" }];
+    const mockImages = { "1": { image: mockFile, url: "", name: "test" } };
     const mockState = {
       collectionName: "Test Collection",
       description: "Example description",
-      images: mockImages,
+      static: { images: mockImages },
       mintingPrice: 0,
+      symbol: "TEST",
     };
     expect(
       uploadCollection(
