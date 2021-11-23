@@ -20,7 +20,7 @@ const collectionRoutes = router();
 
 collectionRoutes.post(
   "/save",
-  collectionValidator(),
+  collectionValidator,
   errorHandler,
   saveCollectionToDB,
   deployContracts
@@ -30,21 +30,21 @@ collectionRoutes.post("/images", uploadImages, successHandler);
 
 collectionRoutes.post(
   "/deployed/:creator/:chainId/:address",
-  deployedValidator(),
+  deployedValidator,
   errorHandler,
   addDeployedAddress
 );
 
 collectionRoutes.get(
   "/:creator",
-  getCollectionsValidator(),
+  getCollectionsValidator,
   errorHandler,
   getUserCollections
 );
 
 collectionRoutes.get(
   "/:chainId/:address",
-  getCollectionValidator(),
+  getCollectionValidator,
   errorHandler,
   getCollection
 );
