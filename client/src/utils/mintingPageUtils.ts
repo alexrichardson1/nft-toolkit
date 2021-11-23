@@ -1,6 +1,7 @@
 import { BaseProvider } from "@ethersproject/providers";
 import axios from "axios";
 import { BigNumber, ethers } from "ethers";
+import { NFT__factory as NftFactory } from "typechain";
 import { API_URL } from "./constants";
 
 interface TokenI {
@@ -15,19 +16,30 @@ export interface CollectionI {
   description: string;
   limit: BigNumber;
   tokens: TokenI[];
-  gifSrc?: string;
+  gifSrc: string;
   chainId: number;
-  price: string;
+  price: BigNumber;
 }
 
 export const getCollection = async (
-  fromAddress: string,
-  collectionName: string
+  chainId: string,
+  address: string
 ): Promise<CollectionI> => {
-  const res = await axios.get(
-    `${API_URL}/collection/${fromAddress}/${collectionName}`
-  );
+  const res = await axios.get(`${API_URL}/collection/${chainId}/${address}`);
   const { collection }: { collection: CollectionI } = res.data;
+  const NFTContract = NftFactory.connect(
+    collection.address,
+    getRPCProvider(collection.chainId)
+  );
+  collection.limit = await NFTContract.collectionLimit();
+  collection.mintedAmount = await NFTContract.tokenIdTracker();
+  collection.tokens.forEach((token) => {
+    collection.gifSrc = token.image;
+  });
+  collection.gifSrc = collection.gifSrc?.replaceAll(" ", "%20");
+  collection.price = await NFTContract.price();
+  collection.name = await NFTContract.name();
+  collection.symbol = await NFTContract.symbol();
   return collection;
 };
 
