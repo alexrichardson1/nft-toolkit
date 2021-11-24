@@ -10,6 +10,7 @@ const BOX_HEIGHT = 200;
 const BOX_WIDTH = 300;
 const CHOICE_CARD_HEIGHT = 600;
 
+const choiceCardContainerStyle = { bgcolor: "background.paper" };
 const choiceCardBoxStyle = { height: BOX_HEIGHT, width: BOX_WIDTH };
 const imgStyle = { height: "100%", width: "100%" };
 const descriptionStyle: SxProps = { textAlign: "left", textTransform: "none" };
@@ -31,7 +32,7 @@ interface CardPropsT {
 const ChoiceCard = (props: CardPropsT): JSX.Element => {
   return (
     <Grid item xs={12} md={6}>
-      <Box>
+      <Box sx={choiceCardContainerStyle}>
         <Button onClick={props.handleCardClick}>
           <Paper sx={choiceCardStyle} elevation={5}>
             <Typography color="secondary" align="center" variant="h3">
