@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import Input from "components/common/Input";
 import { useEffect, useState } from "react";
-import { DEFAULT_MUI_DARK } from "utils/constants";
+import { accessibilityProps, DEFAULT_MUI_DARK } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
 import TabPanel from "./TabPanel";
 
@@ -27,11 +27,6 @@ const inputAndDeleteContainer = {
   width: 1,
   alignItems: "center",
 };
-
-const accessibilityProps = (index: number) => ({
-  id: `vertical-tab-${index}`,
-  "aria-controls": `vertical-tabpanel-${index}`,
-});
 
 interface PropsT {
   imgObjs: ImageT;
@@ -80,12 +75,12 @@ const VerticalTabs = ({
           <Tab
             key={imgId}
             label={`Image ${idx + 1}`}
-            {...accessibilityProps(idx)}
+            {...accessibilityProps(idx, true)}
           />
         ))}
       </Tabs>
       {Object.entries(imgObjs).map(([imgId, img], idx) => (
-        <TabPanel key={imgId} value={value} index={idx}>
+        <TabPanel vertical key={imgId} value={value} index={idx}>
           <Box sx={inputAndDeleteContainer}>
             <Input
               sx={nameInputStyle}
