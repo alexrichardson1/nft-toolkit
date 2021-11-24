@@ -14,6 +14,7 @@ enum FormActions {
   REMOVE_LAYER,
   CHANGE_PRECEDENCE,
   RESET_TYPE_OF_ART,
+  CHANGE_IMAGE_DESC,
 }
 
 export default FormActions;
