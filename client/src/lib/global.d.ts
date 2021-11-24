@@ -21,7 +21,6 @@ type LayerImageT = { [imageId: string]: ImageI & { rarity?: number } };
 interface LayerI {
   layerId: string;
   name: string;
-  description?: string;
   images: LayerImageT;
   numberOfImages: number;
 }
