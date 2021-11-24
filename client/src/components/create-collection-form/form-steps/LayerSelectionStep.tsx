@@ -1,8 +1,10 @@
 import { DragEndEvent } from "@dnd-kit/core";
 import AddIcon from "@mui/icons-material/Add";
+import { Collapse } from "@mui/material";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Input from "components/common/Input";
+import PageHeader from "components/common/PageHeader";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
 import OrderableList from "../OrderableList";
@@ -61,12 +63,15 @@ const LayerSelectionStep = ({
   };
 
   return (
-    <Box>
-      <OrderableList
-        state={state}
-        handleLayerReorder={handleLayerReorder}
-        handleLayerRemoval={handleLayerRemoval}
-      />
+    <>
+      <PageHeader text="Add Layers for your Collection" />
+      <Collapse in={state.generative.numberOfLayers > 0}>
+        <OrderableList
+          state={state}
+          handleLayerReorder={handleLayerReorder}
+          handleLayerRemoval={handleLayerRemoval}
+        />
+      </Collapse>
       <Box
         display="flex"
         flexDirection="column"
@@ -88,7 +93,7 @@ const LayerSelectionStep = ({
           <AddIcon />
         </IconButton>
       </Box>
-    </Box>
+    </>
   );
 };
 

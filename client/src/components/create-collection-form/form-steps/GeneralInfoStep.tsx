@@ -1,6 +1,7 @@
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import Input from "components/common/Input";
+import PageHeader from "components/common/PageHeader";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useMemo } from "react";
@@ -67,6 +68,7 @@ const GeneralInfoStep = ({
 
   return (
     <>
+      <PageHeader text="Enter Collection Details Here" />
       <Paper>
         <Input
           inputProps={{ "data-testid": "collection-name-input" }}

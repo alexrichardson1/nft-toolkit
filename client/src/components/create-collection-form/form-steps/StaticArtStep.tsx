@@ -1,3 +1,4 @@
+import PageHeader from "components/common/PageHeader";
 import { wrongStepStatic } from "utils/pages";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 
@@ -52,7 +53,12 @@ const StaticArtStep = ({
     isLoading,
   };
 
-  return <ImageUploadWithTabs {...children} />;
+  return (
+    <>
+      <PageHeader text="Upload your Static Images" />
+      <ImageUploadWithTabs {...children} />
+    </>
+  );
 };
 
 export default StaticArtStep;
