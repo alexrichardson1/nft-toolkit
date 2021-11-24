@@ -41,3 +41,11 @@ export const getLogoByChainId = (id: number): string => {
 export const API_URL = process.env.REACT_APP_API_LOCAL
   ? "http://localhost:5000"
   : "http://nftoolkit.eu-west-2.elasticbeanstalk.com/server";
+
+export const accessibilityProps = (
+  index: number,
+  vertical = false
+): { id: string; "aria-controls": string } => ({
+  id: `${vertical ? "vertical-" : ""}tab-${index}`,
+  "aria-controls": `${vertical ? "vertical-" : ""}tabpanel-${index}`,
+});
