@@ -109,6 +109,7 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+.vscode
 
 # yarn v2
 .yarn/cache
@@ -260,6 +261,6 @@ postgres-data
 
 *.idea
 
-
 # smart contract coverage report
 coverage.json
+
