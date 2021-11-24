@@ -48,7 +48,7 @@ const Wallet = (): JSX.Element => {
     }
 
     updateNetwork(chainId, setSelectedNet, showSnackbar);
-  }, [chainId, setSelectedNet, showSnackbar]);
+  }, [chainId]);
 
   return (
     <Fab

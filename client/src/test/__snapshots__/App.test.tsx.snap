@@ -13818,7 +13818,7 @@ exports[`App snapshot 1`] = `
                                         <Route
                                           component={[Function]}
                                           exact={true}
-                                          path="/:fromAddress([0-9a-zA-Z]{26,})/:collectionName"
+                                          path="/:paramChainId/:address([0-9a-zA-Z]{26,})"
                                         />,
                                         <Route
                                           component={[Function]}
@@ -14029,7 +14029,7 @@ exports[`App snapshot 1`] = `
                                     <Route
                                       component={[Function]}
                                       exact={true}
-                                      path="/:fromAddress([0-9a-zA-Z]{26,})/:collectionName"
+                                      path="/:paramChainId/:address([0-9a-zA-Z]{26,})"
                                     />
                                     <Route
                                       component={[Function]}

@@ -1,37 +1,54 @@
 import { model, Schema } from "mongoose";
 
+interface AttributeI {
+  [key: string]: string;
+}
+
 export interface TokenT {
   name: string;
   description: string;
   image: string;
+  attributes: AttributeI;
+}
+
+interface LayerI {
+  name: string;
+  variants: string[];
 }
 
 export interface CollectionT {
-  name: string;
-  symbol: string;
+  creator: string;
   description: string;
-  price: string;
   chainId: number;
   address?: string;
   tokens: TokenT[];
+  layers: LayerI[];
 }
 
-// TODO: add attributes to collectible schema
 const tokenSchema = new Schema<TokenT>({
   name: String,
   description: String,
   image: String,
+  attributes: {
+    type: Map,
+    of: String,
+  },
+});
+
+const layerSchema = new Schema<LayerI>({
+  name: String,
+  variants: [String],
 });
 
 export const collectionSchema = new Schema<CollectionT>({
-  name: String,
+  creator: String,
   description: String,
   address: String,
-  symbol: String,
-  price: String,
   chainId: Number,
   tokens: [tokenSchema],
+  layers: [layerSchema],
 });
 
 export const Token = model("Token", tokenSchema);
+export const Layer = model("Layer", layerSchema);
 export const Collection = model("Collection", collectionSchema);

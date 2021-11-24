@@ -1,16 +1,16 @@
 import {
   deployContracts,
   getCollection,
-  getCollections,
+  getUserCollections,
   saveCollectionToDB,
   successHandler,
 } from "@controllers/collection";
-import { User } from "@models/user";
+import { Collection } from "@models/collection";
+import { User, UserCollection } from "@models/user";
 import {
-  mockCollection,
   mockCollectionInfo,
-  mockFromAddress,
-  mockInvalidCollectionName,
+  mockCreator,
+  mockDeployedAddress,
   mockValidCollectionName,
 } from "@tests/mockCollectionInfo";
 import db from "@tests/testDB";
@@ -52,21 +52,6 @@ describe("Save collection to db", () => {
     const mockRequest = {
       body: mockCollectionInfo,
     } as unknown as Request;
-    mockRequest.body.fromAddress = mockFromAddress;
-    await saveCollectionToDB(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith();
-  });
-
-  it("Should successfully add a collection to existing user", async () => {
-    const mockRequest = {
-      body: mockCollectionInfo,
-    } as unknown as Request;
-    mockRequest.body.fromAddress = mockFromAddress;
-    const mockUser = new User({
-      collections: [mockCollectionInfo],
-      fromAddress: mockFromAddress,
-    });
-    await mockUser.save();
     await saveCollectionToDB(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith();
   });
@@ -77,7 +62,9 @@ describe("Deploy contracts", () => {
     const mockRequest = {
       body: mockCollectionInfo,
     } as unknown as Request;
-    mockRequest.body.fromAddress = mockFromAddress;
+    mockRequest.body.name = mockValidCollectionName;
+    mockRequest.body.symbol = "MNKYS";
+    mockRequest.body.price = "1230000000000";
     deployContracts(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -87,33 +74,37 @@ describe("Deploy contracts", () => {
   });
 });
 
-describe("Get collections", () => {
+describe("Get user collections", () => {
   it("Should fail if called with undefined params", async () => {
     const mockRequest = {
       params: {},
     } as unknown as Request;
-    await getCollections(mockRequest, mockResponse, mockNext);
+    await getUserCollections(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
   });
 
   it("Should fail if user does not exist in db", async () => {
     const mockRequest = {
-      params: { fromAddress: mockFromAddress },
+      params: { creator: mockCreator },
     } as unknown as Request;
-    await getCollections(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith(new Error("User not found"));
+    await getUserCollections(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalled();
   });
 
   it("Should successfully return collections", async () => {
     const mockRequest = {
-      params: { fromAddress: mockFromAddress },
+      params: { creator: mockCreator },
     } as unknown as Request;
+    const mockUserCollection = new UserCollection({
+      address: "0x123",
+      chainId: 4,
+    });
     const mockUser = new User({
-      fromAddress: mockFromAddress,
-      collections: [mockCollection],
+      _id: mockCreator,
+      collections: [mockUserCollection],
     });
     await mockUser.save();
-    await getCollections(mockRequest, mockResponse, mockNext);
+    await getUserCollections(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         collections: expect.any(Object),
@@ -131,29 +122,13 @@ describe("Get collection", () => {
     expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
   });
 
-  it("Should fail if user does not exist in db", async () => {
-    const mockRequest = {
-      params: {
-        fromAddress: mockFromAddress,
-        collectionName: mockValidCollectionName,
-      },
-    } as unknown as Request;
-    await getCollection(mockRequest, mockResponse, mockNext);
-    expect(mockNext).toHaveBeenCalledWith(new Error("User not found"));
-  });
-
   it("Should fail if collection does not exist in db", async () => {
     const mockRequest = {
       params: {
-        fromAddress: mockFromAddress,
-        collectionName: mockInvalidCollectionName,
+        address: mockCreator,
+        chainId: "4",
       },
     } as unknown as Request;
-    const mockUser = new User({
-      fromAddress: mockFromAddress,
-      collections: [mockCollection],
-    });
-    await mockUser.save();
     await getCollection(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(new Error("Collection not found"));
   });
@@ -161,15 +136,15 @@ describe("Get collection", () => {
   it("Should successfully return collection", async () => {
     const mockRequest = {
       params: {
-        fromAddress: mockFromAddress,
-        collectionName: mockValidCollectionName,
+        address: mockDeployedAddress,
+        chainId: "4",
       },
     } as unknown as Request;
-    const mockUser = new User({
-      fromAddress: mockFromAddress,
-      collections: [mockCollection],
+    const mockCollection = new Collection({
+      ...mockCollectionInfo,
+      ...{ address: mockDeployedAddress },
     });
-    await mockUser.save();
+    await mockCollection.save();
     await getCollection(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
