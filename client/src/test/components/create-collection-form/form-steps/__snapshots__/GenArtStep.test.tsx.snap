@@ -651,7 +651,7 @@ exports[`GenArtStep Page Number does not match 1`] = `
                     "layers": Array [],
                     "numberOfLayers": 0,
                   },
-                  "mintingPrice": 0,
+                  "mintingPrice": NaN,
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
@@ -1320,7 +1320,7 @@ exports[`GenArtStep Page Number matches 1`] = `
                     "layers": Array [],
                     "numberOfLayers": 0,
                   },
-                  "mintingPrice": 0,
+                  "mintingPrice": NaN,
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
@@ -1991,7 +1991,7 @@ exports[`GenArtStep generative does not match 1`] = `
                     "layers": Array [],
                     "numberOfLayers": 0,
                   },
-                  "mintingPrice": 0,
+                  "mintingPrice": NaN,
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
