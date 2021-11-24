@@ -94,7 +94,7 @@ describe("CreateCollectionForm unit tests", () => {
   test("minting price is 0 at start", () => {
     const NUM_INPUT_ROLE = "spinbutton";
     const input = tree.getByRole(NUM_INPUT_ROLE);
-    expect(input.outerHTML).toContain('value="0"');
+    expect(input.outerHTML).toContain('value=""');
   });
 
   test("minting price changes on change event", () => {

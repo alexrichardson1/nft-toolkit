@@ -684,7 +684,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": 0,
+                          "mintingPrice": NaN,
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -3874,10 +3874,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                 }
                                 label="Minting Price"
                                 onChange={[Function]}
-                                placeholder="Enter a minting price"
+                                placeholder="0"
                                 required={true}
                                 type="number"
-                                value={0}
+                                value=""
                               />,
                               "component": "div",
                               "elevation": 1,
@@ -3910,10 +3910,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                               }
                               label="Minting Price"
                               onChange={[Function]}
-                              placeholder="Enter a minting price"
+                              placeholder="0"
                               required={true}
                               type="number"
-                              value={0}
+                              value=""
                             >
                               <ForwardRef(TextField)
                                 InputProps={
@@ -3936,10 +3936,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                 fullWidth={true}
                                 label="Minting Price"
                                 onChange={[Function]}
-                                placeholder="Enter a minting price"
+                                placeholder="0"
                                 required={true}
                                 type="number"
-                                value={0}
+                                value=""
                                 variant="outlined"
                               >
                                 <MuiTextFieldRoot
@@ -3977,13 +3977,13 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       "name": undefined,
                                       "onChange": [Function],
                                       "onKeyPress": undefined,
-                                      "placeholder": "Enter a minting price",
+                                      "placeholder": "0",
                                       "required": true,
                                       "rows": undefined,
                                       "select": false,
                                       "sx": undefined,
                                       "type": "number",
-                                      "value": 0,
+                                      "value": "",
                                       "variant": "outlined",
                                     }
                                   }
@@ -4037,9 +4037,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               }
                                               multiline={false}
                                               onChange={[Function]}
-                                              placeholder="Enter a minting price"
+                                              placeholder="0"
                                               type="number"
-                                              value={0}
+                                              value=""
                                             />,
                                             undefined,
                                           ],
@@ -4067,10 +4067,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             classes={
                                               Object {
                                                 "asterisk": "MuiInputLabel-asterisk",
-                                                "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
                                               }
                                             }
-                                            data-shrink={true}
+                                            data-shrink={false}
                                             ownerState={
                                               Object {
                                                 "children": "Minting Price",
@@ -4080,7 +4080,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   "color": "primary",
                                                   "disabled": false,
                                                   "error": false,
-                                                  "filled": true,
+                                                  "filled": false,
                                                   "focused": false,
                                                   "fullWidth": true,
                                                   "hiddenLabel": false,
@@ -4097,7 +4097,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                 "htmlFor": undefined,
                                                 "id": undefined,
                                                 "required": true,
-                                                "shrink": true,
+                                                "shrink": false,
                                                 "size": "medium",
                                                 "variant": "outlined",
                                               }
@@ -4105,39 +4105,39 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           >
                                             <Noop />
                                             <ForwardRef(FormLabel)
-                                              className="css-1bzvmy4-MuiInputLabel-root"
+                                              className="css-1x92c1k-MuiInputLabel-root"
                                               classes={
                                                 Object {
                                                   "asterisk": "MuiInputLabel-asterisk",
-                                                  "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                  "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
                                                 }
                                               }
-                                              data-shrink={true}
+                                              data-shrink={false}
                                             >
                                               <MuiFormLabelRoot
                                                 as="label"
-                                                className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-1bzvmy4-MuiInputLabel-root"
+                                                className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1x92c1k-MuiInputLabel-root"
                                                 classes={
                                                   Object {
                                                     "asterisk": "MuiInputLabel-asterisk",
-                                                    "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                    "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
                                                   }
                                                 }
-                                                data-shrink={true}
+                                                data-shrink={false}
                                                 ownerState={
                                                   Object {
                                                     "children": "Minting Price",
-                                                    "className": "css-1bzvmy4-MuiInputLabel-root",
+                                                    "className": "css-1x92c1k-MuiInputLabel-root",
                                                     "classes": Object {
                                                       "asterisk": "MuiInputLabel-asterisk",
-                                                      "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                      "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
                                                     },
                                                     "color": "primary",
                                                     "component": "label",
-                                                    "data-shrink": true,
+                                                    "data-shrink": false,
                                                     "disabled": false,
                                                     "error": false,
-                                                    "filled": true,
+                                                    "filled": false,
                                                     "focused": false,
                                                     "htmlFor": undefined,
                                                     "id": undefined,
@@ -4147,8 +4147,8 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               >
                                                 <Noop />
                                                 <label
-                                                  className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
-                                                  data-shrink={true}
+                                                  className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-12o5nb6-MuiFormLabel-root-MuiInputLabel-root"
+                                                  data-shrink={false}
                                                 >
                                                   Minting Price
                                                   <MuiFormLabelAsterisk
@@ -4157,17 +4157,17 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     ownerState={
                                                       Object {
                                                         "children": "Minting Price",
-                                                        "className": "css-1bzvmy4-MuiInputLabel-root",
+                                                        "className": "css-1x92c1k-MuiInputLabel-root",
                                                         "classes": Object {
                                                           "asterisk": "MuiInputLabel-asterisk",
-                                                          "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                          "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
                                                         },
                                                         "color": "primary",
                                                         "component": "label",
-                                                        "data-shrink": true,
+                                                        "data-shrink": false,
                                                         "disabled": false,
                                                         "error": false,
-                                                        "filled": true,
+                                                        "filled": false,
                                                         "focused": false,
                                                         "htmlFor": undefined,
                                                         "id": undefined,
@@ -4217,9 +4217,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           }
                                           multiline={false}
                                           onChange={[Function]}
-                                          placeholder="Enter a minting price"
+                                          placeholder="0"
                                           type="number"
-                                          value={0}
+                                          value=""
                                         >
                                           <ForwardRef(InputBase)
                                             autoFocus={false}
@@ -4295,10 +4295,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             }
                                             multiline={false}
                                             onChange={[Function]}
-                                            placeholder="Enter a minting price"
+                                            placeholder="0"
                                             renderSuffix={[Function]}
                                             type="number"
-                                            value={0}
+                                            value=""
                                           >
                                             <GlobalStyles
                                               styles={
@@ -4717,7 +4717,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     "color": "primary",
                                                     "disabled": false,
                                                     "error": false,
-                                                    "filled": true,
+                                                    "filled": false,
                                                     "focused": false,
                                                     "fullWidth": true,
                                                     "hiddenLabel": false,
@@ -4747,13 +4747,13 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   "onBlur": undefined,
                                                   "onChange": [Function],
                                                   "onFocus": undefined,
-                                                  "placeholder": "Enter a minting price",
+                                                  "placeholder": "0",
                                                   "renderSuffix": [Function],
                                                   "rows": undefined,
                                                   "size": "medium",
                                                   "startAdornment": undefined,
                                                   "type": "number",
-                                                  "value": 0,
+                                                  "value": "",
                                                 }
                                               }
                                             >
@@ -4844,7 +4844,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                         "color": "primary",
                                                         "disabled": false,
                                                         "error": false,
-                                                        "filled": true,
+                                                        "filled": false,
                                                         "focused": false,
                                                         "fullWidth": true,
                                                         "hiddenLabel": false,
@@ -4874,20 +4874,20 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       "onBlur": undefined,
                                                       "onChange": [Function],
                                                       "onFocus": undefined,
-                                                      "placeholder": "Enter a minting price",
+                                                      "placeholder": "0",
                                                       "renderSuffix": [Function],
                                                       "rows": undefined,
                                                       "size": "medium",
                                                       "startAdornment": undefined,
                                                       "type": "number",
-                                                      "value": 0,
+                                                      "value": "",
                                                     }
                                                   }
-                                                  placeholder="Enter a minting price"
+                                                  placeholder="0"
                                                   required={true}
                                                   step="any"
                                                   type="number"
-                                                  value={0}
+                                                  value=""
                                                 >
                                                   <Noop />
                                                   <input
@@ -4900,11 +4900,11 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     onBlur={[Function]}
                                                     onChange={[Function]}
                                                     onFocus={[Function]}
-                                                    placeholder="Enter a minting price"
+                                                    placeholder="0"
                                                     required={true}
                                                     step="any"
                                                     type="number"
-                                                    value={0}
+                                                    value=""
                                                   />
                                                 </MuiOutlinedInputInput>
                                                 <ForwardRef(InputAdornment)
@@ -4960,7 +4960,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                        *
                                                     </React.Fragment>
                                                   }
-                                                  notched={true}
+                                                  notched={false}
                                                 >
                                                   <Noop />
                                                   <NotchedOutline
@@ -4971,7 +4971,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                          *
                                                       </React.Fragment>
                                                     }
-                                                    notched={true}
+                                                    notched={false}
                                                   >
                                                     <Styled(fieldset)
                                                       aria-hidden={true}
@@ -4983,7 +4983,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                             Minting Price
                                                              *
                                                           </React.Fragment>,
-                                                          "notched": true,
+                                                          "notched": false,
                                                         }
                                                       }
                                                     >
@@ -5000,13 +5000,13 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                                 Minting Price
                                                                  *
                                                               </React.Fragment>,
-                                                              "notched": true,
+                                                              "notched": false,
                                                             }
                                                           }
                                                         >
                                                           <Noop />
                                                           <legend
-                                                            className="css-1z7n62"
+                                                            className="css-173wfxe"
                                                           >
                                                             <span>
                                                               Minting Price
@@ -5051,7 +5051,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": 0,
+                          "mintingPrice": NaN,
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -5074,7 +5074,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": 0,
+                          "mintingPrice": NaN,
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -5094,7 +5094,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": 0,
+                          "mintingPrice": NaN,
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -5118,7 +5118,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": 0,
+                          "mintingPrice": NaN,
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,

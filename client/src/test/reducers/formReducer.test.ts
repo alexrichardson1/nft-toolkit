@@ -5,7 +5,7 @@ const EMPTY_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: 0,
+  mintingPrice: NaN,
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };
