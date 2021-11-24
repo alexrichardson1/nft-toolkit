@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import ImageUpload from "components/create-collection-form/custom-image-upload/ImageUpload";
 import Tabs from "components/create-collection-form/tabs/Tabs";
@@ -24,12 +25,12 @@ const ImageUploadWithTabs = ({
 }: PropsT): JSX.Element => {
   return (
     <>
-      <Paper sx={{ width: 1 }}>
+      <Box sx={{ width: 1 }}>
         <ImageUpload
           handleImageDrop={handleImgDrop}
           NUMBER_OF_IMAGES={NUMBER_OF_IMAGES}
         />
-      </Paper>
+      </Box>
 
       {NUMBER_OF_IMAGES > 0 && (
         <Paper sx={{ width: 1 }}>

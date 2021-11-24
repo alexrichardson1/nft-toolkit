@@ -15,7 +15,6 @@
   transition: border 0.05s ease-in-out;
   gap: 5px;
   cursor: pointer;
-  background: transparent;
 }
 
 .img-upload-label:hover,
