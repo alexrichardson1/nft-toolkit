@@ -2,12 +2,16 @@ import { Tab } from "@mui/material";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import { useState } from "react";
+import { accessibilityProps } from "utils/constants";
 import { wrongStepGenerative } from "utils/pages";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 import TabPanel from "../tabs/TabPanel";
 
 const LAYER_UPLOAD_PAGE_NUMBER = 3;
 const INITIAL_VALUE = 0;
+
+const layerImgUplContainerStyle = { width: "100%" };
+const layerImgUplTabsStyle = { borderBottom: 1, borderColor: "divider" };
 
 interface PropsT {
   stepNumber: number;
@@ -43,14 +47,20 @@ const LayerImageUpload = ({
   }
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box sx={layerImgUplContainerStyle}>
+      <Box sx={layerImgUplTabsStyle}>
         <Tabs
           aria-label="layer-tabs"
           value={value}
           onChange={(_e, newValue) => setValue(newValue)}>
-          {state.generative.layers.map((layer) => {
-            return <Tab key={layer.layerId} label={layer.name} />;
+          {state.generative.layers.map((layer, idx) => {
+            return (
+              <Tab
+                key={layer.layerId}
+                label={layer.name}
+                {...accessibilityProps(idx)}
+              />
+            );
           })}
         </Tabs>
       </Box>

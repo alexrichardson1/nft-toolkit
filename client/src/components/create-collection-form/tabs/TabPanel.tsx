@@ -15,21 +15,22 @@ const tabPanelBoxStyle: SxProps<Theme> = {
 
 interface TabPanelProps {
   children?: ReactNode;
+  vertical?: boolean;
   index: number;
   value: number;
 }
 
 const TabPanel = (props: TabPanelProps): JSX.Element => {
-  const { children, value, index, ...other } = props;
+  const { vertical = false, children, value, index, ...other } = props;
 
-  const TABPANEL_ID = `vertical-tabpanel-${index}`;
+  const TABPANEL_ID = `${props.vertical ? "vertical-" : ""}tabpanel-${index}`;
 
   return (
     <Box
       role="tabpanel"
       hidden={value !== index}
       id={TABPANEL_ID}
-      aria-labelledby={`vertical-tab-${index}`}
+      aria-labelledby={`${vertical ? "vertical-" : ""}-tab-${index}`}
       sx={tabPanelStyle}
       {...other}>
       {value === index && <Box sx={tabPanelBoxStyle}>{children}</Box>}
