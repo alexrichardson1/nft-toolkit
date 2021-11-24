@@ -26,7 +26,7 @@ const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: 0,
+  mintingPrice: NaN,
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };
@@ -229,7 +229,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     case FormActions.CHANGE_PRICE:
       return {
         ...state,
-        mintingPrice: Number(action.payload.price ?? DEFAULT_STRING),
+        mintingPrice: parseFloat(action.payload.price ?? DEFAULT_STRING),
       };
 
     case FormActions.RESET_STATE:
