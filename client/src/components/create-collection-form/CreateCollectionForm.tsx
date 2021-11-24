@@ -17,7 +17,6 @@ import {
   uploadCollection,
   uploadImages,
 } from "../../utils/formUtils";
-import GenArtStep from "./form-steps/GenArtStep";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
@@ -263,11 +262,6 @@ const CreateCollectionForm = (): JSX.Element => {
         stepNumber={stepNumber}
         state={state}
         handleLayerAddition={handleLayerAddition}
-      />
-      <GenArtStep
-        generative={generative}
-        stepNumber={stepNumber}
-        state={state}
       />
       <LayerImageUpload
         isLoading={isLoading}
