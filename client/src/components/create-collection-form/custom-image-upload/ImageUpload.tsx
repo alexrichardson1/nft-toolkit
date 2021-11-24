@@ -7,6 +7,7 @@ const labelStyle = (theme: Theme) => ({
   borderRadius: theme.shape.borderRadius,
   borderColor: theme.palette.primary.main,
   boxShadow: theme.shadows[2],
+  background: theme.palette.background.paper,
 });
 
 interface PropsT {
