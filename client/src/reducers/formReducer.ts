@@ -45,6 +45,7 @@ interface FormActionPayloadI {
   deleteGen?: { deleteId: string; layerId: string };
   dragEndEvent?: DragEndEvent;
   deleteLayerId?: string;
+  imageDescChange?: { imageId: string; newDesc: string };
 }
 
 interface FormActionI {
@@ -231,6 +232,19 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         mintingPrice: parseFloat(action.payload.price ?? DEFAULT_STRING),
       };
+
+    case FormActions.CHANGE_IMAGE_DESC: {
+      if (!action.payload.imageDescChange) {
+        throw new Error("imageDescChange required");
+      }
+
+      const img = state.static.images[action.payload.imageDescChange.imageId];
+      if (!img) {
+        throw new Error("Image does not exist");
+      }
+      img.description = action.payload.imageDescChange.newDesc;
+      return { ...state };
+    }
 
     case FormActions.RESET_STATE:
       return INITIAL_STATE;
