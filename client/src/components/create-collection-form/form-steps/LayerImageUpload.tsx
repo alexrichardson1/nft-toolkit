@@ -2,8 +2,10 @@ import { Tab } from "@mui/material";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import { useState } from "react";
-import { accessibilityProps } from "utils/constants";
+import { accessibilityProps, DEFAULT_MUI_DARK } from "utils/constants";
+import getComponentByMode from "utils/getComponentByMode";
 import { wrongStepGenerative } from "utils/pages";
+import PageHeader from "../../common/PageHeader";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 import TabPanel from "../tabs/TabPanel";
 
@@ -47,44 +49,60 @@ const LayerImageUpload = ({
   }
 
   return (
-    <Box sx={layerImgUplContainerStyle}>
-      <Box sx={layerImgUplTabsStyle}>
-        <Tabs
-          aria-label="layer-tabs"
-          value={value}
-          onChange={(_e, newValue) => setValue(newValue)}>
-          {state.generative.layers.map((layer, idx) => {
-            return (
-              <Tab
-                key={layer.layerId}
-                label={layer.name}
-                {...accessibilityProps(idx)}
+    <>
+      <PageHeader text="Upload Images for Each Layer" />
+      <Box sx={layerImgUplContainerStyle}>
+        <Box sx={layerImgUplTabsStyle}>
+          <Tabs
+            variant="scrollable"
+            allowScrollButtonsMobile
+            selectionFollowsFocus
+            TabScrollButtonProps={{
+              sx: {
+                color: (theme) =>
+                  getComponentByMode(
+                    theme.palette.mode,
+                    DEFAULT_MUI_DARK,
+                    "white"
+                  ),
+              },
+            }}
+            aria-label="layer-tabs"
+            value={value}
+            onChange={(_e, newValue) => setValue(newValue)}>
+            {state.generative.layers.map((layer, idx) => {
+              return (
+                <Tab
+                  key={layer.layerId}
+                  label={layer.name}
+                  {...accessibilityProps(idx)}
+                />
+              );
+            })}
+          </Tabs>
+        </Box>
+        {state.generative.layers.map((layer, idx) => {
+          return (
+            <TabPanel key={layer.layerId} value={value} index={idx}>
+              <ImageUploadWithTabs
+                handleImgDelete={(deleteId) =>
+                  handleLayerImgDelete(deleteId, layer.layerId)
+                }
+                handleImgDrop={(e, imgObjs) =>
+                  handleLayerImgDrop(e, imgObjs, layer.layerId)
+                }
+                handleImgNameChange={(e, id) =>
+                  handleLayerImgNameChange(e, id, layer.layerId)
+                }
+                NUMBER_OF_IMAGES={layer.numberOfImages}
+                isLoading={isLoading}
+                imgObjs={layer.images}
               />
-            );
-          })}
-        </Tabs>
+            </TabPanel>
+          );
+        })}
       </Box>
-      {state.generative.layers.map((layer, idx) => {
-        return (
-          <TabPanel key={layer.layerId} value={value} index={idx}>
-            <ImageUploadWithTabs
-              handleImgDelete={(deleteId) =>
-                handleLayerImgDelete(deleteId, layer.layerId)
-              }
-              handleImgDrop={(e, imgObjs) =>
-                handleLayerImgDrop(e, imgObjs, layer.layerId)
-              }
-              handleImgNameChange={(e, id) =>
-                handleLayerImgNameChange(e, id, layer.layerId)
-              }
-              NUMBER_OF_IMAGES={layer.numberOfImages}
-              isLoading={isLoading}
-              imgObjs={layer.images}
-            />
-          </TabPanel>
-        );
-      })}
-    </Box>
+    </>
   );
 };
 
