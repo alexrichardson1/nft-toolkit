@@ -102,9 +102,9 @@ const GeneralInfoStep = ({
 
       <Paper>
         <Input
-          value={state.mintingPrice}
+          value={Object.is(state.mintingPrice, NaN) ? "" : state.mintingPrice}
           onChange={handleMintPriceChange}
-          placeholder="Enter a minting price"
+          placeholder="0"
           label="Minting Price"
           type="number"
           InputProps={priceInputPropsMemo}
