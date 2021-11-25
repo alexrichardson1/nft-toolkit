@@ -643,14 +643,14 @@ exports[`Input snapshot 1`] = `
           >
             <Input
               label="test"
-              onChange={[Function]}
+              onChange={[MockFunction]}
               placeholder="This is a test"
               value="test"
             >
               <ForwardRef(TextField)
                 fullWidth={true}
                 label="test"
-                onChange={[Function]}
+                onChange={[MockFunction]}
                 placeholder="This is a test"
                 value="test"
                 variant="outlined"
@@ -674,7 +674,7 @@ exports[`Input snapshot 1`] = `
                       "label": "test",
                       "multiline": false,
                       "name": undefined,
-                      "onChange": [Function],
+                      "onChange": [MockFunction],
                       "onKeyPress": undefined,
                       "placeholder": "This is a test",
                       "required": false,
@@ -717,7 +717,7 @@ exports[`Input snapshot 1`] = `
                                 </React.Fragment>
                               }
                               multiline={false}
-                              onChange={[Function]}
+                              onChange={[MockFunction]}
                               placeholder="This is a test"
                               value="test"
                             />,
@@ -845,7 +845,7 @@ exports[`Input snapshot 1`] = `
                             </React.Fragment>
                           }
                           multiline={false}
-                          onChange={[Function]}
+                          onChange={[MockFunction]}
                           placeholder="This is a test"
                           value="test"
                         >
@@ -905,7 +905,7 @@ exports[`Input snapshot 1`] = `
                             fullWidth={true}
                             inputComponent="input"
                             multiline={false}
-                            onChange={[Function]}
+                            onChange={[MockFunction]}
                             placeholder="This is a test"
                             renderSuffix={[Function]}
                             type="text"
@@ -1345,7 +1345,7 @@ exports[`Input snapshot 1`] = `
                                   "multiline": false,
                                   "name": undefined,
                                   "onBlur": undefined,
-                                  "onChange": [Function],
+                                  "onChange": [MockFunction],
                                   "onFocus": undefined,
                                   "placeholder": "This is a test",
                                   "renderSuffix": [Function],
@@ -1460,7 +1460,7 @@ exports[`Input snapshot 1`] = `
                                       "multiline": false,
                                       "name": undefined,
                                       "onBlur": undefined,
-                                      "onChange": [Function],
+                                      "onChange": [MockFunction],
                                       "onFocus": undefined,
                                       "placeholder": "This is a test",
                                       "renderSuffix": [Function],
@@ -2215,7 +2215,7 @@ exports[`Input snapshot with error 1`] = `
             <Input
               error="This is an error"
               label="test"
-              onChange={[Function]}
+              onChange={[MockFunction]}
               placeholder="This is a test"
               value="test"
             >
@@ -2224,7 +2224,7 @@ exports[`Input snapshot with error 1`] = `
                 fullWidth={true}
                 helperText="This is an error"
                 label="test"
-                onChange={[Function]}
+                onChange={[MockFunction]}
                 placeholder="This is a test"
                 value="test"
                 variant="outlined"
@@ -2249,7 +2249,7 @@ exports[`Input snapshot with error 1`] = `
                       "label": "test",
                       "multiline": false,
                       "name": undefined,
-                      "onChange": [Function],
+                      "onChange": [MockFunction],
                       "onKeyPress": undefined,
                       "placeholder": "This is a test",
                       "required": false,
@@ -2292,7 +2292,7 @@ exports[`Input snapshot with error 1`] = `
                                 </React.Fragment>
                               }
                               multiline={false}
-                              onChange={[Function]}
+                              onChange={[MockFunction]}
                               placeholder="This is a test"
                               value="test"
                             />,
@@ -2422,7 +2422,7 @@ exports[`Input snapshot with error 1`] = `
                             </React.Fragment>
                           }
                           multiline={false}
-                          onChange={[Function]}
+                          onChange={[MockFunction]}
                           placeholder="This is a test"
                           value="test"
                         >
@@ -2482,7 +2482,7 @@ exports[`Input snapshot with error 1`] = `
                             fullWidth={true}
                             inputComponent="input"
                             multiline={false}
-                            onChange={[Function]}
+                            onChange={[MockFunction]}
                             placeholder="This is a test"
                             renderSuffix={[Function]}
                             type="text"
@@ -2922,7 +2922,7 @@ exports[`Input snapshot with error 1`] = `
                                   "multiline": false,
                                   "name": undefined,
                                   "onBlur": undefined,
-                                  "onChange": [Function],
+                                  "onChange": [MockFunction],
                                   "onFocus": undefined,
                                   "placeholder": "This is a test",
                                   "renderSuffix": [Function],
@@ -3037,7 +3037,7 @@ exports[`Input snapshot with error 1`] = `
                                       "multiline": false,
                                       "name": undefined,
                                       "onBlur": undefined,
-                                      "onChange": [Function],
+                                      "onChange": [MockFunction],
                                       "onFocus": undefined,
                                       "placeholder": "This is a test",
                                       "renderSuffix": [Function],

@@ -25,9 +25,7 @@ test("MobileMenu snapshot", () => {
             isOpen={true}
             anchorEl={mockAnchorEl}
             anchOrigin={anchorOrigin}
-            handleClose={() => {
-              console.log("test");
-            }}
+            handleClose={jest.fn()}
           />
         </Web3ReactProvider>
       </NetworkProvider>
@@ -49,9 +47,7 @@ describe("MobileMenu unit tests", () => {
               isOpen={true}
               anchorEl={mockAnchorEl}
               anchOrigin={anchorOrigin}
-              handleClose={() => {
-                console.log("test");
-              }}
+              handleClose={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>

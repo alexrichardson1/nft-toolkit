@@ -18,7 +18,7 @@ import OrderableListItem from "components/common/OrderableListItem";
 const listStyle = { padding: 3, gap: 2, maxWidth: 1, overflow: "hidden" };
 
 interface PropsT {
-  state: FormStateI;
+  items: LayerI[];
   handleLayerReorder: (event: DragEndEvent) => void;
   handleLayerRemoval: (layerId: string) => void;
 }
@@ -29,13 +29,13 @@ interface PropsT {
  *
  * @param handleLayerRemoval - handles removal of item from list
  * @param handleLayerReorder - handles reordering of items in the list
- * @param items - state of the form
+ * @param items - list items
  * @returns
  */
 const OrderableList = ({
   handleLayerRemoval,
   handleLayerReorder,
-  state,
+  items,
 }: PropsT): JSX.Element => {
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -48,10 +48,10 @@ const OrderableList = ({
       collisionDetection={closestCenter}
       onDragEnd={handleLayerReorder}>
       <SortableContext
-        items={state.generative.layers.map((layer) => layer.layerId)}
+        items={items.map((layer) => layer.layerId)}
         strategy={verticalListSortingStrategy}>
         <List sx={listStyle}>
-          {state.generative.layers.map((layer) => (
+          {items.map((layer) => (
             <OrderableListItem
               id={layer.layerId}
               key={layer.layerId}
