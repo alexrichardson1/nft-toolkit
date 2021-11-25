@@ -7,7 +7,6 @@ interface PropsT {
 const PageHeader = ({ text }: PropsT) => {
   return (
     <Typography
-      sx={{ textTransform: "uppercase" }}
       variant="h4"
       noWrap
       component="div"
