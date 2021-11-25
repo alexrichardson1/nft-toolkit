@@ -32,7 +32,7 @@ const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: NaN,
+  mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };
@@ -187,6 +187,15 @@ const CreateCollectionForm = (): JSX.Element => {
     });
   };
 
+  const handleImgRarityChange =
+    (layerId: string) => (e: InputEventT, imageId: string) =>
+      dispatch({
+        type: FormActions.CHANGE_RARITY,
+        payload: {
+          rarityChange: { newRarity: e.target.value, imageId, layerId },
+        },
+      });
+
   const handleDescriptionChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_DESCRIPTION,
@@ -272,6 +281,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleLayerAddition={handleLayerAddition}
       />
       <LayerImageUpload
+        handleImgRarityChange={handleImgRarityChange}
         isLoading={isLoading}
         state={state}
         generative={generative}
