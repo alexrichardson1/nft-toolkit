@@ -20,17 +20,20 @@ interface PropsT {
   state: FormStateI;
   generative: boolean;
   isLoading: boolean;
+  handleLayerImgDelete: (deleteId: string, layerId?: string) => void;
   handleLayerImgDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null,
     layerId?: string
   ) => void;
-  handleLayerImgDelete: (deleteId: string, layerId?: string) => void;
   handleLayerImgNameChange: (
     e: InputEventT,
     imageid: string,
     layerId?: string
   ) => void;
+  handleImgRarityChange: (
+    layerId: string
+  ) => (e: InputEventT, id: string) => void;
 }
 
 /**
@@ -52,6 +55,7 @@ const LayerImageUpload = ({
   handleLayerImgDrop,
   handleLayerImgDelete,
   handleLayerImgNameChange,
+  handleImgRarityChange,
   stepNumber,
   isLoading,
 }: PropsT): JSX.Element => {
@@ -108,9 +112,11 @@ const LayerImageUpload = ({
                 handleImgNameChange={(e, id) =>
                   handleLayerImgNameChange(e, id, layer.layerId)
                 }
+                handleImgRarityChange={handleImgRarityChange(layer.layerId)}
                 NUMBER_OF_IMAGES={layer.numberOfImages}
                 isLoading={isLoading}
                 imgObjs={layer.images}
+                rarityRequired
               />
             </TabPanel>
           );
