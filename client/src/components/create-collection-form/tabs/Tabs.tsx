@@ -12,7 +12,6 @@ import TabPanel from "./TabPanel";
 const INITIAL_VALUE = 0;
 
 const tabsStyle = { borderRight: 1, borderColor: "divider" };
-const nameInputStyle = { flexGrow: 1 };
 const vTabsContainerStyle = {
   flexGrow: 1,
   bgcolor: "background.paper",
@@ -33,9 +32,11 @@ interface PropsT {
   NUMBER_OF_IMAGES: number;
   isLoading: boolean;
   descriptionRequired?: boolean;
+  rarityRequired?: boolean;
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (e: InputEventT, id: string) => void;
   handleImgDescChange: (e: InputEventT, id: string) => void;
+  handleImgRarityChange: (e: InputEventT, id: string) => void;
 }
 
 /**
@@ -59,6 +60,8 @@ const VerticalTabs = ({
   handleNameChange,
   descriptionRequired,
   handleImgDescChange,
+  rarityRequired,
+  handleImgRarityChange,
 }: PropsT): JSX.Element => {
   const [value, setValue] = useState(INITIAL_VALUE);
 
@@ -100,13 +103,26 @@ const VerticalTabs = ({
         <TabPanel vertical key={imgId} value={value} index={idx}>
           <Box sx={inputAndDeleteContainer}>
             <Input
-              sx={nameInputStyle}
               label="Name"
               value={img.name}
               placeholder="Enter a name for this NFT here"
               inputProps={{ "data-testid": "nft-name-input" }}
               onChange={(e) => handleNameChange(e, imgId)}
             />
+            {rarityRequired && (
+              <Input
+                type="number"
+                InputProps={{
+                  inputProps: { min: "0.00", max: "1.00", step: "0.01" },
+                }}
+                label="Rarity (0 to 1)"
+                value={img.rarity}
+                required
+                placeholder="0"
+                inputProps={{ "data-testid": "nft-rarity-input" }}
+                onChange={(e) => handleImgRarityChange(e, imgId)}
+              />
+            )}
             <IconButton
               disabled={isLoading}
               data-testid="delete-icon"
@@ -122,6 +138,7 @@ const VerticalTabs = ({
               onChange={(e) => handleImgDescChange(e, imgId)}
               label="Description"
               placeholder="Enter a description for this image"
+              inputProps={{ "data-testid": "nft-description-input" }}
               value={img.description}
             />
           )}
