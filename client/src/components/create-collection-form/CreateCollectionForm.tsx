@@ -83,7 +83,7 @@ const CreateCollectionForm = (): JSX.Element => {
     dispatch({
       type: generative
         ? FormActions.DELETE_IMAGE_GEN
-        : FormActions.DELETE_IMAGE,
+        : FormActions.DELETE_IMAGE_STATIC,
       payload,
     });
   };
@@ -181,8 +181,8 @@ const CreateCollectionForm = (): JSX.Element => {
     }
     dispatch({
       type: generative
-        ? FormActions.CHANGE_IMAGES_GEN
-        : FormActions.CHANGE_IMAGES,
+        ? FormActions.ADD_IMAGES_GEN
+        : FormActions.ADD_IMAGES_STATIC,
       payload,
     });
   };
