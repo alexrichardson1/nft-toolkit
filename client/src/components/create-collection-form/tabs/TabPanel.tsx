@@ -20,6 +20,15 @@ interface TabPanelProps {
   value: number;
 }
 
+/**
+ * TabPanel to render contents of a tab if the tab is active
+ *
+ * @param index - index of this tab
+ * @param value - index of selected tab
+ * @param vertical - true if vertical tabs, false otherwise
+ * @param children - children nodes to render if index === value
+ */
+
 const TabPanel = (props: TabPanelProps): JSX.Element => {
   const { vertical = false, children, value, index, ...other } = props;
 

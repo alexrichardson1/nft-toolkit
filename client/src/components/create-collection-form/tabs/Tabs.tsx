@@ -38,6 +38,19 @@ interface PropsT {
   handleImgDescChange: (e: InputEventT, id: string) => void;
 }
 
+/**
+ *
+ * Renders a vertical tabs component
+ *
+ * @param imgObjs - image objects to render
+ * @params NUMBER_OF_IMAGES - number of images
+ * @params isLoading - true if form is in loading state, false otherwise
+ * @param descriptionRequired - true if description field is required
+ * @param handleImageDelete - handles image delete
+ * @param handleImgDescChange - handles image description change
+ * @param handleNameChange - handles image name change
+ */
+
 const VerticalTabs = ({
   NUMBER_OF_IMAGES,
   imgObjs,
