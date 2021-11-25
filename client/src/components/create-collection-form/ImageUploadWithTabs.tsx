@@ -19,6 +19,21 @@ interface PropsT {
   ) => void;
 }
 
+/**
+ * @param imgObjs - image objects to render in tabs
+ * @param NUMBER_OF_IMAGES - number of imgObjs
+ * @param descriptionRequired - true if description is required (static only)
+ * , false otherwise
+ * @param isLoading - true if form is in loading state, false otherwise
+ * @param rarityRequired - true if rarity is required (generative only), false
+ * otherwise
+ * @param handleImgDelete - handle deletion of image
+ * @param handleImgRarityChange - handle rarity change for an image (generative
+ * only)
+ * @param handleImgNameChange - handle image name change
+ * @param handleImgDrop - handle image drop into the ImageUpload component
+ * @param handleImgDescChange - handle image description change
+ */
 const ImageUploadWithTabs = ({
   NUMBER_OF_IMAGES,
   imgObjs,
