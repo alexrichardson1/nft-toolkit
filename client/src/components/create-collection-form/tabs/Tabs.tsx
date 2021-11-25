@@ -17,7 +17,7 @@ const vTabsContainerStyle = {
   flexGrow: 1,
   bgcolor: "background.paper",
   display: "flex",
-  height: "50vh",
+  height: "60vh",
   border: 1,
   borderRadius: 1,
 };
@@ -32,8 +32,10 @@ interface PropsT {
   imgObjs: ImageT;
   NUMBER_OF_IMAGES: number;
   isLoading: boolean;
+  descriptionRequired?: boolean;
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (e: InputEventT, id: string) => void;
+  handleImgDescChange: (e: InputEventT, id: string) => void;
 }
 
 const VerticalTabs = ({
@@ -42,6 +44,8 @@ const VerticalTabs = ({
   isLoading,
   handleImageDelete,
   handleNameChange,
+  descriptionRequired,
+  handleImgDescChange,
 }: PropsT): JSX.Element => {
   const [value, setValue] = useState(INITIAL_VALUE);
 
@@ -87,7 +91,6 @@ const VerticalTabs = ({
               label="Name"
               value={img.name}
               placeholder="Enter a name for this NFT here"
-              required
               inputProps={{ "data-testid": "nft-name-input" }}
               onChange={(e) => handleNameChange(e, imgId)}
             />
@@ -101,6 +104,14 @@ const VerticalTabs = ({
               />
             </IconButton>
           </Box>
+          {descriptionRequired && (
+            <Input
+              onChange={(e) => handleImgDescChange(e, imgId)}
+              label="Description"
+              placeholder="Enter a description for this image"
+              value={img.description}
+            />
+          )}
           <img width="100%" src={img.url} alt={img.image.name} />
         </TabPanel>
       ))}
