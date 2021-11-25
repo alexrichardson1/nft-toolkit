@@ -13,15 +13,15 @@ interface ImageI {
   url: string;
   name: string;
   description?: string;
+  rarity?: string;
 }
 
 type ImageT = { [imageId: string]: ImageI };
 
-type LayerImageT = { [imageId: string]: ImageI & { rarity?: number } };
 interface LayerI {
   layerId: string;
   name: string;
-  images: LayerImageT;
+  images: ImageT;
   numberOfImages: number;
 }
 
@@ -29,7 +29,7 @@ interface FormStateI {
   collectionName: string;
   description: string;
   symbol: string;
-  mintingPrice: number;
+  mintingPrice: string;
   static: { numberOfImages: number; images: ImageT };
   generative: { numberOfLayers: number; layers: LayerI[] };
 }

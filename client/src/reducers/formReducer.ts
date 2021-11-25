@@ -52,7 +52,7 @@ const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: NaN,
+  mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };
@@ -72,6 +72,7 @@ interface FormActionPayloadI {
   dragEndEvent?: DragEndEvent;
   deleteLayerId?: string;
   imageDescChange?: { imageId: string; newDesc: string };
+  rarityChange?: { layerId: string; imageId: string; newRarity: string };
 }
 
 interface FormActionI {
@@ -183,7 +184,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           action.payload.newImagesGen.images.forEach((newImg) => {
             const newImgId = getImgId(newImg.name, newImg.size);
             if (!(newImgId in layer.images)) {
-              layer.images[newImgId] = getImgObj(newImg);
+              layer.images[newImgId] = { ...getImgObj(newImg), rarity: "" };
               newImages++;
             }
           });
@@ -252,11 +253,29 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       return { ...state };
     }
 
+    // Change the rarity of an image within a layer
+    case FormActions.CHANGE_RARITY:
+      if (!action.payload.rarityChange) {
+        throw new Error("rarityChange required");
+      }
+
+      state.generative.layers.forEach((layer) => {
+        if (layer.layerId === action.payload.rarityChange?.layerId) {
+          const img = layer.images[action.payload.rarityChange.imageId];
+          if (!img) {
+            throw new Error("Image does not exist");
+          }
+          img.rarity = action.payload.rarityChange.newRarity;
+        }
+      });
+
+      return { ...state };
+
     // Change the price of the collection
     case FormActions.CHANGE_PRICE:
       return {
         ...state,
-        mintingPrice: parseFloat(action.payload.price ?? DEFAULT_STRING),
+        mintingPrice: action.payload.price ?? DEFAULT_STRING,
       };
 
     // Add a layer to the state
