@@ -49,7 +49,9 @@ const OrderableListItem = ({
       <IconButton {...attributes} {...listeners}>
         <DragIndicatorIcon fontSize="large" color="action" />
       </IconButton>
-      <IconButton onClick={() => handleLayerRemoval(id)}>
+      <IconButton
+        data-testid="delete-layer-btn"
+        onClick={() => handleLayerRemoval(id)}>
         <DeleteIcon fontSize="large" color="error" />
       </IconButton>
     </ListItem>
