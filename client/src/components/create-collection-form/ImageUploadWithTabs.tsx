@@ -6,9 +6,11 @@ import Tabs from "components/create-collection-form/tabs/Tabs";
 interface PropsT {
   imgObjs: ImageT;
   NUMBER_OF_IMAGES: number;
+  descriptionRequired?: boolean;
   isLoading: boolean;
   handleImgDelete: (deleteId: string) => void;
   handleImgNameChange: (e: InputEventT, id: string) => void;
+  handleImgDescChange: (e: InputEventT, id: string) => void;
   handleImgDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null
@@ -22,6 +24,8 @@ const ImageUploadWithTabs = ({
   handleImgDrop,
   handleImgNameChange,
   isLoading,
+  descriptionRequired,
+  handleImgDescChange,
 }: PropsT): JSX.Element => {
   return (
     <>
@@ -40,6 +44,8 @@ const ImageUploadWithTabs = ({
             handleImageDelete={handleImgDelete}
             handleNameChange={handleImgNameChange}
             imgObjs={imgObjs}
+            handleImgDescChange={handleImgDescChange}
+            descriptionRequired={descriptionRequired}
           />
         </Paper>
       )}

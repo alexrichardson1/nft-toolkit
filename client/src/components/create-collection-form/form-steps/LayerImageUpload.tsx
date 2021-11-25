@@ -85,6 +85,7 @@ const LayerImageUpload = ({
           return (
             <TabPanel key={layer.layerId} value={value} index={idx}>
               <ImageUploadWithTabs
+                handleImgDescChange={() => undefined}
                 handleImgDelete={(deleteId) =>
                   handleLayerImgDelete(deleteId, layer.layerId)
                 }
