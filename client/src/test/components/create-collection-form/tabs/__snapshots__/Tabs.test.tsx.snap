@@ -656,7 +656,7 @@ exports[`empty objects 1`] = `
                     "borderRadius": 1,
                     "display": "flex",
                     "flexGrow": 1,
-                    "height": "50vh",
+                    "height": "60vh",
                   }
                 }
               >
@@ -670,7 +670,7 @@ exports[`empty objects 1`] = `
                       "borderRadius": 1,
                       "display": "flex",
                       "flexGrow": 1,
-                      "height": "50vh",
+                      "height": "60vh",
                     }
                   }
                   theme={
@@ -991,7 +991,7 @@ exports[`empty objects 1`] = `
                 >
                   <Noop />
                   <div
-                    className="MuiBox-root css-hpyfyy"
+                    className="MuiBox-root css-ulmull"
                   >
                     <ForwardRef(Tabs)
                       TabScrollButtonProps={
@@ -1914,7 +1914,7 @@ exports[`loading in progres 1`] = `
                     "borderRadius": 1,
                     "display": "flex",
                     "flexGrow": 1,
-                    "height": "50vh",
+                    "height": "60vh",
                   }
                 }
               >
@@ -1928,7 +1928,7 @@ exports[`loading in progres 1`] = `
                       "borderRadius": 1,
                       "display": "flex",
                       "flexGrow": 1,
-                      "height": "50vh",
+                      "height": "60vh",
                     }
                   }
                   theme={
@@ -2249,7 +2249,7 @@ exports[`loading in progres 1`] = `
                 >
                   <Noop />
                   <div
-                    className="MuiBox-root css-hpyfyy"
+                    className="MuiBox-root css-ulmull"
                   >
                     <ForwardRef(Tabs)
                       TabScrollButtonProps={

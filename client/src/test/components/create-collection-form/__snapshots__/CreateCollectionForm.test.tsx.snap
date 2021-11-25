@@ -684,7 +684,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": NaN,
+                          "mintingPrice": "",
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -694,6 +694,65 @@ exports[`CreateCollectionForm snapshot 1`] = `
                       }
                       stepNumber={0}
                     >
+                      <PageHeader
+                        text="Enter Collection Details Here"
+                      >
+                        <ForwardRef(Typography)
+                          color="secondary"
+                          component="div"
+                          noWrap={true}
+                          textAlign="center"
+                          variant="h4"
+                        >
+                          <MuiTypographyRoot
+                            as="div"
+                            className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap"
+                            ownerState={
+                              Object {
+                                "align": "inherit",
+                                "children": "Enter Collection Details Here",
+                                "className": undefined,
+                                "color": "secondary.main",
+                                "component": "div",
+                                "gutterBottom": false,
+                                "noWrap": true,
+                                "paragraph": false,
+                                "sx": Object {
+                                  "color": "secondary.main",
+                                  "textAlign": "center",
+                                },
+                                "variant": "h4",
+                                "variantMapping": Object {
+                                  "body1": "p",
+                                  "body2": "p",
+                                  "h1": "h1",
+                                  "h2": "h2",
+                                  "h3": "h3",
+                                  "h4": "h4",
+                                  "h5": "h5",
+                                  "h6": "h6",
+                                  "inherit": "p",
+                                  "subtitle1": "h6",
+                                  "subtitle2": "h6",
+                                },
+                              }
+                            }
+                            sx={
+                              Object {
+                                "color": "secondary.main",
+                                "textAlign": "center",
+                              }
+                            }
+                          >
+                            <Noop />
+                            <div
+                              className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap css-w5ksg2-MuiTypography-root"
+                            >
+                              Enter Collection Details Here
+                            </div>
+                          </MuiTypographyRoot>
+                        </ForwardRef(Typography)>
+                      </PageHeader>
                       <ForwardRef(Paper)>
                         <MuiPaperRoot
                           as="div"
@@ -5040,6 +5099,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                     <StaticArtStep
                       generative={false}
                       handleImgDelete={[Function]}
+                      handleImgDescChange={[Function]}
                       handleImgDrop={[Function]}
                       handleImgNameChange={[Function]}
                       isLoading={false}
@@ -5051,7 +5111,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": NaN,
+                          "mintingPrice": "",
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -5074,27 +5134,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": NaN,
-                          "static": Object {
-                            "images": Object {},
-                            "numberOfImages": 0,
-                          },
-                          "symbol": "",
-                        }
-                      }
-                      stepNumber={0}
-                    />
-                    <GenArtStep
-                      generative={false}
-                      state={
-                        Object {
-                          "collectionName": "",
-                          "description": "",
-                          "generative": Object {
-                            "layers": Array [],
-                            "numberOfLayers": 0,
-                          },
-                          "mintingPrice": NaN,
+                          "mintingPrice": "",
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
@@ -5106,6 +5146,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                     />
                     <LayerImageUpload
                       generative={false}
+                      handleImgRarityChange={[Function]}
                       handleLayerImgDelete={[Function]}
                       handleLayerImgDrop={[Function]}
                       handleLayerImgNameChange={[Function]}
@@ -5118,7 +5159,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                           },
-                          "mintingPrice": NaN,
+                          "mintingPrice": "",
                           "static": Object {
                             "images": Object {},
                             "numberOfImages": 0,
