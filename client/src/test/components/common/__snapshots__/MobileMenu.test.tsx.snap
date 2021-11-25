@@ -649,7 +649,7 @@ exports[`MobileMenu snapshot 1`] = `
                 }
               }
               anchorEl={<button />}
-              handleClose={[Function]}
+              handleClose={[MockFunction]}
               isOpen={true}
             >
               <ForwardRef(Menu)
@@ -662,7 +662,7 @@ exports[`MobileMenu snapshot 1`] = `
                 }
                 id="primary-menu-mobile"
                 keepMounted={true}
-                onClose={[Function]}
+                onClose={[MockFunction]}
                 open={true}
                 transformOrigin={
                   Object {
@@ -725,7 +725,7 @@ exports[`MobileMenu snapshot 1`] = `
                   className="MuiMenu-root"
                   id="primary-menu-mobile"
                   keepMounted={true}
-                  onClose={[Function]}
+                  onClose={[MockFunction]}
                   open={true}
                   ownerState={
                     Object {
@@ -777,7 +777,7 @@ exports[`MobileMenu snapshot 1`] = `
                       "disableAutoFocusItem": false,
                       "id": "primary-menu-mobile",
                       "keepMounted": true,
-                      "onClose": [Function],
+                      "onClose": [MockFunction],
                       "onEntering": undefined,
                       "open": true,
                       "transformOrigin": Object {
@@ -851,7 +851,7 @@ exports[`MobileMenu snapshot 1`] = `
                     className="MuiMenu-root css-oouctw-MuiMenu-root"
                     id="primary-menu-mobile"
                     keepMounted={true}
-                    onClose={[Function]}
+                    onClose={[MockFunction]}
                     open={true}
                     transformOrigin={
                       Object {
@@ -1117,7 +1117,7 @@ exports[`MobileMenu snapshot 1`] = `
                       }
                       id="primary-menu-mobile"
                       keepMounted={true}
-                      onClose={[Function]}
+                      onClose={[MockFunction]}
                       open={true}
                       ownerState={
                         Object {
@@ -1239,7 +1239,7 @@ exports[`MobileMenu snapshot 1`] = `
                           "id": "primary-menu-mobile",
                           "keepMounted": true,
                           "marginThreshold": 16,
-                          "onClose": [Function],
+                          "onClose": [MockFunction],
                           "open": true,
                           "transformOrigin": Object {
                             "horizontal": "right",
@@ -1506,7 +1506,7 @@ exports[`MobileMenu snapshot 1`] = `
                         }
                         id="primary-menu-mobile"
                         keepMounted={true}
-                        onClose={[Function]}
+                        onClose={[MockFunction]}
                         open={true}
                       >
                         <ForwardRef(ModalUnstyled)
@@ -1833,7 +1833,7 @@ exports[`MobileMenu snapshot 1`] = `
                           hideBackdrop={false}
                           id="primary-menu-mobile"
                           keepMounted={true}
-                          onClose={[Function]}
+                          onClose={[MockFunction]}
                           onTransitionEnter={[Function]}
                           onTransitionExited={[Function]}
                           open={true}
@@ -2758,7 +2758,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     "hideBackdrop": false,
                                     "id": "primary-menu-mobile",
                                     "keepMounted": true,
-                                    "onClose": [Function],
+                                    "onClose": [MockFunction],
                                     "onTransitionEnter": [Function],
                                     "onTransitionExited": [Function],
                                     "open": true,

@@ -11,7 +11,7 @@ test("Input snapshot", () => {
       <NetworkProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Input
-            onChange={() => console.log("input change occurred")}
+            onChange={jest.fn()}
             value="test"
             label="test"
             placeholder="This is a test"
@@ -29,7 +29,7 @@ test("Input snapshot with error", () => {
       <NetworkProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Input
-            onChange={() => console.log("input change occurred")}
+            onChange={jest.fn()}
             value="test"
             label="test"
             placeholder="This is a test"

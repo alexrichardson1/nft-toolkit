@@ -21,8 +21,10 @@ test("empty objects", () => {
             NUMBER_OF_IMAGES={0}
             isLoading={false}
             imgObjs={{}}
-            handleImageDelete={() => console.log("Image deleted during test")}
-            handleNameChange={() => console.log("Name changed during test")}
+            handleImageDelete={jest.fn()}
+            handleNameChange={jest.fn()}
+            handleImgDescChange={jest.fn()}
+            handleImgRarityChange={jest.fn()}
           />
         </Web3ReactProvider>
       </NetworkProvider>
@@ -40,8 +42,10 @@ test("loading in progres", () => {
             NUMBER_OF_IMAGES={0}
             isLoading={true}
             imgObjs={{}}
-            handleImageDelete={() => console.log("Image deleted during test")}
-            handleNameChange={() => console.log("Name changed during test")}
+            handleImageDelete={jest.fn()}
+            handleNameChange={jest.fn()}
+            handleImgDescChange={jest.fn()}
+            handleImgRarityChange={jest.fn()}
           />
         </Web3ReactProvider>
       </NetworkProvider>
@@ -82,6 +86,8 @@ describe("Tabs unit tests", () => {
               }}
               handleImageDelete={mockHandleImageDelete}
               handleNameChange={mockHandleNameChange}
+              handleImgDescChange={jest.fn()}
+              handleImgRarityChange={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>

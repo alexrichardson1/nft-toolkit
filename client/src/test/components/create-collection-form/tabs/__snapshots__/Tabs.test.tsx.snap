@@ -643,8 +643,10 @@ exports[`empty objects 1`] = `
           >
             <VerticalTabs
               NUMBER_OF_IMAGES={0}
-              handleImageDelete={[Function]}
-              handleNameChange={[Function]}
+              handleImageDelete={[MockFunction]}
+              handleImgDescChange={[MockFunction]}
+              handleImgRarityChange={[MockFunction]}
+              handleNameChange={[MockFunction]}
               imgObjs={Object {}}
               isLoading={false}
             >
@@ -1901,8 +1903,10 @@ exports[`loading in progres 1`] = `
           >
             <VerticalTabs
               NUMBER_OF_IMAGES={0}
-              handleImageDelete={[Function]}
-              handleNameChange={[Function]}
+              handleImageDelete={[MockFunction]}
+              handleImgDescChange={[MockFunction]}
+              handleImgRarityChange={[MockFunction]}
+              handleNameChange={[MockFunction]}
               imgObjs={Object {}}
               isLoading={true}
             >
