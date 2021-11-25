@@ -44,6 +44,34 @@ const formFooterStyle: SxProps = {
   flexDirection: { xs: "column", sm: "row" },
 };
 
+export const checkRarities = (
+  state: FormStateI,
+  showFormAlert: (severity: AlertColor, message: string) => void
+): boolean => {
+  for (const layer of state.generative.layers) {
+    let totalRarity = 0;
+    for (const imageId in layer.images) {
+      const image = layer.images[imageId];
+      if (!image || !image.rarity) {
+        showFormAlert(
+          "warning",
+          `Please type in a rarity for image ${image?.name} in layer ${layer.name}`
+        );
+        return false;
+      }
+      totalRarity += Number(image.rarity);
+    }
+    if (totalRarity !== 1) {
+      showFormAlert(
+        "warning",
+        `All your rarities should add up to 1 for layer ${layer.name}`
+      );
+      return false;
+    }
+  }
+  return true;
+};
+
 // eslint-disable-next-line max-lines-per-function
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
@@ -208,8 +236,18 @@ const CreateCollectionForm = (): JSX.Element => {
       handleNextStep();
       return;
     }
+
     if (!active || !account || !chainId) {
       showSnackbar("warning", "Please connect your wallet first!");
+      return;
+    }
+
+    if (generative) {
+      if (!checkRarities(state, showFormAlert)) {
+        return;
+      }
+
+      // TODO: Add logic for generative uploads here
       return;
     }
 
