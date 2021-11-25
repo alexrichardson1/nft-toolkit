@@ -76,7 +76,7 @@ describe("formUtils unit tests", () => {
       collectionName: "Test Collection",
       description: "Example description",
       static: { images: mockImages },
-      mintingPrice: 0,
+      mintingPrice: "0",
       symbol: "TEST",
     };
     expect(

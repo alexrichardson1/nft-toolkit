@@ -46,7 +46,7 @@ interface StateT {
   description: string;
   static: { images: ImageT };
   symbol: string;
-  mintingPrice: number;
+  mintingPrice: string;
 }
 
 interface TransactionT {
@@ -70,7 +70,7 @@ export const uploadCollection = async (
     name: state.collectionName,
     symbol: state.symbol,
     description: state.description,
-    price: parseUnits(`${state.mintingPrice}`).toString(),
+    price: parseUnits(state.mintingPrice).toString(),
     chainId: chainId,
     tokens: tokens,
     fromAddress: account,

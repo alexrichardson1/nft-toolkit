@@ -9,7 +9,7 @@ const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: NaN,
+  mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };

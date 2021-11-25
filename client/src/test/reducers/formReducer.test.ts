@@ -5,7 +5,7 @@ const EMPTY_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: NaN,
+  mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };
@@ -63,7 +63,7 @@ describe("formReducer", () => {
         },
       },
       generative: { layers: [], numberOfLayers: 0 },
-      mintingPrice: 0,
+      mintingPrice: "0",
     };
   });
 
@@ -140,7 +140,7 @@ describe("formReducer", () => {
 
   test("Minting price is changed", () => {
     const expected = { ...initialState };
-    expected.mintingPrice = Number(payload.price);
+    expected.mintingPrice = payload.price;
     expect(
       formReducer(initialState, { type: FormActions.CHANGE_PRICE, payload })
     ).toMatchObject(expected);
