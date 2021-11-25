@@ -31,7 +31,7 @@ const TESTOBJ_IMG1 = getImageObj(TEST_IMG1_NAME, TEST_IMG1_URL, TEST_IMG1_FILE);
 const TEST_IMG2_NAME = "testImg2";
 const TEST_IMG2_URL = "testUrl2";
 const TEST_IMG2_FILE = new File(["foo"], `${TEST_IMG2_NAME}.txt`);
-// const TEST_IMG2_ID = "testImg2.txt3";
+const TEST_IMG2_ID = "testImg2.txt3";
 const TESTOBJ_IMG2 = getImageObj(TEST_IMG2_NAME, TEST_IMG2_URL, TEST_IMG2_FILE);
 
 describe("formReducer", () => {
@@ -68,7 +68,7 @@ describe("formReducer", () => {
   });
 
   test("Collection Name is changed", () => {
-    const expected = { ...initialState };
+    const expected = JSON.parse(JSON.stringify(initialState));
     expected.collectionName = payload.newName ?? "";
     expect(
       formReducer(initialState, { type: FormActions.CHANGE_NAME, payload })
@@ -76,7 +76,7 @@ describe("formReducer", () => {
   });
 
   test("Description is changed", () => {
-    const expected = { ...initialState };
+    const expected = JSON.parse(JSON.stringify(initialState));
     expected.description = payload.description ?? "";
     expect(
       formReducer(initialState, {
@@ -87,35 +87,36 @@ describe("formReducer", () => {
   });
 
   test("Symbol is changed", () => {
-    const expected = { ...initialState };
+    const expected = JSON.parse(JSON.stringify(initialState));
     expected.symbol = payload.symbol ?? "";
     expect(
       formReducer(initialState, { type: FormActions.CHANGE_SYMBOL, payload })
     ).toMatchObject(expected);
   });
 
-  // test("New images are added", () => {
-  //   if (payload.newImagesStatic && payload.newImagesStatic[0]) {
-  //     const expected = { ...initialState };
-  //     console.log(expected);
-  //     if (!global.URL.createObjectURL) {
-  //       global.URL.createObjectURL = () => TESTOBJ_IMG2.url;
-  //     }
-  //     if (!global.URL.revokeObjectURL) {
-  //       global.URL.revokeObjectURL = jest.fn();
-  //     }
-  //     expected.static.images[TEST_IMG2_ID] = TESTOBJ_IMG2;
-  //     const result = formReducer(initialState, {
-  //       type: FormActions.CHANGE_IMAGES,
-  //       payload,
-  //     });
-  //     console.log(result, expected);
-  //     expect(result).toMatchObject(expected);
-  //   }
-  // });
+  test("New images are added", () => {
+    if (payload.newImagesStatic && payload.newImagesStatic[0]) {
+      const expected: FormStateI = JSON.parse(JSON.stringify(initialState));
+      expected.static.numberOfImages = 3;
+      console.log(expected);
+      if (!global.URL.createObjectURL) {
+        global.URL.createObjectURL = () => TESTOBJ_IMG2.url;
+      }
+      if (!global.URL.revokeObjectURL) {
+        global.URL.revokeObjectURL = jest.fn();
+      }
+      expected.static.images[TEST_IMG2_ID] = TESTOBJ_IMG2;
+      const result = formReducer(initialState, {
+        type: FormActions.ADD_IMAGES_STATIC,
+        payload,
+      });
+      console.log(result, expected);
+      expect(result).toMatchObject(expected);
+    }
+  });
 
   test("Name of TESTOBJ_IMG1 is changed", () => {
-    const expected = { ...initialState };
+    const expected = JSON.parse(JSON.stringify(initialState));
     expected.static.images[TEST_IMG0_ID] = TESTOBJ_IMG0;
     expected.static.images[TEST_IMG1_ID] = getImageObj(
       "newImageName",
@@ -129,17 +130,20 @@ describe("formReducer", () => {
     expect(result).toMatchObject(expected);
   });
 
-  // test("TESTOBJ_IMG1 is deleted", () => {
-  //   const expected = { ...initialState };
-  //   expected.static.images[TEST_IMG0_ID] = TESTOBJ_IMG0;
-  //   expected.static.numberOfImages--;
-  //   expect(
-  //     formReducer(initialState, { type: FormActions.DELETE_IMAGE, payload })
-  //   ).toMatchObject(expected);
-  // });
+  test("TESTOBJ_IMG1 is deleted", () => {
+    const expected = JSON.parse(JSON.stringify(initialState));
+    delete expected.static.images[TEST_IMG1_ID];
+    expected.static.numberOfImages = 1;
+    expect(
+      formReducer(initialState, {
+        type: FormActions.DELETE_IMAGE_STATIC,
+        payload,
+      })
+    ).toMatchObject(expected);
+  });
 
   test("Minting price is changed", () => {
-    const expected = { ...initialState };
+    const expected = JSON.parse(JSON.stringify(initialState));
     expected.mintingPrice = payload.price;
     expect(
       formReducer(initialState, { type: FormActions.CHANGE_PRICE, payload })
