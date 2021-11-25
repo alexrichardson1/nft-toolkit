@@ -88,6 +88,13 @@ const CreateCollectionForm = (): JSX.Element => {
     });
   };
 
+  const handleImgDescChange = (e: InputEventT, imageId: string) => {
+    dispatch({
+      type: FormActions.CHANGE_IMAGE_DESC,
+      payload: { imageDescChange: { imageId, newDesc: e.target.value } },
+    });
+  };
+
   const handleCollNameChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_NAME,
@@ -254,6 +261,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgDrop={handleImageDrop}
         handleImgDelete={handleImageDelete}
         handleImgNameChange={handleImgNameChange}
+        handleImgDescChange={handleImgDescChange}
       />
       <LayerSelectionStep
         handleLayerRemoval={handleLayerRemoval}
