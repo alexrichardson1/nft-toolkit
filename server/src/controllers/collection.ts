@@ -1,5 +1,5 @@
-import { Collection, CollectionT, Token } from "@models/collection";
-import { User } from "@models/user";
+import { Collection, CollectionT, Layer, Token } from "@models/collection";
+import { User, UserCollectionI } from "@models/user";
 import { S3 } from "aws-sdk";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
@@ -31,31 +31,20 @@ export const uploadImages = multer({
 export const successHandler: RequestHandler = (_req, res) =>
   res.json({ success: true });
 
-type address = `0x${string}`;
-interface UserT {
-  fromAddress: address;
-}
-
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
-  const userCollection: CollectionT & UserT = req.body;
-  const { fromAddress } = userCollection;
+  const userCollection: CollectionT = req.body;
   userCollection.tokens.map((token) => new Token(token));
+  userCollection.layers.map((layer) => new Layer(layer));
   const collection = new Collection(userCollection);
-  let user = await User.findOne({
-    fromAddress: fromAddress,
-  }).exec();
-
-  if (user) {
-    user.collections.push(collection);
-  } else {
-    user = new User({
-      fromAddress: fromAddress,
-      collections: [collection],
-    });
-  }
-  await user.save();
+  await collection.save();
   next();
 };
+
+interface CollectionInfo {
+  name: string;
+  symbol: string;
+  price: string;
+}
 
 export const deployContracts: RequestHandler = (req, res) => {
   const {
@@ -63,60 +52,68 @@ export const deployContracts: RequestHandler = (req, res) => {
     symbol,
     tokens,
     price,
-    fromAddress,
+    creator,
     chainId,
-  }: CollectionT & UserT = req.body;
-  const signer = new ethers.VoidSigner(fromAddress);
+  }: CollectionT & CollectionInfo = req.body;
+  const signer = new ethers.VoidSigner(creator);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${fromAddress}/${name}/`,
+    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${chainId}/`,
     tokens.length,
     BigNumber.from(price)
   );
   tx.chainId = chainId;
-  tx.from = fromAddress;
+  tx.from = creator;
   res.json({ transaction: tx });
 };
 
 const getCollectionsFromDB = async (
-  fromAddress: string
-): Promise<CollectionT[]> => {
-  const user = await User.findOne({
-    fromAddress: fromAddress,
-  }).exec();
+  creator: string
+): Promise<UserCollectionI[]> => {
+  const user = await User.findById(creator).exec();
   if (!user) {
     throw new Error("User not found");
   }
   return user.collections;
 };
 
-export const getCollections: RequestHandler = async (req, res, next) => {
-  const { fromAddress } = req.params;
-  if (!fromAddress) {
+export const getUserCollections: RequestHandler = async (req, res, next) => {
+  const { creator } = req.params;
+  if (!creator) {
     return next(new Error("Invalid params"));
   }
   try {
-    const collections = await getCollectionsFromDB(fromAddress);
+    const collections = await getCollectionsFromDB(creator);
     return res.json({ collections });
   } catch (error) {
     return next(error);
   }
 };
 
+export const getCollectionFromDB = async (
+  address: string,
+  chainId: number
+): Promise<CollectionT> => {
+  const collection = await Collection.findOne({
+    address,
+    chainId,
+  }).exec();
+  if (!collection) {
+    throw new Error("Collection not found");
+  }
+  return collection;
+};
+
 export const getCollection: RequestHandler = async (req, res, next) => {
-  const { fromAddress, collectionName } = req.params;
-  if (!fromAddress || !collectionName) {
+  const { chainId, address } = req.params;
+  if (!chainId || !address) {
     return next(new Error("Invalid params"));
   }
   try {
-    const collections = await getCollectionsFromDB(fromAddress);
-    const collection = collections.filter((col) => col.name === collectionName);
-    if (collection.length === 0) {
-      return next(new Error("Collection not found"));
-    }
-    return res.json({ collection: collection[0] });
+    const collection = await getCollectionFromDB(address, parseInt(chainId));
+    return res.json({ collection });
   } catch (error) {
     return next(error);
   }

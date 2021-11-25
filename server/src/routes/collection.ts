@@ -1,7 +1,7 @@
 import {
   deployContracts,
   getCollection,
-  getCollections,
+  getUserCollections,
   saveCollectionToDB,
   successHandler,
   uploadImages,
@@ -20,7 +20,7 @@ const collectionRoutes = router();
 
 collectionRoutes.post(
   "/save",
-  collectionValidator(),
+  collectionValidator,
   errorHandler,
   saveCollectionToDB,
   deployContracts
@@ -29,22 +29,22 @@ collectionRoutes.post(
 collectionRoutes.post("/images", uploadImages, successHandler);
 
 collectionRoutes.post(
-  "/deployed/:fromAddress/:collectionName/:deployedAddress",
-  deployedValidator(),
+  "/deployed/:creator/:chainId/:address",
+  deployedValidator,
   errorHandler,
   addDeployedAddress
 );
 
 collectionRoutes.get(
-  "/:fromAddress",
-  getCollectionsValidator(),
+  "/:creator",
+  getCollectionsValidator,
   errorHandler,
-  getCollections
+  getUserCollections
 );
 
 collectionRoutes.get(
-  "/:fromAddress/:collectionName",
-  getCollectionValidator(),
+  "/:chainId/:address",
+  getCollectionValidator,
   errorHandler,
   getCollection
 );

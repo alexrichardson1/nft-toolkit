@@ -55,7 +55,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [txAddress, setTxAddress] = useState("");
 
   useEffect(() => {
     if (stepNumber <= 1) {
@@ -227,14 +227,10 @@ const CreateCollectionForm = (): JSX.Element => {
       const txResponse = await signer.sendTransaction(tx);
       setLoadingMessage("Confirming...");
       const txReceipt = await txResponse.wait();
-      addDeployedAddress(
-        account,
-        state.collectionName,
-        txReceipt.contractAddress
-      );
+      addDeployedAddress(account, chainId, txReceipt.contractAddress);
       showFormAlert("success", "Collection Creation Successful");
       stopLoading(setLoadingMessage, setIsLoading);
-      setSuccess(true);
+      setTxAddress(txReceipt.contractAddress);
     } catch (error) {
       console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
@@ -242,8 +238,8 @@ const CreateCollectionForm = (): JSX.Element => {
     }
   };
 
-  if (success) {
-    return <Redirect to={`/${account}/${state.collectionName}`} />;
+  if (txAddress !== "") {
+    return <Redirect to={`/${chainId}/${txAddress}`} />;
   }
 
   return (

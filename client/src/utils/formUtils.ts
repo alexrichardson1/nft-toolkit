@@ -73,7 +73,8 @@ export const uploadCollection = async (
     price: parseUnits(state.mintingPrice).toString(),
     chainId: chainId,
     tokens: tokens,
-    fromAddress: account,
+    creator: account,
+    layers: [],
   };
 
   const res = await axios.post(`${API_URL}/collection/save`, collection);
@@ -82,11 +83,11 @@ export const uploadCollection = async (
 };
 
 export const addDeployedAddress = async (
-  fromAddress: string,
-  collectionName: string,
-  deployedAddress: string
+  creator: string,
+  chainId: number,
+  address: string
 ): Promise<void> => {
   await axios.post(
-    `${API_URL}/collection/deployed/${fromAddress}/${collectionName}/${deployedAddress}`
+    `${API_URL}/collection/deployed/${creator}/${chainId}/${address}`
   );
 };

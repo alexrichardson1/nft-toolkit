@@ -1,5 +1,5 @@
 import { compileOneImage, GeneratedImageI } from "@controllers/generateArt";
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync } from "fs";
 import { join } from "path";
 
 describe("Generate Art", () => {
@@ -44,7 +44,7 @@ describe("Generate Art", () => {
 
   test("Image gets compiled", async () => {
     const compiled = await compileOneImage(image);
-    writeFileSync(join(__dirname, "../../examples/output.png"), compiled.image);
+    expect(compiled).toBeDefined();
   });
 
   test("No image throws error", () => {
