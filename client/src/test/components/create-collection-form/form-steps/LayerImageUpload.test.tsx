@@ -12,8 +12,8 @@ const INITIAL_STATE: FormStateI = {
   generative: { layers: [], numberOfLayers: 0 },
 };
 
-describe("GeneralInfoStep", () => {
-  test("Page Number and generative matche", () => {
+describe("LayerImageUpload snapshots", () => {
+  test("Page Number and generative match", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerImageUpload
