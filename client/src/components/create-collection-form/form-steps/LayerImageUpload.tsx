@@ -86,7 +86,10 @@ const LayerImageUpload = ({
             }}
             aria-label="layer-tabs"
             value={value}
-            onChange={(_e, newValue) => setValue(newValue)}>
+            onChange={(e, newValue) => {
+              e.preventDefault();
+              setValue(newValue);
+            }}>
             {state.generative.layers.map((layer, idx) => {
               return (
                 <Tab

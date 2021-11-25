@@ -1,6 +1,4 @@
-import { Web3ReactProvider } from "@web3-react/core";
 import GeneralInfoStep from "components/create-collection-form/form-steps/GeneralInfoStep";
-import { getLibrary } from "components/wallet/Wallet";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
@@ -19,16 +17,14 @@ describe("GeneralInfoStep", () => {
     const tree = mount(
       <ThemeProvider>
         <NetworkProvider>
-          <Web3ReactProvider getLibrary={getLibrary}>
-            <GeneralInfoStep
-              stepNumber={0}
-              state={INITIAL_STATE}
-              handleCollNameChange={jest.fn()}
-              handleDescriptionChange={jest.fn()}
-              handleMintPriceChange={jest.fn()}
-              handleSymbolChange={jest.fn()}
-            />
-          </Web3ReactProvider>
+          <GeneralInfoStep
+            stepNumber={0}
+            state={INITIAL_STATE}
+            handleCollNameChange={jest.fn()}
+            handleDescriptionChange={jest.fn()}
+            handleMintPriceChange={jest.fn()}
+            handleSymbolChange={jest.fn()}
+          />
         </NetworkProvider>
       </ThemeProvider>
     );
@@ -38,16 +34,14 @@ describe("GeneralInfoStep", () => {
     const tree = mount(
       <ThemeProvider>
         <NetworkProvider>
-          <Web3ReactProvider getLibrary={getLibrary}>
-            <GeneralInfoStep
-              stepNumber={1}
-              state={INITIAL_STATE}
-              handleCollNameChange={jest.fn()}
-              handleDescriptionChange={jest.fn()}
-              handleMintPriceChange={jest.fn()}
-              handleSymbolChange={jest.fn()}
-            />
-          </Web3ReactProvider>
+          <GeneralInfoStep
+            stepNumber={1}
+            state={INITIAL_STATE}
+            handleCollNameChange={jest.fn()}
+            handleDescriptionChange={jest.fn()}
+            handleMintPriceChange={jest.fn()}
+            handleSymbolChange={jest.fn()}
+          />
         </NetworkProvider>
       </ThemeProvider>
     );
