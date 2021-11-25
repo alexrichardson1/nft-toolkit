@@ -9,7 +9,7 @@ const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
-  mintingPrice: NaN,
+  mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: { layers: [], numberOfLayers: 0 },
 };
@@ -28,6 +28,7 @@ describe("StaticArtStep", () => {
               handleImgDelete={jest.fn()}
               handleImgNameChange={jest.fn()}
               handleImgDrop={jest.fn()}
+              handleImgDescChange={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -49,6 +50,7 @@ describe("StaticArtStep", () => {
               handleImgDelete={jest.fn()}
               handleImgNameChange={jest.fn()}
               handleImgDrop={jest.fn()}
+              handleImgDescChange={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -70,6 +72,7 @@ describe("StaticArtStep", () => {
               handleImgDelete={jest.fn()}
               handleImgNameChange={jest.fn()}
               handleImgDrop={jest.fn()}
+              handleImgDescChange={jest.fn()}
             />
           </Web3ReactProvider>
         </NetworkProvider>
