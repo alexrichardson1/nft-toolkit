@@ -33,6 +33,19 @@ interface PropsT {
   ) => void;
 }
 
+/**
+ * Step of the form where users can upload images for each layer of their
+ * generative collection
+ *
+ * @param generative - true if user chose generative state, false otherwise
+ * (must equal true for this page to render)
+ * @param state - state of the form
+ * @param stepNumber - current step the form is on
+ * @param isLoading - true if form is in loading state, false otherwise
+ * @param handleLayerImgDrop - handles image drop for layers
+ * @param handleLayerImgDelete - handles image delete for layers
+ * @param handleLayerImgNameChange - handles name changes for images in a layer
+ */
 const LayerImageUpload = ({
   generative,
   state,
