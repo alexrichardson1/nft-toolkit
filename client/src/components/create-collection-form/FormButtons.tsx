@@ -4,6 +4,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { LoadingButton } from "@mui/lab";
 import { Box } from "@mui/material";
 import Button from "@mui/material/Button";
+import { getSubmissionButtonText } from "utils/formUtils";
 
 interface PropsI {
   isLoading: boolean;
@@ -12,20 +13,6 @@ interface PropsI {
   isLastStep: boolean;
   handlePrevStep: () => void;
 }
-
-const getButtonText = (
-  isLoading: boolean,
-  isLastStep: boolean,
-  loadingMessage: string
-) => {
-  if (isLoading) {
-    return loadingMessage;
-  }
-  if (isLastStep) {
-    return "Submit";
-  }
-  return "Next";
-};
 
 const INITIAL_STEP_NUMBER = 0;
 
@@ -72,7 +59,7 @@ const FormButtons = ({
           size="large"
           data-testid="submit-btn"
           variant="contained">
-          {getButtonText(isLoading, isLastStep, loadingMessage)}
+          {getSubmissionButtonText(isLoading, isLastStep, loadingMessage)}
         </LoadingButton>
       )}
     </Box>

@@ -91,3 +91,17 @@ export const addDeployedAddress = async (
     `${API_URL}/collection/deployed/${creator}/${chainId}/${address}`
   );
 };
+
+export const getSubmissionButtonText = (
+  isLoading: boolean,
+  isLastStep: boolean,
+  loadingMessage: string
+): string => {
+  if (isLoading) {
+    return loadingMessage;
+  }
+  if (isLastStep) {
+    return "Submit";
+  }
+  return "Next";
+};
