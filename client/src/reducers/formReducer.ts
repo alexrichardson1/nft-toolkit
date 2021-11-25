@@ -12,7 +12,7 @@ const DEFAULT_STRING = "";
  * @param size size of image
  * @returns id for the image based on name and size
  */
-export const getImgId = (name: string, size: number): string => size + name;
+export const getImgId = (name: string, size: number): string => name + size;
 
 /**
  * Returns an image object whilst making a URL to store the image locally
