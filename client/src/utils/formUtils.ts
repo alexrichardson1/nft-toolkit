@@ -60,7 +60,7 @@ export const uploadCollection = async (
 ): Promise<UnsignedTransaction> => {
   const tokens = Object.values(state.static.images).map((image, index) => ({
     name: image.name,
-    description: "",
+    description: image.description ?? "",
     image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${account}/${
       state.collectionName
     }/images/${index + 1}.${image.image.name.split(".").pop()}`,
