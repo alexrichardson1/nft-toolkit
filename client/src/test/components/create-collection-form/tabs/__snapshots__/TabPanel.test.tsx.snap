@@ -646,9 +646,9 @@ exports[`TabPanel snapshot 1`] = `
               value={0}
             >
               <ForwardRef(Box)
-                aria-labelledby="vertical-tab-0"
+                aria-labelledby="-tab-0"
                 hidden={false}
-                id="vertical-tabpanel-0"
+                id="tabpanel-0"
                 role="tabpanel"
                 sx={
                   Object {
@@ -658,11 +658,11 @@ exports[`TabPanel snapshot 1`] = `
                 }
               >
                 <Styled(div)
-                  aria-labelledby="vertical-tab-0"
+                  aria-labelledby="-tab-0"
                   as="div"
                   className="MuiBox-root"
                   hidden={false}
-                  id="vertical-tabpanel-0"
+                  id="tabpanel-0"
                   role="tabpanel"
                   sx={
                     Object {
@@ -988,10 +988,10 @@ exports[`TabPanel snapshot 1`] = `
                 >
                   <Noop />
                   <div
-                    aria-labelledby="vertical-tab-0"
+                    aria-labelledby="-tab-0"
                     className="MuiBox-root css-uwwqev"
                     hidden={false}
-                    id="vertical-tabpanel-0"
+                    id="tabpanel-0"
                     role="tabpanel"
                   >
                     <ForwardRef(Box)
