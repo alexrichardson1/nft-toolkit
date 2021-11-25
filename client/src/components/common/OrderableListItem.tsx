@@ -12,7 +12,7 @@ const listItemStyle: SxProps<Theme> = {
   bgcolor: "background.paper",
   boxShadow: (theme: Theme) => theme.shadows[5],
   mb: 1,
-  textTransform: "capitalize",
+  textTransform: "uppercase",
 };
 
 interface PropsT {

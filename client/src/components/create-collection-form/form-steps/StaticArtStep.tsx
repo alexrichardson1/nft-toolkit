@@ -10,6 +10,7 @@ interface PropsT {
   state: FormStateI;
   isLoading: boolean;
   handleImgDelete: (deleteId: string) => void;
+  handleImgDescChange: (e: InputEventT, id: string) => void;
   handleImgNameChange: (e: InputEventT, id: string) => void;
   handleImgDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
@@ -29,6 +30,7 @@ interface PropsT {
  * @param handleImgDelete - handle deletion of Static Images
  * @param handleImgDrop - handle drop of images into image upload area
  * @param handleImgNameChange - handle name change for uploaded static images
+ * @param handleImgDescChange - handle description change for uploaded images
  * @param isLoading - true if the form is in a loading state, False otherwise
  */
 const StaticArtStep = ({
@@ -38,25 +40,27 @@ const StaticArtStep = ({
   handleImgDelete,
   handleImgDrop,
   handleImgNameChange,
+  handleImgDescChange,
   isLoading,
 }: PropsT): JSX.Element => {
   if (wrongStepStatic(generative, stepNumber, STATIC_ART_STEP_NUMBER)) {
     return <></>;
   }
 
-  const children = {
+  const props = {
     NUMBER_OF_IMAGES: state.static.numberOfImages,
     imgObjs: state.static.images,
+    isLoading,
     handleImgDelete,
     handleImgDrop,
     handleImgNameChange,
-    isLoading,
+    handleImgDescChange,
   };
 
   return (
     <>
       <PageHeader text="Upload your Static Images" />
-      <ImageUploadWithTabs {...children} />
+      <ImageUploadWithTabs descriptionRequired {...props} />
     </>
   );
 };
