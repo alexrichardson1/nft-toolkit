@@ -18,8 +18,11 @@ interface ImageI {
 
 type ImageT = { [imageId: string]: ImageI };
 
+interface TierI {
+  name: string;
+  probability: string;
+}
 interface LayerI {
-  layerId: string;
   name: string;
   images: ImageT;
   numberOfImages: number;
@@ -31,5 +34,10 @@ interface FormStateI {
   symbol: string;
   mintingPrice: string;
   static: { numberOfImages: number; images: ImageT };
-  generative: { numberOfLayers: number; layers: LayerI[] };
+  generative: {
+    numberOfTiers: number;
+    tiers: TierI[];
+    numberOfLayers: number;
+    layers: LayerI[];
+  };
 }
