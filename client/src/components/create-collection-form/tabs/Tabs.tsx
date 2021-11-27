@@ -114,8 +114,10 @@ const VerticalTabs = ({
                   inputProps: { min: "0.00", max: "1.00", step: "0.01" },
                   endAdornment: (
                     <InputAdornment position="end">
-                      {/* TODO: Add explanation here */}
-                      <InfoTooltip text="Add explanation here..." />
+                      <InfoTooltip
+                        text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed) 
+                      for the chance that this image is randomly minted for this layer."
+                      />
                     </InputAdornment>
                   ),
                 }}
