@@ -3,10 +3,10 @@ import AddIcon from "@mui/icons-material/Add";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Input from "components/common/Input";
+import OrderableList from "components/common/OrderableList";
 import OrderableListItem from "components/common/OrderableListItem";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
-import OrderableList from "../../common/OrderableList";
 
 const TIER_SELECTION_STEP_NUMBER = 2;
 const MINIMUM_TIERS_REQUIRED = 1;
@@ -18,15 +18,17 @@ interface PropsT {
   handleTierAdd: (newTierName: string) => void;
   handleTierReorder: (event: DragEndEvent) => void;
   handleTierRemoval: (tierName: string) => void;
+  handleTierProbChange: (tierName: string) => (e: InputEventT) => void;
 }
 
 const TierSelectionStep = ({
   state,
+  generative,
+  stepNumber,
   handleTierReorder,
   handleTierRemoval,
   handleTierAdd,
-  generative,
-  stepNumber,
+  handleTierProbChange,
 }: PropsT) => {
   const [text, setText] = useState("");
 
@@ -58,6 +60,13 @@ const TierSelectionStep = ({
             itemName={tier.name}
             id={tier.name}
             handleItemRemoval={handleTierRemoval}
+            numericInput={{
+              // TODO: Add tooltip text
+              tooltipText: "Explain what this does",
+              numberInputLabel: "Chance",
+              numberInputValue: tier.probability,
+              handleNumberInputChange: handleTierProbChange(tier.name),
+            }}
           />
         ))}
       </OrderableList>
