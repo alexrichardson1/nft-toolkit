@@ -5129,6 +5129,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                       <TierSelectionStep
                         generative={false}
                         handleTierAdd={[Function]}
+                        handleTierProbChange={[Function]}
                         handleTierRemoval={[Function]}
                         handleTierReorder={[Function]}
                         state={

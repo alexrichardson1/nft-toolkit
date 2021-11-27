@@ -5093,6 +5093,13 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                             <Input
                                               InputProps={
                                                 Object {
+                                                  "endAdornment": <ForwardRef(InputAdornment)
+                                                    position="end"
+                                                  >
+                                                    <InfoTooltip
+                                                      text="Add explanation here..."
+                                                    />
+                                                  </ForwardRef(InputAdornment)>,
                                                   "inputProps": Object {
                                                     "max": "1.00",
                                                     "min": "0.00",
@@ -5114,6 +5121,13 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                               <ForwardRef(TextField)
                                                 InputProps={
                                                   Object {
+                                                    "endAdornment": <ForwardRef(InputAdornment)
+                                                      position="end"
+                                                    >
+                                                      <InfoTooltip
+                                                        text="Add explanation here..."
+                                                      />
+                                                    </ForwardRef(InputAdornment)>,
                                                     "inputProps": Object {
                                                       "max": "1.00",
                                                       "min": "0.00",
@@ -5143,6 +5157,13 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                   ownerState={
                                                     Object {
                                                       "InputProps": Object {
+                                                        "endAdornment": <ForwardRef(InputAdornment)
+                                                          position="end"
+                                                        >
+                                                          <InfoTooltip
+                                                            text="Add explanation here..."
+                                                          />
+                                                        </ForwardRef(InputAdornment)>,
                                                         "inputProps": Object {
                                                           "max": "1.00",
                                                           "min": "0.00",
@@ -5197,6 +5218,15 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                             </ForwardRef(InputLabel)>,
                                                             <ForwardRef(OutlinedInput)
                                                               autoFocus={false}
+                                                              endAdornment={
+                                                                <ForwardRef(InputAdornment)
+                                                                  position="end"
+                                                                >
+                                                                  <InfoTooltip
+                                                                    text="Add explanation here..."
+                                                                  />
+                                                                </ForwardRef(InputAdornment)>
+                                                              }
                                                               fullWidth={true}
                                                               inputProps={
                                                                 Object {
@@ -5366,6 +5396,15 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                         </ForwardRef(InputLabel)>
                                                         <ForwardRef(OutlinedInput)
                                                           autoFocus={false}
+                                                          endAdornment={
+                                                            <ForwardRef(InputAdornment)
+                                                              position="end"
+                                                            >
+                                                              <InfoTooltip
+                                                                text="Add explanation here..."
+                                                              />
+                                                            </ForwardRef(InputAdornment)>
+                                                          }
                                                           fullWidth={true}
                                                           inputProps={
                                                             Object {
@@ -5437,6 +5476,15 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                   "withComponent": [Function],
                                                                 },
                                                               }
+                                                            }
+                                                            endAdornment={
+                                                              <ForwardRef(InputAdornment)
+                                                                position="end"
+                                                              >
+                                                                <InfoTooltip
+                                                                  text="Add explanation here..."
+                                                                />
+                                                              </ForwardRef(InputAdornment)>
                                                             }
                                                             fullWidth={true}
                                                             inputComponent="input"
@@ -5790,7 +5838,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                               </GlobalStyles>
                                                             </GlobalStyles>
                                                             <MuiOutlinedInputRoot
-                                                              className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl"
+                                                              className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd"
                                                               classes={
                                                                 Object {
                                                                   "input": "MuiOutlinedInput-input",
@@ -5854,7 +5902,13 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                   },
                                                                   "defaultValue": undefined,
                                                                   "disabled": false,
-                                                                  "endAdornment": undefined,
+                                                                  "endAdornment": <ForwardRef(InputAdornment)
+                                                                    position="end"
+                                                                  >
+                                                                    <InfoTooltip
+                                                                      text="Add explanation here..."
+                                                                    />
+                                                                  </ForwardRef(InputAdornment)>,
                                                                   "error": false,
                                                                   "focused": false,
                                                                   "formControl": Object {
@@ -5905,14 +5959,14 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                             >
                                                               <Noop />
                                                               <div
-                                                                className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
+                                                                className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-1gvv60k-MuiInputBase-root-MuiOutlinedInput-root"
                                                                 onClick={[Function]}
                                                               >
                                                                 <MuiOutlinedInputInput
                                                                   aria-invalid={false}
                                                                   as="input"
                                                                   autoFocus={false}
-                                                                  className="MuiOutlinedInput-input MuiInputBase-input"
+                                                                  className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd"
                                                                   disabled={false}
                                                                   max="1.00"
                                                                   min="0.00"
@@ -5975,7 +6029,13 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                       },
                                                                       "defaultValue": undefined,
                                                                       "disabled": false,
-                                                                      "endAdornment": undefined,
+                                                                      "endAdornment": <ForwardRef(InputAdornment)
+                                                                        position="end"
+                                                                      >
+                                                                        <InfoTooltip
+                                                                          text="Add explanation here..."
+                                                                        />
+                                                                      </ForwardRef(InputAdornment)>,
                                                                       "error": false,
                                                                       "focused": false,
                                                                       "formControl": Object {
@@ -6032,7 +6092,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                   <input
                                                                     aria-invalid={false}
                                                                     autoFocus={false}
-                                                                    className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                                                                    className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
                                                                     disabled={false}
                                                                     max="1.00"
                                                                     min="0.00"
@@ -6046,6 +6106,304 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                     type="number"
                                                                   />
                                                                 </MuiOutlinedInputInput>
+                                                                <ForwardRef(InputAdornment)
+                                                                  position="end"
+                                                                >
+                                                                  <MuiInputAdornmentRoot
+                                                                    as="div"
+                                                                    className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium"
+                                                                    ownerState={
+                                                                      Object {
+                                                                        "children": <InfoTooltip
+                                                                          text="Add explanation here..."
+                                                                        />,
+                                                                        "disablePointerEvents": false,
+                                                                        "hiddenLabel": false,
+                                                                        "position": "end",
+                                                                        "size": "medium",
+                                                                        "variant": "outlined",
+                                                                      }
+                                                                    }
+                                                                  >
+                                                                    <Noop />
+                                                                    <div
+                                                                      className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
+                                                                    >
+                                                                      <InfoTooltip
+                                                                        text="Add explanation here..."
+                                                                      >
+                                                                        <ForwardRef(Tooltip)
+                                                                          arrow={true}
+                                                                          placement="top"
+                                                                          title="Add explanation here..."
+                                                                        >
+                                                                          <ForwardRef(InfoIcon)
+                                                                            aria-label="Add explanation here..."
+                                                                            aria-labelledby={null}
+                                                                            className=""
+                                                                            color="primary"
+                                                                            data-mui-internal-clone-element={true}
+                                                                            onBlur={[Function]}
+                                                                            onFocus={[Function]}
+                                                                            onMouseLeave={[Function]}
+                                                                            onMouseOver={[Function]}
+                                                                            onTouchEnd={[Function]}
+                                                                            onTouchStart={[Function]}
+                                                                          >
+                                                                            <ForwardRef(SvgIcon)
+                                                                              aria-label="Add explanation here..."
+                                                                              aria-labelledby={null}
+                                                                              className=""
+                                                                              color="primary"
+                                                                              data-mui-internal-clone-element={true}
+                                                                              data-testid="InfoIcon"
+                                                                              onBlur={[Function]}
+                                                                              onFocus={[Function]}
+                                                                              onMouseLeave={[Function]}
+                                                                              onMouseOver={[Function]}
+                                                                              onTouchEnd={[Function]}
+                                                                              onTouchStart={[Function]}
+                                                                            >
+                                                                              <MuiSvgIconRoot
+                                                                                aria-hidden={true}
+                                                                                aria-label="Add explanation here..."
+                                                                                aria-labelledby={null}
+                                                                                as="svg"
+                                                                                className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium"
+                                                                                data-mui-internal-clone-element={true}
+                                                                                data-testid="InfoIcon"
+                                                                                focusable="false"
+                                                                                onBlur={[Function]}
+                                                                                onFocus={[Function]}
+                                                                                onMouseLeave={[Function]}
+                                                                                onMouseOver={[Function]}
+                                                                                onTouchEnd={[Function]}
+                                                                                onTouchStart={[Function]}
+                                                                                ownerState={
+                                                                                  Object {
+                                                                                    "aria-label": "Add explanation here...",
+                                                                                    "aria-labelledby": null,
+                                                                                    "children": <path
+                                                                                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                                                    />,
+                                                                                    "className": "",
+                                                                                    "color": "primary",
+                                                                                    "component": "svg",
+                                                                                    "data-mui-internal-clone-element": true,
+                                                                                    "data-testid": "InfoIcon",
+                                                                                    "fontSize": "medium",
+                                                                                    "onBlur": [Function],
+                                                                                    "onFocus": [Function],
+                                                                                    "onMouseLeave": [Function],
+                                                                                    "onMouseOver": [Function],
+                                                                                    "onTouchEnd": [Function],
+                                                                                    "onTouchStart": [Function],
+                                                                                    "viewBox": "0 0 24 24",
+                                                                                  }
+                                                                                }
+                                                                                viewBox="0 0 24 24"
+                                                                              >
+                                                                                <Noop />
+                                                                                <svg
+                                                                                  aria-hidden={true}
+                                                                                  aria-label="Add explanation here..."
+                                                                                  aria-labelledby={null}
+                                                                                  className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                                                  data-mui-internal-clone-element={true}
+                                                                                  data-testid="InfoIcon"
+                                                                                  focusable="false"
+                                                                                  onBlur={[Function]}
+                                                                                  onFocus={[Function]}
+                                                                                  onMouseLeave={[Function]}
+                                                                                  onMouseOver={[Function]}
+                                                                                  onTouchEnd={[Function]}
+                                                                                  onTouchStart={[Function]}
+                                                                                  viewBox="0 0 24 24"
+                                                                                >
+                                                                                  <path
+                                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                                                  />
+                                                                                </svg>
+                                                                              </MuiSvgIconRoot>
+                                                                            </ForwardRef(SvgIcon)>
+                                                                          </ForwardRef(InfoIcon)>
+                                                                          <MuiTooltipPopper
+                                                                            anchorEl={
+                                                                              <svg
+                                                                                aria-hidden="true"
+                                                                                aria-label="Add explanation here..."
+                                                                                class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                                                data-mui-internal-clone-element="true"
+                                                                                data-testid="InfoIcon"
+                                                                                focusable="false"
+                                                                                viewBox="0 0 24 24"
+                                                                              >
+                                                                                <path
+                                                                                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                                                />
+                                                                              </svg>
+                                                                            }
+                                                                            as={
+                                                                              Object {
+                                                                                "$$typeof": Symbol(react.forward_ref),
+                                                                                "propTypes": Object {
+                                                                                  "anchorEl": [Function],
+                                                                                  "children": [Function],
+                                                                                  "container": [Function],
+                                                                                  "disablePortal": [Function],
+                                                                                  "keepMounted": [Function],
+                                                                                  "modifiers": [Function],
+                                                                                  "open": [Function],
+                                                                                  "placement": [Function],
+                                                                                  "popperOptions": [Function],
+                                                                                  "popperRef": [Function],
+                                                                                  "transition": [Function],
+                                                                                },
+                                                                                "render": [Function],
+                                                                              }
+                                                                            }
+                                                                            className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow"
+                                                                            id="mui-58346975"
+                                                                            onBlur={[Function]}
+                                                                            onFocus={[Function]}
+                                                                            onMouseLeave={[Function]}
+                                                                            onMouseOver={[Function]}
+                                                                            open={false}
+                                                                            ownerState={
+                                                                              Object {
+                                                                                "PopperComponentProp": undefined,
+                                                                                "arrow": true,
+                                                                                "children": <Memo
+                                                                                  color="primary"
+                                                                                />,
+                                                                                "disableInteractive": false,
+                                                                                "isRtl": false,
+                                                                                "placement": "top",
+                                                                                "title": "Add explanation here...",
+                                                                                "touch": false,
+                                                                              }
+                                                                            }
+                                                                            placement="top"
+                                                                            popperOptions={
+                                                                              Object {
+                                                                                "modifiers": Array [
+                                                                                  Object {
+                                                                                    "enabled": false,
+                                                                                    "name": "arrow",
+                                                                                    "options": Object {
+                                                                                      "element": null,
+                                                                                      "padding": 4,
+                                                                                    },
+                                                                                  },
+                                                                                ],
+                                                                              }
+                                                                            }
+                                                                            popperRef={
+                                                                              Object {
+                                                                                "current": undefined,
+                                                                              }
+                                                                            }
+                                                                            transition={true}
+                                                                          >
+                                                                            <Noop />
+                                                                            <ForwardRef(Popper)
+                                                                              anchorEl={
+                                                                                <svg
+                                                                                  aria-hidden="true"
+                                                                                  aria-label="Add explanation here..."
+                                                                                  class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                                                  data-mui-internal-clone-element="true"
+                                                                                  data-testid="InfoIcon"
+                                                                                  focusable="false"
+                                                                                  viewBox="0 0 24 24"
+                                                                                >
+                                                                                  <path
+                                                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                                                  />
+                                                                                </svg>
+                                                                              }
+                                                                              className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
+                                                                              id="mui-58346975"
+                                                                              onBlur={[Function]}
+                                                                              onFocus={[Function]}
+                                                                              onMouseLeave={[Function]}
+                                                                              onMouseOver={[Function]}
+                                                                              open={false}
+                                                                              placement="top"
+                                                                              popperOptions={
+                                                                                Object {
+                                                                                  "modifiers": Array [
+                                                                                    Object {
+                                                                                      "enabled": false,
+                                                                                      "name": "arrow",
+                                                                                      "options": Object {
+                                                                                        "element": null,
+                                                                                        "padding": 4,
+                                                                                      },
+                                                                                    },
+                                                                                  ],
+                                                                                }
+                                                                              }
+                                                                              popperRef={
+                                                                                Object {
+                                                                                  "current": undefined,
+                                                                                }
+                                                                              }
+                                                                              transition={true}
+                                                                            >
+                                                                              <ForwardRef(PopperUnstyled)
+                                                                                anchorEl={
+                                                                                  <svg
+                                                                                    aria-hidden="true"
+                                                                                    aria-label="Add explanation here..."
+                                                                                    class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                                                    data-mui-internal-clone-element="true"
+                                                                                    data-testid="InfoIcon"
+                                                                                    focusable="false"
+                                                                                    viewBox="0 0 24 24"
+                                                                                  >
+                                                                                    <path
+                                                                                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                                                    />
+                                                                                  </svg>
+                                                                                }
+                                                                                className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
+                                                                                direction="ltr"
+                                                                                id="mui-58346975"
+                                                                                onBlur={[Function]}
+                                                                                onFocus={[Function]}
+                                                                                onMouseLeave={[Function]}
+                                                                                onMouseOver={[Function]}
+                                                                                open={false}
+                                                                                placement="top"
+                                                                                popperOptions={
+                                                                                  Object {
+                                                                                    "modifiers": Array [
+                                                                                      Object {
+                                                                                        "enabled": false,
+                                                                                        "name": "arrow",
+                                                                                        "options": Object {
+                                                                                          "element": null,
+                                                                                          "padding": 4,
+                                                                                        },
+                                                                                      },
+                                                                                    ],
+                                                                                  }
+                                                                                }
+                                                                                popperRef={
+                                                                                  Object {
+                                                                                    "current": undefined,
+                                                                                  }
+                                                                                }
+                                                                                transition={true}
+                                                                              />
+                                                                            </ForwardRef(Popper)>
+                                                                          </MuiTooltipPopper>
+                                                                        </ForwardRef(Tooltip)>
+                                                                      </InfoTooltip>
+                                                                    </div>
+                                                                  </MuiInputAdornmentRoot>
+                                                                </ForwardRef(InputAdornment)>
                                                                 <MuiOutlinedInputNotchedOutline
                                                                   className="MuiOutlinedInput-notchedOutline"
                                                                   label={
