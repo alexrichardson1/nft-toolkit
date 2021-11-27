@@ -61,7 +61,7 @@ const LayerSelectionStep = ({
 
   return (
     <>
-      <PageHeader text="Add Layers for your Collection" />
+      <PageHeader text="Add Layers For Your Collection" />
       <Collapse in={state.generative.numberOfLayers > 0}>
         <OrderableList
           items={state.generative.layers}
