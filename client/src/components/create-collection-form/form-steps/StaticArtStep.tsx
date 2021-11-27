@@ -60,11 +60,7 @@ const StaticArtStep = ({
   return (
     <>
       <PageHeader text="Upload your Static Images" />
-      <ImageUploadWithTabs
-        handleImgRarityChange={() => undefined}
-        descriptionRequired
-        {...props}
-      />
+      <ImageUploadWithTabs {...props} />
     </>
   );
 };

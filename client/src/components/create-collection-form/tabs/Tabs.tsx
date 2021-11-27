@@ -31,12 +31,10 @@ interface PropsT {
   imgObjs: ImageT;
   NUMBER_OF_IMAGES: number;
   isLoading: boolean;
-  descriptionRequired?: boolean;
-  rarityRequired?: boolean;
   handleImageDelete: (deleteId: string) => void;
   handleNameChange: (e: InputEventT, id: string) => void;
-  handleImgDescChange: (e: InputEventT, id: string) => void;
-  handleImgRarityChange: (e: InputEventT, id: string) => void;
+  handleImgDescChange?: (e: InputEventT, id: string) => void;
+  handleImgRarityChange?: (e: InputEventT, id: string) => void;
 }
 
 /**
@@ -46,10 +44,10 @@ interface PropsT {
  * @param imgObjs - image objects to render
  * @params NUMBER_OF_IMAGES - number of images
  * @params isLoading - true if form is in loading state, false otherwise
- * @param descriptionRequired - true if description field is required
  * @param handleImageDelete - handles image delete
  * @param handleImgDescChange - handles image description change
  * @param handleNameChange - handles image name change
+ * @param handleImgRarityChange - handles change in rarity of an image
  */
 
 const VerticalTabs = ({
@@ -58,9 +56,7 @@ const VerticalTabs = ({
   isLoading,
   handleImageDelete,
   handleNameChange,
-  descriptionRequired,
   handleImgDescChange,
-  rarityRequired,
   handleImgRarityChange,
 }: PropsT): JSX.Element => {
   const [value, setValue] = useState(INITIAL_VALUE);
@@ -109,7 +105,7 @@ const VerticalTabs = ({
               inputProps={{ "data-testid": "nft-name-input" }}
               onChange={(e) => handleNameChange(e, imgId)}
             />
-            {rarityRequired && (
+            {handleImgRarityChange !== undefined && (
               <Input
                 type="number"
                 InputProps={{
@@ -133,7 +129,7 @@ const VerticalTabs = ({
               />
             </IconButton>
           </Box>
-          {descriptionRequired && (
+          {handleImgDescChange !== undefined && (
             <Input
               onChange={(e) => handleImgDescChange(e, imgId)}
               label="Description"

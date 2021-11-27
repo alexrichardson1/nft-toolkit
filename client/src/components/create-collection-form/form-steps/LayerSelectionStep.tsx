@@ -4,13 +4,13 @@ import { Collapse } from "@mui/material";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Input from "components/common/Input";
+import OrderableListItem from "components/common/OrderableListItem";
 import PageHeader from "components/common/PageHeader";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
-import OrderableList from "../OrderableList";
+import OrderableList from "../../common/OrderableList";
 
-const LAYER_UPLOAD_STEP_NUMBER = 2;
-const INITIAL_TEXT = "";
+const LAYER_UPLOAD_STEP_NUMBER = 3;
 const MINIMUM_LAYERS_REQUIRED = 1;
 
 interface PropsT {
@@ -19,7 +19,7 @@ interface PropsT {
   state: FormStateI;
   handleLayerAddition: (newLayerName: string) => void;
   handleLayerReorder: (event: DragEndEvent) => void;
-  handleLayerRemoval: (layerId: string) => void;
+  handleLayerRemoval: (layerName: string) => void;
 }
 
 /**
@@ -42,7 +42,7 @@ const LayerSelectionStep = ({
   handleLayerAddition,
   handleLayerRemoval,
 }: PropsT): JSX.Element => {
-  const [text, setText] = useState(INITIAL_TEXT);
+  const [text, setText] = useState("");
 
   if (wrongStepGenerative(generative, stepNumber, LAYER_UPLOAD_STEP_NUMBER)) {
     return <></>;
@@ -68,9 +68,16 @@ const LayerSelectionStep = ({
       <Collapse in={state.generative.numberOfLayers > 0}>
         <OrderableList
           items={state.generative.layers}
-          handleLayerReorder={handleLayerReorder}
-          handleLayerRemoval={handleLayerRemoval}
-        />
+          handleItemReorder={handleLayerReorder}>
+          {state.generative.layers.map((layer) => (
+            <OrderableListItem
+              id={layer.name}
+              key={layer.name}
+              itemName={layer.name}
+              handleItemRemoval={handleLayerRemoval}
+            />
+          ))}
+        </OrderableList>
       </Collapse>
       <Box
         display="flex"
