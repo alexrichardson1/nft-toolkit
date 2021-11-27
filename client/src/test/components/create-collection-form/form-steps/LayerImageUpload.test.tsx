@@ -9,11 +9,11 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: [], numberOfLayers: 0 },
+  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
 };
 
 describe("LayerImageUpload snapshots", () => {
-  test("Page Number and generative match", () => {
+  test("Step Number and generative match", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerImageUpload
@@ -22,10 +22,11 @@ describe("LayerImageUpload snapshots", () => {
           state={{
             ...INITIAL_STATE,
             generative: {
+              numberOfTiers: 0,
+              tiers: [],
               numberOfLayers: 1,
               layers: [
                 {
-                  layerId: "test-id",
                   name: "test-name",
                   numberOfImages: 0,
                   images: {},
@@ -33,7 +34,7 @@ describe("LayerImageUpload snapshots", () => {
               ],
             },
           }}
-          stepNumber={3}
+          stepNumber={4}
           handleImgRarityChange={jest.fn()}
           handleLayerImgDelete={jest.fn()}
           handleLayerImgDrop={jest.fn()}
@@ -44,7 +45,7 @@ describe("LayerImageUpload snapshots", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("Page Number does not match", () => {
+  test("Step Number does not match", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerImageUpload
@@ -69,7 +70,7 @@ describe("LayerImageUpload snapshots", () => {
           generative={false}
           isLoading={true}
           state={{ ...INITIAL_STATE }}
-          stepNumber={3}
+          stepNumber={4}
           handleImgRarityChange={jest.fn()}
           handleLayerImgDelete={jest.fn()}
           handleLayerImgDrop={jest.fn()}
@@ -91,16 +92,16 @@ describe("LayerImageUpload unit tests", () => {
           state={{
             ...INITIAL_STATE,
             generative: {
+              tiers: [],
+              numberOfTiers: 0,
               numberOfLayers: 2,
               layers: [
                 {
-                  layerId: "test-id",
                   name: "test-name",
                   numberOfImages: 0,
                   images: {},
                 },
                 {
-                  layerId: "test-id2",
                   name: "test-name2",
                   numberOfImages: 0,
                   images: {},
@@ -108,7 +109,7 @@ describe("LayerImageUpload unit tests", () => {
               ],
             },
           }}
-          stepNumber={3}
+          stepNumber={4}
           handleImgRarityChange={jest.fn()}
           handleLayerImgDelete={jest.fn()}
           handleLayerImgDrop={jest.fn()}

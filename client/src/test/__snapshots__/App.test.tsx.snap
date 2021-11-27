@@ -14116,6 +14116,8 @@ exports[`App snapshot 1`] = `
                                                       "generative": Object {
                                                         "layers": Array [],
                                                         "numberOfLayers": 0,
+                                                        "numberOfTiers": 0,
+                                                        "tiers": Array [],
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -18543,6 +18545,33 @@ exports[`App snapshot 1`] = `
                                                       "generative": Object {
                                                         "layers": Array [],
                                                         "numberOfLayers": 0,
+                                                        "numberOfTiers": 0,
+                                                        "tiers": Array [],
+                                                      },
+                                                      "mintingPrice": "",
+                                                      "static": Object {
+                                                        "images": Object {},
+                                                        "numberOfImages": 0,
+                                                      },
+                                                      "symbol": "",
+                                                    }
+                                                  }
+                                                  stepNumber={0}
+                                                />
+                                                <TierSelectionStep
+                                                  generative={false}
+                                                  handleTierAdd={[Function]}
+                                                  handleTierRemoval={[Function]}
+                                                  handleTierReorder={[Function]}
+                                                  state={
+                                                    Object {
+                                                      "collectionName": "",
+                                                      "description": "",
+                                                      "generative": Object {
+                                                        "layers": Array [],
+                                                        "numberOfLayers": 0,
+                                                        "numberOfTiers": 0,
+                                                        "tiers": Array [],
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -18566,6 +18595,8 @@ exports[`App snapshot 1`] = `
                                                       "generative": Object {
                                                         "layers": Array [],
                                                         "numberOfLayers": 0,
+                                                        "numberOfTiers": 0,
+                                                        "tiers": Array [],
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -18591,6 +18622,8 @@ exports[`App snapshot 1`] = `
                                                       "generative": Object {
                                                         "layers": Array [],
                                                         "numberOfLayers": 0,
+                                                        "numberOfTiers": 0,
+                                                        "tiers": Array [],
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {

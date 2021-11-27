@@ -13,8 +13,8 @@ test("OrderableListItem snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <OrderableListItem
-        handleLayerRemoval={jest.fn()}
-        layerName="test-layer"
+        handleItemRemoval={jest.fn()}
+        itemName="test-layer"
         id="test-id"
       />
     </ThemeProvider>
@@ -24,23 +24,23 @@ test("OrderableListItem snapshot", () => {
 
 describe("OrderableListItemTests", () => {
   let tree: RenderResult<typeof Queries, HTMLElement>;
-  let handleLayerRemoval: jest.Mock<unknown, unknown[]>;
+  let handleItemRemoval: jest.Mock<unknown, unknown[]>;
   beforeEach(() => {
-    handleLayerRemoval = jest.fn();
+    handleItemRemoval = jest.fn();
     tree = render(
       <ThemeProvider>
         <OrderableListItem
-          handleLayerRemoval={handleLayerRemoval}
-          layerName="test-layer"
+          handleItemRemoval={handleItemRemoval}
+          itemName="test-layer"
           id="test-id"
         />
       </ThemeProvider>
     );
   });
 
-  test("handleLayerRemoval is called", () => {
-    const deleteBtn = tree.getByTestId("delete-layer-btn");
+  test("handleItemRemoval is called", () => {
+    const deleteBtn = tree.getByTestId("delete-item-btn");
     fireEvent(deleteBtn, createEvent.click(deleteBtn));
-    expect(handleLayerRemoval).toHaveBeenCalledWith("test-id");
+    expect(handleItemRemoval).toHaveBeenCalledWith("test-id");
   });
 });

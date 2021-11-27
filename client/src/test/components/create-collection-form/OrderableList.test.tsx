@@ -1,4 +1,4 @@
-import OrderableList from "components/create-collection-form/OrderableList";
+import OrderableList from "components/common/OrderableList";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 
@@ -6,17 +6,16 @@ test("OrderableListItem snapshot", () => {
   const tree = mount(
     <ThemeProvider>
       <OrderableList
-        handleLayerRemoval={jest.fn()}
-        handleLayerReorder={jest.fn()}
+        handleItemReorder={jest.fn()}
         items={[
           {
-            layerId: "test-layer",
             images: {},
             name: "test-name",
             numberOfImages: 0,
           },
-        ]}
-      />
+        ]}>
+        child1
+      </OrderableList>
     </ThemeProvider>
   );
   expect(tree).toMatchSnapshot();

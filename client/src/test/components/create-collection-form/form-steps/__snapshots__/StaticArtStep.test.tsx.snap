@@ -655,6 +655,8 @@ exports[`StaticArtStep generative does not match 1`] = `
                   "generative": Object {
                     "layers": Array [],
                     "numberOfLayers": 0,
+                    "numberOfTiers": 0,
+                    "tiers": Array [],
                   },
                   "mintingPrice": "",
                   "static": Object {
@@ -1329,6 +1331,8 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                   "generative": Object {
                     "layers": Array [],
                     "numberOfLayers": 0,
+                    "numberOfTiers": 0,
+                    "tiers": Array [],
                   },
                   "mintingPrice": "",
                   "static": Object {
@@ -1401,12 +1405,10 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
               </PageHeader>
               <ImageUploadWithTabs
                 NUMBER_OF_IMAGES={0}
-                descriptionRequired={true}
                 handleImgDelete={[MockFunction]}
                 handleImgDescChange={[MockFunction]}
                 handleImgDrop={[MockFunction]}
                 handleImgNameChange={[MockFunction]}
-                handleImgRarityChange={[Function]}
                 imgObjs={Object {}}
                 isLoading={false}
               >
@@ -2544,6 +2546,8 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                   "generative": Object {
                     "layers": Array [],
                     "numberOfLayers": 0,
+                    "numberOfTiers": 0,
+                    "tiers": Array [],
                   },
                   "mintingPrice": "",
                   "static": Object {

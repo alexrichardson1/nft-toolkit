@@ -9,11 +9,11 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: [], numberOfLayers: 0 },
+  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
 };
 
 describe("GeneralInfoStep", () => {
-  test("Page Number matches", () => {
+  test("Step Number matches", () => {
     const tree = mount(
       <ThemeProvider>
         <NetworkProvider>
@@ -30,7 +30,7 @@ describe("GeneralInfoStep", () => {
     );
     expect(tree).toMatchSnapshot();
   });
-  test("Page Number does not match", () => {
+  test("Step Number does not match", () => {
     const tree = mount(
       <ThemeProvider>
         <NetworkProvider>

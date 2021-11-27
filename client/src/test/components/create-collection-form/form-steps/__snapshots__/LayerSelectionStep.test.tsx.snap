@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
+exports[`LayerSelectionStep snapshots Step Number and generative matche 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -650,12 +650,13 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                 "layers": Array [
                   Object {
                     "images": Object {},
-                    "layerId": "test-id",
                     "name": "test-name",
                     "numberOfImages": 0,
                   },
                 ],
                 "numberOfLayers": 1,
+                "numberOfTiers": 0,
+                "tiers": Array [],
               },
               "mintingPrice": "",
               "static": Object {
@@ -665,7 +666,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
               "symbol": "",
             }
           }
-          stepNumber={2}
+          stepNumber={3}
         >
           <PageHeader
             text="Add Layers for your Collection"
@@ -788,7 +789,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                             </button>
                             <button
                               class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                              data-testid="delete-layer-btn"
+                              data-testid="delete-item-btn"
                               tabindex="0"
                               type="button"
                             >
@@ -828,19 +829,23 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                 ownerState={
                   Object {
                     "children": <OrderableList
-                      handleLayerRemoval={[MockFunction]}
-                      handleLayerReorder={[MockFunction]}
+                      handleItemReorder={[MockFunction]}
                       items={
                         Array [
                           Object {
                             "images": Object {},
-                            "layerId": "test-id",
                             "name": "test-name",
                             "numberOfImages": 0,
                           },
                         ]
                       }
-                    />,
+                    >
+                      <OrderableListItem
+                        handleItemRemoval={[MockFunction]}
+                        id="test-name"
+                        itemName="test-name"
+                      />
+                    </OrderableList>,
                     "collapsedSize": "0px",
                     "in": true,
                     "orientation": "vertical",
@@ -867,19 +872,23 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                     ownerState={
                       Object {
                         "children": <OrderableList
-                          handleLayerRemoval={[MockFunction]}
-                          handleLayerReorder={[MockFunction]}
+                          handleItemReorder={[MockFunction]}
                           items={
                             Array [
                               Object {
                                 "images": Object {},
-                                "layerId": "test-id",
                                 "name": "test-name",
                                 "numberOfImages": 0,
                               },
                             ]
                           }
-                        />,
+                        >
+                          <OrderableListItem
+                            handleItemRemoval={[MockFunction]}
+                            id="test-name"
+                            itemName="test-name"
+                          />
+                        </OrderableList>,
                         "collapsedSize": "0px",
                         "in": true,
                         "orientation": "vertical",
@@ -896,19 +905,23 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                         ownerState={
                           Object {
                             "children": <OrderableList
-                              handleLayerRemoval={[MockFunction]}
-                              handleLayerReorder={[MockFunction]}
+                              handleItemReorder={[MockFunction]}
                               items={
                                 Array [
                                   Object {
                                     "images": Object {},
-                                    "layerId": "test-id",
                                     "name": "test-name",
                                     "numberOfImages": 0,
                                   },
                                 ]
                               }
-                            />,
+                            >
+                              <OrderableListItem
+                                handleItemRemoval={[MockFunction]}
+                                id="test-name"
+                                itemName="test-name"
+                              />
+                            </OrderableList>,
                             "collapsedSize": "0px",
                             "in": true,
                             "orientation": "vertical",
@@ -921,13 +934,11 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                           className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                         >
                           <OrderableList
-                            handleLayerRemoval={[MockFunction]}
-                            handleLayerReorder={[MockFunction]}
+                            handleItemReorder={[MockFunction]}
                             items={
                               Array [
                                 Object {
                                   "images": Object {},
-                                  "layerId": "test-id",
                                   "name": "test-name",
                                   "numberOfImages": 0,
                                 },
@@ -955,7 +966,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                               <SortableContext
                                 items={
                                   Array [
-                                    "test-id",
+                                    "test-name",
                                   ]
                                 }
                                 strategy={[Function]}
@@ -977,9 +988,9 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                       Object {
                                         "children": Array [
                                           <OrderableListItem
-                                            handleLayerRemoval={[MockFunction]}
-                                            id="test-id"
-                                            layerName="test-name"
+                                            handleItemRemoval={[MockFunction]}
+                                            id="test-name"
+                                            itemName="test-name"
                                           />,
                                         ],
                                         "component": "ul",
@@ -1007,10 +1018,10 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                       className="MuiList-root MuiList-padding css-f1wrvk-MuiList-root"
                                     >
                                       <OrderableListItem
-                                        handleLayerRemoval={[MockFunction]}
-                                        id="test-id"
-                                        key="test-id"
-                                        layerName="test-name"
+                                        handleItemRemoval={[MockFunction]}
+                                        id="test-name"
+                                        itemName="test-name"
+                                        key="test-name"
                                       >
                                         <ForwardRef(ListItem)
                                           style={
@@ -1054,8 +1065,9 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                       fontSize="large"
                                                     />
                                                   </ForwardRef(IconButton)>,
+                                                  false,
                                                   <ForwardRef(IconButton)
-                                                    data-testid="delete-layer-btn"
+                                                    data-testid="delete-item-btn"
                                                     onClick={[Function]}
                                                   >
                                                     <Memo
@@ -1377,14 +1389,14 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                 </MuiIconButtonRoot>
                                               </ForwardRef(IconButton)>
                                               <ForwardRef(IconButton)
-                                                data-testid="delete-layer-btn"
-                                                key=".2"
+                                                data-testid="delete-item-btn"
+                                                key=".3"
                                                 onClick={[Function]}
                                               >
                                                 <MuiIconButtonRoot
                                                   centerRipple={true}
                                                   className="MuiIconButton-root MuiIconButton-sizeMedium"
-                                                  data-testid="delete-layer-btn"
+                                                  data-testid="delete-item-btn"
                                                   disabled={false}
                                                   focusRipple={true}
                                                   onClick={[Function]}
@@ -1395,7 +1407,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                         fontSize="large"
                                                       />,
                                                       "color": "default",
-                                                      "data-testid": "delete-layer-btn",
+                                                      "data-testid": "delete-item-btn",
                                                       "disableFocusRipple": false,
                                                       "disabled": false,
                                                       "edge": false,
@@ -1408,7 +1420,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                   <ForwardRef(ButtonBase)
                                                     centerRipple={true}
                                                     className="MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root"
-                                                    data-testid="delete-layer-btn"
+                                                    data-testid="delete-item-btn"
                                                     disabled={false}
                                                     focusRipple={true}
                                                     onClick={[Function]}
@@ -1416,7 +1428,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                     <MuiButtonBaseRoot
                                                       as="button"
                                                       className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root"
-                                                      data-testid="delete-layer-btn"
+                                                      data-testid="delete-item-btn"
                                                       disabled={false}
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -1440,7 +1452,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                           />,
                                                           "className": "MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root",
                                                           "component": "button",
-                                                          "data-testid": "delete-layer-btn",
+                                                          "data-testid": "delete-item-btn",
                                                           "disableRipple": false,
                                                           "disableTouchRipple": false,
                                                           "disabled": false,
@@ -1456,7 +1468,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
                                                       <Noop />
                                                       <button
                                                         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                                                        data-testid="delete-layer-btn"
+                                                        data-testid="delete-item-btn"
                                                         disabled={false}
                                                         onBlur={[Function]}
                                                         onClick={[Function]}
@@ -3077,7 +3089,7 @@ exports[`LayerSelectionStep snapshots Page Number and generative matche 1`] = `
 </ThemeProvider>
 `;
 
-exports[`LayerSelectionStep snapshots Page Number does not match 1`] = `
+exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -3726,6 +3738,8 @@ exports[`LayerSelectionStep snapshots Page Number does not match 1`] = `
               "generative": Object {
                 "layers": Array [],
                 "numberOfLayers": 0,
+                "numberOfTiers": 0,
+                "tiers": Array [],
               },
               "mintingPrice": "",
               "static": Object {
@@ -4392,6 +4406,8 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
               "generative": Object {
                 "layers": Array [],
                 "numberOfLayers": 0,
+                "numberOfTiers": 0,
+                "tiers": Array [],
               },
               "mintingPrice": "",
               "static": Object {
@@ -4401,7 +4417,7 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
               "symbol": "",
             }
           }
-          stepNumber={2}
+          stepNumber={3}
         />
       </InnerThemeProvider>
     </ThemeProvider>

@@ -7,7 +7,7 @@ const EMPTY_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: [], numberOfLayers: 0 },
+  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
 };
 
 const getImageObj = (name: string, url: string, image: File): ImageI => ({
@@ -62,7 +62,13 @@ describe("formReducer", () => {
           [TEST_IMG1_ID]: TESTOBJ_IMG1,
         },
       },
-      generative: { layers: [], numberOfLayers: 0 },
+      generative: {
+        tiers: [],
+        numberOfTiers: 0,
+        layers: [],
+        numberOfLayers: 0,
+      },
+
       mintingPrice: "0",
     };
   });
@@ -98,7 +104,6 @@ describe("formReducer", () => {
     if (payload.newImagesStatic && payload.newImagesStatic[0]) {
       const expected: FormStateI = JSON.parse(JSON.stringify(initialState));
       expected.static.numberOfImages = 3;
-      console.log(expected);
       if (!global.URL.createObjectURL) {
         global.URL.createObjectURL = () => TESTOBJ_IMG2.url;
       }
@@ -110,7 +115,6 @@ describe("formReducer", () => {
         type: FormActions.ADD_IMAGES_STATIC,
         payload,
       });
-      console.log(result, expected);
       expect(result).toMatchObject(expected);
     }
   });

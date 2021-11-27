@@ -53,14 +53,6 @@ describe("CreateCollectionForm unit tests", () => {
     );
   });
 
-  // test("alert has text when reset button clicked", () => {
-  //   const alert = tree.getByTestId("form-alert");
-  //   const resetButton = tree.getByTestId("previous-page");
-  //   expect(alert).not.toHaveTextContent("reset");
-  //   fireEvent.click(resetButton);
-  //   expect(alert).toHaveTextContent("reset");
-  // });
-
   test("collection name is empty at start", () => {
     const input = tree.getByTestId("collection-name-input");
     expect(input.textContent).toBe("");

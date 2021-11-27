@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GeneralInfoStep Page Number does not match 1`] = `
+exports[`GeneralInfoStep Step Number does not match 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -650,6 +650,8 @@ exports[`GeneralInfoStep Page Number does not match 1`] = `
                 "generative": Object {
                   "layers": Array [],
                   "numberOfLayers": 0,
+                  "numberOfTiers": 0,
+                  "tiers": Array [],
                 },
                 "mintingPrice": "",
                 "static": Object {
@@ -668,7 +670,7 @@ exports[`GeneralInfoStep Page Number does not match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`GeneralInfoStep Page Number matches 1`] = `
+exports[`GeneralInfoStep Step Number matches 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -1318,6 +1320,8 @@ exports[`GeneralInfoStep Page Number matches 1`] = `
                 "generative": Object {
                   "layers": Array [],
                   "numberOfLayers": 0,
+                  "numberOfTiers": 0,
+                  "tiers": Array [],
                 },
                 "mintingPrice": "",
                 "static": Object {
