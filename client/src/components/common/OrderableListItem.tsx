@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { SxProps } from "@mui/system";
+import Input from "components/common/Input";
 
 const listItemStyle: SxProps<Theme> = {
   bgcolor: "background.paper",
@@ -16,9 +17,14 @@ const listItemStyle: SxProps<Theme> = {
 };
 
 interface PropsT {
-  layerName: string;
+  itemName: string;
   id: string;
-  handleLayerRemoval: (layerId: string) => void;
+  numericInput?: {
+    numberInputValue: string;
+    numberInputLabel: string;
+    handleNumberInputChange: (e: InputEventT) => void;
+  };
+  handleItemRemoval: (itemId: string) => void;
 }
 
 /**
@@ -26,14 +32,18 @@ interface PropsT {
  * betweem multiple items in a list. Also has delete buttons in order to allow
  * for removal of item from the list.
  *
- * @param layerName - the name of the layer
- * @param id - the unique identifier of the layer
- * @param handleLayerRemoval - handles removal of layers from the collection
+ * @param itemName - the name of the item
+ * @param id - the unique identifier of the item
+ * @param numericInput - object containing the following items:
+ *        numberInputValue - value of numeric input
+ *        numberInputLabel- label of numeric input
+ *        handleItemRemoval - handles removal of items
  */
 const OrderableListItem = ({
-  layerName,
+  itemName,
   id,
-  handleLayerRemoval,
+  numericInput,
+  handleItemRemoval,
 }: PropsT): JSX.Element => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
@@ -45,13 +55,22 @@ const OrderableListItem = ({
 
   return (
     <ListItem sx={listItemStyle} ref={setNodeRef} style={listItemCSSStyle}>
-      <ListItemText primary={layerName} />
+      <ListItemText primary={itemName} />
       <IconButton {...attributes} {...listeners}>
         <DragIndicatorIcon fontSize="large" color="action" />
       </IconButton>
+      {numericInput !== undefined && (
+        <Input
+          value={numericInput.numberInputValue}
+          label={numericInput.numberInputLabel}
+          placeholder={"0"}
+          type="number"
+          onChange={numericInput.handleNumberInputChange}
+        />
+      )}
       <IconButton
-        data-testid="delete-layer-btn"
-        onClick={() => handleLayerRemoval(id)}>
+        data-testid="delete-item-btn"
+        onClick={() => handleItemRemoval(id)}>
         <DeleteIcon fontSize="large" color="error" />
       </IconButton>
     </ListItem>
