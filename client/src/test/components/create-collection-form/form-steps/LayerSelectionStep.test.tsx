@@ -8,11 +8,11 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: [], numberOfLayers: 0 },
+  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
 };
 
 describe("LayerSelectionStep snapshots", () => {
-  test("Page Number and generative matche", () => {
+  test("Step Number and generative matche", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerSelectionStep
@@ -20,10 +20,11 @@ describe("LayerSelectionStep snapshots", () => {
           state={{
             ...INITIAL_STATE,
             generative: {
+              numberOfTiers: 0,
+              tiers: [],
               numberOfLayers: 1,
               layers: [
                 {
-                  layerId: "test-id",
                   name: "test-name",
                   numberOfImages: 0,
                   images: {},
@@ -31,7 +32,7 @@ describe("LayerSelectionStep snapshots", () => {
               ],
             },
           }}
-          stepNumber={2}
+          stepNumber={3}
           handleLayerAddition={jest.fn()}
           handleLayerRemoval={jest.fn()}
           handleLayerReorder={jest.fn()}
@@ -41,7 +42,7 @@ describe("LayerSelectionStep snapshots", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test("Page Number does not match", () => {
+  test("Step Number does not match", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerSelectionStep
@@ -63,7 +64,7 @@ describe("LayerSelectionStep snapshots", () => {
         <LayerSelectionStep
           generative={false}
           state={{ ...INITIAL_STATE }}
-          stepNumber={2}
+          stepNumber={3}
           handleLayerAddition={jest.fn()}
           handleLayerRemoval={jest.fn()}
           handleLayerReorder={jest.fn()}

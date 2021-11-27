@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
+exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -643,7 +643,7 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
             [MockFunction] {
               "calls": Array [
                 Array [
-                  "test-id",
+                  "test-name",
                 ],
               ],
               "results": Array [
@@ -666,12 +666,13 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
                 "layers": Array [
                   Object {
                     "images": Object {},
-                    "layerId": "test-id",
                     "name": "test-name",
                     "numberOfImages": 0,
                   },
                 ],
                 "numberOfLayers": 1,
+                "numberOfTiers": 0,
+                "tiers": Array [],
               },
               "mintingPrice": "",
               "static": Object {
@@ -681,7 +682,7 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
               "symbol": "",
             }
           }
-          stepNumber={3}
+          stepNumber={4}
         >
           <PageHeader
             text="Upload Images for Each Layer"
@@ -1606,7 +1607,7 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
                                       fullWidth={false}
                                       id="tab-0"
                                       indicator={false}
-                                      key=".$test-id"
+                                      key=".$test-name"
                                       label="test-name"
                                       onChange={[Function]}
                                       selected={true}
@@ -1822,7 +1823,7 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
                 </ForwardRef(Box)>
                 <TabPanel
                   index={0}
-                  key="test-id"
+                  key="test-name"
                   value={0}
                 >
                   <ForwardRef(Box)
@@ -2526,12 +2527,10 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
                               <ImageUploadWithTabs
                                 NUMBER_OF_IMAGES={0}
                                 handleImgDelete={[Function]}
-                                handleImgDescChange={[Function]}
                                 handleImgDrop={[Function]}
                                 handleImgNameChange={[Function]}
                                 imgObjs={Object {}}
                                 isLoading={false}
-                                rarityRequired={true}
                               >
                                 <ForwardRef(Box)
                                   sx={
@@ -3020,7 +3019,7 @@ exports[`LayerImageUpload snapshots Page Number and generative match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`LayerImageUpload snapshots Page Number does not match 1`] = `
+exports[`LayerImageUpload snapshots Step Number does not match 1`] = `
 <ThemeProvider>
   <ThemeProvider
     theme={
@@ -3671,6 +3670,8 @@ exports[`LayerImageUpload snapshots Page Number does not match 1`] = `
               "generative": Object {
                 "layers": Array [],
                 "numberOfLayers": 0,
+                "numberOfTiers": 0,
+                "tiers": Array [],
               },
               "mintingPrice": "",
               "static": Object {
@@ -4339,6 +4340,8 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
               "generative": Object {
                 "layers": Array [],
                 "numberOfLayers": 0,
+                "numberOfTiers": 0,
+                "tiers": Array [],
               },
               "mintingPrice": "",
               "static": Object {
@@ -4348,7 +4351,7 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
               "symbol": "",
             }
           }
-          stepNumber={3}
+          stepNumber={4}
         />
       </InnerThemeProvider>
     </ThemeProvider>

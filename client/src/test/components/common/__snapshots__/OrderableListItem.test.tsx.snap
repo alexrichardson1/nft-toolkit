@@ -638,9 +638,9 @@ exports[`OrderableListItem snapshot 1`] = `
     >
       <InnerThemeProvider>
         <OrderableListItem
-          handleLayerRemoval={[MockFunction]}
+          handleItemRemoval={[MockFunction]}
           id="test-id"
-          layerName="test-layer"
+          itemName="test-layer"
         >
           <ForwardRef(ListItem)
             style={
@@ -682,8 +682,9 @@ exports[`OrderableListItem snapshot 1`] = `
                         fontSize="large"
                       />
                     </ForwardRef(IconButton)>,
+                    false,
                     <ForwardRef(IconButton)
-                      data-testid="delete-layer-btn"
+                      data-testid="delete-item-btn"
                       onClick={[Function]}
                     >
                       <Memo
@@ -993,14 +994,14 @@ exports[`OrderableListItem snapshot 1`] = `
                   </MuiIconButtonRoot>
                 </ForwardRef(IconButton)>
                 <ForwardRef(IconButton)
-                  data-testid="delete-layer-btn"
-                  key=".2"
+                  data-testid="delete-item-btn"
+                  key=".3"
                   onClick={[Function]}
                 >
                   <MuiIconButtonRoot
                     centerRipple={true}
                     className="MuiIconButton-root MuiIconButton-sizeMedium"
-                    data-testid="delete-layer-btn"
+                    data-testid="delete-item-btn"
                     disabled={false}
                     focusRipple={true}
                     onClick={[Function]}
@@ -1011,7 +1012,7 @@ exports[`OrderableListItem snapshot 1`] = `
                           fontSize="large"
                         />,
                         "color": "default",
-                        "data-testid": "delete-layer-btn",
+                        "data-testid": "delete-item-btn",
                         "disableFocusRipple": false,
                         "disabled": false,
                         "edge": false,
@@ -1024,7 +1025,7 @@ exports[`OrderableListItem snapshot 1`] = `
                     <ForwardRef(ButtonBase)
                       centerRipple={true}
                       className="MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root"
-                      data-testid="delete-layer-btn"
+                      data-testid="delete-item-btn"
                       disabled={false}
                       focusRipple={true}
                       onClick={[Function]}
@@ -1032,7 +1033,7 @@ exports[`OrderableListItem snapshot 1`] = `
                       <MuiButtonBaseRoot
                         as="button"
                         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root"
-                        data-testid="delete-layer-btn"
+                        data-testid="delete-item-btn"
                         disabled={false}
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -1056,7 +1057,7 @@ exports[`OrderableListItem snapshot 1`] = `
                             />,
                             "className": "MuiIconButton-root MuiIconButton-sizeMedium css-da3c9u-MuiIconButton-root",
                             "component": "button",
-                            "data-testid": "delete-layer-btn",
+                            "data-testid": "delete-item-btn",
                             "disableRipple": false,
                             "disableTouchRipple": false,
                             "disabled": false,
@@ -1072,7 +1073,7 @@ exports[`OrderableListItem snapshot 1`] = `
                         <Noop />
                         <button
                           className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
-                          data-testid="delete-layer-btn"
+                          data-testid="delete-item-btn"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
