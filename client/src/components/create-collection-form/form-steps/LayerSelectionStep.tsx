@@ -1,9 +1,6 @@
 import { DragEndEvent } from "@dnd-kit/core";
-import AddIcon from "@mui/icons-material/Add";
 import { Collapse } from "@mui/material";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Input from "components/common/Input";
+import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
 import PageHeader from "components/common/PageHeader";
 import { useState } from "react";
@@ -79,27 +76,16 @@ const LayerSelectionStep = ({
           ))}
         </OrderableList>
       </Collapse>
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems={"center"}
-        gap={"5px"}>
-        <Input
-          onKeyPress={handleInputKeyPress}
-          value={text}
-          multiline={false}
-          placeholder="Add a layer for your NFT"
-          label="Type Layer Name Here"
-          required={state.generative.numberOfLayers < MINIMUM_LAYERS_REQUIRED}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <IconButton
-          color="primary"
-          aria-label="Add to list"
-          onClick={handleListAdd}>
-          <AddIcon />
-        </IconButton>
-      </Box>
+
+      <OrderableListInput
+        onKeyPress={handleInputKeyPress}
+        text={text}
+        placeholder={"Add a layer for your NFT"}
+        label={"Type Layer Name Here"}
+        required={state.generative.numberOfLayers < MINIMUM_LAYERS_REQUIRED}
+        onChange={(e) => setText(e.target.value)}
+        onClick={handleListAdd}
+      />
     </>
   );
 };
