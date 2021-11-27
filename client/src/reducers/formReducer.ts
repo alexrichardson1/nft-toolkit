@@ -27,25 +27,21 @@ export const getImgObj = (image: File): ImageI => ({
 });
 
 /**
- * Returns the id of the layer based on its name
- *
- * @param name name of the layer
- * @returns id of layer based on name of the layer
- */
-export const getLayerId = (name: string): string => name;
-
-/**
  * Returns a layer object based on layer name and id
  *
  * @param name - name of the layer
  * @param id - id of the layer
  * @returns a layer object
  */
-export const getLayerObj = (name: string, id: string): LayerI => ({
-  layerId: id,
-  name: name,
+export const getLayerObj = (name: string): LayerI => ({
+  name,
   images: {},
   numberOfImages: 0,
+});
+
+const getTierObj = (name: string): TierI => ({
+  name,
+  probability: "0",
 });
 
 const INITIAL_STATE: FormStateI = {
@@ -54,7 +50,7 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: [], numberOfLayers: 0 },
+  generative: { numberOfTiers: 0, tiers: [], layers: [], numberOfLayers: 0 },
 };
 
 interface FormActionPayloadI {
@@ -63,16 +59,22 @@ interface FormActionPayloadI {
   price?: string;
   symbol?: string;
   newLayer?: { name: string };
-  newImagesGen?: { images: File[]; layerId: string };
+  newTier?: { name: string };
+  newImagesGen?: { images: File[]; layerName: string };
   newImagesStatic?: File[];
   modifyImgObjStatic?: { newImageName: string; imageId: string };
-  modifyImgObjGen?: { newImageName: string; imageId: string; layerId: string };
+  modifyImgObjGen?: {
+    newImageName: string;
+    imageId: string;
+    layerName: string;
+  };
   deleteId?: string;
-  deleteGen?: { deleteId: string; layerId: string };
+  deleteGen?: { deleteId: string; layerName: string };
   dragEndEvent?: DragEndEvent;
-  deleteLayerId?: string;
+  deleteLayerName?: string;
+  deleteTierName?: string;
   imageDescChange?: { imageId: string; newDesc: string };
-  rarityChange?: { layerId: string; imageId: string; newRarity: string };
+  rarityChange?: { layerName: string; imageId: string; newRarity: string };
 }
 
 interface FormActionI {
@@ -179,7 +181,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         throw new Error("newImagesGen required");
       }
       state.generative.layers.forEach((layer) => {
-        if (layer.layerId === action.payload.newImagesGen?.layerId) {
+        if (layer.name === action.payload.newImagesGen?.layerName) {
           let newImages = 0;
           action.payload.newImagesGen.images.forEach((newImg) => {
             const newImgId = getImgId(newImg.name, newImg.size);
@@ -200,7 +202,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         throw new Error("deleteGen required");
       }
       state.generative.layers.forEach((layer) => {
-        if (layer.layerId === action.payload.deleteGen?.layerId) {
+        if (layer.name === action.payload.deleteGen?.layerName) {
           const imgUrl = layer.images[action.payload.deleteGen.deleteId]?.url;
           delete layer.images[action.payload.deleteGen.deleteId];
           layer.numberOfImages--;
@@ -217,7 +219,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         throw new Error("modifyImgObjGen required");
       }
       state.generative.layers.forEach((layer) => {
-        if (layer.layerId === action.payload.modifyImgObjGen?.layerId) {
+        if (layer.name === action.payload.modifyImgObjGen?.layerName) {
           const img = layer.images[action.payload.modifyImgObjGen.imageId];
 
           if (!img) {
@@ -229,7 +231,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       return { ...state };
 
     // Change the precedence of a layer
-    case FormActions.CHANGE_PRECEDENCE: {
+    case FormActions.CHANGE_LAYER_PRECEDENCE: {
       if (!action.payload.dragEndEvent) {
         throw new Error("dragEndEvent required");
       }
@@ -239,10 +241,10 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       }
       if (active.id !== over.id) {
         const oldIdx = state.generative.layers.findIndex(
-          (layer) => layer.layerId === active.id
+          (layer) => layer.name === active.id
         );
         const newIdx = state.generative.layers.findIndex(
-          (layer) => layer.layerId === over.id
+          (layer) => layer.name === over.id
         );
         state.generative.layers = arrayMove(
           state.generative.layers,
@@ -260,7 +262,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       }
 
       state.generative.layers.forEach((layer) => {
-        if (layer.layerId === action.payload.rarityChange?.layerId) {
+        if (layer.name === action.payload.rarityChange?.layerName) {
           const img = layer.images[action.payload.rarityChange.imageId];
           if (!img) {
             throw new Error("Image does not exist");
@@ -283,18 +285,20 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       if (!action.payload.newLayer) {
         throw new Error("newLayer required");
       }
-      const newLayerId = getLayerId(action.payload.newLayer.name);
       if (
-        state.generative.layers.find((layer) => layer.layerId === newLayerId)
+        state.generative.layers.find(
+          (layer) => layer.name === action.payload.newLayer?.name
+        )
       ) {
         return { ...state };
       }
       return {
         ...state,
         generative: {
+          ...state.generative,
           layers: [
             ...state.generative.layers,
-            getLayerObj(action.payload.newLayer.name, newLayerId),
+            getLayerObj(action.payload.newLayer.name),
           ],
           numberOfLayers: state.generative.numberOfLayers + 1,
         },
@@ -303,11 +307,11 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
 
     // Remove a layer from the state
     case FormActions.REMOVE_LAYER:
-      if (!action.payload.deleteLayerId) {
-        throw new Error("deleteLayerId required");
+      if (!action.payload.deleteLayerName) {
+        throw new Error("deleteLayerName required");
       }
       state.generative.layers = state.generative.layers.filter((layer) => {
-        if (layer.layerId !== action.payload.deleteLayerId) {
+        if (layer.name !== action.payload.deleteLayerName) {
           return true;
         }
         Object.values(layer.images).map((image) =>
@@ -323,12 +327,83 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         },
       };
 
+    // Add tier to state
+    case FormActions.ADD_TIER: {
+      if (!action.payload.newTier) {
+        throw new Error("newTier required");
+      }
+      if (
+        state.generative.tiers.find(
+          (tier) => tier.name === action.payload.newTier?.name
+        )
+      ) {
+        return { ...state };
+      }
+      return {
+        ...state,
+        generative: {
+          ...state.generative,
+          tiers: [
+            ...state.generative.tiers,
+            getTierObj(action.payload.newTier.name),
+          ],
+          numberOfTiers: state.generative.numberOfTiers + 1,
+        },
+      };
+    }
+
+    // Change tier precedence
+    case FormActions.CHANGE_TIER_PRECEDENCE: {
+      if (!action.payload.dragEndEvent) {
+        throw new Error("dragEndEvent required");
+      }
+      const { active, over } = action.payload.dragEndEvent;
+      if (!over) {
+        return { ...state };
+      }
+      if (active.id !== over.id) {
+        const oldIdx = state.generative.tiers.findIndex(
+          (tier) => tier.name === active.id
+        );
+        const newIdx = state.generative.tiers.findIndex(
+          (tier) => tier.name === over.id
+        );
+        state.generative.tiers = arrayMove(
+          state.generative.tiers,
+          oldIdx,
+          newIdx
+        );
+      }
+      return { ...state };
+    }
+
+    // Remove tier from state
+    case FormActions.REMOVE_TIER:
+      if (!action.payload.deleteTierName) {
+        throw new Error("deleteTierName required");
+      }
+      state.generative.tiers = state.generative.tiers.filter(
+        (tier) => tier.name !== action.payload.deleteTierName
+      );
+      return {
+        ...state,
+        generative: {
+          ...state.generative,
+          numberOfTiers: state.generative.numberOfTiers - 1,
+        },
+      };
+
     // Reset static and generative objects in the state
     case FormActions.RESET_TYPE_OF_ART:
       return {
         ...state,
         static: { images: {}, numberOfImages: 0 },
-        generative: { layers: [], numberOfLayers: 0 },
+        generative: {
+          numberOfTiers: 0,
+          tiers: [],
+          layers: [],
+          numberOfLayers: 0,
+        },
       };
 
     // Reset form state
