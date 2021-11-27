@@ -13,28 +13,27 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import List from "@mui/material/List";
-import OrderableListItem from "components/common/OrderableListItem";
+import { ReactNode } from "react";
 
 const listStyle = { padding: 3, gap: 2, maxWidth: 1, overflow: "hidden" };
 
 interface PropsT {
-  items: LayerI[];
-  handleLayerReorder: (event: DragEndEvent) => void;
-  handleLayerRemoval: (layerId: string) => void;
+  items: LayerI[] | TierI[];
+  children: ReactNode;
+  handleItemReorder: (event: DragEndEvent) => void;
 }
 
 /**
- * Orderable list to allow users to select the precedence of each layer whilst
- *  also allowing them to remove any unwanted layers
+ * Orderable list to allow users to select the precedence of each item whilst
+ * also allowing them to remove any unwanted items
  *
- * @param handleLayerRemoval - handles removal of item from list
- * @param handleLayerReorder - handles reordering of items in the list
+ * @param handleItemReorder - handles reordering of items in the list
  * @param items - list items
  * @returns
  */
 const OrderableList = ({
-  handleLayerRemoval,
-  handleLayerReorder,
+  handleItemReorder,
+  children,
   items,
 }: PropsT): JSX.Element => {
   const sensors = useSensors(
@@ -46,20 +45,11 @@ const OrderableList = ({
     <DndContext
       sensors={sensors}
       collisionDetection={closestCenter}
-      onDragEnd={handleLayerReorder}>
+      onDragEnd={handleItemReorder}>
       <SortableContext
-        items={items.map((layer) => layer.layerId)}
+        items={items.map((item) => item.name)}
         strategy={verticalListSortingStrategy}>
-        <List sx={listStyle}>
-          {items.map((layer) => (
-            <OrderableListItem
-              id={layer.layerId}
-              key={layer.layerId}
-              layerName={layer.name}
-              handleLayerRemoval={handleLayerRemoval}
-            />
-          ))}
-        </List>
+        <List sx={listStyle}>{children}</List>
       </SortableContext>
     </DndContext>
   );
