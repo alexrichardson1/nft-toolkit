@@ -22,6 +22,7 @@ interface InputPropsI {
   defaultValue?: unknown;
   inputProps?: InputBaseComponentProps;
   onKeyPress?: React.KeyboardEventHandler<HTMLDivElement>;
+  notFullWidth?: boolean;
 }
 
 const Input = (props: InputPropsI): JSX.Element => {
@@ -42,7 +43,7 @@ const Input = (props: InputPropsI): JSX.Element => {
       name={props.name}
       required={props.required}
       variant="outlined"
-      fullWidth
+      fullWidth={!props.notFullWidth}
       {...(props.error && { error: true, helperText: props.error })}
     />
   );
