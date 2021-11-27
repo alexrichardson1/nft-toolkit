@@ -60,8 +60,8 @@ const TierSelectionStep = ({
             id={tier.name}
             handleItemRemoval={handleTierRemoval}
             numericInput={{
-              // TODO: Add tooltip text
-              tooltipText: "Explain what this does",
+              tooltipText:
+                "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance an NFT from this rarity tier is randomly minted",
               numberInputLabel: "Chance",
               numberInputValue: tier.probability,
               handleNumberInputChange: handleTierProbChange(tier.name),
@@ -73,7 +73,7 @@ const TierSelectionStep = ({
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
         text={text}
-        placeholder={"Add a tier for your NFT"}
+        placeholder={"Add a tier for your NFT e.g Legendary"}
         label={"Type Tier Name Here"}
         required={state.generative.numberOfTiers < MINIMUM_TIERS_REQUIRED}
         onChange={(e) => setText(e.target.value)}
