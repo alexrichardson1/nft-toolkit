@@ -41,7 +41,7 @@ export const getLayerObj = (name: string): LayerI => ({
 
 const getTierObj = (name: string): TierI => ({
   name,
-  probability: "0",
+  probability: "",
 });
 
 const INITIAL_STATE: FormStateI = {
@@ -68,6 +68,7 @@ interface FormActionPayloadI {
     imageId: string;
     layerName: string;
   };
+  tierProbabilityChange?: { tierName: string; newProbability: string };
   deleteId?: string;
   deleteGen?: { deleteId: string; layerName: string };
   dragEndEvent?: DragEndEvent;
@@ -351,6 +352,19 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         },
       };
     }
+
+    // Change tier probabilities
+    case FormActions.CHANGE_TIER_PROBABILITY:
+      if (!action.payload.tierProbabilityChange) {
+        throw new Error("tierProbabilityChange required");
+      }
+      state.generative.tiers.forEach((tier) => {
+        if (tier.name === action.payload.tierProbabilityChange?.tierName) {
+          tier.probability =
+            action.payload.tierProbabilityChange.newProbability;
+        }
+      });
+      return { ...state };
 
     // Change tier precedence
     case FormActions.CHANGE_TIER_PRECEDENCE: {
