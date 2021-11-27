@@ -1,8 +1,10 @@
 import DeleteIcon from "@mui/icons-material/Delete";
+import { InputAdornment } from "@mui/material";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
+import InfoTooltip from "components/common/InfoToolTip";
 import Input from "components/common/Input";
 import { useEffect, useState } from "react";
 import { accessibilityProps, DEFAULT_MUI_DARK } from "utils/constants";
@@ -110,6 +112,12 @@ const VerticalTabs = ({
                 type="number"
                 InputProps={{
                   inputProps: { min: "0.00", max: "1.00", step: "0.01" },
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      {/* TODO: Add explanation here */}
+                      <InfoTooltip text="Add explanation here..." />
+                    </InputAdornment>
+                  ),
                 }}
                 label="Rarity (0 to 1)"
                 value={img.rarity}
