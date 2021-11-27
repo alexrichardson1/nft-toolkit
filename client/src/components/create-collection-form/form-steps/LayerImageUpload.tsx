@@ -9,7 +9,7 @@ import PageHeader from "../../common/PageHeader";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 import TabPanel from "../tabs/TabPanel";
 
-const LAYER_UPLOAD_PAGE_NUMBER = 3;
+const LAYER_UPLOAD_PAGE_NUMBER = 4;
 const INITIAL_VALUE = 0;
 
 const layerImgUplContainerStyle = { width: "100%" };
@@ -20,19 +20,19 @@ interface PropsT {
   state: FormStateI;
   generative: boolean;
   isLoading: boolean;
-  handleLayerImgDelete: (deleteId: string, layerId?: string) => void;
+  handleLayerImgDelete: (deleteId: string, layerName?: string) => void;
   handleLayerImgDrop: (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null,
-    layerId?: string
+    layerName?: string
   ) => void;
   handleLayerImgNameChange: (
     e: InputEventT,
     imageid: string,
-    layerId?: string
+    layerName?: string
   ) => void;
   handleImgRarityChange: (
-    layerId: string
+    layerName: string
   ) => (e: InputEventT, id: string) => void;
 }
 
@@ -93,7 +93,7 @@ const LayerImageUpload = ({
             {state.generative.layers.map((layer, idx) => {
               return (
                 <Tab
-                  key={layer.layerId}
+                  key={layer.name}
                   label={layer.name}
                   {...accessibilityProps(idx)}
                 />
@@ -103,23 +103,21 @@ const LayerImageUpload = ({
         </Box>
         {state.generative.layers.map((layer, idx) => {
           return (
-            <TabPanel key={layer.layerId} value={value} index={idx}>
+            <TabPanel key={layer.name} value={value} index={idx}>
               <ImageUploadWithTabs
-                handleImgDescChange={() => undefined}
                 handleImgDelete={(deleteId) =>
-                  handleLayerImgDelete(deleteId, layer.layerId)
+                  handleLayerImgDelete(deleteId, layer.name)
                 }
                 handleImgDrop={(e, imgObjs) =>
-                  handleLayerImgDrop(e, imgObjs, layer.layerId)
+                  handleLayerImgDrop(e, imgObjs, layer.name)
                 }
                 handleImgNameChange={(e, id) =>
-                  handleLayerImgNameChange(e, id, layer.layerId)
+                  handleLayerImgNameChange(e, id, layer.name)
                 }
-                handleImgRarityChange={handleImgRarityChange(layer.layerId)}
+                handleImgRarityChange={handleImgRarityChange(layer.name)}
                 NUMBER_OF_IMAGES={layer.numberOfImages}
                 isLoading={isLoading}
                 imgObjs={layer.images}
-                rarityRequired
               />
             </TabPanel>
           );
