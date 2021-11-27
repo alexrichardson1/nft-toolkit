@@ -21,20 +21,21 @@ import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
+import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
 
 const INITIAL_STEP_NUMBER = 0;
 const STATIC_STEP = 3;
-const GEN_STEPS = 4;
+const GEN_STEPS = 5;
 const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { layers: [], numberOfLayers: 0 },
+  generative: { numberOfTiers: 0, tiers: [], layers: [], numberOfLayers: 0 },
 };
 
 const formFooterStyle: SxProps = {
@@ -99,11 +100,11 @@ const CreateCollectionForm = (): JSX.Element => {
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
 
-  const handleImageDelete = (deleteId: string, layerId = "") => {
+  const handleImageDelete = (deleteId: string, layerName = "") => {
     let payload;
 
     if (generative) {
-      payload = { deleteGen: { deleteId, layerId } };
+      payload = { deleteGen: { deleteId, layerName } };
     } else {
       payload = { deleteId };
     }
@@ -148,17 +149,39 @@ const CreateCollectionForm = (): JSX.Element => {
   };
   const handleLayerReorder = (e: DragEndEvent) => {
     dispatch({
-      type: FormActions.CHANGE_PRECEDENCE,
+      type: FormActions.CHANGE_LAYER_PRECEDENCE,
       payload: { dragEndEvent: e },
     });
   };
 
-  const handleLayerRemoval = (layerId: string) => {
+  const handleTierRemoval = (layerName: string) => {
     dispatch({
-      type: FormActions.REMOVE_LAYER,
-      payload: { deleteLayerId: layerId },
+      type: FormActions.REMOVE_TIER,
+      payload: { deleteTierName: layerName },
     });
   };
+
+  const handleTierAdd = (newLayerName: string) => {
+    dispatch({
+      type: FormActions.ADD_TIER,
+      payload: { newTier: { name: newLayerName } },
+    });
+  };
+
+  const handleTierReorder = (e: DragEndEvent) => {
+    dispatch({
+      type: FormActions.CHANGE_TIER_PRECEDENCE,
+      payload: { dragEndEvent: e },
+    });
+  };
+
+  const handleLayerRemoval = (layerName: string) => {
+    dispatch({
+      type: FormActions.REMOVE_LAYER,
+      payload: { deleteLayerName: layerName },
+    });
+  };
+
   const handleSymbolChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_SYMBOL,
@@ -168,7 +191,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleImgNameChange = (
     e: InputEventT,
     imageid: string,
-    layerId = ""
+    layerName = ""
   ) => {
     let payload;
     if (generative) {
@@ -176,7 +199,7 @@ const CreateCollectionForm = (): JSX.Element => {
         modifyImgObjGen: {
           newImageName: e.target.value,
           imageId: imageid,
-          layerId,
+          layerName,
         },
       };
     } else {
@@ -195,7 +218,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleImageDrop = (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null,
-    layerId = ""
+    layerName = ""
   ) => {
     e.preventDefault();
     if (!imgObjs) {
@@ -203,7 +226,7 @@ const CreateCollectionForm = (): JSX.Element => {
     }
     let payload;
     if (generative) {
-      payload = { newImagesGen: { images: Array.from(imgObjs), layerId } };
+      payload = { newImagesGen: { images: Array.from(imgObjs), layerName } };
     } else {
       payload = { newImagesStatic: Array.from(imgObjs) };
     }
@@ -216,11 +239,11 @@ const CreateCollectionForm = (): JSX.Element => {
   };
 
   const handleImgRarityChange =
-    (layerId: string) => (e: InputEventT, imageId: string) =>
+    (layerName: string) => (e: InputEventT, imageId: string) =>
       dispatch({
         type: FormActions.CHANGE_RARITY,
         payload: {
-          rarityChange: { newRarity: e.target.value, imageId, layerId },
+          rarityChange: { newRarity: e.target.value, imageId, layerName },
         },
       });
 
@@ -309,6 +332,14 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgDelete={handleImageDelete}
         handleImgNameChange={handleImgNameChange}
         handleImgDescChange={handleImgDescChange}
+      />
+      <TierSelectionStep
+        handleTierAdd={handleTierAdd}
+        handleTierRemoval={handleTierRemoval}
+        handleTierReorder={handleTierReorder}
+        state={state}
+        stepNumber={stepNumber}
+        generative={generative}
       />
       <LayerSelectionStep
         handleLayerRemoval={handleLayerRemoval}
