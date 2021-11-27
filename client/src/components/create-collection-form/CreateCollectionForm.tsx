@@ -154,17 +154,26 @@ const CreateCollectionForm = (): JSX.Element => {
     });
   };
 
-  const handleTierRemoval = (layerName: string) => {
+  const handleTierRemoval = (tierName: string) => {
     dispatch({
       type: FormActions.REMOVE_TIER,
-      payload: { deleteTierName: layerName },
+      payload: { deleteTierName: tierName },
     });
   };
 
-  const handleTierAdd = (newLayerName: string) => {
+  const handleTierAdd = (newTierName: string) => {
     dispatch({
       type: FormActions.ADD_TIER,
-      payload: { newTier: { name: newLayerName } },
+      payload: { newTier: { name: newTierName } },
+    });
+  };
+
+  const handleTierProbChange = (tierName: string) => (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_TIER_PROBABILITY,
+      payload: {
+        tierProbabilityChange: { tierName, newProbability: e.target.value },
+      },
     });
   };
 
@@ -340,6 +349,7 @@ const CreateCollectionForm = (): JSX.Element => {
         state={state}
         stepNumber={stepNumber}
         generative={generative}
+        handleTierProbChange={handleTierProbChange}
       />
       <LayerSelectionStep
         handleLayerRemoval={handleLayerRemoval}
