@@ -1,9 +1,6 @@
 import { DragEndEvent } from "@dnd-kit/core";
-import AddIcon from "@mui/icons-material/Add";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Input from "components/common/Input";
 import OrderableList from "components/common/OrderableList";
+import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
@@ -71,28 +68,15 @@ const TierSelectionStep = ({
         ))}
       </OrderableList>
 
-      {/* TODO: Extract component for this from layerselectionstep */}
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems={"center"}
-        gap={"5px"}>
-        <Input
-          onKeyPress={handleInputKeyPress}
-          value={text}
-          multiline={false}
-          placeholder="Add a tier for your NFT"
-          label="Type Tier Name Here"
-          required={state.generative.numberOfTiers < MINIMUM_TIERS_REQUIRED}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <IconButton
-          color="primary"
-          aria-label="Add to list"
-          onClick={handleListAdd}>
-          <AddIcon />
-        </IconButton>
-      </Box>
+      <OrderableListInput
+        onKeyPress={handleInputKeyPress}
+        text={text}
+        placeholder={"Add a tier for your NFT"}
+        label={"Type Tier Name Here"}
+        required={state.generative.numberOfTiers < MINIMUM_TIERS_REQUIRED}
+        onChange={(e) => setText(e.target.value)}
+        onClick={handleListAdd}
+      />
     </>
   );
 };
