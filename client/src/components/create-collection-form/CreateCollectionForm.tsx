@@ -73,6 +73,21 @@ export const checkRarities = (
   return true;
 };
 
+export const checkChance = (
+  state: FormStateI,
+  showFormAlert: (severity: AlertColor, message: string) => void
+): boolean => {
+  let totalChance = 0;
+  for (const tier of state.generative.tiers) {
+    totalChance += Number(tier.probability);
+  }
+  if (totalChance !== 100) {
+    showFormAlert("warning", `All your Tiers should add up to 100`);
+    return false;
+  }
+  return true;
+};
+
 // eslint-disable-next-line max-lines-per-function
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
