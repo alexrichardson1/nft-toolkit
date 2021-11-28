@@ -1,13 +1,13 @@
-import { assert } from "console";
+import axios from "axios";
 import sharp from "sharp";
 
 interface ImageI {
   name: string;
   rarity: number;
-  image?: Buffer;
+  image?: string;
 }
 
-interface LayerI {
+export interface LayerI {
   name: string;
   images: ImageI[];
   rarity: number;
@@ -23,7 +23,7 @@ interface GenCollectionI {
 
 interface GeneratedImageI {
   hash: string;
-  images: ImageI[];
+  images: [number, string][];
   rarity: number;
 }
 
@@ -46,23 +46,20 @@ function generateRandomPercentage() {
   return Math.random() * MAX_RAND;
 }
 
-function chooseLayerImage(images: ImageI[]): ImageI {
+function chooseLayerImage(images: ImageI[]): [number, ImageI] {
   const randomValue = generateRandomPercentage();
   let rarityCumulative = 0;
-  for (const image of images) {
+  for (const [index, image] of images.entries()) {
     rarityCumulative += image.rarity;
     if (randomValue <= rarityCumulative) {
-      return image;
+      return [index, image];
     }
   }
-  return {
-    name: "fail",
-    rarity: 0,
-  };
+  throw new Error("Could not choose image");
 }
 
 function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
-  const chosenLayerImages: ImageI[] = [];
+  const chosenLayerImages: [number, string][] = [];
   let hash = "";
   let layerIndex = 0;
   let rarity = 1;
@@ -70,10 +67,10 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
   collection.layers.forEach((layer) => {
     const includeLayer = generateRandomPercentage() <= layer.rarity;
     if (includeLayer) {
-      const chosenImage: ImageI = chooseLayerImage(layer.images);
+      const [chosenIndex, chosenImage] = chooseLayerImage(layer.images);
 
       hash += `${layer.name}/${chosenImage.name},`;
-      chosenLayerImages[layerIndex++] = chosenImage;
+      chosenLayerImages[layerIndex++] = [chosenIndex, chosenImage.name];
       rarity *= layer.rarity;
       rarity *= chosenImage.rarity / (oneHundred * oneHundred);
     } else {
@@ -86,6 +83,29 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
     images: chosenLayerImages,
     rarity: rarity * oneHundred,
   };
+}
+
+interface LayerBuffersI {
+  [key: string]: Buffer[];
+}
+
+export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
+  const res: LayerBuffersI = {};
+  await Promise.all(
+    layers.map(async (layer) => {
+      const layerName = layer.name;
+      res[layerName] = await Promise.all(
+        layer.images.map(async (image) => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const buffer = await axios.get(image.image!, {
+            responseType: "arraybuffer",
+          });
+          return buffer.data;
+        })
+      );
+    })
+  );
+  return res;
 }
 
 /**
@@ -107,6 +127,7 @@ function generate(collection: GenCollectionI): GeneratedCollectionI {
 
   const generatedImages: GeneratedImageI[] = [];
   const generatedHashes = new Set();
+  // const layerBuffers = await getImages(collection.layers);
 
   for (let i = 0; i < collection.quantity; i++) {
     const generatedImage = generateOneCombination(collection);
@@ -130,35 +151,35 @@ function generate(collection: GenCollectionI): GeneratedCollectionI {
 }
 
 async function compileOneImage(
-  generatedImage: GeneratedImageI
+  generatedImage: GeneratedImageI,
+  layerBuffers: LayerBuffersI
 ): Promise<CompiledImageI> {
   let resultImage = null;
 
   const composites = [];
   for (let i = 0; i < generatedImage.images.length; i++) {
     const image = generatedImage.images[i];
-    if (!image?.image) {
+    if (!image) {
       throw new Error("Cannot compile image when none is given");
     }
+    const buffer = layerBuffers[image[1]]?.[image[0]];
     if (resultImage) {
-      composites.push({ input: image.image });
+      composites.push({ input: buffer });
     } else {
-      resultImage = sharp(image.image);
+      resultImage = sharp(buffer);
     }
   }
-
-  assert(resultImage !== null);
-  if (resultImage) {
-    resultImage.composite(composites);
-    const buffer = await resultImage.toBuffer({ resolveWithObject: true });
-    return {
-      hash: generatedImage.hash,
-      image: buffer.data,
-      rarity: generatedImage.rarity,
-    };
+  if (!resultImage) {
+    throw new Error("Cannot compile image when none is given");
   }
 
-  throw new Error("Result image is null");
+  resultImage.composite(composites);
+  const buffer = await resultImage.toBuffer({ resolveWithObject: true });
+  return {
+    hash: generatedImage.hash,
+    image: buffer.data,
+    rarity: generatedImage.rarity,
+  };
 }
 
 export {
