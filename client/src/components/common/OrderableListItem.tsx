@@ -60,7 +60,7 @@ const OrderableListItem = ({
     <ListItem sx={listItemStyle} ref={setNodeRef} style={listItemCSSStyle}>
       <ListItemText primary={itemName} />
       <Box display="flex" alignItems="center" gap="10px">
-        {numericInput !== undefined && (
+        {typeof numericInput !== "undefined" && (
           <Input
             notFullWidth
             required

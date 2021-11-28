@@ -46,46 +46,65 @@ const formFooterStyle: SxProps = {
 };
 
 export const checkRarities = (
-  state: FormStateI,
+  layer: LayerI,
   showFormAlert: (severity: AlertColor, message: string) => void
 ): boolean => {
-  for (const layer of state.generative.layers) {
-    let totalRarity = 0;
-    for (const imageId in layer.images) {
-      const image = layer.images[imageId];
-      if (!image || !image.rarity) {
-        showFormAlert(
-          "warning",
-          `Please type in a rarity for image ${image?.name} in layer ${layer.name}`
-        );
-        return false;
-      }
-      totalRarity += Number(image.rarity);
-    }
-    if (totalRarity !== 1) {
+  let totalRarity = 0;
+  for (const imageId in layer.images) {
+    const image = layer.images[imageId];
+    if (!image || !image.rarity) {
       showFormAlert(
         "warning",
-        `All your rarities should add up to 1 for layer ${layer.name}`
+        `Please type in a rarity for image ${image?.name} in layer ${layer.name}`
       );
       return false;
     }
+    totalRarity += Number(image.rarity);
+  }
+  if (totalRarity !== 1) {
+    showFormAlert(
+      "warning",
+      `All your rarities should add up to 1 for layer ${layer.name}`
+    );
+    return false;
   }
   return true;
 };
 
 export const checkChance = (
-  state: FormStateI,
+  numberOfTiers: number,
+  tiers: TierI[],
   showFormAlert: (severity: AlertColor, message: string) => void
 ): boolean => {
+  if (numberOfTiers <= 0) {
+    showFormAlert("warning", "You need atleast one Tier to proceed.");
+    return false;
+  }
+  const REQUIRED_CHANCE = 100;
   let totalChance = 0;
-  for (const tier of state.generative.tiers) {
+  for (const tier of tiers) {
     totalChance += Number(tier.probability);
   }
-  if (totalChance !== 100) {
-    showFormAlert("warning", `All your Tiers should add up to 100`);
+  if (totalChance !== REQUIRED_CHANCE) {
+    showFormAlert(
+      "warning",
+      `All your Tiers should add up to ${REQUIRED_CHANCE}`
+    );
     return false;
   }
   return true;
+};
+
+export const uploadGenImages = (
+  state: FormStateI,
+  showFormAlert: (severity: AlertColor, message: string) => void
+): void => {
+  for (const layer of state.generative.layers) {
+    if (!checkRarities(layer, showFormAlert)) {
+      return;
+    }
+  }
+  // TODO: Add logic for generative uploads here
 };
 
 // eslint-disable-next-line max-lines-per-function
@@ -279,22 +298,38 @@ const CreateCollectionForm = (): JSX.Element => {
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!IS_LAST_STEP) {
-      handleNextStep();
-      return;
-    }
 
     if (!active || !account || !chainId) {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
 
-    if (generative) {
-      if (!checkRarities(state, showFormAlert)) {
+    if (!IS_LAST_STEP) {
+      const TIER_UPLOAD_PAGE = 2;
+      const LAYER_SELECTION_PAGE = 3;
+      if (
+        stepNumber === LAYER_SELECTION_PAGE &&
+        state.generative.numberOfLayers <= 0
+      ) {
+        showFormAlert("warning", "You need atleast one layer to proceed.");
         return;
       }
+      if (
+        stepNumber === TIER_UPLOAD_PAGE &&
+        !checkChance(
+          state.generative.numberOfTiers,
+          state.generative.tiers,
+          showFormAlert
+        )
+      ) {
+        return;
+      }
+      handleNextStep();
+      return;
+    }
 
-      // TODO: Add logic for generative uploads here
+    if (generative) {
+      uploadGenImages(state, showFormAlert);
       return;
     }
 

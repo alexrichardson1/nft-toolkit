@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import Input from "components/common/Input";
 
 interface PropsT {
-  onKeyPress: any;
+  onKeyPress: React.KeyboardEventHandler<HTMLDivElement>;
   text: string;
   placeholder: string;
   label: string;
@@ -21,7 +21,7 @@ const OrderableListInput = ({
   required,
   onChange,
   onClick,
-}: PropsT) => {
+}: PropsT): JSX.Element => {
   return (
     <Box
       display="flex"

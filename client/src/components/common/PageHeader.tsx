@@ -4,7 +4,7 @@ interface PropsT {
   text: string;
 }
 
-const PageHeader = ({ text }: PropsT) => {
+const PageHeader = ({ text }: PropsT): JSX.Element => {
   return (
     <Typography
       variant="h4"

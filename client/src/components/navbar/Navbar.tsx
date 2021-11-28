@@ -13,6 +13,7 @@ import NetworkSpeedDial from "components/common/Networks";
 import Wallet from "components/wallet/Wallet";
 import ThemeContext from "context/theme/ThemeContext";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { NAVBAR_HEIGHT } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
 import MobileMenu from "../common/MobileMenu";
@@ -91,7 +92,13 @@ const Navbar = (): JSX.Element => {
     <Box flexGrow={1}>
       <AppBar sx={appBarStyle} position="sticky">
         <Toolbar sx={toolbarStyle}>
-          <Typography color="primary" variant="h3" noWrap component="div">
+          <Typography
+            sx={{ textDecoration: "none" }}
+            component={Link}
+            to="/"
+            color="primary"
+            variant="h3"
+            noWrap>
             NFToolkit
           </Typography>
           <Box flexGrow={1} />
