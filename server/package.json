@@ -34,9 +34,10 @@
     "chai-http": "^4.3.0",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.7",
+    "glob-parent": "^5.1.2",
     "hardhat": "^2.6.5",
-    "json-schema": "^0.4.0",
     "jest": "^27.3.1",
+    "json-schema": "^0.4.0",
     "lodash": "^4.17.21",
     "mocha": "^9.1.2",
     "mongodb-memory-server": "^7.5.1",
@@ -50,8 +51,7 @@
     "tsconfig-paths": "^3.11.0",
     "tscpaths": "^0.0.9",
     "typechain": "^5.2.0",
-    "typescript": "^4.4.4",
-    "glob-parent": "^5.1.2"
+    "typescript": "^4.4.4"
   },
   "nodemonConfig": {
     "ignore": [
@@ -99,6 +99,7 @@
     "@types/sharp": "^0.29.4",
     "ansi-regex": "^5.0.1",
     "aws-sdk": "^2.1013.0",
+    "axios": "^0.24.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
