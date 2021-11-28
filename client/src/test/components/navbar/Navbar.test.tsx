@@ -2,6 +2,7 @@ import Navbar from "components/navbar/Navbar";
 import NetworkProvider from "context/network/NetworkProvider";
 import ThemeProvider from "context/theme/ThemeProvider";
 import { mount, ReactWrapper } from "enzyme";
+import { BrowserRouter as Router } from "react-router-dom";
 
 describe("Navbar tests", () => {
   let tree: ReactWrapper<
@@ -14,7 +15,9 @@ describe("Navbar tests", () => {
     tree = mount(
       <ThemeProvider>
         <NetworkProvider>
-          <Navbar />
+          <Router>
+            <Navbar />
+          </Router>
         </NetworkProvider>
       </ThemeProvider>
     );

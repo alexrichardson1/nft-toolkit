@@ -5097,7 +5097,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                     position="end"
                                                   >
                                                     <InfoTooltip
-                                                      text="Add explanation here..."
+                                                      text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                     />
                                                   </ForwardRef(InputAdornment)>,
                                                   "inputProps": Object {
@@ -5125,7 +5125,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                       position="end"
                                                     >
                                                       <InfoTooltip
-                                                        text="Add explanation here..."
+                                                        text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                       />
                                                     </ForwardRef(InputAdornment)>,
                                                     "inputProps": Object {
@@ -5161,7 +5161,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                           position="end"
                                                         >
                                                           <InfoTooltip
-                                                            text="Add explanation here..."
+                                                            text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                           />
                                                         </ForwardRef(InputAdornment)>,
                                                         "inputProps": Object {
@@ -5223,7 +5223,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                   position="end"
                                                                 >
                                                                   <InfoTooltip
-                                                                    text="Add explanation here..."
+                                                                    text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                   />
                                                                 </ForwardRef(InputAdornment)>
                                                               }
@@ -5401,7 +5401,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                               position="end"
                                                             >
                                                               <InfoTooltip
-                                                                text="Add explanation here..."
+                                                                text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                               />
                                                             </ForwardRef(InputAdornment)>
                                                           }
@@ -5482,7 +5482,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                 position="end"
                                                               >
                                                                 <InfoTooltip
-                                                                  text="Add explanation here..."
+                                                                  text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                 />
                                                               </ForwardRef(InputAdornment)>
                                                             }
@@ -5906,7 +5906,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                     position="end"
                                                                   >
                                                                     <InfoTooltip
-                                                                      text="Add explanation here..."
+                                                                      text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                     />
                                                                   </ForwardRef(InputAdornment)>,
                                                                   "error": false,
@@ -6033,7 +6033,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                         position="end"
                                                                       >
                                                                         <InfoTooltip
-                                                                          text="Add explanation here..."
+                                                                          text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                         />
                                                                       </ForwardRef(InputAdornment)>,
                                                                       "error": false,
@@ -6115,7 +6115,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                     ownerState={
                                                                       Object {
                                                                         "children": <InfoTooltip
-                                                                          text="Add explanation here..."
+                                                                          text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                         />,
                                                                         "disablePointerEvents": false,
                                                                         "hiddenLabel": false,
@@ -6130,15 +6130,15 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                       className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                                                     >
                                                                       <InfoTooltip
-                                                                        text="Add explanation here..."
+                                                                        text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                       >
                                                                         <ForwardRef(Tooltip)
                                                                           arrow={true}
                                                                           placement="top"
-                                                                          title="Add explanation here..."
+                                                                          title="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                         >
                                                                           <ForwardRef(InfoIcon)
-                                                                            aria-label="Add explanation here..."
+                                                                            aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                             aria-labelledby={null}
                                                                             className=""
                                                                             color="primary"
@@ -6151,7 +6151,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                             onTouchStart={[Function]}
                                                                           >
                                                                             <ForwardRef(SvgIcon)
-                                                                              aria-label="Add explanation here..."
+                                                                              aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                               aria-labelledby={null}
                                                                               className=""
                                                                               color="primary"
@@ -6166,7 +6166,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                             >
                                                                               <MuiSvgIconRoot
                                                                                 aria-hidden={true}
-                                                                                aria-label="Add explanation here..."
+                                                                                aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                                 aria-labelledby={null}
                                                                                 as="svg"
                                                                                 className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium"
@@ -6181,7 +6181,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                                 onTouchStart={[Function]}
                                                                                 ownerState={
                                                                                   Object {
-                                                                                    "aria-label": "Add explanation here...",
+                                                                                    "aria-label": "Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer.",
                                                                                     "aria-labelledby": null,
                                                                                     "children": <path
                                                                                       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
@@ -6206,7 +6206,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                                 <Noop />
                                                                                 <svg
                                                                                   aria-hidden={true}
-                                                                                  aria-label="Add explanation here..."
+                                                                                  aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                                   aria-labelledby={null}
                                                                                   className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                   data-mui-internal-clone-element={true}
@@ -6231,7 +6231,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                             anchorEl={
                                                                               <svg
                                                                                 aria-hidden="true"
-                                                                                aria-label="Add explanation here..."
+                                                                                aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                                 class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                 data-mui-internal-clone-element="true"
                                                                                 data-testid="InfoIcon"
@@ -6263,7 +6263,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                               }
                                                                             }
                                                                             className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow"
-                                                                            id="mui-58346975"
+                                                                            id="mui-572045458"
                                                                             onBlur={[Function]}
                                                                             onFocus={[Function]}
                                                                             onMouseLeave={[Function]}
@@ -6279,7 +6279,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                                 "disableInteractive": false,
                                                                                 "isRtl": false,
                                                                                 "placement": "top",
-                                                                                "title": "Add explanation here...",
+                                                                                "title": "Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer.",
                                                                                 "touch": false,
                                                                               }
                                                                             }
@@ -6310,7 +6310,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                               anchorEl={
                                                                                 <svg
                                                                                   aria-hidden="true"
-                                                                                  aria-label="Add explanation here..."
+                                                                                  aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                                   class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                   data-mui-internal-clone-element="true"
                                                                                   data-testid="InfoIcon"
@@ -6323,7 +6323,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                                 </svg>
                                                                               }
                                                                               className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
-                                                                              id="mui-58346975"
+                                                                              id="mui-572045458"
                                                                               onBlur={[Function]}
                                                                               onFocus={[Function]}
                                                                               onMouseLeave={[Function]}
@@ -6355,7 +6355,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                                 anchorEl={
                                                                                   <svg
                                                                                     aria-hidden="true"
-                                                                                    aria-label="Add explanation here..."
+                                                                                    aria-label="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed)  for the chance that this image is randomly minted for this layer."
                                                                                     class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                     data-mui-internal-clone-element="true"
                                                                                     data-testid="InfoIcon"
@@ -6369,7 +6369,7 @@ exports[`OrderableListItem snapshots not isLoading and number of images > 0 1`] 
                                                                                 }
                                                                                 className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
                                                                                 direction="ltr"
-                                                                                id="mui-58346975"
+                                                                                id="mui-572045458"
                                                                                 onBlur={[Function]}
                                                                                 onFocus={[Function]}
                                                                                 onMouseLeave={[Function]}
