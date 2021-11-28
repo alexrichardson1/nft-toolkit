@@ -1,6 +1,6 @@
+import { s3 } from "@controllers/common";
 import { Collection, CollectionT, Layer, Token } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
-import { S3 } from "aws-sdk";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
 import { RequestHandler } from "express";
@@ -9,13 +9,6 @@ import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 
 dotenv.config();
-
-const s3 = new S3({
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  },
-});
 
 export const uploadImages = multer({
   storage: multerS3({
