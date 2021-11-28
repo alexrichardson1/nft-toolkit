@@ -83,14 +83,36 @@ interface FormActionI {
   payload: FormActionPayloadI;
 }
 
-const addImagesGen = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.newImagesGen) {
-    throw new Error("newImagesGen required");
+/**
+ * Checks if `value` is undefined. Used for type narrowing from `T | undefined` to `T`
+ * @param value - Any value
+ * @param message - Error message if value is `undefined`
+ * @throws - Error with `message`
+ * @returns `value` with type T
+ */
+const undefinedCheck = <T>(value: T | undefined, message: string): T => {
+  if (!value) {
+    throw new Error(message);
   }
+  return value;
+};
+
+const containsDuplicates = (name: string, items: { name: string }[]) => {
+  const newName = name.toLowerCase();
+  return items.find(
+    (item: { name: string }) => item.name.toLowerCase() === newName
+  );
+};
+
+const addImagesGen = (action: FormActionI, state: FormStateI) => {
+  const imgsToAdd = undefinedCheck(
+    action.payload.newImagesGen,
+    "nImagesGen required"
+  );
   state.generative.layers.forEach((layer) => {
-    if (layer.name === action.payload.newImagesGen?.layerName) {
+    if (layer.name === imgsToAdd.layerName) {
       let newImages = 0;
-      action.payload.newImagesGen.images.forEach((newImg) => {
+      imgsToAdd.images.forEach((newImg) => {
         const newImgId = getImgId(newImg.name, newImg.size);
         if (!(newImgId in layer.images)) {
           layer.images[newImgId] = { ...getImgObj(newImg), rarity: "" };
@@ -122,42 +144,45 @@ const addImagesStatic = (action: FormActionI, state: FormStateI) => {
 };
 
 const changeImageNameStatic = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.modifyImgObjStatic) {
-    throw new Error("modifyImgObj required");
-  }
-  const img = state.static.images[action.payload.modifyImgObjStatic.imageId];
-  if (!img) {
-    throw new Error("Image does not exist");
-  }
-  img.name = action.payload.modifyImgObjStatic.newImageName;
+  const modifyImgObj = undefinedCheck(
+    action.payload.modifyImgObjStatic,
+    "modifyImgObjStatic required"
+  );
+  const img = undefinedCheck(
+    state.static.images[modifyImgObj.imageId],
+    "Relevant Image not present"
+  );
+  img.name = modifyImgObj.newImageName;
   return { ...state };
 };
 
 const changeImageNameGen = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.modifyImgObjGen) {
-    throw new Error("modifyImgObjGen required");
-  }
+  const modifyImgGen = undefinedCheck(
+    action.payload.modifyImgObjGen,
+    "modifyImgObjGen required"
+  );
   state.generative.layers.forEach((layer) => {
-    if (layer.name === action.payload.modifyImgObjGen?.layerName) {
-      const img = layer.images[action.payload.modifyImgObjGen.imageId];
+    if (layer.name === modifyImgGen.layerName) {
+      const img = layer.images[modifyImgGen.imageId];
 
       if (!img) {
         throw new Error("Image not found");
       }
-      img.name = action.payload.modifyImgObjGen.newImageName;
+      img.name = modifyImgGen.newImageName;
     }
   });
   return { ...state };
 };
 
 const deleteImageGen = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.deleteGen) {
-    throw new Error("deleteGen required");
-  }
+  const deleteObjGen = undefinedCheck(
+    action.payload.deleteGen,
+    "deleteGen required"
+  );
   state.generative.layers.forEach((layer) => {
-    if (layer.name === action.payload.deleteGen?.layerName) {
-      const imgUrl = layer.images[action.payload.deleteGen.deleteId]?.url;
-      delete layer.images[action.payload.deleteGen.deleteId];
+    if (layer.name === deleteObjGen.layerName) {
+      const imgUrl = layer.images[deleteObjGen.deleteId]?.url;
+      delete layer.images[deleteObjGen.deleteId];
       layer.numberOfImages--;
       if (imgUrl) {
         URL.revokeObjectURL(imgUrl);
@@ -168,27 +193,26 @@ const deleteImageGen = (action: FormActionI, state: FormStateI) => {
 };
 
 const changeImageDesc = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.imageDescChange) {
-    throw new Error("imageDescChange required");
-  }
-
-  const img = state.static.images[action.payload.imageDescChange.imageId];
-  if (!img) {
-    throw new Error("Image does not exist");
-  }
-  img.description = action.payload.imageDescChange.newDesc;
+  const imgDescChange = undefinedCheck(
+    action.payload.imageDescChange,
+    "imageDescChange required"
+  );
+  const img = undefinedCheck(
+    state.static.images[imgDescChange.imageId],
+    "Image does not exist"
+  );
+  img.description = imgDescChange.newDesc;
   return { ...state };
 };
 
 const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.deleteId) {
-    throw new Error("deleteId required");
-  }
-  const imgUrl = state.static.images[action.payload.deleteId]?.url;
-  delete state.static.images[action.payload.deleteId];
+  const deleteId = undefinedCheck(action.payload.deleteId, "deleteId required");
+  const imgUrl = state.static.images[deleteId]?.url;
+  delete state.static.images[deleteId];
   if (imgUrl) {
     URL.revokeObjectURL(imgUrl);
   }
+
   return {
     ...state,
     static: {
@@ -199,17 +223,18 @@ const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
 };
 
 const changeRarity = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.rarityChange) {
-    throw new Error("rarityChange required");
-  }
+  const rarityChange = undefinedCheck(
+    action.payload.rarityChange,
+    "rarityChange required"
+  );
 
   state.generative.layers.forEach((layer) => {
-    if (layer.name === action.payload.rarityChange?.layerName) {
-      const img = layer.images[action.payload.rarityChange.imageId];
+    if (layer.name === rarityChange.layerName) {
+      const img = layer.images[rarityChange.imageId];
       if (!img) {
         throw new Error("Image does not exist");
       }
-      img.rarity = action.payload.rarityChange.newRarity;
+      img.rarity = rarityChange.newRarity;
     }
   });
 
@@ -217,46 +242,41 @@ const changeRarity = (action: FormActionI, state: FormStateI) => {
 };
 
 const changeTierProb = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.tierProbabilityChange) {
-    throw new Error("tierProbabilityChange required");
-  }
+  const tierProbabilityChange = undefinedCheck(
+    action.payload.tierProbabilityChange,
+    "tierProbabilityChange required"
+  );
   state.generative.tiers.forEach((tier) => {
-    if (tier.name === action.payload.tierProbabilityChange?.tierName) {
-      tier.probability = action.payload.tierProbabilityChange.newProbability;
+    if (tier.name === tierProbabilityChange.tierName) {
+      tier.probability = tierProbabilityChange.newProbability;
     }
   });
   return { ...state };
 };
 
 const addLayer = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.newLayer) {
-    throw new Error("newLayer required");
-  }
-  if (
-    state.generative.layers.find(
-      (layer) => layer.name === action.payload.newLayer?.name
-    )
-  ) {
+  const newLayer = undefinedCheck(action.payload.newLayer, "newLayer required");
+
+  if (containsDuplicates(newLayer.name, state.generative.layers)) {
     return { ...state };
   }
+
   return {
     ...state,
     generative: {
       ...state.generative,
-      layers: [
-        ...state.generative.layers,
-        getLayerObj(action.payload.newLayer.name),
-      ],
+      layers: [...state.generative.layers, getLayerObj(newLayer.name)],
       numberOfLayers: state.generative.numberOfLayers + 1,
     },
   };
 };
 
 const changeLayerPrecedence = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.dragEndEvent) {
-    throw new Error("dragEndEvent required");
-  }
-  const { active, over } = action.payload.dragEndEvent;
+  const dragEndEvent = undefinedCheck(
+    action.payload.dragEndEvent,
+    "dragEndEvent required"
+  );
+  const { active, over } = dragEndEvent;
   if (!over) {
     return { ...state };
   }
@@ -277,11 +297,12 @@ const changeLayerPrecedence = (action: FormActionI, state: FormStateI) => {
 };
 
 const removeLayer = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.deleteLayerName) {
-    throw new Error("deleteLayerName required");
-  }
+  const deleteLayerName = undefinedCheck(
+    action.payload.deleteLayerName,
+    "deleteLayerName required"
+  );
   state.generative.layers = state.generative.layers.filter((layer) => {
-    if (layer.name !== action.payload.deleteLayerName) {
+    if (layer.name !== deleteLayerName) {
       return true;
     }
     Object.values(layer.images).map((image) => URL.revokeObjectURL(image.url));
@@ -297,11 +318,12 @@ const removeLayer = (action: FormActionI, state: FormStateI) => {
 };
 
 const removeTier = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.deleteTierName) {
-    throw new Error("deleteTierName required");
-  }
+  const deleteTierName = undefinedCheck(
+    action.payload.deleteTierName,
+    "deleteTierName required"
+  );
   state.generative.tiers = state.generative.tiers.filter(
-    (tier) => tier.name !== action.payload.deleteTierName
+    (tier) => tier.name !== deleteTierName
   );
   return {
     ...state,
@@ -313,34 +335,28 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
 };
 
 const addTier = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.newTier) {
-    throw new Error("newTier required");
-  }
-  if (
-    state.generative.tiers.find(
-      (tier) => tier.name === action.payload.newTier?.name
-    )
-  ) {
+  const newTier = undefinedCheck(action.payload.newTier, "newTier required");
+
+  if (containsDuplicates(newTier.name, state.generative.tiers)) {
     return { ...state };
   }
+
   return {
     ...state,
     generative: {
       ...state.generative,
-      tiers: [
-        ...state.generative.tiers,
-        getTierObj(action.payload.newTier.name),
-      ],
+      tiers: [...state.generative.tiers, getTierObj(newTier.name)],
       numberOfTiers: state.generative.numberOfTiers + 1,
     },
   };
 };
 
 const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
-  if (!action.payload.dragEndEvent) {
-    throw new Error("dragEndEvent required");
-  }
-  const { active, over } = action.payload.dragEndEvent;
+  const dragEndEvent = undefinedCheck(
+    action.payload.dragEndEvent,
+    "dragEndEvent required"
+  );
+  const { active, over } = dragEndEvent;
   if (!over) {
     return { ...state };
   }
