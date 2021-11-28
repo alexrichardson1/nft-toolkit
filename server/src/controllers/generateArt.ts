@@ -22,10 +22,15 @@ interface GenCollectionI {
   layers: LayerI[];
 }
 
+interface AttributeI {
+  [key: string]: string;
+}
+
 interface GeneratedImageI {
   hash: string;
   images: [number, string][];
   rarity: number;
+  attributes: AttributeI;
 }
 
 interface GeneratedCollectionI {
@@ -59,6 +64,7 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
   let layerIndex = 0;
   let rarity = 1;
   const oneHundred = 100;
+  const attributes: AttributeI = {};
   collection.layers.forEach((layer) => {
     const includeLayer = generateRandomPercentage() <= layer.rarity;
     if (includeLayer) {
@@ -66,6 +72,7 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
 
       hash += `${layer.name}/${chosenImage.name},`;
       chosenLayerImages[layerIndex++] = [chosenIndex, chosenImage.name];
+      attributes[layer.name] = chosenImage.name;
       rarity *= layer.rarity;
       rarity *= chosenImage.rarity / (oneHundred * oneHundred);
     } else {
@@ -77,6 +84,7 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
     hash: hash,
     images: chosenLayerImages,
     rarity: rarity * oneHundred,
+    attributes,
   };
 }
 
@@ -108,21 +116,18 @@ async function compileOneImage(
   layerBuffers: LayerBuffersI,
   index: number
 ): Promise<ImageI> {
-  let resultImage = null;
+  let resultImage: sharp.Sharp | undefined;
 
-  const composites = [];
-  for (let i = 0; i < generatedImage.images.length; i++) {
-    const image = generatedImage.images[i];
-    if (!image) {
-      throw new Error("Cannot compile image when none is given");
-    }
-    const buffer = layerBuffers[image[1]]?.[image[0]];
-    if (resultImage) {
+  const composites: sharp.OverlayOptions[] = [];
+  generatedImage.images.forEach(([layerIndex, layerName], index) => {
+    const buffer = layerBuffers[layerName]?.[layerIndex];
+    if (index) {
       composites.push({ input: buffer });
     } else {
       resultImage = sharp(buffer);
     }
-  }
+  });
+
   if (!resultImage) {
     throw new Error("Cannot compile image when none is given");
   }
