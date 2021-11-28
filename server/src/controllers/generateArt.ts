@@ -1,5 +1,6 @@
 import axios from "axios";
 import sharp from "sharp";
+import { s3 } from "./common";
 
 interface ImageI {
   name: string;
@@ -27,18 +28,12 @@ interface GeneratedImageI {
   rarity: number;
 }
 
-interface CompiledImageI {
-  hash: string;
-  image: Buffer;
-  rarity: number;
-}
-
 interface GeneratedCollectionI {
   name: string;
   symbol: string;
   description: string;
   quantity: number;
-  images: GeneratedImageI[];
+  images: ImageI[];
 }
 
 function generateRandomPercentage() {
@@ -108,52 +103,11 @@ export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
   return res;
 }
 
-/**
- * PRE: Layer images are assumed to be of equal dimensions, so that we don't
- * have to positition any features ourselves
- * @param collection - Collection of picture layers
- */
-function generate(collection: GenCollectionI): GeneratedCollectionI {
-  let numPossibleCombinations = 1;
-  collection.layers.forEach((layer) => {
-    numPossibleCombinations *= layer.images.length;
-  });
-
-  if (numPossibleCombinations < collection.quantity) {
-    throw new Error(
-      "There are less possible combinations than quantity requested"
-    );
-  }
-
-  const generatedImages: GeneratedImageI[] = [];
-  const generatedHashes = new Set();
-  // const layerBuffers = await getImages(collection.layers);
-
-  for (let i = 0; i < collection.quantity; i++) {
-    const generatedImage = generateOneCombination(collection);
-
-    if (generatedHashes.has(generatedImage.hash)) {
-      // Duplicate made - repeat loop
-      i--;
-      continue;
-    }
-
-    generatedImages.push(generatedImage);
-    generatedHashes.add(generatedImage.hash);
-  }
-  return {
-    name: collection.name,
-    symbol: collection.symbol,
-    description: collection.description,
-    quantity: collection.quantity,
-    images: generatedImages,
-  };
-}
-
 async function compileOneImage(
   generatedImage: GeneratedImageI,
-  layerBuffers: LayerBuffersI
-): Promise<CompiledImageI> {
+  layerBuffers: LayerBuffersI,
+  index: number
+): Promise<ImageI> {
   let resultImage = null;
 
   const composites = [];
@@ -175,10 +129,60 @@ async function compileOneImage(
 
   resultImage.composite(composites);
   const buffer = await resultImage.toBuffer({ resolveWithObject: true });
+  s3.upload({
+    Bucket: "nft-toolkit-collections",
+    Body: buffer.data,
+    // TODO: Add folder name
+    Key: `${index}.png`,
+  });
   return {
-    hash: generatedImage.hash,
-    image: buffer.data,
+    name: "",
+    image: "",
     rarity: generatedImage.rarity,
+  };
+}
+
+/**
+ * PRE: Layer images are assumed to be of equal dimensions, so that we don't
+ * have to positition any features ourselves
+ * @param collection - Collection of picture layers
+ */
+async function generate(
+  collection: GenCollectionI
+): Promise<GeneratedCollectionI> {
+  let numPossibleCombinations = 1;
+  collection.layers.forEach((layer) => {
+    numPossibleCombinations *= layer.images.length;
+  });
+
+  if (numPossibleCombinations < collection.quantity) {
+    throw new Error(
+      "There are less possible combinations than quantity requested"
+    );
+  }
+
+  const generatedImages = [];
+  const generatedHashes = new Set();
+  const layerBuffers = await getImages(collection.layers);
+
+  for (let i = 0; i < collection.quantity; i++) {
+    const generatedImage = generateOneCombination(collection);
+
+    if (generatedHashes.has(generatedImage.hash)) {
+      // Duplicate made - repeat loop
+      i--;
+      continue;
+    }
+
+    generatedImages.push(compileOneImage(generatedImage, layerBuffers, i));
+    generatedHashes.add(generatedImage.hash);
+  }
+  return {
+    name: collection.name,
+    symbol: collection.symbol,
+    description: collection.description,
+    quantity: collection.quantity,
+    images: await Promise.all(generatedImages),
   };
 }
 
