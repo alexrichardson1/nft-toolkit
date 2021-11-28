@@ -3,6 +3,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "solidity-coverage";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   solidity: {
     version: "0.8.0",
