@@ -3,7 +3,16 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "react-app",
+    "plugin:react-hooks/recommended"
+    // "plugin:import/recommended",
+    // "plugin:import/typescript"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -12,7 +21,12 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "eslint-plugin-tsdoc"
+  ],
   "ignorePatterns": [],
   "rules": {
     // Possible Problems
@@ -90,7 +104,11 @@
     "jsx-quotes": ["error", "prefer-double"],
     "line-comment-position": ["warn", { "position": "above" }],
     "no-multi-spaces": "error",
+    // React Hooks
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
     // Other
+    "react/react-in-jsx-scope": "off",
     "tsdoc/syntax": "warn"
   },
   "root": true
