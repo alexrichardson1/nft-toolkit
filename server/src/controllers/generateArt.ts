@@ -58,14 +58,14 @@ function chooseLayerImage(images: ImageI[]): [number, ImageI] {
   throw new Error("Could not choose image");
 }
 
-function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
+function generateOneCombination(layers: LayerI[]): GeneratedImageI {
   const chosenLayerImages: [number, string][] = [];
   let hash = "";
   let layerIndex = 0;
   let rarity = 1;
   const oneHundred = 100;
   const attributes: AttributeI = {};
-  collection.layers.forEach((layer) => {
+  layers.forEach((layer) => {
     const includeLayer = generateRandomPercentage() <= layer.rarity;
     if (includeLayer) {
       const [chosenIndex, chosenImage] = chooseLayerImage(layer.images);
@@ -152,15 +152,13 @@ async function compileOneImage(
  * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
-async function generate(
-  collection: GenCollectionI
-): Promise<GeneratedCollectionI> {
+async function generate(quantity: number, layers: LayerI[]): Promise<ImageI[]> {
   let numPossibleCombinations = 1;
-  collection.layers.forEach((layer) => {
+  layers.forEach((layer) => {
     numPossibleCombinations *= layer.images.length;
   });
 
-  if (numPossibleCombinations < collection.quantity) {
+  if (numPossibleCombinations < quantity) {
     throw new Error(
       "There are less possible combinations than quantity requested"
     );
@@ -168,10 +166,10 @@ async function generate(
 
   const generatedImages = [];
   const generatedHashes = new Set();
-  const layerBuffers = await getImages(collection.layers);
+  const layerBuffers = await getImages(layers);
 
-  for (let i = 0; i < collection.quantity; i++) {
-    const generatedImage = generateOneCombination(collection);
+  for (let i = 0; i < quantity; i++) {
+    const generatedImage = generateOneCombination(layers);
 
     if (generatedHashes.has(generatedImage.hash)) {
       // Duplicate made - repeat loop
@@ -182,13 +180,7 @@ async function generate(
     generatedImages.push(compileOneImage(generatedImage, layerBuffers, i));
     generatedHashes.add(generatedImage.hash);
   }
-  return {
-    name: collection.name,
-    symbol: collection.symbol,
-    description: collection.description,
-    quantity: collection.quantity,
-    images: await Promise.all(generatedImages),
-  };
+  return Promise.all(generatedImages);
 }
 
 export {
