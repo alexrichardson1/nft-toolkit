@@ -31,8 +31,8 @@ const App = (): JSX.Element => {
 
   return (
     <>
-      <Navbar />
       <Router>
+        <Navbar />
         <Switch>
           <Box sx={mainContainerStyle}>
             <Container sx={containerStyle}>
