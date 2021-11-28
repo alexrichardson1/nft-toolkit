@@ -44,8 +44,8 @@ interface PropsT {
  * Renders a vertical tabs component
  *
  * @param imgObjs - image objects to render
- * @params NUMBER_OF_IMAGES - number of images
- * @params isLoading - true if form is in loading state, false otherwise
+ * @param NUMBER_OF_IMAGES - number of images
+ * @param isLoading - true if form is in loading state, false otherwise
  * @param handleImageDelete - handles image delete
  * @param handleImgDescChange - handles image description change
  * @param handleNameChange - handles image name change
@@ -107,7 +107,7 @@ const VerticalTabs = ({
               inputProps={{ "data-testid": "nft-name-input" }}
               onChange={(e) => handleNameChange(e, imgId)}
             />
-            {handleImgRarityChange !== undefined && (
+            {typeof handleImgRarityChange !== "undefined" && (
               <Input
                 type="number"
                 InputProps={{
@@ -139,7 +139,7 @@ const VerticalTabs = ({
               />
             </IconButton>
           </Box>
-          {handleImgDescChange !== undefined && (
+          {typeof handleImgDescChange !== "undefined" && (
             <Input
               onChange={(e) => handleImgDescChange(e, imgId)}
               label="Description"

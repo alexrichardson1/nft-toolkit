@@ -6,8 +6,10 @@ import PageHeader from "components/common/PageHeader";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
 
-const TIER_SELECTION_STEP_NUMBER = 2;
+const TIER_SELECT_STEP_NUMBER = 2;
 const MINIMUM_TIERS_REQUIRED = 1;
+const CHANCE_INPUT_INFO =
+  "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance an NFT from this rarity tier is randomly minted";
 
 interface PropsT {
   state: FormStateI;
@@ -27,10 +29,10 @@ const TierSelectionStep = ({
   handleTierRemoval,
   handleTierAdd,
   handleTierProbChange,
-}: PropsT) => {
+}: PropsT): JSX.Element => {
   const [text, setText] = useState("");
 
-  if (wrongStepGenerative(generative, stepNumber, TIER_SELECTION_STEP_NUMBER)) {
+  if (wrongStepGenerative(generative, stepNumber, TIER_SELECT_STEP_NUMBER)) {
     return <></>;
   }
 
@@ -56,13 +58,13 @@ const TierSelectionStep = ({
         items={state.generative.tiers}>
         {state.generative.tiers.map((tier) => (
           <OrderableListItem
+            key={tier.name}
             itemName={tier.name}
             id={tier.name}
             handleItemRemoval={handleTierRemoval}
             numericInput={{
-              tooltipText:
-                "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance an NFT from this rarity tier is randomly minted",
-              numberInputLabel: "Chance",
+              tooltipText: CHANCE_INPUT_INFO,
+              numberInputLabel: "Chance (%)",
               numberInputValue: tier.probability,
               handleNumberInputChange: handleTierProbChange(tier.name),
             }}
