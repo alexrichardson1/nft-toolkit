@@ -59,7 +59,7 @@ function generateOneCombination(layers: LayerI[]): GeneratedImageI {
       const [chosenIndex, chosenImage] = chooseLayerImage(layer.images);
 
       hash += `${layer.name}/${chosenImage.name},`;
-      chosenLayerImages[layerIndex++] = [chosenIndex, chosenImage.name];
+      chosenLayerImages[layerIndex++] = [chosenIndex, layer.name];
       // eslint-disable-next-line camelcase
       attributes.push({ trait_type: layer.name, value: chosenImage.name });
       rarity *= layer.rarity;
@@ -125,11 +125,19 @@ async function compileOneImage(
   resultImage.composite(composites);
   const buffer = await resultImage.toBuffer();
   const uploadKey = `${creator}/${name}/images/${index}.png`;
-  s3.upload({
-    Bucket: "nft-toolkit-collections",
-    Body: buffer,
-    Key: uploadKey,
-  });
+  s3.upload(
+    {
+      Bucket: "nft-toolkit-collections",
+      Body: buffer,
+      Key: uploadKey,
+      ACL: "public-read",
+    },
+    (err) => {
+      if (err) {
+        console.error("S3 upload error", err);
+      }
+    }
+  );
 
   return {
     name: `${name} ${index}`,
