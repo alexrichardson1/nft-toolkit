@@ -12,6 +12,12 @@ export const invalidChainId = check("chainId")
   .isNumeric()
   .withMessage("Invalid chainId");
 
+export const invalidTokens: ValidationChain = check("tokens")
+  .custom(areTokensValid)
+  .withMessage("Must have at least one NFT in collection.");
+
+export const invalidLayers = check("layers").isArray();
+
 export const collectionValidator: ValidationChain[] = [
   check("name")
     .notEmpty()
@@ -20,12 +26,8 @@ export const collectionValidator: ValidationChain[] = [
   check("symbol").notEmpty().isAlphanumeric(),
   check("description").notEmpty().escape(),
   check("price").isNumeric(),
-  check("tokens")
-    .custom(areTokensValid)
-    .withMessage("Must have at least one NFT in collection."),
   invalidAddress("creator"),
   invalidChainId,
-  check("layers").isArray(),
 ];
 
 export const deployedValidator: ValidationChain[] = [
