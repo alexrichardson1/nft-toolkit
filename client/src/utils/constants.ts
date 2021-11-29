@@ -49,3 +49,7 @@ export const accessibilityProps = (
   id: `${vertical ? "vertical-" : ""}tab-${index}`,
   "aria-controls": `${vertical ? "vertical-" : ""}tabpanel-${index}`,
 });
+
+export const siderbarMenuItems = [
+  { text: "Create New Collection", location: "/" },
+];
