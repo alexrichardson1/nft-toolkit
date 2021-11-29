@@ -41,6 +41,56 @@ export const uploadImages = async (
   });
 };
 
+interface ServerLayerI {
+  name: string;
+  images: {
+    name: string;
+    rarity: number;
+    image: string;
+  }[];
+  rarity: number;
+}
+
+const toPercent = 100;
+
+export const uploadGenImages = async (
+  layers: LayerI[],
+  account: string,
+  collectionName: string
+): Promise<ServerLayerI[]> => {
+  const formData = new FormData();
+
+  const result = layers.map((layer) => {
+    const images = Object.values(layer.images).map((img, index) => {
+      const fileName = img.image.name;
+      const ext = fileName.split(".").pop();
+      const newFileName = `${index + 1}.${ext}`;
+      const newFile = new File([img.image], `${index + 1}.${ext}`, {
+        type: img.image.type,
+      });
+      const folderName = `${account}/${collectionName}/${layer.name}`;
+      formData.append(folderName, newFile);
+      return {
+        name: img.name,
+        image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${folderName}/images/${newFileName}`,
+        rarity: parseFloat(img.rarity ?? "0") * toPercent,
+      };
+    });
+
+    return {
+      images,
+      name: layer.name,
+      rarity: 100,
+    };
+  });
+
+  await axios.post(`${API_URL}/collection/images`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+
+  return result;
+};
+
 interface StateT {
   collectionName: string;
   description: string;
@@ -52,6 +102,29 @@ interface StateT {
 interface TransactionT {
   transaction: UnsignedTransaction;
 }
+
+export const uploadGenCollection = async (
+  layers: ServerLayerI[],
+  state: StateT,
+  account: string,
+  chainId: number
+): Promise<UnsignedTransaction> => {
+  const genCollection = {
+    name: state.collectionName,
+    symbol: state.symbol,
+    description: state.description,
+    price: parseUnits(state.mintingPrice).toString(),
+    chainId: chainId,
+    creator: account,
+    layers: layers,
+    // TODO: Add quantity to form
+    quantity: 1,
+  };
+
+  const res = await axios.post(`${API_URL}/collection/save-gen`, genCollection);
+  const tx: TransactionT = res.data;
+  return tx.transaction;
+};
 
 export const uploadCollection = async (
   state: StateT,
@@ -74,7 +147,6 @@ export const uploadCollection = async (
     chainId: chainId,
     tokens: tokens,
     creator: account,
-    layers: [],
   };
 
   const res = await axios.post(`${API_URL}/collection/save`, collection);
