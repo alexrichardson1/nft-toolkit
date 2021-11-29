@@ -4565,7 +4565,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                             />
                           </ForwardRef(InputAdornment)>,
                           "inputProps": Object {
-                            "min": "0",
+                            "min": 0,
                             "step": "any",
                           },
                         }
@@ -4601,7 +4601,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                           />
                         </ForwardRef(InputAdornment)>,
                         "inputProps": Object {
-                          "min": "0",
+                          "min": 0,
                           "step": "any",
                         },
                       }
@@ -4626,7 +4626,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                             />
                           </ForwardRef(InputAdornment)>,
                           "inputProps": Object {
-                            "min": "0",
+                            "min": 0,
                             "step": "any",
                           },
                         }
@@ -4659,7 +4659,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                 />
                               </ForwardRef(InputAdornment)>,
                               "inputProps": Object {
-                                "min": "0",
+                                "min": 0,
                                 "step": "any",
                               },
                             },
@@ -4723,7 +4723,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                     fullWidth={true}
                                     inputProps={
                                       Object {
-                                        "min": "0",
+                                        "min": 0,
                                         "step": "any",
                                       }
                                     }
@@ -4903,7 +4903,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                 fullWidth={true}
                                 inputProps={
                                   Object {
-                                    "min": "0",
+                                    "min": 0,
                                     "step": "any",
                                   }
                                 }
@@ -4987,7 +4987,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                   inputComponent="input"
                                   inputProps={
                                     Object {
-                                      "min": "0",
+                                      "min": 0,
                                       "step": "any",
                                     }
                                   }
@@ -5434,7 +5434,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                         "id": undefined,
                                         "inputComponent": "input",
                                         "inputProps": Object {
-                                          "min": "0",
+                                          "min": 0,
                                           "step": "any",
                                         },
                                         "inputRef": undefined,
@@ -5466,7 +5466,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                         autoFocus={false}
                                         className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd"
                                         disabled={false}
-                                        min="0"
+                                        min={0}
                                         onAnimationStart={[Function]}
                                         onBlur={[Function]}
                                         onChange={[Function]}
@@ -5561,7 +5561,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                             "id": undefined,
                                             "inputComponent": "input",
                                             "inputProps": Object {
-                                              "min": "0",
+                                              "min": 0,
                                               "step": "any",
                                             },
                                             "inputRef": undefined,
@@ -5593,7 +5593,7 @@ exports[`GeneralInfoStep Step Number matches 1`] = `
                                           autoFocus={false}
                                           className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
                                           disabled={false}
-                                          min="0"
+                                          min={0}
                                           onAnimationStart={[Function]}
                                           onBlur={[Function]}
                                           onChange={[Function]}
