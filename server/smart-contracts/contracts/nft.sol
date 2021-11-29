@@ -40,7 +40,9 @@ contract NFT is ERC721Enumerable, Ownable {
   }
 
   function char(bytes1 b) internal pure returns (bytes1 c) {
-    if (uint8(b) < 10) return bytes1(uint8(b) + 0x30);
+    if (uint8(b) < 10) {
+      return bytes1(uint8(b) + 0x30);
+    }
     return bytes1(uint8(b) + 0x57);
   }
 
