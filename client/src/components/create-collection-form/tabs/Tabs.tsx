@@ -115,13 +115,13 @@ const VerticalTabs = ({
                   endAdornment: (
                     <InputAdornment position="end">
                       <InfoTooltip
-                        text="Add an associated likelihood ranging from 0 (Impossible) to 1 (Guaranteed) 
+                        text="Add an associated likelihood ranging from 0 (Impossible) to 100 (Guaranteed) 
                       for the chance that this image is randomly minted for this layer."
                       />
                     </InputAdornment>
                   ),
                 }}
-                label="Rarity (0 to 1)"
+                label="Likelihood (0 to 100)"
                 value={img.rarity}
                 required
                 placeholder="0"
