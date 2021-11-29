@@ -37,7 +37,7 @@ contract Royalty {
     emit Delist(tokenId);
   }
 
-  event SellListing(tokenId, price);
+  event SellListing(uint256 tokenId, uint256 price);
 
   /**
    * @notice Add a NFT to the listing to be sold
