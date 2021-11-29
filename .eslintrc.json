@@ -5,11 +5,7 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "react-app",
-    "plugin:react-hooks/recommended"
+    "plugin:@typescript-eslint/recommended"
     // "plugin:import/recommended",
     // "plugin:import/typescript"
   ],
@@ -21,12 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "eslint-plugin-tsdoc"
-  ],
+  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc"],
   "ignorePatterns": [],
   "rules": {
     // Possible Problems
@@ -104,11 +95,7 @@
     "jsx-quotes": ["error", "prefer-double"],
     "line-comment-position": ["warn", { "position": "above" }],
     "no-multi-spaces": "error",
-    // React Hooks
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "off",
     // Other
-    "react/react-in-jsx-scope": "off",
     "tsdoc/syntax": "warn"
   },
   "root": true
