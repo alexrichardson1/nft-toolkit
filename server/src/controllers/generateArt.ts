@@ -1,3 +1,4 @@
+import { AttributeI, TokenT } from "@models/collection";
 import axios from "axios";
 import sharp from "sharp";
 import { s3 } from "./common";
@@ -5,7 +6,7 @@ import { s3 } from "./common";
 interface ImageI {
   name: string;
   rarity: number;
-  image?: string;
+  image: string;
 }
 
 export interface LayerI {
@@ -14,31 +15,18 @@ export interface LayerI {
   rarity: number;
 }
 
-interface GenCollectionI {
-  name: string;
-  symbol: string;
-  description: string;
-  quantity: number;
-  layers: LayerI[];
-}
-
-interface AttributeI {
-  [key: string]: string;
-}
-
 interface GeneratedImageI {
   hash: string;
   images: [number, string][];
   rarity: number;
-  attributes: AttributeI;
+  attributes: AttributeI[];
 }
 
-interface GeneratedCollectionI {
-  name: string;
-  symbol: string;
-  description: string;
+export interface GenCollectionI {
+  layers: LayerI[];
   quantity: number;
-  images: ImageI[];
+  name: string;
+  creator: string;
 }
 
 function generateRandomPercentage() {
@@ -64,7 +52,7 @@ function generateOneCombination(layers: LayerI[]): GeneratedImageI {
   let layerIndex = 0;
   let rarity = 1;
   const oneHundred = 100;
-  const attributes: AttributeI = {};
+  const attributes: AttributeI[] = [];
   layers.forEach((layer) => {
     const includeLayer = generateRandomPercentage() <= layer.rarity;
     if (includeLayer) {
@@ -72,7 +60,8 @@ function generateOneCombination(layers: LayerI[]): GeneratedImageI {
 
       hash += `${layer.name}/${chosenImage.name},`;
       chosenLayerImages[layerIndex++] = [chosenIndex, chosenImage.name];
-      attributes[layer.name] = chosenImage.name;
+      // eslint-disable-next-line camelcase
+      attributes.push({ trait_type: layer.name, value: chosenImage.name });
       rarity *= layer.rarity;
       rarity *= chosenImage.rarity / (oneHundred * oneHundred);
     } else {
@@ -99,8 +88,7 @@ export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
       const layerName = layer.name;
       res[layerName] = await Promise.all(
         layer.images.map(async (image) => {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const buffer = await axios.get(image.image!, {
+          const buffer = await axios.get(image.image, {
             responseType: "arraybuffer",
           });
           return buffer.data;
@@ -114,8 +102,10 @@ export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
 async function compileOneImage(
   generatedImage: GeneratedImageI,
   layerBuffers: LayerBuffersI,
-  index: number
-): Promise<ImageI> {
+  index: number,
+  name: string,
+  creator: string
+): Promise<TokenT> {
   let resultImage: sharp.Sharp | undefined;
 
   const composites: sharp.OverlayOptions[] = [];
@@ -133,17 +123,20 @@ async function compileOneImage(
   }
 
   resultImage.composite(composites);
-  const buffer = await resultImage.toBuffer({ resolveWithObject: true });
+  const buffer = await resultImage.toBuffer();
+  const uploadKey = `${creator}/${name}/images/${index}.png`;
   s3.upload({
     Bucket: "nft-toolkit-collections",
-    Body: buffer.data,
-    // TODO: Add folder name
-    Key: `${index}.png`,
+    Body: buffer,
+    Key: uploadKey,
   });
+
   return {
-    name: "",
-    image: "",
-    rarity: generatedImage.rarity,
+    name: `${name} ${index}`,
+    image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${uploadKey}`,
+    attributes: generatedImage.attributes,
+    description: "",
+    // rarity: generatedImage.rarity,
   };
 }
 
@@ -152,7 +145,8 @@ async function compileOneImage(
  * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
-async function generate(quantity: number, layers: LayerI[]): Promise<ImageI[]> {
+async function generate(collection: GenCollectionI): Promise<TokenT[]> {
+  const { layers, quantity, name, creator } = collection;
   let numPossibleCombinations = 1;
   layers.forEach((layer) => {
     numPossibleCombinations *= layer.images.length;
@@ -177,17 +171,12 @@ async function generate(quantity: number, layers: LayerI[]): Promise<ImageI[]> {
       continue;
     }
 
-    generatedImages.push(compileOneImage(generatedImage, layerBuffers, i));
+    generatedImages.push(
+      compileOneImage(generatedImage, layerBuffers, i, name, creator)
+    );
     generatedHashes.add(generatedImage.hash);
   }
   return Promise.all(generatedImages);
 }
 
-export {
-  generate,
-  GenCollectionI,
-  compileOneImage,
-  GeneratedImageI,
-  ImageI,
-  GeneratedCollectionI,
-};
+export { generate, compileOneImage, GeneratedImageI, ImageI };
