@@ -1,5 +1,6 @@
 import {
   deployContracts,
+  generateTokens,
   getCollection,
   getUserCollections,
   saveCollectionToDB,
@@ -22,6 +23,15 @@ collectionRoutes.post(
   "/save",
   collectionValidator,
   errorHandler,
+  saveCollectionToDB,
+  deployContracts
+);
+
+collectionRoutes.post(
+  "/save-gen",
+  collectionValidator,
+  errorHandler,
+  generateTokens,
   saveCollectionToDB,
   deployContracts
 );
