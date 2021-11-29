@@ -111,7 +111,7 @@ const VerticalTabs = ({
               <Input
                 type="number"
                 InputProps={{
-                  inputProps: { min: "0.00", max: "1.00", step: "0.01" },
+                  inputProps: { min: 1, max: 100, step: 1 },
                   endAdornment: (
                     <InputAdornment position="end">
                       <InfoTooltip

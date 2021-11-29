@@ -26,7 +26,7 @@ interface PropsT {
  * @returns props for the `mintinPrice` input field
  */
 const priceInputProps = (selectedNet: NetworkT) => ({
-  inputProps: { min: "0", step: "any" },
+  inputProps: { min: 0, step: "any" },
   endAdornment: (
     <InputAdornment position="end">
       <SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />
