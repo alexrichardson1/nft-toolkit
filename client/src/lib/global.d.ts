@@ -39,5 +39,6 @@ interface FormStateI {
     tiers: TierI[];
     numberOfLayers: number;
     layers: LayerI[];
+    quantity: string;
   };
 }
