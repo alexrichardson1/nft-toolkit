@@ -5,6 +5,7 @@ import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import FormActions from "actions/formActions";
 import SnackbarContext from "context/snackbar/SnackbarContext";
+import { UnsignedTransaction } from "ethers";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
@@ -15,6 +16,8 @@ import {
   startLoading,
   stopLoading,
   uploadCollection,
+  uploadGenCollection,
+  uploadGenImages,
   uploadImages,
 } from "../../utils/formUtils";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
@@ -93,18 +96,6 @@ export const checkChance = (
     return false;
   }
   return true;
-};
-
-export const uploadGenImages = (
-  state: FormStateI,
-  showFormAlert: (severity: AlertColor, message: string) => void
-): void => {
-  for (const layer of state.generative.layers) {
-    if (!checkRarities(layer, showFormAlert)) {
-      return;
-    }
-  }
-  // TODO: Add logic for generative uploads here
 };
 
 // eslint-disable-next-line max-lines-per-function
@@ -328,20 +319,33 @@ const CreateCollectionForm = (): JSX.Element => {
       return;
     }
 
-    if (generative) {
-      uploadGenImages(state, showFormAlert);
-      return;
+    for (const layer of state.generative.layers) {
+      if (!checkRarities(layer, showFormAlert)) {
+        return;
+      }
     }
 
     try {
       startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-      await uploadImages(
-        Object.values(state.static.images),
-        account,
-        state.collectionName
-      );
-      setLoadingMessage("Saving...");
-      const tx = await uploadCollection(state, account, chainId);
+      let tx: UnsignedTransaction;
+      if (generative) {
+        const layers = await uploadGenImages(
+          state.generative.layers,
+          account,
+          state.collectionName
+        );
+        setLoadingMessage("Generating...");
+        tx = await uploadGenCollection(layers, state, account, chainId);
+      } else {
+        await uploadImages(
+          Object.values(state.static.images),
+          account,
+          state.collectionName
+        );
+        setLoadingMessage("Saving...");
+        tx = await uploadCollection(state, account, chainId);
+      }
+
       const signer = library.getSigner();
       setLoadingMessage("Deploying...");
       const txResponse = await signer.sendTransaction(tx);
