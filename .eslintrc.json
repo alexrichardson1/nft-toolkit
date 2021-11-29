@@ -39,7 +39,7 @@
     "no-use-before-define": "error",
     // Suggestions
     "block-scoped-var": "error",
-    "camelcase": ["error", { "allow": [] }],
+    "camelcase": ["error", { "allow": ["trait_type"] }],
     "class-methods-use-this": "error",
     "consistent-return": "error",
     "consistent-this": "warn",
