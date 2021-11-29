@@ -22,7 +22,7 @@ interface TierI {
 
 interface GeneratedImageI {
   hash: string;
-  images: [number, string][];
+  images: [number, string, string][];
   rarity: number;
   attributes: AttributeI[];
 }
@@ -53,7 +53,7 @@ function chooseLayerImage(images: ImageI[]): [number, ImageI] {
 }
 
 function generateOneCombination(layers: LayerI[]): GeneratedImageI {
-  const chosenLayerImages: [number, string][] = [];
+  const chosenLayerImages: [number, string, string][] = [];
   let hash = "";
   let layerIndex = 0;
   let rarity = 1;
@@ -65,8 +65,11 @@ function generateOneCombination(layers: LayerI[]): GeneratedImageI {
       const [chosenIndex, chosenImage] = chooseLayerImage(layer.images);
 
       hash += `${layer.name}/${chosenImage.name},`;
-      chosenLayerImages[layerIndex++] = [chosenIndex, layer.name];
-      // eslint-disable-next-line camelcase
+      chosenLayerImages[layerIndex++] = [
+        chosenIndex,
+        layer.name,
+        chosenImage.name,
+      ];
       attributes.push({ trait_type: layer.name, value: chosenImage.name });
       rarity *= layer.rarity;
       rarity *= chosenImage.rarity / (oneHundred * oneHundred);
@@ -105,17 +108,53 @@ export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
   return res;
 }
 
+interface LayerQI {
+  [key: string]: number;
+  total: number;
+}
+
+interface LayersQI {
+  [key: string]: LayerQI;
+}
+
+const updateLayerQuantities = (
+  layerName: string,
+  imgName: string,
+  quantities: LayersQI
+) => {
+  let layer: LayerQI | undefined;
+  if (quantities[layerName]) {
+    layer = quantities[layerName];
+  } else {
+    quantities[layerName] = { total: 0 };
+    layer = quantities[layerName];
+  }
+
+  if (layer) {
+    if (layer[imgName]) {
+      layer[imgName]++;
+      layer.total++;
+    } else {
+      layer[imgName] = 1;
+      layer.total++;
+    }
+  }
+};
+
 async function compileOneImage(
   generatedImage: GeneratedImageI,
   layerBuffers: LayerBuffersI,
   index: number,
   name: string,
-  creator: string
+  creator: string,
+  layerQuantities: LayersQI
 ): Promise<TokenT> {
   let resultImage: sharp.Sharp | undefined;
 
   const composites: sharp.OverlayOptions[] = [];
-  generatedImage.images.forEach(([layerIndex, layerName], index) => {
+  generatedImage.images.forEach(([layerIndex, layerName, imgName], index) => {
+    updateLayerQuantities(layerName, imgName, layerQuantities);
+
     const buffer = layerBuffers[layerName]?.[layerIndex];
     if (index) {
       composites.push({ input: buffer });
@@ -150,9 +189,10 @@ async function compileOneImage(
     image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${uploadKey}`,
     attributes: generatedImage.attributes,
     description: "",
-    // rarity: generatedImage.rarity,
   };
 }
+
+const toPercent = 100;
 
 /**
  * PRE: Layer images are assumed to be of equal dimensions, so that we don't
@@ -160,7 +200,7 @@ async function compileOneImage(
  * @param collection - Collection of picture layers
  */
 async function generate(collection: GenCollectionI): Promise<TokenT[]> {
-  const { layers, quantity, name, creator } = collection;
+  const { layers, quantity, name, creator, tiers } = collection;
   let numPossibleCombinations = 1;
   layers.forEach((layer) => {
     numPossibleCombinations *= layer.images.length;
@@ -175,6 +215,7 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
   const generatedImages = [];
   const generatedHashes = new Set();
   const layerBuffers = await getImages(layers);
+  const layerQuantities: LayersQI = {};
 
   for (let i = 0; i < quantity; i++) {
     const generatedImage = generateOneCombination(layers);
@@ -186,11 +227,40 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
     }
 
     generatedImages.push(
-      compileOneImage(generatedImage, layerBuffers, i, name, creator)
+      compileOneImage(
+        generatedImage,
+        layerBuffers,
+        i,
+        name,
+        creator,
+        layerQuantities
+      )
     );
     generatedHashes.add(generatedImage.hash);
   }
-  return Promise.all(generatedImages);
+  const res = await Promise.all(generatedImages);
+  res.forEach((img) => {
+    let prob = toPercent;
+    img.attributes.forEach((attr) => {
+      let layer;
+      if (layerQuantities[attr.trait_type]) {
+        layer = layerQuantities[attr.trait_type];
+      }
+      if (layer) {
+        prob *= (layer[attr.value] ?? 1) / layer.total;
+      }
+    });
+
+    let tierCumulative = 0;
+    for (const tier of tiers) {
+      tierCumulative += parseInt(tier.probability);
+      if (prob <= tierCumulative) {
+        img.attributes.push({ trait_type: "tier", value: tier.name });
+        break;
+      }
+    }
+  });
+  return res;
 }
 
 export { generate, compileOneImage, GeneratedImageI, ImageI };
