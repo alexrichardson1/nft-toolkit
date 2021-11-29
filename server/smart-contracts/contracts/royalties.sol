@@ -22,6 +22,8 @@ contract Royalty {
     royalty = cut;
   }
 
+  event Delist(uint256 tokenId);
+
   /**
    * @notice Delist a NFT
    * @param tokenId The tokenId of the NFT to delist
@@ -32,7 +34,10 @@ contract Royalty {
       "You do not own this NFT"
     );
     delete listings[tokenId];
+    emit Delist(tokenId);
   }
+
+  event SellListing(tokenId, price);
 
   /**
    * @notice Add a NFT to the listing to be sold
@@ -49,7 +54,10 @@ contract Royalty {
       "This NFT is not approved"
     );
     listings[tokenId] = price;
+    emit SellListing(tokenId, price);
   }
+
+  event Buy(uint256 tokenId);
 
   /**
    * @notice Buy a NFT
@@ -68,5 +76,6 @@ contract Royalty {
     artist.transfer(royalty);
     seller.transfer(msg.value - royalty);
     _collection.transferFrom(address(this), msg.sender, tokenId);
+    emit Buy(tokenId);
   }
 }
