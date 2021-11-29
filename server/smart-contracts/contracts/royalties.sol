@@ -69,12 +69,12 @@ contract Royalty {
       _collection.getApproved(tokenId) == address(this),
       "This NFT is not approved"
     );
-    uint256 royalty = (msg.value * royalty) / 100;
-    address payable artist = payable(_collection.artist());
+    uint256 cut = (msg.value * royalty) / 100;
+    address payable artist = payable(_collection.owner());
     address payable seller = payable(_collection.ownerOf(tokenId));
     _collection.transferFrom(seller, address(this), tokenId);
-    artist.transfer(royalty);
-    seller.transfer(msg.value - royalty);
+    artist.transfer(cut);
+    seller.transfer(msg.value - cut);
     _collection.transferFrom(address(this), msg.sender, tokenId);
     emit Buy(tokenId);
   }
