@@ -38,7 +38,13 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { numberOfTiers: 0, tiers: [], layers: [], numberOfLayers: 0 },
+  generative: {
+    numberOfTiers: 0,
+    tiers: [],
+    layers: [],
+    numberOfLayers: 0,
+    quantity: "",
+  },
 };
 
 const formFooterStyle: SxProps = {
@@ -64,10 +70,11 @@ export const checkRarities = (
     }
     totalRarity += Number(image.rarity);
   }
-  if (totalRarity !== 1) {
+  const maxRarity = 100;
+  if (totalRarity !== maxRarity) {
     showFormAlert(
       "warning",
-      `All your rarities should add up to 1 for layer ${layer.name}`
+      `All your rarities should add up to 100 for layer ${layer.name}`
     );
     return false;
   }
@@ -287,6 +294,12 @@ const CreateCollectionForm = (): JSX.Element => {
       payload: { description: e.target.value },
     });
 
+  const handleQuantityChange = (e: InputEventT) =>
+    dispatch({
+      type: FormActions.CHANGE_QUANTITY,
+      payload: { quantity: e.target.value },
+    });
+
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -421,6 +434,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleLayerImgDrop={handleImageDrop}
         handleLayerImgDelete={handleImageDelete}
         handleLayerImgNameChange={handleImgNameChange}
+        handleQuantityChange={handleQuantityChange}
         stepNumber={stepNumber}
       />
       <Box sx={formFooterStyle}>
