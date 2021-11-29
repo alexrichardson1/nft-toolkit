@@ -27,14 +27,20 @@ const extendedFabStyle = {
   justifyContent: "center",
 };
 
+const connector = new InjectedConnector({
+  supportedChainIds: supportedChains,
+});
+
 const Wallet = (): JSX.Element => {
-  const { activate, account, chainId } = useWeb3React();
+  const {
+    active: networkActive,
+    error: networkError,
+    activate,
+    account,
+    chainId,
+  } = useWeb3React();
   const { setSelectedNet } = useContext(NetworkContext);
   const { showSnackbar } = useContext(SnackbarContext);
-
-  const connector = new InjectedConnector({
-    supportedChainIds: supportedChains,
-  });
 
   const connectWallet = () => {
     activate(connector, (err) => {
@@ -43,12 +49,24 @@ const Wallet = (): JSX.Element => {
   };
 
   useEffect(() => {
-    if (!chainId) {
+    connector
+      .isAuthorized()
+      .then((isAuthorised) => {
+        if (isAuthorised && !networkActive && !networkError) {
+          activate(connector, (err) => showSnackbar("error", err.message));
+        }
+      })
+      .catch((err) => showSnackbar("error", err.message));
+
+    const sessionChainId = sessionStorage.getItem("chainId");
+
+    if (!chainId || sessionChainId === chainId.toString()) {
       return;
     }
 
     updateNetwork(chainId, setSelectedNet, showSnackbar);
-  }, [chainId]);
+    sessionStorage.setItem("chainId", chainId.toString());
+  }, [chainId, networkActive]);
 
   return (
     <Fab
