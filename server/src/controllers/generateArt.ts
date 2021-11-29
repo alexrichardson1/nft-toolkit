@@ -170,19 +170,17 @@ async function compileOneImage(
   resultImage.composite(composites);
   const buffer = await resultImage.toBuffer();
   const uploadKey = `${creator}/${name}/images/${index}.png`;
-  s3.upload(
-    {
-      Bucket: "nft-toolkit-collections",
-      Body: buffer,
-      Key: uploadKey,
-      ACL: "public-read",
-    },
-    (err) => {
-      if (err) {
-        console.error("S3 upload error", err);
-      }
-    }
-  );
+  const uploadParams = {
+    Bucket: "nft-toolkit-collections",
+    Body: buffer,
+    Key: uploadKey,
+    ACL: "public-read",
+  };
+
+  await s3
+    .upload(uploadParams)
+    .promise()
+    .catch((err) => console.log(err));
 
   return {
     name: `${name} ${index}`,
