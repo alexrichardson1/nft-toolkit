@@ -1,5 +1,6 @@
 import { s3 } from "@controllers/common";
-import { Collection, CollectionT, Layer, Token } from "@models/collection";
+import { GenCollectionI, generate } from "@controllers/generateArt";
+import { Collection, CollectionT, Token } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
@@ -27,7 +28,6 @@ export const successHandler: RequestHandler = (_req, res) =>
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT = req.body;
   userCollection.tokens.map((token) => new Token(token));
-  userCollection.layers.map((layer) => new Layer(layer));
   const collection = new Collection(userCollection);
   await collection.save();
   next();
@@ -109,5 +109,14 @@ export const getCollection: RequestHandler = async (req, res, next) => {
     return res.json({ collection });
   } catch (error) {
     return next(error);
+  }
+};
+
+export const generateTokens: RequestHandler = async (req, _res, next) => {
+  const genCollection: GenCollectionI = req.body;
+  try {
+    req.body.tokens = await generate(genCollection);
+  } catch (error) {
+    next(error);
   }
 };
