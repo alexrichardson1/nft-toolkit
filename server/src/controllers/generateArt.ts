@@ -15,6 +15,11 @@ export interface LayerI {
   rarity: number;
 }
 
+interface TierI {
+  name: string;
+  probability: string;
+}
+
 interface GeneratedImageI {
   hash: string;
   images: [number, string][];
@@ -24,6 +29,7 @@ interface GeneratedImageI {
 
 export interface GenCollectionI {
   layers: LayerI[];
+  tiers: TierI[];
   quantity: number;
   name: string;
   creator: string;
