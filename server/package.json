@@ -85,15 +85,7 @@
     "coveragePathIgnorePatterns": [
       "smart-contracts",
       "tests"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    }
+    ]
   },
   "dependencies": {
     "@types/sharp": "^0.29.4",
