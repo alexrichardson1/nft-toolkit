@@ -1,6 +1,8 @@
 import { Tab } from "@mui/material";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
+import Input from "components/common/Input";
 import { useState } from "react";
 import { accessibilityProps, DEFAULT_MUI_DARK } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
@@ -34,6 +36,7 @@ interface PropsT {
   handleImgRarityChange: (
     layerName: string
   ) => (e: InputEventT, id: string) => void;
+  handleQuantityChange: (e: InputEventT) => void;
 }
 
 /**
@@ -56,6 +59,7 @@ const LayerImageUpload = ({
   handleLayerImgDelete,
   handleLayerImgNameChange,
   handleImgRarityChange,
+  handleQuantityChange,
   stepNumber,
   isLoading,
 }: PropsT): JSX.Element => {
@@ -64,6 +68,14 @@ const LayerImageUpload = ({
   if (wrongStepGenerative(generative, stepNumber, LAYER_UPLOAD_PAGE_NUMBER)) {
     return <></>;
   }
+
+  const getMaxQuantity = (): number => {
+    let max = 1;
+    state.generative.layers.forEach((layer) => {
+      max *= layer.numberOfImages;
+    });
+    return max;
+  };
 
   return (
     <>
@@ -123,6 +135,19 @@ const LayerImageUpload = ({
           );
         })}
       </Box>
+      <Paper>
+        <Input
+          type="number"
+          value={state.generative.quantity}
+          onChange={handleQuantityChange}
+          placeholder="0"
+          label="Collection Quantity"
+          InputProps={{
+            inputProps: { min: 1, max: getMaxQuantity() },
+          }}
+          required
+        />
+      </Paper>
     </>
   );
 };
