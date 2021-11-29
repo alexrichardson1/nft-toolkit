@@ -51,8 +51,6 @@ interface ServerLayerI {
   rarity: number;
 }
 
-const toPercent = 100;
-
 export const uploadGenImages = async (
   layers: LayerI[],
   account: string,
@@ -73,7 +71,7 @@ export const uploadGenImages = async (
       return {
         name: img.name,
         image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${folderName}/images/${newFileName}`,
-        rarity: parseFloat(img.rarity ?? "0") * toPercent,
+        rarity: parseInt(img.rarity ?? "1"),
       };
     });
 
@@ -110,8 +108,7 @@ export const uploadGenCollection = async (
     creator: account,
     layers: layers,
     tiers: state.generative.tiers,
-    // TODO: Add quantity to form
-    quantity: 1,
+    quantity: parseInt(state.generative.quantity),
   };
 
   const res = await axios.post(`${API_URL}/collection/save-gen`, genCollection);
