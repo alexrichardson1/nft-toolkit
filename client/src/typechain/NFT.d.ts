@@ -22,7 +22,6 @@ import type { TypedEvent, TypedEventFilter, TypedListener } from "./common";
 interface NFTInterface extends ethers.utils.Interface {
   functions: {
     "approve(address,uint256)": FunctionFragment;
-    "artist()": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
     "collectionLimit()": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
@@ -50,7 +49,6 @@ interface NFTInterface extends ethers.utils.Interface {
     functionFragment: "approve",
     values: [string, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "artist", values?: undefined): string;
   encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
   encodeFunctionData(
     functionFragment: "collectionLimit",
@@ -119,7 +117,6 @@ interface NFTInterface extends ethers.utils.Interface {
   ): string;
 
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "artist", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "collectionLimit",
@@ -268,8 +265,6 @@ export class NFT extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    artist(overrides?: CallOverrides): Promise<[string]>;
-
     balanceOf(owner: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
     collectionLimit(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -374,8 +369,6 @@ export class NFT extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  artist(overrides?: CallOverrides): Promise<string>;
-
   balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
   collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
@@ -471,8 +464,6 @@ export class NFT extends BaseContract {
       tokenId: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
-
-    artist(overrides?: CallOverrides): Promise<string>;
 
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -638,8 +629,6 @@ export class NFT extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    artist(overrides?: CallOverrides): Promise<BigNumber>;
-
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
     collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
@@ -742,8 +731,6 @@ export class NFT extends BaseContract {
       tokenId: BigNumberish,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
-
-    artist(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     balanceOf(
       owner: string,
