@@ -76,15 +76,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "../.eslintrc.json"
-    ],
-    "rules": {
-      "react/react-in-jsx-scope": "off",
-      "react-hooks/exhaustive-deps": "off"
-    }
   }
 }
