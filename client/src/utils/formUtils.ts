@@ -91,21 +91,13 @@ export const uploadGenImages = async (
   return result;
 };
 
-interface StateT {
-  collectionName: string;
-  description: string;
-  static: { images: ImageT };
-  symbol: string;
-  mintingPrice: string;
-}
-
 interface TransactionT {
   transaction: UnsignedTransaction;
 }
 
 export const uploadGenCollection = async (
   layers: ServerLayerI[],
-  state: StateT,
+  state: FormStateI,
   account: string,
   chainId: number
 ): Promise<UnsignedTransaction> => {
@@ -117,6 +109,7 @@ export const uploadGenCollection = async (
     chainId: chainId,
     creator: account,
     layers: layers,
+    tiers: state.generative.tiers,
     // TODO: Add quantity to form
     quantity: 1,
   };
@@ -127,7 +120,7 @@ export const uploadGenCollection = async (
 };
 
 export const uploadCollection = async (
-  state: StateT,
+  state: FormStateI,
   account: string,
   chainId: number
 ): Promise<UnsignedTransaction> => {
