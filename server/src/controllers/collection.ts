@@ -116,6 +116,7 @@ export const generateTokens: RequestHandler = async (req, _res, next) => {
   const genCollection: GenCollectionI = req.body;
   try {
     req.body.tokens = await generate(genCollection);
+    next();
   } catch (error) {
     next(error);
   }
