@@ -42,3 +42,15 @@ interface FormStateI {
     quantity: string;
   };
 }
+
+interface AttributeI {
+  ["trait_type"]: string;
+  value: string;
+}
+
+interface CardInfoI {
+  name: string;
+  description: string;
+  image: string;
+  attributes: AttributeI[];
+}
