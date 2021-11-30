@@ -1,0 +1,63 @@
+.marketplace-card {
+  background: "transparent";
+  height: 350px;
+  width: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.marketplace-card-container {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.marketplace-card:hover,
+.marketplace-card:focus {
+  outline: none;
+}
+
+.marketplace-card:hover .marketplace-card-container,
+.marketplace-card:focus .marketplace-card-container {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title-container {
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.card-img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
