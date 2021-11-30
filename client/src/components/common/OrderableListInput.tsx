@@ -23,11 +23,7 @@ const OrderableListInput = ({
   onClick,
 }: PropsT): JSX.Element => {
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems={"center"}
-      gap={"5px"}>
+    <Box display="flex" flexDirection="column" alignItems="center" gap="5px">
       <Input
         onKeyPress={onKeyPress}
         value={text}
