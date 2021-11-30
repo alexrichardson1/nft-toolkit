@@ -80,8 +80,8 @@ const LayerSelectionStep = ({
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
         text={text}
-        placeholder={"Add a layer for your NFT"}
-        label={"Type Layer Name Here"}
+        placeholder="Add a layer for your NFT"
+        label="Type Layer Name Here"
         required={state.generative.numberOfLayers < MINIMUM_LAYERS_REQUIRED}
         onChange={(e) => setText(e.target.value)}
         onClick={handleListAdd}

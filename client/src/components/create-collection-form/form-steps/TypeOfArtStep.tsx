@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import ChoiceCard from "components/common/ChoiceCard";
-import genArtImg from "images/generativeIcon.svg";
-import staticArtImg from "images/staticIcon.svg";
+import genArtImg from "images/generative-icon.svg";
+import staticArtImg from "images/static-icon.svg";
 import { useCallback } from "react";
 import { wrongStep } from "utils/pages";
 

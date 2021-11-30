@@ -75,8 +75,8 @@ const TierSelectionStep = ({
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
         text={text}
-        placeholder={"Add a tier for your NFT e.g Legendary"}
-        label={"Type Tier Name Here"}
+        placeholder="Add a tier for your NFT e.g Legendary"
+        label="Type Tier Name Here"
         required={state.generative.numberOfTiers < MINIMUM_TIERS_REQUIRED}
         onChange={(e) => setText(e.target.value)}
         onClick={handleListAdd}
