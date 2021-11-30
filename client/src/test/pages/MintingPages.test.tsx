@@ -6,8 +6,8 @@ import { mount, ReactWrapper } from "enzyme";
 import MintingPage from "pages/MintingPage";
 import StoreProvider from "store/StoreProvider";
 
-jest.mock("react-router", () => ({
-  ...jest.requireActual("react-router"),
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
   useParams: () => ({
     collectionName: "Example Collection",
   }),
