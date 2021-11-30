@@ -1,5 +1,6 @@
 import {
   deployContracts,
+  generateTokens,
   getCollection,
   getUserCollections,
   saveCollectionToDB,
@@ -13,6 +14,8 @@ import {
   deployedValidator,
   getCollectionsValidator,
   getCollectionValidator,
+  invalidLayers,
+  invalidTokens,
 } from "@validators/collection";
 import { Router as router } from "express";
 
@@ -21,7 +24,18 @@ const collectionRoutes = router();
 collectionRoutes.post(
   "/save",
   collectionValidator,
+  invalidTokens,
   errorHandler,
+  saveCollectionToDB,
+  deployContracts
+);
+
+collectionRoutes.post(
+  "/save-gen",
+  collectionValidator,
+  invalidLayers,
+  errorHandler,
+  generateTokens,
   saveCollectionToDB,
   deployContracts
 );

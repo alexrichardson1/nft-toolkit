@@ -11,7 +11,6 @@ import "@openzeppelin/contracts/utils/Counters.sol";
  *  @notice NFT Collection
  */
 contract NFT is ERC721Enumerable, Ownable {
-  address public artist;
   uint256 public price;
   uint256 public collectionLimit;
   string private _baseURIString;
@@ -31,7 +30,6 @@ contract NFT is ERC721Enumerable, Ownable {
     uint256 limit,
     uint256 _price
   ) ERC721(name, symbol) {
-    artist = msg.sender;
     collectionLimit = limit;
     price = _price;
     _baseURIString = string(
@@ -40,7 +38,9 @@ contract NFT is ERC721Enumerable, Ownable {
   }
 
   function char(bytes1 b) internal pure returns (bytes1 c) {
-    if (uint8(b) < 10) return bytes1(uint8(b) + 0x30);
+    if (uint8(b) < 10) {
+      return bytes1(uint8(b) + 0x30);
+    }
     return bytes1(uint8(b) + 0x57);
   }
 

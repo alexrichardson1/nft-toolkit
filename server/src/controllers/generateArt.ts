@@ -1,44 +1,38 @@
-import { assert } from "console";
+import { AttributeI, TokenT } from "@models/collection";
+import axios from "axios";
 import sharp from "sharp";
+import { s3 } from "./common";
 
 interface ImageI {
   name: string;
   rarity: number;
-  image?: Buffer;
+  image: string;
 }
 
-interface LayerI {
+export interface LayerI {
   name: string;
   images: ImageI[];
   rarity: number;
 }
 
-interface GenCollectionI {
+interface TierI {
   name: string;
-  symbol: string;
-  description: string;
-  quantity: number;
-  layers: LayerI[];
+  probability: string;
 }
 
 interface GeneratedImageI {
   hash: string;
-  images: ImageI[];
+  images: [number, string, string][];
   rarity: number;
+  attributes: AttributeI[];
 }
 
-interface CompiledImageI {
-  hash: string;
-  image: Buffer;
-  rarity: number;
-}
-
-interface GeneratedCollectionI {
-  name: string;
-  symbol: string;
-  description: string;
+export interface GenCollectionI {
+  layers: LayerI[];
+  tiers: TierI[];
   quantity: number;
-  images: GeneratedImageI[];
+  name: string;
+  creator: string;
 }
 
 function generateRandomPercentage() {
@@ -46,34 +40,37 @@ function generateRandomPercentage() {
   return Math.random() * MAX_RAND;
 }
 
-function chooseLayerImage(images: ImageI[]): ImageI {
+function chooseLayerImage(images: ImageI[]): [number, ImageI] {
   const randomValue = generateRandomPercentage();
   let rarityCumulative = 0;
-  for (const image of images) {
+  for (const [index, image] of images.entries()) {
     rarityCumulative += image.rarity;
     if (randomValue <= rarityCumulative) {
-      return image;
+      return [index, image];
     }
   }
-  return {
-    name: "fail",
-    rarity: 0,
-  };
+  throw new Error("Could not choose image");
 }
 
-function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
-  const chosenLayerImages: ImageI[] = [];
+function generateOneCombination(layers: LayerI[]): GeneratedImageI {
+  const chosenLayerImages: [number, string, string][] = [];
   let hash = "";
   let layerIndex = 0;
   let rarity = 1;
   const oneHundred = 100;
-  collection.layers.forEach((layer) => {
+  const attributes: AttributeI[] = [];
+  layers.forEach((layer) => {
     const includeLayer = generateRandomPercentage() <= layer.rarity;
     if (includeLayer) {
-      const chosenImage: ImageI = chooseLayerImage(layer.images);
+      const [chosenIndex, chosenImage] = chooseLayerImage(layer.images);
 
       hash += `${layer.name}/${chosenImage.name},`;
-      chosenLayerImages[layerIndex++] = chosenImage;
+      chosenLayerImages[layerIndex++] = [
+        chosenIndex,
+        layer.name,
+        chosenImage.name,
+      ];
+      attributes.push({ trait_type: layer.name, value: chosenImage.name });
       rarity *= layer.rarity;
       rarity *= chosenImage.rarity / (oneHundred * oneHundred);
     } else {
@@ -85,31 +82,141 @@ function generateOneCombination(collection: GenCollectionI): GeneratedImageI {
     hash: hash,
     images: chosenLayerImages,
     rarity: rarity * oneHundred,
+    attributes,
   };
 }
+
+interface LayerBuffersI {
+  [key: string]: Buffer[];
+}
+
+export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
+  const res: LayerBuffersI = {};
+  await Promise.all(
+    layers.map(async (layer) => {
+      const layerName = layer.name;
+      res[layerName] = await Promise.all(
+        layer.images.map(async (image) => {
+          const buffer = await axios.get(image.image, {
+            responseType: "arraybuffer",
+          });
+          return buffer.data;
+        })
+      );
+    })
+  );
+  return res;
+}
+
+interface LayerQI {
+  [key: string]: number;
+  total: number;
+}
+
+interface LayersQI {
+  [key: string]: LayerQI;
+}
+
+const updateLayerQuantities = (
+  layerName: string,
+  imgName: string,
+  quantities: LayersQI
+) => {
+  let layer: LayerQI | undefined;
+  if (quantities[layerName]) {
+    layer = quantities[layerName];
+  } else {
+    quantities[layerName] = { total: 0 };
+    layer = quantities[layerName];
+  }
+
+  if (layer) {
+    if (layer[imgName]) {
+      layer[imgName]++;
+      layer.total++;
+    } else {
+      layer[imgName] = 1;
+      layer.total++;
+    }
+  }
+};
+
+async function compileOneImage(
+  generatedImage: GeneratedImageI,
+  layerBuffers: LayerBuffersI,
+  index: number,
+  name: string,
+  creator: string,
+  layerQuantities: LayersQI
+): Promise<TokenT> {
+  let resultImage: sharp.Sharp | undefined;
+
+  const composites: sharp.OverlayOptions[] = [];
+  generatedImage.images.forEach(([layerIndex, layerName, imgName], index) => {
+    updateLayerQuantities(layerName, imgName, layerQuantities);
+
+    const buffer = layerBuffers[layerName]?.[layerIndex];
+    if (index) {
+      composites.push({ input: buffer });
+    } else {
+      resultImage = sharp(buffer);
+    }
+  });
+
+  if (!resultImage) {
+    throw new Error("Cannot compile image when none is given");
+  }
+
+  resultImage.composite(composites);
+  const buffer = await resultImage.toBuffer();
+  const uploadKey = `${creator}/${name}/images/${index}.png`;
+  const uploadParams = {
+    Bucket: "nft-toolkit-collections",
+    Body: buffer,
+    Key: uploadKey,
+    ACL: "public-read",
+  };
+
+  await s3
+    .upload(uploadParams)
+    .promise()
+    .catch((err) => console.log(err));
+
+  return {
+    name: `${name} ${index}`,
+    image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${uploadKey}`,
+    attributes: generatedImage.attributes,
+    description: "",
+  };
+}
+
+const toPercent = 100;
 
 /**
  * PRE: Layer images are assumed to be of equal dimensions, so that we don't
  * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
-function generate(collection: GenCollectionI): GeneratedCollectionI {
+async function generate(collection: GenCollectionI): Promise<TokenT[]> {
+  const { layers, quantity, name, creator, tiers } = collection;
   let numPossibleCombinations = 1;
-  collection.layers.forEach((layer) => {
+  layers.forEach((layer) => {
     numPossibleCombinations *= layer.images.length;
   });
 
-  if (numPossibleCombinations < collection.quantity) {
+  if (numPossibleCombinations < quantity) {
     throw new Error(
       "There are less possible combinations than quantity requested"
     );
   }
 
-  const generatedImages: GeneratedImageI[] = [];
+  const generatedImages = [];
   const generatedHashes = new Set();
+  const layerBuffers = await getImages(layers);
+  const layerQuantities: LayersQI = {};
 
-  for (let i = 0; i < collection.quantity; i++) {
-    const generatedImage = generateOneCombination(collection);
+  for (let i = 0; i < quantity; i++) {
+    const generatedImage = generateOneCombination(layers);
 
     if (generatedHashes.has(generatedImage.hash)) {
       // Duplicate made - repeat loop
@@ -117,55 +224,41 @@ function generate(collection: GenCollectionI): GeneratedCollectionI {
       continue;
     }
 
-    generatedImages.push(generatedImage);
+    generatedImages.push(
+      compileOneImage(
+        generatedImage,
+        layerBuffers,
+        i,
+        name,
+        creator,
+        layerQuantities
+      )
+    );
     generatedHashes.add(generatedImage.hash);
   }
-  return {
-    name: collection.name,
-    symbol: collection.symbol,
-    description: collection.description,
-    quantity: collection.quantity,
-    images: generatedImages,
-  };
+  const res = await Promise.all(generatedImages);
+  res.forEach((img) => {
+    let prob = toPercent;
+    img.attributes.forEach((attr) => {
+      let layer;
+      if (layerQuantities[attr.trait_type]) {
+        layer = layerQuantities[attr.trait_type];
+      }
+      if (layer) {
+        prob *= (layer[attr.value] ?? 1) / layer.total;
+      }
+    });
+
+    let tierCumulative = 0;
+    for (const tier of tiers) {
+      tierCumulative += parseInt(tier.probability);
+      if (prob <= tierCumulative) {
+        img.attributes.push({ trait_type: "tier", value: tier.name });
+        break;
+      }
+    }
+  });
+  return res;
 }
 
-async function compileOneImage(
-  generatedImage: GeneratedImageI
-): Promise<CompiledImageI> {
-  let resultImage = null;
-
-  const composites = [];
-  for (let i = 0; i < generatedImage.images.length; i++) {
-    const image = generatedImage.images[i];
-    if (!image?.image) {
-      throw new Error("Cannot compile image when none is given");
-    }
-    if (resultImage) {
-      composites.push({ input: image.image });
-    } else {
-      resultImage = sharp(image.image);
-    }
-  }
-
-  assert(resultImage !== null);
-  if (resultImage) {
-    resultImage.composite(composites);
-    const buffer = await resultImage.toBuffer({ resolveWithObject: true });
-    return {
-      hash: generatedImage.hash,
-      image: buffer.data,
-      rarity: generatedImage.rarity,
-    };
-  }
-
-  throw new Error("Result image is null");
-}
-
-export {
-  generate,
-  GenCollectionI,
-  compileOneImage,
-  GeneratedImageI,
-  ImageI,
-  GeneratedCollectionI,
-};
+export { generate, compileOneImage, GeneratedImageI, ImageI };

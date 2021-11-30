@@ -20,6 +20,7 @@ enum FormActions {
   CHANGE_LAYER_PRECEDENCE,
   RESET_TYPE_OF_ART,
   RESET_STATE,
+  CHANGE_QUANTITY,
 }
 
 export default FormActions;

@@ -50,10 +50,17 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { numberOfTiers: 0, tiers: [], layers: [], numberOfLayers: 0 },
+  generative: {
+    numberOfTiers: 0,
+    tiers: [],
+    layers: [],
+    numberOfLayers: 0,
+    quantity: "1",
+  },
 };
 
 interface FormActionPayloadI {
+  quantity?: string;
   newName?: string;
   description?: string;
   price?: string;
@@ -453,19 +460,15 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     // Add tier to state
     case FormActions.ADD_TIER:
       return addTier(action, state);
-
     // Change tier probabilities
     case FormActions.CHANGE_TIER_PROBABILITY:
       return changeTierProb(action, state);
-
     // Change tier precedence
     case FormActions.CHANGE_TIER_PRECEDENCE:
       return changeTierPrecedence(action, state);
-
     // Remove tier from state
     case FormActions.REMOVE_TIER:
       return removeTier(action, state);
-
     // Reset static and generative objects in the state
     case FormActions.RESET_TYPE_OF_ART:
       return {
@@ -476,13 +479,18 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           tiers: [],
           layers: [],
           numberOfLayers: 0,
+          quantity: DEFAULT_STRING,
         },
       };
-
+    case FormActions.CHANGE_QUANTITY: {
+      state.generative.quantity = action.payload.quantity ?? DEFAULT_STRING;
+      return {
+        ...state,
+      };
+    }
     // Reset form state
     case FormActions.RESET_STATE:
       return INITIAL_STATE;
-
     default:
       throw new Error("Invalid action provided");
   }

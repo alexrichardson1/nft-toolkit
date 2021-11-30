@@ -684,6 +684,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
+                            "quantity": "",
                             "tiers": Array [],
                           },
                           "mintingPrice": "",
@@ -3928,7 +3929,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       />
                                     </ForwardRef(InputAdornment)>,
                                     "inputProps": Object {
-                                      "min": "0",
+                                      "min": 0,
                                       "step": "any",
                                     },
                                   }
@@ -3964,7 +3965,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                     />
                                   </ForwardRef(InputAdornment)>,
                                   "inputProps": Object {
-                                    "min": "0",
+                                    "min": 0,
                                     "step": "any",
                                   },
                                 }
@@ -3989,7 +3990,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                       />
                                     </ForwardRef(InputAdornment)>,
                                     "inputProps": Object {
-                                      "min": "0",
+                                      "min": 0,
                                       "step": "any",
                                     },
                                   }
@@ -4022,7 +4023,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           />
                                         </ForwardRef(InputAdornment)>,
                                         "inputProps": Object {
-                                          "min": "0",
+                                          "min": 0,
                                           "step": "any",
                                         },
                                       },
@@ -4086,7 +4087,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                               fullWidth={true}
                                               inputProps={
                                                 Object {
-                                                  "min": "0",
+                                                  "min": 0,
                                                   "step": "any",
                                                 }
                                               }
@@ -4266,7 +4267,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                           fullWidth={true}
                                           inputProps={
                                             Object {
-                                              "min": "0",
+                                              "min": 0,
                                               "step": "any",
                                             }
                                           }
@@ -4350,7 +4351,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                             inputComponent="input"
                                             inputProps={
                                               Object {
-                                                "min": "0",
+                                                "min": 0,
                                                 "step": "any",
                                               }
                                             }
@@ -4797,7 +4798,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   "id": undefined,
                                                   "inputComponent": "input",
                                                   "inputProps": Object {
-                                                    "min": "0",
+                                                    "min": 0,
                                                     "step": "any",
                                                   },
                                                   "inputRef": undefined,
@@ -4829,7 +4830,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                   autoFocus={false}
                                                   className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd"
                                                   disabled={false}
-                                                  min="0"
+                                                  min={0}
                                                   onAnimationStart={[Function]}
                                                   onBlur={[Function]}
                                                   onChange={[Function]}
@@ -4924,7 +4925,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                       "id": undefined,
                                                       "inputComponent": "input",
                                                       "inputProps": Object {
-                                                        "min": "0",
+                                                        "min": 0,
                                                         "step": "any",
                                                       },
                                                       "inputRef": undefined,
@@ -4956,7 +4957,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                                                     autoFocus={false}
                                                     className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
                                                     disabled={false}
-                                                    min="0"
+                                                    min={0}
                                                     onAnimationStart={[Function]}
                                                     onBlur={[Function]}
                                                     onChange={[Function]}
@@ -5113,6 +5114,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
+                            "quantity": "",
                             "tiers": Array [],
                           },
                           "mintingPrice": "",
@@ -5139,6 +5141,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
+                            "quantity": "",
                             "tiers": Array [],
                           },
                           "mintingPrice": "",
@@ -5164,6 +5167,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
+                            "quantity": "",
                             "tiers": Array [],
                           },
                           "mintingPrice": "",
@@ -5182,6 +5186,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                       handleLayerImgDelete={[Function]}
                       handleLayerImgDrop={[Function]}
                       handleLayerImgNameChange={[Function]}
+                      handleQuantityChange={[Function]}
                       isLoading={false}
                       state={
                         Object {
@@ -5191,6 +5196,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
+                            "quantity": "",
                             "tiers": Array [],
                           },
                           "mintingPrice": "",
