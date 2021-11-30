@@ -40,7 +40,6 @@ const DisplayCard = ({ data, loading }: PropsT): JSX.Element => {
                   {data.name}
                 </Typography>
                 <Typography noWrap variant="h6">
-                  {/* eslint-disable-next-line dot-notation */}
                   {data.attributes["tier"]}
                 </Typography>
               </Box>

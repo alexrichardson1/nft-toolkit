@@ -44,7 +44,6 @@ interface FormStateI {
 }
 
 interface AttributeI {
-  // eslint-disable-next-line camelcase
   [trait_type: string]: string;
 }
 
