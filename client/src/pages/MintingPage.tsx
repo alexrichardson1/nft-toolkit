@@ -16,20 +16,19 @@ import { BigNumber } from "ethers";
 import { formatEther } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
 import { getDollarValue } from "utils/coinGecko";
 import { getLogoByChainId } from "utils/constants";
 import { CollectionI, getCollection } from "utils/mintingPageUtils";
 
 const DUMMY_DATA = {
-  name: "COLLECTION_NAME",
-  symbol: "COL",
-  description: "THIS IS THE DESCRIPTION",
-  address: "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
+  name: "DummyCollectionName",
+  symbol: "DUMMY",
+  description: "DummyDescription",
+  address: "DummyAddress",
   tokens: [],
-  gifSrc: "https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif",
+  gifSrc: "DummyGIFAddress",
   chainId: 1,
   price: BigNumber.from("1"),
   mintedAmount: BigNumber.from("1"),
@@ -58,11 +57,6 @@ const mintingCardStyle: SxProps = {
   flexDirection: "column",
   justifyContent: "flex-end",
 };
-
-interface ParamsI {
-  paramChainId: string;
-  address: string;
-}
 
 const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
   return {
@@ -144,18 +138,16 @@ const MintingPage = (): JSX.Element => {
     async function getCollectionData() {
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
       const WAIT_TIME = 1000;
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
-      dispatch({
-        type: ProgressActions.ADVANCE_PROGRESS_BY,
-        payload: { advanceProgressBy: 50 },
-      });
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
-      dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
-      dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
 
       try {
+        dispatch({
+          type: ProgressActions.ADVANCE_PROGRESS_BY,
+          payload: { advanceProgressBy: 50 },
+        });
         const collection = await getCollection(paramChainId, address);
+        dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
+        await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
+        dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
         setMintingData(collection);
         setUsdValue(
           await getDollarValue(collection.price.toString(), collection.chainId)
