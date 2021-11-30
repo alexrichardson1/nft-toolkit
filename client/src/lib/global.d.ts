@@ -42,14 +42,11 @@ interface FormStateI {
   };
 }
 
-interface AttributeI {
-  ["trait_type"]: string;
-  value: string;
-}
+type AttributeI = { tier: string };
 
 interface CardInfoI {
   name: string;
   description: string;
   image: string;
-  attributes: AttributeI[];
+  attributes: AttributeI;
 }
