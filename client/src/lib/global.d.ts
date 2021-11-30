@@ -43,7 +43,10 @@ interface FormStateI {
   };
 }
 
-type AttributeI = { tier: string };
+interface AttributeI {
+  // eslint-disable-next-line camelcase
+  [trait_type: string]: string;
+}
 
 interface CardInfoI {
   name: string;
