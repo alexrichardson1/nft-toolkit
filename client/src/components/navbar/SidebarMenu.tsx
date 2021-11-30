@@ -28,6 +28,7 @@ const SidebarMenu = ({ handleDrawerToggle }: PropsT): JSX.Element => (
     onClick={handleDrawerToggle}
     onKeyDown={handleDrawerToggle}>
     <Typography
+      gutterBottom
       component={Link}
       align="center"
       to="/"
@@ -35,8 +36,7 @@ const SidebarMenu = ({ handleDrawerToggle }: PropsT): JSX.Element => (
       variant="h5"
       sx={{ textDecoration: "none" }}
       noWrap
-      mt={2}
-      mb={2}>
+      mt={2}>
       NFToolkit
     </Typography>
     <Divider />
