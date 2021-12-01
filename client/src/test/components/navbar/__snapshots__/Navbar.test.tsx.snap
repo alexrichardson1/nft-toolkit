@@ -662,6 +662,139 @@ exports[`Navbar tests Navbar snapshot 1`] = `
               }
             >
               <Navbar>
+                <ForwardRef(Drawer)
+                  anchor="left"
+                  onClose={[Function]}
+                  open={false}
+                >
+                  <MuiDrawerRoot
+                    BackdropProps={
+                      Object {
+                        "transitionDuration": Object {
+                          "enter": 225,
+                          "exit": 195,
+                        },
+                      }
+                    }
+                    className="MuiDrawer-root MuiDrawer-modal"
+                    hideBackdrop={false}
+                    onClose={[Function]}
+                    open={false}
+                    ownerState={
+                      Object {
+                        "anchor": "left",
+                        "children": <SidebarMenu
+                          handleDrawerToggle={[Function]}
+                        />,
+                        "elevation": 16,
+                        "onClose": [Function],
+                        "open": false,
+                        "variant": "temporary",
+                      }
+                    }
+                  >
+                    <Noop />
+                    <ForwardRef(Modal)
+                      BackdropProps={
+                        Object {
+                          "transitionDuration": Object {
+                            "enter": 225,
+                            "exit": 195,
+                          },
+                        }
+                      }
+                      className="MuiDrawer-root MuiDrawer-modal css-j8ofbm-MuiDrawer-root"
+                      hideBackdrop={false}
+                      onClose={[Function]}
+                      open={false}
+                    >
+                      <ForwardRef(ModalUnstyled)
+                        BackdropComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "__emotion_base": Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "propTypes": Object {
+                                "children": [Function],
+                                "className": [Function],
+                                "classes": [Function],
+                                "components": [Function],
+                                "componentsProps": [Function],
+                                "invisible": [Function],
+                                "open": [Function],
+                                "sx": [Function],
+                                "transitionDuration": [Function],
+                              },
+                              "render": [Function],
+                            },
+                            "__emotion_forwardProp": [Function],
+                            "__emotion_real": [Circular],
+                            "__emotion_styles": Array [
+                              "label:MuiModal-backdrop;",
+                              Object {
+                                "zIndex": -1,
+                              },
+                              [Function],
+                              [Function],
+                            ],
+                            "defaultProps": undefined,
+                            "render": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        BackdropProps={
+                          Object {
+                            "transitionDuration": Object {
+                              "enter": 225,
+                              "exit": 195,
+                            },
+                          }
+                        }
+                        className="MuiDrawer-root MuiDrawer-modal css-j8ofbm-MuiDrawer-root"
+                        closeAfterTransition={false}
+                        components={
+                          Object {
+                            "Root": Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "__emotion_base": "div",
+                              "__emotion_forwardProp": [Function],
+                              "__emotion_real": [Circular],
+                              "__emotion_styles": Array [
+                                "label:MuiModal-root;",
+                                [Function],
+                                [Function],
+                                [Function],
+                                [Function],
+                              ],
+                              "defaultProps": undefined,
+                              "render": [Function],
+                              "withComponent": [Function],
+                            },
+                          }
+                        }
+                        componentsProps={
+                          Object {
+                            "root": Object {
+                              "ownerState": Object {},
+                            },
+                          }
+                        }
+                        disableAutoFocus={false}
+                        disableEnforceFocus={false}
+                        disableEscapeKeyDown={false}
+                        disablePortal={false}
+                        disableRestoreFocus={false}
+                        disableScrollLock={false}
+                        hideBackdrop={false}
+                        keepMounted={false}
+                        onClose={[Function]}
+                        onTransitionEnter={[Function]}
+                        onTransitionExited={[Function]}
+                        open={false}
+                      />
+                    </ForwardRef(Modal)>
+                  </MuiDrawerRoot>
+                </ForwardRef(Drawer)>
                 <ForwardRef(Box)
                   flexGrow={1}
                 >
@@ -1014,13 +1147,21 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                               "children": <ForwardRef(Toolbar)
                                 sx={
                                   Object {
-                                    "alignItems": "center",
+                                    "gap": 1,
                                     "height": 1,
-                                    "justifyContent": "center",
                                     "width": 1,
                                   }
                                 }
                               >
+                                <ForwardRef(IconButton)
+                                  aria-label="drawer-menu"
+                                  color="inherit"
+                                  edge="start"
+                                  onClick={[Function]}
+                                  size="large"
+                                >
+                                  <Memo />
+                                </ForwardRef(IconButton)>
                                 <ForwardRef(Typography)
                                   color="primary"
                                   component={
@@ -1143,13 +1284,21 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                   "children": <ForwardRef(Toolbar)
                                     sx={
                                       Object {
-                                        "alignItems": "center",
+                                        "gap": 1,
                                         "height": 1,
-                                        "justifyContent": "center",
                                         "width": 1,
                                       }
                                     }
                                   >
+                                    <ForwardRef(IconButton)
+                                      aria-label="drawer-menu"
+                                      color="inherit"
+                                      edge="start"
+                                      onClick={[Function]}
+                                      size="large"
+                                    >
+                                      <Memo />
+                                    </ForwardRef(IconButton)>
                                     <ForwardRef(Typography)
                                       color="primary"
                                       component={
@@ -1249,9 +1398,8 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                 <ForwardRef(Toolbar)
                                   sx={
                                     Object {
-                                      "alignItems": "center",
+                                      "gap": 1,
                                       "height": 1,
-                                      "justifyContent": "center",
                                       "width": 1,
                                     }
                                   }
@@ -1262,6 +1410,15 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                     ownerState={
                                       Object {
                                         "children": Array [
+                                          <ForwardRef(IconButton)
+                                            aria-label="drawer-menu"
+                                            color="inherit"
+                                            edge="start"
+                                            onClick={[Function]}
+                                            size="large"
+                                          >
+                                            <Memo />
+                                          </ForwardRef(IconButton)>,
                                           <ForwardRef(Typography)
                                             color="primary"
                                             component={
@@ -1349,9 +1506,8 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                         "component": "div",
                                         "disableGutters": false,
                                         "sx": Object {
-                                          "alignItems": "center",
+                                          "gap": 1,
                                           "height": 1,
-                                          "justifyContent": "center",
                                           "width": 1,
                                         },
                                         "variant": "regular",
@@ -1359,17 +1515,172 @@ exports[`Navbar tests Navbar snapshot 1`] = `
                                     }
                                     sx={
                                       Object {
-                                        "alignItems": "center",
+                                        "gap": 1,
                                         "height": 1,
-                                        "justifyContent": "center",
                                         "width": 1,
                                       }
                                     }
                                   >
                                     <Noop />
                                     <div
-                                      className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-4n6f7h-MuiToolbar-root"
+                                      className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-dzbpcr-MuiToolbar-root"
                                     >
+                                      <ForwardRef(IconButton)
+                                        aria-label="drawer-menu"
+                                        color="inherit"
+                                        edge="start"
+                                        onClick={[Function]}
+                                        size="large"
+                                      >
+                                        <MuiIconButtonRoot
+                                          aria-label="drawer-menu"
+                                          centerRipple={true}
+                                          className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeLarge"
+                                          disabled={false}
+                                          focusRipple={true}
+                                          onClick={[Function]}
+                                          ownerState={
+                                            Object {
+                                              "aria-label": "drawer-menu",
+                                              "children": <Memo />,
+                                              "color": "inherit",
+                                              "disableFocusRipple": false,
+                                              "disabled": false,
+                                              "edge": "start",
+                                              "onClick": [Function],
+                                              "size": "large",
+                                            }
+                                          }
+                                        >
+                                          <Noop />
+                                          <ForwardRef(ButtonBase)
+                                            aria-label="drawer-menu"
+                                            centerRipple={true}
+                                            className="MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeLarge css-1ils2jy-MuiIconButton-root"
+                                            disabled={false}
+                                            focusRipple={true}
+                                            onClick={[Function]}
+                                          >
+                                            <MuiButtonBaseRoot
+                                              aria-label="drawer-menu"
+                                              as="button"
+                                              className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeLarge css-1ils2jy-MuiIconButton-root"
+                                              disabled={false}
+                                              onBlur={[Function]}
+                                              onClick={[Function]}
+                                              onContextMenu={[Function]}
+                                              onDragLeave={[Function]}
+                                              onFocus={[Function]}
+                                              onKeyDown={[Function]}
+                                              onKeyUp={[Function]}
+                                              onMouseDown={[Function]}
+                                              onMouseLeave={[Function]}
+                                              onMouseUp={[Function]}
+                                              onTouchEnd={[Function]}
+                                              onTouchMove={[Function]}
+                                              onTouchStart={[Function]}
+                                              ownerState={
+                                                Object {
+                                                  "aria-label": "drawer-menu",
+                                                  "centerRipple": true,
+                                                  "children": <Memo />,
+                                                  "className": "MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeLarge css-1ils2jy-MuiIconButton-root",
+                                                  "component": "button",
+                                                  "disableRipple": false,
+                                                  "disableTouchRipple": false,
+                                                  "disabled": false,
+                                                  "focusRipple": true,
+                                                  "focusVisible": false,
+                                                  "onClick": [Function],
+                                                  "tabIndex": 0,
+                                                }
+                                              }
+                                              tabIndex={0}
+                                              type="button"
+                                            >
+                                              <Noop />
+                                              <button
+                                                aria-label="drawer-menu"
+                                                className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeLarge css-184mzhy-MuiButtonBase-root-MuiIconButton-root"
+                                                disabled={false}
+                                                onBlur={[Function]}
+                                                onClick={[Function]}
+                                                onContextMenu={[Function]}
+                                                onDragLeave={[Function]}
+                                                onFocus={[Function]}
+                                                onKeyDown={[Function]}
+                                                onKeyUp={[Function]}
+                                                onMouseDown={[Function]}
+                                                onMouseLeave={[Function]}
+                                                onMouseUp={[Function]}
+                                                onTouchEnd={[Function]}
+                                                onTouchMove={[Function]}
+                                                onTouchStart={[Function]}
+                                                tabIndex={0}
+                                                type="button"
+                                              >
+                                                <ForwardRef(MenuIcon)>
+                                                  <ForwardRef(SvgIcon)
+                                                    data-testid="MenuIcon"
+                                                  >
+                                                    <MuiSvgIconRoot
+                                                      aria-hidden={true}
+                                                      as="svg"
+                                                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                                      data-testid="MenuIcon"
+                                                      focusable="false"
+                                                      ownerState={
+                                                        Object {
+                                                          "children": <path
+                                                            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                                                          />,
+                                                          "color": "inherit",
+                                                          "component": "svg",
+                                                          "data-testid": "MenuIcon",
+                                                          "fontSize": "medium",
+                                                          "viewBox": "0 0 24 24",
+                                                        }
+                                                      }
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <Noop />
+                                                      <svg
+                                                        aria-hidden={true}
+                                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                                        data-testid="MenuIcon"
+                                                        focusable="false"
+                                                        viewBox="0 0 24 24"
+                                                      >
+                                                        <path
+                                                          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                                                        />
+                                                      </svg>
+                                                    </MuiSvgIconRoot>
+                                                  </ForwardRef(SvgIcon)>
+                                                </ForwardRef(MenuIcon)>
+                                                <ForwardRef(TouchRipple)
+                                                  center={true}
+                                                >
+                                                  <MuiTouchRippleRoot
+                                                    className="MuiTouchRipple-root"
+                                                  >
+                                                    <Noop />
+                                                    <span
+                                                      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                                    >
+                                                      <TransitionGroup
+                                                        childFactory={[Function]}
+                                                        component={null}
+                                                        exit={true}
+                                                      />
+                                                    </span>
+                                                  </MuiTouchRippleRoot>
+                                                </ForwardRef(TouchRipple)>
+                                              </button>
+                                            </MuiButtonBaseRoot>
+                                          </ForwardRef(ButtonBase)>
+                                        </MuiIconButtonRoot>
+                                      </ForwardRef(IconButton)>
                                       <ForwardRef(Typography)
                                         color="primary"
                                         component={

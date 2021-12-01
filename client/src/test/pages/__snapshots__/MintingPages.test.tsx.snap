@@ -1032,18 +1032,18 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             <h3
                                               class="MuiTypography-root MuiTypography-h3 css-tfjsvx-MuiTypography-root"
                                             >
-                                              COLLECTION_NAME
+                                              DummyCollectionName
                                             </h3>
                                             <p
                                               class="MuiTypography-root MuiTypography-body1 css-1mjdjo4-MuiTypography-root"
                                             >
-                                              COL
+                                              DUMMY
                                             </p>
                                           </div>
                                           <p
                                             class="MuiTypography-root MuiTypography-body1 css-1xfy0bh-MuiTypography-root"
                                           >
-                                            THIS IS THE DESCRIPTION
+                                            DummyDescription
                                           </p>
                                         </div>
                                         <div
@@ -1053,7 +1053,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation6 css-p61zj5-MuiPaper-root"
                                           >
                                             <div
-                                              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1eeuam4-MuiPaper-root"
+                                              class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-bellrx-MuiPaper-root"
                                             />
                                             <div
                                               class="MuiBox-root css-6md8xp"
@@ -1180,7 +1180,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                           }
                                           variant="h3"
                                         >
-                                          COLLECTION_NAME
+                                          DummyCollectionName
                                         </ForwardRef(Typography)>
                                         <ForwardRef(Typography)
                                           color="primary"
@@ -1197,7 +1197,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             }
                                           }
                                         >
-                                          COL
+                                          DUMMY
                                         </ForwardRef(Typography)>
                                       </ForwardRef(Box)>
                                       <ForwardRef(Typography)
@@ -1208,7 +1208,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                           }
                                         }
                                       >
-                                        THIS IS THE DESCRIPTION
+                                        DummyDescription
                                       </ForwardRef(Typography)>
                                     </ForwardRef(Box)>
                                     <ForwardRef(Box)
@@ -1233,7 +1233,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                         <ForwardRef(Paper)
                                           sx={
                                             Object {
-                                              "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                              "background": "url(DummyGIFAddress)",
                                               "backgroundRepeat": "no-repeat",
                                               "backgroundSize": "250px 250px",
                                               "height": 250,
@@ -1394,7 +1394,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               }
                                               variant="h3"
                                             >
-                                              COLLECTION_NAME
+                                              DummyCollectionName
                                             </ForwardRef(Typography)>
                                             <ForwardRef(Typography)
                                               color="primary"
@@ -1411,7 +1411,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                 }
                                               }
                                             >
-                                              COL
+                                              DUMMY
                                             </ForwardRef(Typography)>
                                           </ForwardRef(Box)>
                                           <ForwardRef(Typography)
@@ -1422,7 +1422,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            THIS IS THE DESCRIPTION
+                                            DummyDescription
                                           </ForwardRef(Typography)>
                                         </ForwardRef(Box)>
                                         <ForwardRef(Box)
@@ -1447,7 +1447,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             <ForwardRef(Paper)
                                               sx={
                                                 Object {
-                                                  "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                                  "background": "url(DummyGIFAddress)",
                                                   "backgroundRepeat": "no-repeat",
                                                   "backgroundSize": "250px 250px",
                                                   "height": 250,
@@ -1593,7 +1593,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                   }
                                                   variant="h3"
                                                 >
-                                                  COLLECTION_NAME
+                                                  DummyCollectionName
                                                 </ForwardRef(Typography)>
                                                 <ForwardRef(Typography)
                                                   color="primary"
@@ -1610,7 +1610,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                     }
                                                   }
                                                 >
-                                                  COL
+                                                  DUMMY
                                                 </ForwardRef(Typography)>
                                               </ForwardRef(Box)>
                                               <ForwardRef(Typography)
@@ -1621,7 +1621,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                   }
                                                 }
                                               >
-                                                THIS IS THE DESCRIPTION
+                                                DummyDescription
                                               </ForwardRef(Typography)>
                                             </ForwardRef(Box)>
                                             <ForwardRef(Box)
@@ -1646,7 +1646,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                 <ForwardRef(Paper)
                                                   sx={
                                                     Object {
-                                                      "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                                      "background": "url(DummyGIFAddress)",
                                                       "backgroundRepeat": "no-repeat",
                                                       "backgroundSize": "250px 250px",
                                                       "height": 250,
@@ -2787,7 +2787,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                               ownerState={
                                                                 Object {
                                                                   "align": "inherit",
-                                                                  "children": "COLLECTION_NAME",
+                                                                  "children": "DummyCollectionName",
                                                                   "className": undefined,
                                                                   "color": "secondary.main",
                                                                   "component": undefined,
@@ -2835,7 +2835,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                               <h3
                                                                 className="MuiTypography-root MuiTypography-h3 css-tfjsvx-MuiTypography-root"
                                                               >
-                                                                COLLECTION_NAME
+                                                                DummyCollectionName
                                                               </h3>
                                                             </MuiTypographyRoot>
                                                           </ForwardRef(Typography)>
@@ -2860,7 +2860,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                               ownerState={
                                                                 Object {
                                                                   "align": "inherit",
-                                                                  "children": "COL",
+                                                                  "children": "DUMMY",
                                                                   "className": undefined,
                                                                   "color": "primary.main",
                                                                   "component": undefined,
@@ -2908,7 +2908,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                               <p
                                                                 className="MuiTypography-root MuiTypography-body1 css-1mjdjo4-MuiTypography-root"
                                                               >
-                                                                COL
+                                                                DUMMY
                                                               </p>
                                                             </MuiTypographyRoot>
                                                           </ForwardRef(Typography)>
@@ -2929,7 +2929,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                         ownerState={
                                                           Object {
                                                             "align": "inherit",
-                                                            "children": "THIS IS THE DESCRIPTION",
+                                                            "children": "DummyDescription",
                                                             "className": undefined,
                                                             "color": undefined,
                                                             "component": undefined,
@@ -2973,7 +2973,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                         <p
                                                           className="MuiTypography-root MuiTypography-body1 css-1xfy0bh-MuiTypography-root"
                                                         >
-                                                          THIS IS THE DESCRIPTION
+                                                          DummyDescription
                                                         </p>
                                                       </MuiTypographyRoot>
                                                     </ForwardRef(Typography)>
@@ -3339,7 +3339,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                               <ForwardRef(Paper)
                                                                 sx={
                                                                   Object {
-                                                                    "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                                                    "background": "url(DummyGIFAddress)",
                                                                     "backgroundRepeat": "no-repeat",
                                                                     "backgroundSize": "250px 250px",
                                                                     "height": 250,
@@ -3461,7 +3461,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                           <ForwardRef(Paper)
                                                             sx={
                                                               Object {
-                                                                "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                                                "background": "url(DummyGIFAddress)",
                                                                 "backgroundRepeat": "no-repeat",
                                                                 "backgroundSize": "250px 250px",
                                                                 "height": 250,
@@ -3485,7 +3485,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                   "elevation": 1,
                                                                   "square": false,
                                                                   "sx": Object {
-                                                                    "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                                                    "background": "url(DummyGIFAddress)",
                                                                     "backgroundRepeat": "no-repeat",
                                                                     "backgroundSize": "250px 250px",
                                                                     "height": 250,
@@ -3503,7 +3503,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                               }
                                                               sx={
                                                                 Object {
-                                                                  "background": "url(https://c.tenor.com/S4njt-KCLDgAAAAC/ole-gunnar-yes.gif)",
+                                                                  "background": "url(DummyGIFAddress)",
                                                                   "backgroundRepeat": "no-repeat",
                                                                   "backgroundSize": "250px 250px",
                                                                   "height": 250,
@@ -3520,7 +3520,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                             >
                                                               <Noop />
                                                               <div
-                                                                className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1eeuam4-MuiPaper-root"
+                                                                className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-bellrx-MuiPaper-root"
                                                               />
                                                             </MuiPaperRoot>
                                                           </ForwardRef(Paper)>

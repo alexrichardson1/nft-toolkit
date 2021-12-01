@@ -42,3 +42,21 @@ interface FormStateI {
     quantity: string;
   };
 }
+
+interface AttributeI {
+  [trait_type: string]: string;
+}
+
+interface CollectionI {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: string;
+  attributes: AttributeI;
+}
+
+interface ParamsI {
+  paramChainId: string;
+  address: string;
+}

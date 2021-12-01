@@ -57,3 +57,7 @@ export const s3 = new S3({
     secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
   },
 });
+
+export const siderbarMenuItems = [
+  { text: "Create New Collection", location: "/" },
+];

@@ -2,6 +2,7 @@ import { Collapse, LinearProgress } from "@mui/material";
 import Container from "@mui/material/Container";
 import { SxProps } from "@mui/system";
 import Box from "@mui/system/Box";
+import Market from "components/marketplace/Market";
 import Navbar from "components/navbar/Navbar";
 import { useAppSelector } from "hooks/useAppSelector";
 import CreateCollectionPage from "pages/CreateCollectionPage";
@@ -43,6 +44,11 @@ const App = (): JSX.Element => {
                 exact
                 path="/:paramChainId/:address([0-9a-zA-Z]{26,})"
                 component={MintingPage}
+              />
+              <Route
+                exact
+                path="/:paramChainId/:address([0-9a-zA-Z]{26,})/market"
+                component={Market}
               />
               <Route exact path="/" component={CreateCollectionPage} />
             </Container>
