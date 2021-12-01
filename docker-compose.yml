@@ -11,6 +11,8 @@ services:
       - "80:80"
   client:
     image: jmp119/nft-toolkit-client
+    env_file:
+      - .env
     restart: on-failure
   server:
     image: jmp119/nft-toolkit-server
