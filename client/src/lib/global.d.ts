@@ -2,6 +2,8 @@ interface ProviderPropsI {
   children: React.ReactNode;
 }
 
+type SetStateAction<T> = React.Dispatch<React.SetStateAction<T>>;
+
 type NetworkT = { icon: string; name: string; chainId?: number };
 
 type AnchorT = null | HTMLElement;

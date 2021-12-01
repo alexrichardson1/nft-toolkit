@@ -4,8 +4,8 @@ import { parseUnits } from "ethers/lib/utils";
 import { API_URL } from "utils/constants";
 
 export const startLoading = (
-  setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setLoadingMessage: SetStateAction<string>,
+  setIsLoading: SetStateAction<boolean>,
   message = "Loading..."
 ): void => {
   setLoadingMessage(message);
@@ -13,8 +13,8 @@ export const startLoading = (
 };
 
 export const stopLoading = (
-  setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setLoadingMessage: SetStateAction<string>,
+  setIsLoading: SetStateAction<boolean>
 ): void => {
   setIsLoading(false);
   setLoadingMessage("");
