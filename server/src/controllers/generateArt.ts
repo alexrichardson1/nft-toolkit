@@ -17,7 +17,7 @@ export interface LayerI {
 
 interface TierI {
   name: string;
-  probability: string;
+  probability: number;
 }
 
 interface GeneratedImageI {
@@ -141,7 +141,7 @@ const updateLayerQuantities = (
   }
 };
 
-async function compileOneImage(
+async function compileImage(
   generatedImage: GeneratedImageI,
   layerBuffers: LayerBuffersI,
   index: number,
@@ -167,8 +167,10 @@ async function compileOneImage(
     throw new Error("Cannot compile image when none is given");
   }
 
-  resultImage.composite(composites);
-  const buffer = await resultImage.toBuffer();
+  const buffer = await resultImage
+    .composite(composites)
+    .toFormat("png", { quality: 80 })
+    .toBuffer();
   const uploadKey = `${creator}/${name}/images/${index}.png`;
   const uploadParams = {
     Bucket: "nft-toolkit-collections",
@@ -177,10 +179,7 @@ async function compileOneImage(
     ACL: "public-read",
   };
 
-  await s3
-    .upload(uploadParams)
-    .promise()
-    .catch((err) => console.log(err));
+  s3.upload(uploadParams).promise();
 
   return {
     name: `${name} ${index}`,
@@ -191,6 +190,50 @@ async function compileOneImage(
 }
 
 const toPercent = 100;
+
+const addRarityScore = (img: TokenT, layerQuantities: LayersQI) => {
+  let prob = toPercent * toPercent;
+  img.attributes.forEach((attr) => {
+    let layer;
+    if (layerQuantities[attr.trait_type]) {
+      layer = layerQuantities[attr.trait_type];
+    }
+    if (layer) {
+      prob *= (layer[attr.value] ?? 1) / layer.total;
+    }
+  });
+
+  img.attributes.push({ trait_type: "rarity_score", value: prob });
+};
+
+const sortByRarity = (aToken: TokenT, bToken: TokenT): number => {
+  const aRarityScore = aToken.attributes[aToken.attributes.length - 1];
+  const bRarityScore = bToken.attributes[bToken.attributes.length - 1];
+  if (aRarityScore && bRarityScore) {
+    return (
+      parseInt(aRarityScore.value.toString()) -
+      parseInt(bRarityScore.value.toString())
+    );
+  }
+  throw new Error("Cannot sort tokens without rarity score");
+};
+
+const addTiers = (tokens: TokenT[], sortedTokens: TokenT[], tiers: TierI[]) => {
+  const increment = 1 / tokens.length;
+  let current = 0;
+  let curLayer = 0;
+  sortedTokens.forEach((token) => {
+    const tier = tiers[curLayer];
+    if (!tier) {
+      throw new Error("Cannot find tier");
+    }
+    if (tier.probability < current * toPercent) {
+      curLayer++;
+    }
+    current += increment;
+    token.attributes.push({ trait_type: "tier", value: tier.name });
+  });
+};
 
 /**
  * PRE: Layer images are assumed to be of equal dimensions, so that we don't
@@ -210,55 +253,29 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
     );
   }
 
-  const generatedImages = [];
+  const images = [];
   const generatedHashes = new Set();
   const layerBuffers = await getImages(layers);
-  const layerQuantities: LayersQI = {};
+  const layerFreq: LayersQI = {};
 
   for (let i = 0; i < quantity; i++) {
-    const generatedImage = generateOneCombination(layers);
+    const image = generateOneCombination(layers);
 
-    if (generatedHashes.has(generatedImage.hash)) {
+    if (generatedHashes.has(image.hash)) {
       // Duplicate made - repeat loop
       i--;
       continue;
     }
 
-    generatedImages.push(
-      compileOneImage(
-        generatedImage,
-        layerBuffers,
-        i,
-        name,
-        creator,
-        layerQuantities
-      )
-    );
-    generatedHashes.add(generatedImage.hash);
+    images.push(compileImage(image, layerBuffers, i, name, creator, layerFreq));
+    generatedHashes.add(image.hash);
   }
-  const res = await Promise.all(generatedImages);
-  res.forEach((img) => {
-    let prob = toPercent;
-    img.attributes.forEach((attr) => {
-      let layer;
-      if (layerQuantities[attr.trait_type]) {
-        layer = layerQuantities[attr.trait_type];
-      }
-      if (layer) {
-        prob *= (layer[attr.value] ?? 1) / layer.total;
-      }
-    });
+  const tokens = await Promise.all(images);
+  tokens.forEach((token) => addRarityScore(token, layerFreq));
+  const sortedTokens = [...tokens].sort(sortByRarity);
 
-    let tierCumulative = 0;
-    for (const tier of tiers) {
-      tierCumulative += parseInt(tier.probability);
-      if (prob <= tierCumulative) {
-        img.attributes.push({ trait_type: "tier", value: tier.name });
-        break;
-      }
-    }
-  });
-  return res;
+  addTiers(tokens, sortedTokens, tiers);
+  return tokens;
 }
 
-export { generate, compileOneImage, GeneratedImageI, ImageI };
+export { generate, compileImage, GeneratedImageI, ImageI };
