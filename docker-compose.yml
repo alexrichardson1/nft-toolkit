@@ -11,8 +11,9 @@ services:
       - "80:80"
   client:
     image: jmp119/nft-toolkit-client
-    env_file:
-      - .env
+    args:
+      REACT_APP_AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      REACT_APP_AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     restart: on-failure
   server:
     image: jmp119/nft-toolkit-server
