@@ -53,6 +53,7 @@ const TierSelectionStep = ({
   return (
     <>
       <PageHeader text="Add Rarity Tiers For Your Collection" />
+      <p>{state.generative.totalTierRarity}</p>
       <OrderableList
         handleItemReorder={handleTierReorder}
         items={state.generative.tiers}>
