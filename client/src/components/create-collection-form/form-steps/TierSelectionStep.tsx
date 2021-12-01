@@ -3,6 +3,7 @@ import OrderableList from "components/common/OrderableList";
 import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
 import PageHeader from "components/common/PageHeader";
+import ProgressBar from "components/common/ProgressBar";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
 
@@ -53,7 +54,7 @@ const TierSelectionStep = ({
   return (
     <>
       <PageHeader text="Add Rarity Tiers For Your Collection" />
-      <p>{state.generative.totalTierRarity}</p>
+      <ProgressBar totalTierRarity={state.generative.totalTierRarity} />
       <OrderableList
         handleItemReorder={handleTierReorder}
         items={state.generative.tiers}>
