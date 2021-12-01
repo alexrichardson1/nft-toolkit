@@ -30,6 +30,16 @@ interface LayerI {
   numberOfImages: number;
 }
 
+type NameRecommendationT = {
+  name: string;
+  distance: number;
+};
+
+interface MlDataI {
+  names: NameRecommendationT[];
+  hype: number;
+}
+
 interface FormStateI {
   collectionName: string;
   description: string;
@@ -43,6 +53,7 @@ interface FormStateI {
     layers: LayerI[];
     quantity: string;
   };
+  predictions: MlDataI;
 }
 
 interface AttributeI {
