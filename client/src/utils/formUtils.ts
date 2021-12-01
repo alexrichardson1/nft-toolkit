@@ -32,8 +32,6 @@ const uploadToS3 = (
     Key: `${folder}/images/${newFileName}`,
     ACL: "public-read",
   };
-  console.log(process.env.REACT_APP_AWS_ACCESS_KEY_ID);
-  console.log(process.env.REACT_APP_AWS_SECRET_ACCESS_KEY);
   return s3.upload(uploadParams).promise();
 };
 
