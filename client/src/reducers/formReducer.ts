@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import FormActions from "actions/formActions";
@@ -8,7 +7,6 @@ const DEFAULT_STRING = "";
 
 /**
  * Returns an identifier for the image based on its name and size
- *
  * @param name - name of image
  * @param size - size of image
  * @returns id for the image based on name and size
@@ -17,7 +15,6 @@ export const getImgId = (name: string, size: number): string => name + size;
 
 /**
  * Returns an image object whilst making a URL to store the image locally
- *
  * @param image - the image file uploaded
  * @returns an image object based on the image
  */
@@ -29,7 +26,6 @@ export const getImgObj = (image: File): ImageI => ({
 
 /**
  * Returns a layer object based on layer name and id
- *
  * @param name - name of the layer
  * @param id - id of the layer
  * @returns a layer object
@@ -394,7 +390,6 @@ const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
 };
 
 /**
- *
  * @param state - current state of the form
  * @param action - object containting type of action to perform and payload
  * required for the action to be performed
@@ -408,69 +403,54 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         collectionName: action.payload.newName ?? DEFAULT_STRING,
       };
-
     // Change the description of the collection
     case FormActions.CHANGE_DESCRIPTION:
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
       };
-
     // Change the symbol of the collection
     case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
-
     // Add new images to the static collection
     case FormActions.ADD_IMAGES_STATIC:
       return addImagesStatic(action, state);
-
     // Change name of a static image
     case FormActions.CHANGE_IMAGE_NAME:
       return changeImageNameStatic(action, state);
-
     // Delete a static image
     case FormActions.DELETE_IMAGE_STATIC:
       return deleteImageStatic(action, state);
-
     // Change the desription of a static image
     case FormActions.CHANGE_IMAGE_DESC:
       return changeImageDesc(action, state);
-
     // Add new images within a layer for generative art
     case FormActions.ADD_IMAGES_GEN:
       return addImagesGen(action, state);
-
     // Delete an image within a layer for generative art
     case FormActions.DELETE_IMAGE_GEN:
       return deleteImageGen(action, state);
-
     // Change the name of an image within a layer for generative art
     case FormActions.CHANGE_IMAGE_NAME_GEN:
       return changeImageNameGen(action, state);
-
     // Change the precedence of a layer
     case FormActions.CHANGE_LAYER_PRECEDENCE:
       return changeLayerPrecedence(action, state);
-
     // Change the rarity of an image within a layer
     case FormActions.CHANGE_RARITY:
       return changeRarity(action, state);
-
     // Change the price of the collection
     case FormActions.CHANGE_PRICE:
       return {
         ...state,
         mintingPrice: action.payload.price ?? DEFAULT_STRING,
       };
-
     // Add a layer to the state
     case FormActions.ADD_LAYER:
       return addLayer(action, state);
-
     // Remove a layer from the state
     case FormActions.REMOVE_LAYER:
       return removeLayer(action, state);
-
     // Add tier to state
     case FormActions.ADD_TIER:
       return addTier(action, state);
