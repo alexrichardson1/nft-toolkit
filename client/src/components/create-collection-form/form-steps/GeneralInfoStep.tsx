@@ -5,15 +5,17 @@ import PageHeader from "components/common/PageHeader";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useMemo } from "react";
-import { wrongStep } from "utils/pages";
+import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const DESCRIPTION_ROWS = 4;
 const ICON_SIZE = 25;
-const GENERAL_INFO_STEP_NUMBER = 0;
+const INFO_STEP_NUMBER_STATIC = 2;
+const INFO_STEP_NUMBER_GEN = 4;
 
 interface PropsT {
   stepNumber: number;
   state: FormStateI;
+  generative: boolean;
   handleCollNameChange: (e: InputEventT) => void;
   handleDescriptionChange: (e: InputEventT) => void;
   handleMintPriceChange: (e: InputEventT) => void;
@@ -35,9 +37,7 @@ const priceInputProps = (selectedNet: NetworkT) => ({
 });
 
 /**
- *
- *
- *
+ * @param generative - true if the user has chosen generative art, else false
  * @param stepNumber - current step the form is on (must equal
  * GENERAL_INFO_STEP_NUMBER for this step to render)
  * @param state - state of the form
@@ -49,6 +49,7 @@ const priceInputProps = (selectedNet: NetworkT) => ({
  * @param handleSymbolChange - handle change in the symbol of the collection
  */
 const GeneralInfoStep = ({
+  generative,
   stepNumber,
   state,
   handleCollNameChange,
@@ -62,7 +63,10 @@ const GeneralInfoStep = ({
     [selectedNet]
   );
 
-  if (wrongStep(stepNumber, GENERAL_INFO_STEP_NUMBER)) {
+  if (
+    wrongStepStatic(generative, stepNumber, INFO_STEP_NUMBER_STATIC) &&
+    wrongStepGenerative(generative, stepNumber, INFO_STEP_NUMBER_GEN)
+  ) {
     return <></>;
   }
 

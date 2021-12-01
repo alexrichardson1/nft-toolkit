@@ -7,7 +7,7 @@ import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
 import OrderableList from "../../common/OrderableList";
 
-const LAYER_UPLOAD_STEP_NUMBER = 3;
+const LAYER_UPLOAD_STEP_NUMBER = 2;
 const MINIMUM_LAYERS_REQUIRED = 1;
 
 interface PropsT {
