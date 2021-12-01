@@ -690,6 +690,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                             },
                             "mintingPrice": "",
+                            "predictions": Object {
+                              "hype": -1,
+                              "names": Array [],
+                            },
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
@@ -3593,6 +3597,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                             },
                             "mintingPrice": "",
+                            "predictions": Object {
+                              "hype": -1,
+                              "names": Array [],
+                            },
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
@@ -3620,6 +3628,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                             },
                             "mintingPrice": "",
+                            "predictions": Object {
+                              "hype": -1,
+                              "names": Array [],
+                            },
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
@@ -3646,6 +3658,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                             },
                             "mintingPrice": "",
+                            "predictions": Object {
+                              "hype": -1,
+                              "names": Array [],
+                            },
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
@@ -3675,6 +3691,39 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                             },
                             "mintingPrice": "",
+                            "predictions": Object {
+                              "hype": -1,
+                              "names": Array [],
+                            },
+                            "static": Object {
+                              "images": Object {},
+                              "numberOfImages": 0,
+                            },
+                            "symbol": "",
+                          }
+                        }
+                        stepNumber={0}
+                      />
+                      <RecommendationsStep
+                        changedCollName=""
+                        generative={false}
+                        handleChangeCollName={[Function]}
+                        state={
+                          Object {
+                            "collectionName": "",
+                            "description": "",
+                            "generative": Object {
+                              "layers": Array [],
+                              "numberOfLayers": 0,
+                              "numberOfTiers": 0,
+                              "quantity": "",
+                              "tiers": Array [],
+                            },
+                            "mintingPrice": "",
+                            "predictions": Object {
+                              "hype": -1,
+                              "names": Array [],
+                            },
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,

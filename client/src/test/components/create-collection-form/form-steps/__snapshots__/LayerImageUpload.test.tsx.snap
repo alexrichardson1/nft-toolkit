@@ -677,6 +677,10 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                 "tiers": Array [],
               },
               "mintingPrice": "",
+              "predictions": Object {
+                "hype": -1,
+                "names": Array [],
+              },
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
@@ -692,13 +696,14 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
             <ForwardRef(Typography)
               color="secondary"
               component="div"
+              gutterBottom={true}
               noWrap={true}
               textAlign="center"
               variant="h4"
             >
               <MuiTypographyRoot
                 as="div"
-                className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap"
+                className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
                 ownerState={
                   Object {
                     "align": "inherit",
@@ -706,7 +711,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                     "className": undefined,
                     "color": "secondary.main",
                     "component": "div",
-                    "gutterBottom": false,
+                    "gutterBottom": true,
                     "noWrap": true,
                     "paragraph": false,
                     "sx": Object {
@@ -738,7 +743,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
               >
                 <Noop />
                 <div
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap css-w5ksg2-MuiTypography-root"
+                  className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                 >
                   Upload Images for Each Layer
                 </div>
@@ -4731,6 +4736,10 @@ exports[`LayerImageUpload snapshots Step Number does not match 1`] = `
                 "tiers": Array [],
               },
               "mintingPrice": "",
+              "predictions": Object {
+                "hype": -1,
+                "names": Array [],
+              },
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
@@ -5403,6 +5412,10 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
                 "tiers": Array [],
               },
               "mintingPrice": "",
+              "predictions": Object {
+                "hype": -1,
+                "names": Array [],
+              },
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,

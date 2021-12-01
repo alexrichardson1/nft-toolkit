@@ -15,6 +15,7 @@ const INITIAL_STATE: FormStateI = {
     layers: [],
     numberOfLayers: 0,
   },
+  predictions: { names: [], hype: -1 },
 };
 
 describe("LayerSelectionStep snapshots", () => {
