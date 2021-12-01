@@ -657,6 +657,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
           handleLayerImgDelete={[MockFunction]}
           handleLayerImgDrop={[MockFunction]}
           handleLayerImgNameChange={[MockFunction]}
+          handleQuantityChange={[MockFunction]}
           isLoading={false}
           state={
             Object {
@@ -672,6 +673,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                 ],
                 "numberOfLayers": 1,
                 "numberOfTiers": 0,
+                "quantity": "1",
                 "tiers": Array [],
               },
               "mintingPrice": "",
@@ -682,7 +684,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
               "symbol": "",
             }
           }
-          stepNumber={4}
+          stepNumber={3}
         >
           <PageHeader
             text="Upload Images for Each Layer"
@@ -3028,9 +3030,11 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                       }
                     }
                     label="Collection Quantity"
+                    onChange={[MockFunction]}
                     placeholder="0"
                     required={true}
                     type="number"
+                    value="1"
                   />,
                   "component": "div",
                   "elevation": 1,
@@ -3053,9 +3057,11 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                     }
                   }
                   label="Collection Quantity"
+                  onChange={[MockFunction]}
                   placeholder="0"
                   required={true}
                   type="number"
+                  value="1"
                 >
                   <ForwardRef(TextField)
                     InputProps={
@@ -3068,9 +3074,11 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                     }
                     fullWidth={true}
                     label="Collection Quantity"
+                    onChange={[MockFunction]}
                     placeholder="0"
                     required={true}
                     type="number"
+                    value="1"
                     variant="outlined"
                   >
                     <MuiTextFieldRoot
@@ -3097,7 +3105,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                           "label": "Collection Quantity",
                           "multiline": false,
                           "name": undefined,
-                          "onChange": undefined,
+                          "onChange": [MockFunction],
                           "onKeyPress": undefined,
                           "placeholder": "0",
                           "required": true,
@@ -3105,7 +3113,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                           "select": false,
                           "sx": undefined,
                           "type": "number",
-                          "value": undefined,
+                          "value": "1",
                           "variant": "outlined",
                         }
                       }
@@ -3147,8 +3155,10 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                     </React.Fragment>
                                   }
                                   multiline={false}
+                                  onChange={[MockFunction]}
                                   placeholder="0"
                                   type="number"
+                                  value="1"
                                 />,
                                 undefined,
                               ],
@@ -3176,10 +3186,10 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                 classes={
                                   Object {
                                     "asterisk": "MuiInputLabel-asterisk",
-                                    "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
+                                    "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                   }
                                 }
-                                data-shrink={false}
+                                data-shrink={true}
                                 ownerState={
                                   Object {
                                     "children": "Collection Quantity",
@@ -3189,7 +3199,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                       "color": "primary",
                                       "disabled": false,
                                       "error": false,
-                                      "filled": false,
+                                      "filled": true,
                                       "focused": false,
                                       "fullWidth": true,
                                       "hiddenLabel": false,
@@ -3206,7 +3216,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                     "htmlFor": undefined,
                                     "id": undefined,
                                     "required": true,
-                                    "shrink": false,
+                                    "shrink": true,
                                     "size": "medium",
                                     "variant": "outlined",
                                   }
@@ -3214,39 +3224,39 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                               >
                                 <Noop />
                                 <ForwardRef(FormLabel)
-                                  className="css-1x92c1k-MuiInputLabel-root"
+                                  className="css-1bzvmy4-MuiInputLabel-root"
                                   classes={
                                     Object {
                                       "asterisk": "MuiInputLabel-asterisk",
-                                      "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
+                                      "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                     }
                                   }
-                                  data-shrink={false}
+                                  data-shrink={true}
                                 >
                                   <MuiFormLabelRoot
                                     as="label"
-                                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-1x92c1k-MuiInputLabel-root"
+                                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-1bzvmy4-MuiInputLabel-root"
                                     classes={
                                       Object {
                                         "asterisk": "MuiInputLabel-asterisk",
-                                        "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
+                                        "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                       }
                                     }
-                                    data-shrink={false}
+                                    data-shrink={true}
                                     ownerState={
                                       Object {
                                         "children": "Collection Quantity",
-                                        "className": "css-1x92c1k-MuiInputLabel-root",
+                                        "className": "css-1bzvmy4-MuiInputLabel-root",
                                         "classes": Object {
                                           "asterisk": "MuiInputLabel-asterisk",
-                                          "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
+                                          "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                         },
                                         "color": "primary",
                                         "component": "label",
-                                        "data-shrink": false,
+                                        "data-shrink": true,
                                         "disabled": false,
                                         "error": false,
-                                        "filled": false,
+                                        "filled": true,
                                         "focused": false,
                                         "htmlFor": undefined,
                                         "id": undefined,
@@ -3256,8 +3266,8 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                   >
                                     <Noop />
                                     <label
-                                      className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-12o5nb6-MuiFormLabel-root-MuiInputLabel-root"
-                                      data-shrink={false}
+                                      className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
+                                      data-shrink={true}
                                     >
                                       Collection Quantity
                                       <MuiFormLabelAsterisk
@@ -3266,17 +3276,17 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                         ownerState={
                                           Object {
                                             "children": "Collection Quantity",
-                                            "className": "css-1x92c1k-MuiInputLabel-root",
+                                            "className": "css-1bzvmy4-MuiInputLabel-root",
                                             "classes": Object {
                                               "asterisk": "MuiInputLabel-asterisk",
-                                              "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined",
+                                              "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
                                             },
                                             "color": "primary",
                                             "component": "label",
-                                            "data-shrink": false,
+                                            "data-shrink": true,
                                             "disabled": false,
                                             "error": false,
-                                            "filled": false,
+                                            "filled": true,
                                             "focused": false,
                                             "htmlFor": undefined,
                                             "id": undefined,
@@ -3314,8 +3324,10 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                 </React.Fragment>
                               }
                               multiline={false}
+                              onChange={[MockFunction]}
                               placeholder="0"
                               type="number"
+                              value="1"
                             >
                               <ForwardRef(InputBase)
                                 autoFocus={false}
@@ -3379,9 +3391,11 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                   }
                                 }
                                 multiline={false}
+                                onChange={[MockFunction]}
                                 placeholder="0"
                                 renderSuffix={[Function]}
                                 type="number"
+                                value="1"
                               >
                                 <GlobalStyles
                                   styles={
@@ -3792,7 +3806,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                         "color": "primary",
                                         "disabled": false,
                                         "error": false,
-                                        "filled": false,
+                                        "filled": true,
                                         "focused": false,
                                         "fullWidth": true,
                                         "hiddenLabel": false,
@@ -3820,7 +3834,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                       "multiline": false,
                                       "name": undefined,
                                       "onBlur": undefined,
-                                      "onChange": undefined,
+                                      "onChange": [MockFunction],
                                       "onFocus": undefined,
                                       "placeholder": "0",
                                       "renderSuffix": [Function],
@@ -3828,7 +3842,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                       "size": "medium",
                                       "startAdornment": undefined,
                                       "type": "number",
-                                      "value": undefined,
+                                      "value": "1",
                                     }
                                   }
                                 >
@@ -3912,7 +3926,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                             "color": "primary",
                                             "disabled": false,
                                             "error": false,
-                                            "filled": false,
+                                            "filled": true,
                                             "focused": false,
                                             "fullWidth": true,
                                             "hiddenLabel": false,
@@ -3940,7 +3954,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                           "multiline": false,
                                           "name": undefined,
                                           "onBlur": undefined,
-                                          "onChange": undefined,
+                                          "onChange": [MockFunction],
                                           "onFocus": undefined,
                                           "placeholder": "0",
                                           "renderSuffix": [Function],
@@ -3948,12 +3962,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                           "size": "medium",
                                           "startAdornment": undefined,
                                           "type": "number",
-                                          "value": undefined,
+                                          "value": "1",
                                         }
                                       }
                                       placeholder="0"
                                       required={true}
                                       type="number"
+                                      value="1"
                                     >
                                       <Noop />
                                       <input
@@ -3970,6 +3985,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                         placeholder="0"
                                         required={true}
                                         type="number"
+                                        value="1"
                                       />
                                     </MuiOutlinedInputInput>
                                     <MuiOutlinedInputNotchedOutline
@@ -3980,7 +3996,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                            *
                                         </React.Fragment>
                                       }
-                                      notched={false}
+                                      notched={true}
                                     >
                                       <Noop />
                                       <NotchedOutline
@@ -3991,7 +4007,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                              *
                                           </React.Fragment>
                                         }
-                                        notched={false}
+                                        notched={true}
                                       >
                                         <Styled(fieldset)
                                           aria-hidden={true}
@@ -4003,7 +4019,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                                 Collection Quantity
                                                  *
                                               </React.Fragment>,
-                                              "notched": false,
+                                              "notched": true,
                                             }
                                           }
                                         >
@@ -4020,13 +4036,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                                     Collection Quantity
                                                      *
                                                   </React.Fragment>,
-                                                  "notched": false,
+                                                  "notched": true,
                                                 }
                                               }
                                             >
                                               <Noop />
                                               <legend
-                                                className="css-173wfxe"
+                                                className="css-1z7n62"
                                               >
                                                 <span>
                                                   Collection Quantity
@@ -4701,6 +4717,7 @@ exports[`LayerImageUpload snapshots Step Number does not match 1`] = `
           handleLayerImgDelete={[MockFunction]}
           handleLayerImgDrop={[MockFunction]}
           handleLayerImgNameChange={[MockFunction]}
+          handleQuantityChange={[MockFunction]}
           isLoading={true}
           state={
             Object {
@@ -4710,6 +4727,7 @@ exports[`LayerImageUpload snapshots Step Number does not match 1`] = `
                 "layers": Array [],
                 "numberOfLayers": 0,
                 "numberOfTiers": 0,
+                "quantity": "1",
                 "tiers": Array [],
               },
               "mintingPrice": "",
@@ -5371,6 +5389,7 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
           handleLayerImgDelete={[MockFunction]}
           handleLayerImgDrop={[MockFunction]}
           handleLayerImgNameChange={[MockFunction]}
+          handleQuantityChange={[MockFunction]}
           isLoading={true}
           state={
             Object {
@@ -5380,6 +5399,7 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
                 "layers": Array [],
                 "numberOfLayers": 0,
                 "numberOfTiers": 0,
+                "quantity": "1",
                 "tiers": Array [],
               },
               "mintingPrice": "",
@@ -5390,7 +5410,7 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
               "symbol": "",
             }
           }
-          stepNumber={4}
+          stepNumber={3}
         />
       </InnerThemeProvider>
     </ThemeProvider>

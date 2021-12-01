@@ -641,6 +641,7 @@ exports[`TierSelectionStep generative does not match 1`] = `
           <TierSelectionStep
             generative={false}
             handleTierAdd={[MockFunction]}
+            handleTierProbChange={[MockFunction]}
             handleTierRemoval={[MockFunction]}
             handleTierReorder={[MockFunction]}
             state={
@@ -651,6 +652,7 @@ exports[`TierSelectionStep generative does not match 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
+                  "quantity": "1",
                   "tiers": Array [],
                 },
                 "mintingPrice": "",
@@ -661,7 +663,7 @@ exports[`TierSelectionStep generative does not match 1`] = `
                 "symbol": "",
               }
             }
-            stepNumber={2}
+            stepNumber={1}
           />
         </NetworkProvider>
       </InnerThemeProvider>
@@ -1311,6 +1313,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
           <TierSelectionStep
             generative={true}
             handleTierAdd={[MockFunction]}
+            handleTierProbChange={[MockFunction]}
             handleTierRemoval={[MockFunction]}
             handleTierReorder={[MockFunction]}
             state={
@@ -1321,6 +1324,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
+                  "quantity": "1",
                   "tiers": Array [],
                 },
                 "mintingPrice": "",
@@ -1331,7 +1335,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 "symbol": "",
               }
             }
-            stepNumber={2}
+            stepNumber={1}
           >
             <PageHeader
               text="Add Rarity Tiers For Your Collection"
@@ -3673,6 +3677,7 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
           <TierSelectionStep
             generative={true}
             handleTierAdd={[MockFunction]}
+            handleTierProbChange={[MockFunction]}
             handleTierRemoval={[MockFunction]}
             handleTierReorder={[MockFunction]}
             state={
@@ -3683,6 +3688,7 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
+                  "quantity": "1",
                   "tiers": Array [],
                 },
                 "mintingPrice": "",
