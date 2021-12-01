@@ -15,7 +15,7 @@ import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
 import { formatEther } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
 import { getDollarValue } from "utils/coinGecko";
@@ -90,6 +90,7 @@ const MintingPage = (): JSX.Element => {
   const [mintingQuantity, setMintingQuantity] = useState(MIN_AMOUNT_ALLOWED);
   const [isMinting, setIsMinting] = useState(false);
   const [usdValue, setUsdValue] = useState(0.0);
+  const logo = useMemo(() => getLogoByChainId(mintingData.chainId), []);
 
   const handleQuantityIncrease = () =>
     setMintingQuantity((prev) => Math.min(prev + 1, MAX_AMOUNT_ALLOWED));
@@ -242,12 +243,7 @@ const MintingPage = (): JSX.Element => {
                     BigNumber.from(mintingData.price).mul(mintingQuantity)
                   )}`}
                   {!isMinting && (
-                    <SvgLogo
-                      icon={getLogoByChainId(mintingData.chainId)}
-                      width="20px"
-                      height="20px"
-                      margins
-                    />
+                    <SvgLogo icon={logo} width="20px" height="20px" margins />
                   )}{" "}
                   ${`(${(mintingQuantity * usdValue).toFixed(DECIMALS)})`}
                 </LoadingButton>
