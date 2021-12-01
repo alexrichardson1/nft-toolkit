@@ -40,6 +40,7 @@ const INITIAL_STATE: FormStateI = {
   static: { images: {}, numberOfImages: 0 },
   generative: {
     numberOfTiers: 0,
+    totalTierRarity: 0,
     tiers: [],
     layers: [],
     numberOfLayers: 0,
