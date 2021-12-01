@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import { DragEndEvent } from "@dnd-kit/core";
 import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor, Stack } from "@mui/material";
