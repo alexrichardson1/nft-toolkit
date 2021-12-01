@@ -9,7 +9,13 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
+  generative: {
+    quantity: "1",
+    tiers: [],
+    numberOfTiers: 0,
+    layers: [],
+    numberOfLayers: 0,
+  },
 };
 
 describe("TierSelectionStep", () => {
@@ -22,6 +28,7 @@ describe("TierSelectionStep", () => {
             state={INITIAL_STATE}
             generative={true}
             handleTierAdd={jest.fn()}
+            handleTierProbChange={jest.fn()}
             handleTierRemoval={jest.fn()}
             handleTierReorder={jest.fn()}
           />
@@ -36,9 +43,10 @@ describe("TierSelectionStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <TierSelectionStep
-            stepNumber={2}
+            stepNumber={1}
             state={INITIAL_STATE}
             generative={false}
+            handleTierProbChange={jest.fn()}
             handleTierAdd={jest.fn()}
             handleTierRemoval={jest.fn()}
             handleTierReorder={jest.fn()}
@@ -54,12 +62,13 @@ describe("TierSelectionStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <TierSelectionStep
-            stepNumber={2}
+            stepNumber={1}
             state={INITIAL_STATE}
             generative={true}
             handleTierAdd={jest.fn()}
             handleTierRemoval={jest.fn()}
             handleTierReorder={jest.fn()}
+            handleTierProbChange={jest.fn()}
           />
         </NetworkProvider>
       </ThemeProvider>

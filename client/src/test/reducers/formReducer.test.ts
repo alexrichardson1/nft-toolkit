@@ -7,7 +7,13 @@ const EMPTY_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
+  generative: {
+    quantity: "1",
+    tiers: [],
+    numberOfTiers: 0,
+    layers: [],
+    numberOfLayers: 0,
+  },
 };
 
 const getImageObj = (name: string, url: string, image: File): ImageI => ({
@@ -63,6 +69,7 @@ describe("formReducer", () => {
         },
       },
       generative: {
+        quantity: "1",
         tiers: [],
         numberOfTiers: 0,
         layers: [],

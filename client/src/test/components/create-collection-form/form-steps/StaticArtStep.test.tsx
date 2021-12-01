@@ -11,7 +11,13 @@ const INITIAL_STATE: FormStateI = {
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
+  generative: {
+    quantity: "1",
+    tiers: [],
+    numberOfTiers: 0,
+    layers: [],
+    numberOfLayers: 0,
+  },
 };
 
 describe("StaticArtStep", () => {
@@ -43,7 +49,7 @@ describe("StaticArtStep", () => {
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
             <StaticArtStep
-              stepNumber={2}
+              stepNumber={1}
               state={INITIAL_STATE}
               generative={true}
               isLoading={false}
@@ -65,7 +71,7 @@ describe("StaticArtStep", () => {
         <NetworkProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
             <StaticArtStep
-              stepNumber={2}
+              stepNumber={1}
               state={INITIAL_STATE}
               generative={false}
               isLoading={false}
