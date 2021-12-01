@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import FormActions from "actions/formActions";
@@ -52,6 +53,7 @@ const INITIAL_STATE: FormStateI = {
   static: { images: {}, numberOfImages: 0 },
   generative: {
     numberOfTiers: 0,
+    totalTierRarity: 0,
     tiers: [],
     layers: [],
     numberOfLayers: 0,
@@ -253,11 +255,15 @@ const changeTierProb = (action: FormActionI, state: FormStateI) => {
     action.payload.tierProbabilityChange,
     "tierProbabilityChange required"
   );
+  let rarity = 0;
   state.generative.tiers.forEach((tier) => {
     if (tier.name === tierProbabilityChange.tierName) {
       tier.probability = tierProbabilityChange.newProbability;
     }
+    rarity += tier.probability ? parseFloat(tier.probability) : 0;
   });
+  state.generative.totalTierRarity = rarity;
+
   return { ...state };
 };
 
@@ -329,9 +335,17 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
     action.payload.deleteTierName,
     "deleteTierName required"
   );
+
   state.generative.tiers = state.generative.tiers.filter(
     (tier) => tier.name !== deleteTierName
   );
+
+  let rarity = 0;
+  state.generative.tiers.forEach((tier) => {
+    rarity += tier.probability ? parseFloat(tier.probability) : 0;
+  });
+  state.generative.totalTierRarity = rarity;
+
   return {
     ...state,
     generative: {
@@ -478,6 +492,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           numberOfTiers: 0,
           tiers: [],
           layers: [],
+          totalTierRarity: 0,
           numberOfLayers: 0,
           quantity: DEFAULT_STRING,
         },
