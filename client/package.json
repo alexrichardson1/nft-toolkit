@@ -34,6 +34,7 @@
     "browserslist": "^4.16.5",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
+    "eslint-plugin-tsdoc": "^0.2.14",
     "ethers": "^5.5.1",
     "glob-parent": "^5.1.2",
     "immer": "^9.0.6",
