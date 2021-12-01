@@ -1,6 +1,6 @@
+import { TransactionRequest } from "@ethersproject/providers";
 import axios from "axios";
-import { UnsignedTransaction } from "ethers";
-import { parseUnits } from "ethers/lib/utils";
+import { Deferrable, parseUnits } from "ethers/lib/utils";
 import { API_URL } from "utils/constants";
 
 export const startLoading = (
@@ -90,7 +90,7 @@ export const uploadGenImages = async (
 };
 
 interface TransactionT {
-  transaction: UnsignedTransaction;
+  transaction: Deferrable<TransactionRequest>;
 }
 
 export const uploadGenCollection = async (
@@ -98,7 +98,7 @@ export const uploadGenCollection = async (
   state: FormStateI,
   account: string,
   chainId: number
-): Promise<UnsignedTransaction> => {
+): Promise<Deferrable<TransactionRequest>> => {
   const genCollection = {
     name: state.collectionName,
     symbol: state.symbol,
@@ -120,7 +120,7 @@ export const uploadCollection = async (
   state: FormStateI,
   account: string,
   chainId: number
-): Promise<UnsignedTransaction> => {
+): Promise<Deferrable<TransactionRequest>> => {
   const tokens = Object.values(state.static.images).map((image, index) => ({
     name: image.name,
     description: image.description ?? "",

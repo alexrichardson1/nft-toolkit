@@ -1,16 +1,16 @@
 import { DragEndEvent } from "@dnd-kit/core";
+import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import FormActions from "actions/formActions";
 import SnackbarContext from "context/snackbar/SnackbarContext";
-import { UnsignedTransaction } from "ethers";
+import { Deferrable } from "ethers/lib/utils";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
 import { DEFAULT_ALERT_DURATION } from "utils/constants";
-import showAlert from "utils/showAlert";
 import {
   addDeployedAddress,
   startLoading,
@@ -19,7 +19,8 @@ import {
   uploadGenCollection,
   uploadGenImages,
   uploadImages,
-} from "../../utils/formUtils";
+} from "utils/formUtils";
+import showAlert from "utils/showAlert";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
@@ -30,8 +31,13 @@ import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
 
 const INITIAL_STEP_NUMBER = 0;
-const STATIC_STEP = 3;
+const STATIC_STEPS = 3;
 const GEN_STEPS = 5;
+// handleFormSubmit
+const TIER_UPLOAD_STEP = 1;
+const LAYER_SELECTION_STEP = 2;
+const LAYER_IMG_UPLOAD_STEP = 3;
+
 const INITIAL_STATE: FormStateI = {
   collectionName: "",
   description: "",
@@ -105,6 +111,34 @@ export const checkChance = (
   return true;
 };
 
+const checkLayers = (
+  layers: LayerI[],
+  showFormAlert: (severity: AlertColor, message: string) => void
+): boolean => {
+  return layers.every((layer) => checkRarities(layer, showFormAlert));
+};
+
+const createCollection = async (
+  library: Web3Provider,
+  setLoadingMessage: SetStateAction<string>,
+  tx: Deferrable<TransactionRequest>,
+  account: string,
+  chainId: number,
+  showFormAlert: (severity: AlertColor, message: string) => void,
+  setIsLoading: SetStateAction<boolean>,
+  setTxAddress: SetStateAction<string>
+) => {
+  const signer = library.getSigner();
+  setLoadingMessage("Deploying...");
+  const txResponse = await signer.sendTransaction(tx);
+  setLoadingMessage("Confirming...");
+  const txReceipt = await txResponse.wait();
+  addDeployedAddress(account, chainId, txReceipt.contractAddress);
+  showFormAlert("success", "Collection Creation Successful");
+  stopLoading(setLoadingMessage, setIsLoading);
+  setTxAddress(txReceipt.contractAddress);
+};
+
 // eslint-disable-next-line max-lines-per-function
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
@@ -119,28 +153,22 @@ const CreateCollectionForm = (): JSX.Element => {
   const [txAddress, setTxAddress] = useState("");
 
   useEffect(() => {
-    if (stepNumber <= 1) {
+    if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
       dispatch({ type: FormActions.RESET_TYPE_OF_ART, payload: {} });
     }
   }, [stepNumber]);
 
   const IS_LAST_STEP =
-    stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEP - 1);
-
+    stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEPS - 1);
   const handleNextStep = () => setStepNumber((prev) => prev + 1);
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
 
   const handleImageDelete = (deleteId: string, layerName = "") => {
-    let payload;
-
-    if (generative) {
-      payload = { deleteGen: { deleteId, layerName } };
-    } else {
-      payload = { deleteId };
-    }
-
+    const payload = generative
+      ? { deleteGen: { deleteId, layerName } }
+      : { deleteId };
     dispatch({
       type: generative
         ? FormActions.DELETE_IMAGE_GEN
@@ -148,31 +176,26 @@ const CreateCollectionForm = (): JSX.Element => {
       payload,
     });
   };
-
   const handleImgDescChange = (e: InputEventT, imageId: string) => {
     dispatch({
       type: FormActions.CHANGE_IMAGE_DESC,
       payload: { imageDescChange: { imageId, newDesc: e.target.value } },
     });
   };
-
   const handleCollNameChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_NAME,
       payload: { newName: e.target.value },
     });
-
   const handleMintPriceChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_PRICE,
       payload: { price: e.target.value },
     });
-
   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
-
   const handleLayerAddition = (newLayerName: string) => {
     dispatch({
       type: FormActions.ADD_LAYER,
@@ -185,21 +208,18 @@ const CreateCollectionForm = (): JSX.Element => {
       payload: { dragEndEvent: e },
     });
   };
-
   const handleTierRemoval = (tierName: string) => {
     dispatch({
       type: FormActions.REMOVE_TIER,
       payload: { deleteTierName: tierName },
     });
   };
-
   const handleTierAdd = (newTierName: string) => {
     dispatch({
       type: FormActions.ADD_TIER,
       payload: { newTier: { name: newTierName } },
     });
   };
-
   const handleTierProbChange = (tierName: string) => (e: InputEventT) => {
     dispatch({
       type: FormActions.CHANGE_TIER_PROBABILITY,
@@ -208,46 +228,42 @@ const CreateCollectionForm = (): JSX.Element => {
       },
     });
   };
-
   const handleTierReorder = (e: DragEndEvent) => {
     dispatch({
       type: FormActions.CHANGE_TIER_PRECEDENCE,
       payload: { dragEndEvent: e },
     });
   };
-
   const handleLayerRemoval = (layerName: string) => {
     dispatch({
       type: FormActions.REMOVE_LAYER,
       payload: { deleteLayerName: layerName },
     });
   };
-
   const handleSymbolChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_SYMBOL,
       payload: { symbol: e.target.value },
     });
-
   const handleImgNameChange = (
     e: InputEventT,
     imageid: string,
     layerName = ""
   ) => {
-    let payload;
-    if (generative) {
-      payload = {
-        modifyImgObjGen: {
-          newImageName: e.target.value,
-          imageId: imageid,
-          layerName,
-        },
-      };
-    } else {
-      payload = {
-        modifyImgObjStatic: { newImageName: e.target.value, imageId: imageid },
-      };
-    }
+    const payload = generative
+      ? {
+          modifyImgObjGen: {
+            newImageName: e.target.value,
+            imageId: imageid,
+            layerName,
+          },
+        }
+      : {
+          modifyImgObjStatic: {
+            newImageName: e.target.value,
+            imageId: imageid,
+          },
+        };
     dispatch({
       type: generative
         ? FormActions.CHANGE_IMAGE_NAME_GEN
@@ -255,7 +271,6 @@ const CreateCollectionForm = (): JSX.Element => {
       payload,
     });
   };
-
   const handleImageDrop = (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null,
@@ -265,12 +280,9 @@ const CreateCollectionForm = (): JSX.Element => {
     if (!imgObjs) {
       return;
     }
-    let payload;
-    if (generative) {
-      payload = { newImagesGen: { images: Array.from(imgObjs), layerName } };
-    } else {
-      payload = { newImagesStatic: Array.from(imgObjs) };
-    }
+    const payload = generative
+      ? { newImagesGen: { images: Array.from(imgObjs), layerName } }
+      : { newImagesStatic: Array.from(imgObjs) };
     dispatch({
       type: generative
         ? FormActions.ADD_IMAGES_GEN
@@ -278,7 +290,6 @@ const CreateCollectionForm = (): JSX.Element => {
       payload,
     });
   };
-
   const handleImgRarityChange =
     (layerName: string) => (e: InputEventT, imageId: string) =>
       dispatch({
@@ -287,44 +298,42 @@ const CreateCollectionForm = (): JSX.Element => {
           rarityChange: { newRarity: e.target.value, imageId, layerName },
         },
       });
-
   const handleDescriptionChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_DESCRIPTION,
       payload: { description: e.target.value },
     });
-
   const handleQuantityChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_QUANTITY,
       payload: { quantity: e.target.value },
     });
-
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     if (!active || !account || !chainId) {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
-
     if (!IS_LAST_STEP) {
-      const TIER_UPLOAD_PAGE = 2;
-      const LAYER_SELECTION_PAGE = 3;
       if (
-        stepNumber === LAYER_SELECTION_PAGE &&
+        generative &&
+        stepNumber === LAYER_SELECTION_STEP &&
         state.generative.numberOfLayers <= 0
       ) {
         showFormAlert("warning", "You need atleast one layer to proceed.");
         return;
       }
+
       if (
-        stepNumber === TIER_UPLOAD_PAGE &&
-        !checkChance(
-          state.generative.numberOfTiers,
-          state.generative.tiers,
-          showFormAlert
-        )
+        generative &&
+        ((stepNumber === TIER_UPLOAD_STEP &&
+          !checkChance(
+            state.generative.numberOfTiers,
+            state.generative.tiers,
+            showFormAlert
+          )) ||
+          (stepNumber === LAYER_IMG_UPLOAD_STEP &&
+            !checkLayers(state.generative.layers, showFormAlert)))
       ) {
         return;
       }
@@ -332,15 +341,9 @@ const CreateCollectionForm = (): JSX.Element => {
       return;
     }
 
-    for (const layer of state.generative.layers) {
-      if (!checkRarities(layer, showFormAlert)) {
-        return;
-      }
-    }
-
     try {
-      startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-      let tx: UnsignedTransaction;
+      startLoading(setLoadingMessage, setIsLoading, "UPLOADING...");
+      let tx: Deferrable<TransactionRequest>;
       if (generative) {
         const layers = await uploadGenImages(
           state.generative.layers,
@@ -359,15 +362,16 @@ const CreateCollectionForm = (): JSX.Element => {
         tx = await uploadCollection(state, account, chainId);
       }
 
-      const signer = library.getSigner();
-      setLoadingMessage("Deploying...");
-      const txResponse = await signer.sendTransaction(tx);
-      setLoadingMessage("Confirming...");
-      const txReceipt = await txResponse.wait();
-      addDeployedAddress(account, chainId, txReceipt.contractAddress);
-      showFormAlert("success", "Collection Creation Successful");
-      stopLoading(setLoadingMessage, setIsLoading);
-      setTxAddress(txReceipt.contractAddress);
+      await createCollection(
+        library,
+        setLoadingMessage,
+        tx,
+        account,
+        chainId,
+        showFormAlert,
+        setIsLoading,
+        setTxAddress
+      );
     } catch (error) {
       console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
@@ -387,6 +391,7 @@ const CreateCollectionForm = (): JSX.Element => {
       spacing={2}
       data-testid="create-form">
       <GeneralInfoStep
+        generative={generative}
         stepNumber={stepNumber}
         state={state}
         handleCollNameChange={handleCollNameChange}
