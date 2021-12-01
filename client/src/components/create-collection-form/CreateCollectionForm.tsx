@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { DragEndEvent } from "@dnd-kit/core";
 import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor, Stack } from "@mui/material";
@@ -24,15 +25,26 @@ import showAlert from "utils/showAlert";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
+import RecommendationsStep from "./form-steps/RecommendationsStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
 
+const DUMMY_ML_DATA = {
+  names: [
+    { name: "name1", distance: 3 },
+    { name: "name2", distance: 4 },
+    { name: "name3", distance: 5 },
+  ],
+  hype: 2,
+};
+
 const INITIAL_STEP_NUMBER = 0;
-const STATIC_STEPS = 3;
-const GEN_STEPS = 5;
+const STATIC_STEPS = 4;
+const GEN_STEPS = 6;
+const PAGE_IDX_OFFSET = 2;
 // handleFormSubmit
 const TIER_UPLOAD_STEP = 1;
 const LAYER_SELECTION_STEP = 2;
@@ -51,6 +63,7 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "",
   },
+  predictions: { names: [], hype: -1 },
 };
 
 const formFooterStyle: SxProps = {
@@ -59,6 +72,10 @@ const formFooterStyle: SxProps = {
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
 };
+
+const isGeneralInfoStep = (stepNumber: number) =>
+  stepNumber === GEN_STEPS - PAGE_IDX_OFFSET ||
+  stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET;
 
 export const checkRarities = (
   layer: LayerI,
@@ -151,20 +168,18 @@ const CreateCollectionForm = (): JSX.Element => {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
   const [txAddress, setTxAddress] = useState("");
-
+  const [newCollName, setNewCollName] = useState("");
   useEffect(() => {
     if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
       dispatch({ type: FormActions.RESET_TYPE_OF_ART, payload: {} });
     }
   }, [stepNumber]);
-
   const IS_LAST_STEP =
     stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEPS - 1);
   const handleNextStep = () => setStepNumber((prev) => prev + 1);
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
-
   const handleImageDelete = (deleteId: string, layerName = "") => {
     const payload = generative
       ? { deleteGen: { deleteId, layerName } }
@@ -308,6 +323,11 @@ const CreateCollectionForm = (): JSX.Element => {
       type: FormActions.CHANGE_QUANTITY,
       payload: { quantity: e.target.value },
     });
+  const handlePredictionsChange = (newPredictions: MlDataI) =>
+    dispatch({
+      type: FormActions.CHANGE_PREDICTIONS,
+      payload: { newPredictions },
+    });
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!active || !account || !chainId) {
@@ -337,29 +357,39 @@ const CreateCollectionForm = (): JSX.Element => {
       ) {
         return;
       }
+      if (isGeneralInfoStep(stepNumber)) {
+        startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
+        const DUMMY_WAIT_TIME = 5000;
+        // Get the data here
+        await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
+        handlePredictionsChange(DUMMY_ML_DATA);
+        stopLoading(setLoadingMessage, setIsLoading);
+        setNewCollName(state.collectionName);
+      }
       handleNextStep();
       return;
     }
 
     try {
-      startLoading(setLoadingMessage, setIsLoading, "UPLOADING...");
+      startLoading(setLoadingMessage, setIsLoading, "Uploading...");
       let tx: Deferrable<TransactionRequest>;
+      const modifiedState = { ...state, collectionName: newCollName };
       if (generative) {
         const layers = await uploadGenImages(
           state.generative.layers,
           account,
-          state.collectionName
+          newCollName
         );
         setLoadingMessage("Generating...");
-        tx = await uploadGenCollection(layers, state, account, chainId);
+        tx = await uploadGenCollection(layers, modifiedState, account, chainId);
       } else {
         await uploadImages(
           Object.values(state.static.images),
           account,
-          state.collectionName
+          newCollName
         );
         setLoadingMessage("Saving...");
-        tx = await uploadCollection(state, account, chainId);
+        tx = await uploadCollection(modifiedState, account, chainId);
       }
 
       await createCollection(
@@ -441,6 +471,13 @@ const CreateCollectionForm = (): JSX.Element => {
         handleLayerImgNameChange={handleImgNameChange}
         handleQuantityChange={handleQuantityChange}
         stepNumber={stepNumber}
+      />
+      <RecommendationsStep
+        generative={generative}
+        stepNumber={stepNumber}
+        state={state}
+        handleChangeCollName={setNewCollName}
+        changedCollName={newCollName}
       />
       <Box sx={formFooterStyle}>
         <FormAlert
