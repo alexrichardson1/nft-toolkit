@@ -6,6 +6,7 @@ import Market from "components/marketplace/Market";
 import Navbar from "components/navbar/Navbar";
 import { useAppSelector } from "hooks/useAppSelector";
 import CreateCollectionPage from "pages/CreateCollectionPage";
+import Error404Page from "pages/Error404";
 import MintingPage from "pages/MintingPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NAVBAR_HEIGHT } from "utils/constants";
@@ -34,12 +35,12 @@ const App = (): JSX.Element => {
     <>
       <Router>
         <Navbar />
-        <Switch>
-          <Box sx={mainContainerStyle}>
-            <Container sx={containerStyle}>
-              <Collapse in={inProgress}>
-                <LinearProgress variant="determinate" value={progressAmount} />
-              </Collapse>
+        <Box sx={mainContainerStyle}>
+          <Container sx={containerStyle}>
+            <Collapse in={inProgress}>
+              <LinearProgress variant="determinate" value={progressAmount} />
+            </Collapse>
+            <Switch>
               <Route
                 exact
                 path="/:paramChainId/:address([0-9a-zA-Z]{26,})"
@@ -51,9 +52,10 @@ const App = (): JSX.Element => {
                 component={Market}
               />
               <Route exact path="/" component={CreateCollectionPage} />
-            </Container>
-          </Box>
-        </Switch>
+              <Route path="*" component={Error404Page} />
+            </Switch>
+          </Container>
+        </Box>
       </Router>
     </>
   );
