@@ -10,10 +10,11 @@ services:
     ports:
       - "80:80"
   client:
-    image: jmp119/nft-toolkit-client
-    args:
-      REACT_APP_AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      REACT_APP_AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    build:
+      context: client/
+      args:
+        REACT_APP_AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        REACT_APP_AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     restart: on-failure
   server:
     image: jmp119/nft-toolkit-server
