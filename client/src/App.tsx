@@ -52,7 +52,7 @@ const App = (): JSX.Element => {
                 component={Market}
               />
               <Route exact path="/" component={CreateCollectionPage} />
-              <Route path="*" component={Error404Page} />
+              <Route component={Error404Page} />
             </Switch>
           </Container>
         </Box>
