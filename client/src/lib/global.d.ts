@@ -36,6 +36,7 @@ interface FormStateI {
   static: { numberOfImages: number; images: ImageT };
   generative: {
     numberOfTiers: number;
+    totalTierRarity: number;
     tiers: TierI[];
     numberOfLayers: number;
     layers: LayerI[];
