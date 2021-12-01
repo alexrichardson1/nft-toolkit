@@ -1,3 +1,4 @@
+import { S3 } from "aws-sdk";
 import AvalancheLogo from "images/avalanche-logo.svg";
 import BinanceLogo from "images/binance-logo.svg";
 import CardanoLogo from "images/cardano-logo.svg";
@@ -48,4 +49,11 @@ export const accessibilityProps = (
 ): { id: string; "aria-controls": string } => ({
   id: `${vertical ? "vertical-" : ""}tab-${index}`,
   "aria-controls": `${vertical ? "vertical-" : ""}tabpanel-${index}`,
+});
+
+export const s3 = new S3({
+  credentials: {
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  },
 });
