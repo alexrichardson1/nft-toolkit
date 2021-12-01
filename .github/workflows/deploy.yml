@@ -41,12 +41,12 @@ jobs:
           context: ./server
           push: true
           tags: jmp119/nft-toolkit-server:latest
-      # - name: Build and push ml
-      #   uses: docker/build-push-action@v2
-      #   with:
-      #     context: ./ml
-      #     push: true
-      #     tags: jmp119/nft-toolkit-ml:latest
+      - name: Build and push ml
+        uses: docker/build-push-action@v2
+        with:
+          context: ./ml
+          push: true
+          tags: jmp119/nft-toolkit-ml:latest
   aws-eb:
     runs-on: ubuntu-latest
     needs: [docker]
