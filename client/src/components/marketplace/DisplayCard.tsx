@@ -2,6 +2,7 @@ import { Skeleton } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import SvgLogo from "components/common/SvgLogo";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { getLogoByChainId } from "utils/constants";
 import "./displaycard.css";
@@ -14,6 +15,8 @@ interface PropsT {
 }
 
 const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
+  const logo = useMemo(() => getLogoByChainId(chainId), [chainId]);
+
   return (
     <Box tabIndex={0} component={Link} to={to} className="marketplace-card">
       <Box
@@ -41,12 +44,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
                 <Typography variant="h6" color="primary" className="card-price">
                   Price: {data.price}
                 </Typography>
-                <SvgLogo
-                  icon={getLogoByChainId(chainId)}
-                  width="20px"
-                  height="20px"
-                  margins
-                />
+                <SvgLogo icon={logo} width="20px" height="20px" margins />
               </Box>
             </Box>
             <Box bgcolor="background.paper" className="card-back">
@@ -69,12 +67,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
                     className="card-price">
                     Price: {data.price}
                   </Typography>
-                  <SvgLogo
-                    icon={getLogoByChainId(chainId)}
-                    width="20px"
-                    height="20px"
-                    margins
-                  />
+                  <SvgLogo icon={logo} width="20px" height="20px" margins />
                 </Box>
               </Box>
             </Box>
