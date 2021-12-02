@@ -1,4 +1,3 @@
-import { DragEndEvent } from "@dnd-kit/core";
 import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -30,6 +29,28 @@ import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
+import {
+  handleCollNameChange,
+  handleDescriptionChange,
+  handleImageDelete,
+  handleImageDrop,
+  handleImgDescChange,
+  handleImgNameChange,
+  handleImgRarityChange,
+  handleLayerAddition,
+  handleLayerRemoval,
+  handleLayerReorder,
+  handleMintPriceChange,
+  handlePredictionsChange,
+  handleQuantityChange,
+  handleRedditChange,
+  handleSymbolChange,
+  handleTierAdd,
+  handleTierProbChange,
+  handleTierRemoval,
+  handleTierReorder,
+  handleTwitterChange,
+} from "./FormHandles";
 
 const DUMMY_ML_DATA = {
   names: [
@@ -172,166 +193,12 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleNextStep = () => setStepNumber((prev) => prev + 1);
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
-  const handleTwitterChange = (e: InputEventT) => {
-    dispatch({
-      type: FormActions.CHANGE_TWITTER_HANDLE,
-      payload: { twitterHandleChange: e.target.value },
-    });
-  };
-  const handleRedditChange = (e: InputEventT) => {
-    dispatch({
-      type: FormActions.CHANGE_REDDIT_HANDLE,
-      payload: { redditHandleChange: e.target.value },
-    });
-  };
-  const handleImageDelete = (deleteId: string, layerName = "") => {
-    const payload = generative
-      ? { deleteGen: { deleteId, layerName } }
-      : { deleteId };
-    dispatch({
-      type: generative
-        ? FormActions.DELETE_IMAGE_GEN
-        : FormActions.DELETE_IMAGE_STATIC,
-      payload,
-    });
-  };
-  const handleImgDescChange = (e: InputEventT, imageId: string) => {
-    dispatch({
-      type: FormActions.CHANGE_IMAGE_DESC,
-      payload: { imageDescChange: { imageId, newDesc: e.target.value } },
-    });
-  };
-  const handleCollNameChange = (e: InputEventT) =>
-    dispatch({
-      type: FormActions.CHANGE_NAME,
-      payload: { newName: e.target.value },
-    });
-  const handleMintPriceChange = (e: InputEventT) =>
-    dispatch({
-      type: FormActions.CHANGE_PRICE,
-      payload: { price: e.target.value },
-    });
+
   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
-  const handleLayerAddition = (newLayerName: string) => {
-    dispatch({
-      type: FormActions.ADD_LAYER,
-      payload: { newLayer: { name: newLayerName } },
-    });
-  };
-  const handleLayerReorder = (e: DragEndEvent) => {
-    dispatch({
-      type: FormActions.CHANGE_LAYER_PRECEDENCE,
-      payload: { dragEndEvent: e },
-    });
-  };
-  const handleTierRemoval = (tierName: string) => {
-    dispatch({
-      type: FormActions.REMOVE_TIER,
-      payload: { deleteTierName: tierName },
-    });
-  };
-  const handleTierAdd = (newTierName: string) => {
-    dispatch({
-      type: FormActions.ADD_TIER,
-      payload: { newTier: { name: newTierName } },
-    });
-  };
-  const handleTierProbChange = (tierName: string) => (e: InputEventT) => {
-    dispatch({
-      type: FormActions.CHANGE_TIER_PROBABILITY,
-      payload: {
-        tierProbabilityChange: { tierName, newProbability: e.target.value },
-      },
-    });
-  };
-  const handleTierReorder = (e: DragEndEvent) => {
-    dispatch({
-      type: FormActions.CHANGE_TIER_PRECEDENCE,
-      payload: { dragEndEvent: e },
-    });
-  };
-  const handleLayerRemoval = (layerName: string) => {
-    dispatch({
-      type: FormActions.REMOVE_LAYER,
-      payload: { deleteLayerName: layerName },
-    });
-  };
-  const handleSymbolChange = (e: InputEventT) =>
-    dispatch({
-      type: FormActions.CHANGE_SYMBOL,
-      payload: { symbol: e.target.value },
-    });
-  const handleImgNameChange = (
-    e: InputEventT,
-    imageid: string,
-    layerName = ""
-  ) => {
-    const payload = generative
-      ? {
-          modifyImgObjGen: {
-            newImageName: e.target.value,
-            imageId: imageid,
-            layerName,
-          },
-        }
-      : {
-          modifyImgObjStatic: {
-            newImageName: e.target.value,
-            imageId: imageid,
-          },
-        };
-    dispatch({
-      type: generative
-        ? FormActions.CHANGE_IMAGE_NAME_GEN
-        : FormActions.CHANGE_IMAGE_NAME,
-      payload,
-    });
-  };
-  const handleImageDrop = (
-    e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
-    imgObjs: FileList | null,
-    layerName = ""
-  ) => {
-    e.preventDefault();
-    if (!imgObjs) {
-      return;
-    }
-    const payload = generative
-      ? { newImagesGen: { images: Array.from(imgObjs), layerName } }
-      : { newImagesStatic: Array.from(imgObjs) };
-    dispatch({
-      type: generative
-        ? FormActions.ADD_IMAGES_GEN
-        : FormActions.ADD_IMAGES_STATIC,
-      payload,
-    });
-  };
-  const handleImgRarityChange =
-    (layerName: string) => (e: InputEventT, imageId: string) =>
-      dispatch({
-        type: FormActions.CHANGE_RARITY,
-        payload: {
-          rarityChange: { newRarity: e.target.value, imageId, layerName },
-        },
-      });
-  const handleDescriptionChange = (e: InputEventT) =>
-    dispatch({
-      type: FormActions.CHANGE_DESCRIPTION,
-      payload: { description: e.target.value },
-    });
-  const handleQuantityChange = (e: InputEventT) =>
-    dispatch({
-      type: FormActions.CHANGE_QUANTITY,
-      payload: { quantity: e.target.value },
-    });
-  const handlePredictionsChange = (newPredictions: MlDataI) =>
-    dispatch({
-      type: FormActions.CHANGE_PREDICTIONS,
-      payload: { newPredictions },
-    });
+
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!active || !account || !chainId) {
@@ -365,7 +232,7 @@ const CreateCollectionForm = (): JSX.Element => {
         startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
         const DUMMY_WAIT_TIME = 5000;
         await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
-        handlePredictionsChange(DUMMY_ML_DATA);
+        handlePredictionsChange(DUMMY_ML_DATA, dispatch);
         stopLoading(setLoadingMessage, setIsLoading);
         setNewCollName(state.collectionName);
       }
@@ -420,15 +287,15 @@ const CreateCollectionForm = (): JSX.Element => {
       spacing={2}
       data-testid="create-form">
       <GeneralInfoStep
-        handleTwitterChange={handleTwitterChange}
-        handleRedditChange={handleRedditChange}
+        handleTwitterChange={(e) => handleTwitterChange(e, dispatch)}
+        handleRedditChange={(e) => handleRedditChange(e, dispatch)}
         generative={generative}
         stepNumber={stepNumber}
         state={state}
-        handleCollNameChange={handleCollNameChange}
-        handleDescriptionChange={handleDescriptionChange}
-        handleMintPriceChange={handleMintPriceChange}
-        handleSymbolChange={handleSymbolChange}
+        handleCollNameChange={(e) => handleCollNameChange(e, dispatch)}
+        handleDescriptionChange={(e) => handleDescriptionChange(e, dispatch)}
+        handleMintPriceChange={(e) => handleMintPriceChange(e, dispatch)}
+        handleSymbolChange={(e) => handleSymbolChange(e, dispatch)}
       />
       <TypeOfArtStep
         handleNextStep={handleNextStep}
@@ -440,37 +307,53 @@ const CreateCollectionForm = (): JSX.Element => {
         stepNumber={stepNumber}
         state={state}
         isLoading={isLoading}
-        handleImgDrop={handleImageDrop}
-        handleImgDelete={handleImageDelete}
-        handleImgNameChange={handleImgNameChange}
-        handleImgDescChange={handleImgDescChange}
+        handleImgDrop={(e) => handleImageDrop(e, dispatch, generative)}
+        handleImgDelete={(deleteId) =>
+          handleImageDelete(deleteId, dispatch, generative)
+        }
+        handleImgNameChange={(e) =>
+          handleImgNameChange(e, dispatch, generative)
+        }
+        handleImgDescChange={(e) => handleImgDescChange(e, dispatch)}
       />
       <TierSelectionStep
-        handleTierAdd={handleTierAdd}
-        handleTierRemoval={handleTierRemoval}
-        handleTierReorder={handleTierReorder}
+        handleTierAdd={(e) => handleTierAdd(e, dispatch)}
+        handleTierRemoval={(e) => handleTierRemoval(e, dispatch)}
+        handleTierReorder={(e) => handleTierReorder(e, dispatch)}
         state={state}
         stepNumber={stepNumber}
         generative={generative}
-        handleTierProbChange={handleTierProbChange}
+        handleTierProbChange={(tierName) =>
+          handleTierProbChange(tierName, dispatch)
+        }
       />
       <LayerSelectionStep
-        handleLayerRemoval={handleLayerRemoval}
-        handleLayerReorder={handleLayerReorder}
+        handleLayerRemoval={(layerName) =>
+          handleLayerRemoval(layerName, dispatch)
+        }
+        handleLayerReorder={(layerName) =>
+          handleLayerReorder(layerName, dispatch)
+        }
         generative={generative}
         stepNumber={stepNumber}
         state={state}
-        handleLayerAddition={handleLayerAddition}
+        handleLayerAddition={(newLayerName) =>
+          handleLayerAddition(newLayerName, dispatch)
+        }
       />
       <LayerImageUpload
-        handleImgRarityChange={handleImgRarityChange}
+        handleImgRarityChange={handleImgRarityChange(dispatch)}
         isLoading={isLoading}
         state={state}
         generative={generative}
-        handleLayerImgDrop={handleImageDrop}
-        handleLayerImgDelete={handleImageDelete}
-        handleLayerImgNameChange={handleImgNameChange}
-        handleQuantityChange={handleQuantityChange}
+        handleLayerImgDrop={(e) => handleImageDrop(e, dispatch, generative)}
+        handleLayerImgDelete={(deleteId) =>
+          handleImageDelete(deleteId, dispatch, generative)
+        }
+        handleLayerImgNameChange={(e) =>
+          handleImgNameChange(e, dispatch, generative)
+        }
+        handleQuantityChange={(e) => handleQuantityChange(e, dispatch)}
         stepNumber={stepNumber}
       />
       <RecommendationsStep
