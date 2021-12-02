@@ -52,6 +52,7 @@ const INITIAL_STATE: FormStateI = {
     totalTierRarity: 0,
     tiers: [],
     layers: [],
+    totalLayerRarities: [],
     numberOfLayers: 0,
     quantity: "1",
   },
@@ -184,15 +185,22 @@ const deleteImageGen = (action: FormActionI, state: FormStateI) => {
     action.payload.deleteGen,
     "deleteGen required"
   );
+  let index = 0;
   state.generative.layers.forEach((layer) => {
     if (layer.name === deleteObjGen.layerName) {
-      const imgUrl = layer.images[deleteObjGen.deleteId]?.url;
+      const img = layer.images[deleteObjGen.deleteId];
+      if (typeof img !== "undefined") {
+        state.generative.totalLayerRarities[index] -= img.rarity
+          ? parseFloat(img.rarity)
+          : 0;
+      }
       delete layer.images[deleteObjGen.deleteId];
       layer.numberOfImages--;
-      if (imgUrl) {
-        URL.revokeObjectURL(imgUrl);
+      if (img?.url) {
+        URL.revokeObjectURL(img?.url);
       }
     }
+    index += 1;
   });
   return { ...state };
 };
@@ -233,14 +241,19 @@ const changeRarity = (action: FormActionI, state: FormStateI) => {
     "rarityChange required"
   );
 
+  let index = 0;
   state.generative.layers.forEach((layer) => {
     if (layer.name === rarityChange.layerName) {
       const img = layer.images[rarityChange.imageId];
       if (!img) {
         throw new Error("Image does not exist");
       }
+      state.generative.totalLayerRarities[index] += img.rarity
+        ? parseFloat(rarityChange.newRarity) - parseFloat(img.rarity)
+        : parseFloat(rarityChange.newRarity);
       img.rarity = rarityChange.newRarity;
     }
+    index += 1;
   });
 
   return { ...state };
@@ -412,31 +425,24 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     // Change the symbol of the collection
     case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
-    // Add new images to the static collection
     case FormActions.ADD_IMAGES_STATIC:
       return addImagesStatic(action, state);
     // Change name of a static image
     case FormActions.CHANGE_IMAGE_NAME:
       return changeImageNameStatic(action, state);
-    // Delete a static image
     case FormActions.DELETE_IMAGE_STATIC:
       return deleteImageStatic(action, state);
     // Change the desription of a static image
     case FormActions.CHANGE_IMAGE_DESC:
       return changeImageDesc(action, state);
-    // Add new images within a layer for generative art
     case FormActions.ADD_IMAGES_GEN:
       return addImagesGen(action, state);
-    // Delete an image within a layer for generative art
     case FormActions.DELETE_IMAGE_GEN:
       return deleteImageGen(action, state);
-    // Change the name of an image within a layer for generative art
     case FormActions.CHANGE_IMAGE_NAME_GEN:
       return changeImageNameGen(action, state);
-    // Change the precedence of a layer
     case FormActions.CHANGE_LAYER_PRECEDENCE:
       return changeLayerPrecedence(action, state);
-    // Change the rarity of an image within a layer
     case FormActions.CHANGE_RARITY:
       return changeRarity(action, state);
     // Change the price of the collection
@@ -463,7 +469,6 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     // Remove tier from state
     case FormActions.REMOVE_TIER:
       return removeTier(action, state);
-    // Reset static and generative objects in the state
     case FormActions.RESET_TYPE_OF_ART:
       return {
         ...state,
@@ -472,6 +477,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           numberOfTiers: 0,
           tiers: [],
           layers: [],
+          totalLayerRarities: [],
           totalTierRarity: 0,
           numberOfLayers: 0,
           quantity: DEFAULT_STRING,
