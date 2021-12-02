@@ -12,11 +12,12 @@ const INITIAL_STATE: FormStateI = {
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: {
-    quantity: "1",
-    tiers: [],
     numberOfTiers: 0,
+    totalTierRarity: 0,
+    tiers: [],
     layers: [],
     numberOfLayers: 0,
+    quantity: "1",
   },
   predictions: { names: [], hype: -1 },
 };

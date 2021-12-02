@@ -658,6 +658,7 @@ exports[`StaticArtStep generative does not match 1`] = `
                     "numberOfTiers": 0,
                     "quantity": "1",
                     "tiers": Array [],
+                    "totalTierRarity": 0,
                   },
                   "mintingPrice": "",
                   "predictions": Object {
@@ -1341,6 +1342,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     "numberOfTiers": 0,
                     "quantity": "1",
                     "tiers": Array [],
+                    "totalTierRarity": 0,
                   },
                   "mintingPrice": "",
                   "predictions": Object {
@@ -2564,6 +2566,7 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                     "numberOfTiers": 0,
                     "quantity": "1",
                     "tiers": Array [],
+                    "totalTierRarity": 0,
                   },
                   "mintingPrice": "",
                   "predictions": Object {

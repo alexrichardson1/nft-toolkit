@@ -14,7 +14,6 @@ import {
   uploadGenImages,
   uploadImages,
 } from "utils/formUtils";
-import { checkChance } from "./CreateCollectionForm";
 
 export const handleTwitterChange = (
   e: InputEventT,
@@ -25,7 +24,6 @@ export const handleTwitterChange = (
     payload: { twitterHandleChange: e.target.value },
   });
 };
-
 export const handleRedditChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
@@ -35,7 +33,6 @@ export const handleRedditChange = (
     payload: { redditHandleChange: e.target.value },
   });
 };
-
 export const handleImageDelete = (
   deleteId: string,
   dispatch: React.Dispatch<FormActionI>,
@@ -53,7 +50,6 @@ export const handleImageDelete = (
     });
   };
 };
-
 export const handleImgDescChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
@@ -65,7 +61,6 @@ export const handleImgDescChange = (
     });
   };
 };
-
 export const handleCollNameChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
@@ -74,7 +69,6 @@ export const handleCollNameChange = (
     type: FormActions.CHANGE_NAME,
     payload: { newName: e.target.value },
   });
-
 export const handleMintPriceChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
@@ -83,7 +77,6 @@ export const handleMintPriceChange = (
     type: FormActions.CHANGE_PRICE,
     payload: { price: e.target.value },
   });
-
 export const handleLayerAddition = (
   newLayerName: string,
   dispatch: React.Dispatch<FormActionI>
@@ -93,7 +86,6 @@ export const handleLayerAddition = (
     payload: { newLayer: { name: newLayerName } },
   });
 };
-
 export const handleLayerReorder = (
   e: DragEndEvent,
   dispatch: React.Dispatch<FormActionI>
@@ -103,7 +95,6 @@ export const handleLayerReorder = (
     payload: { dragEndEvent: e },
   });
 };
-
 export const handleTierRemoval = (
   tierName: string,
   dispatch: React.Dispatch<FormActionI>
@@ -113,7 +104,6 @@ export const handleTierRemoval = (
     payload: { deleteTierName: tierName },
   });
 };
-
 export const handleTierAdd = (
   newTierName: string,
   dispatch: React.Dispatch<FormActionI>
@@ -123,7 +113,6 @@ export const handleTierAdd = (
     payload: { newTier: { name: newTierName } },
   });
 };
-
 export const handleTierProbChange = (
   tierName: string,
   dispatch: React.Dispatch<FormActionI>
@@ -137,7 +126,6 @@ export const handleTierProbChange = (
     });
   };
 };
-
 export const handleTierReorder = (
   e: DragEndEvent,
   dispatch: React.Dispatch<FormActionI>
@@ -147,7 +135,6 @@ export const handleTierReorder = (
     payload: { dragEndEvent: e },
   });
 };
-
 export const handleLayerRemoval = (
   layerName: string,
   dispatch: React.Dispatch<FormActionI>
@@ -157,7 +144,6 @@ export const handleLayerRemoval = (
     payload: { deleteLayerName: layerName },
   });
 };
-
 export const handleSymbolChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
@@ -167,7 +153,6 @@ export const handleSymbolChange = (
     payload: { symbol: e.target.value },
   });
 };
-
 export const handleImgNameChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>,
@@ -196,7 +181,6 @@ export const handleImgNameChange = (
     });
   };
 };
-
 export const handleImageDrop = (
   e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
   dispatch: React.Dispatch<FormActionI>,
@@ -337,6 +321,30 @@ const createCollection = async (
   showFormAlert("success", "Collection Creation Successful");
   stopLoading(setLoadingMessage, setIsLoading);
   setTxAddress(txReceipt.contractAddress);
+};
+
+const checkChance = (
+  numberOfTiers: number,
+  tiers: TierI[],
+  showFormAlert: (severity: AlertColor, message: string) => void
+): boolean => {
+  if (numberOfTiers <= 0) {
+    showFormAlert("warning", "You need atleast one Tier to proceed.");
+    return false;
+  }
+  const REQUIRED_CHANCE = 100;
+  let totalChance = 0;
+  for (const tier of tiers) {
+    totalChance += Number(tier.probability);
+  }
+  if (totalChance !== REQUIRED_CHANCE) {
+    showFormAlert(
+      "warning",
+      `All your Tiers should add up to ${REQUIRED_CHANCE}`
+    );
+    return false;
+  }
+  return true;
 };
 
 const handleIfNotLastStep = async (

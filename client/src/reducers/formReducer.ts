@@ -7,7 +7,6 @@ const DEFAULT_STRING = "";
 
 /**
  * Returns an identifier for the image based on its name and size
- *
  * @param name - name of image
  * @param size - size of image
  * @returns id for the image based on name and size
@@ -16,27 +15,21 @@ export const getImgId = (name: string, size: number): string => name + size;
 
 /**
  * Returns an image object whilst making a URL to store the image locally
- *
  * @param image - the image file uploaded
  * @returns an image object based on the image
  */
 export const getImgObj = (image: File): ImageI => ({
-  name: image.name.replace(FILE_EXTENSION, ""),
+  name: image.name.replace(FILE_EXTENSION, DEFAULT_STRING),
   url: URL.createObjectURL(image),
   image: image,
 });
 
-/**
- * Returns a layer object based on layer name and id
- *
- * @param name - name of the layer
- * @param id - id of the layer
- * @returns a layer object
- */
 export const getLayerObj = (name: string): LayerI => ({
   name,
   images: {},
   numberOfImages: 0,
+  totalImageRarities: 0,
+  probability: "100",
 });
 
 /**
@@ -60,6 +53,7 @@ const INITIAL_STATE: FormStateI = {
   static: { images: {}, numberOfImages: 0 },
   generative: {
     numberOfTiers: 0,
+    totalTierRarity: 0,
     tiers: [],
     layers: [],
     numberOfLayers: 0,
@@ -89,27 +83,6 @@ const containsDuplicates = (name: string, items: { name: string }[]) => {
   );
 };
 
-const addImagesGen = (action: FormActionI, state: FormStateI) => {
-  const imgsToAdd = undefinedCheck(
-    action.payload.newImagesGen,
-    "nImagesGen required"
-  );
-  state.generative.layers.forEach((layer) => {
-    if (layer.name === imgsToAdd.layerName) {
-      let newImages = 0;
-      imgsToAdd.images.forEach((newImg) => {
-        const newImgId = getImgId(newImg.name, newImg.size);
-        if (!(newImgId in layer.images)) {
-          layer.images[newImgId] = { ...getImgObj(newImg), rarity: "" };
-          newImages++;
-        }
-      });
-      layer.numberOfImages += newImages;
-    }
-  });
-  return { ...state };
-};
-
 const addImagesStatic = (action: FormActionI, state: FormStateI) => {
   let newImages = 0;
   action.payload.newImagesStatic?.forEach((newImg) => {
@@ -127,6 +100,18 @@ const addImagesStatic = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
+const changeImageDescStatic = (action: FormActionI, state: FormStateI) => {
+  const imgDescChange = undefinedCheck(
+    action.payload.imageDescChange,
+    "imageDescChange required"
+  );
+  const img = undefinedCheck(
+    state.static.images[imgDescChange.imageId],
+    "Image does not exist"
+  );
+  img.description = imgDescChange.newDesc;
+  return { ...state };
+};
 
 const changeImageNameStatic = (action: FormActionI, state: FormStateI) => {
   const modifyImgObj = undefinedCheck(
@@ -141,6 +126,46 @@ const changeImageNameStatic = (action: FormActionI, state: FormStateI) => {
   return { ...state };
 };
 
+const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
+  const deleteId = undefinedCheck(action.payload.deleteId, "deleteId required");
+  const imgUrl = state.static.images[deleteId]?.url;
+  delete state.static.images[deleteId];
+  if (imgUrl) {
+    URL.revokeObjectURL(imgUrl);
+  }
+  return {
+    ...state,
+    static: {
+      ...state.static,
+      numberOfImages: state.static.numberOfImages - 1,
+    },
+  };
+};
+
+const addImagesGen = (action: FormActionI, state: FormStateI) => {
+  const imgsToAdd = undefinedCheck(
+    action.payload.newImagesGen,
+    "newImagesGen required"
+  );
+  state.generative.layers.forEach((layer) => {
+    if (layer.name === imgsToAdd.layerName) {
+      let newImages = 0;
+      imgsToAdd.images.forEach((newImg) => {
+        const newImgId = getImgId(newImg.name, newImg.size);
+        if (!(newImgId in layer.images)) {
+          layer.images[newImgId] = {
+            ...getImgObj(newImg),
+            rarity: DEFAULT_STRING,
+          };
+          newImages++;
+        }
+      });
+      layer.numberOfImages += newImages;
+    }
+  });
+  return { ...state };
+};
+
 const changeImageNameGen = (action: FormActionI, state: FormStateI) => {
   const modifyImgGen = undefinedCheck(
     action.payload.modifyImgObjGen,
@@ -148,12 +173,31 @@ const changeImageNameGen = (action: FormActionI, state: FormStateI) => {
   );
   state.generative.layers.forEach((layer) => {
     if (layer.name === modifyImgGen.layerName) {
-      const img = layer.images[modifyImgGen.imageId];
-
-      if (!img) {
-        throw new Error("Image not found");
-      }
+      const img = undefinedCheck(
+        layer.images[modifyImgGen.imageId],
+        "Image not found"
+      );
       img.name = modifyImgGen.newImageName;
+    }
+  });
+  return { ...state };
+};
+
+const changeRarityGen = (action: FormActionI, state: FormStateI) => {
+  const rarityChange = undefinedCheck(
+    action.payload.rarityChange,
+    "rarityChange required"
+  );
+  state.generative.layers.forEach((layer) => {
+    if (layer.name === rarityChange.layerName) {
+      const img = undefinedCheck(
+        layer.images[rarityChange.imageId],
+        "Image not found"
+      );
+      const oldRarity = Number(img.rarity ?? DEFAULT_STRING);
+      const newRarity = Number(rarityChange.newRarity);
+      img.rarity = rarityChange.newRarity;
+      layer.totalImageRarities += newRarity - oldRarity;
     }
   });
   return { ...state };
@@ -166,7 +210,12 @@ const deleteImageGen = (action: FormActionI, state: FormStateI) => {
   );
   state.generative.layers.forEach((layer) => {
     if (layer.name === deleteObjGen.layerName) {
-      const imgUrl = layer.images[deleteObjGen.deleteId]?.url;
+      const img = undefinedCheck(
+        layer.images[deleteObjGen.deleteId],
+        "Image does not exist"
+      );
+      const imgUrl = img.url;
+      layer.totalImageRarities -= Number(img.rarity ?? DEFAULT_STRING);
       delete layer.images[deleteObjGen.deleteId];
       layer.numberOfImages--;
       if (imgUrl) {
@@ -177,75 +226,11 @@ const deleteImageGen = (action: FormActionI, state: FormStateI) => {
   return { ...state };
 };
 
-const changeImageDesc = (action: FormActionI, state: FormStateI) => {
-  const imgDescChange = undefinedCheck(
-    action.payload.imageDescChange,
-    "imageDescChange required"
-  );
-  const img = undefinedCheck(
-    state.static.images[imgDescChange.imageId],
-    "Image does not exist"
-  );
-  img.description = imgDescChange.newDesc;
-  return { ...state };
-};
-
-const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
-  const deleteId = undefinedCheck(action.payload.deleteId, "deleteId required");
-  const imgUrl = state.static.images[deleteId]?.url;
-  delete state.static.images[deleteId];
-  if (imgUrl) {
-    URL.revokeObjectURL(imgUrl);
-  }
-
-  return {
-    ...state,
-    static: {
-      ...state.static,
-      numberOfImages: state.static.numberOfImages - 1,
-    },
-  };
-};
-
-const changeRarity = (action: FormActionI, state: FormStateI) => {
-  const rarityChange = undefinedCheck(
-    action.payload.rarityChange,
-    "rarityChange required"
-  );
-
-  state.generative.layers.forEach((layer) => {
-    if (layer.name === rarityChange.layerName) {
-      const img = layer.images[rarityChange.imageId];
-      if (!img) {
-        throw new Error("Image does not exist");
-      }
-      img.rarity = rarityChange.newRarity;
-    }
-  });
-
-  return { ...state };
-};
-
-const changeTierProb = (action: FormActionI, state: FormStateI) => {
-  const tierProbabilityChange = undefinedCheck(
-    action.payload.tierProbabilityChange,
-    "tierProbabilityChange required"
-  );
-  state.generative.tiers.forEach((tier) => {
-    if (tier.name === tierProbabilityChange.tierName) {
-      tier.probability = tierProbabilityChange.newProbability;
-    }
-  });
-  return { ...state };
-};
-
 const addLayer = (action: FormActionI, state: FormStateI) => {
   const newLayer = undefinedCheck(action.payload.newLayer, "newLayer required");
-
   if (containsDuplicates(newLayer.name, state.generative.layers)) {
     return { ...state };
   }
-
   return {
     ...state,
     generative: {
@@ -254,6 +239,19 @@ const addLayer = (action: FormActionI, state: FormStateI) => {
       numberOfLayers: state.generative.numberOfLayers + 1,
     },
   };
+};
+
+const changeLayerProb = (action: FormActionI, state: FormStateI) => {
+  const layerProbabilityChange = undefinedCheck(
+    action.payload.layerProbabilityChange,
+    "layerProbabilityChange required"
+  );
+  state.generative.layers.forEach((layer) => {
+    if (layer.name === layerProbabilityChange.layerName) {
+      layer.probability = layerProbabilityChange.newProbability;
+    }
+  });
+  return { ...state };
 };
 
 const changeLayerPrecedence = (action: FormActionI, state: FormStateI) => {
@@ -302,30 +300,11 @@ const removeLayer = (action: FormActionI, state: FormStateI) => {
   };
 };
 
-const removeTier = (action: FormActionI, state: FormStateI) => {
-  const deleteTierName = undefinedCheck(
-    action.payload.deleteTierName,
-    "deleteTierName required"
-  );
-  state.generative.tiers = state.generative.tiers.filter(
-    (tier) => tier.name !== deleteTierName
-  );
-  return {
-    ...state,
-    generative: {
-      ...state.generative,
-      numberOfTiers: state.generative.numberOfTiers - 1,
-    },
-  };
-};
-
 const addTier = (action: FormActionI, state: FormStateI) => {
   const newTier = undefinedCheck(action.payload.newTier, "newTier required");
-
   if (containsDuplicates(newTier.name, state.generative.tiers)) {
     return { ...state };
   }
-
   return {
     ...state,
     generative: {
@@ -334,6 +313,22 @@ const addTier = (action: FormActionI, state: FormStateI) => {
       numberOfTiers: state.generative.numberOfTiers + 1,
     },
   };
+};
+
+const changeTierProb = (action: FormActionI, state: FormStateI) => {
+  const tierProbabilityChange = undefinedCheck(
+    action.payload.tierProbabilityChange,
+    "tierProbabilityChange required"
+  );
+  let newTotalRarity = 0;
+  state.generative.tiers.forEach((tier) => {
+    if (tier.name === tierProbabilityChange.tierName) {
+      tier.probability = tierProbabilityChange.newProbability;
+    }
+    newTotalRarity += Number(tier.probability);
+  });
+  state.generative.totalTierRarity = newTotalRarity;
+  return { ...state };
 };
 
 const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
@@ -357,6 +352,27 @@ const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
   return { ...state };
 };
 
+const removeTier = (action: FormActionI, state: FormStateI) => {
+  const deleteTierName = undefinedCheck(
+    action.payload.deleteTierName,
+    "deleteTierName required"
+  );
+  state.generative.tiers = state.generative.tiers.filter((tier) => {
+    if (tier.name === deleteTierName) {
+      state.generative.totalTierRarity -= Number(tier.probability);
+      return false;
+    }
+    return true;
+  });
+  return {
+    ...state,
+    generative: {
+      ...state.generative,
+      numberOfTiers: state.generative.numberOfTiers - 1,
+    },
+  };
+};
+
 const changePredictions = (action: FormActionI, state: FormStateI) => {
   const predictions = undefinedCheck(
     action.payload.newPredictions,
@@ -366,7 +382,6 @@ const changePredictions = (action: FormActionI, state: FormStateI) => {
 };
 
 /**
- *
  * @param state - current state of the form
  * @param action - object containting type of action to perform and payload
  * required for the action to be performed
@@ -374,17 +389,28 @@ const changePredictions = (action: FormActionI, state: FormStateI) => {
  */
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   switch (action.type) {
-    // Change the name of the collection
+    case FormActions.CHANGE_QUANTITY:
+      return {
+        ...state,
+        generative: {
+          ...state.generative,
+          quantity: action.payload.quantity ?? DEFAULT_STRING,
+        },
+      };
     case FormActions.CHANGE_NAME:
       return {
         ...state,
         collectionName: action.payload.newName ?? DEFAULT_STRING,
       };
-    // Change the description of the collection
     case FormActions.CHANGE_DESCRIPTION:
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
+      };
+    case FormActions.CHANGE_PRICE:
+      return {
+        ...state,
+        mintingPrice: action.payload.price ?? DEFAULT_STRING,
       };
     case FormActions.CHANGE_TWITTER_HANDLE:
       return {
@@ -396,62 +422,48 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         redditHandle: action.payload.redditHandleChange ?? DEFAULT_STRING,
       };
-    // Change the symbol of the collection
     case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
-    // Add new images to the static collection
+
     case FormActions.ADD_IMAGES_STATIC:
       return addImagesStatic(action, state);
-    // Change name of a static image
     case FormActions.CHANGE_IMAGE_NAME:
       return changeImageNameStatic(action, state);
-    // Delete a static image
+    case FormActions.CHANGE_IMAGE_DESC:
+      return changeImageDescStatic(action, state);
     case FormActions.DELETE_IMAGE_STATIC:
       return deleteImageStatic(action, state);
-    // Change the desription of a static image
-    case FormActions.CHANGE_IMAGE_DESC:
-      return changeImageDesc(action, state);
-    // Add new images within a layer for generative art
+
     case FormActions.ADD_IMAGES_GEN:
       return addImagesGen(action, state);
-    // Delete an image within a layer for generative art
-    case FormActions.DELETE_IMAGE_GEN:
-      return deleteImageGen(action, state);
-    // Change the name of an image within a layer for generative art
     case FormActions.CHANGE_IMAGE_NAME_GEN:
       return changeImageNameGen(action, state);
-    // Change the precedence of a layer
-    case FormActions.CHANGE_LAYER_PRECEDENCE:
-      return changeLayerPrecedence(action, state);
-    // Change the rarity of an image within a layer
     case FormActions.CHANGE_RARITY:
-      return changeRarity(action, state);
-    // Change the price of the collection
-    case FormActions.CHANGE_PRICE:
-      return {
-        ...state,
-        mintingPrice: action.payload.price ?? DEFAULT_STRING,
-      };
-    // Add a layer to the state
+      return changeRarityGen(action, state);
+    case FormActions.DELETE_IMAGE_GEN:
+      return deleteImageGen(action, state);
+
     case FormActions.ADD_LAYER:
       return addLayer(action, state);
-    // Remove a layer from the state
+    case FormActions.CHANGE_LAYER_PRECEDENCE:
+      return changeLayerPrecedence(action, state);
+    case FormActions.CHANGE_LAYER_PROBABILITY:
+      return changeLayerProb(action, state);
     case FormActions.REMOVE_LAYER:
       return removeLayer(action, state);
-    // Add tier to state
+
     case FormActions.ADD_TIER:
       return addTier(action, state);
-    // Change tier probabilities
     case FormActions.CHANGE_TIER_PROBABILITY:
       return changeTierProb(action, state);
-    // Change tier precedence
     case FormActions.CHANGE_TIER_PRECEDENCE:
       return changeTierPrecedence(action, state);
-    // Remove tier from state
     case FormActions.REMOVE_TIER:
       return removeTier(action, state);
 
-    // Reset static and generative objects in the state
+    case FormActions.CHANGE_PREDICTIONS:
+      return changePredictions(action, state);
+
     case FormActions.RESET_TYPE_OF_ART:
       return {
         ...state,
@@ -460,25 +472,12 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           numberOfTiers: 0,
           tiers: [],
           layers: [],
+          totalTierRarity: 0,
           numberOfLayers: 0,
           quantity: DEFAULT_STRING,
         },
         predictions: { names: [], hype: -1 },
       };
-    // Change quantitiy
-    case FormActions.CHANGE_QUANTITY: {
-      return {
-        ...state,
-        generative: {
-          ...state.generative,
-          quantity: action.payload.quantity ?? DEFAULT_STRING,
-        },
-      };
-    }
-    // Change predictions
-    case FormActions.CHANGE_PREDICTIONS:
-      return changePredictions(action, state);
-    // Reset form state
     case FormActions.RESET_STATE:
       return INITIAL_STATE;
     default:

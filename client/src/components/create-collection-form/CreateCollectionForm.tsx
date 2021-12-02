@@ -44,7 +44,6 @@ import {
 } from "./FormHandles";
 
 const INITIAL_STEP_NUMBER = 0;
-
 const INITIAL_STATE: FormStateI = {
   twitterHandle: "",
   redditHandle: "",
@@ -55,10 +54,11 @@ const INITIAL_STATE: FormStateI = {
   static: { images: {}, numberOfImages: 0 },
   generative: {
     numberOfTiers: 0,
+    totalTierRarity: 0,
     tiers: [],
     layers: [],
     numberOfLayers: 0,
-    quantity: "",
+    quantity: "1",
   },
   predictions: { names: [], hype: -1 },
 };
@@ -67,30 +67,6 @@ const formFooterStyle: SxProps = {
   gap: "10px",
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
-};
-
-export const checkChance = (
-  numberOfTiers: number,
-  tiers: TierI[],
-  showFormAlert: (severity: AlertColor, message: string) => void
-): boolean => {
-  if (numberOfTiers <= 0) {
-    showFormAlert("warning", "You need atleast one Tier to proceed.");
-    return false;
-  }
-  const REQUIRED_CHANCE = 100;
-  let totalChance = 0;
-  for (const tier of tiers) {
-    totalChance += Number(tier.probability);
-  }
-  if (totalChance !== REQUIRED_CHANCE) {
-    showFormAlert(
-      "warning",
-      `All your Tiers should add up to ${REQUIRED_CHANCE}`
-    );
-    return false;
-  }
-  return true;
 };
 
 const CreateCollectionForm = (): JSX.Element => {
@@ -120,6 +96,15 @@ const CreateCollectionForm = (): JSX.Element => {
   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
+  };
+
+  const handleLayerProbChange = (layerName: string) => (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_LAYER_PROBABILITY,
+      payload: {
+        layerProbabilityChange: { layerName, newProbability: e.target.value },
+      },
+    });
   };
 
   if (txAddress !== "") {
@@ -208,6 +193,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleLayerAddition={(newLayerName) =>
           handleLayerAddition(newLayerName, dispatch)
         }
+        handleLayerProbChange={handleLayerProbChange}
       />
       <LayerImageUpload
         handleImgRarityChange={handleImgRarityChange(dispatch)}
