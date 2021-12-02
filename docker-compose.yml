@@ -14,8 +14,11 @@ services:
     restart: on-failure
   server:
     image: jmp119/nft-toolkit-server:latest
-    cpus: "1.5"
-    mem_limit: 1024000000
+    deploy:
+      resources:
+        limits:
+          cpus: "1.5"
+          memory: 1024M
     env_file:
       - .env
     restart: on-failure
