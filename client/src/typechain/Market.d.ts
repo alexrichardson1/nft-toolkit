@@ -2,7 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { FunctionFragment, Result } from "@ethersproject/abi";
+import { EventFragment, FunctionFragment, Result } from "@ethersproject/abi";
 import { BytesLike } from "@ethersproject/bytes";
 import { Listener, Provider } from "@ethersproject/providers";
 import {
@@ -19,15 +19,20 @@ import {
 } from "ethers";
 import type { TypedEvent, TypedEventFilter, TypedListener } from "./common";
 
-interface RoyaltyInterface extends ethers.utils.Interface {
+interface MarketInterface extends ethers.utils.Interface {
   functions: {
+    "areStable(uint256)": FunctionFragment;
     "buy(uint256)": FunctionFragment;
     "delist(uint256)": FunctionFragment;
     "listings(uint256)": FunctionFragment;
     "royalty()": FunctionFragment;
-    "sellListing(uint256,uint256)": FunctionFragment;
+    "sellListing(uint256,uint256,bool)": FunctionFragment;
   };
 
+  encodeFunctionData(
+    functionFragment: "areStable",
+    values: [BigNumberish]
+  ): string;
   encodeFunctionData(functionFragment: "buy", values: [BigNumberish]): string;
   encodeFunctionData(
     functionFragment: "delist",
@@ -40,9 +45,10 @@ interface RoyaltyInterface extends ethers.utils.Interface {
   encodeFunctionData(functionFragment: "royalty", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "sellListing",
-    values: [BigNumberish, BigNumberish]
+    values: [BigNumberish, BigNumberish, boolean]
   ): string;
 
+  decodeFunctionResult(functionFragment: "areStable", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "buy", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "delist", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "listings", data: BytesLike): Result;
@@ -52,10 +58,26 @@ interface RoyaltyInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
 
-  events: {};
+  events: {
+    "Buy(uint256)": EventFragment;
+    "Delist(uint256)": EventFragment;
+    "SellListing(uint256,uint256)": EventFragment;
+  };
+
+  getEvent(nameOrSignatureOrTopic: "Buy"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Delist"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "SellListing"): EventFragment;
 }
 
-export class Royalty extends BaseContract {
+export type BuyEvent = TypedEvent<[BigNumber] & { tokenId: BigNumber }>;
+
+export type DelistEvent = TypedEvent<[BigNumber] & { tokenId: BigNumber }>;
+
+export type SellListingEvent = TypedEvent<
+  [BigNumber, BigNumber] & { tokenId: BigNumber; price: BigNumber }
+>;
+
+export class Market extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -96,9 +118,14 @@ export class Royalty extends BaseContract {
     toBlock?: string | number | undefined
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
-  interface: RoyaltyInterface;
+  interface: MarketInterface;
 
   functions: {
+    areStable(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
+
     buy(
       tokenId: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
@@ -119,9 +146,12 @@ export class Royalty extends BaseContract {
     sellListing(
       tokenId: BigNumberish,
       price: BigNumberish,
+      isStable: boolean,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
+
+  areStable(arg0: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
 
   buy(
     tokenId: BigNumberish,
@@ -140,10 +170,13 @@ export class Royalty extends BaseContract {
   sellListing(
     tokenId: BigNumberish,
     price: BigNumberish,
+    isStable: boolean,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    areStable(arg0: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
+
     buy(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
 
     delist(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
@@ -155,13 +188,49 @@ export class Royalty extends BaseContract {
     sellListing(
       tokenId: BigNumberish,
       price: BigNumberish,
+      isStable: boolean,
       overrides?: CallOverrides
     ): Promise<void>;
   };
 
-  filters: {};
+  filters: {
+    "Buy(uint256)"(
+      tokenId?: null
+    ): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    Buy(tokenId?: null): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    "Delist(uint256)"(
+      tokenId?: null
+    ): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    Delist(
+      tokenId?: null
+    ): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    "SellListing(uint256,uint256)"(
+      tokenId?: null,
+      price?: null
+    ): TypedEventFilter<
+      [BigNumber, BigNumber],
+      { tokenId: BigNumber; price: BigNumber }
+    >;
+
+    SellListing(
+      tokenId?: null,
+      price?: null
+    ): TypedEventFilter<
+      [BigNumber, BigNumber],
+      { tokenId: BigNumber; price: BigNumber }
+    >;
+  };
 
   estimateGas: {
+    areStable(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     buy(
       tokenId: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
@@ -179,11 +248,17 @@ export class Royalty extends BaseContract {
     sellListing(
       tokenId: BigNumberish,
       price: BigNumberish,
+      isStable: boolean,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
+    areStable(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     buy(
       tokenId: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
@@ -204,6 +279,7 @@ export class Royalty extends BaseContract {
     sellListing(
       tokenId: BigNumberish,
       price: BigNumberish,
+      isStable: boolean,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };
