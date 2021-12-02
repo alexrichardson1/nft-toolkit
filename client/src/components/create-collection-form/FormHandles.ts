@@ -281,10 +281,10 @@ const DUMMY_ML_DATA = {
   hype: 2,
 };
 
-const isGeneralInfoStep = (stepNumber: number) => {
+const isGeneralInfoStep = (generative: boolean, stepNumber: number) => {
   return (
-    stepNumber === GEN_STEPS - PAGE_IDX_OFFSET ||
-    stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET
+    (generative && stepNumber === GEN_STEPS - PAGE_IDX_OFFSET) ||
+    (!generative && stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET)
   );
 };
 
@@ -379,7 +379,7 @@ const handleIfNotLastStep = async (
   ) {
     return false;
   }
-  if (isGeneralInfoStep(stepNumber)) {
+  if (isGeneralInfoStep(generative, stepNumber)) {
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
     const DUMMY_WAIT_TIME = 5000;
     await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
