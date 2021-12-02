@@ -5,7 +5,7 @@ import staticArtImg from "images/static-icon.svg";
 import { useCallback } from "react";
 import { wrongStep } from "utils/pages";
 
-const ART_TYPE_STEP_NUMBER = 1;
+const ART_TYPE_STEP_NUMBER = 0;
 const GEN_ART_DESC = (
   <>
     Dynamically generate an NFT collection using multi-layered images
@@ -36,7 +36,7 @@ const STATIC_ART_DESC = (
 interface PropsT {
   stepNumber: number;
   handleNextStep: () => void;
-  setGenerative: React.Dispatch<React.SetStateAction<boolean>>;
+  setGenerative: SetStateAction<boolean>;
 }
 
 /**

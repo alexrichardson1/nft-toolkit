@@ -8,10 +8,10 @@ import RarityProgressBar from "components/common/RarityProgressBar";
 import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
 
-const TIER_SELECT_STEP_NUMBER = 2;
+const TIER_SELECT_STEP_NUMBER = 1;
 const MINIMUM_TIERS_REQUIRED = 1;
 const CHANCE_INPUT_INFO =
-  "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance an NFT from this rarity tier is randomly minted";
+  "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance an NFT from this rarity tier is randomly minted";
 
 interface PropsT {
   state: FormStateI;

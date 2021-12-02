@@ -12,7 +12,7 @@ import PageHeader from "../../common/PageHeader";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 import TabPanel from "../tabs/TabPanel";
 
-const LAYER_UPLOAD_PAGE_NUMBER = 4;
+const LAYER_UPLOAD_PAGE_NUMBER = 3;
 const INITIAL_VALUE = 0;
 
 const layerImgUplContainerStyle = { width: "100%" };

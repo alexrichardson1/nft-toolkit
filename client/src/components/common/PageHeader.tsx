@@ -7,6 +7,7 @@ interface PropsT {
 const PageHeader = ({ text }: PropsT): JSX.Element => {
   return (
     <Typography
+      gutterBottom
       variant="h4"
       noWrap
       component="div"

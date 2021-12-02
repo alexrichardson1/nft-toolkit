@@ -1,6 +1,6 @@
-import { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import FormActions from "actions/formActions";
+import { FormActionI } from "./formReducerTypes";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
 const DEFAULT_STRING = "";
@@ -32,16 +32,24 @@ export const getLayerObj = (name: string): LayerI => ({
   probability: "100",
 });
 
+/**
+ * Returns a tier object based on tier name
+ *
+ * @param name - name of the tier
+ * @returns a tier object
+ */
 const getTierObj = (name: string): TierI => ({
   name,
-  probability: "0",
+  probability: "",
 });
 
 const INITIAL_STATE: FormStateI = {
-  collectionName: DEFAULT_STRING,
-  description: DEFAULT_STRING,
-  symbol: DEFAULT_STRING,
-  mintingPrice: DEFAULT_STRING,
+  twitterHandle: "",
+  redditHandle: "",
+  collectionName: "",
+  description: "",
+  symbol: "",
+  mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: {
     numberOfTiers: 0,
@@ -51,39 +59,8 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
+  predictions: { names: [], hype: -1 },
 };
-
-interface FormActionPayloadI {
-  quantity?: string;
-  newName?: string;
-  description?: string;
-  price?: string;
-  symbol?: string;
-  newLayer?: { name: string };
-  newTier?: { name: string };
-  newImagesGen?: { images: File[]; layerName: string };
-  newImagesStatic?: File[];
-  modifyImgObjStatic?: { newImageName: string; imageId: string };
-  modifyImgObjGen?: {
-    newImageName: string;
-    imageId: string;
-    layerName: string;
-  };
-  tierProbabilityChange?: { tierName: string; newProbability: string };
-  layerProbabilityChange?: { layerName: string; newProbability: string };
-  deleteId?: string;
-  deleteGen?: { deleteId: string; layerName: string };
-  dragEndEvent?: DragEndEvent;
-  deleteLayerName?: string;
-  deleteTierName?: string;
-  imageDescChange?: { imageId: string; newDesc: string };
-  rarityChange?: { layerName: string; imageId: string; newRarity: string };
-}
-
-interface FormActionI {
-  type: FormActions;
-  payload: FormActionPayloadI;
-}
 
 /**
  * Checks if `value` is undefined. Used for type narrowing from `T | undefined` to `T`
@@ -396,6 +373,14 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
   };
 };
 
+const changePredictions = (action: FormActionI, state: FormStateI) => {
+  const predictions = undefinedCheck(
+    action.payload.newPredictions,
+    "newPredictions required"
+  );
+  return { ...state, predictions };
+};
+
 /**
  * @param state - current state of the form
  * @param action - object containting type of action to perform and payload
@@ -404,6 +389,14 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
  */
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   switch (action.type) {
+    case FormActions.CHANGE_QUANTITY:
+      return {
+        ...state,
+        generative: {
+          ...state.generative,
+          quantity: action.payload.quantity ?? DEFAULT_STRING,
+        },
+      };
     case FormActions.CHANGE_NAME:
       return {
         ...state,
@@ -418,6 +411,16 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       return {
         ...state,
         mintingPrice: action.payload.price ?? DEFAULT_STRING,
+      };
+    case FormActions.CHANGE_TWITTER_HANDLE:
+      return {
+        ...state,
+        twitterHandle: action.payload.twitterHandleChange ?? DEFAULT_STRING,
+      };
+    case FormActions.CHANGE_REDDIT_HANDLE:
+      return {
+        ...state,
+        redditHandle: action.payload.redditHandleChange ?? DEFAULT_STRING,
       };
     case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
@@ -458,6 +461,9 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     case FormActions.REMOVE_TIER:
       return removeTier(action, state);
 
+    case FormActions.CHANGE_PREDICTIONS:
+      return changePredictions(action, state);
+
     case FormActions.RESET_TYPE_OF_ART:
       return {
         ...state,
@@ -470,11 +476,8 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           numberOfLayers: 0,
           quantity: DEFAULT_STRING,
         },
+        predictions: { names: [], hype: -1 },
       };
-    case FormActions.CHANGE_QUANTITY: {
-      state.generative.quantity = action.payload.quantity ?? DEFAULT_STRING;
-      return { ...state };
-    }
     case FormActions.RESET_STATE:
       return INITIAL_STATE;
     default:

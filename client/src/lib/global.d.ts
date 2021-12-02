@@ -2,6 +2,8 @@ interface ProviderPropsI {
   children: React.ReactNode;
 }
 
+type SetStateAction<T> = React.Dispatch<React.SetStateAction<T>>;
+
 type NetworkT = { icon: string; name: string; chainId?: number };
 
 type AnchorT = null | HTMLElement;
@@ -30,7 +32,19 @@ interface LayerI {
   totalImageRarities: number;
 }
 
+type NameRecommendationT = {
+  name: string;
+  distance: number;
+};
+
+interface MlDataI {
+  names: NameRecommendationT[];
+  hype: number;
+}
+
 interface FormStateI {
+  twitterHandle: string;
+  redditHandle: string;
   collectionName: string;
   description: string;
   symbol: string;
@@ -44,6 +58,7 @@ interface FormStateI {
     layers: LayerI[];
     quantity: string;
   };
+  predictions: MlDataI;
 }
 
 interface AttributeI {

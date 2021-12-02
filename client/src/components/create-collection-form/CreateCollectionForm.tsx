@@ -1,11 +1,12 @@
 import { DragEndEvent } from "@dnd-kit/core";
+import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import FormActions from "actions/formActions";
 import SnackbarContext from "context/snackbar/SnackbarContext";
-import { UnsignedTransaction } from "ethers";
+import { Deferrable } from "ethers/lib/utils";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
@@ -23,16 +24,26 @@ import showAlert from "utils/showAlert";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
+import RecommendationsStep from "./form-steps/RecommendationsStep";
 import StaticArtStep from "./form-steps/StaticArtStep";
 import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
-
+const DUMMY_ML_DATA = {
+  names: [{ name: "name1", distance: 3 }],
+  hype: 2,
+};
 const INITIAL_STEP_NUMBER = 0;
-const STATIC_STEP = 3;
-const GEN_STEPS = 5;
+const STATIC_STEPS = 4;
+const GEN_STEPS = 6;
+const PAGE_IDX_OFFSET = 2;
+const TIER_UPLOAD_STEP = 1;
+const LAYER_SELECTION_STEP = 2;
+const LAYER_IMG_UPLOAD_STEP = 3;
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
@@ -46,15 +57,17 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "",
   },
+  predictions: { names: [], hype: -1 },
 };
-
 const formFooterStyle: SxProps = {
   display: "flex",
   gap: "10px",
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
 };
-
+const isGeneralInfoStep = (stepNumber: number) =>
+  stepNumber === GEN_STEPS - PAGE_IDX_OFFSET ||
+  stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET;
 export const checkRarities = (
   layer: LayerI,
   showFormAlert: (severity: AlertColor, message: string) => void
@@ -81,7 +94,6 @@ export const checkRarities = (
   }
   return true;
 };
-
 export const checkChance = (
   numberOfTiers: number,
   tiers: TierI[],
@@ -105,7 +117,32 @@ export const checkChance = (
   }
   return true;
 };
-
+const checkLayers = (
+  layers: LayerI[],
+  showFormAlert: (severity: AlertColor, message: string) => void
+): boolean => {
+  return layers.every((layer) => checkRarities(layer, showFormAlert));
+};
+const createCollection = async (
+  library: Web3Provider,
+  setLoadingMessage: SetStateAction<string>,
+  tx: Deferrable<TransactionRequest>,
+  account: string,
+  chainId: number,
+  showFormAlert: (severity: AlertColor, message: string) => void,
+  setIsLoading: SetStateAction<boolean>,
+  setTxAddress: SetStateAction<string>
+) => {
+  const signer = library.getSigner();
+  setLoadingMessage("Deploying...");
+  const txResponse = await signer.sendTransaction(tx);
+  setLoadingMessage("Confirming...");
+  const txReceipt = await txResponse.wait();
+  addDeployedAddress(account, chainId, txReceipt.contractAddress);
+  showFormAlert("success", "Collection Creation Successful");
+  stopLoading(setLoadingMessage, setIsLoading);
+  setTxAddress(txReceipt.contractAddress);
+};
 // eslint-disable-next-line max-lines-per-function
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
@@ -118,30 +155,34 @@ const CreateCollectionForm = (): JSX.Element => {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
   const [txAddress, setTxAddress] = useState("");
-
+  const [newCollName, setNewCollName] = useState("");
   useEffect(() => {
-    if (stepNumber <= 1) {
+    if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
       dispatch({ type: FormActions.RESET_TYPE_OF_ART, payload: {} });
     }
   }, [stepNumber]);
-
   const IS_LAST_STEP =
-    stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEP - 1);
-
+    stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEPS - 1);
   const handleNextStep = () => setStepNumber((prev) => prev + 1);
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
-
+  const handleTwitterChange = (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_TWITTER_HANDLE,
+      payload: { twitterHandleChange: e.target.value },
+    });
+  };
+  const handleRedditChange = (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_REDDIT_HANDLE,
+      payload: { redditHandleChange: e.target.value },
+    });
+  };
   const handleImageDelete = (deleteId: string, layerName = "") => {
-    let payload;
-
-    if (generative) {
-      payload = { deleteGen: { deleteId, layerName } };
-    } else {
-      payload = { deleteId };
-    }
-
+    const payload = generative
+      ? { deleteGen: { deleteId, layerName } }
+      : { deleteId };
     dispatch({
       type: generative
         ? FormActions.DELETE_IMAGE_GEN
@@ -149,31 +190,26 @@ const CreateCollectionForm = (): JSX.Element => {
       payload,
     });
   };
-
   const handleImgDescChange = (e: InputEventT, imageId: string) => {
     dispatch({
       type: FormActions.CHANGE_IMAGE_DESC,
       payload: { imageDescChange: { imageId, newDesc: e.target.value } },
     });
   };
-
   const handleCollNameChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_NAME,
       payload: { newName: e.target.value },
     });
-
   const handleMintPriceChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_PRICE,
       payload: { price: e.target.value },
     });
-
   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
-
   const handleLayerAddition = (newLayerName: string) => {
     dispatch({
       type: FormActions.ADD_LAYER,
@@ -186,21 +222,18 @@ const CreateCollectionForm = (): JSX.Element => {
       payload: { dragEndEvent: e },
     });
   };
-
   const handleTierRemoval = (tierName: string) => {
     dispatch({
       type: FormActions.REMOVE_TIER,
       payload: { deleteTierName: tierName },
     });
   };
-
   const handleTierAdd = (newTierName: string) => {
     dispatch({
       type: FormActions.ADD_TIER,
       payload: { newTier: { name: newTierName } },
     });
   };
-
   const handleTierProbChange = (tierName: string) => (e: InputEventT) => {
     dispatch({
       type: FormActions.CHANGE_TIER_PROBABILITY,
@@ -209,7 +242,6 @@ const CreateCollectionForm = (): JSX.Element => {
       },
     });
   };
-
   const handleLayerProbChange = (layerName: string) => (e: InputEventT) => {
     dispatch({
       type: FormActions.CHANGE_LAYER_PROBABILITY,
@@ -218,44 +250,35 @@ const CreateCollectionForm = (): JSX.Element => {
       },
     });
   };
-
   const handleTierReorder = (e: DragEndEvent) => {
     dispatch({
       type: FormActions.CHANGE_TIER_PRECEDENCE,
       payload: { dragEndEvent: e },
     });
   };
-
   const handleLayerRemoval = (layerName: string) => {
     dispatch({
       type: FormActions.REMOVE_LAYER,
       payload: { deleteLayerName: layerName },
     });
   };
-
   const handleSymbolChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_SYMBOL,
       payload: { symbol: e.target.value },
     });
-
   const handleImgNameChange = (
     e: InputEventT,
     imageid: string,
     layerName = ""
   ) => {
     let payload;
+    payload = {
+      modifyImgObjStatic: { newImageName: e.target.value, imageId: imageid },
+    };
     if (generative) {
       payload = {
-        modifyImgObjGen: {
-          newImageName: e.target.value,
-          imageId: imageid,
-          layerName,
-        },
-      };
-    } else {
-      payload = {
-        modifyImgObjStatic: { newImageName: e.target.value, imageId: imageid },
+        modifyImgObjGen: { ...payload.modifyImgObjStatic, layerName },
       };
     }
     dispatch({
@@ -265,7 +288,6 @@ const CreateCollectionForm = (): JSX.Element => {
       payload,
     });
   };
-
   const handleImageDrop = (
     e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
     imgObjs: FileList | null,
@@ -275,12 +297,9 @@ const CreateCollectionForm = (): JSX.Element => {
     if (!imgObjs) {
       return;
     }
-    let payload;
-    if (generative) {
-      payload = { newImagesGen: { images: Array.from(imgObjs), layerName } };
-    } else {
-      payload = { newImagesStatic: Array.from(imgObjs) };
-    }
+    const payload = generative
+      ? { newImagesGen: { images: Array.from(imgObjs), layerName } }
+      : { newImagesStatic: Array.from(imgObjs) };
     dispatch({
       type: generative
         ? FormActions.ADD_IMAGES_GEN
@@ -288,7 +307,6 @@ const CreateCollectionForm = (): JSX.Element => {
       payload,
     });
   };
-
   const handleImgRarityChange =
     (layerName: string) => (e: InputEventT, imageId: string) =>
       dispatch({
@@ -297,98 +315,100 @@ const CreateCollectionForm = (): JSX.Element => {
           rarityChange: { newRarity: e.target.value, imageId, layerName },
         },
       });
-
   const handleDescriptionChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_DESCRIPTION,
       payload: { description: e.target.value },
     });
-
   const handleQuantityChange = (e: InputEventT) =>
     dispatch({
       type: FormActions.CHANGE_QUANTITY,
       payload: { quantity: e.target.value },
     });
-
+  const handlePredictionsChange = (newPredictions: MlDataI) =>
+    dispatch({
+      type: FormActions.CHANGE_PREDICTIONS,
+      payload: { newPredictions },
+    });
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     if (!active || !account || !chainId) {
       showSnackbar("warning", "Please connect your wallet first!");
       return;
     }
-
     if (!IS_LAST_STEP) {
-      const TIER_UPLOAD_PAGE = 2;
-      const LAYER_SELECTION_PAGE = 3;
       if (
-        stepNumber === LAYER_SELECTION_PAGE &&
+        generative &&
+        stepNumber === LAYER_SELECTION_STEP &&
         state.generative.numberOfLayers <= 0
       ) {
         showFormAlert("warning", "You need atleast one layer to proceed.");
         return;
       }
+
       if (
-        stepNumber === TIER_UPLOAD_PAGE &&
-        !checkChance(
-          state.generative.numberOfTiers,
-          state.generative.tiers,
-          showFormAlert
-        )
+        generative &&
+        ((stepNumber === TIER_UPLOAD_STEP &&
+          !checkChance(
+            state.generative.numberOfTiers,
+            state.generative.tiers,
+            showFormAlert
+          )) ||
+          (stepNumber === LAYER_IMG_UPLOAD_STEP &&
+            !checkLayers(state.generative.layers, showFormAlert)))
       ) {
         return;
+      }
+      if (isGeneralInfoStep(stepNumber)) {
+        startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
+        const DUMMY_WAIT_TIME = 5000;
+        await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
+        handlePredictionsChange(DUMMY_ML_DATA);
+        stopLoading(setLoadingMessage, setIsLoading);
+        setNewCollName(state.collectionName);
       }
       handleNextStep();
       return;
     }
-
-    for (const layer of state.generative.layers) {
-      if (!checkRarities(layer, showFormAlert)) {
-        return;
-      }
-    }
-
     try {
       startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-      let tx: UnsignedTransaction;
+      let tx: Deferrable<TransactionRequest>;
+      const modifiedState = { ...state, collectionName: newCollName };
       if (generative) {
         const layers = await uploadGenImages(
           state.generative.layers,
           account,
-          state.collectionName
+          newCollName
         );
         setLoadingMessage("Generating...");
-        tx = await uploadGenCollection(layers, state, account, chainId);
+        tx = await uploadGenCollection(layers, modifiedState, account, chainId);
       } else {
         await uploadImages(
           Object.values(state.static.images),
           account,
-          state.collectionName
+          newCollName
         );
         setLoadingMessage("Saving...");
-        tx = await uploadCollection(state, account, chainId);
+        tx = await uploadCollection(modifiedState, account, chainId);
       }
-
-      const signer = library.getSigner();
-      setLoadingMessage("Deploying...");
-      const txResponse = await signer.sendTransaction(tx);
-      setLoadingMessage("Confirming...");
-      const txReceipt = await txResponse.wait();
-      addDeployedAddress(account, chainId, txReceipt.contractAddress);
-      showFormAlert("success", "Collection Creation Successful");
-      stopLoading(setLoadingMessage, setIsLoading);
-      setTxAddress(txReceipt.contractAddress);
+      await createCollection(
+        library,
+        setLoadingMessage,
+        tx,
+        account,
+        chainId,
+        showFormAlert,
+        setIsLoading,
+        setTxAddress
+      );
     } catch (error) {
-      console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
       showFormAlert("error", "Unable to create collection");
     }
   };
-
   if (txAddress !== "") {
     return <Redirect to={`/${chainId}/${txAddress}`} />;
   }
-
   return (
     <Stack
       onSubmit={handleFormSubmit}
@@ -397,6 +417,9 @@ const CreateCollectionForm = (): JSX.Element => {
       spacing={2}
       data-testid="create-form">
       <GeneralInfoStep
+        handleTwitterChange={handleTwitterChange}
+        handleRedditChange={handleRedditChange}
+        generative={generative}
         stepNumber={stepNumber}
         state={state}
         handleCollNameChange={handleCollNameChange}
@@ -448,6 +471,13 @@ const CreateCollectionForm = (): JSX.Element => {
         handleQuantityChange={handleQuantityChange}
         stepNumber={stepNumber}
       />
+      <RecommendationsStep
+        generative={generative}
+        stepNumber={stepNumber}
+        state={state}
+        handleChangeCollName={setNewCollName}
+        changedCollName={newCollName}
+      />
       <Box sx={formFooterStyle}>
         <FormAlert
           closeAlert={closeAlert}
@@ -465,5 +495,4 @@ const CreateCollectionForm = (): JSX.Element => {
     </Stack>
   );
 };
-
 export default CreateCollectionForm;

@@ -7,10 +7,10 @@ import { useState } from "react";
 import { wrongStepGenerative } from "utils/pages";
 import OrderableList from "../../common/OrderableList";
 
-const LAYER_UPLOAD_STEP_NUMBER = 3;
+const LAYER_UPLOAD_STEP_NUMBER = 2;
 const MINIMUM_LAYERS_REQUIRED = 1;
 const CHANCE_INPUT_INFO =
-  "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT";
+  "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT";
 
 interface PropsT {
   stepNumber: number;

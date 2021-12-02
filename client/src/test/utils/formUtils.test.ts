@@ -4,7 +4,6 @@ import {
   startLoading,
   stopLoading,
   uploadCollection,
-  uploadImages,
 } from "utils/formUtils";
 
 jest.mock("axios");
@@ -55,29 +54,27 @@ describe("formUtils unit tests", () => {
     }
   });
 
-  test("Uploading images", () => {
-    axios.post.mockResolvedValue(true);
-    const mockFile = new File([], "testFileName.jpg", { type: "image/jpeg" });
-    const mockImages = [{ image: mockFile, url: "", name: "test", id: "1" }];
-    expect(
-      uploadImages(
-        mockImages,
-        "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        "Test Collection"
-      )
-    ).resolves.not.toThrow();
-  });
-
   test("Saving collection", () => {
     axios.post.mockResolvedValue({ data: { transaction: {} } });
     const mockFile = new File([], "testFileName.jpg", { type: "image/jpeg" });
     const mockImages = { "1": { image: mockFile, url: "", name: "test" } };
     const mockState = {
+      twitterHandle: "twitter",
+      redditHandle: "reddit",
+      predictions: { names: [], hype: 0 },
       collectionName: "Test Collection",
       description: "Example description",
-      static: { images: mockImages },
+      static: { numberOfImages: 1, images: mockImages },
       mintingPrice: "0",
       symbol: "TEST",
+      generative: {
+        numberOfTiers: 0,
+        totalTierRarity: 0,
+        tiers: [],
+        layers: [],
+        numberOfLayers: 0,
+        quantity: "",
+      },
     };
     expect(
       uploadCollection(
@@ -93,7 +90,7 @@ describe("formUtils unit tests", () => {
     expect(
       addDeployedAddress(
         "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752",
-        "Test Collection",
+        0,
         "0x81b7E08F65Bdf5648606c89998A9CC8164397647"
       )
     ).resolves.not.toThrow();

@@ -48,7 +48,7 @@ const FormButtons = ({
         onClick={handlePrevStep}>
         Back
       </Button>
-      {stepNumber !== 1 && (
+      {stepNumber !== 0 && (
         <LoadingButton
           sx={loadingButtonStyle}
           loading={isLoading}
