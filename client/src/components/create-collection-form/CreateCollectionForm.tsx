@@ -43,6 +43,7 @@ const INITIAL_STATE: FormStateI = {
     totalTierRarity: 0,
     tiers: [],
     layers: [],
+    totalLayerRarities: [],
     numberOfLayers: 0,
     quantity: "",
   },
