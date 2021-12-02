@@ -14,24 +14,38 @@ import {
   uploadGenImages,
   uploadImages,
 } from "utils/formUtils";
-
+const inputDispatch = (
+  e: InputEventT,
+  dispatch: React.Dispatch<FormActionI>,
+  type: FormActions,
+  property: string
+) => {
+  dispatch({
+    type,
+    payload: { [property]: e.target.value },
+  });
+};
 export const handleTwitterChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
 ): void => {
-  dispatch({
-    type: FormActions.CHANGE_TWITTER_HANDLE,
-    payload: { twitterHandleChange: e.target.value },
-  });
+  inputDispatch(
+    e,
+    dispatch,
+    FormActions.CHANGE_TWITTER_HANDLE,
+    "twitterHandleChange"
+  );
 };
 export const handleRedditChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
 ): void => {
-  dispatch({
-    type: FormActions.CHANGE_REDDIT_HANDLE,
-    payload: { redditHandleChange: e.target.value },
-  });
+  inputDispatch(
+    e,
+    dispatch,
+    FormActions.CHANGE_REDDIT_HANDLE,
+    "redditHandleChange"
+  );
 };
 export const handleImageDelete = (
   deleteId: string,
@@ -64,19 +78,15 @@ export const handleImgDescChange = (
 export const handleCollNameChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
-): void =>
-  dispatch({
-    type: FormActions.CHANGE_NAME,
-    payload: { newName: e.target.value },
-  });
+): void => {
+  inputDispatch(e, dispatch, FormActions.CHANGE_NAME, "newName");
+};
 export const handleMintPriceChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
-): void =>
-  dispatch({
-    type: FormActions.CHANGE_PRICE,
-    payload: { price: e.target.value },
-  });
+): void => {
+  inputDispatch(e, dispatch, FormActions.CHANGE_PRICE, "price");
+};
 export const handleLayerAddition = (
   newLayerName: string,
   dispatch: React.Dispatch<FormActionI>
@@ -148,10 +158,7 @@ export const handleSymbolChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
 ): void => {
-  dispatch({
-    type: FormActions.CHANGE_SYMBOL,
-    payload: { symbol: e.target.value },
-  });
+  inputDispatch(e, dispatch, FormActions.CHANGE_SYMBOL, "symbol");
 };
 export const handleImgNameChange = (
   e: InputEventT,
@@ -202,7 +209,6 @@ export const handleImageDrop = (
     });
   };
 };
-
 export const handleImgRarityChange = (
   dispatch: React.Dispatch<FormActionI>
 ) => {
@@ -217,27 +223,18 @@ export const handleImgRarityChange = (
     };
   };
 };
-
 export const handleDescriptionChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
 ): void => {
-  dispatch({
-    type: FormActions.CHANGE_DESCRIPTION,
-    payload: { description: e.target.value },
-  });
+  inputDispatch(e, dispatch, FormActions.CHANGE_DESCRIPTION, "description");
 };
-
 export const handleQuantityChange = (
   e: InputEventT,
   dispatch: React.Dispatch<FormActionI>
 ): void => {
-  dispatch({
-    type: FormActions.CHANGE_QUANTITY,
-    payload: { quantity: e.target.value },
-  });
+  inputDispatch(e, dispatch, FormActions.CHANGE_QUANTITY, "quantity");
 };
-
 export const handlePredictionsChange = (
   newPredictions: MlDataI,
   dispatch: React.Dispatch<FormActionI>
