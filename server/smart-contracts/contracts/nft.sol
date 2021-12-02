@@ -37,6 +37,10 @@ contract NFT is ERC721Enumerable, Ownable {
     );
   }
 
+  /**
+   * @notice Convert from byte to character
+   * @param b Byte to convert
+   */
   function char(bytes1 b) internal pure returns (bytes1 c) {
     if (uint8(b) < 10) {
       return bytes1(uint8(b) + 0x30);
@@ -44,6 +48,10 @@ contract NFT is ERC721Enumerable, Ownable {
     return bytes1(uint8(b) + 0x57);
   }
 
+  /**
+   * @notice Convert from address to string
+   * @param x Address to convert
+   */
   function toAsciiString(address x) internal pure returns (string memory) {
     bytes memory s = new bytes(40);
     for (uint256 i = 0; i < 20; i++) {

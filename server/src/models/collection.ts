@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 
 export interface AttributeI {
   ["trait_type"]: string;
-  ["value"]: string;
+  ["value"]: string | number;
 }
 
 export interface TokenT {
@@ -27,7 +27,7 @@ const tokenSchema = new Schema<TokenT>({
   attributes: [
     {
       type: Map,
-      of: String,
+      of: Schema.Types.Mixed,
     },
   ],
 });

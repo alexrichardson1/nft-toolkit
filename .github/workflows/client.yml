@@ -21,8 +21,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: Set-up seed env vars
-      #   run: echo "REACT_APP_SEED=${{ secrets.SEED }}" >> client/.env
+      - name: Set-up access key env vars
+        run: echo "REACT_APP_AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}" >> client/.env
+      - name: Set-up secret access key env vars
+        run: echo "REACT_APP_AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}}" >> client/.env
       - name: Install dependencies
         run: yarn && cd client/ && yarn
       - name: Build
