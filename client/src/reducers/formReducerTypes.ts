@@ -18,6 +18,7 @@ interface FormActionPayloadI {
     layerName: string;
   };
   tierProbabilityChange?: { tierName: string; newProbability: string };
+  layerProbabilityChange?: { layerName: string; newProbability: string };
   deleteId?: string;
   deleteGen?: { deleteId: string; layerName: string };
   dragEndEvent?: DragEndEvent;

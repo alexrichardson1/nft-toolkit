@@ -30,20 +30,14 @@ import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
-
 const DUMMY_ML_DATA = {
-  names: [
-    { name: "name1", distance: 3 },
-    { name: "name2", distance: 4 },
-    { name: "name3", distance: 5 },
-  ],
+  names: [{ name: "name1", distance: 3 }],
   hype: 2,
 };
 const INITIAL_STEP_NUMBER = 0;
 const STATIC_STEPS = 4;
 const GEN_STEPS = 6;
 const PAGE_IDX_OFFSET = 2;
-// handleFormSubmit
 const TIER_UPLOAD_STEP = 1;
 const LAYER_SELECTION_STEP = 2;
 const LAYER_IMG_UPLOAD_STEP = 3;
@@ -57,10 +51,11 @@ const INITIAL_STATE: FormStateI = {
   static: { images: {}, numberOfImages: 0 },
   generative: {
     numberOfTiers: 0,
+    totalTierRarity: 0,
     tiers: [],
     layers: [],
     numberOfLayers: 0,
-    quantity: "",
+    quantity: "1",
   },
   predictions: { names: [], hype: -1 },
 };
@@ -247,6 +242,14 @@ const CreateCollectionForm = (): JSX.Element => {
       },
     });
   };
+  const handleLayerProbChange = (layerName: string) => (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_LAYER_PROBABILITY,
+      payload: {
+        layerProbabilityChange: { layerName, newProbability: e.target.value },
+      },
+    });
+  };
   const handleTierReorder = (e: DragEndEvent) => {
     dispatch({
       type: FormActions.CHANGE_TIER_PRECEDENCE,
@@ -269,20 +272,15 @@ const CreateCollectionForm = (): JSX.Element => {
     imageid: string,
     layerName = ""
   ) => {
-    const payload = generative
-      ? {
-          modifyImgObjGen: {
-            newImageName: e.target.value,
-            imageId: imageid,
-            layerName,
-          },
-        }
-      : {
-          modifyImgObjStatic: {
-            newImageName: e.target.value,
-            imageId: imageid,
-          },
-        };
+    let payload;
+    payload = {
+      modifyImgObjStatic: { newImageName: e.target.value, imageId: imageid },
+    };
+    if (generative) {
+      payload = {
+        modifyImgObjGen: { ...payload.modifyImgObjStatic, layerName },
+      };
+    }
     dispatch({
       type: generative
         ? FormActions.CHANGE_IMAGE_NAME_GEN
@@ -404,7 +402,6 @@ const CreateCollectionForm = (): JSX.Element => {
         setTxAddress
       );
     } catch (error) {
-      console.error(error);
       stopLoading(setLoadingMessage, setIsLoading);
       showFormAlert("error", "Unable to create collection");
     }
@@ -446,12 +443,12 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgDescChange={handleImgDescChange}
       />
       <TierSelectionStep
-        handleTierAdd={handleTierAdd}
-        handleTierRemoval={handleTierRemoval}
-        handleTierReorder={handleTierReorder}
         state={state}
         stepNumber={stepNumber}
         generative={generative}
+        handleTierAdd={handleTierAdd}
+        handleTierRemoval={handleTierRemoval}
+        handleTierReorder={handleTierReorder}
         handleTierProbChange={handleTierProbChange}
       />
       <LayerSelectionStep
@@ -461,6 +458,7 @@ const CreateCollectionForm = (): JSX.Element => {
         stepNumber={stepNumber}
         state={state}
         handleLayerAddition={handleLayerAddition}
+        handleLayerProbChange={handleLayerProbChange}
       />
       <LayerImageUpload
         handleImgRarityChange={handleImgRarityChange}

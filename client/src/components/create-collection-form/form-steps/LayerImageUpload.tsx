@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
 import Input from "components/common/Input";
+import RarityProgressBar from "components/common/RarityProgressBar";
 import { useState } from "react";
 import { accessibilityProps, DEFAULT_MUI_DARK } from "utils/constants";
 import getComponentByMode from "utils/getComponentByMode";
@@ -116,6 +117,7 @@ const LayerImageUpload = ({
         {state.generative.layers.map((layer, idx) => {
           return (
             <TabPanel key={layer.name} value={value} index={idx}>
+              <RarityProgressBar totalRarity={layer.totalImageRarities} />
               <ImageUploadWithTabs
                 handleImgDelete={(deleteId) =>
                   handleLayerImgDelete(deleteId, layer.name)

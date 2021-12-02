@@ -70,7 +70,7 @@ const OrderableListItem = ({
             type="number"
             onChange={numericInput.handleNumberInputChange}
             InputProps={{
-              inputProps: { min: 0, max: 100 },
+              inputProps: { min: 1, max: 100 },
               endAdornment: (
                 <InputAdornment position="end">
                   <InfoTooltip text={numericInput.tooltipText} />
