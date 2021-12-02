@@ -28,6 +28,7 @@ import {
 import {
   handleImgRarityChange,
   handleLayerAddition,
+  handleLayerProbChange,
   handleLayerRemoval,
   handleLayerReorder,
   handleQuantityChange,
@@ -106,15 +107,6 @@ const CreateCollectionForm = (): JSX.Element => {
   const showFormAlert = (severity: AlertColor, message: string) => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
-  };
-
-  const handleLayerProbChange = (layerName: string) => (e: InputEventT) => {
-    dispatch({
-      type: FormActions.CHANGE_LAYER_PROBABILITY,
-      payload: {
-        layerProbabilityChange: { layerName, newProbability: e.target.value },
-      },
-    });
   };
 
   if (txAddress !== "") {
@@ -203,7 +195,9 @@ const CreateCollectionForm = (): JSX.Element => {
         handleLayerAddition={(newLayerName) =>
           handleLayerAddition(newLayerName, dispatch)
         }
-        handleLayerProbChange={handleLayerProbChange}
+        handleLayerProbChange={(layerName) =>
+          handleLayerProbChange(layerName, dispatch)
+        }
       />
       <LayerImageUpload
         handleImgRarityChange={handleImgRarityChange(dispatch)}

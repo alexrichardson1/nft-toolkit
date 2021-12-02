@@ -48,7 +48,16 @@ export const handleLayerReorder = (
   });
 };
 
-// TODO: add CHANGE_LAYER_PROBABILITY
+export const handleLayerProbChange =
+  (layerName: string, dispatch: React.Dispatch<FormActionI>) =>
+  (e: InputEventT): void => {
+    dispatch({
+      type: FormActions.CHANGE_LAYER_PROBABILITY,
+      payload: {
+        layerProbabilityChange: { layerName, newProbability: e.target.value },
+      },
+    });
+  };
 
 export const handleQuantityChange = (
   e: InputEventT,
