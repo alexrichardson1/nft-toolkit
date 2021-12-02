@@ -173,6 +173,7 @@ async function compileImage(
     .composite(composites)
     .toFormat("png", { quality: 80 })
     .toBuffer();
+  console.log("Have buffer", buffer, index);
   const uploadKey = `${creator}/${name}/images/${index}.png`;
   const uploadParams = {
     Bucket: "nft-toolkit-collections",
@@ -270,6 +271,7 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
     }
 
     images.push(compileImage(image, layerBuffers, i, name, creator, layerFreq));
+    console.log("Found combo: ", image);
     generatedHashes.add(image.hash);
   }
   const tokens = await Promise.all(images);

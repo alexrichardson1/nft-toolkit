@@ -119,6 +119,7 @@ interface TierI {
 
 export const transformTiers: RequestHandler = (req, _res, next) => {
   const { tiers }: { tiers: TierI[] } = req.body;
+  console.log("Transforming Tiers", tiers);
   if (!tiers) {
     return next(new Error("Invalid params"));
   }
@@ -137,6 +138,7 @@ export const transformTiers: RequestHandler = (req, _res, next) => {
 
 export const generateTokens: RequestHandler = async (req, _res, next) => {
   const genCollection: GenCollectionI = req.body;
+  console.log("About to generate", genCollection);
   try {
     req.body.tokens = await generate(genCollection);
     next();
