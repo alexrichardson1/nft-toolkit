@@ -1,3 +1,6 @@
+// ANY CHANGES MADE HERE WILL AFFECT reducers/formReducer.ts
+// UPDATE ACCORDINGLY
+
 enum FormActions {
   // collection details
   CHANGE_NAME,
@@ -27,7 +30,7 @@ enum FormActions {
   // resets
   RESET_TYPE_OF_ART,
   RESET_STATE,
-  // ML
+  // predictions
   CHANGE_PREDICTIONS,
   CHANGE_TWITTER_HANDLE,
   CHANGE_REDDIT_HANDLE,

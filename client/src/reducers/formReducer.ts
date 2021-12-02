@@ -441,10 +441,12 @@ const resetState = (): FormStateI => {
  */
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   const reducers = [
+    // collection details
     changeName,
     changePrice,
     changeSymbol,
     changeDescription,
+    // image uploads
     addImagesStatic,
     deleteImageStatic,
     changeImageNameStatic,
@@ -452,18 +454,22 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     addImagesGen,
     changeImageNameGen,
     deleteImageGen,
+    // tiers
     addTier,
     removeTier,
     changeTierPrecedence,
     changeTierProb,
+    // layers
     addLayer,
     removeLayer,
     changeRarityGen,
     changeLayerPrecedence,
     changeLayerProb,
     changeQuantity,
+    // resets
     resetTypeOfArt,
     resetState,
+    // predictions
     changePredictions,
     changeTwitterHandle,
     changeRedditHandle,
