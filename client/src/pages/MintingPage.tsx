@@ -155,7 +155,6 @@ const MintingPage = (): JSX.Element => {
         );
       } catch (error) {
         dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
-        // TODO: handle invalid collection
         setError(true);
       }
     }
@@ -163,7 +162,6 @@ const MintingPage = (): JSX.Element => {
   }, [paramChainId, address, isMinting]);
 
   if (error) {
-    // TODO: handle invalid collection
     return <Redirect to="/404" />;
   }
 
