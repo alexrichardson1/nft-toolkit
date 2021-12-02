@@ -211,6 +211,15 @@ const CreateCollectionForm = (): JSX.Element => {
     });
   };
 
+  const handleLayerProbChange = (layerName: string) => (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_LAYER_PROBABILITY,
+      payload: {
+        layerProbabilityChange: { layerName, newProbability: e.target.value },
+      },
+    });
+  };
+
   const handleTierReorder = (e: DragEndEvent) => {
     dispatch({
       type: FormActions.CHANGE_TIER_PRECEDENCE,
@@ -427,6 +436,7 @@ const CreateCollectionForm = (): JSX.Element => {
         stepNumber={stepNumber}
         state={state}
         handleLayerAddition={handleLayerAddition}
+        handleLayerProbChange={handleLayerProbChange}
       />
       <LayerImageUpload
         handleImgRarityChange={handleImgRarityChange}
