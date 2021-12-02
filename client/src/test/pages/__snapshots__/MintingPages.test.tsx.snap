@@ -642,11 +642,11 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
             <Provider
               store={
                 Object {
-                  "@@observable": [Function],
                   "dispatch": [Function],
                   "getState": [Function],
                   "replaceReducer": [Function],
                   "subscribe": [Function],
+                  Symbol(observable): [Function],
                 }
               }
             >
@@ -1311,7 +1311,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             variant="contained"
                                           >
                                             Mint for 0.000000000000000001
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height="20px"
                                               icon="ethereum-logo.svg"
                                               margins={true}
@@ -1525,7 +1525,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                 variant="contained"
                                               >
                                                 Mint for 0.000000000000000001
-                                                <SvgLogo
+                                                <pure(SvgLogo)
                                                   height="20px"
                                                   icon="ethereum-logo.svg"
                                                   margins={true}
@@ -1724,7 +1724,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                     variant="contained"
                                                   >
                                                     Mint for 0.000000000000000001
-                                                    <SvgLogo
+                                                    <pure(SvgLogo)
                                                       height="20px"
                                                       icon="ethereum-logo.svg"
                                                       margins={true}
@@ -3417,7 +3417,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                   variant="contained"
                                                                 >
                                                                   Mint for 0.000000000000000001
-                                                                  <SvgLogo
+                                                                  <pure(SvgLogo)
                                                                     height="20px"
                                                                     icon="ethereum-logo.svg"
                                                                     margins={true}
@@ -4468,7 +4468,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                       Object {
                                                                         "children": Array [
                                                                           "Mint for 0.000000000000000001",
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height="20px"
                                                                             icon="ethereum-logo.svg"
                                                                             margins={true}
@@ -4532,7 +4532,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           Object {
                                                                             "children": <React.Fragment>
                                                                               Mint for 0.000000000000000001
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
                                                                                 margins={true}
@@ -4617,7 +4617,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                   undefined,
                                                                                   <React.Fragment>
                                                                                     Mint for 0.000000000000000001
-                                                                                    <SvgLogo
+                                                                                    <pure(SvgLogo)
                                                                                       height="20px"
                                                                                       icon="ethereum-logo.svg"
                                                                                       margins={true}
@@ -4675,24 +4675,31 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               Mint for 0.000000000000000001
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
                                                                                 margins={true}
                                                                                 width="20px"
                                                                               >
-                                                                                <img
-                                                                                  alt="logo"
+                                                                                <SvgLogo
                                                                                   height="20px"
-                                                                                  src="ethereum-logo.svg"
-                                                                                  style={
-                                                                                    Object {
-                                                                                      "margin": "0 5px",
-                                                                                    }
-                                                                                  }
+                                                                                  icon="ethereum-logo.svg"
+                                                                                  margins={true}
                                                                                   width="20px"
-                                                                                />
-                                                                              </SvgLogo>
+                                                                                >
+                                                                                  <img
+                                                                                    alt="logo"
+                                                                                    height="20px"
+                                                                                    src="ethereum-logo.svg"
+                                                                                    style={
+                                                                                      Object {
+                                                                                        "margin": "0 5px",
+                                                                                      }
+                                                                                    }
+                                                                                    width="20px"
+                                                                                  />
+                                                                                </SvgLogo>
+                                                                              </pure(SvgLogo)>
                                                                                
                                                                               $
                                                                               (0.00)

@@ -2036,66 +2036,70 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
             }
             stepNumber={4}
           >
-            <PageHeader
+            <pure(PageHeader)
               text="Enter Collection Details Here"
             >
-              <ForwardRef(Typography)
-                color="secondary"
-                component="div"
-                gutterBottom={true}
-                noWrap={true}
-                textAlign="center"
-                variant="h4"
+              <PageHeader
+                text="Enter Collection Details Here"
               >
-                <MuiTypographyRoot
-                  as="div"
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
-                  ownerState={
-                    Object {
-                      "align": "inherit",
-                      "children": "Enter Collection Details Here",
-                      "className": undefined,
-                      "color": "secondary.main",
-                      "component": "div",
-                      "gutterBottom": true,
-                      "noWrap": true,
-                      "paragraph": false,
-                      "sx": Object {
+                <ForwardRef(Typography)
+                  color="secondary"
+                  component="div"
+                  gutterBottom={true}
+                  noWrap={true}
+                  textAlign="center"
+                  variant="h4"
+                >
+                  <MuiTypographyRoot
+                    as="div"
+                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
+                    ownerState={
+                      Object {
+                        "align": "inherit",
+                        "children": "Enter Collection Details Here",
+                        "className": undefined,
+                        "color": "secondary.main",
+                        "component": "div",
+                        "gutterBottom": true,
+                        "noWrap": true,
+                        "paragraph": false,
+                        "sx": Object {
+                          "color": "secondary.main",
+                          "textAlign": "center",
+                        },
+                        "variant": "h4",
+                        "variantMapping": Object {
+                          "body1": "p",
+                          "body2": "p",
+                          "h1": "h1",
+                          "h2": "h2",
+                          "h3": "h3",
+                          "h4": "h4",
+                          "h5": "h5",
+                          "h6": "h6",
+                          "inherit": "p",
+                          "subtitle1": "h6",
+                          "subtitle2": "h6",
+                        },
+                      }
+                    }
+                    sx={
+                      Object {
                         "color": "secondary.main",
                         "textAlign": "center",
-                      },
-                      "variant": "h4",
-                      "variantMapping": Object {
-                        "body1": "p",
-                        "body2": "p",
-                        "h1": "h1",
-                        "h2": "h2",
-                        "h3": "h3",
-                        "h4": "h4",
-                        "h5": "h5",
-                        "h6": "h6",
-                        "inherit": "p",
-                        "subtitle1": "h6",
-                        "subtitle2": "h6",
-                      },
+                      }
                     }
-                  }
-                  sx={
-                    Object {
-                      "color": "secondary.main",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  <Noop />
-                  <div
-                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                   >
-                    Enter Collection Details Here
-                  </div>
-                </MuiTypographyRoot>
-              </ForwardRef(Typography)>
-            </PageHeader>
+                    <Noop />
+                    <div
+                      className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
+                    >
+                      Enter Collection Details Here
+                    </div>
+                  </MuiTypographyRoot>
+                </ForwardRef(Typography)>
+              </PageHeader>
+            </pure(PageHeader)>
             <ForwardRef(Paper)>
               <MuiPaperRoot
                 as="div"
@@ -5262,7 +5266,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <SvgLogo
+                            <pure(SvgLogo)
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -5298,7 +5302,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                         "endAdornment": <ForwardRef(InputAdornment)
                           position="end"
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={25}
                             icon="ethereum-logo.svg"
                             width={25}
@@ -5323,7 +5327,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <SvgLogo
+                            <pure(SvgLogo)
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -5356,7 +5360,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                               "endAdornment": <ForwardRef(InputAdornment)
                                 position="end"
                               >
-                                <SvgLogo
+                                <pure(SvgLogo)
                                   height={25}
                                   icon="ethereum-logo.svg"
                                   width={25}
@@ -5417,7 +5421,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                       <ForwardRef(InputAdornment)
                                         position="end"
                                       >
-                                        <SvgLogo
+                                        <pure(SvgLogo)
                                           height={25}
                                           icon="ethereum-logo.svg"
                                           width={25}
@@ -5597,7 +5601,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                   <ForwardRef(InputAdornment)
                                     position="end"
                                   >
-                                    <SvgLogo
+                                    <pure(SvgLogo)
                                       height={25}
                                       icon="ethereum-logo.svg"
                                       width={25}
@@ -5680,7 +5684,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                     <ForwardRef(InputAdornment)
                                       position="end"
                                     >
-                                      <SvgLogo
+                                      <pure(SvgLogo)
                                         height={25}
                                         icon="ethereum-logo.svg"
                                         width={25}
@@ -6106,7 +6110,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                         "endAdornment": <ForwardRef(InputAdornment)
                                           position="end"
                                         >
-                                          <SvgLogo
+                                          <pure(SvgLogo)
                                             height={25}
                                             icon="ethereum-logo.svg"
                                             width={25}
@@ -6233,7 +6237,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                             "endAdornment": <ForwardRef(InputAdornment)
                                               position="end"
                                             >
-                                              <SvgLogo
+                                              <pure(SvgLogo)
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -6317,7 +6321,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                           className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium"
                                           ownerState={
                                             Object {
-                                              "children": <SvgLogo
+                                              "children": <pure(SvgLogo)
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -6334,23 +6338,29 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                           <div
                                             className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={25}
                                               icon="ethereum-logo.svg"
                                               width={25}
                                             >
-                                              <img
-                                                alt="logo"
+                                              <SvgLogo
                                                 height={25}
-                                                src="ethereum-logo.svg"
-                                                style={
-                                                  Object {
-                                                    "margin": "0",
-                                                  }
-                                                }
+                                                icon="ethereum-logo.svg"
                                                 width={25}
-                                              />
-                                            </SvgLogo>
+                                              >
+                                                <img
+                                                  alt="logo"
+                                                  height={25}
+                                                  src="ethereum-logo.svg"
+                                                  style={
+                                                    Object {
+                                                      "margin": "0",
+                                                    }
+                                                  }
+                                                  width={25}
+                                                />
+                                              </SvgLogo>
+                                            </pure(SvgLogo)>
                                           </div>
                                         </MuiInputAdornmentRoot>
                                       </ForwardRef(InputAdornment)>
@@ -9011,66 +9021,70 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
             }
             stepNumber={2}
           >
-            <PageHeader
+            <pure(PageHeader)
               text="Enter Collection Details Here"
             >
-              <ForwardRef(Typography)
-                color="secondary"
-                component="div"
-                gutterBottom={true}
-                noWrap={true}
-                textAlign="center"
-                variant="h4"
+              <PageHeader
+                text="Enter Collection Details Here"
               >
-                <MuiTypographyRoot
-                  as="div"
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
-                  ownerState={
-                    Object {
-                      "align": "inherit",
-                      "children": "Enter Collection Details Here",
-                      "className": undefined,
-                      "color": "secondary.main",
-                      "component": "div",
-                      "gutterBottom": true,
-                      "noWrap": true,
-                      "paragraph": false,
-                      "sx": Object {
+                <ForwardRef(Typography)
+                  color="secondary"
+                  component="div"
+                  gutterBottom={true}
+                  noWrap={true}
+                  textAlign="center"
+                  variant="h4"
+                >
+                  <MuiTypographyRoot
+                    as="div"
+                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
+                    ownerState={
+                      Object {
+                        "align": "inherit",
+                        "children": "Enter Collection Details Here",
+                        "className": undefined,
+                        "color": "secondary.main",
+                        "component": "div",
+                        "gutterBottom": true,
+                        "noWrap": true,
+                        "paragraph": false,
+                        "sx": Object {
+                          "color": "secondary.main",
+                          "textAlign": "center",
+                        },
+                        "variant": "h4",
+                        "variantMapping": Object {
+                          "body1": "p",
+                          "body2": "p",
+                          "h1": "h1",
+                          "h2": "h2",
+                          "h3": "h3",
+                          "h4": "h4",
+                          "h5": "h5",
+                          "h6": "h6",
+                          "inherit": "p",
+                          "subtitle1": "h6",
+                          "subtitle2": "h6",
+                        },
+                      }
+                    }
+                    sx={
+                      Object {
                         "color": "secondary.main",
                         "textAlign": "center",
-                      },
-                      "variant": "h4",
-                      "variantMapping": Object {
-                        "body1": "p",
-                        "body2": "p",
-                        "h1": "h1",
-                        "h2": "h2",
-                        "h3": "h3",
-                        "h4": "h4",
-                        "h5": "h5",
-                        "h6": "h6",
-                        "inherit": "p",
-                        "subtitle1": "h6",
-                        "subtitle2": "h6",
-                      },
+                      }
                     }
-                  }
-                  sx={
-                    Object {
-                      "color": "secondary.main",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  <Noop />
-                  <div
-                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                   >
-                    Enter Collection Details Here
-                  </div>
-                </MuiTypographyRoot>
-              </ForwardRef(Typography)>
-            </PageHeader>
+                    <Noop />
+                    <div
+                      className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
+                    >
+                      Enter Collection Details Here
+                    </div>
+                  </MuiTypographyRoot>
+                </ForwardRef(Typography)>
+              </PageHeader>
+            </pure(PageHeader)>
             <ForwardRef(Paper)>
               <MuiPaperRoot
                 as="div"
@@ -12237,7 +12251,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <SvgLogo
+                            <pure(SvgLogo)
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -12273,7 +12287,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                         "endAdornment": <ForwardRef(InputAdornment)
                           position="end"
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={25}
                             icon="ethereum-logo.svg"
                             width={25}
@@ -12298,7 +12312,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <SvgLogo
+                            <pure(SvgLogo)
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -12331,7 +12345,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                               "endAdornment": <ForwardRef(InputAdornment)
                                 position="end"
                               >
-                                <SvgLogo
+                                <pure(SvgLogo)
                                   height={25}
                                   icon="ethereum-logo.svg"
                                   width={25}
@@ -12392,7 +12406,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                       <ForwardRef(InputAdornment)
                                         position="end"
                                       >
-                                        <SvgLogo
+                                        <pure(SvgLogo)
                                           height={25}
                                           icon="ethereum-logo.svg"
                                           width={25}
@@ -12572,7 +12586,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                   <ForwardRef(InputAdornment)
                                     position="end"
                                   >
-                                    <SvgLogo
+                                    <pure(SvgLogo)
                                       height={25}
                                       icon="ethereum-logo.svg"
                                       width={25}
@@ -12655,7 +12669,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                     <ForwardRef(InputAdornment)
                                       position="end"
                                     >
-                                      <SvgLogo
+                                      <pure(SvgLogo)
                                         height={25}
                                         icon="ethereum-logo.svg"
                                         width={25}
@@ -13081,7 +13095,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                         "endAdornment": <ForwardRef(InputAdornment)
                                           position="end"
                                         >
-                                          <SvgLogo
+                                          <pure(SvgLogo)
                                             height={25}
                                             icon="ethereum-logo.svg"
                                             width={25}
@@ -13208,7 +13222,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                             "endAdornment": <ForwardRef(InputAdornment)
                                               position="end"
                                             >
-                                              <SvgLogo
+                                              <pure(SvgLogo)
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -13292,7 +13306,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                           className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium"
                                           ownerState={
                                             Object {
-                                              "children": <SvgLogo
+                                              "children": <pure(SvgLogo)
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -13309,23 +13323,29 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                           <div
                                             className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={25}
                                               icon="ethereum-logo.svg"
                                               width={25}
                                             >
-                                              <img
-                                                alt="logo"
+                                              <SvgLogo
                                                 height={25}
-                                                src="ethereum-logo.svg"
-                                                style={
-                                                  Object {
-                                                    "margin": "0",
-                                                  }
-                                                }
+                                                icon="ethereum-logo.svg"
                                                 width={25}
-                                              />
-                                            </SvgLogo>
+                                              >
+                                                <img
+                                                  alt="logo"
+                                                  height={25}
+                                                  src="ethereum-logo.svg"
+                                                  style={
+                                                    Object {
+                                                      "margin": "0",
+                                                    }
+                                                  }
+                                                  width={25}
+                                                />
+                                              </SvgLogo>
+                                            </pure(SvgLogo)>
                                           </div>
                                         </MuiInputAdornmentRoot>
                                       </ForwardRef(InputAdornment)>
