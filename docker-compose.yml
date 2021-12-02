@@ -14,7 +14,12 @@ services:
     restart: on-failure
   server:
     image: jmp119/nft-toolkit-server:latest
-    cpus: "1.5"
+    deploy:
+      resources:
+        limits:
+          cpus: "1.5"
+        reservations:
+          cpus: "1.25"
     env_file:
       - .env
     restart: on-failure

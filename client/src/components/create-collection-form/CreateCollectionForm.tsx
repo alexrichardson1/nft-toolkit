@@ -65,9 +65,9 @@ const formFooterStyle: SxProps = {
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
 };
-const isGeneralInfoStep = (stepNumber: number) =>
-  stepNumber === GEN_STEPS - PAGE_IDX_OFFSET ||
-  stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET;
+const isGeneralInfoStep = (generative: boolean, stepNumber: number) =>
+  (generative && stepNumber === GEN_STEPS - PAGE_IDX_OFFSET) ||
+  (!generative && stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET);
 export const checkRarities = (
   layer: LayerI,
   showFormAlert: (severity: AlertColor, message: string) => void
@@ -359,7 +359,7 @@ const CreateCollectionForm = (): JSX.Element => {
       ) {
         return;
       }
-      if (isGeneralInfoStep(stepNumber)) {
+      if (isGeneralInfoStep(generative, stepNumber)) {
         startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
         const DUMMY_WAIT_TIME = 5000;
         await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
