@@ -8,17 +8,6 @@ import useCounter from "hooks/useCounter";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
-import { DEFAULT_ALERT_DURATION } from "utils/constants";
-import showAlert from "utils/showAlert";
-import GeneralInfoStep from "./form-steps/GeneralInfoStep";
-import LayerImageUpload from "./form-steps/LayerImageUpload";
-import LayerSelectionStep from "./form-steps/LayerSelectionStep";
-import RecommendationsStep from "./form-steps/RecommendationsStep";
-import StaticArtStep from "./form-steps/StaticArtStep";
-import TierSelectionStep from "./form-steps/TierSelectionStep";
-import TypeOfArtStep from "./form-steps/TypeOfArtStep";
-import FormAlert from "./FormAlert";
-import FormButtons from "./FormButtons";
 import {
   GEN_STEPS,
   handleCollNameChange,
@@ -42,7 +31,18 @@ import {
   handleTierReorder,
   handleTwitterChange,
   STATIC_STEPS,
-} from "./FormHandles";
+} from "utils/collection-form/FormHandles";
+import { DEFAULT_ALERT_DURATION } from "utils/constants";
+import showAlert from "utils/showAlert";
+import GeneralInfoStep from "./form-steps/GeneralInfoStep";
+import LayerImageUpload from "./form-steps/LayerImageUpload";
+import LayerSelectionStep from "./form-steps/LayerSelectionStep";
+import RecommendationsStep from "./form-steps/RecommendationsStep";
+import StaticArtStep from "./form-steps/StaticArtStep";
+import TierSelectionStep from "./form-steps/TierSelectionStep";
+import TypeOfArtStep from "./form-steps/TypeOfArtStep";
+import FormAlert from "./FormAlert";
+import FormButtons from "./FormButtons";
 
 const INITIAL_STEP_NUMBER = 0;
 const INITIAL_STATE: FormStateI = {
