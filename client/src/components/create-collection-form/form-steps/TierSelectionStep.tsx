@@ -1,4 +1,5 @@
 import { DragEndEvent } from "@dnd-kit/core";
+import { Collapse } from "@mui/material";
 import OrderableList from "components/common/OrderableList";
 import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
@@ -54,11 +55,9 @@ const TierSelectionStep = ({
   return (
     <>
       <PageHeader text="Add Rarity Tiers For Your Collection" />
-      {state.generative.numberOfTiers > 0 ? (
+      <Collapse in={state.generative.numberOfTiers > 0}>
         <RarityProgressBar totalRarity={state.generative.totalTierRarity} />
-      ) : (
-        <></>
-      )}
+      </Collapse>
       <OrderableList
         handleItemReorder={handleTierReorder}
         items={state.generative.tiers}>

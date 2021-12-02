@@ -65,16 +65,9 @@ const LayerImageUpload = ({
   isLoading,
 }: PropsT): JSX.Element => {
   const [value, setValue] = useState(INITIAL_VALUE);
-  // Display progress bar using totalLayerRarities[value]
 
   if (wrongStepGenerative(generative, stepNumber, LAYER_UPLOAD_PAGE_NUMBER)) {
     return <></>;
-  }
-
-  while (
-    state.generative.totalLayerRarities.length < state.generative.layers.length
-  ) {
-    state.generative.totalLayerRarities.push(0);
   }
 
   const getMaxQuantity = (): number => {
@@ -122,13 +115,9 @@ const LayerImageUpload = ({
           </Tabs>
         </Box>
         {state.generative.layers.map((layer, idx) => {
-          let totalRarity = state.generative.totalLayerRarities[value];
-          if (typeof totalRarity === "undefined") {
-            totalRarity = 0;
-          }
           return (
             <TabPanel key={layer.name} value={value} index={idx}>
-              <RarityProgressBar totalRarity={totalRarity} />
+              <RarityProgressBar totalRarity={layer.totalImageRarities} />
               <ImageUploadWithTabs
                 handleImgDelete={(deleteId) =>
                   handleLayerImgDelete(deleteId, layer.name)

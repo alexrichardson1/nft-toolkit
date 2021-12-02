@@ -10,7 +10,6 @@ import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
 import { DEFAULT_ALERT_DURATION } from "utils/constants";
-import showAlert from "utils/showAlert";
 import {
   addDeployedAddress,
   startLoading,
@@ -19,7 +18,8 @@ import {
   uploadGenCollection,
   uploadGenImages,
   uploadImages,
-} from "../../utils/formUtils";
+} from "utils/formUtils";
+import showAlert from "utils/showAlert";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
 import LayerSelectionStep from "./form-steps/LayerSelectionStep";
@@ -43,7 +43,6 @@ const INITIAL_STATE: FormStateI = {
     totalTierRarity: 0,
     tiers: [],
     layers: [],
-    totalLayerRarities: [],
     numberOfLayers: 0,
     quantity: "",
   },
@@ -421,12 +420,12 @@ const CreateCollectionForm = (): JSX.Element => {
         handleImgDescChange={handleImgDescChange}
       />
       <TierSelectionStep
-        handleTierAdd={handleTierAdd}
-        handleTierRemoval={handleTierRemoval}
-        handleTierReorder={handleTierReorder}
         state={state}
         stepNumber={stepNumber}
         generative={generative}
+        handleTierAdd={handleTierAdd}
+        handleTierRemoval={handleTierRemoval}
+        handleTierReorder={handleTierReorder}
         handleTierProbChange={handleTierProbChange}
       />
       <LayerSelectionStep
