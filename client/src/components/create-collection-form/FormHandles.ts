@@ -273,11 +273,7 @@ export const STATIC_STEPS = 4;
 export const GEN_STEPS = 6;
 
 const DUMMY_ML_DATA = {
-  names: [
-    { name: "name1", distance: 3 },
-    { name: "name2", distance: 4 },
-    { name: "name3", distance: 5 },
-  ],
+  names: [{ name: "name1", distance: 3 }],
   hype: 2,
 };
 
