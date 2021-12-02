@@ -22,6 +22,8 @@ enum FormActions {
   RESET_TYPE_OF_ART,
   RESET_STATE,
   CHANGE_QUANTITY,
+  CHANGE_TWITTER_HANDLE,
+  CHANGE_REDDIT_HANDLE,
 }
 
 export default FormActions;
