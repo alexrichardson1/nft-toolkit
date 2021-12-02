@@ -39,7 +39,6 @@ const DUMMY_ML_DATA = {
   ],
   hype: 2,
 };
-
 const INITIAL_STEP_NUMBER = 0;
 const STATIC_STEPS = 4;
 const GEN_STEPS = 6;
@@ -48,8 +47,9 @@ const PAGE_IDX_OFFSET = 2;
 const TIER_UPLOAD_STEP = 1;
 const LAYER_SELECTION_STEP = 2;
 const LAYER_IMG_UPLOAD_STEP = 3;
-
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
@@ -64,18 +64,15 @@ const INITIAL_STATE: FormStateI = {
   },
   predictions: { names: [], hype: -1 },
 };
-
 const formFooterStyle: SxProps = {
   display: "flex",
   gap: "10px",
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
 };
-
 const isGeneralInfoStep = (stepNumber: number) =>
   stepNumber === GEN_STEPS - PAGE_IDX_OFFSET ||
   stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET;
-
 export const checkRarities = (
   layer: LayerI,
   showFormAlert: (severity: AlertColor, message: string) => void
@@ -102,7 +99,6 @@ export const checkRarities = (
   }
   return true;
 };
-
 export const checkChance = (
   numberOfTiers: number,
   tiers: TierI[],
@@ -126,14 +122,12 @@ export const checkChance = (
   }
   return true;
 };
-
 const checkLayers = (
   layers: LayerI[],
   showFormAlert: (severity: AlertColor, message: string) => void
 ): boolean => {
   return layers.every((layer) => checkRarities(layer, showFormAlert));
 };
-
 const createCollection = async (
   library: Web3Provider,
   setLoadingMessage: SetStateAction<string>,
@@ -154,7 +148,6 @@ const createCollection = async (
   stopLoading(setLoadingMessage, setIsLoading);
   setTxAddress(txReceipt.contractAddress);
 };
-
 // eslint-disable-next-line max-lines-per-function
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
@@ -179,6 +172,18 @@ const CreateCollectionForm = (): JSX.Element => {
   const handleNextStep = () => setStepNumber((prev) => prev + 1);
   const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
+  const handleTwitterChange = (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_TWITTER_HANDLE,
+      payload: { twitterHandleChange: e.target.value },
+    });
+  };
+  const handleRedditChange = (e: InputEventT) => {
+    dispatch({
+      type: FormActions.CHANGE_REDDIT_HANDLE,
+      payload: { redditHandleChange: e.target.value },
+    });
+  };
   const handleImageDelete = (deleteId: string, layerName = "") => {
     const payload = generative
       ? { deleteGen: { deleteId, layerName } }
@@ -359,7 +364,6 @@ const CreateCollectionForm = (): JSX.Element => {
       if (isGeneralInfoStep(stepNumber)) {
         startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
         const DUMMY_WAIT_TIME = 5000;
-        // Get the data here
         await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
         handlePredictionsChange(DUMMY_ML_DATA);
         stopLoading(setLoadingMessage, setIsLoading);
@@ -368,7 +372,6 @@ const CreateCollectionForm = (): JSX.Element => {
       handleNextStep();
       return;
     }
-
     try {
       startLoading(setLoadingMessage, setIsLoading, "Uploading...");
       let tx: Deferrable<TransactionRequest>;
@@ -390,7 +393,6 @@ const CreateCollectionForm = (): JSX.Element => {
         setLoadingMessage("Saving...");
         tx = await uploadCollection(modifiedState, account, chainId);
       }
-
       await createCollection(
         library,
         setLoadingMessage,
@@ -407,11 +409,9 @@ const CreateCollectionForm = (): JSX.Element => {
       showFormAlert("error", "Unable to create collection");
     }
   };
-
   if (txAddress !== "") {
     return <Redirect to={`/${chainId}/${txAddress}`} />;
   }
-
   return (
     <Stack
       onSubmit={handleFormSubmit}
@@ -420,6 +420,8 @@ const CreateCollectionForm = (): JSX.Element => {
       spacing={2}
       data-testid="create-form">
       <GeneralInfoStep
+        handleTwitterChange={handleTwitterChange}
+        handleRedditChange={handleRedditChange}
         generative={generative}
         stepNumber={stepNumber}
         state={state}
@@ -495,5 +497,4 @@ const CreateCollectionForm = (): JSX.Element => {
     </Stack>
   );
 };
-
 export default CreateCollectionForm;

@@ -20,6 +20,8 @@ interface PropsT {
   handleDescriptionChange: (e: InputEventT) => void;
   handleMintPriceChange: (e: InputEventT) => void;
   handleSymbolChange: (e: InputEventT) => void;
+  handleTwitterChange: (e: InputEventT) => void;
+  handleRedditChange: (e: InputEventT) => void;
 }
 
 /**
@@ -56,6 +58,8 @@ const GeneralInfoStep = ({
   handleMintPriceChange,
   handleDescriptionChange,
   handleSymbolChange,
+  handleRedditChange,
+  handleTwitterChange,
 }: PropsT): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
   const priceInputPropsMemo = useMemo(
@@ -115,6 +119,24 @@ const GeneralInfoStep = ({
           type="number"
           InputProps={priceInputPropsMemo}
           required
+        />
+      </Paper>
+
+      <Paper>
+        <Input
+          value={state.twitterHandle}
+          onChange={handleTwitterChange}
+          placeholder="Enter your Twitter handle here"
+          label="Twitter Handle"
+        />
+      </Paper>
+
+      <Paper>
+        <Input
+          value={state.redditHandle}
+          onChange={handleRedditChange}
+          placeholder="Enter your Reddit subreddit"
+          label="Reddit Handle"
         />
       </Paper>
     </>
