@@ -59,11 +59,14 @@ const Recommendation = ({ title, children, tooltipText }: SectionProps) => (
 
 /**
  * The form step for the recommendation of the collection name
- * @param name - The name entered by the user for their collection
+ * @param state - The state of the form
  * @param stepNumber - The step the form is currently on (must equal
  * REC_STEP_NUMBER_(GEN, STATIC) for this page to render)
  * @param generative - true is the user chose to upload dynamic images, false
  * otherwise (used to determine if this page should number alongside stepNumber)
+ * @param changedCollName - Represents changed collection name if user decides
+ * to pick a new collection name
+ * @param handleChangeCollName - handles collection name change
  */
 const RecommendationsStep = ({
   generative,

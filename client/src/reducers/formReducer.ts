@@ -51,6 +51,8 @@ const getTierObj = (name: string): TierI => ({
 });
 
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
@@ -383,6 +385,16 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
+      };
+    case FormActions.CHANGE_TWITTER_HANDLE:
+      return {
+        ...state,
+        twitterHandle: action.payload.twitterHandleChange ?? DEFAULT_STRING,
+      };
+    case FormActions.CHANGE_REDDIT_HANDLE:
+      return {
+        ...state,
+        redditHandle: action.payload.redditHandleChange ?? DEFAULT_STRING,
       };
     // Change the symbol of the collection
     case FormActions.CHANGE_SYMBOL:
