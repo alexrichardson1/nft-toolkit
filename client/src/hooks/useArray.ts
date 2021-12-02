@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface ArrayI<T> {
   array: T[];
-  set: React.Dispatch<React.SetStateAction<T[]>>;
+  set: SetStateAction<T[]>;
   push: (elem: T) => void;
   filter: (predicate: (value: T, index: number, array: T[]) => T) => void;
   update: (i: number, elem: T) => void;

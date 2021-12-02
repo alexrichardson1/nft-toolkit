@@ -2,7 +2,7 @@ import PageHeader from "components/common/PageHeader";
 import { wrongStepStatic } from "utils/pages";
 import ImageUploadWithTabs from "../ImageUploadWithTabs";
 
-const STATIC_ART_STEP_NUMBER = 2;
+const STATIC_ART_STEP_NUMBER = 1;
 
 interface PropsT {
   stepNumber: number;

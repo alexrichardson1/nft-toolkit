@@ -1,6 +1,6 @@
-import { DragEndEvent } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import FormActions from "actions/formActions";
+import { FormActionI } from "./formReducerTypes";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
 const DEFAULT_STRING = "";
@@ -39,12 +39,20 @@ export const getLayerObj = (name: string): LayerI => ({
   numberOfImages: 0,
 });
 
+/**
+ * Returns a tier object based on tier name
+ *
+ * @param name - name of the tier
+ * @returns a tier object
+ */
 const getTierObj = (name: string): TierI => ({
   name,
   probability: "",
 });
 
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
@@ -57,38 +65,8 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
+  predictions: { names: [], hype: -1 },
 };
-
-interface FormActionPayloadI {
-  quantity?: string;
-  newName?: string;
-  description?: string;
-  price?: string;
-  symbol?: string;
-  newLayer?: { name: string };
-  newTier?: { name: string };
-  newImagesGen?: { images: File[]; layerName: string };
-  newImagesStatic?: File[];
-  modifyImgObjStatic?: { newImageName: string; imageId: string };
-  modifyImgObjGen?: {
-    newImageName: string;
-    imageId: string;
-    layerName: string;
-  };
-  tierProbabilityChange?: { tierName: string; newProbability: string };
-  deleteId?: string;
-  deleteGen?: { deleteId: string; layerName: string };
-  dragEndEvent?: DragEndEvent;
-  deleteLayerName?: string;
-  deleteTierName?: string;
-  imageDescChange?: { imageId: string; newDesc: string };
-  rarityChange?: { layerName: string; imageId: string; newRarity: string };
-}
-
-interface FormActionI {
-  type: FormActions;
-  payload: FormActionPayloadI;
-}
 
 /**
  * Checks if `value` is undefined. Used for type narrowing from `T | undefined` to `T`
@@ -379,6 +357,14 @@ const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
   return { ...state };
 };
 
+const changePredictions = (action: FormActionI, state: FormStateI) => {
+  const predictions = undefinedCheck(
+    action.payload.newPredictions,
+    "newPredictions required"
+  );
+  return { ...state, predictions };
+};
+
 /**
  *
  * @param state - current state of the form
@@ -394,69 +380,64 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
         ...state,
         collectionName: action.payload.newName ?? DEFAULT_STRING,
       };
-
     // Change the description of the collection
     case FormActions.CHANGE_DESCRIPTION:
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
       };
-
+    case FormActions.CHANGE_TWITTER_HANDLE:
+      return {
+        ...state,
+        twitterHandle: action.payload.twitterHandleChange ?? DEFAULT_STRING,
+      };
+    case FormActions.CHANGE_REDDIT_HANDLE:
+      return {
+        ...state,
+        redditHandle: action.payload.redditHandleChange ?? DEFAULT_STRING,
+      };
     // Change the symbol of the collection
     case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
-
     // Add new images to the static collection
     case FormActions.ADD_IMAGES_STATIC:
       return addImagesStatic(action, state);
-
     // Change name of a static image
     case FormActions.CHANGE_IMAGE_NAME:
       return changeImageNameStatic(action, state);
-
     // Delete a static image
     case FormActions.DELETE_IMAGE_STATIC:
       return deleteImageStatic(action, state);
-
     // Change the desription of a static image
     case FormActions.CHANGE_IMAGE_DESC:
       return changeImageDesc(action, state);
-
     // Add new images within a layer for generative art
     case FormActions.ADD_IMAGES_GEN:
       return addImagesGen(action, state);
-
     // Delete an image within a layer for generative art
     case FormActions.DELETE_IMAGE_GEN:
       return deleteImageGen(action, state);
-
     // Change the name of an image within a layer for generative art
     case FormActions.CHANGE_IMAGE_NAME_GEN:
       return changeImageNameGen(action, state);
-
     // Change the precedence of a layer
     case FormActions.CHANGE_LAYER_PRECEDENCE:
       return changeLayerPrecedence(action, state);
-
     // Change the rarity of an image within a layer
     case FormActions.CHANGE_RARITY:
       return changeRarity(action, state);
-
     // Change the price of the collection
     case FormActions.CHANGE_PRICE:
       return {
         ...state,
         mintingPrice: action.payload.price ?? DEFAULT_STRING,
       };
-
     // Add a layer to the state
     case FormActions.ADD_LAYER:
       return addLayer(action, state);
-
     // Remove a layer from the state
     case FormActions.REMOVE_LAYER:
       return removeLayer(action, state);
-
     // Add tier to state
     case FormActions.ADD_TIER:
       return addTier(action, state);
@@ -469,6 +450,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     // Remove tier from state
     case FormActions.REMOVE_TIER:
       return removeTier(action, state);
+
     // Reset static and generative objects in the state
     case FormActions.RESET_TYPE_OF_ART:
       return {
@@ -481,13 +463,21 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
           numberOfLayers: 0,
           quantity: DEFAULT_STRING,
         },
+        predictions: { names: [], hype: -1 },
       };
+    // Change quantitiy
     case FormActions.CHANGE_QUANTITY: {
-      state.generative.quantity = action.payload.quantity ?? DEFAULT_STRING;
       return {
         ...state,
+        generative: {
+          ...state.generative,
+          quantity: action.payload.quantity ?? DEFAULT_STRING,
+        },
       };
     }
+    // Change predictions
+    case FormActions.CHANGE_PREDICTIONS:
+      return changePredictions(action, state);
     // Reset form state
     case FormActions.RESET_STATE:
       return INITIAL_STATE;
