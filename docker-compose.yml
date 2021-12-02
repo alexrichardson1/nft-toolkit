@@ -5,18 +5,18 @@ services:
       - client
       - server
       - ml
-    image: jmp119/nft-toolkit-nginx
+    image: jmp119/nft-toolkit-nginx:latest
     restart: always
     ports:
       - "80:80"
   client:
-    image: jmp119/nft-toolkit-client
+    image: jmp119/nft-toolkit-client:latest
     restart: on-failure
   server:
-    image: jmp119/nft-toolkit-server
+    image: jmp119/nft-toolkit-server:latest
     env_file:
       - .env
     restart: on-failure
   ml:
-    image: jmp119/nft-toolkit-ml
+    image: jmp119/nft-toolkit-ml:latest
     restart: on-failure
