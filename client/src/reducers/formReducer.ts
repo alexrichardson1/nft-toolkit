@@ -1,5 +1,4 @@
 import { arrayMove } from "@dnd-kit/sortable";
-import FormActions from "actions/formActions";
 import { FormActionI } from "./formReducerTypes";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
@@ -34,7 +33,6 @@ export const getLayerObj = (name: string): LayerI => ({
 
 /**
  * Returns a tier object based on tier name
- *
  * @param name - name of the tier
  * @returns a tier object
  */
@@ -83,7 +81,7 @@ const containsDuplicates = (name: string, items: { name: string }[]) => {
   );
 };
 
-const addImagesStatic = (action: FormActionI, state: FormStateI) => {
+const addImagesStatic = (state: FormStateI, action: FormActionI) => {
   let newImages = 0;
   action.payload.newImagesStatic?.forEach((newImg) => {
     const newImgId = getImgId(newImg.name, newImg.size);
@@ -100,7 +98,7 @@ const addImagesStatic = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
-const changeImageDescStatic = (action: FormActionI, state: FormStateI) => {
+const changeImageDescStatic = (state: FormStateI, action: FormActionI) => {
   const imgDescChange = undefinedCheck(
     action.payload.imageDescChange,
     "imageDescChange required"
@@ -112,8 +110,7 @@ const changeImageDescStatic = (action: FormActionI, state: FormStateI) => {
   img.description = imgDescChange.newDesc;
   return { ...state };
 };
-
-const changeImageNameStatic = (action: FormActionI, state: FormStateI) => {
+const changeImageNameStatic = (state: FormStateI, action: FormActionI) => {
   const modifyImgObj = undefinedCheck(
     action.payload.modifyImgObjStatic,
     "modifyImgObjStatic required"
@@ -125,8 +122,7 @@ const changeImageNameStatic = (action: FormActionI, state: FormStateI) => {
   img.name = modifyImgObj.newImageName;
   return { ...state };
 };
-
-const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
+const deleteImageStatic = (state: FormStateI, action: FormActionI) => {
   const deleteId = undefinedCheck(action.payload.deleteId, "deleteId required");
   const imgUrl = state.static.images[deleteId]?.url;
   delete state.static.images[deleteId];
@@ -141,8 +137,7 @@ const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
-
-const addImagesGen = (action: FormActionI, state: FormStateI) => {
+const addImagesGen = (state: FormStateI, action: FormActionI) => {
   const imgsToAdd = undefinedCheck(
     action.payload.newImagesGen,
     "newImagesGen required"
@@ -165,8 +160,7 @@ const addImagesGen = (action: FormActionI, state: FormStateI) => {
   });
   return { ...state };
 };
-
-const changeImageNameGen = (action: FormActionI, state: FormStateI) => {
+const changeImageNameGen = (state: FormStateI, action: FormActionI) => {
   const modifyImgGen = undefinedCheck(
     action.payload.modifyImgObjGen,
     "modifyImgObjGen required"
@@ -182,8 +176,7 @@ const changeImageNameGen = (action: FormActionI, state: FormStateI) => {
   });
   return { ...state };
 };
-
-const changeRarityGen = (action: FormActionI, state: FormStateI) => {
+const changeRarityGen = (state: FormStateI, action: FormActionI) => {
   const rarityChange = undefinedCheck(
     action.payload.rarityChange,
     "rarityChange required"
@@ -202,8 +195,7 @@ const changeRarityGen = (action: FormActionI, state: FormStateI) => {
   });
   return { ...state };
 };
-
-const deleteImageGen = (action: FormActionI, state: FormStateI) => {
+const deleteImageGen = (state: FormStateI, action: FormActionI) => {
   const deleteObjGen = undefinedCheck(
     action.payload.deleteGen,
     "deleteGen required"
@@ -225,8 +217,7 @@ const deleteImageGen = (action: FormActionI, state: FormStateI) => {
   });
   return { ...state };
 };
-
-const addLayer = (action: FormActionI, state: FormStateI) => {
+const addLayer = (state: FormStateI, action: FormActionI) => {
   const newLayer = undefinedCheck(action.payload.newLayer, "newLayer required");
   if (containsDuplicates(newLayer.name, state.generative.layers)) {
     return { ...state };
@@ -240,8 +231,7 @@ const addLayer = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
-
-const changeLayerProb = (action: FormActionI, state: FormStateI) => {
+const changeLayerProb = (state: FormStateI, action: FormActionI) => {
   const layerProbabilityChange = undefinedCheck(
     action.payload.layerProbabilityChange,
     "layerProbabilityChange required"
@@ -251,17 +241,16 @@ const changeLayerProb = (action: FormActionI, state: FormStateI) => {
       layer.probability = layerProbabilityChange.newProbability;
     }
   });
-  return { ...state };
+  return state;
 };
-
-const changeLayerPrecedence = (action: FormActionI, state: FormStateI) => {
+const changeLayerPrecedence = (state: FormStateI, action: FormActionI) => {
   const dragEndEvent = undefinedCheck(
     action.payload.dragEndEvent,
     "dragEndEvent required"
   );
   const { active, over } = dragEndEvent;
   if (!over) {
-    return { ...state };
+    return state;
   }
   if (active.id !== over.id) {
     const oldIdx = state.generative.layers.findIndex(
@@ -276,10 +265,10 @@ const changeLayerPrecedence = (action: FormActionI, state: FormStateI) => {
       newIdx
     );
   }
-  return { ...state };
+  return state;
 };
 
-const removeLayer = (action: FormActionI, state: FormStateI) => {
+const removeLayer = (state: FormStateI, action: FormActionI) => {
   const deleteLayerName = undefinedCheck(
     action.payload.deleteLayerName,
     "deleteLayerName required"
@@ -299,8 +288,7 @@ const removeLayer = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
-
-const addTier = (action: FormActionI, state: FormStateI) => {
+const addTier = (state: FormStateI, action: FormActionI) => {
   const newTier = undefinedCheck(action.payload.newTier, "newTier required");
   if (containsDuplicates(newTier.name, state.generative.tiers)) {
     return { ...state };
@@ -314,8 +302,7 @@ const addTier = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
-
-const changeTierProb = (action: FormActionI, state: FormStateI) => {
+const changeTierProb = (state: FormStateI, action: FormActionI) => {
   const tierProbabilityChange = undefinedCheck(
     action.payload.tierProbabilityChange,
     "tierProbabilityChange required"
@@ -328,17 +315,16 @@ const changeTierProb = (action: FormActionI, state: FormStateI) => {
     newTotalRarity += Number(tier.probability);
   });
   state.generative.totalTierRarity = newTotalRarity;
-  return { ...state };
+  return state;
 };
-
-const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
+const changeTierPrecedence = (state: FormStateI, action: FormActionI) => {
   const dragEndEvent = undefinedCheck(
     action.payload.dragEndEvent,
     "dragEndEvent required"
   );
   const { active, over } = dragEndEvent;
   if (!over) {
-    return { ...state };
+    return state;
   }
   if (active.id !== over.id) {
     const oldIdx = state.generative.tiers.findIndex(
@@ -349,10 +335,9 @@ const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
     );
     state.generative.tiers = arrayMove(state.generative.tiers, oldIdx, newIdx);
   }
-  return { ...state };
+  return state;
 };
-
-const removeTier = (action: FormActionI, state: FormStateI) => {
+const removeTier = (state: FormStateI, action: FormActionI) => {
   const deleteTierName = undefinedCheck(
     action.payload.deleteTierName,
     "deleteTierName required"
@@ -372,15 +357,82 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
     },
   };
 };
-
-const changePredictions = (action: FormActionI, state: FormStateI) => {
+const changePredictions = (state: FormStateI, action: FormActionI) => {
   const predictions = undefinedCheck(
     action.payload.newPredictions,
     "newPredictions required"
   );
   return { ...state, predictions };
 };
-
+const resetTypeOfArt = (state: FormStateI): FormStateI => {
+  return {
+    ...state,
+    static: { images: {}, numberOfImages: 0 },
+    generative: {
+      numberOfTiers: 0,
+      tiers: [],
+      layers: [],
+      totalTierRarity: 0,
+      numberOfLayers: 0,
+      quantity: DEFAULT_STRING,
+    },
+    predictions: { names: [], hype: -1 },
+  };
+};
+const changeSymbol = (state: FormStateI, action: FormActionI): FormStateI => {
+  return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
+};
+const changeRedditHandle = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  return {
+    ...state,
+    redditHandle: action.payload.redditHandleChange ?? DEFAULT_STRING,
+  };
+};
+const changeTwitterHandle = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  return {
+    ...state,
+    twitterHandle: action.payload.twitterHandleChange ?? DEFAULT_STRING,
+  };
+};
+const changePrice = (state: FormStateI, action: FormActionI): FormStateI => {
+  return {
+    ...state,
+    mintingPrice: action.payload.price ?? DEFAULT_STRING,
+  };
+};
+const changeDescription = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  return {
+    ...state,
+    description: action.payload.description ?? DEFAULT_STRING,
+  };
+};
+const changeName = (state: FormStateI, action: FormActionI): FormStateI => {
+  return {
+    ...state,
+    collectionName: action.payload.newName ?? DEFAULT_STRING,
+  };
+};
+const changeQuantity = (state: FormStateI, action: FormActionI): FormStateI => {
+  return {
+    ...state,
+    generative: {
+      ...state.generative,
+      quantity: action.payload.quantity ?? DEFAULT_STRING,
+    },
+  };
+};
+const resetState = (): FormStateI => {
+  return INITIAL_STATE;
+};
 /**
  * @param state - current state of the form
  * @param action - object containting type of action to perform and payload
@@ -388,101 +440,39 @@ const changePredictions = (action: FormActionI, state: FormStateI) => {
  * @returns The state of the form
  */
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
-  switch (action.type) {
-    case FormActions.CHANGE_QUANTITY:
-      return {
-        ...state,
-        generative: {
-          ...state.generative,
-          quantity: action.payload.quantity ?? DEFAULT_STRING,
-        },
-      };
-    case FormActions.CHANGE_NAME:
-      return {
-        ...state,
-        collectionName: action.payload.newName ?? DEFAULT_STRING,
-      };
-    case FormActions.CHANGE_DESCRIPTION:
-      return {
-        ...state,
-        description: action.payload.description ?? DEFAULT_STRING,
-      };
-    case FormActions.CHANGE_PRICE:
-      return {
-        ...state,
-        mintingPrice: action.payload.price ?? DEFAULT_STRING,
-      };
-    case FormActions.CHANGE_TWITTER_HANDLE:
-      return {
-        ...state,
-        twitterHandle: action.payload.twitterHandleChange ?? DEFAULT_STRING,
-      };
-    case FormActions.CHANGE_REDDIT_HANDLE:
-      return {
-        ...state,
-        redditHandle: action.payload.redditHandleChange ?? DEFAULT_STRING,
-      };
-    case FormActions.CHANGE_SYMBOL:
-      return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
-
-    case FormActions.ADD_IMAGES_STATIC:
-      return addImagesStatic(action, state);
-    case FormActions.CHANGE_IMAGE_NAME:
-      return changeImageNameStatic(action, state);
-    case FormActions.CHANGE_IMAGE_DESC:
-      return changeImageDescStatic(action, state);
-    case FormActions.DELETE_IMAGE_STATIC:
-      return deleteImageStatic(action, state);
-
-    case FormActions.ADD_IMAGES_GEN:
-      return addImagesGen(action, state);
-    case FormActions.CHANGE_IMAGE_NAME_GEN:
-      return changeImageNameGen(action, state);
-    case FormActions.CHANGE_RARITY:
-      return changeRarityGen(action, state);
-    case FormActions.DELETE_IMAGE_GEN:
-      return deleteImageGen(action, state);
-
-    case FormActions.ADD_LAYER:
-      return addLayer(action, state);
-    case FormActions.CHANGE_LAYER_PRECEDENCE:
-      return changeLayerPrecedence(action, state);
-    case FormActions.CHANGE_LAYER_PROBABILITY:
-      return changeLayerProb(action, state);
-    case FormActions.REMOVE_LAYER:
-      return removeLayer(action, state);
-
-    case FormActions.ADD_TIER:
-      return addTier(action, state);
-    case FormActions.CHANGE_TIER_PROBABILITY:
-      return changeTierProb(action, state);
-    case FormActions.CHANGE_TIER_PRECEDENCE:
-      return changeTierPrecedence(action, state);
-    case FormActions.REMOVE_TIER:
-      return removeTier(action, state);
-
-    case FormActions.CHANGE_PREDICTIONS:
-      return changePredictions(action, state);
-
-    case FormActions.RESET_TYPE_OF_ART:
-      return {
-        ...state,
-        static: { images: {}, numberOfImages: 0 },
-        generative: {
-          numberOfTiers: 0,
-          tiers: [],
-          layers: [],
-          totalTierRarity: 0,
-          numberOfLayers: 0,
-          quantity: DEFAULT_STRING,
-        },
-        predictions: { names: [], hype: -1 },
-      };
-    case FormActions.RESET_STATE:
-      return INITIAL_STATE;
-    default:
-      throw new Error("Invalid action provided");
-  }
+  const reducers = [
+    changeName,
+    changePrice,
+    changeSymbol,
+    changeDescription,
+    addImagesStatic,
+    deleteImageStatic,
+    changeImageNameStatic,
+    changeImageDescStatic,
+    addImagesGen,
+    changeImageNameGen,
+    deleteImageGen,
+    addTier,
+    removeTier,
+    changeTierPrecedence,
+    changeTierProb,
+    addLayer,
+    removeLayer,
+    changeRarityGen,
+    changeLayerPrecedence,
+    changeLayerProb,
+    changeQuantity,
+    resetTypeOfArt,
+    resetState,
+    changePredictions,
+    changeTwitterHandle,
+    changeRedditHandle,
+  ];
+  const reducer = undefinedCheck(
+    reducers[action.type],
+    "Invalid action provided"
+  );
+  return reducer(state, action);
 };
 
 export default formReducer;
