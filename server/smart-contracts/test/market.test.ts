@@ -3,7 +3,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import chai, { expect } from "chai";
 import { solidity } from "ethereum-waffle";
 import { ethers } from "hardhat";
-import { NFT, Royalty } from "../typechain";
+import { Market, NFT } from "../typechain";
 
 chai.use(solidity);
 
@@ -15,11 +15,11 @@ const DEFAULT_MAPPING_VALUE = BigNumber.from("0");
 const COLLECTION_SIZE = 10;
 const COLLECTION_WEI_PRICE = ethers.utils.parseEther("1");
 const BASE_URI = "";
-// Royalty Contract
+// Market Contract
 const CUT = 20;
 
 describe("Royalties Contract", () => {
-  let royaltiesContract: Royalty;
+  let royaltiesContract: Market;
   let nftContract: NFT;
   let signerOne: SignerWithAddress | undefined;
   let signerTwo: SignerWithAddress | undefined;
@@ -38,8 +38,8 @@ describe("Royalties Contract", () => {
     await nftContract.mint(NUM_NFTS, {
       value: COLLECTION_WEI_PRICE.mul(NUM_NFTS),
     });
-    // Royalty Contract
-    const RoyaltiesContract = await ethers.getContractFactory("Royalty");
+    // Market Contract
+    const RoyaltiesContract = await ethers.getContractFactory("Market");
     royaltiesContract = await RoyaltiesContract.deploy(
       CUT,
       nftContract.address
