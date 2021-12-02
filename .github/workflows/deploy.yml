@@ -71,7 +71,7 @@ jobs:
         run: |
           aws elasticbeanstalk create-application-version \
           --application-name NFToolkit \
-          --source-bundle S3Bucket="elasticbeanstalk-eu-west-2-307164813438",S3Key="deploy.zip" \
+          --source-bundle S3Bucket="elasticbeanstalk-eu-west-2-307164813438",S3Key="deploy-${{ github.sha }}.zip" \
           --version-label "${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
 
