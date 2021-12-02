@@ -1,24 +1,13 @@
-import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import FormActions from "actions/formActions";
 import SnackbarContext from "context/snackbar/SnackbarContext";
-import { Deferrable } from "ethers/lib/utils";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
 import { DEFAULT_ALERT_DURATION } from "utils/constants";
-import {
-  addDeployedAddress,
-  startLoading,
-  stopLoading,
-  uploadCollection,
-  uploadGenCollection,
-  uploadGenImages,
-  uploadImages,
-} from "utils/formUtils";
 import showAlert from "utils/showAlert";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
 import LayerImageUpload from "./form-steps/LayerImageUpload";
@@ -30,8 +19,10 @@ import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
 import {
+  GEN_STEPS,
   handleCollNameChange,
   handleDescriptionChange,
+  handleFormSubmit,
   handleImageDelete,
   handleImageDrop,
   handleImgDescChange,
@@ -41,7 +32,6 @@ import {
   handleLayerRemoval,
   handleLayerReorder,
   handleMintPriceChange,
-  handlePredictionsChange,
   handleQuantityChange,
   handleRedditChange,
   handleSymbolChange,
@@ -50,24 +40,11 @@ import {
   handleTierRemoval,
   handleTierReorder,
   handleTwitterChange,
+  STATIC_STEPS,
 } from "./FormHandles";
 
-const DUMMY_ML_DATA = {
-  names: [
-    { name: "name1", distance: 3 },
-    { name: "name2", distance: 4 },
-    { name: "name3", distance: 5 },
-  ],
-  hype: 2,
-};
 const INITIAL_STEP_NUMBER = 0;
-const STATIC_STEPS = 4;
-const GEN_STEPS = 6;
-const PAGE_IDX_OFFSET = 2;
-// handleFormSubmit
-const TIER_UPLOAD_STEP = 1;
-const LAYER_SELECTION_STEP = 2;
-const LAYER_IMG_UPLOAD_STEP = 3;
+
 const INITIAL_STATE: FormStateI = {
   twitterHandle: "",
   redditHandle: "",
@@ -91,35 +68,7 @@ const formFooterStyle: SxProps = {
   minHeight: 50,
   flexDirection: { xs: "column", sm: "row" },
 };
-const isGeneralInfoStep = (stepNumber: number) =>
-  stepNumber === GEN_STEPS - PAGE_IDX_OFFSET ||
-  stepNumber === STATIC_STEPS - PAGE_IDX_OFFSET;
-export const checkRarities = (
-  layer: LayerI,
-  showFormAlert: (severity: AlertColor, message: string) => void
-): boolean => {
-  let totalRarity = 0;
-  for (const imageId in layer.images) {
-    const image = layer.images[imageId];
-    if (!image || !image.rarity) {
-      showFormAlert(
-        "warning",
-        `Please type in a rarity for image ${image?.name} in layer ${layer.name}`
-      );
-      return false;
-    }
-    totalRarity += Number(image.rarity);
-  }
-  const maxRarity = 100;
-  if (totalRarity !== maxRarity) {
-    showFormAlert(
-      "warning",
-      `All your rarities should add up to 100 for layer ${layer.name}`
-    );
-    return false;
-  }
-  return true;
-};
+
 export const checkChance = (
   numberOfTiers: number,
   tiers: TierI[],
@@ -143,33 +92,7 @@ export const checkChance = (
   }
   return true;
 };
-const checkLayers = (
-  layers: LayerI[],
-  showFormAlert: (severity: AlertColor, message: string) => void
-): boolean => {
-  return layers.every((layer) => checkRarities(layer, showFormAlert));
-};
-const createCollection = async (
-  library: Web3Provider,
-  setLoadingMessage: SetStateAction<string>,
-  tx: Deferrable<TransactionRequest>,
-  account: string,
-  chainId: number,
-  showFormAlert: (severity: AlertColor, message: string) => void,
-  setIsLoading: SetStateAction<boolean>,
-  setTxAddress: SetStateAction<string>
-) => {
-  const signer = library.getSigner();
-  setLoadingMessage("Deploying...");
-  const txResponse = await signer.sendTransaction(tx);
-  setLoadingMessage("Confirming...");
-  const txReceipt = await txResponse.wait();
-  addDeployedAddress(account, chainId, txReceipt.contractAddress);
-  showFormAlert("success", "Collection Creation Successful");
-  stopLoading(setLoadingMessage, setIsLoading);
-  setTxAddress(txReceipt.contractAddress);
-};
-// eslint-disable-next-line max-lines-per-function
+
 const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
@@ -199,89 +122,34 @@ const CreateCollectionForm = (): JSX.Element => {
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
 
-  const handleFormSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!active || !account || !chainId) {
-      showSnackbar("warning", "Please connect your wallet first!");
-      return;
-    }
-    if (!IS_LAST_STEP) {
-      if (
-        generative &&
-        stepNumber === LAYER_SELECTION_STEP &&
-        state.generative.numberOfLayers <= 0
-      ) {
-        showFormAlert("warning", "You need atleast one layer to proceed.");
-        return;
-      }
-
-      if (
-        generative &&
-        ((stepNumber === TIER_UPLOAD_STEP &&
-          !checkChance(
-            state.generative.numberOfTiers,
-            state.generative.tiers,
-            showFormAlert
-          )) ||
-          (stepNumber === LAYER_IMG_UPLOAD_STEP &&
-            !checkLayers(state.generative.layers, showFormAlert)))
-      ) {
-        return;
-      }
-      if (isGeneralInfoStep(stepNumber)) {
-        startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
-        const DUMMY_WAIT_TIME = 5000;
-        await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
-        handlePredictionsChange(DUMMY_ML_DATA, dispatch);
-        stopLoading(setLoadingMessage, setIsLoading);
-        setNewCollName(state.collectionName);
-      }
-      handleNextStep();
-      return;
-    }
-    try {
-      startLoading(setLoadingMessage, setIsLoading, "Uploading...");
-      let tx: Deferrable<TransactionRequest>;
-      const modifiedState = { ...state, collectionName: newCollName };
-      if (generative) {
-        const layers = await uploadGenImages(
-          state.generative.layers,
-          account,
-          newCollName
-        );
-        setLoadingMessage("Generating...");
-        tx = await uploadGenCollection(layers, modifiedState, account, chainId);
-      } else {
-        await uploadImages(
-          Object.values(state.static.images),
-          account,
-          newCollName
-        );
-        setLoadingMessage("Saving...");
-        tx = await uploadCollection(modifiedState, account, chainId);
-      }
-      await createCollection(
-        library,
-        setLoadingMessage,
-        tx,
-        account,
-        chainId,
-        showFormAlert,
-        setIsLoading,
-        setTxAddress
-      );
-    } catch (error) {
-      console.error(error);
-      stopLoading(setLoadingMessage, setIsLoading);
-      showFormAlert("error", "Unable to create collection");
-    }
-  };
   if (txAddress !== "") {
     return <Redirect to={`/${chainId}/${txAddress}`} />;
   }
+
   return (
     <Stack
-      onSubmit={handleFormSubmit}
+      onSubmit={(e: FormEvent<Element>) =>
+        handleFormSubmit(
+          e,
+          active,
+          account,
+          chainId,
+          showSnackbar,
+          IS_LAST_STEP,
+          generative,
+          stepNumber,
+          state,
+          showFormAlert,
+          setLoadingMessage,
+          setIsLoading,
+          dispatch,
+          setNewCollName,
+          handleNextStep,
+          newCollName,
+          library,
+          setTxAddress
+        )
+      }
       component="form"
       justifyContent="center"
       spacing={2}
