@@ -65,6 +65,7 @@ contract Market {
       _collection.getApproved(tokenId) == address(this),
       "This NFT is not approved"
     );
+    require(price > 0, "Price must be greater than 0");
     listings[tokenId] = price;
     areStable[tokenId] = isStable;
     emit SellListing(tokenId, price);
@@ -78,27 +79,33 @@ contract Market {
    */
   function buy(uint256 tokenId) public payable {
     uint256 price = listings[tokenId];
-    if (areStable[tokenId]) {
-      _stable.transferFrom(msg.sender, address(this), price);
-    } else {
-      require(msg.value == price, "Must send correct price");
-    }
+    bool isStable = areStable[tokenId];
+    require(price > 0, "This NFT is not for sale");
     require(
       _collection.getApproved(tokenId) == address(this),
       "This NFT is not approved"
     );
+    require(
+      (isStable && _stable.transferFrom(msg.sender, address(this), price)) ||
+        msg.value == price,
+      "Must send correct price"
+    );
+    require(
+      _collection.transferFrom(seller, address(this), tokenId),
+      "Could not transfer NFT"
+    );
     uint256 cut = (price * royalty) / 100;
     address payable artist = payable(_collection.owner());
     address payable seller = payable(_collection.ownerOf(tokenId));
-    _collection.transferFrom(seller, address(this), tokenId);
-    if (areStable[tokenId]) {
+    _collection.transferFrom(address(this), msg.sender, tokenId);
+    if (isStable) {
       _stable.transferFrom(address(this), artist, price);
       _stable.transferFrom(address(this), seller, price - cut);
     } else {
       artist.transfer(cut);
       seller.transfer(price - cut);
     }
-    _collection.transferFrom(address(this), msg.sender, tokenId);
+    delete listings[tokenId];
     emit Buy(tokenId);
   }
 }
