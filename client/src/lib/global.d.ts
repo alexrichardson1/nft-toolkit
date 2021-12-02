@@ -26,6 +26,7 @@ interface LayerI {
   name: string;
   images: ImageT;
   numberOfImages: number;
+  probability: string;
 }
 
 interface FormStateI {
