@@ -20,9 +20,11 @@ interface TierI {
   probability: number;
 }
 
+type LayerKeys = [number, string, string];
+
 interface GeneratedImageI {
   hash: string;
-  images: [number, string, string][];
+  images: LayerKeys[];
   rarity: number;
   attributes: AttributeI[];
 }
@@ -53,7 +55,7 @@ function chooseLayerImage(images: ImageI[]): [number, ImageI] {
 }
 
 function generateOneCombination(layers: LayerI[]): GeneratedImageI {
-  const chosenLayerImages: [number, string, string][] = [];
+  const chosenLayerImages: LayerKeys[] = [];
   let hash = "";
   let layerIndex = 0;
   let rarity = 1;
