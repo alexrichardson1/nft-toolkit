@@ -22,41 +22,6 @@ const INITIAL_STATE: FormStateI = {
 };
 
 describe("LayerSelectionStep snapshots", () => {
-  test("Step Number and generative match", () => {
-    const tree = mount(
-      <ThemeProvider>
-        <LayerSelectionStep
-          handleLayerProbChange={jest.fn()}
-          generative={true}
-          state={{
-            ...INITIAL_STATE,
-            generative: {
-              totalTierRarity: 0,
-              quantity: "1",
-              numberOfTiers: 0,
-              tiers: [],
-              numberOfLayers: 1,
-              layers: [
-                {
-                  name: "test-name",
-                  numberOfImages: 0,
-                  images: {},
-                  totalImageRarities: 0,
-                  probability: "",
-                },
-              ],
-            },
-          }}
-          stepNumber={2}
-          handleLayerAddition={jest.fn()}
-          handleLayerRemoval={jest.fn()}
-          handleLayerReorder={jest.fn()}
-        />
-      </ThemeProvider>
-    );
-    expect(tree).toMatchSnapshot();
-  });
-
   test("Step Number does not match", () => {
     const tree = mount(
       <ThemeProvider>
