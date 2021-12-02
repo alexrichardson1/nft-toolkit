@@ -1,5 +1,7 @@
 import { AttributeI, TokenT } from "@models/collection";
 import axios from "axios";
+import fs from "fs";
+import path from "path";
 import sharp from "sharp";
 import { s3 } from "./common";
 
@@ -169,19 +171,24 @@ async function compileImage(
     throw new Error("Cannot compile image when none is given");
   }
 
-  const buffer = await resultImage
+  const filePath = path.resolve(__dirname, `./${index}.png`);
+
+  await resultImage
     .composite(composites)
     .toFormat("png", { quality: 80 })
-    .toBuffer();
+    .toFile(filePath);
+
   const uploadKey = `${creator}/${name}/images/${index}.png`;
   const uploadParams = {
     Bucket: "nft-toolkit-collections",
-    Body: buffer,
+    Body: fs.readFileSync(filePath),
     Key: uploadKey,
     ACL: "public-read",
   };
 
-  s3.upload(uploadParams).promise();
+  s3.upload(uploadParams)
+    .promise()
+    .then(() => fs.unlinkSync(filePath));
 
   return {
     name: `${name} ${index}`,
