@@ -40,6 +40,7 @@ interface FormStateI {
     tiers: TierI[];
     numberOfLayers: number;
     layers: LayerI[];
+    totalLayerRarities: number[];
     quantity: string;
   };
 }
