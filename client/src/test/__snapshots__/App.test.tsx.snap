@@ -14222,6 +14222,11 @@ exports[`App snapshot 1`] = `
                                         />
                                         <Route
                                           component={[Function]}
+                                          exact={true}
+                                          path="/purchase"
+                                        />
+                                        <Route
+                                          component={[Function]}
                                         />
                                       </Switch>,
                                     ],

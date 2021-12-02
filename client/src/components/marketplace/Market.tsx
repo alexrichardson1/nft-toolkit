@@ -124,7 +124,7 @@ const Market = (): JSX.Element => {
             {collections.map((dummy) => (
               <DisplayCard
                 chainId={Number(paramChainId)}
-                to="/"
+                to="/purchase"
                 key={dummy.id}
                 data={dummy}
               />

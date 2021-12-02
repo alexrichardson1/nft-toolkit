@@ -21,7 +21,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
     <Box tabIndex={0} component={Link} to={to} className="marketplace-card">
       <Box
         color="text.primary"
-        sx={{ bgcolor: "background.paper" }}
+        sx={{ bgcolor: "background.paper", boxShadow: 3 }}
         className="card-wrapper">
         {loading ? (
           <>

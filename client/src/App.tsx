@@ -3,6 +3,7 @@ import Container from "@mui/material/Container";
 import { SxProps } from "@mui/system";
 import Box from "@mui/system/Box";
 import Market from "components/marketplace/Market";
+import PurchasePage from "components/marketplace/PurchasePage";
 import Navbar from "components/navbar/Navbar";
 import { useAppSelector } from "hooks/useAppSelector";
 import CreateCollectionPage from "pages/CreateCollectionPage";
@@ -52,6 +53,7 @@ const App = (): JSX.Element => {
                 component={Market}
               />
               <Route exact path="/" component={CreateCollectionPage} />
+              <Route exact path="/purchase" component={PurchasePage} />
               <Route component={Error404Page} />
             </Switch>
           </Container>
