@@ -24,21 +24,16 @@ export const getImgObj = (image: File): ImageI => ({
   image: image,
 });
 
-/**
- * Returns a layer object based on layer name and id
- * @param name - name of the layer
- * @param id - id of the layer
- * @returns a layer object
- */
 export const getLayerObj = (name: string): LayerI => ({
   name,
   images: {},
   numberOfImages: 0,
+  probability: "100",
 });
 
 const getTierObj = (name: string): TierI => ({
   name,
-  probability: "",
+  probability: "0",
 });
 
 const INITIAL_STATE: FormStateI = {
@@ -75,6 +70,7 @@ interface FormActionPayloadI {
     layerName: string;
   };
   tierProbabilityChange?: { tierName: string; newProbability: string };
+  layerProbabilityChange?: { layerName: string; newProbability: string };
   deleteId?: string;
   deleteGen?: { deleteId: string; layerName: string };
   dragEndEvent?: DragEndEvent;
@@ -225,7 +221,6 @@ const deleteImageStatic = (action: FormActionI, state: FormStateI) => {
   if (imgUrl) {
     URL.revokeObjectURL(imgUrl);
   }
-
   return {
     ...state,
     static: {
@@ -240,7 +235,6 @@ const changeRarity = (action: FormActionI, state: FormStateI) => {
     action.payload.rarityChange,
     "rarityChange required"
   );
-
   let index = 0;
   state.generative.layers.forEach((layer) => {
     if (layer.name === rarityChange.layerName) {
@@ -255,7 +249,6 @@ const changeRarity = (action: FormActionI, state: FormStateI) => {
     }
     index += 1;
   });
-
   return { ...state };
 };
 
@@ -272,17 +265,28 @@ const changeTierProb = (action: FormActionI, state: FormStateI) => {
     rarity += tier.probability ? parseFloat(tier.probability) : 0;
   });
   state.generative.totalTierRarity = rarity;
+  return { ...state };
+};
+
+const changeLayerProb = (action: FormActionI, state: FormStateI) => {
+  const layerProbabilityChange = undefinedCheck(
+    action.payload.layerProbabilityChange,
+    "layerProbabilityChange required"
+  );
+  state.generative.layers.forEach((layer) => {
+    if (layer.name === layerProbabilityChange.layerName) {
+      layer.probability = layerProbabilityChange.newProbability;
+    }
+  });
 
   return { ...state };
 };
 
 const addLayer = (action: FormActionI, state: FormStateI) => {
   const newLayer = undefinedCheck(action.payload.newLayer, "newLayer required");
-
   if (containsDuplicates(newLayer.name, state.generative.layers)) {
     return { ...state };
   }
-
   return {
     ...state,
     generative: {
@@ -344,17 +348,14 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
     action.payload.deleteTierName,
     "deleteTierName required"
   );
-
   state.generative.tiers = state.generative.tiers.filter(
     (tier) => tier.name !== deleteTierName
   );
-
   let rarity = 0;
   state.generative.tiers.forEach((tier) => {
     rarity += tier.probability ? parseFloat(tier.probability) : 0;
   });
   state.generative.totalTierRarity = rarity;
-
   return {
     ...state,
     generative: {
@@ -366,11 +367,9 @@ const removeTier = (action: FormActionI, state: FormStateI) => {
 
 const addTier = (action: FormActionI, state: FormStateI) => {
   const newTier = undefinedCheck(action.payload.newTier, "newTier required");
-
   if (containsDuplicates(newTier.name, state.generative.tiers)) {
     return { ...state };
   }
-
   return {
     ...state,
     generative: {
@@ -410,29 +409,24 @@ const changeTierPrecedence = (action: FormActionI, state: FormStateI) => {
  */
 const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
   switch (action.type) {
-    // Change the name of the collection
     case FormActions.CHANGE_NAME:
       return {
         ...state,
         collectionName: action.payload.newName ?? DEFAULT_STRING,
       };
-    // Change the description of the collection
     case FormActions.CHANGE_DESCRIPTION:
       return {
         ...state,
         description: action.payload.description ?? DEFAULT_STRING,
       };
-    // Change the symbol of the collection
     case FormActions.CHANGE_SYMBOL:
       return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
     case FormActions.ADD_IMAGES_STATIC:
       return addImagesStatic(action, state);
-    // Change name of a static image
     case FormActions.CHANGE_IMAGE_NAME:
       return changeImageNameStatic(action, state);
     case FormActions.DELETE_IMAGE_STATIC:
       return deleteImageStatic(action, state);
-    // Change the desription of a static image
     case FormActions.CHANGE_IMAGE_DESC:
       return changeImageDesc(action, state);
     case FormActions.ADD_IMAGES_GEN:
@@ -445,28 +439,23 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       return changeLayerPrecedence(action, state);
     case FormActions.CHANGE_RARITY:
       return changeRarity(action, state);
-    // Change the price of the collection
     case FormActions.CHANGE_PRICE:
       return {
         ...state,
         mintingPrice: action.payload.price ?? DEFAULT_STRING,
       };
-    // Add a layer to the state
     case FormActions.ADD_LAYER:
       return addLayer(action, state);
-    // Remove a layer from the state
     case FormActions.REMOVE_LAYER:
       return removeLayer(action, state);
-    // Add tier to state
     case FormActions.ADD_TIER:
       return addTier(action, state);
-    // Change tier probabilities
     case FormActions.CHANGE_TIER_PROBABILITY:
       return changeTierProb(action, state);
-    // Change tier precedence
+    case FormActions.CHANGE_LAYER_PROBABILITY:
+      return changeLayerProb(action, state);
     case FormActions.CHANGE_TIER_PRECEDENCE:
       return changeTierPrecedence(action, state);
-    // Remove tier from state
     case FormActions.REMOVE_TIER:
       return removeTier(action, state);
     case FormActions.RESET_TYPE_OF_ART:
