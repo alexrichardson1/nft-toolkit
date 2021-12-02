@@ -656,17 +656,24 @@ exports[`StaticArtStep generative does not match 1`] = `
                     "layers": Array [],
                     "numberOfLayers": 0,
                     "numberOfTiers": 0,
+                    "quantity": "1",
                     "tiers": Array [],
                   },
                   "mintingPrice": "",
+                  "predictions": Object {
+                    "hype": -1,
+                    "names": Array [],
+                  },
+                  "redditHandle": "",
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
                   },
                   "symbol": "",
+                  "twitterHandle": "",
                 }
               }
-              stepNumber={2}
+              stepNumber={1}
             />
           </Web3ReactProvider>
         </NetworkProvider>
@@ -1332,17 +1339,24 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     "layers": Array [],
                     "numberOfLayers": 0,
                     "numberOfTiers": 0,
+                    "quantity": "1",
                     "tiers": Array [],
                   },
                   "mintingPrice": "",
+                  "predictions": Object {
+                    "hype": -1,
+                    "names": Array [],
+                  },
+                  "redditHandle": "",
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
                   },
                   "symbol": "",
+                  "twitterHandle": "",
                 }
               }
-              stepNumber={2}
+              stepNumber={1}
             >
               <PageHeader
                 text="Upload your Static Images"
@@ -1350,13 +1364,14 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                 <ForwardRef(Typography)
                   color="secondary"
                   component="div"
+                  gutterBottom={true}
                   noWrap={true}
                   textAlign="center"
                   variant="h4"
                 >
                   <MuiTypographyRoot
                     as="div"
-                    className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap"
+                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
                     ownerState={
                       Object {
                         "align": "inherit",
@@ -1364,7 +1379,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                         "className": undefined,
                         "color": "secondary.main",
                         "component": "div",
-                        "gutterBottom": false,
+                        "gutterBottom": true,
                         "noWrap": true,
                         "paragraph": false,
                         "sx": Object {
@@ -1396,7 +1411,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                   >
                     <Noop />
                     <div
-                      className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap css-w5ksg2-MuiTypography-root"
+                      className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                     >
                       Upload your Static Images
                     </div>
@@ -2547,14 +2562,21 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                     "layers": Array [],
                     "numberOfLayers": 0,
                     "numberOfTiers": 0,
+                    "quantity": "1",
                     "tiers": Array [],
                   },
                   "mintingPrice": "",
+                  "predictions": Object {
+                    "hype": -1,
+                    "names": Array [],
+                  },
+                  "redditHandle": "",
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
                   },
                   "symbol": "",
+                  "twitterHandle": "",
                 }
               }
               stepNumber={0}

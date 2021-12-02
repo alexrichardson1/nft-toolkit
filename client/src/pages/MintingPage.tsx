@@ -154,6 +154,7 @@ const MintingPage = (): JSX.Element => {
           await getDollarValue(collection.price.toString(), collection.chainId)
         );
       } catch (error) {
+        dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
         // TODO: handle invalid collection
         setError(true);
       }
@@ -163,7 +164,7 @@ const MintingPage = (): JSX.Element => {
 
   if (error) {
     // TODO: handle invalid collection
-    return <Redirect to="/" />;
+    return <Redirect to="/404" />;
   }
 
   return (

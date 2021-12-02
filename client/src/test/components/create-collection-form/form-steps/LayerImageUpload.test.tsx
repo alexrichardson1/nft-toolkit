@@ -4,12 +4,21 @@ import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
+  generative: {
+    quantity: "1",
+    tiers: [],
+    numberOfTiers: 0,
+    layers: [],
+    numberOfLayers: 0,
+  },
+  predictions: { names: [], hype: -1 },
 };
 
 describe("LayerImageUpload snapshots", () => {
@@ -22,6 +31,7 @@ describe("LayerImageUpload snapshots", () => {
           state={{
             ...INITIAL_STATE,
             generative: {
+              quantity: "1",
               numberOfTiers: 0,
               tiers: [],
               numberOfLayers: 1,
@@ -34,7 +44,8 @@ describe("LayerImageUpload snapshots", () => {
               ],
             },
           }}
-          stepNumber={4}
+          stepNumber={3}
+          handleQuantityChange={jest.fn()}
           handleImgRarityChange={jest.fn()}
           handleLayerImgDelete={jest.fn()}
           handleLayerImgDrop={jest.fn()}
@@ -49,6 +60,7 @@ describe("LayerImageUpload snapshots", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerImageUpload
+          handleQuantityChange={jest.fn()}
           generative={true}
           isLoading={true}
           state={{ ...INITIAL_STATE }}
@@ -67,10 +79,11 @@ describe("LayerImageUpload snapshots", () => {
     const tree = mount(
       <ThemeProvider>
         <LayerImageUpload
+          handleQuantityChange={jest.fn()}
           generative={false}
           isLoading={true}
           state={{ ...INITIAL_STATE }}
-          stepNumber={4}
+          stepNumber={3}
           handleImgRarityChange={jest.fn()}
           handleLayerImgDelete={jest.fn()}
           handleLayerImgDrop={jest.fn()}
@@ -87,11 +100,13 @@ describe("LayerImageUpload unit tests", () => {
     const tree = render(
       <ThemeProvider>
         <LayerImageUpload
+          handleQuantityChange={jest.fn()}
           generative={true}
           isLoading={false}
           state={{
             ...INITIAL_STATE,
             generative: {
+              quantity: "1",
               tiers: [],
               numberOfTiers: 0,
               numberOfLayers: 2,
@@ -109,7 +124,7 @@ describe("LayerImageUpload unit tests", () => {
               ],
             },
           }}
-          stepNumber={4}
+          stepNumber={3}
           handleImgRarityChange={jest.fn()}
           handleLayerImgDelete={jest.fn()}
           handleLayerImgDrop={jest.fn()}

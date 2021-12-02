@@ -1,12 +1,12 @@
+import { TransactionRequest } from "@ethersproject/providers";
 import { ManagedUpload } from "aws-sdk/clients/s3";
 import axios from "axios";
-import { UnsignedTransaction } from "ethers";
-import { parseUnits } from "ethers/lib/utils";
+import { Deferrable, parseUnits } from "ethers/lib/utils";
 import { API_URL, s3 } from "utils/constants";
 
 export const startLoading = (
-  setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setLoadingMessage: SetStateAction<string>,
+  setIsLoading: SetStateAction<boolean>,
   message = "Loading..."
 ): void => {
   setLoadingMessage(message);
@@ -14,8 +14,8 @@ export const startLoading = (
 };
 
 export const stopLoading = (
-  setLoadingMessage: React.Dispatch<React.SetStateAction<string>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setLoadingMessage: SetStateAction<string>,
+  setIsLoading: SetStateAction<boolean>
 ): void => {
   setIsLoading(false);
   setLoadingMessage("");
@@ -94,7 +94,7 @@ export const uploadGenImages = (
 };
 
 interface TransactionT {
-  transaction: UnsignedTransaction;
+  transaction: Deferrable<TransactionRequest>;
 }
 
 export const uploadGenCollection = async (
@@ -102,7 +102,7 @@ export const uploadGenCollection = async (
   state: FormStateI,
   account: string,
   chainId: number
-): Promise<UnsignedTransaction> => {
+): Promise<Deferrable<TransactionRequest>> => {
   const genCollection = {
     name: state.collectionName,
     symbol: state.symbol,
@@ -124,7 +124,7 @@ export const uploadCollection = async (
   state: FormStateI,
   account: string,
   chainId: number
-): Promise<UnsignedTransaction> => {
+): Promise<Deferrable<TransactionRequest>> => {
   const tokens = Object.values(state.static.images).map((image, index) => ({
     name: image.name,
     description: image.description ?? "",

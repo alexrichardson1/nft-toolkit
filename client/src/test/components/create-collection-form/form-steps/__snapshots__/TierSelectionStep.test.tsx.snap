@@ -641,6 +641,7 @@ exports[`TierSelectionStep generative does not match 1`] = `
           <TierSelectionStep
             generative={false}
             handleTierAdd={[MockFunction]}
+            handleTierProbChange={[MockFunction]}
             handleTierRemoval={[MockFunction]}
             handleTierReorder={[MockFunction]}
             state={
@@ -651,17 +652,24 @@ exports[`TierSelectionStep generative does not match 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
+                  "quantity": "1",
                   "tiers": Array [],
                 },
                 "mintingPrice": "",
+                "predictions": Object {
+                  "hype": -1,
+                  "names": Array [],
+                },
+                "redditHandle": "",
                 "static": Object {
                   "images": Object {},
                   "numberOfImages": 0,
                 },
                 "symbol": "",
+                "twitterHandle": "",
               }
             }
-            stepNumber={2}
+            stepNumber={1}
           />
         </NetworkProvider>
       </InnerThemeProvider>
@@ -1311,6 +1319,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
           <TierSelectionStep
             generative={true}
             handleTierAdd={[MockFunction]}
+            handleTierProbChange={[MockFunction]}
             handleTierRemoval={[MockFunction]}
             handleTierReorder={[MockFunction]}
             state={
@@ -1321,17 +1330,24 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
+                  "quantity": "1",
                   "tiers": Array [],
                 },
                 "mintingPrice": "",
+                "predictions": Object {
+                  "hype": -1,
+                  "names": Array [],
+                },
+                "redditHandle": "",
                 "static": Object {
                   "images": Object {},
                   "numberOfImages": 0,
                 },
                 "symbol": "",
+                "twitterHandle": "",
               }
             }
-            stepNumber={2}
+            stepNumber={1}
           >
             <PageHeader
               text="Add Rarity Tiers For Your Collection"
@@ -1339,13 +1355,14 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
               <ForwardRef(Typography)
                 color="secondary"
                 component="div"
+                gutterBottom={true}
                 noWrap={true}
                 textAlign="center"
                 variant="h4"
               >
                 <MuiTypographyRoot
                   as="div"
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap"
+                  className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
                   ownerState={
                     Object {
                       "align": "inherit",
@@ -1353,7 +1370,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                       "className": undefined,
                       "color": "secondary.main",
                       "component": "div",
-                      "gutterBottom": false,
+                      "gutterBottom": true,
                       "noWrap": true,
                       "paragraph": false,
                       "sx": Object {
@@ -1385,7 +1402,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 >
                   <Noop />
                   <div
-                    className="MuiTypography-root MuiTypography-h4 MuiTypography-noWrap css-w5ksg2-MuiTypography-root"
+                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                   >
                     Add Rarity Tiers For Your Collection
                   </div>
@@ -3673,6 +3690,7 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
           <TierSelectionStep
             generative={true}
             handleTierAdd={[MockFunction]}
+            handleTierProbChange={[MockFunction]}
             handleTierRemoval={[MockFunction]}
             handleTierReorder={[MockFunction]}
             state={
@@ -3683,14 +3701,21 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
+                  "quantity": "1",
                   "tiers": Array [],
                 },
                 "mintingPrice": "",
+                "predictions": Object {
+                  "hype": -1,
+                  "names": Array [],
+                },
+                "redditHandle": "",
                 "static": Object {
                   "images": Object {},
                   "numberOfImages": 0,
                 },
                 "symbol": "",
+                "twitterHandle": "",
               }
             }
             stepNumber={0}

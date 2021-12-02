@@ -2,12 +2,21 @@ import FormActions from "actions/formActions";
 import formReducer from "../../reducers/formReducer";
 
 const EMPTY_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
-  generative: { tiers: [], numberOfTiers: 0, layers: [], numberOfLayers: 0 },
+  generative: {
+    quantity: "1",
+    tiers: [],
+    numberOfTiers: 0,
+    layers: [],
+    numberOfLayers: 0,
+  },
+  predictions: { names: [], hype: -1 },
 };
 
 const getImageObj = (name: string, url: string, image: File): ImageI => ({
@@ -52,6 +61,8 @@ describe("formReducer", () => {
 
   beforeEach(() => {
     initialState = {
+      twitterHandle: "",
+      redditHandle: "",
       collectionName: "",
       description: "",
       symbol: "",
@@ -63,12 +74,13 @@ describe("formReducer", () => {
         },
       },
       generative: {
+        quantity: "1",
         tiers: [],
         numberOfTiers: 0,
         layers: [],
         numberOfLayers: 0,
       },
-
+      predictions: { names: [], hype: -1 },
       mintingPrice: "0",
     };
   });
