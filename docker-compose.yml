@@ -18,10 +18,8 @@ services:
       resources:
         limits:
           cpus: "1.5"
-          memory: 1200M
         reservations:
           cpus: "1.25"
-          memory: 800M
     env_file:
       - .env
     restart: on-failure
