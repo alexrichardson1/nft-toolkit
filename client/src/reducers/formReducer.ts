@@ -197,6 +197,14 @@ const deleteImageGen = (action: FormActionI, state: FormStateI) => {
       }
     }
     index += 1;
+    let rarity = 0;
+    for (const id in layer.images) {
+      const thisImg = layer.images[id];
+      if (thisImg) {
+        rarity += thisImg.rarity ? parseFloat(thisImg.rarity) : 0;
+      }
+    }
+    state.generative.totalLayerRarities[index] = rarity;
   });
   return { ...state };
 };
@@ -242,11 +250,16 @@ const changeRarity = (action: FormActionI, state: FormStateI) => {
       if (!img) {
         throw new Error("Image does not exist");
       }
-      state.generative.totalLayerRarities[index] += img.rarity
-        ? parseFloat(rarityChange.newRarity) - parseFloat(img.rarity)
-        : parseFloat(rarityChange.newRarity);
       img.rarity = rarityChange.newRarity;
     }
+    let rarity = 0;
+    for (const id in layer.images) {
+      const thisImg = layer.images[id];
+      if (thisImg) {
+        rarity += thisImg.rarity ? parseFloat(thisImg.rarity) : 0;
+      }
+    }
+    state.generative.totalLayerRarities[index] = rarity;
     index += 1;
   });
   return { ...state };
@@ -321,7 +334,6 @@ const changeLayerPrecedence = (action: FormActionI, state: FormStateI) => {
   }
   return { ...state };
 };
-
 const removeLayer = (action: FormActionI, state: FormStateI) => {
   const deleteLayerName = undefinedCheck(
     action.payload.deleteLayerName,
@@ -485,5 +497,4 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
       throw new Error("Invalid action provided");
   }
 };
-
 export default formReducer;
