@@ -27,6 +27,7 @@ interface LayerI {
   images: ImageT;
   numberOfImages: number;
   probability: string;
+  totalImageRarities: number;
 }
 
 interface FormStateI {
@@ -41,7 +42,6 @@ interface FormStateI {
     tiers: TierI[];
     numberOfLayers: number;
     layers: LayerI[];
-    totalLayerRarities: number[];
     quantity: string;
   };
 }
