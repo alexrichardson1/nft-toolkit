@@ -24,7 +24,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
 });
 Alert.displayName = "Alert";
 
-const SnackbarProvider = (props: ProviderPropsI): JSX.Element => {
+const SnackbarProvider = ({ children }: ProviderPropsI): JSX.Element => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState<AlertColor>(INITIAL_ALERT_COLOR);
@@ -53,7 +53,7 @@ const SnackbarProvider = (props: ProviderPropsI): JSX.Element => {
           {message}
         </Alert>
       </Snackbar>
-      {props.children}
+      {children}
     </SnackbarContext.Provider>
   );
 };

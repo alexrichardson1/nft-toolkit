@@ -5,12 +5,12 @@ interface PropsT {
   margins?: boolean;
 }
 
-const SvgLogo = (props: PropsT): JSX.Element => (
+const SvgLogo = ({ icon, width, height, margins }: PropsT): JSX.Element => (
   <img
-    style={{ margin: props.margins ? "0 5px" : "0" }}
-    width={props.width}
-    height={props.height}
-    src={props.icon}
+    style={{ margin: margins ? "0 5px" : "0" }}
+    width={width}
+    height={height}
+    src={icon}
     alt="logo"
   />
 );

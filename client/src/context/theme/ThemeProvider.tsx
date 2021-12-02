@@ -36,7 +36,7 @@ export const getDesign = (mode: PaletteMode): ThemeOptions => {
       };
 };
 
-const ThemeProvider = (props: ProviderPropsI): JSX.Element => {
+const ThemeProvider = ({ children }: ProviderPropsI): JSX.Element => {
   const [mode, setMode] = useState<PaletteMode>("light");
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const ThemeProvider = (props: ProviderPropsI): JSX.Element => {
 
   return (
     <ThemeContext.Provider value={colourMode}>
-      <MUIThemeProvider theme={theme}>{props.children}</MUIThemeProvider>
+      <MUIThemeProvider theme={theme}>{children}</MUIThemeProvider>
     </ThemeContext.Provider>
   );
 };
