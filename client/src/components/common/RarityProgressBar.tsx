@@ -2,16 +2,16 @@ const MAX_RARITY = 100;
 const TWO = 2;
 
 interface PropsT {
-  totalTierRarity: number;
+  totalRarity: number;
 }
 
-const ProgressBar = (props: PropsT): JSX.Element => {
+const RarityProgressBar = (props: PropsT): JSX.Element => {
   return (
     <>
       <div>
         <p style={{ textAlign: "right" }}>
           {" "}
-          You have {MAX_RARITY - props.totalTierRarity} rarity left to assign
+          You have {MAX_RARITY - props.totalRarity} rarity left to assign
         </p>
         <div
           style={{
@@ -21,13 +21,13 @@ const ProgressBar = (props: PropsT): JSX.Element => {
           }}>
           <div
             style={{
-              width: `${Math.min(props.totalTierRarity, MAX_RARITY)}%`,
+              width: `${Math.min(props.totalRarity, MAX_RARITY)}%`,
               height: 20,
               backgroundColor:
-                props.totalTierRarity <= MAX_RARITY ? "#00bcd4" : "#B33F40",
+                props.totalRarity <= MAX_RARITY ? "#00bcd4" : "#B33F40",
               textAlign: "center",
             }}>
-            {props.totalTierRarity <= MAX_RARITY
+            {props.totalRarity <= MAX_RARITY
               ? ""
               : "You have a total rarity over 100"}
           </div>
@@ -37,4 +37,4 @@ const ProgressBar = (props: PropsT): JSX.Element => {
   );
 };
 
-export default ProgressBar;
+export default RarityProgressBar;
