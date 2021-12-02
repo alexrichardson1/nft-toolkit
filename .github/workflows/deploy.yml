@@ -65,7 +65,7 @@ jobs:
           aws-region: "eu-west-2"
 
       - name: Upload package to S3 bucket
-        run: aws s3 cp deploy.zip s3://elasticbeanstalk-eu-west-2-307164813438/
+        run: aws s3 cp deploy-${{ github.sha }}.zip s3://elasticbeanstalk-eu-west-2-307164813438/
 
       - name: Create new ElasticBeanstalk Application Version
         run: |
