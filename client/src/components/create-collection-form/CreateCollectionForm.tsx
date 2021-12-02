@@ -4,6 +4,7 @@ import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import FormActions from "actions/formActions";
 import SnackbarContext from "context/snackbar/SnackbarContext";
+import useCounter from "hooks/useCounter";
 import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
@@ -73,7 +74,8 @@ const CreateCollectionForm = (): JSX.Element => {
   const { active, account, chainId, library } = useWeb3React();
   const { showSnackbar } = useContext(SnackbarContext);
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
-  const [stepNumber, setStepNumber] = useState(INITIAL_STEP_NUMBER);
+  const [stepNumber, handleNextStep, handlePrevStep] =
+    useCounter(INITIAL_STEP_NUMBER);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState<AlertColor>("success");
   const [isLoading, setIsLoading] = useState(false);
@@ -89,8 +91,6 @@ const CreateCollectionForm = (): JSX.Element => {
   }, [stepNumber]);
   const IS_LAST_STEP =
     stepNumber === (generative ? GEN_STEPS - 1 : STATIC_STEPS - 1);
-  const handleNextStep = () => setStepNumber((prev) => prev + 1);
-  const handlePrevStep = () => setStepNumber((prev) => prev - 1);
   const closeAlert = () => setAlertMessage("");
 
   const showFormAlert = (severity: AlertColor, message: string) => {
