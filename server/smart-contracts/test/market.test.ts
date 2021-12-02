@@ -42,7 +42,8 @@ describe("Royalties Contract", () => {
     const RoyaltiesContract = await ethers.getContractFactory("Market");
     royaltiesContract = await RoyaltiesContract.deploy(
       CUT,
-      nftContract.address
+      nftContract.address,
+      "0xdac17f958d2ee523a2206206994597c13d831ec7"
     );
     await royaltiesContract.deployed();
     [signerOne, signerTwo] = await ethers.getSigners();
@@ -53,19 +54,23 @@ describe("Royalties Contract", () => {
       expect(
         royaltiesContract
           .connect(signerTwo || "")
-          .sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE)
+          .sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE, false)
       ).to.be.revertedWith("You do not own this NFT");
     });
 
     it("Should not allow to list NFT if not approved", () => {
       expect(
-        royaltiesContract.sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE)
+        royaltiesContract.sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE, false)
       ).to.be.revertedWith("This NFT is not approved");
     });
 
     it("Should update listings with the correct price", async () => {
       await nftContract.approve(royaltiesContract.address, TOKEN_ONE_ID);
-      await royaltiesContract.sellListing(TOKEN_ONE_ID, COLLECTION_WEI_PRICE);
+      await royaltiesContract.sellListing(
+        TOKEN_ONE_ID,
+        COLLECTION_WEI_PRICE,
+        false
+      );
       expect(await royaltiesContract.listings(TOKEN_ONE_ID)).to.equal(
         COLLECTION_WEI_PRICE
       );
@@ -114,13 +119,17 @@ describe("Royalties Contract", () => {
       expect(
         royaltiesContract
           .connect(signerTwo || "")
-          .sellListing(TOKEN_TWO_ID, COLLECTION_WEI_PRICE)
+          .sellListing(TOKEN_TWO_ID, COLLECTION_WEI_PRICE, false)
       ).to.be.revertedWith("You do not own this NFT");
     });
 
     it("Should delist a tokenId", async () => {
       await nftContract.approve(royaltiesContract.address, TOKEN_TWO_ID);
-      await royaltiesContract.sellListing(TOKEN_TWO_ID, COLLECTION_WEI_PRICE);
+      await royaltiesContract.sellListing(
+        TOKEN_TWO_ID,
+        COLLECTION_WEI_PRICE,
+        false
+      );
       // safety check
       expect(await royaltiesContract.listings(TOKEN_TWO_ID)).to.equal(
         COLLECTION_WEI_PRICE
