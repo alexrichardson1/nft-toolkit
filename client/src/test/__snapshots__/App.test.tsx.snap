@@ -14531,6 +14531,7 @@ exports[`App snapshot 1`] = `
                                                         "numberOfTiers": 0,
                                                         "quantity": "",
                                                         "tiers": Array [],
+                                                        "totalTierRarity": 0,
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -18961,6 +18962,7 @@ exports[`App snapshot 1`] = `
                                                         "numberOfTiers": 0,
                                                         "quantity": "",
                                                         "tiers": Array [],
+                                                        "totalTierRarity": 0,
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -18988,6 +18990,7 @@ exports[`App snapshot 1`] = `
                                                         "numberOfTiers": 0,
                                                         "quantity": "",
                                                         "tiers": Array [],
+                                                        "totalTierRarity": 0,
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -19014,6 +19017,7 @@ exports[`App snapshot 1`] = `
                                                         "numberOfTiers": 0,
                                                         "quantity": "",
                                                         "tiers": Array [],
+                                                        "totalTierRarity": 0,
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {
@@ -19043,6 +19047,7 @@ exports[`App snapshot 1`] = `
                                                         "numberOfTiers": 0,
                                                         "quantity": "",
                                                         "tiers": Array [],
+                                                        "totalTierRarity": 0,
                                                       },
                                                       "mintingPrice": "",
                                                       "static": Object {

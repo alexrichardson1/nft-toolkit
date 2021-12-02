@@ -1392,6 +1392,44 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 </MuiTypographyRoot>
               </ForwardRef(Typography)>
             </PageHeader>
+            <ProgressBar>
+              <div>
+                <p
+                  style={
+                    Object {
+                      "textAlign": "right",
+                    }
+                  }
+                >
+                   
+                  You have 
+                  NaN
+                   rarity left to assign
+                </p>
+                <div
+                  style={
+                    Object {
+                      "height": 20,
+                      "outline": "solid",
+                      "width": "512",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "#B33F40",
+                        "height": 20,
+                        "textAlign": "center",
+                        "width": "NaN%",
+                      }
+                    }
+                  >
+                    You have a total rarity over 100
+                  </div>
+                </div>
+              </div>
+            </ProgressBar>
             <OrderableList
               handleItemReorder={[MockFunction]}
               items={Array []}
