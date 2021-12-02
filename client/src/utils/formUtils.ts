@@ -78,7 +78,7 @@ export const uploadGenImages = async (
     return {
       images,
       name: layer.name,
-      rarity: 100,
+      rarity: parseFloat(layer.probability),
     };
   });
 
