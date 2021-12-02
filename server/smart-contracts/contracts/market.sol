@@ -90,14 +90,16 @@ contract Market {
         msg.value == price,
       "Must send correct price"
     );
-    require(
-      _collection.transferFrom(seller, address(this), tokenId),
-      "Could not transfer NFT"
-    );
     uint256 cut = (price * royalty) / 100;
     address payable artist = payable(_collection.owner());
     address payable seller = payable(_collection.ownerOf(tokenId));
+
+    // Transfer NFT to market contract
+    _collection.transferFrom(seller, address(this), tokenId);
+    // Transfer NFT from market contract to buyer
     _collection.transferFrom(address(this), msg.sender, tokenId);
+
+    // Transfer cut to artist & seller
     if (isStable) {
       _stable.transferFrom(address(this), artist, price);
       _stable.transferFrom(address(this), seller, price - cut);
@@ -105,6 +107,7 @@ contract Market {
       artist.transfer(cut);
       seller.transfer(price - cut);
     }
+
     delete listings[tokenId];
     emit Buy(tokenId);
   }
