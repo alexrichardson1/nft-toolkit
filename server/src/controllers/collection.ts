@@ -112,6 +112,29 @@ export const getCollection: RequestHandler = async (req, res, next) => {
   }
 };
 
+interface TierI {
+  name: string;
+  probability: string;
+}
+
+export const transformTiers: RequestHandler = (req, _res, next) => {
+  const { tiers }: { tiers: TierI[] } = req.body;
+  if (!tiers) {
+    return next(new Error("Invalid params"));
+  }
+  let cumProbability = 0;
+
+  const newTiers = tiers.map((tier) => {
+    cumProbability += parseInt(tier.probability);
+    return {
+      name: tier.name,
+      probability: cumProbability,
+    };
+  });
+  req.body.tiers = newTiers;
+  return next();
+};
+
 export const generateTokens: RequestHandler = async (req, _res, next) => {
   const genCollection: GenCollectionI = req.body;
   try {

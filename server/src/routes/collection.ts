@@ -5,6 +5,7 @@ import {
   getUserCollections,
   saveCollectionToDB,
   successHandler,
+  transformTiers,
   uploadImages,
 } from "@controllers/collection";
 import { errorHandler } from "@controllers/common";
@@ -35,6 +36,7 @@ collectionRoutes.post(
   collectionValidator,
   invalidLayers,
   errorHandler,
+  transformTiers,
   generateTokens,
   saveCollectionToDB,
   deployContracts

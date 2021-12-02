@@ -1,7 +1,8 @@
 import { TransactionRequest } from "@ethersproject/providers";
+import { ManagedUpload } from "aws-sdk/clients/s3";
 import axios from "axios";
 import { Deferrable, parseUnits } from "ethers/lib/utils";
-import { API_URL } from "utils/constants";
+import { API_URL, s3 } from "utils/constants";
 
 export const startLoading = (
   setLoadingMessage: SetStateAction<string>,
@@ -20,25 +21,34 @@ export const stopLoading = (
   setLoadingMessage("");
 };
 
-export const uploadImages = async (
+const uploadToS3 = (
+  folder: string,
+  newFileName: string,
+  file: File
+): Promise<ManagedUpload.SendData> => {
+  const uploadParams = {
+    Bucket: "nft-toolkit-collections",
+    Body: file,
+    Key: `${folder}/images/${newFileName}`,
+    ACL: "public-read",
+  };
+  return s3.upload(uploadParams).promise();
+};
+
+export const uploadImages = (
   images: ImageI[],
   account: string,
   collectionName: string
-): Promise<void> => {
-  const formData = new FormData();
+): Promise<ManagedUpload.SendData[]> => {
+  const folderName = `${account}/${collectionName}`;
 
-  images.forEach((img, index) => {
-    const fileName = img.image.name;
-    const ext = fileName.split(".").pop();
-    const newFile = new File([img.image], `${index + 1}.${ext}`, {
-      type: img.image.type,
-    });
-    formData.append(`${account}/${collectionName}`, newFile);
-  });
-
-  await axios.post(`${API_URL}/collection/images`, formData, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
+  return Promise.all(
+    images.map((img, index) => {
+      const ext = img.image.name.split(".").pop();
+      const newFileName = `${index + 1}.${ext}`;
+      return uploadToS3(folderName, newFileName, img.image);
+    })
+  );
 };
 
 interface ServerLayerI {
@@ -51,42 +61,36 @@ interface ServerLayerI {
   rarity: number;
 }
 
-export const uploadGenImages = async (
+export const uploadGenImages = (
   layers: LayerI[],
   account: string,
   collectionName: string
 ): Promise<ServerLayerI[]> => {
-  const formData = new FormData();
-
-  const result = layers.map((layer) => {
-    const images = Object.values(layer.images).map((img, index) => {
-      const fileName = img.image.name;
-      const ext = fileName.split(".").pop();
-      const newFileName = `${index + 1}.${ext}`;
-      const newFile = new File([img.image], `${index + 1}.${ext}`, {
-        type: img.image.type,
-      });
+  return Promise.all(
+    layers.map(async (layer) => {
       const folderName = `${account}/${collectionName}/${layer.name}`;
-      formData.append(folderName, newFile);
+
+      const images = await Promise.all(
+        Object.values(layer.images).map(async (img, index) => {
+          const ext = img.image.name.split(".").pop();
+          const newFileName = `${index + 1}.${ext}`;
+          await uploadToS3(folderName, newFileName, img.image);
+
+          return {
+            name: img.name,
+            image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${folderName}/images/${newFileName}`,
+            rarity: parseInt(img.rarity ?? "1"),
+          };
+        })
+      );
+
       return {
-        name: img.name,
-        image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${folderName}/images/${newFileName}`,
-        rarity: parseInt(img.rarity ?? "1"),
+        images,
+        name: layer.name,
+        rarity: 100,
       };
-    });
-
-    return {
-      images,
-      name: layer.name,
-      rarity: 100,
-    };
-  });
-
-  await axios.post(`${API_URL}/collection/images`, formData, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
-
-  return result;
+    })
+  );
 };
 
 interface TransactionT {
