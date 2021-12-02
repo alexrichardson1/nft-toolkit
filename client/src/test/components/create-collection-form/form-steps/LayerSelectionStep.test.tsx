@@ -16,7 +16,7 @@ const INITIAL_STATE: FormStateI = {
     tiers: [],
     layers: [],
     numberOfLayers: 0,
-    quantity: "",
+    quantity: "1",
   },
   predictions: { names: [], hype: -1 },
 };

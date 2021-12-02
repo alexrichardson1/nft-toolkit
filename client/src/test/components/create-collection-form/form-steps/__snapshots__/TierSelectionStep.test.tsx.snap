@@ -654,6 +654,7 @@ exports[`TierSelectionStep generative does not match 1`] = `
                   "numberOfTiers": 0,
                   "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -1332,6 +1333,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                   "numberOfTiers": 0,
                   "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -1437,14 +1439,18 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                             <p
                               class="MuiTypography-root MuiTypography-body1 MuiTypography-alignRight css-hlnzui-MuiTypography-root"
                             >
-                              You have reached the required amount
+                              You have 100% left to assign
                             </p>
                             <span
-                              class="MuiLinearProgress-root MuiLinearProgress-colorError MuiLinearProgress-determinate css-1y47o37-MuiLinearProgress-root"
+                              aria-valuemax="100"
+                              aria-valuemin="0"
+                              aria-valuenow="0"
+                              class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate css-o0bcmd-MuiLinearProgress-root"
                               role="progressbar"
                             >
                               <span
-                                class="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar1Determinate css-ete1bz-MuiLinearProgress-bar1"
+                                class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-1q8f18t-MuiLinearProgress-bar1"
+                                style="transform: translateX(-100%);"
                               />
                             </span>
                           </div>
@@ -1466,7 +1472,9 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                   className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
                   ownerState={
                     Object {
-                      "children": <RarityProgressBar />,
+                      "children": <RarityProgressBar
+                        totalRarity={0}
+                      />,
                       "collapsedSize": "0px",
                       "in": false,
                       "orientation": "vertical",
@@ -1492,7 +1500,9 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                       className="MuiCollapse-wrapper MuiCollapse-vertical"
                       ownerState={
                         Object {
-                          "children": <RarityProgressBar />,
+                          "children": <RarityProgressBar
+                            totalRarity={0}
+                          />,
                           "collapsedSize": "0px",
                           "in": false,
                           "orientation": "vertical",
@@ -1508,7 +1518,9 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                           className="MuiCollapse-wrapperInner MuiCollapse-vertical"
                           ownerState={
                             Object {
-                              "children": <RarityProgressBar />,
+                              "children": <RarityProgressBar
+                                totalRarity={0}
+                              />,
                               "collapsedSize": "0px",
                               "in": false,
                               "orientation": "vertical",
@@ -1520,7 +1532,9 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                           <div
                             className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                           >
-                            <RarityProgressBar>
+                            <RarityProgressBar
+                              totalRarity={0}
+                            >
                               <ForwardRef(Box)
                                 mb={2}
                                 width={1}
@@ -1863,7 +1877,7 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                                         ownerState={
                                           Object {
                                             "align": "right",
-                                            "children": "You have reached the required amount",
+                                            "children": "You have 100% left to assign",
                                             "className": undefined,
                                             "color": undefined,
                                             "component": undefined,
@@ -1899,28 +1913,32 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                                         <p
                                           className="MuiTypography-root MuiTypography-body1 MuiTypography-alignRight css-hlnzui-MuiTypography-root"
                                         >
-                                          You have reached the required amount
+                                          You have 100% left to assign
                                         </p>
                                       </MuiTypographyRoot>
                                     </ForwardRef(Typography)>
                                     <ForwardRef(LinearProgress)
-                                      color="error"
+                                      color="primary"
                                       sx={
                                         Object {
                                           "height": 20,
                                         }
                                       }
+                                      value={0}
                                       variant="determinate"
                                     >
                                       <MuiLinearProgressRoot
-                                        className="MuiLinearProgress-root MuiLinearProgress-colorError MuiLinearProgress-determinate"
+                                        aria-valuemax={100}
+                                        aria-valuemin={0}
+                                        aria-valuenow={0}
+                                        className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
                                         ownerState={
                                           Object {
-                                            "color": "error",
+                                            "color": "primary",
                                             "sx": Object {
                                               "height": 20,
                                             },
-                                            "value": undefined,
+                                            "value": 0,
                                             "variant": "determinate",
                                           }
                                         }
@@ -1933,27 +1951,38 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                                       >
                                         <Noop />
                                         <span
-                                          className="MuiLinearProgress-root MuiLinearProgress-colorError MuiLinearProgress-determinate css-1y47o37-MuiLinearProgress-root"
+                                          aria-valuemax={100}
+                                          aria-valuemin={0}
+                                          aria-valuenow={0}
+                                          className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate css-o0bcmd-MuiLinearProgress-root"
                                           role="progressbar"
                                         >
                                           <MuiLinearProgressBar1
-                                            className="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar1Determinate"
+                                            className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
                                             ownerState={
                                               Object {
-                                                "color": "error",
+                                                "color": "primary",
                                                 "sx": Object {
                                                   "height": 20,
                                                 },
-                                                "value": undefined,
+                                                "value": 0,
                                                 "variant": "determinate",
                                               }
                                             }
-                                            style={Object {}}
+                                            style={
+                                              Object {
+                                                "transform": "translateX(-100%)",
+                                              }
+                                            }
                                           >
                                             <Noop />
                                             <span
-                                              className="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar1Determinate css-ete1bz-MuiLinearProgress-bar1"
-                                              style={Object {}}
+                                              className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-1q8f18t-MuiLinearProgress-bar1"
+                                              style={
+                                                Object {
+                                                  "transform": "translateX(-100%)",
+                                                }
+                                              }
                                             />
                                           </MuiLinearProgressBar1>
                                         </span>
@@ -4265,6 +4294,7 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
                   "numberOfTiers": 0,
                   "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {

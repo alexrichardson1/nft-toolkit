@@ -827,7 +827,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                   >
                                     <svg
                                       aria-hidden="true"
-                                      aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                      aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                       class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                       data-mui-internal-clone-element="true"
                                       data-testid="InfoIcon"
@@ -942,7 +942,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                             "handleNumberInputChange": undefined,
                             "numberInputLabel": "Chance (%)",
                             "numberInputValue": "",
-                            "tooltipText": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                            "tooltipText": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                           }
                         }
                       />
@@ -995,7 +995,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                 "handleNumberInputChange": undefined,
                                 "numberInputLabel": "Chance (%)",
                                 "numberInputValue": "",
-                                "tooltipText": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                                "tooltipText": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                               }
                             }
                           />
@@ -1038,7 +1038,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                     "handleNumberInputChange": undefined,
                                     "numberInputLabel": "Chance (%)",
                                     "numberInputValue": "",
-                                    "tooltipText": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                                    "tooltipText": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                                   }
                                 }
                               />
@@ -1119,7 +1119,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                 "handleNumberInputChange": undefined,
                                                 "numberInputLabel": "Chance (%)",
                                                 "numberInputValue": "",
-                                                "tooltipText": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                                                "tooltipText": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                                               }
                                             }
                                           />,
@@ -1158,7 +1158,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                             "handleNumberInputChange": undefined,
                                             "numberInputLabel": "Chance (%)",
                                             "numberInputValue": "",
-                                            "tooltipText": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                                            "tooltipText": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                                           }
                                         }
                                       >
@@ -1203,7 +1203,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                             position="end"
                                                           >
                                                             <InfoTooltip
-                                                              text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                              text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                             />
                                                           </ForwardRef(InputAdornment)>,
                                                           "inputProps": Object {
@@ -1708,7 +1708,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                             position="end"
                                                           >
                                                             <InfoTooltip
-                                                              text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                              text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                             />
                                                           </ForwardRef(InputAdornment)>,
                                                           "inputProps": Object {
@@ -1731,7 +1731,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                               position="end"
                                                             >
                                                               <InfoTooltip
-                                                                text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                               />
                                                             </ForwardRef(InputAdornment)>,
                                                             "inputProps": Object {
@@ -1761,7 +1761,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                   position="end"
                                                                 >
                                                                   <InfoTooltip
-                                                                    text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                    text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                   />
                                                                 </ForwardRef(InputAdornment)>,
                                                                 "inputProps": Object {
@@ -1820,7 +1820,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                           position="end"
                                                                         >
                                                                           <InfoTooltip
-                                                                            text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                            text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                           />
                                                                         </ForwardRef(InputAdornment)>
                                                                       }
@@ -1997,7 +1997,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                       position="end"
                                                                     >
                                                                       <InfoTooltip
-                                                                        text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                        text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                       />
                                                                     </ForwardRef(InputAdornment)>
                                                                   }
@@ -2077,7 +2077,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                         position="end"
                                                                       >
                                                                         <InfoTooltip
-                                                                          text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                          text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                         />
                                                                       </ForwardRef(InputAdornment)>
                                                                     }
@@ -2500,7 +2500,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                             position="end"
                                                                           >
                                                                             <InfoTooltip
-                                                                              text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                              text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                             />
                                                                           </ForwardRef(InputAdornment)>,
                                                                           "error": false,
@@ -2626,7 +2626,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                 position="end"
                                                                               >
                                                                                 <InfoTooltip
-                                                                                  text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                  text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                 />
                                                                               </ForwardRef(InputAdornment)>,
                                                                               "error": false,
@@ -2707,7 +2707,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                             ownerState={
                                                                               Object {
                                                                                 "children": <InfoTooltip
-                                                                                  text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                  text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                 />,
                                                                                 "disablePointerEvents": false,
                                                                                 "hiddenLabel": false,
@@ -2722,15 +2722,15 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                               className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                                                             >
                                                                               <InfoTooltip
-                                                                                text="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                text="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                               >
                                                                                 <ForwardRef(Tooltip)
                                                                                   arrow={true}
                                                                                   placement="top"
-                                                                                  title="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                  title="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                 >
                                                                                   <ForwardRef(InfoIcon)
-                                                                                    aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                    aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                     aria-labelledby={null}
                                                                                     className=""
                                                                                     color="primary"
@@ -2743,7 +2743,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                     onTouchStart={[Function]}
                                                                                   >
                                                                                     <ForwardRef(SvgIcon)
-                                                                                      aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                      aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                       aria-labelledby={null}
                                                                                       className=""
                                                                                       color="primary"
@@ -2758,7 +2758,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                     >
                                                                                       <MuiSvgIconRoot
                                                                                         aria-hidden={true}
-                                                                                        aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                        aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                         aria-labelledby={null}
                                                                                         as="svg"
                                                                                         className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium"
@@ -2773,7 +2773,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                         onTouchStart={[Function]}
                                                                                         ownerState={
                                                                                           Object {
-                                                                                            "aria-label": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                                                                                            "aria-label": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                                                                                             "aria-labelledby": null,
                                                                                             "children": <path
                                                                                               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
@@ -2798,7 +2798,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                         <Noop />
                                                                                         <svg
                                                                                           aria-hidden={true}
-                                                                                          aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                          aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                           aria-labelledby={null}
                                                                                           className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                           data-mui-internal-clone-element={true}
@@ -2823,7 +2823,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                     anchorEl={
                                                                                       <svg
                                                                                         aria-hidden="true"
-                                                                                        aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                        aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                         class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                         data-mui-internal-clone-element="true"
                                                                                         data-testid="InfoIcon"
@@ -2855,7 +2855,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                       }
                                                                                     }
                                                                                     className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow"
-                                                                                    id="mui-896848816"
+                                                                                    id="mui-672061253"
                                                                                     onBlur={[Function]}
                                                                                     onFocus={[Function]}
                                                                                     onMouseLeave={[Function]}
@@ -2871,7 +2871,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                         "disableInteractive": false,
                                                                                         "isRtl": false,
                                                                                         "placement": "top",
-                                                                                        "title": "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
+                                                                                        "title": "Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT",
                                                                                         "touch": false,
                                                                                       }
                                                                                     }
@@ -2902,7 +2902,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                       anchorEl={
                                                                                         <svg
                                                                                           aria-hidden="true"
-                                                                                          aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                          aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                           class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                           data-mui-internal-clone-element="true"
                                                                                           data-testid="InfoIcon"
@@ -2915,7 +2915,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                         </svg>
                                                                                       }
                                                                                       className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
-                                                                                      id="mui-896848816"
+                                                                                      id="mui-672061253"
                                                                                       onBlur={[Function]}
                                                                                       onFocus={[Function]}
                                                                                       onMouseLeave={[Function]}
@@ -2947,7 +2947,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                         anchorEl={
                                                                                           <svg
                                                                                             aria-hidden="true"
-                                                                                            aria-label="Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
+                                                                                            aria-label="Add a likelihood value ranging from 1 (Highly Unlikely) to 100 (Guaranteed) for the chance this layer is included in a generated NFT"
                                                                                             class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
                                                                                             data-mui-internal-clone-element="true"
                                                                                             data-testid="InfoIcon"
@@ -2961,7 +2961,7 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                                                                                         }
                                                                                         className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
                                                                                         direction="ltr"
-                                                                                        id="mui-896848816"
+                                                                                        id="mui-672061253"
                                                                                         onBlur={[Function]}
                                                                                         onFocus={[Function]}
                                                                                         onMouseLeave={[Function]}
@@ -5625,7 +5625,7 @@ exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
                 "layers": Array [],
                 "numberOfLayers": 0,
                 "numberOfTiers": 0,
-                "quantity": "",
+                "quantity": "1",
                 "tiers": Array [],
                 "totalTierRarity": 0,
               },
@@ -6302,7 +6302,7 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
                 "layers": Array [],
                 "numberOfLayers": 0,
                 "numberOfTiers": 0,
-                "quantity": "",
+                "quantity": "1",
                 "tiers": Array [],
                 "totalTierRarity": 0,
               },

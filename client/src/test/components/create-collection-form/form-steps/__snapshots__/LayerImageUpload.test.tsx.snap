@@ -2922,7 +2922,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                         </MuiTypographyRoot>
                                       </ForwardRef(Typography)>
                                       <ForwardRef(LinearProgress)
-                                        color="error"
+                                        color="primary"
                                         sx={
                                           Object {
                                             "height": 20,
@@ -2935,10 +2935,10 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                           aria-valuemax={100}
                                           aria-valuemin={0}
                                           aria-valuenow={0}
-                                          className="MuiLinearProgress-root MuiLinearProgress-colorError MuiLinearProgress-determinate"
+                                          className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate"
                                           ownerState={
                                             Object {
-                                              "color": "error",
+                                              "color": "primary",
                                               "sx": Object {
                                                 "height": 20,
                                               },
@@ -2958,14 +2958,14 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                             aria-valuemax={100}
                                             aria-valuemin={0}
                                             aria-valuenow={0}
-                                            className="MuiLinearProgress-root MuiLinearProgress-colorError MuiLinearProgress-determinate css-1y47o37-MuiLinearProgress-root"
+                                            className="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate css-o0bcmd-MuiLinearProgress-root"
                                             role="progressbar"
                                           >
                                             <MuiLinearProgressBar1
-                                              className="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar1Determinate"
+                                              className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate"
                                               ownerState={
                                                 Object {
-                                                  "color": "error",
+                                                  "color": "primary",
                                                   "sx": Object {
                                                     "height": 20,
                                                   },
@@ -2981,7 +2981,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                             >
                                               <Noop />
                                               <span
-                                                className="MuiLinearProgress-bar MuiLinearProgress-barColorError MuiLinearProgress-bar1Determinate css-ete1bz-MuiLinearProgress-bar1"
+                                                className="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate css-1q8f18t-MuiLinearProgress-bar1"
                                                 style={
                                                   Object {
                                                     "transform": "translateX(-100%)",
@@ -5197,7 +5197,7 @@ exports[`LayerImageUpload snapshots Step Number does not match 1`] = `
                 "layers": Array [],
                 "numberOfLayers": 0,
                 "numberOfTiers": 0,
-                "quantity": "",
+                "quantity": "1",
                 "tiers": Array [],
                 "totalTierRarity": 0,
               },
@@ -5876,7 +5876,7 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
                 "layers": Array [],
                 "numberOfLayers": 0,
                 "numberOfTiers": 0,
-                "quantity": "",
+                "quantity": "1",
                 "tiers": Array [],
                 "totalTierRarity": 0,
               },

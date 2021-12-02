@@ -73,7 +73,7 @@ describe("formUtils unit tests", () => {
         tiers: [],
         layers: [],
         numberOfLayers: 0,
-        quantity: "",
+        quantity: "1",
       },
     };
     expect(
