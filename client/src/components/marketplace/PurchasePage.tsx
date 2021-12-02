@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import ListItemText from "@mui/material/ListItemText";
+import { SxProps } from "@mui/system/styleFunctionSx";
 
 const dummyData: CollectionI =
     {
@@ -18,6 +19,15 @@ const dummyData: CollectionI =
         id: 0,
         price: "69",
     };
+
+const paperStyle: SxProps = {
+  bgcolor: 'background.paper',
+  boxShadow: 3,
+  borderRadius: 2,
+  padding: 3,
+  margin: 4, 
+  width: '55%',
+};
 
 const PurchasePage = (): JSX.Element => {
 
@@ -33,14 +43,7 @@ const PurchasePage = (): JSX.Element => {
               data={dummyData}
             />
           </Box>
-          <Box sx={{
-          bgcolor: 'background.paper',
-          boxShadow: 3,
-          borderRadius: 2,
-          padding: 3,
-          margin: 4, 
-          width: '55%',
-          }}>
+          <Box sx={paperStyle}>
             <Box display="flex" flexDirection="column" alignItems="center">
               <ListItem>
                 <Box>
