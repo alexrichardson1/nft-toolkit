@@ -1,39 +1,34 @@
-const MAX_RARITY = 100;
-const TWO = 2;
+import { LinearProgress } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
+const MAX_RARITY = 100;
+
+const getProgressText = (totalRarity: number) => {
+  const rarityDiff = MAX_RARITY - totalRarity;
+  if (rarityDiff < 0) {
+    return `You are ${Math.abs(rarityDiff)}% over the required amount`;
+  }
+  if (rarityDiff > 0) {
+    return `You have ${rarityDiff}% left to assign`;
+  }
+  return "You have reached the required amount";
+};
 interface PropsT {
   totalRarity: number;
 }
 
-const RarityProgressBar = (props: PropsT): JSX.Element => {
+const RarityProgressBar = ({ totalRarity }: PropsT): JSX.Element => {
   return (
-    <>
-      <div>
-        <p style={{ textAlign: "right" }}>
-          {" "}
-          You have {MAX_RARITY - props.totalRarity} rarity left to assign
-        </p>
-        <div
-          style={{
-            width: `${window.innerWidth / TWO}`,
-            height: 20,
-            outline: "solid",
-          }}>
-          <div
-            style={{
-              width: `${Math.min(props.totalRarity, MAX_RARITY)}%`,
-              height: 20,
-              backgroundColor:
-                props.totalRarity <= MAX_RARITY ? "#00bcd4" : "#B33F40",
-              textAlign: "center",
-            }}>
-            {props.totalRarity <= MAX_RARITY
-              ? ""
-              : "You have a total rarity over 100"}
-          </div>
-        </div>
-      </div>
-    </>
+    <Box mb={2} width={1}>
+      <Typography align="right">{getProgressText(totalRarity)}</Typography>
+      <LinearProgress
+        color={totalRarity === MAX_RARITY ? "primary" : "error"}
+        sx={{ height: 20 }}
+        variant="determinate"
+        value={totalRarity}
+      />
+    </Box>
   );
 };
 
