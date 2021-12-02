@@ -90,6 +90,33 @@ const RecommendationsStep = ({
     return <></>;
   }
 
+  const RecommendedNamesList = () => (
+    <List>
+      <ListItem
+        onClick={() => handleChangeCollName(state.collectionName)}
+        sx={{
+          ...listItemStyle,
+          border:
+            changedCollName === state.collectionName ? "3px solid" : "none",
+        }}>
+        <ListItemText>{state.collectionName}</ListItemText>
+      </ListItem>
+      {state.predictions.names.map((nameObj, idx) => {
+        return (
+          <ListItem
+            onClick={() => handleChangeCollName(nameObj.name)}
+            sx={{
+              ...listItemStyle,
+              border: changedCollName === nameObj.name ? "3px solid" : "none",
+            }}
+            key={idx}>
+            <ListItemText>{nameObj.name}</ListItemText>
+          </ListItem>
+        );
+      })}
+    </List>
+  );
+
   return (
     <>
       <PageHeader text="Predictions & Recommendations" />
@@ -107,31 +134,7 @@ const RecommendationsStep = ({
         Recommendations
       </Typography>
       <Recommendation title="Collection Name" tooltipText={NAME_REC_TT_TEXT}>
-        <List>
-          <ListItem
-            onClick={() => handleChangeCollName(state.collectionName)}
-            sx={{
-              ...listItemStyle,
-              border:
-                changedCollName === state.collectionName ? "3px solid" : "none",
-            }}>
-            <ListItemText>{state.collectionName}</ListItemText>
-          </ListItem>
-          {state.predictions.names.map((nameObj, idx) => {
-            return (
-              <ListItem
-                onClick={() => handleChangeCollName(nameObj.name)}
-                sx={{
-                  ...listItemStyle,
-                  border:
-                    changedCollName === nameObj.name ? "3px solid" : "none",
-                }}
-                key={idx}>
-                <ListItemText>{nameObj.name}</ListItemText>
-              </ListItem>
-            );
-          })}
-        </List>
+        <RecommendedNamesList />
       </Recommendation>
     </>
   );
