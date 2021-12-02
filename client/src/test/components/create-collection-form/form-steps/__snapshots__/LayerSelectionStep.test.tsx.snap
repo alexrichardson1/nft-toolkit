@@ -664,11 +664,13 @@ exports[`LayerSelectionStep snapshots Step Number and generative match 1`] = `
                 "hype": -1,
                 "names": Array [],
               },
+              "redditHandle": "",
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
               },
               "symbol": "",
+              "twitterHandle": "",
             }
           }
           stepNumber={2}
@@ -4109,11 +4111,13 @@ exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
                 "hype": -1,
                 "names": Array [],
               },
+              "redditHandle": "",
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
               },
               "symbol": "",
+              "twitterHandle": "",
             }
           }
           stepNumber={0}
@@ -4782,11 +4786,13 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
                 "hype": -1,
                 "names": Array [],
               },
+              "redditHandle": "",
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
               },
               "symbol": "",
+              "twitterHandle": "",
             }
           }
           stepNumber={2}

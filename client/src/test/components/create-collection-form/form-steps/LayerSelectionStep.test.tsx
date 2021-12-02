@@ -3,6 +3,8 @@ import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",

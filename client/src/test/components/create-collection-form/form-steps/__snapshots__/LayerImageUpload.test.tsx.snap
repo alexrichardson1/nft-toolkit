@@ -681,11 +681,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                 "hype": -1,
                 "names": Array [],
               },
+              "redditHandle": "",
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
               },
               "symbol": "",
+              "twitterHandle": "",
             }
           }
           stepNumber={3}
@@ -4740,11 +4742,13 @@ exports[`LayerImageUpload snapshots Step Number does not match 1`] = `
                 "hype": -1,
                 "names": Array [],
               },
+              "redditHandle": "",
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
               },
               "symbol": "",
+              "twitterHandle": "",
             }
           }
           stepNumber={0}
@@ -5416,11 +5420,13 @@ exports[`LayerImageUpload snapshots generative does not match 1`] = `
                 "hype": -1,
                 "names": Array [],
               },
+              "redditHandle": "",
               "static": Object {
                 "images": Object {},
                 "numberOfImages": 0,
               },
               "symbol": "",
+              "twitterHandle": "",
             }
           }
           stepNumber={3}

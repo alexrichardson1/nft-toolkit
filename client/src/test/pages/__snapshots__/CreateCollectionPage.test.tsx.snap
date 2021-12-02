@@ -677,7 +677,9 @@ exports[`CreateCollectionPage snapshot 1`] = `
                         handleCollNameChange={[Function]}
                         handleDescriptionChange={[Function]}
                         handleMintPriceChange={[Function]}
+                        handleRedditChange={[Function]}
                         handleSymbolChange={[Function]}
+                        handleTwitterChange={[Function]}
                         state={
                           Object {
                             "collectionName": "",
@@ -694,11 +696,13 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "hype": -1,
                               "names": Array [],
                             },
+                            "redditHandle": "",
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
                             },
                             "symbol": "",
+                            "twitterHandle": "",
                           }
                         }
                         stepNumber={0}
@@ -3601,11 +3605,13 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "hype": -1,
                               "names": Array [],
                             },
+                            "redditHandle": "",
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
                             },
                             "symbol": "",
+                            "twitterHandle": "",
                           }
                         }
                         stepNumber={0}
@@ -3632,11 +3638,13 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "hype": -1,
                               "names": Array [],
                             },
+                            "redditHandle": "",
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
                             },
                             "symbol": "",
+                            "twitterHandle": "",
                           }
                         }
                         stepNumber={0}
@@ -3662,11 +3670,13 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "hype": -1,
                               "names": Array [],
                             },
+                            "redditHandle": "",
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
                             },
                             "symbol": "",
+                            "twitterHandle": "",
                           }
                         }
                         stepNumber={0}
@@ -3695,11 +3705,13 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "hype": -1,
                               "names": Array [],
                             },
+                            "redditHandle": "",
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
                             },
                             "symbol": "",
+                            "twitterHandle": "",
                           }
                         }
                         stepNumber={0}
@@ -3724,11 +3736,13 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "hype": -1,
                               "names": Array [],
                             },
+                            "redditHandle": "",
                             "static": Object {
                               "images": Object {},
                               "numberOfImages": 0,
                             },
                             "symbol": "",
+                            "twitterHandle": "",
                           }
                         }
                         stepNumber={0}

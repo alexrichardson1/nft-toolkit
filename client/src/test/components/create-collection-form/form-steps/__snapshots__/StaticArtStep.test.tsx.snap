@@ -664,11 +664,13 @@ exports[`StaticArtStep generative does not match 1`] = `
                     "hype": -1,
                     "names": Array [],
                   },
+                  "redditHandle": "",
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
                   },
                   "symbol": "",
+                  "twitterHandle": "",
                 }
               }
               stepNumber={1}
@@ -1345,11 +1347,13 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     "hype": -1,
                     "names": Array [],
                   },
+                  "redditHandle": "",
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
                   },
                   "symbol": "",
+                  "twitterHandle": "",
                 }
               }
               stepNumber={1}
@@ -2566,11 +2570,13 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                     "hype": -1,
                     "names": Array [],
                   },
+                  "redditHandle": "",
                   "static": Object {
                     "images": Object {},
                     "numberOfImages": 0,
                   },
                   "symbol": "",
+                  "twitterHandle": "",
                 }
               }
               stepNumber={0}

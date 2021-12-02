@@ -2,6 +2,8 @@ import FormActions from "actions/formActions";
 import formReducer from "../../reducers/formReducer";
 
 const EMPTY_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
@@ -59,6 +61,8 @@ describe("formReducer", () => {
 
   beforeEach(() => {
     initialState = {
+      twitterHandle: "",
+      redditHandle: "",
       collectionName: "",
       description: "",
       symbol: "",

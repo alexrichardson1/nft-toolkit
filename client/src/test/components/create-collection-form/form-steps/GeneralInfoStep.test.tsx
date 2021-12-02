@@ -4,6 +4,8 @@ import ThemeProvider from "context/theme/ThemeProvider";
 import { mount } from "enzyme";
 
 const INITIAL_STATE: FormStateI = {
+  twitterHandle: "",
+  redditHandle: "",
   collectionName: "",
   description: "",
   symbol: "",
@@ -25,6 +27,8 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleRedditChange={jest.fn()}
+            handleTwitterChange={jest.fn()}
             generative
             stepNumber={4}
             state={INITIAL_STATE}
@@ -43,6 +47,8 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleRedditChange={jest.fn()}
+            handleTwitterChange={jest.fn()}
             generative={false}
             stepNumber={2}
             state={INITIAL_STATE}
@@ -61,6 +67,8 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleRedditChange={jest.fn()}
+            handleTwitterChange={jest.fn()}
             generative
             stepNumber={0}
             state={INITIAL_STATE}
@@ -79,6 +87,8 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleRedditChange={jest.fn()}
+            handleTwitterChange={jest.fn()}
             generative={false}
             stepNumber={0}
             state={INITIAL_STATE}
