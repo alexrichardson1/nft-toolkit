@@ -1,5 +1,13 @@
 import FireIcon from "@mui/icons-material/LocalFireDepartment";
-import { List, ListItem, ListItemText, Theme, Typography } from "@mui/material";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Stack,
+  Theme,
+  Typography,
+} from "@mui/material";
+import Slider from "@mui/material/Slider";
 import { SxProps } from "@mui/system";
 import Box from "@mui/system/Box";
 import InfoTooltip from "components/common/InfoToolTip";
@@ -9,7 +17,6 @@ import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const REC_STEP_NUMBER_STATIC = 3;
 const REC_STEP_NUMBER_GEN = 5;
-const MAX_HYPE = 5;
 const HYPE_TT_TEXT =
   "This indicates how well we think your collection will do based on the data you have provided.";
 const NAME_REC_TT_TEXT =
@@ -90,14 +97,11 @@ const RecommendationsStep = ({
         Predictions
       </Typography>
       <Prediction title="Predicted Hype" tooltipText={HYPE_TT_TEXT}>
-        <Box display="flex" alignItems="center" gap={1}>
-          {Array.from(Array(MAX_HYPE).keys()).map((idx) => (
-            <FireIcon
-              key={idx}
-              {...(state.predictions.hype > idx && { color: "primary" })}
-            />
-          ))}
-        </Box>
+        <Stack minWidth={300} spacing={2} direction="row" alignItems="center">
+          <FireIcon color="info" fontSize="small" />
+          <Slider aria-label="Hype" defaultValue={10} disabled />
+          <FireIcon color="error" fontSize="large" />
+        </Stack>
       </Prediction>
       <Typography color="primary" variant="h5">
         Recommendations
