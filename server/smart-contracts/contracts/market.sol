@@ -4,10 +4,10 @@ pragma solidity ^0.8.0;
 
 import "./nft.sol";
 
-/** @title Royalty Smart Contract
- *  @notice Royalty for NFT Collection Owners
+/** @title Market Smart Contract
+ *  @notice Market for NFT Collection Owners
  */
-contract Royalty {
+contract Market {
   NFT private _collection;
   uint256 public royalty;
   mapping(uint256 => uint256) public listings;
