@@ -41,6 +41,8 @@ interface MlDataI {
 }
 
 interface FormStateI {
+  twitterHandle: string;
+  redditHandle: string;
   collectionName: string;
   description: string;
   symbol: string;

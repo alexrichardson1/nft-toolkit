@@ -26,6 +26,8 @@ interface FormActionPayloadI {
   imageDescChange?: { imageId: string; newDesc: string };
   rarityChange?: { layerName: string; imageId: string; newRarity: string };
   newPredictions?: MlDataI;
+  twitterHandleChange?: string;
+  redditHandleChange?: string;
 }
 
 export interface FormActionI {
