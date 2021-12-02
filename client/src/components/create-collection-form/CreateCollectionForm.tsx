@@ -9,29 +9,39 @@ import { FormEvent, useContext, useEffect, useReducer, useState } from "react";
 import { Redirect } from "react-router-dom";
 import formReducer from "reducers/formReducer";
 import {
-  GEN_STEPS,
   handleCollNameChange,
   handleDescriptionChange,
+  handleMintPriceChange,
+  handleSymbolChange,
+} from "utils/collection-form/collectionHandles";
+import {
+  GEN_STEPS,
   handleFormSubmit,
+  STATIC_STEPS,
+} from "utils/collection-form/FormHandles";
+import {
   handleImageDelete,
   handleImageDrop,
   handleImgDescChange,
   handleImgNameChange,
+} from "utils/collection-form/imageHandles";
+import {
   handleImgRarityChange,
   handleLayerAddition,
   handleLayerRemoval,
   handleLayerReorder,
-  handleMintPriceChange,
   handleQuantityChange,
+} from "utils/collection-form/layerHandles";
+import {
   handleRedditChange,
-  handleSymbolChange,
+  handleTwitterChange,
+} from "utils/collection-form/predictionHandles";
+import {
   handleTierAdd,
   handleTierProbChange,
   handleTierRemoval,
   handleTierReorder,
-  handleTwitterChange,
-  STATIC_STEPS,
-} from "utils/collection-form/FormHandles";
+} from "utils/collection-form/tierHandles";
 import { DEFAULT_ALERT_DURATION } from "utils/constants";
 import showAlert from "utils/showAlert";
 import GeneralInfoStep from "./form-steps/GeneralInfoStep";
