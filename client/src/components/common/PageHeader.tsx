@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+import { pure } from "recompose";
 
 interface PropsT {
   text: string;
@@ -18,4 +19,4 @@ const PageHeader = ({ text }: PropsT): JSX.Element => {
   );
 };
 
-export default PageHeader;
+export default pure(PageHeader);

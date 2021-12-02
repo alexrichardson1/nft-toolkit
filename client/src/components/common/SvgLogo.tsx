@@ -1,3 +1,5 @@
+import { pure } from "recompose";
+
 interface PropsT {
   icon: string;
   width: string | number;
@@ -15,4 +17,4 @@ const SvgLogo = ({ icon, width, height, margins }: PropsT): JSX.Element => (
   />
 );
 
-export default SvgLogo;
+export default pure(SvgLogo);

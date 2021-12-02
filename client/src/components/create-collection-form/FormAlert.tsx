@@ -1,5 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import { Alert, AlertColor, Collapse, IconButton } from "@mui/material";
+import { pure } from "recompose";
 import { DEFAULT_ALERT_ELEVATION } from "utils/constants";
 
 const alertContainerStyle = { flexGrow: 1 };
@@ -35,4 +36,4 @@ const FormAlert = ({
   </Collapse>
 );
 
-export default FormAlert;
+export default pure(FormAlert);
