@@ -9,6 +9,8 @@ import OrderableList from "../../common/OrderableList";
 
 const LAYER_UPLOAD_STEP_NUMBER = 3;
 const MINIMUM_LAYERS_REQUIRED = 1;
+const CHANCE_INPUT_INFO =
+  "Add a likelihood value ranging from 0 (Impossible) to 100 (Guaranteed) for the chance this layer is included in a generated NFT";
 
 interface PropsT {
   stepNumber: number;
@@ -17,6 +19,7 @@ interface PropsT {
   handleLayerAddition: (newLayerName: string) => void;
   handleLayerReorder: (event: DragEndEvent) => void;
   handleLayerRemoval: (layerName: string) => void;
+  handleLayerProbChange: (layerName: string) => (e: InputEventT) => void;
 }
 
 /**
@@ -38,6 +41,7 @@ const LayerSelectionStep = ({
   handleLayerReorder,
   handleLayerAddition,
   handleLayerRemoval,
+  handleLayerProbChange,
 }: PropsT): JSX.Element => {
   const [text, setText] = useState("");
 
@@ -72,6 +76,12 @@ const LayerSelectionStep = ({
               key={layer.name}
               itemName={layer.name}
               handleItemRemoval={handleLayerRemoval}
+              numericInput={{
+                tooltipText: CHANCE_INPUT_INFO,
+                numberInputLabel: "Chance (%)",
+                numberInputValue: layer.probability,
+                handleNumberInputChange: handleLayerProbChange(layer.name),
+              }}
             />
           ))}
         </OrderableList>
