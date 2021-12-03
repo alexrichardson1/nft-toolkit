@@ -212,6 +212,9 @@ const addRarityScore = (img: TokenT, layerQuantities: LayersQI) => {
     }
   });
 
+  const normaliseProb = 1000;
+  prob = Math.round((1 / prob) * normaliseProb);
+
   img.attributes.push({ trait_type: "rarity_score", value: prob });
 };
 

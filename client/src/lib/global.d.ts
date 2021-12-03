@@ -58,20 +58,24 @@ interface FormStateI {
     layers: LayerI[];
     quantity: string;
   };
+  marketplace: { wanted: boolean; royalty: string };
   predictions: MlDataI;
 }
 
 interface AttributeI {
-  [trait_type: string]: string;
+  [trait_type: string]: string | number;
 }
 
-interface CollectionI {
-  id: number;
+interface ContractAttributeI {
+  trait_type: string;
+  value: string | number;
+}
+
+interface ContractTokenI {
   name: string;
   description: string;
   image: string;
-  price: string;
-  attributes: AttributeI;
+  attributes: ContractAttributeI[];
 }
 
 interface ParamsI {

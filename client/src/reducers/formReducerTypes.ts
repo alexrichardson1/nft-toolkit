@@ -29,6 +29,8 @@ interface FormActionPayloadI {
   newPredictions?: MlDataI;
   twitterHandleChange?: string;
   redditHandleChange?: string;
+  mplaceWantedChange?: boolean;
+  mplaceRoyaltyChange?: string;
 }
 
 export interface FormActionI {

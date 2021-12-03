@@ -14297,7 +14297,7 @@ exports[`App snapshot 1`] = `
                                         <Route
                                           component={[Function]}
                                           exact={true}
-                                          path="/:paramChainId/:address([0-9a-zA-Z]{26,})/market"
+                                          path="/:paramChainId/:address([0-9a-zA-Z]{26,})/:marketAddress([0-9a-zA-Z]{26,})"
                                         />
                                         <Route
                                           component={[Function]}
@@ -14307,7 +14307,7 @@ exports[`App snapshot 1`] = `
                                         <Route
                                           component={[Function]}
                                           exact={true}
-                                          path="/purchase"
+                                          path="/:paramChainId/:address([0-9a-zA-Z]{26,})/:marketAddress([0-9a-zA-Z]{26,})/:tokenId([0-9]+)"
                                         />
                                         <Route
                                           component={[Function]}
@@ -14609,6 +14609,8 @@ exports[`App snapshot 1`] = `
                                                   handleCollNameChange={[Function]}
                                                   handleDescriptionChange={[Function]}
                                                   handleMintPriceChange={[Function]}
+                                                  handleMplaceRoyaltyChange={[Function]}
+                                                  handleMplaceWantedChange={[Function]}
                                                   handleRedditChange={[Function]}
                                                   handleSymbolChange={[Function]}
                                                   handleTwitterChange={[Function]}
@@ -14623,6 +14625,10 @@ exports[`App snapshot 1`] = `
                                                         "quantity": "",
                                                         "tiers": Array [],
                                                         "totalTierRarity": 0,
+                                                      },
+                                                      "marketplace": Object {
+                                                        "royalty": "",
+                                                        "wanted": false,
                                                       },
                                                       "mintingPrice": "",
                                                       "predictions": Object {
@@ -17540,6 +17546,10 @@ exports[`App snapshot 1`] = `
                                                         "tiers": Array [],
                                                         "totalTierRarity": 0,
                                                       },
+                                                      "marketplace": Object {
+                                                        "royalty": "",
+                                                        "wanted": false,
+                                                      },
                                                       "mintingPrice": "",
                                                       "predictions": Object {
                                                         "hype": -1,
@@ -17574,6 +17584,10 @@ exports[`App snapshot 1`] = `
                                                         "tiers": Array [],
                                                         "totalTierRarity": 0,
                                                       },
+                                                      "marketplace": Object {
+                                                        "royalty": "",
+                                                        "wanted": false,
+                                                      },
                                                       "mintingPrice": "",
                                                       "predictions": Object {
                                                         "hype": -1,
@@ -17607,6 +17621,10 @@ exports[`App snapshot 1`] = `
                                                         "quantity": "",
                                                         "tiers": Array [],
                                                         "totalTierRarity": 0,
+                                                      },
+                                                      "marketplace": Object {
+                                                        "royalty": "",
+                                                        "wanted": false,
                                                       },
                                                       "mintingPrice": "",
                                                       "predictions": Object {
@@ -17644,6 +17662,10 @@ exports[`App snapshot 1`] = `
                                                         "tiers": Array [],
                                                         "totalTierRarity": 0,
                                                       },
+                                                      "marketplace": Object {
+                                                        "royalty": "",
+                                                        "wanted": false,
+                                                      },
                                                       "mintingPrice": "",
                                                       "predictions": Object {
                                                         "hype": -1,
@@ -17676,6 +17698,10 @@ exports[`App snapshot 1`] = `
                                                         "quantity": "",
                                                         "tiers": Array [],
                                                         "totalTierRarity": 0,
+                                                      },
+                                                      "marketplace": Object {
+                                                        "royalty": "",
+                                                        "wanted": false,
                                                       },
                                                       "mintingPrice": "",
                                                       "predictions": Object {

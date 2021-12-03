@@ -17,6 +17,7 @@ const EMPTY_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
+  marketplace: { wanted: false, royalty: "" },
   predictions: { names: [], hype: -1 },
 };
 
@@ -82,6 +83,7 @@ describe("formReducer", () => {
         layers: [],
         numberOfLayers: 0,
       },
+      marketplace: { wanted: false, royalty: "" },
       predictions: { names: [], hype: -1 },
       mintingPrice: "0",
     };

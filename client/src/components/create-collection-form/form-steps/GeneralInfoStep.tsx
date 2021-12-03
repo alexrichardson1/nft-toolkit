@@ -1,3 +1,4 @@
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import Input from "components/common/Input";
@@ -22,6 +23,8 @@ interface PropsT {
   handleSymbolChange: (e: InputEventT) => void;
   handleTwitterChange: (e: InputEventT) => void;
   handleRedditChange: (e: InputEventT) => void;
+  handleMplaceRoyaltyChange: (e: InputEventT) => void;
+  handleMplaceWantedChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
@@ -37,6 +40,8 @@ const priceInputProps = (selectedNet: NetworkT) => ({
     </InputAdornment>
   ),
 });
+
+const royaltyInputProps = { inputProps: { min: 0, max: 100 } };
 
 /**
  * @param generative - true if the user has chosen generative art, else false
@@ -60,6 +65,8 @@ const GeneralInfoStep = ({
   handleSymbolChange,
   handleRedditChange,
   handleTwitterChange,
+  handleMplaceWantedChange,
+  handleMplaceRoyaltyChange,
 }: PropsT): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
   const priceInputPropsMemo = useMemo(
@@ -139,6 +146,32 @@ const GeneralInfoStep = ({
           label="Reddit Handle"
         />
       </Paper>
+
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={state.marketplace.wanted}
+              onChange={handleMplaceWantedChange}
+            />
+          }
+          label="Select to deploy your own Marketplace"
+        />
+      </FormGroup>
+
+      {state.marketplace.wanted && (
+        <Paper>
+          <Input
+            value={state.marketplace.royalty}
+            onChange={handleMplaceRoyaltyChange}
+            placeholder="0"
+            label="Royalty (%)"
+            type="number"
+            InputProps={royaltyInputProps}
+            required
+          />
+        </Paper>
+      )}
     </>
   );
 };

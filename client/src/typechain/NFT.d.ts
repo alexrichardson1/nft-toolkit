@@ -24,6 +24,7 @@ interface NFTInterface extends ethers.utils.Interface {
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
     "collectionLimit()": FunctionFragment;
+    "contractURI()": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
     "mint(uint256)": FunctionFragment;
@@ -52,6 +53,10 @@ interface NFTInterface extends ethers.utils.Interface {
   encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
   encodeFunctionData(
     functionFragment: "collectionLimit",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "contractURI",
     values?: undefined
   ): string;
   encodeFunctionData(
@@ -120,6 +125,10 @@ interface NFTInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "collectionLimit",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "contractURI",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -269,6 +278,8 @@ export class NFT extends BaseContract {
 
     collectionLimit(overrides?: CallOverrides): Promise<[BigNumber]>;
 
+    contractURI(overrides?: CallOverrides): Promise<[string]>;
+
     getApproved(
       tokenId: BigNumberish,
       overrides?: CallOverrides
@@ -373,6 +384,8 @@ export class NFT extends BaseContract {
 
   collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
 
+  contractURI(overrides?: CallOverrides): Promise<string>;
+
   getApproved(
     tokenId: BigNumberish,
     overrides?: CallOverrides
@@ -468,6 +481,8 @@ export class NFT extends BaseContract {
     balanceOf(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
     collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
+
+    contractURI(overrides?: CallOverrides): Promise<string>;
 
     getApproved(
       tokenId: BigNumberish,
@@ -633,6 +648,8 @@ export class NFT extends BaseContract {
 
     collectionLimit(overrides?: CallOverrides): Promise<BigNumber>;
 
+    contractURI(overrides?: CallOverrides): Promise<BigNumber>;
+
     getApproved(
       tokenId: BigNumberish,
       overrides?: CallOverrides
@@ -738,6 +755,8 @@ export class NFT extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     collectionLimit(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    contractURI(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getApproved(
       tokenId: BigNumberish,
