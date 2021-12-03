@@ -26,3 +26,5 @@ services:
   ml:
     image: jmp119/nft-toolkit-ml:latest
     restart: on-failure
+    env_file:
+      - .env
