@@ -62,10 +62,15 @@ interface FormStateI {
 }
 
 interface AttributeI {
-  [trait_type: string]: string;
+  [trait_type: string]: string | number;
 }
 
-interface CollectionI {
+interface ContractAttributeI {
+  trait_type: string;
+  value: string | number;
+}
+
+interface TokenI {
   id: number;
   name: string;
   description: string;
