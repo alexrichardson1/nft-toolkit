@@ -49,11 +49,15 @@ const App = (): JSX.Element => {
               />
               <Route
                 exact
-                path="/:paramChainId/:address([0-9a-zA-Z]{26,})/market"
+                path="/:paramChainId/:address([0-9a-zA-Z]{26,})/:marketAddress([0-9a-zA-Z]{26,})"
                 component={Market}
               />
               <Route exact path="/" component={CreateCollectionPage} />
-              <Route exact path="/purchase" component={PurchasePage} />
+              <Route
+                exact
+                path="/:paramChainId/:address([0-9a-zA-Z]{26,})/:tokenId([0-9]+)"
+                component={PurchasePage}
+              />
               <Route component={Error404Page} />
             </Switch>
           </Container>
