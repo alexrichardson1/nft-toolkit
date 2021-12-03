@@ -11,7 +11,10 @@ import axios from "axios";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NFT__factory as NftFactory } from "typechain";
+import {
+  Market__factory as MarketFactory,
+  NFT__factory as NftFactory,
+} from "typechain";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
@@ -35,8 +38,8 @@ const paperStyle: SxProps = {
 };
 
 const PurchasePage = (): JSX.Element => {
-  const { paramChainId, tokenId, address } = useParams<
-    ParamsI & { tokenId: string }
+  const { paramChainId, tokenId, address, marketAddress } = useParams<
+    ParamsI & { tokenId: string; marketAddress: string }
   >();
   const dispatch = useAppDispatch();
   const [token, setToken] = useState<TokenI>(dummyData);
@@ -47,6 +50,10 @@ const PurchasePage = (): JSX.Element => {
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
       const nftContract = NftFactory.connect(
         address,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      const marketContract = MarketFactory.connect(
+        marketAddress,
         getRPCProvider(parseInt(paramChainId))
       );
       dispatch({
@@ -62,6 +69,9 @@ const PurchasePage = (): JSX.Element => {
         attributeMap[attr.trait_type] = attr.value;
       });
       res.data.attributes = attributeMap;
+      res.data.price = await (
+        await marketContract.listings(res.data.id)
+      ).toString();
       const token = res.data;
       setToken(token);
 
@@ -80,7 +90,7 @@ const PurchasePage = (): JSX.Element => {
         <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
           <DisplayCard
             chainId={Number(paramChainId)}
-            to={`/${paramChainId}/${address}/${tokenId}`}
+            to={`/${paramChainId}/${address}/${marketAddress}/${tokenId}`}
             key={token.id}
             data={token}
           />
@@ -127,13 +137,13 @@ const PurchasePage = (): JSX.Element => {
               </Grid>
             </ListItem>
             <Divider variant="middle" />
-            <ListItem>
+            {/* <ListItem>
               <Box>
                 <Typography textAlign="left" color="secondary">
                   Floor Price: xx ETH
                 </Typography>
               </Box>
-            </ListItem>
+            </ListItem> */}
             <Box>
               <Button variant="contained" size="large" border-radius="10px">
                 Purchase
