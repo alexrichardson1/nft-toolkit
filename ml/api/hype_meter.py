@@ -88,4 +88,5 @@ def get_overall_score_using_handles(twitter_handle, reddit_handle):
     """
     Returns overall hype via requesting APIs
     """
-    return get_score_from_reddit(reddit_handle) + get_score_from_twitter(twitter_handle)
+    return get_score_from_reddit(reddit_handle) + \
+        get_score_from_twitter(twitter_handle)

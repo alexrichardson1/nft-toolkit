@@ -101,7 +101,7 @@ def get_hype(names, twitter_handle, reddit_handle):
         - reddit_handle: Collection subreddit name
     """
     avg_score = sum([hype_meter.get_overall_score(collection)
-                    for collection, _ in names]) / len(names)
+                     for collection, _ in names]) / len(names)
 
     score_of_request = hype_meter.get_overall_score_using_handles(
         twitter_handle, reddit_handle)
@@ -139,4 +139,4 @@ def get_avg_price(names):
             prices.append(document["avg_sale_price"])
     if len(prices) == 0:
         return 0
-    return sum(prices)/len(prices)
+    return sum(prices) / len(prices)
