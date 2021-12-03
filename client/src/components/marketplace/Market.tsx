@@ -6,7 +6,10 @@ import axios from "axios";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { NFT__factory as NftFactory } from "typechain";
+import {
+  Market__factory as MarketFactory,
+  NFT__factory as NftFactory,
+} from "typechain";
 import { API_URL } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
@@ -31,7 +34,7 @@ const Market = (): JSX.Element => {
   const [tokens, setCollections] = useState<TokenI[]>(dummyData);
   const [collectionName, setCollectionName] = useState("");
   const [symbol, setSymbol] = useState("");
-  const { paramChainId, address } = useParams<
+  const { paramChainId, address, marketAddress } = useParams<
     ParamsI & { marketAddress: string }
   >();
   const dispatch = useAppDispatch();
@@ -42,6 +45,10 @@ const Market = (): JSX.Element => {
 
       const nftContract = NftFactory.connect(
         address,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      const marketContract = MarketFactory.connect(
+        marketAddress,
         getRPCProvider(parseInt(paramChainId))
       );
       const totalSupply = await nftContract.totalSupply();
@@ -56,17 +63,24 @@ const Market = (): JSX.Element => {
         `${API_URL}/metadata/${paramChainId}/${address}`
       );
       let { tokens }: { tokens: ContractTokenI[] } = res.data;
-      console.log(res.data);
       if (tokens.length < totalSupply.toNumber()) {
         tokens = tokens.slice(0, totalSupply.toNumber());
       }
-      const transTokens = tokens.map((token, index) => {
-        const attributeMap: AttributeI = {};
-        token.attributes.forEach((attr: ContractAttributeI) => {
-          attributeMap[attr.trait_type] = attr.value;
-        });
-        return { ...token, id: index, attributes: attributeMap };
-      });
+      const transTokens = await Promise.all(
+        tokens.map(async (token, index) => {
+          const attributeMap: AttributeI = {};
+          token.attributes.forEach((attr: ContractAttributeI) => {
+            attributeMap[attr.trait_type] = attr.value;
+          });
+          const price = await marketContract.listings(index);
+          return {
+            ...token,
+            id: index,
+            attributes: attributeMap,
+            price: price.toString(),
+          };
+        })
+      );
 
       dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
@@ -97,7 +111,7 @@ const Market = (): JSX.Element => {
             {tokens.map((token) => (
               <DisplayCard
                 chainId={Number(paramChainId)}
-                to={`/${paramChainId}/${address}/${token.id}`}
+                to={`/${paramChainId}/${address}/${marketAddress}/${token.id}`}
                 key={token.id}
                 data={token}
               />
