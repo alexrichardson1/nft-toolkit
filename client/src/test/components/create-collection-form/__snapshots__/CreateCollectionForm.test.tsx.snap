@@ -689,6 +689,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "numberOfTiers": 0,
                             "quantity": "",
                             "tiers": Array [],
+                            "totalTierRarity": 0,
                           },
                           "mintingPrice": "",
                           "predictions": Object {
@@ -3598,6 +3599,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "numberOfTiers": 0,
                             "quantity": "",
                             "tiers": Array [],
+                            "totalTierRarity": 0,
                           },
                           "mintingPrice": "",
                           "predictions": Object {
@@ -3631,6 +3633,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "numberOfTiers": 0,
                             "quantity": "",
                             "tiers": Array [],
+                            "totalTierRarity": 0,
                           },
                           "mintingPrice": "",
                           "predictions": Object {
@@ -3651,6 +3654,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                     <LayerSelectionStep
                       generative={false}
                       handleLayerAddition={[Function]}
+                      handleLayerProbChange={[Function]}
                       handleLayerRemoval={[Function]}
                       handleLayerReorder={[Function]}
                       state={
@@ -3663,6 +3667,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "numberOfTiers": 0,
                             "quantity": "",
                             "tiers": Array [],
+                            "totalTierRarity": 0,
                           },
                           "mintingPrice": "",
                           "predictions": Object {
@@ -3698,6 +3703,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "numberOfTiers": 0,
                             "quantity": "",
                             "tiers": Array [],
+                            "totalTierRarity": 0,
                           },
                           "mintingPrice": "",
                           "predictions": Object {
@@ -3729,6 +3735,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "numberOfTiers": 0,
                             "quantity": "",
                             "tiers": Array [],
+                            "totalTierRarity": 0,
                           },
                           "mintingPrice": "",
                           "predictions": Object {

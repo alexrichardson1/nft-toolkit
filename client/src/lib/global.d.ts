@@ -28,6 +28,8 @@ interface LayerI {
   name: string;
   images: ImageT;
   numberOfImages: number;
+  probability: string;
+  totalImageRarities: number;
 }
 
 type NameRecommendationT = {
@@ -50,6 +52,7 @@ interface FormStateI {
   static: { numberOfImages: number; images: ImageT };
   generative: {
     numberOfTiers: number;
+    totalTierRarity: number;
     tiers: TierI[];
     numberOfLayers: number;
     layers: LayerI[];

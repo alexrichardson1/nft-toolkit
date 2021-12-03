@@ -654,8 +654,9 @@ exports[`GeneralInfoStep Step Number does not match when generative 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
-                  "quantity": "",
+                  "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -1334,8 +1335,9 @@ exports[`GeneralInfoStep Step Number does not match when not generative 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
-                  "quantity": "",
+                  "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -2014,8 +2016,9 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
-                  "quantity": "",
+                  "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -8988,8 +8991,9 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                   "layers": Array [],
                   "numberOfLayers": 0,
                   "numberOfTiers": 0,
-                  "quantity": "",
+                  "quantity": "1",
                   "tiers": Array [],
+                  "totalTierRarity": 0,
                 },
                 "mintingPrice": "",
                 "predictions": Object {

@@ -12,11 +12,12 @@ const INITIAL_STATE: FormStateI = {
   mintingPrice: "",
   static: { images: {}, numberOfImages: 0 },
   generative: {
-    quantity: "1",
-    tiers: [],
     numberOfTiers: 0,
+    totalTierRarity: 0,
+    tiers: [],
     layers: [],
     numberOfLayers: 0,
+    quantity: "1",
   },
   predictions: { names: [], hype: -1 },
 };
@@ -31,6 +32,7 @@ describe("LayerImageUpload snapshots", () => {
           state={{
             ...INITIAL_STATE,
             generative: {
+              totalTierRarity: 0,
               quantity: "1",
               numberOfTiers: 0,
               tiers: [],
@@ -40,6 +42,8 @@ describe("LayerImageUpload snapshots", () => {
                   name: "test-name",
                   numberOfImages: 0,
                   images: {},
+                  totalImageRarities: 0,
+                  probability: "0",
                 },
               ],
             },
@@ -106,6 +110,7 @@ describe("LayerImageUpload unit tests", () => {
           state={{
             ...INITIAL_STATE,
             generative: {
+              totalTierRarity: 0,
               quantity: "1",
               tiers: [],
               numberOfTiers: 0,
@@ -115,11 +120,15 @@ describe("LayerImageUpload unit tests", () => {
                   name: "test-name",
                   numberOfImages: 0,
                   images: {},
+                  probability: "0",
+                  totalImageRarities: 0,
                 },
                 {
                   name: "test-name2",
                   numberOfImages: 0,
                   images: {},
+                  probability: "0",
+                  totalImageRarities: 0,
                 },
               ],
             },
