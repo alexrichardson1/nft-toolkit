@@ -14,6 +14,7 @@ contract NFT is ERC721Enumerable, Ownable {
   uint256 public price;
   uint256 public collectionLimit;
   string private _baseURIString;
+  string public contractURI;
   using Counters for Counters.Counter;
   Counters.Counter public tokenIdTracker;
 
@@ -35,6 +36,7 @@ contract NFT is ERC721Enumerable, Ownable {
     _baseURIString = string(
       abi.encodePacked(baseURI, "0x", toAsciiString(address(this)), "/")
     );
+    contractURI = string(abi.encodePacked(baseURI, "/contract/data"));
   }
 
   /**
