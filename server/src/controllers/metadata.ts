@@ -50,7 +50,7 @@ export const getAllTokenMetadata: RequestHandler = async (req, res, next) => {
     return next(error);
   }
 
-  return res.json(collection.tokens);
+  return res.json({ tokens: collection.tokens });
 };
 
 const getRPCProvider = (_chainId: number): BaseProvider => {
