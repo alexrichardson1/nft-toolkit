@@ -55,7 +55,7 @@ def eslint_disabled():
 def pylint_disabled():
     """Counts the number of pylint disabled comments in a project"""
     files = glob("ml/**/*.py", recursive=True)
-    check_disable_linter(files, 1, "pylint: disable")
+    check_disable_linter(files, 2, "pylint: disable")
 
 
 def main():

@@ -55,7 +55,6 @@ class Prediction_Model:  # pylint: disable=invalid-name
             cluster = np.unique(
                 self.collection_names[np.nonzero(self.model.labels_ == cluster_id)])
             cluster_str = ", ".join(cluster)
-            res += str("cluster %i - *%s:* %s" %  # pylint: disable=consider-using-f-string
-                       (i, cluster_head, cluster_str))
+            res += str(f"cluster {i} - *{cluster_head}:* {cluster_str}")
             res += "\n"
         return res
