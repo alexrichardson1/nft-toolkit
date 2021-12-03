@@ -2,10 +2,12 @@ import { Skeleton } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import SvgLogo from "components/common/SvgLogo";
+import { BigNumber, utils } from "ethers";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { getLogoByChainId } from "utils/constants";
 import "./displaycard.css";
+import { TokenI } from "./Market";
 
 interface PropsT {
   data: TokenI;
@@ -14,14 +16,14 @@ interface PropsT {
   chainId: number;
 }
 
-const priceCard = (logo: string, price?: string) => {
-  if (!price || price === "0") {
+const priceCard = (logo: string, price: BigNumber) => {
+  if (price.eq(0)) {
     return <></>;
   }
   return (
     <Box className="card-price-container">
       <Typography variant="h6" color="primary" className="card-price">
-        Price: {price}
+        Price: {utils.formatEther(price)}
       </Typography>
       <SvgLogo icon={logo} width="20px" height="20px" margins />
     </Box>
