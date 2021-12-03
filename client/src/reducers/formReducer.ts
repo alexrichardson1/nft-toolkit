@@ -58,6 +58,7 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
+  marketplace: { wanted: false, royalty: "" },
   predictions: { names: [], hype: -1 },
 };
 
@@ -69,7 +70,7 @@ const INITIAL_STATE: FormStateI = {
  * @returns `value` with type T
  */
 const undefinedCheck = <T>(value: T | undefined, message: string): T => {
-  if (!value) {
+  if (value === void 0) {
     throw new Error(message);
   }
   return value;
@@ -415,6 +416,29 @@ const changeQuantity = (state: FormStateI, action: FormActionI): FormStateI => {
 const resetState = (): FormStateI => {
   return { ...INITIAL_STATE };
 };
+const changeMarketplaceWanted = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  const newWanted = undefinedCheck(
+    action.payload.mplaceWantedChange,
+    "mplaceWantedChange required"
+  );
+  return { ...state, marketplace: { ...state.marketplace, wanted: newWanted } };
+};
+const changeMarketplaceRoyalty = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  return {
+    ...state,
+    marketplace: {
+      ...state.marketplace,
+      royalty: action.payload.mplaceRoyaltyChange ?? DEFAULT_STRING,
+    },
+  };
+};
+
 /**
  * @param state - current state of the form
  * @param action - object containting type of action to perform and payload
@@ -455,6 +479,9 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     changePredictions,
     changeTwitterHandle,
     changeRedditHandle,
+    // marketplace
+    changeMarketplaceWanted,
+    changeMarketplaceRoyalty,
   ];
   const reducer = undefinedCheck(
     reducers[action.type],

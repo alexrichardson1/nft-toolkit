@@ -34,6 +34,9 @@ enum FormActions {
   CHANGE_PREDICTIONS,
   CHANGE_TWITTER_HANDLE,
   CHANGE_REDDIT_HANDLE,
+  // marketplace
+  CHANGE_WANTED,
+  CHANGE_ROYALTY,
 }
 
 export default FormActions;
