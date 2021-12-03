@@ -1,5 +1,9 @@
 import { errorHandler } from "@controllers/common";
-import { getCollectionMetadata, getTokenMetadata } from "@controllers/metadata";
+import {
+  getAllTokenMetadata,
+  getCollectionMetadata,
+  getTokenMetadata,
+} from "@controllers/metadata";
 import { invalidTokenId, metadataValidator } from "@validators/metadata";
 import { Router as router } from "express";
 
@@ -18,6 +22,13 @@ metadataRoutes.get(
   invalidTokenId,
   errorHandler,
   getTokenMetadata
+);
+
+metadataRoutes.get(
+  "/:chainId/:address",
+  metadataValidator,
+  errorHandler,
+  getAllTokenMetadata
 );
 
 export default metadataRoutes;
