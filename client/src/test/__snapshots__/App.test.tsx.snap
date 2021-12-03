@@ -14307,7 +14307,7 @@ exports[`App snapshot 1`] = `
                                         <Route
                                           component={[Function]}
                                           exact={true}
-                                          path="/:paramChainId/:address([0-9a-zA-Z]{26,})/:tokenId([0-9]+)"
+                                          path="/:paramChainId/:address([0-9a-zA-Z]{26,})/:marketAddress([0-9a-zA-Z]{26,})/:tokenId([0-9]+)"
                                         />
                                         <Route
                                           component={[Function]}
