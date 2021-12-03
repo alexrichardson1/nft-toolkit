@@ -15,16 +15,16 @@ interface PropsT {
 }
 
 const priceCard = (logo: string, price?: string) => {
-  if (!price) {
-    return <p></p>;
+  if (!price || price === "0") {
+    return <></>;
   }
   return (
-    <>
+    <Box className="card-price-container">
       <Typography variant="h6" color="primary" className="card-price">
         Price: {price}
       </Typography>
       <SvgLogo icon={logo} width="20px" height="20px" margins />
-    </>
+    </Box>
   );
 };
 
@@ -54,9 +54,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
           <>
             <Box bgcolor="background.paper" className="card-front">
               <img src={data.image} alt={data.name} className="card-img" />
-              <Box className="card-price-container">
-                {priceCard(logo, data.price)}
-              </Box>
+              {priceCard(logo, data.price)}
             </Box>
             <Box bgcolor="background.paper" className="card-back">
               <Box className="card-title-container">
@@ -71,9 +69,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
                 <Typography className="card-description">
                   {data.description}
                 </Typography>
-                <Box className="card-price-container">
-                  {priceCard(logo, data.price)}
-                </Box>
+                {priceCard(logo, data.price)}
               </Box>
             </Box>
           </>
