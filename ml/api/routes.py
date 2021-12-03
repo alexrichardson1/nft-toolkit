@@ -7,6 +7,7 @@ from flask import Flask, Blueprint
 import pymongo
 from dotenv import load_dotenv
 import hype_meter
+from flask_cors import CORS
 
 load_dotenv()
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
@@ -34,7 +35,7 @@ def get_similar_collections(collection_name, twitter, reddit):
         model = pickle.load(file)
 
     similar_collections = model.predict(collection_name)
-    names = [{"collection_name": i[0], "similarity": i[1]}
+    names = [{"name": i[0], "distance": i[1]}
              for i in similar_collections]
 
     if twitter == "":
@@ -70,6 +71,7 @@ def create_app(test_config=None):
         - test_config: Configuration for the test document.
     """
     app = Flask(__name__, instance_relative_config=True)
+    CORS(app)
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),

@@ -138,7 +138,11 @@ const RecommendationsStep = ({
       <Prediction title="Predicted Hype" tooltipText={HYPE_TT_TEXT}>
         <Stack minWidth={300} spacing={2} direction="row" alignItems="center">
           <FireIcon color="info" fontSize="small" />
-          <Slider aria-label="Hype" defaultValue={10} disabled />
+          <Slider
+            aria-label="Hype"
+            defaultValue={state.predictions.hype}
+            disabled
+          />
           <FireIcon color="error" fontSize="large" />
         </Stack>
       </Prediction>

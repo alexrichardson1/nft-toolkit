@@ -58,7 +58,6 @@ import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
-
 const INITIAL_STEP_NUMBER = 0;
 const INITIAL_STATE: FormStateI = {
   twitterHandle: "",
@@ -113,7 +112,6 @@ const CreateCollectionForm = (): JSX.Element => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
-
   if (txAddress !== "") {
     return <Redirect to={`/${chainId}/${txAddress}`} />;
   }

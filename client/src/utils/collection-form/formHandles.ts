@@ -1,6 +1,7 @@
 import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor } from "@mui/material";
 import FormActions from "actions/formActions";
+import axios from "axios";
 import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
@@ -36,10 +37,10 @@ const PAGE_IDX_OFFSET = 2;
 export const STATIC_STEPS = 4;
 export const GEN_STEPS = 6;
 
-const DUMMY_ML_DATA = {
-  names: [{ name: "name1", distance: 3 }],
-  hype: 2,
-};
+// const DUMMY_ML_DATA = {
+//   names: [{ name: "name1", distance: 3 }],
+//   hype: 2,
+// };
 
 const isGeneralInfoStep = (generative: boolean, stepNumber: number) => {
   return (
@@ -182,9 +183,19 @@ const handleIfNotLastStep = async (
   }
   if (isGeneralInfoStep(generative, stepNumber)) {
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
-    const DUMMY_WAIT_TIME = 5000;
-    await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
-    handlePredictionsChange(DUMMY_ML_DATA, dispatch);
+    // TODO: make try and catch
+    try {
+      await axios
+        .get(
+          `http://localhost:4000/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
+        )
+        .then((res) => {
+          console.log(res);
+          handlePredictionsChange(res.data as MlDataI, dispatch);
+        });
+    } catch (err) {
+      console.log(err);
+    }
     stopLoading(setLoadingMessage, setIsLoading);
     setNewCollName(state.collectionName);
   }
