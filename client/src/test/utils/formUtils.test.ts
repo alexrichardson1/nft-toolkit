@@ -65,6 +65,7 @@ describe("formUtils unit tests", () => {
       collectionName: "Test Collection",
       description: "Example description",
       static: { numberOfImages: 1, images: mockImages },
+      marketplace: { wanted: false, royalty: "" },
       mintingPrice: "0",
       symbol: "TEST",
       generative: {

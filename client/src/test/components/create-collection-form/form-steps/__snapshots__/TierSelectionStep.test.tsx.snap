@@ -656,6 +656,10 @@ exports[`TierSelectionStep generative does not match 1`] = `
                   "tiers": Array [],
                   "totalTierRarity": 0,
                 },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
+                },
                 "mintingPrice": "",
                 "predictions": Object {
                   "hype": -1,
@@ -1334,6 +1338,10 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                   "quantity": "1",
                   "tiers": Array [],
                   "totalTierRarity": 0,
+                },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -4299,6 +4307,10 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
                   "quantity": "1",
                   "tiers": Array [],
                   "totalTierRarity": 0,
+                },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
                 },
                 "mintingPrice": "",
                 "predictions": Object {

@@ -658,6 +658,10 @@ exports[`GeneralInfoStep Step Number does not match when generative 1`] = `
                   "tiers": Array [],
                   "totalTierRarity": 0,
                 },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
+                },
                 "mintingPrice": "",
                 "predictions": Object {
                   "hype": -1,
@@ -1339,6 +1343,10 @@ exports[`GeneralInfoStep Step Number does not match when not generative 1`] = `
                   "tiers": Array [],
                   "totalTierRarity": 0,
                 },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
+                },
                 "mintingPrice": "",
                 "predictions": Object {
                   "hype": -1,
@@ -2019,6 +2027,10 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                   "quantity": "1",
                   "tiers": Array [],
                   "totalTierRarity": 0,
+                },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -8339,6 +8351,422 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                 </div>
               </MuiPaperRoot>
             </ForwardRef(Paper)>
+            <ForwardRef(FormGroup)>
+              <MuiFormGroupRoot
+                className="MuiFormGroup-root"
+                ownerState={
+                  Object {
+                    "children": <ForwardRef(FormControlLabel)
+                      control={
+                        <ForwardRef(Checkbox)
+                          checked={false}
+                        />
+                      }
+                      label="Select to deploy your own Marketplace"
+                    />,
+                    "row": false,
+                  }
+                }
+              >
+                <Noop />
+                <div
+                  className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+                >
+                  <ForwardRef(FormControlLabel)
+                    control={
+                      <ForwardRef(Checkbox)
+                        checked={false}
+                      />
+                    }
+                    label="Select to deploy your own Marketplace"
+                  >
+                    <MuiFormControlLabelRoot
+                      className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd"
+                      ownerState={
+                        Object {
+                          "control": <ForwardRef(Checkbox)
+                            checked={false}
+                          />,
+                          "disabled": undefined,
+                          "label": "Select to deploy your own Marketplace",
+                          "labelPlacement": "end",
+                        }
+                      }
+                    >
+                      <Noop />
+                      <label
+                        className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                      >
+                        <ForwardRef(Checkbox)
+                          checked={false}
+                        >
+                          <MuiCheckboxRoot
+                            checked={false}
+                            checkedIcon={
+                              <Memo
+                                fontSize="medium"
+                              />
+                            }
+                            classes={
+                              Object {
+                                "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                              }
+                            }
+                            icon={
+                              <Memo
+                                fontSize="medium"
+                              />
+                            }
+                            inputProps={
+                              Object {
+                                "data-indeterminate": false,
+                              }
+                            }
+                            ownerState={
+                              Object {
+                                "checked": false,
+                                "color": "primary",
+                                "disabled": undefined,
+                                "indeterminate": false,
+                                "onChange": undefined,
+                                "size": "medium",
+                              }
+                            }
+                            type="checkbox"
+                          >
+                            <Noop />
+                            <ForwardRef(SwitchBase)
+                              checked={false}
+                              checkedIcon={
+                                <Memo
+                                  fontSize="medium"
+                                />
+                              }
+                              className="css-1uay1-MuiCheckbox-root"
+                              classes={
+                                Object {
+                                  "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                }
+                              }
+                              icon={
+                                <Memo
+                                  fontSize="medium"
+                                />
+                              }
+                              inputProps={
+                                Object {
+                                  "data-indeterminate": false,
+                                }
+                              }
+                              type="checkbox"
+                            >
+                              <Styled(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-1uay1-MuiCheckbox-root"
+                                classes={
+                                  Object {
+                                    "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                  }
+                                }
+                                component="span"
+                                focusRipple={true}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                ownerState={
+                                  Object {
+                                    "checked": false,
+                                    "checkedIcon": <Memo
+                                      fontSize="medium"
+                                    />,
+                                    "className": "css-1uay1-MuiCheckbox-root",
+                                    "classes": Object {
+                                      "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                    },
+                                    "disableFocusRipple": false,
+                                    "disabled": undefined,
+                                    "edge": false,
+                                    "icon": <Memo
+                                      fontSize="medium"
+                                    />,
+                                    "inputProps": Object {
+                                      "data-indeterminate": false,
+                                    },
+                                    "onChange": undefined,
+                                    "type": "checkbox",
+                                  }
+                                }
+                                tabIndex={null}
+                              >
+                                <Noop />
+                                <ForwardRef(ButtonBase)
+                                  centerRipple={true}
+                                  className="MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-qrihwo-MuiCheckbox-root"
+                                  classes={
+                                    Object {
+                                      "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                    }
+                                  }
+                                  component="span"
+                                  focusRipple={true}
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  tabIndex={null}
+                                >
+                                  <MuiButtonBaseRoot
+                                    as="span"
+                                    className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-qrihwo-MuiCheckbox-root"
+                                    classes={
+                                      Object {
+                                        "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                      }
+                                    }
+                                    onBlur={[Function]}
+                                    onContextMenu={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    ownerState={
+                                      Object {
+                                        "centerRipple": true,
+                                        "children": Array [
+                                          <Styled(input)
+                                            checked={false}
+                                            className="PrivateSwitchBase-input"
+                                            data-indeterminate={false}
+                                            onChange={[Function]}
+                                            ownerState={
+                                              Object {
+                                                "checked": false,
+                                                "checkedIcon": <Memo
+                                                  fontSize="medium"
+                                                />,
+                                                "className": "css-1uay1-MuiCheckbox-root",
+                                                "classes": Object {
+                                                  "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                                },
+                                                "disableFocusRipple": false,
+                                                "disabled": undefined,
+                                                "edge": false,
+                                                "icon": <Memo
+                                                  fontSize="medium"
+                                                />,
+                                                "inputProps": Object {
+                                                  "data-indeterminate": false,
+                                                },
+                                                "onChange": undefined,
+                                                "type": "checkbox",
+                                              }
+                                            }
+                                            type="checkbox"
+                                          />,
+                                          <Memo
+                                            fontSize="medium"
+                                          />,
+                                        ],
+                                        "className": "MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-qrihwo-MuiCheckbox-root",
+                                        "classes": Object {
+                                          "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                        },
+                                        "component": "span",
+                                        "disableRipple": false,
+                                        "disableTouchRipple": false,
+                                        "disabled": false,
+                                        "focusRipple": true,
+                                        "focusVisible": false,
+                                        "onBlur": [Function],
+                                        "onFocus": [Function],
+                                        "role": undefined,
+                                        "tabIndex": null,
+                                      }
+                                    }
+                                    tabIndex={null}
+                                  >
+                                    <Noop />
+                                    <span
+                                      className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-1v6klcs-MuiButtonBase-root-MuiCheckbox-root"
+                                      onBlur={[Function]}
+                                      onContextMenu={[Function]}
+                                      onDragLeave={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex={null}
+                                    >
+                                      <Styled(input)
+                                        checked={false}
+                                        className="PrivateSwitchBase-input"
+                                        data-indeterminate={false}
+                                        onChange={[Function]}
+                                        ownerState={
+                                          Object {
+                                            "checked": false,
+                                            "checkedIcon": <Memo
+                                              fontSize="medium"
+                                            />,
+                                            "className": "css-1uay1-MuiCheckbox-root",
+                                            "classes": Object {
+                                              "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                            },
+                                            "disableFocusRipple": false,
+                                            "disabled": undefined,
+                                            "edge": false,
+                                            "icon": <Memo
+                                              fontSize="medium"
+                                            />,
+                                            "inputProps": Object {
+                                              "data-indeterminate": false,
+                                            },
+                                            "onChange": undefined,
+                                            "type": "checkbox",
+                                          }
+                                        }
+                                        type="checkbox"
+                                      >
+                                        <Noop />
+                                        <input
+                                          checked={false}
+                                          className="PrivateSwitchBase-input css-1m9pwf3"
+                                          data-indeterminate={false}
+                                          onChange={[Function]}
+                                          type="checkbox"
+                                        />
+                                      </Styled(input)>
+                                      <ForwardRef(CheckBoxOutlineBlankIcon)
+                                        fontSize="medium"
+                                      >
+                                        <ForwardRef(SvgIcon)
+                                          data-testid="CheckBoxOutlineBlankIcon"
+                                          fontSize="medium"
+                                        >
+                                          <MuiSvgIconRoot
+                                            aria-hidden={true}
+                                            as="svg"
+                                            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                            data-testid="CheckBoxOutlineBlankIcon"
+                                            focusable="false"
+                                            ownerState={
+                                              Object {
+                                                "children": <path
+                                                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                                />,
+                                                "color": "inherit",
+                                                "component": "svg",
+                                                "data-testid": "CheckBoxOutlineBlankIcon",
+                                                "fontSize": "medium",
+                                                "viewBox": "0 0 24 24",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Noop />
+                                            <svg
+                                              aria-hidden={true}
+                                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              data-testid="CheckBoxOutlineBlankIcon"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                              />
+                                            </svg>
+                                          </MuiSvgIconRoot>
+                                        </ForwardRef(SvgIcon)>
+                                      </ForwardRef(CheckBoxOutlineBlankIcon)>
+                                      <ForwardRef(TouchRipple)
+                                        center={true}
+                                      >
+                                        <MuiTouchRippleRoot
+                                          className="MuiTouchRipple-root"
+                                        >
+                                          <Noop />
+                                          <span
+                                            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                          >
+                                            <TransitionGroup
+                                              childFactory={[Function]}
+                                              component={null}
+                                              exit={true}
+                                            />
+                                          </span>
+                                        </MuiTouchRippleRoot>
+                                      </ForwardRef(TouchRipple)>
+                                    </span>
+                                  </MuiButtonBaseRoot>
+                                </ForwardRef(ButtonBase)>
+                              </Styled(ForwardRef(ButtonBase))>
+                            </ForwardRef(SwitchBase)>
+                          </MuiCheckboxRoot>
+                        </ForwardRef(Checkbox)>
+                        <ForwardRef(Typography)
+                          className="MuiFormControlLabel-label"
+                          component="span"
+                        >
+                          <MuiTypographyRoot
+                            as="span"
+                            className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label"
+                            ownerState={
+                              Object {
+                                "align": "inherit",
+                                "children": "Select to deploy your own Marketplace",
+                                "className": "MuiFormControlLabel-label",
+                                "color": undefined,
+                                "component": "span",
+                                "gutterBottom": false,
+                                "noWrap": false,
+                                "paragraph": false,
+                                "sx": Object {
+                                  "color": undefined,
+                                },
+                                "variant": "body1",
+                                "variantMapping": Object {
+                                  "body1": "p",
+                                  "body2": "p",
+                                  "h1": "h1",
+                                  "h2": "h2",
+                                  "h3": "h3",
+                                  "h4": "h4",
+                                  "h5": "h5",
+                                  "h6": "h6",
+                                  "inherit": "p",
+                                  "subtitle1": "h6",
+                                  "subtitle2": "h6",
+                                },
+                              }
+                            }
+                            sx={
+                              Object {
+                                "color": undefined,
+                              }
+                            }
+                          >
+                            <Noop />
+                            <span
+                              className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                            >
+                              Select to deploy your own Marketplace
+                            </span>
+                          </MuiTypographyRoot>
+                        </ForwardRef(Typography)>
+                      </label>
+                    </MuiFormControlLabelRoot>
+                  </ForwardRef(FormControlLabel)>
+                </div>
+              </MuiFormGroupRoot>
+            </ForwardRef(FormGroup)>
           </GeneralInfoStep>
         </NetworkProvider>
       </InnerThemeProvider>
@@ -9004,6 +9432,10 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                   "quantity": "1",
                   "tiers": Array [],
                   "totalTierRarity": 0,
+                },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
                 },
                 "mintingPrice": "",
                 "predictions": Object {
@@ -15324,6 +15756,422 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                 </div>
               </MuiPaperRoot>
             </ForwardRef(Paper)>
+            <ForwardRef(FormGroup)>
+              <MuiFormGroupRoot
+                className="MuiFormGroup-root"
+                ownerState={
+                  Object {
+                    "children": <ForwardRef(FormControlLabel)
+                      control={
+                        <ForwardRef(Checkbox)
+                          checked={false}
+                        />
+                      }
+                      label="Select to deploy your own Marketplace"
+                    />,
+                    "row": false,
+                  }
+                }
+              >
+                <Noop />
+                <div
+                  className="MuiFormGroup-root css-dmmspl-MuiFormGroup-root"
+                >
+                  <ForwardRef(FormControlLabel)
+                    control={
+                      <ForwardRef(Checkbox)
+                        checked={false}
+                      />
+                    }
+                    label="Select to deploy your own Marketplace"
+                  >
+                    <MuiFormControlLabelRoot
+                      className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd"
+                      ownerState={
+                        Object {
+                          "control": <ForwardRef(Checkbox)
+                            checked={false}
+                          />,
+                          "disabled": undefined,
+                          "label": "Select to deploy your own Marketplace",
+                          "labelPlacement": "end",
+                        }
+                      }
+                    >
+                      <Noop />
+                      <label
+                        className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                      >
+                        <ForwardRef(Checkbox)
+                          checked={false}
+                        >
+                          <MuiCheckboxRoot
+                            checked={false}
+                            checkedIcon={
+                              <Memo
+                                fontSize="medium"
+                              />
+                            }
+                            classes={
+                              Object {
+                                "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                              }
+                            }
+                            icon={
+                              <Memo
+                                fontSize="medium"
+                              />
+                            }
+                            inputProps={
+                              Object {
+                                "data-indeterminate": false,
+                              }
+                            }
+                            ownerState={
+                              Object {
+                                "checked": false,
+                                "color": "primary",
+                                "disabled": undefined,
+                                "indeterminate": false,
+                                "onChange": undefined,
+                                "size": "medium",
+                              }
+                            }
+                            type="checkbox"
+                          >
+                            <Noop />
+                            <ForwardRef(SwitchBase)
+                              checked={false}
+                              checkedIcon={
+                                <Memo
+                                  fontSize="medium"
+                                />
+                              }
+                              className="css-1uay1-MuiCheckbox-root"
+                              classes={
+                                Object {
+                                  "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                }
+                              }
+                              icon={
+                                <Memo
+                                  fontSize="medium"
+                                />
+                              }
+                              inputProps={
+                                Object {
+                                  "data-indeterminate": false,
+                                }
+                              }
+                              type="checkbox"
+                            >
+                              <Styled(ForwardRef(ButtonBase))
+                                centerRipple={true}
+                                className="MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-1uay1-MuiCheckbox-root"
+                                classes={
+                                  Object {
+                                    "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                  }
+                                }
+                                component="span"
+                                focusRipple={true}
+                                onBlur={[Function]}
+                                onFocus={[Function]}
+                                ownerState={
+                                  Object {
+                                    "checked": false,
+                                    "checkedIcon": <Memo
+                                      fontSize="medium"
+                                    />,
+                                    "className": "css-1uay1-MuiCheckbox-root",
+                                    "classes": Object {
+                                      "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                    },
+                                    "disableFocusRipple": false,
+                                    "disabled": undefined,
+                                    "edge": false,
+                                    "icon": <Memo
+                                      fontSize="medium"
+                                    />,
+                                    "inputProps": Object {
+                                      "data-indeterminate": false,
+                                    },
+                                    "onChange": undefined,
+                                    "type": "checkbox",
+                                  }
+                                }
+                                tabIndex={null}
+                              >
+                                <Noop />
+                                <ForwardRef(ButtonBase)
+                                  centerRipple={true}
+                                  className="MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-qrihwo-MuiCheckbox-root"
+                                  classes={
+                                    Object {
+                                      "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                    }
+                                  }
+                                  component="span"
+                                  focusRipple={true}
+                                  onBlur={[Function]}
+                                  onFocus={[Function]}
+                                  tabIndex={null}
+                                >
+                                  <MuiButtonBaseRoot
+                                    as="span"
+                                    className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-qrihwo-MuiCheckbox-root"
+                                    classes={
+                                      Object {
+                                        "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                      }
+                                    }
+                                    onBlur={[Function]}
+                                    onContextMenu={[Function]}
+                                    onDragLeave={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    onKeyUp={[Function]}
+                                    onMouseDown={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseUp={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchMove={[Function]}
+                                    onTouchStart={[Function]}
+                                    ownerState={
+                                      Object {
+                                        "centerRipple": true,
+                                        "children": Array [
+                                          <Styled(input)
+                                            checked={false}
+                                            className="PrivateSwitchBase-input"
+                                            data-indeterminate={false}
+                                            onChange={[Function]}
+                                            ownerState={
+                                              Object {
+                                                "checked": false,
+                                                "checkedIcon": <Memo
+                                                  fontSize="medium"
+                                                />,
+                                                "className": "css-1uay1-MuiCheckbox-root",
+                                                "classes": Object {
+                                                  "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                                },
+                                                "disableFocusRipple": false,
+                                                "disabled": undefined,
+                                                "edge": false,
+                                                "icon": <Memo
+                                                  fontSize="medium"
+                                                />,
+                                                "inputProps": Object {
+                                                  "data-indeterminate": false,
+                                                },
+                                                "onChange": undefined,
+                                                "type": "checkbox",
+                                              }
+                                            }
+                                            type="checkbox"
+                                          />,
+                                          <Memo
+                                            fontSize="medium"
+                                          />,
+                                        ],
+                                        "className": "MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-qrihwo-MuiCheckbox-root",
+                                        "classes": Object {
+                                          "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                        },
+                                        "component": "span",
+                                        "disableRipple": false,
+                                        "disableTouchRipple": false,
+                                        "disabled": false,
+                                        "focusRipple": true,
+                                        "focusVisible": false,
+                                        "onBlur": [Function],
+                                        "onFocus": [Function],
+                                        "role": undefined,
+                                        "tabIndex": null,
+                                      }
+                                    }
+                                    tabIndex={null}
+                                  >
+                                    <Noop />
+                                    <span
+                                      className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root css-1v6klcs-MuiButtonBase-root-MuiCheckbox-root"
+                                      onBlur={[Function]}
+                                      onContextMenu={[Function]}
+                                      onDragLeave={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex={null}
+                                    >
+                                      <Styled(input)
+                                        checked={false}
+                                        className="PrivateSwitchBase-input"
+                                        data-indeterminate={false}
+                                        onChange={[Function]}
+                                        ownerState={
+                                          Object {
+                                            "checked": false,
+                                            "checkedIcon": <Memo
+                                              fontSize="medium"
+                                            />,
+                                            "className": "css-1uay1-MuiCheckbox-root",
+                                            "classes": Object {
+                                              "root": "MuiCheckbox-root MuiCheckbox-colorPrimary",
+                                            },
+                                            "disableFocusRipple": false,
+                                            "disabled": undefined,
+                                            "edge": false,
+                                            "icon": <Memo
+                                              fontSize="medium"
+                                            />,
+                                            "inputProps": Object {
+                                              "data-indeterminate": false,
+                                            },
+                                            "onChange": undefined,
+                                            "type": "checkbox",
+                                          }
+                                        }
+                                        type="checkbox"
+                                      >
+                                        <Noop />
+                                        <input
+                                          checked={false}
+                                          className="PrivateSwitchBase-input css-1m9pwf3"
+                                          data-indeterminate={false}
+                                          onChange={[Function]}
+                                          type="checkbox"
+                                        />
+                                      </Styled(input)>
+                                      <ForwardRef(CheckBoxOutlineBlankIcon)
+                                        fontSize="medium"
+                                      >
+                                        <ForwardRef(SvgIcon)
+                                          data-testid="CheckBoxOutlineBlankIcon"
+                                          fontSize="medium"
+                                        >
+                                          <MuiSvgIconRoot
+                                            aria-hidden={true}
+                                            as="svg"
+                                            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                            data-testid="CheckBoxOutlineBlankIcon"
+                                            focusable="false"
+                                            ownerState={
+                                              Object {
+                                                "children": <path
+                                                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                                />,
+                                                "color": "inherit",
+                                                "component": "svg",
+                                                "data-testid": "CheckBoxOutlineBlankIcon",
+                                                "fontSize": "medium",
+                                                "viewBox": "0 0 24 24",
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <Noop />
+                                            <svg
+                                              aria-hidden={true}
+                                              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              data-testid="CheckBoxOutlineBlankIcon"
+                                              focusable="false"
+                                              viewBox="0 0 24 24"
+                                            >
+                                              <path
+                                                d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                                              />
+                                            </svg>
+                                          </MuiSvgIconRoot>
+                                        </ForwardRef(SvgIcon)>
+                                      </ForwardRef(CheckBoxOutlineBlankIcon)>
+                                      <ForwardRef(TouchRipple)
+                                        center={true}
+                                      >
+                                        <MuiTouchRippleRoot
+                                          className="MuiTouchRipple-root"
+                                        >
+                                          <Noop />
+                                          <span
+                                            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                                          >
+                                            <TransitionGroup
+                                              childFactory={[Function]}
+                                              component={null}
+                                              exit={true}
+                                            />
+                                          </span>
+                                        </MuiTouchRippleRoot>
+                                      </ForwardRef(TouchRipple)>
+                                    </span>
+                                  </MuiButtonBaseRoot>
+                                </ForwardRef(ButtonBase)>
+                              </Styled(ForwardRef(ButtonBase))>
+                            </ForwardRef(SwitchBase)>
+                          </MuiCheckboxRoot>
+                        </ForwardRef(Checkbox)>
+                        <ForwardRef(Typography)
+                          className="MuiFormControlLabel-label"
+                          component="span"
+                        >
+                          <MuiTypographyRoot
+                            as="span"
+                            className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label"
+                            ownerState={
+                              Object {
+                                "align": "inherit",
+                                "children": "Select to deploy your own Marketplace",
+                                "className": "MuiFormControlLabel-label",
+                                "color": undefined,
+                                "component": "span",
+                                "gutterBottom": false,
+                                "noWrap": false,
+                                "paragraph": false,
+                                "sx": Object {
+                                  "color": undefined,
+                                },
+                                "variant": "body1",
+                                "variantMapping": Object {
+                                  "body1": "p",
+                                  "body2": "p",
+                                  "h1": "h1",
+                                  "h2": "h2",
+                                  "h3": "h3",
+                                  "h4": "h4",
+                                  "h5": "h5",
+                                  "h6": "h6",
+                                  "inherit": "p",
+                                  "subtitle1": "h6",
+                                  "subtitle2": "h6",
+                                },
+                              }
+                            }
+                            sx={
+                              Object {
+                                "color": undefined,
+                              }
+                            }
+                          >
+                            <Noop />
+                            <span
+                              className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+                            >
+                              Select to deploy your own Marketplace
+                            </span>
+                          </MuiTypographyRoot>
+                        </ForwardRef(Typography)>
+                      </label>
+                    </MuiFormControlLabelRoot>
+                  </ForwardRef(FormControlLabel)>
+                </div>
+              </MuiFormGroupRoot>
+            </ForwardRef(FormGroup)>
           </GeneralInfoStep>
         </NetworkProvider>
       </InnerThemeProvider>

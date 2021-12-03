@@ -677,6 +677,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                         handleCollNameChange={[Function]}
                         handleDescriptionChange={[Function]}
                         handleMintPriceChange={[Function]}
+                        handleMplaceRoyaltyChange={[Function]}
+                        handleMplaceWantedChange={[Function]}
                         handleRedditChange={[Function]}
                         handleSymbolChange={[Function]}
                         handleTwitterChange={[Function]}
@@ -691,6 +693,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "quantity": "",
                               "tiers": Array [],
                               "totalTierRarity": 0,
+                            },
+                            "marketplace": Object {
+                              "royalty": "",
+                              "wanted": false,
                             },
                             "mintingPrice": "",
                             "predictions": Object {
@@ -3608,6 +3614,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                               "totalTierRarity": 0,
                             },
+                            "marketplace": Object {
+                              "royalty": "",
+                              "wanted": false,
+                            },
                             "mintingPrice": "",
                             "predictions": Object {
                               "hype": -1,
@@ -3642,6 +3652,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                               "totalTierRarity": 0,
                             },
+                            "marketplace": Object {
+                              "royalty": "",
+                              "wanted": false,
+                            },
                             "mintingPrice": "",
                             "predictions": Object {
                               "hype": -1,
@@ -3675,6 +3689,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "quantity": "",
                               "tiers": Array [],
                               "totalTierRarity": 0,
+                            },
+                            "marketplace": Object {
+                              "royalty": "",
+                              "wanted": false,
                             },
                             "mintingPrice": "",
                             "predictions": Object {
@@ -3712,6 +3730,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "tiers": Array [],
                               "totalTierRarity": 0,
                             },
+                            "marketplace": Object {
+                              "royalty": "",
+                              "wanted": false,
+                            },
                             "mintingPrice": "",
                             "predictions": Object {
                               "hype": -1,
@@ -3744,6 +3766,10 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "quantity": "",
                               "tiers": Array [],
                               "totalTierRarity": 0,
+                            },
+                            "marketplace": Object {
+                              "royalty": "",
+                              "wanted": false,
                             },
                             "mintingPrice": "",
                             "predictions": Object {
