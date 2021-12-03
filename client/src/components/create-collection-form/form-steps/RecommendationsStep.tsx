@@ -36,6 +36,7 @@ interface PropsT {
   state: FormStateI;
   handleChangeCollName: SetStateAction<string>;
   changedCollName: string;
+  isLoading: boolean;
 }
 
 interface SectionProps {
@@ -81,6 +82,7 @@ const RecommendationsStep = ({
   state,
   handleChangeCollName,
   changedCollName,
+  isLoading,
 }: PropsT): JSX.Element => {
   // TODO: connect with ML
   if (
@@ -93,7 +95,12 @@ const RecommendationsStep = ({
   const RecommendedNamesList = () => (
     <List>
       <ListItem
-        onClick={() => handleChangeCollName(state.collectionName)}
+        onClick={() => {
+          if (isLoading) {
+            return;
+          }
+          handleChangeCollName(state.collectionName);
+        }}
         sx={{
           ...listItemStyle,
           border:
@@ -104,7 +111,12 @@ const RecommendationsStep = ({
       {state.predictions.names.map((nameObj, idx) => {
         return (
           <ListItem
-            onClick={() => handleChangeCollName(nameObj.name)}
+            onClick={() => {
+              if (isLoading) {
+                return;
+              }
+              handleChangeCollName(nameObj.name);
+            }}
             sx={{
               ...listItemStyle,
               border: changedCollName === nameObj.name ? "3px solid" : "none",

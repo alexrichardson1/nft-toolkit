@@ -198,6 +198,7 @@ const CreateCollectionForm = (): JSX.Element => {
       />
       <RecommendationsStep
         state={state}
+        isLoading={isLoading}
         stepNumber={stepNumber}
         generative={generative}
         changedCollName={newCollName}
