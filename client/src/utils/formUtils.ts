@@ -151,10 +151,12 @@ export const uploadCollection = async (
 export const addDeployedAddress = async (
   creator: string,
   chainId: number,
-  address: string
+  address: string,
+  marketAddress?: string
 ): Promise<void> => {
   await axios.post(
-    `${API_URL}/collection/deployed/${creator}/${chainId}/${address}`
+    `${API_URL}/collection/deployed/${creator}/${chainId}/${address}`,
+    { marketAddress }
   );
 };
 
