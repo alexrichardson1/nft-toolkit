@@ -18,7 +18,7 @@ import {
   GEN_STEPS,
   handleFormSubmit,
   STATIC_STEPS,
-} from "utils/collection-form/FormHandles";
+} from "utils/collection-form/formHandles";
 import {
   handleImageDelete,
   handleImageDrop,
@@ -142,78 +142,66 @@ const CreateCollectionForm = (): JSX.Element => {
       spacing={2}
       data-testid="create-form">
       <GeneralInfoStep
-        handleTwitterChange={(e) => handleTwitterChange(e, dispatch)}
-        handleRedditChange={(e) => handleRedditChange(e, dispatch)}
+        state={state}
         generative={generative}
         stepNumber={stepNumber}
-        state={state}
-        handleCollNameChange={(e) => handleCollNameChange(e, dispatch)}
-        handleDescriptionChange={(e) => handleDescriptionChange(e, dispatch)}
-        handleMintPriceChange={(e) => handleMintPriceChange(e, dispatch)}
-        handleSymbolChange={(e) => handleSymbolChange(e, dispatch)}
+        handleRedditChange={handleRedditChange(dispatch)}
+        handleSymbolChange={handleSymbolChange(dispatch)}
+        handleTwitterChange={handleTwitterChange(dispatch)}
+        handleCollNameChange={handleCollNameChange(dispatch)}
+        handleMintPriceChange={handleMintPriceChange(dispatch)}
+        handleDescriptionChange={handleDescriptionChange(dispatch)}
       />
       <TypeOfArtStep
-        handleNextStep={handleNextStep}
-        setGenerative={setGenerative}
         stepNumber={stepNumber}
+        setGenerative={setGenerative}
+        handleNextStep={handleNextStep}
       />
       <StaticArtStep
-        generative={generative}
-        stepNumber={stepNumber}
         state={state}
         isLoading={isLoading}
+        generative={generative}
+        stepNumber={stepNumber}
         handleImgDrop={handleImageDrop(dispatch, generative)}
         handleImgDelete={handleImageDelete(dispatch, generative)}
-        handleImgNameChange={(e) =>
-          handleImgNameChange(e, dispatch, generative)
-        }
-        handleImgDescChange={(e) => handleImgDescChange(e, dispatch)}
+        handleImgNameChange={handleImgNameChange(dispatch, generative)}
+        handleImgDescChange={handleImgDescChange(dispatch)}
       />
       <TierSelectionStep
-        handleTierAdd={(e) => handleTierAdd(e, dispatch)}
-        handleTierRemoval={(e) => handleTierRemoval(e, dispatch)}
-        handleTierReorder={(e) => handleTierReorder(e, dispatch)}
         state={state}
         stepNumber={stepNumber}
         generative={generative}
+        handleTierAdd={handleTierAdd(dispatch)}
+        handleTierRemoval={handleTierRemoval(dispatch)}
+        handleTierReorder={handleTierReorder(dispatch)}
         handleTierProbChange={handleTierProbChange(dispatch)}
       />
       <LayerSelectionStep
-        handleLayerRemoval={(layerName) =>
-          handleLayerRemoval(layerName, dispatch)
-        }
-        handleLayerReorder={(layerName) =>
-          handleLayerReorder(layerName, dispatch)
-        }
-        generative={generative}
-        stepNumber={stepNumber}
         state={state}
-        handleLayerAddition={(newLayerName) =>
-          handleLayerAddition(newLayerName, dispatch)
-        }
-        handleLayerProbChange={(layerName) =>
-          handleLayerProbChange(layerName, dispatch)
-        }
+        stepNumber={stepNumber}
+        generative={generative}
+        handleLayerRemoval={handleLayerRemoval(dispatch)}
+        handleLayerReorder={handleLayerReorder(dispatch)}
+        handleLayerAddition={handleLayerAddition(dispatch)}
+        handleLayerProbChange={handleLayerProbChange(dispatch)}
       />
       <LayerImageUpload
-        handleImgRarityChange={handleImgRarityChange(dispatch)}
-        isLoading={isLoading}
         state={state}
+        isLoading={isLoading}
+        stepNumber={stepNumber}
         generative={generative}
         handleLayerImgDrop={handleImageDrop(dispatch, generative)}
+        handleQuantityChange={handleQuantityChange(dispatch)}
         handleLayerImgDelete={handleImageDelete(dispatch, generative)}
-        handleLayerImgNameChange={(e) =>
-          handleImgNameChange(e, dispatch, generative)
-        }
-        handleQuantityChange={(e) => handleQuantityChange(e, dispatch)}
-        stepNumber={stepNumber}
+        handleImgRarityChange={handleImgRarityChange(dispatch)}
+        handleLayerImgNameChange={handleImgNameChange(dispatch, generative)}
       />
       <RecommendationsStep
-        generative={generative}
-        stepNumber={stepNumber}
         state={state}
-        handleChangeCollName={setNewCollName}
+        stepNumber={stepNumber}
+        generative={generative}
         changedCollName={newCollName}
+        handleChangeCollName={setNewCollName}
       />
       <Box sx={formFooterStyle}>
         <FormAlert
@@ -223,10 +211,10 @@ const CreateCollectionForm = (): JSX.Element => {
         />
         <FormButtons
           isLoading={isLoading}
-          loadingMessage={loadingMessage}
-          handlePrevStep={handlePrevStep}
           isLastStep={IS_LAST_STEP}
           stepNumber={stepNumber}
+          loadingMessage={loadingMessage}
+          handlePrevStep={handlePrevStep}
         />
       </Box>
     </Stack>

@@ -272,7 +272,8 @@ export const handleFormSubmit = async (
       showFormAlert,
       setTxAddress
     );
-  } catch {
+  } catch (error) {
+    console.error(error);
     stopLoading(setLoadingMessage, setIsLoading);
     showFormAlert("error", "Unable to create collection");
   }

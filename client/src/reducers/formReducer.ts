@@ -21,6 +21,7 @@ export const getImgObj = (image: File): ImageI => ({
   name: image.name.replace(FILE_EXTENSION, DEFAULT_STRING),
   url: URL.createObjectURL(image),
   image: image,
+  description: "",
 });
 
 export const getLayerObj = (name: string): LayerI => ({
@@ -90,14 +91,10 @@ const addImagesStatic = (state: FormStateI, action: FormActionI) => {
       newImages++;
     }
   });
-  return {
-    ...state,
-    static: {
-      ...state.static,
-      numberOfImages: state.static.numberOfImages + newImages,
-    },
-  };
+  state.static.numberOfImages += newImages;
+  return { ...state };
 };
+
 const changeImageDescStatic = (state: FormStateI, action: FormActionI) => {
   const imgDescChange = undefinedCheck(
     action.payload.imageDescChange,
@@ -126,16 +123,11 @@ const deleteImageStatic = (state: FormStateI, action: FormActionI) => {
   const deleteId = undefinedCheck(action.payload.deleteId, "deleteId required");
   const imgUrl = state.static.images[deleteId]?.url;
   delete state.static.images[deleteId];
+  state.static.numberOfImages--;
   if (imgUrl) {
     URL.revokeObjectURL(imgUrl);
   }
-  return {
-    ...state,
-    static: {
-      ...state.static,
-      numberOfImages: state.static.numberOfImages - 1,
-    },
-  };
+  return { ...state };
 };
 const addImagesGen = (state: FormStateI, action: FormActionI) => {
   const imgsToAdd = undefinedCheck(
@@ -280,13 +272,8 @@ const removeLayer = (state: FormStateI, action: FormActionI) => {
     Object.values(layer.images).map((image) => URL.revokeObjectURL(image.url));
     return false;
   });
-  return {
-    ...state,
-    generative: {
-      ...state.generative,
-      numberOfLayers: state.generative.numberOfLayers - 1,
-    },
-  };
+  state.generative.numberOfLayers--;
+  return { ...state };
 };
 const addTier = (state: FormStateI, action: FormActionI) => {
   const newTier = undefinedCheck(action.payload.newTier, "newTier required");
@@ -349,13 +336,8 @@ const removeTier = (state: FormStateI, action: FormActionI) => {
     }
     return true;
   });
-  return {
-    ...state,
-    generative: {
-      ...state.generative,
-      numberOfTiers: state.generative.numberOfTiers - 1,
-    },
-  };
+  state.generative.numberOfTiers--;
+  return { ...state };
 };
 const changePredictions = (state: FormStateI, action: FormActionI) => {
   const predictions = undefinedCheck(
