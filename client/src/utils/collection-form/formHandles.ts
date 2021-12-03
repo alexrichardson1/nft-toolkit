@@ -4,6 +4,7 @@ import FormActions from "actions/formActions";
 import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
+import { Market__factory as MarketFactory } from "typechain";
 import {
   addDeployedAddress,
   startLoading,
@@ -89,14 +90,31 @@ const createCollection = async (
   chainId: number,
   showFormAlert: (severity: AlertColor, message: string) => void,
   setIsLoading: SetStateAction<boolean>,
-  setTxAddress: SetStateAction<string>
+  setTxAddress: SetStateAction<string>,
+  royalty?: string
 ) => {
   const signer = library.getSigner();
   setLoadingMessage("Deploying...");
   const txResponse = await signer.sendTransaction(tx);
   setLoadingMessage("Confirming...");
   const txReceipt = await txResponse.wait();
-  addDeployedAddress(account, chainId, txReceipt.contractAddress);
+  let marketAddress;
+  if (royalty) {
+    const marketFactory = new MarketFactory(signer);
+    setLoadingMessage("Deploying Market...");
+    const marketContract = await marketFactory.deploy(
+      royalty,
+      txReceipt.contractAddress,
+      "0x3b00ef435fa4fcff5c209a37d1f3dcff37c705ad"
+    );
+    marketAddress = marketContract.address;
+  }
+  addDeployedAddress(
+    account,
+    chainId,
+    txReceipt.contractAddress,
+    marketAddress
+  );
   showFormAlert("success", "Collection Creation Successful");
   stopLoading(setLoadingMessage, setIsLoading);
   setTxAddress(txReceipt.contractAddress);
@@ -214,7 +232,8 @@ const handleLastStep = async (
     chainId,
     showFormAlert,
     setIsLoading,
-    setTxAddress
+    setTxAddress,
+    state.marketplace.wanted ? state.marketplace.royalty : void 0
   );
 };
 
