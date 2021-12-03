@@ -78,15 +78,6 @@ interface ContractTokenI {
   attributes: ContractAttributeI[];
 }
 
-interface TokenI {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  price?: string;
-  attributes: AttributeI;
-}
-
 interface ParamsI {
   paramChainId: string;
   address: string;
