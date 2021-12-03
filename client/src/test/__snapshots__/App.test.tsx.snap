@@ -17664,6 +17664,7 @@ exports[`App snapshot 1`] = `
                                                   changedCollName=""
                                                   generative={false}
                                                   handleChangeCollName={[Function]}
+                                                  isLoading={false}
                                                   state={
                                                     Object {
                                                       "collectionName": "",
