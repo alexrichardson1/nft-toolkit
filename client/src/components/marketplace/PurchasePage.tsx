@@ -1,3 +1,5 @@
+/* eslint-disable max-lines-per-function */
+import { LoadingButton } from "@mui/lab";
 import { Collapse, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -6,8 +8,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import { SxProps } from "@mui/system/styleFunctionSx";
+import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import { BigNumber } from "ethers";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -17,6 +21,7 @@ import {
 } from "typechain";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
+import { TokenI } from "./Market";
 
 const dummyData: TokenI = {
   name: "APE 1",
@@ -25,7 +30,8 @@ const dummyData: TokenI = {
   image: "",
   attributes: { tier: "Legendary" },
   id: 0,
-  price: "69",
+  price: BigNumber.from(0),
+  isOwner: true,
 };
 
 const paperStyle: SxProps = {
@@ -41,9 +47,11 @@ const PurchasePage = (): JSX.Element => {
   const { paramChainId, tokenId, address, marketAddress } = useParams<
     ParamsI & { tokenId: string; marketAddress: string }
   >();
+  const { account, library } = useWeb3React();
   const dispatch = useAppDispatch();
   const [token, setToken] = useState<TokenI>(dummyData);
   const [symbol, setSymbol] = useState("");
+  const [loadingButton, setLoadingButton] = useState(false);
 
   useEffect(() => {
     async function getTokenData() {
@@ -69,12 +77,11 @@ const PurchasePage = (): JSX.Element => {
         attributeMap[attr.trait_type] = attr.value;
       });
       res.data.attributes = attributeMap;
-      res.data.price = await (
-        await marketContract.listings(res.data.id)
-      ).toString();
+      res.data.price = await marketContract.listings(res.data.id);
+      const curOwner = await nftContract.ownerOf(tokenId);
+      res.data.isOwner = curOwner === account;
       const token = res.data;
       setToken(token);
-
       const symbol = await nftContract.symbol();
       setSymbol(symbol);
 
@@ -82,7 +89,92 @@ const PurchasePage = (): JSX.Element => {
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
     }
     getTokenData();
-  }, []);
+  }, [loadingButton]);
+
+  const handlePurchase = async () => {
+    const marketContract = MarketFactory.connect(
+      marketAddress,
+      library.getSigner()
+    );
+    setLoadingButton(true);
+    const tx = await marketContract.buy(tokenId, {
+      value: BigNumber.from(token.price),
+    });
+    await tx.wait();
+    setLoadingButton(false);
+  };
+
+  const handleListing = async () => {
+    const marketContract = MarketFactory.connect(
+      marketAddress,
+      library.getSigner()
+    );
+    const nftContract = NftFactory.connect(address, library.getSigner());
+    setLoadingButton(true);
+    try {
+      const approveTx = await nftContract.approve(marketAddress, tokenId);
+      await approveTx.wait();
+      const tx = await marketContract.sellListing(tokenId, "100000", false);
+      await tx.wait();
+    } finally {
+      setLoadingButton(false);
+    }
+  };
+
+  const handleDelist = async () => {
+    const marketContract = MarketFactory.connect(
+      marketAddress,
+      library.getSigner()
+    );
+    setLoadingButton(true);
+    try {
+      const tx = await marketContract.delist(tokenId);
+      await tx.wait();
+    } finally {
+      setLoadingButton(false);
+    }
+  };
+
+  const buttons = (token: TokenI) => {
+    if (token.isOwner) {
+      if (!token.price.eq(0)) {
+        return (
+          <LoadingButton
+            loading={loadingButton}
+            variant="contained"
+            size="large"
+            border-radius="10px"
+            onClick={handleDelist}>
+            Delist Token
+          </LoadingButton>
+        );
+      }
+      return (
+        <LoadingButton
+          loading={loadingButton}
+          variant="contained"
+          size="large"
+          border-radius="10px"
+          onClick={handleListing}>
+          List Token
+        </LoadingButton>
+      );
+    }
+    if (!token.price.eq(0)) {
+      return (
+        <LoadingButton
+          loading={loadingButton}
+          variant="contained"
+          size="large"
+          border-radius="10px"
+          onClick={handlePurchase}>
+          Purchase
+        </LoadingButton>
+      );
+    }
+
+    return <></>;
+  };
 
   return (
     <Collapse sx={{ width: 1 }} in={token !== dummyData}>
@@ -144,11 +236,7 @@ const PurchasePage = (): JSX.Element => {
                 </Typography>
               </Box>
             </ListItem> */}
-            <Box>
-              <Button variant="contained" size="large" border-radius="10px">
-                Purchase
-              </Button>
-            </Box>
+            <Box>{buttons(token)}</Box>
           </Box>
         </Box>
       </Box>
