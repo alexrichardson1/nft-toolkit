@@ -1,26 +1,24 @@
 import { DragEndEvent } from "@dnd-kit/core";
 import FormActions from "actions/formActions";
 import { FormActionI } from "reducers/formReducerTypes";
-import { inputDispatch } from "./FormHandles";
+import { inputDispatch } from "./formHandles";
 
-export const handleLayerAddition = (
-  newLayerName: string,
-  dispatch: React.Dispatch<FormActionI>
-): void => {
-  dispatch({
-    type: FormActions.ADD_LAYER,
-    payload: { newLayer: { name: newLayerName } },
-  });
+export const handleLayerAddition = (dispatch: React.Dispatch<FormActionI>) => {
+  return (newLayerName: string): void => {
+    dispatch({
+      type: FormActions.ADD_LAYER,
+      payload: { newLayer: { name: newLayerName } },
+    });
+  };
 };
 
-export const handleLayerRemoval = (
-  layerName: string,
-  dispatch: React.Dispatch<FormActionI>
-): void => {
-  dispatch({
-    type: FormActions.REMOVE_LAYER,
-    payload: { deleteLayerName: layerName },
-  });
+export const handleLayerRemoval = (dispatch: React.Dispatch<FormActionI>) => {
+  return (layerName: string): void => {
+    dispatch({
+      type: FormActions.REMOVE_LAYER,
+      payload: { deleteLayerName: layerName },
+    });
+  };
 };
 
 export const handleImgRarityChange = (
@@ -38,30 +36,32 @@ export const handleImgRarityChange = (
   };
 };
 
-export const handleLayerReorder = (
-  e: DragEndEvent,
-  dispatch: React.Dispatch<FormActionI>
-): void => {
-  dispatch({
-    type: FormActions.CHANGE_LAYER_PRECEDENCE,
-    payload: { dragEndEvent: e },
-  });
-};
-
-export const handleLayerProbChange =
-  (layerName: string, dispatch: React.Dispatch<FormActionI>) =>
-  (e: InputEventT): void => {
+export const handleLayerReorder = (dispatch: React.Dispatch<FormActionI>) => {
+  return (e: DragEndEvent): void => {
     dispatch({
-      type: FormActions.CHANGE_LAYER_PROBABILITY,
-      payload: {
-        layerProbabilityChange: { layerName, newProbability: e.target.value },
-      },
+      type: FormActions.CHANGE_LAYER_PRECEDENCE,
+      payload: { dragEndEvent: e },
     });
   };
+};
 
-export const handleQuantityChange = (
-  e: InputEventT,
+export const handleLayerProbChange = (
   dispatch: React.Dispatch<FormActionI>
-): void => {
-  inputDispatch(e, dispatch, FormActions.CHANGE_QUANTITY, "quantity");
+) => {
+  return (layerName: string) => {
+    return (e: InputEventT): void => {
+      dispatch({
+        type: FormActions.CHANGE_LAYER_PROBABILITY,
+        payload: {
+          layerProbabilityChange: { layerName, newProbability: e.target.value },
+        },
+      });
+    };
+  };
+};
+
+export const handleQuantityChange = (dispatch: React.Dispatch<FormActionI>) => {
+  return (e: InputEventT): void => {
+    inputDispatch(e, dispatch, FormActions.CHANGE_QUANTITY, "quantity");
+  };
 };

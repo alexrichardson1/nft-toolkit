@@ -31,24 +31,22 @@ export const handleImageDelete = (
   generative: boolean
 ) => {
   return (deleteId: string, layerName = ""): void => {
-    const payload = generative
-      ? { deleteGen: { deleteId, layerName } }
-      : { deleteId };
     dispatch({
       type: generative
         ? FormActions.DELETE_IMAGE_GEN
         : FormActions.DELETE_IMAGE_STATIC,
-      payload,
+      payload: generative
+        ? { deleteGen: { deleteId, layerName } }
+        : { deleteId },
     });
   };
 };
 
 export const handleImgNameChange = (
-  e: InputEventT,
   dispatch: React.Dispatch<FormActionI>,
   generative: boolean
 ) => {
-  return (imageid: string, layerName = ""): void => {
+  return (e: InputEventT, imageid: string, layerName = ""): void => {
     const payload = generative
       ? {
           modifyImgObjGen: {
@@ -72,11 +70,8 @@ export const handleImgNameChange = (
   };
 };
 
-export const handleImgDescChange = (
-  e: InputEventT,
-  dispatch: React.Dispatch<FormActionI>
-) => {
-  return (imageId: string): void => {
+export const handleImgDescChange = (dispatch: React.Dispatch<FormActionI>) => {
+  return (e: InputEventT, imageId: string): void => {
     dispatch({
       type: FormActions.CHANGE_IMAGE_DESC,
       payload: { imageDescChange: { imageId, newDesc: e.target.value } },
