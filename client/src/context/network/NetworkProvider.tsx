@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DEFAULT_NET, NETWORKS } from "utils/constants";
 import NetworkContext from "./NetworkContext";
 
-const NetworkProvider = (props: ProviderPropsI): JSX.Element => {
+const NetworkProvider = ({ children }: ProviderPropsI): JSX.Element => {
   const [selectedNet, setSelectedNet] = useState<NetworkT>(DEFAULT_NET);
 
   const handleNetworkChange = (newNetwork: NetworkT) => {
@@ -23,7 +23,7 @@ const NetworkProvider = (props: ProviderPropsI): JSX.Element => {
   return (
     <NetworkContext.Provider
       value={{ selectedNet, setSelectedNet: handleNetworkChange }}>
-      {props.children}
+      {children}
     </NetworkContext.Provider>
   );
 };

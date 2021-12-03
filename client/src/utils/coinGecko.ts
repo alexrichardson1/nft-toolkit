@@ -28,8 +28,6 @@ export const getDollarValue = async (
   price: string,
   chainId: number
 ): Promise<number> => {
-  const num =
-    parseFloat(formatEther(BigNumber.from(price))) *
-    (await getUSDValue(chainId));
-  return num;
+  const USD = await getUSDValue(chainId);
+  return parseFloat(formatEther(BigNumber.from(price))) * USD;
 };

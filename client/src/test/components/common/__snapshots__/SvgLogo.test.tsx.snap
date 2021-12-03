@@ -1,21 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SvgLogo snapshot 1`] = `
-<SvgLogo
+<pure(SvgLogo)
   height="50"
   icon="avalanche-logo.svg"
   width="50"
 >
-  <img
-    alt="logo"
+  <SvgLogo
     height="50"
-    src="avalanche-logo.svg"
-    style={
-      Object {
-        "margin": "0",
-      }
-    }
+    icon="avalanche-logo.svg"
     width="50"
-  />
-</SvgLogo>
+  >
+    <img
+      alt="logo"
+      height="50"
+      src="avalanche-logo.svg"
+      style={
+        Object {
+          "margin": "0",
+        }
+      }
+      width="50"
+    />
+  </SvgLogo>
+</pure(SvgLogo)>
 `;

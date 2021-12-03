@@ -17,7 +17,13 @@ interface PropsT {
   handleClose: () => void;
 }
 
-const MobileMenu = (props: PropsT): JSX.Element => {
+const MobileMenu = ({
+  isOpen,
+  anchorEl,
+  anchOrigin,
+  transformOrigin,
+  handleClose,
+}: PropsT): JSX.Element => {
   const { selectedNet, setSelectedNet } = useContext(NetworkContext);
   const [networkAnchorEl, setNetworkAnchorEl] = useState<AnchorT>(null);
 
@@ -35,13 +41,13 @@ const MobileMenu = (props: PropsT): JSX.Element => {
   return (
     <>
       <Menu
-        anchorEl={props.anchorEl}
-        anchorOrigin={props.anchOrigin}
-        transformOrigin={props.transformOrigin ?? props.anchOrigin}
+        anchorEl={anchorEl}
+        anchorOrigin={anchOrigin}
+        transformOrigin={transformOrigin ?? anchOrigin}
         id={MOBILE_MENU_ID}
         keepMounted
-        open={props.isOpen}
-        onClose={props.handleClose}>
+        open={isOpen}
+        onClose={handleClose}>
         <MenuItem sx={menuItemStyle}>
           <AccountBalanceWalletIcon color="primary" />
           <Typography>Connect Wallet</Typography>
@@ -62,8 +68,8 @@ const MobileMenu = (props: PropsT): JSX.Element => {
 
       <Menu
         keepMounted
-        anchorOrigin={props.anchOrigin}
-        transformOrigin={props.transformOrigin ?? props.anchOrigin}
+        anchorOrigin={anchOrigin}
+        transformOrigin={transformOrigin ?? anchOrigin}
         onClose={handleNetworkMenuClose}
         anchorEl={networkAnchorEl}
         open={IS_NET_MENU_OPEN}>

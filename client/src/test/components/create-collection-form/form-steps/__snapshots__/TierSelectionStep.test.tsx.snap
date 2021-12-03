@@ -1351,66 +1351,70 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
             }
             stepNumber={1}
           >
-            <PageHeader
+            <pure(PageHeader)
               text="Add Rarity Tiers For Your Collection"
             >
-              <ForwardRef(Typography)
-                color="secondary"
-                component="div"
-                gutterBottom={true}
-                noWrap={true}
-                textAlign="center"
-                variant="h4"
+              <PageHeader
+                text="Add Rarity Tiers For Your Collection"
               >
-                <MuiTypographyRoot
-                  as="div"
-                  className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
-                  ownerState={
-                    Object {
-                      "align": "inherit",
-                      "children": "Add Rarity Tiers For Your Collection",
-                      "className": undefined,
-                      "color": "secondary.main",
-                      "component": "div",
-                      "gutterBottom": true,
-                      "noWrap": true,
-                      "paragraph": false,
-                      "sx": Object {
+                <ForwardRef(Typography)
+                  color="secondary"
+                  component="div"
+                  gutterBottom={true}
+                  noWrap={true}
+                  textAlign="center"
+                  variant="h4"
+                >
+                  <MuiTypographyRoot
+                    as="div"
+                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
+                    ownerState={
+                      Object {
+                        "align": "inherit",
+                        "children": "Add Rarity Tiers For Your Collection",
+                        "className": undefined,
+                        "color": "secondary.main",
+                        "component": "div",
+                        "gutterBottom": true,
+                        "noWrap": true,
+                        "paragraph": false,
+                        "sx": Object {
+                          "color": "secondary.main",
+                          "textAlign": "center",
+                        },
+                        "variant": "h4",
+                        "variantMapping": Object {
+                          "body1": "p",
+                          "body2": "p",
+                          "h1": "h1",
+                          "h2": "h2",
+                          "h3": "h3",
+                          "h4": "h4",
+                          "h5": "h5",
+                          "h6": "h6",
+                          "inherit": "p",
+                          "subtitle1": "h6",
+                          "subtitle2": "h6",
+                        },
+                      }
+                    }
+                    sx={
+                      Object {
                         "color": "secondary.main",
                         "textAlign": "center",
-                      },
-                      "variant": "h4",
-                      "variantMapping": Object {
-                        "body1": "p",
-                        "body2": "p",
-                        "h1": "h1",
-                        "h2": "h2",
-                        "h3": "h3",
-                        "h4": "h4",
-                        "h5": "h5",
-                        "h6": "h6",
-                        "inherit": "p",
-                        "subtitle1": "h6",
-                        "subtitle2": "h6",
-                      },
+                      }
                     }
-                  }
-                  sx={
-                    Object {
-                      "color": "secondary.main",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  <Noop />
-                  <div
-                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                   >
-                    Add Rarity Tiers For Your Collection
-                  </div>
-                </MuiTypographyRoot>
-              </ForwardRef(Typography)>
-            </PageHeader>
+                    <Noop />
+                    <div
+                      className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
+                    >
+                      Add Rarity Tiers For Your Collection
+                    </div>
+                  </MuiTypographyRoot>
+                </ForwardRef(Typography)>
+              </PageHeader>
+            </pure(PageHeader)>
             <ForwardRef(Collapse)
               in={false}
             >

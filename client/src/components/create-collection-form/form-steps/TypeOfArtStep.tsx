@@ -3,6 +3,7 @@ import ChoiceCard from "components/common/ChoiceCard";
 import genArtImg from "images/generative-icon.svg";
 import staticArtImg from "images/static-icon.svg";
 import { useCallback } from "react";
+import { pure } from "recompose";
 import { wrongStep } from "utils/pages";
 
 const ART_TYPE_STEP_NUMBER = 0;
@@ -40,10 +41,9 @@ interface PropsT {
 }
 
 /**
- *  Step of the form which allows users to select which type of art they want to
+ * Step of the form which allows users to select which type of art they want to
  * upload (static or generative) and takes them to the next step based on this
  * choice
- *
  * @param setGenerative - sets the `generative` boolean true if generative type
  * of art selected by user
  * @param handleNextStep - go to next step based on user choice
@@ -60,9 +60,11 @@ const TypeOfArtStep = ({
     handleNextStep();
   }, [handleNextStep, setGenerative]);
 
-  return wrongStep(stepNumber, ART_TYPE_STEP_NUMBER) ? (
-    <></>
-  ) : (
+  if (wrongStep(stepNumber, ART_TYPE_STEP_NUMBER)) {
+    return <></>;
+  }
+
+  return (
     <Grid container spacing={2}>
       <ChoiceCard
         handleCardClick={handleGenerativeCardClick}
@@ -80,4 +82,4 @@ const TypeOfArtStep = ({
   );
 };
 
-export default TypeOfArtStep;
+export default pure(TypeOfArtStep);

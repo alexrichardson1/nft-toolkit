@@ -764,7 +764,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="ethereum-logo.svg"
                             width={24}
@@ -1223,7 +1223,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="ethereum-logo.svg"
                                 width={24}
@@ -2465,7 +2465,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="ethereum-logo.svg"
                                               width={24}
@@ -3212,7 +3212,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="ethereum-logo.svg"
                                                         width={24}
@@ -3349,7 +3349,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="ethereum-logo.svg"
                                                               width={24}
@@ -3464,7 +3464,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="ethereum-logo.svg"
                                                                         width={24}
@@ -3758,7 +3758,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
@@ -3828,7 +3828,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="ethereum-logo.svg"
                                                                                 width={24}
@@ -3877,23 +3877,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="ethereum-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="ethereum-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="ethereum-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -4089,7 +4095,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="ethereum-logo.svg"
                             width={24}
@@ -4108,7 +4114,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="cardano-logo.svg"
                             width={24}
@@ -4127,7 +4133,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="avalanche-logo.svg"
                             width={24}
@@ -4146,7 +4152,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="solana-logo.svg"
                             width={24}
@@ -4165,7 +4171,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="polygon-logo.svg"
                             width={24}
@@ -4184,7 +4190,7 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <SvgLogo
+                          <pure(SvgLogo)
                             height={24}
                             icon="binance-logo.svg"
                             width={24}
@@ -4378,7 +4384,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="ethereum-logo.svg"
                                 width={24}
@@ -4397,7 +4403,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="cardano-logo.svg"
                                 width={24}
@@ -4416,7 +4422,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="avalanche-logo.svg"
                                 width={24}
@@ -4435,7 +4441,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="solana-logo.svg"
                                 width={24}
@@ -4454,7 +4460,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="polygon-logo.svg"
                                 width={24}
@@ -4473,7 +4479,7 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <SvgLogo
+                              <pure(SvgLogo)
                                 height={24}
                                 icon="binance-logo.svg"
                                 width={24}
@@ -4955,7 +4961,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="ethereum-logo.svg"
                                               width={24}
@@ -4974,7 +4980,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="cardano-logo.svg"
                                               width={24}
@@ -4993,7 +4999,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="avalanche-logo.svg"
                                               width={24}
@@ -5012,7 +5018,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="solana-logo.svg"
                                               width={24}
@@ -5031,7 +5037,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="polygon-logo.svg"
                                               width={24}
@@ -5050,7 +5056,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <SvgLogo
+                                            <pure(SvgLogo)
                                               height={24}
                                               icon="binance-logo.svg"
                                               width={24}
@@ -5621,7 +5627,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="ethereum-logo.svg"
                                                         width={24}
@@ -5640,7 +5646,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="cardano-logo.svg"
                                                         width={24}
@@ -5659,7 +5665,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="avalanche-logo.svg"
                                                         width={24}
@@ -5678,7 +5684,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="solana-logo.svg"
                                                         width={24}
@@ -5697,7 +5703,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="polygon-logo.svg"
                                                         width={24}
@@ -5716,7 +5722,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <SvgLogo
+                                                      <pure(SvgLogo)
                                                         height={24}
                                                         icon="binance-logo.svg"
                                                         width={24}
@@ -5838,7 +5844,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="ethereum-logo.svg"
                                                               width={24}
@@ -5857,7 +5863,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="cardano-logo.svg"
                                                               width={24}
@@ -5876,7 +5882,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="avalanche-logo.svg"
                                                               width={24}
@@ -5895,7 +5901,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="solana-logo.svg"
                                                               width={24}
@@ -5914,7 +5920,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="polygon-logo.svg"
                                                               width={24}
@@ -5933,7 +5939,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <SvgLogo
+                                                            <pure(SvgLogo)
                                                               height={24}
                                                               icon="binance-logo.svg"
                                                               width={24}
@@ -6032,7 +6038,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                       }
                                                                       tabIndex={0}
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="ethereum-logo.svg"
                                                                         width={24}
@@ -6051,7 +6057,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="cardano-logo.svg"
                                                                         width={24}
@@ -6070,7 +6076,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="avalanche-logo.svg"
                                                                         width={24}
@@ -6089,7 +6095,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="solana-logo.svg"
                                                                         width={24}
@@ -6108,7 +6114,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="polygon-logo.svg"
                                                                         width={24}
@@ -6127,7 +6133,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <SvgLogo
+                                                                      <pure(SvgLogo)
                                                                         height={24}
                                                                         icon="binance-logo.svg"
                                                                         width={24}
@@ -6181,7 +6187,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
@@ -6252,7 +6258,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="ethereum-logo.svg"
                                                                                 width={24}
@@ -6301,23 +6307,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={0}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="ethereum-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="ethereum-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="ethereum-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -6412,7 +6424,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="cardano-logo.svg"
                                                                             width={24}
@@ -6482,7 +6494,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="cardano-logo.svg"
                                                                                 width={24}
@@ -6531,23 +6543,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="cardano-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="cardano-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="cardano-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="cardano-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -6642,7 +6660,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="avalanche-logo.svg"
                                                                             width={24}
@@ -6712,7 +6730,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="avalanche-logo.svg"
                                                                                 width={24}
@@ -6761,23 +6779,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="avalanche-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="avalanche-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="avalanche-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="avalanche-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -6872,7 +6896,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="solana-logo.svg"
                                                                             width={24}
@@ -6942,7 +6966,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="solana-logo.svg"
                                                                                 width={24}
@@ -6991,23 +7015,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="solana-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="solana-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="solana-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="solana-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -7102,7 +7132,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="polygon-logo.svg"
                                                                             width={24}
@@ -7172,7 +7202,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="polygon-logo.svg"
                                                                                 width={24}
@@ -7221,23 +7251,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="polygon-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="polygon-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="polygon-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="polygon-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -7332,7 +7368,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="binance-logo.svg"
                                                                             width={24}
@@ -7402,7 +7438,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <SvgLogo
+                                                                              <pure(SvgLogo)
                                                                                 height={24}
                                                                                 icon="binance-logo.svg"
                                                                                 width={24}
@@ -7451,23 +7487,29 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <SvgLogo
+                                                                          <pure(SvgLogo)
                                                                             height={24}
                                                                             icon="binance-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <img
-                                                                              alt="logo"
+                                                                            <SvgLogo
                                                                               height={24}
-                                                                              src="binance-logo.svg"
-                                                                              style={
-                                                                                Object {
-                                                                                  "margin": "0",
-                                                                                }
-                                                                              }
+                                                                              icon="binance-logo.svg"
                                                                               width={24}
-                                                                            />
-                                                                          </SvgLogo>
+                                                                            >
+                                                                              <img
+                                                                                alt="logo"
+                                                                                height={24}
+                                                                                src="binance-logo.svg"
+                                                                                style={
+                                                                                  Object {
+                                                                                    "margin": "0",
+                                                                                  }
+                                                                                }
+                                                                                width={24}
+                                                                              />
+                                                                            </SvgLogo>
+                                                                          </pure(SvgLogo)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
