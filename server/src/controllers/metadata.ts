@@ -34,6 +34,25 @@ export const getTokenMetadata: RequestHandler = async (req, res, next) => {
   return res.json(collection.tokens[tokenNumber]);
 };
 
+export const getAllTokenMetadata: RequestHandler = async (req, res, next) => {
+  const { chainId, address } = req.params;
+  if (!chainId || !address) {
+    return next(new Error("Invalid params"));
+  }
+
+  let collection: CollectionT;
+  try {
+    collection = await getCollectionFromDB(
+      utils.getAddress(address),
+      parseInt(chainId)
+    );
+  } catch (error) {
+    return next(error);
+  }
+
+  return res.json(collection.tokens);
+};
+
 const getRPCProvider = (_chainId: number): BaseProvider => {
   const network = ethers.providers.getNetwork(_chainId);
   return new ethers.providers.InfuraProvider(
