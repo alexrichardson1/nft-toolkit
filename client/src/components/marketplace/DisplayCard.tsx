@@ -8,11 +8,25 @@ import { getLogoByChainId } from "utils/constants";
 import "./displaycard.css";
 
 interface PropsT {
-  data: CollectionI;
+  data: TokenI;
   to: string;
   loading?: boolean;
   chainId: number;
 }
+
+const priceCard = (logo: string, price?: string) => {
+  if (!price) {
+    return <p></p>;
+  }
+  return (
+    <>
+      <Typography variant="h6" color="primary" className="card-price">
+        Price: {price}
+      </Typography>
+      <SvgLogo icon={logo} width="20px" height="20px" margins />
+    </>
+  );
+};
 
 const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
   const logo = useMemo(() => getLogoByChainId(chainId), [chainId]);
@@ -41,10 +55,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
             <Box bgcolor="background.paper" className="card-front">
               <img src={data.image} alt={data.name} className="card-img" />
               <Box className="card-price-container">
-                <Typography variant="h6" color="primary" className="card-price">
-                  Price: {data.price}
-                </Typography>
-                <SvgLogo icon={logo} width="20px" height="20px" margins />
+                {priceCard(logo, data.price)}
               </Box>
             </Box>
             <Box bgcolor="background.paper" className="card-back">
@@ -61,13 +72,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
                   {data.description}
                 </Typography>
                 <Box className="card-price-container">
-                  <Typography
-                    variant="h6"
-                    color="primary"
-                    className="card-price">
-                    Price: {data.price}
-                  </Typography>
-                  <SvgLogo icon={logo} width="20px" height="20px" margins />
+                  {priceCard(logo, data.price)}
                 </Box>
               </Box>
             </Box>
