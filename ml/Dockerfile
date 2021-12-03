@@ -10,5 +10,4 @@ COPY . .
 
 EXPOSE 4000
 
-ENV FLASK_APP=api/__init__.py
-CMD [ "python3", "-m" , "flask", "run" ]
+CMD [ "python3", "api/app.py" ]
