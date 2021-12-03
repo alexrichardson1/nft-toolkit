@@ -7,6 +7,7 @@ import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
+import { API_URL } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
@@ -46,32 +47,32 @@ const Market = (): JSX.Element => {
       const totalSupply = await nftContract.totalSupply();
       const name = await nftContract.name();
       const symbol = await nftContract.symbol();
-      const allTokens: TokenI[] = Array.from({
-        length: totalSupply.toNumber(),
-      });
+
       dispatch({
         type: ProgressActions.ADVANCE_PROGRESS_BY,
         payload: { advanceProgressBy: 50 },
       });
-      const collectionData = await Promise.all(
-        allTokens.map(async (_value, index) => {
-          const tokenURI = await nftContract.tokenURI(index);
-          const res = await axios.get(tokenURI);
-          res.data.id = index;
-          const attributeMap: AttributeI = {};
-          res.data.attributes.forEach((attr: ContractAttributeI) => {
-            attributeMap[attr.trait_type] = attr.value;
-          });
-          res.data.attributes = attributeMap;
-          return res.data;
-        })
+      const res = await axios.get(
+        `${API_URL}/metadata/${paramChainId}/${address}`
       );
+      let { tokens }: { tokens: ContractTokenI[] } = res.data;
+      console.log(res.data);
+      if (tokens.length < totalSupply.toNumber()) {
+        tokens = tokens.slice(0, totalSupply.toNumber());
+      }
+      const transTokens = tokens.map((token, index) => {
+        const attributeMap: AttributeI = {};
+        token.attributes.forEach((attr: ContractAttributeI) => {
+          attributeMap[attr.trait_type] = attr.value;
+        });
+        return { ...token, id: index, attributes: attributeMap };
+      });
 
       dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
       setCollectionName(name);
       setSymbol(symbol);
-      setCollections(collectionData);
+      setCollections(transTokens);
     }
     getCollectionData();
   }, []);
