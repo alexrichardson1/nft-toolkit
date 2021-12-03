@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import { BigNumber } from "ethers";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -14,6 +15,16 @@ import { API_URL } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
+export interface TokenI {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: BigNumber;
+  isOwner?: boolean;
+  attributes: AttributeI;
+}
+
 const dummyData: TokenI[] = [
   {
     name: "Dummy",
@@ -21,7 +32,7 @@ const dummyData: TokenI[] = [
     image: "",
     attributes: {},
     id: 0,
-    price: "69",
+    price: BigNumber.from(0),
   },
 ];
 
@@ -77,7 +88,7 @@ const Market = (): JSX.Element => {
             ...token,
             id: index,
             attributes: attributeMap,
-            price: price.toString(),
+            price,
           };
         })
       );
