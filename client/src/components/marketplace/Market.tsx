@@ -2,74 +2,21 @@ import { Collapse, Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
 import { ProgressActions } from "actions/progressActions";
+import axios from "axios";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { NFT__factory as NftFactory } from "typechain";
+import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
-const dummyData: CollectionI[] = [
+const dummyData: TokenI[] = [
   {
     name: "Dummy",
     description: "DummyDescription",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
+    image: "",
     attributes: {},
     id: 0,
-    price: "69",
-  },
-];
-
-const dummyData2: CollectionI[] = [
-  {
-    id: 0,
-    name: "APE 0",
-    description: "",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 1,
-    name: "APE 1",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 2,
-    name: "APE 2",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 3,
-    name: "APE 3",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 4,
-    name: "APE 4",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 5,
-    name: "APE 5",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
     price: "69",
   },
 ];
@@ -80,33 +27,58 @@ const textStyle: SxProps = {
 };
 
 const Market = (): JSX.Element => {
-  const [collections, setCollections] = useState<CollectionI[]>(dummyData);
+  const [tokens, setCollections] = useState<TokenI[]>(dummyData);
   const [collectionName, setCollectionName] = useState("");
-  const { paramChainId } = useParams<ParamsI>();
+  const [symbol, setSymbol] = useState("");
+  const { paramChainId, address } = useParams<
+    ParamsI & { marketAddress: string }
+  >();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     async function getCollectionData() {
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
-      const WAIT_TIME = 1000;
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
+
+      const nftContract = NftFactory.connect(
+        address,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      const totalSupply = await nftContract.totalSupply();
+      const name = await nftContract.name();
+      const symbol = await nftContract.symbol();
+      const allTokens: TokenI[] = Array.from({
+        length: totalSupply.toNumber(),
+      });
       dispatch({
         type: ProgressActions.ADVANCE_PROGRESS_BY,
         payload: { advanceProgressBy: 50 },
       });
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
+      const collectionData = await Promise.all(
+        allTokens.map(async (_value, index) => {
+          const tokenURI = await nftContract.tokenURI(index);
+          const res = await axios.get(tokenURI);
+          res.data.id = index;
+          const attributeMap: AttributeI = {};
+          res.data.attributes.forEach((attr: ContractAttributeI) => {
+            attributeMap[attr.trait_type] = attr.value;
+          });
+          res.data.attributes = attributeMap;
+          return res.data;
+        })
+      );
+
       dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
-      setCollectionName("Aayush Babies");
-      setCollections(dummyData2);
+      setCollectionName(name);
+      setSymbol(symbol);
+      setCollections(collectionData);
     }
     getCollectionData();
   }, []);
 
   return (
     <Box alignItems="center" flexGrow={1} display="flex">
-      <Collapse sx={{ width: 1 }} in={collections !== dummyData}>
+      <Collapse sx={{ width: 1 }} in={tokens !== dummyData}>
         <Stack spacing={2} justifyContent="center">
           <Box display="flex" flexDirection="column" alignItems="center">
             <Typography
@@ -117,16 +89,16 @@ const Market = (): JSX.Element => {
               {collectionName}
             </Typography>
             <Typography textAlign="center" sx={textStyle} color="primary">
-              Aayu
+              {symbol}
             </Typography>
           </Box>
           <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
-            {collections.map((dummy) => (
+            {tokens.map((token) => (
               <DisplayCard
                 chainId={Number(paramChainId)}
-                to="/purchase"
-                key={dummy.id}
-                data={dummy}
+                to={`/${paramChainId}/${address}/${token.id}`}
+                key={token.id}
+                data={token}
               />
             ))}
           </Box>
