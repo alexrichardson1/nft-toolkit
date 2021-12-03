@@ -241,7 +241,7 @@ const changeLayerProb = (state: FormStateI, action: FormActionI) => {
       layer.probability = layerProbabilityChange.newProbability;
     }
   });
-  return state;
+  return { ...state };
 };
 const changeLayerPrecedence = (state: FormStateI, action: FormActionI) => {
   const dragEndEvent = undefinedCheck(
@@ -250,7 +250,7 @@ const changeLayerPrecedence = (state: FormStateI, action: FormActionI) => {
   );
   const { active, over } = dragEndEvent;
   if (!over) {
-    return state;
+    return { ...state };
   }
   if (active.id !== over.id) {
     const oldIdx = state.generative.layers.findIndex(
@@ -265,7 +265,7 @@ const changeLayerPrecedence = (state: FormStateI, action: FormActionI) => {
       newIdx
     );
   }
-  return state;
+  return { ...state };
 };
 
 const removeLayer = (state: FormStateI, action: FormActionI) => {
@@ -315,7 +315,7 @@ const changeTierProb = (state: FormStateI, action: FormActionI) => {
     newTotalRarity += Number(tier.probability);
   });
   state.generative.totalTierRarity = newTotalRarity;
-  return state;
+  return { ...state };
 };
 const changeTierPrecedence = (state: FormStateI, action: FormActionI) => {
   const dragEndEvent = undefinedCheck(
@@ -324,7 +324,7 @@ const changeTierPrecedence = (state: FormStateI, action: FormActionI) => {
   );
   const { active, over } = dragEndEvent;
   if (!over) {
-    return state;
+    return { ...state };
   }
   if (active.id !== over.id) {
     const oldIdx = state.generative.tiers.findIndex(
@@ -335,7 +335,7 @@ const changeTierPrecedence = (state: FormStateI, action: FormActionI) => {
     );
     state.generative.tiers = arrayMove(state.generative.tiers, oldIdx, newIdx);
   }
-  return state;
+  return { ...state };
 };
 const removeTier = (state: FormStateI, action: FormActionI) => {
   const deleteTierName = undefinedCheck(
@@ -431,7 +431,7 @@ const changeQuantity = (state: FormStateI, action: FormActionI): FormStateI => {
   };
 };
 const resetState = (): FormStateI => {
-  return INITIAL_STATE;
+  return { ...INITIAL_STATE };
 };
 /**
  * @param state - current state of the form

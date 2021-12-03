@@ -171,7 +171,7 @@ const handleIfNotLastStep = async (
     setNewCollName(state.collectionName);
   }
   handleNextStep();
-  return true;
+  return false;
 };
 
 const handleLastStep = async (

@@ -162,10 +162,8 @@ const CreateCollectionForm = (): JSX.Element => {
         stepNumber={stepNumber}
         state={state}
         isLoading={isLoading}
-        handleImgDrop={(e) => handleImageDrop(e, dispatch, generative)}
-        handleImgDelete={(deleteId) =>
-          handleImageDelete(deleteId, dispatch, generative)
-        }
+        handleImgDrop={handleImageDrop(dispatch, generative)}
+        handleImgDelete={handleImageDelete(dispatch, generative)}
         handleImgNameChange={(e) =>
           handleImgNameChange(e, dispatch, generative)
         }
@@ -178,9 +176,7 @@ const CreateCollectionForm = (): JSX.Element => {
         state={state}
         stepNumber={stepNumber}
         generative={generative}
-        handleTierProbChange={(tierName) =>
-          handleTierProbChange(tierName, dispatch)
-        }
+        handleTierProbChange={handleTierProbChange(dispatch)}
       />
       <LayerSelectionStep
         handleLayerRemoval={(layerName) =>
@@ -204,10 +200,8 @@ const CreateCollectionForm = (): JSX.Element => {
         isLoading={isLoading}
         state={state}
         generative={generative}
-        handleLayerImgDrop={(e) => handleImageDrop(e, dispatch, generative)}
-        handleLayerImgDelete={(deleteId) =>
-          handleImageDelete(deleteId, dispatch, generative)
-        }
+        handleLayerImgDrop={handleImageDrop(dispatch, generative)}
+        handleLayerImgDelete={handleImageDelete(dispatch, generative)}
         handleLayerImgNameChange={(e) =>
           handleImgNameChange(e, dispatch, generative)
         }

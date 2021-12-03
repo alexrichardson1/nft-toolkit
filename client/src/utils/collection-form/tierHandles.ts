@@ -32,16 +32,15 @@ export const handleTierReorder = (
   });
 };
 
-export const handleTierProbChange = (
-  tierName: string,
-  dispatch: React.Dispatch<FormActionI>
-) => {
-  return (e: InputEventT): void => {
-    dispatch({
-      type: FormActions.CHANGE_TIER_PROBABILITY,
-      payload: {
-        tierProbabilityChange: { tierName, newProbability: e.target.value },
-      },
-    });
+export const handleTierProbChange = (dispatch: React.Dispatch<FormActionI>) => {
+  return (tierName: string) => {
+    return (e: InputEventT): void => {
+      dispatch({
+        type: FormActions.CHANGE_TIER_PROBABILITY,
+        payload: {
+          tierProbabilityChange: { tierName, newProbability: e.target.value },
+        },
+      });
+    };
   };
 };

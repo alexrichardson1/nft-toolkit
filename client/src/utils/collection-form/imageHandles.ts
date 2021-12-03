@@ -2,11 +2,14 @@ import FormActions from "actions/formActions";
 import { FormActionI } from "reducers/formReducerTypes";
 
 export const handleImageDrop = (
-  e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
   dispatch: React.Dispatch<FormActionI>,
   generative: boolean
 ) => {
-  return (imgObjs: FileList | null, layerName = ""): void => {
+  return (
+    e: React.DragEvent<HTMLLabelElement> | React.ChangeEvent<HTMLInputElement>,
+    imgObjs: FileList | null,
+    layerName = ""
+  ): void => {
     e.preventDefault();
     if (!imgObjs) {
       return;
@@ -24,11 +27,10 @@ export const handleImageDrop = (
 };
 
 export const handleImageDelete = (
-  deleteId: string,
   dispatch: React.Dispatch<FormActionI>,
   generative: boolean
 ) => {
-  return (layerName = ""): void => {
+  return (deleteId: string, layerName = ""): void => {
     const payload = generative
       ? { deleteGen: { deleteId, layerName } }
       : { deleteId };
