@@ -6,7 +6,7 @@ import pickle
 from flask import Flask, Blueprint
 import pymongo
 from dotenv import load_dotenv
-from .hype_meter import get_overall_score_using_handles, get_overall_score
+import hype_meter
 
 load_dotenv()
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
@@ -100,10 +100,10 @@ def get_hype(names, twitter_handle, reddit_handle):
         - twitter_handle: Collection/Artists' twitter username
         - reddit_handle: Collection subreddit name
     """
-    avg_score = sum([get_overall_score(collection)
+    avg_score = sum([hype_meter.get_overall_score(collection)
                     for collection, _ in names]) / len(names)
 
-    score_of_request = get_overall_score_using_handles(
+    score_of_request = hype_meter.get_overall_score_using_handles(
         twitter_handle, reddit_handle)
     if score_of_request > avg_score:
         return 1

@@ -2,10 +2,11 @@
 Main for running flask app
 """
 
-from .prediction_model import Prediction_Model  # pylint: disable=unused-import
-from .routes import create_app
+# pylint: disable=unused-import
+from prediction_model import Prediction_Model
+import routes
 
 
 if __name__ == '__main__':
-    app = create_app()
+    app = routes.create_app()
     app.run(port=4000)
