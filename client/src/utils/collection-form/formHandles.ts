@@ -37,11 +37,6 @@ const PAGE_IDX_OFFSET = 2;
 export const STATIC_STEPS = 4;
 export const GEN_STEPS = 6;
 
-// const DUMMY_ML_DATA = {
-//   names: [{ name: "name1", distance: 3 }],
-//   hype: 2,
-// };
-
 const isGeneralInfoStep = (generative: boolean, stepNumber: number) => {
   return (
     (generative && stepNumber === GEN_STEPS - PAGE_IDX_OFFSET) ||
@@ -183,7 +178,6 @@ const handleIfNotLastStep = async (
   }
   if (isGeneralInfoStep(generative, stepNumber)) {
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
-    // TODO: make try and catch
     try {
       await axios
         .get(
