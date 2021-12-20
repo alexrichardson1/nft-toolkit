@@ -137,18 +137,22 @@ const MintingPage = (): JSX.Element => {
 
   useEffect(() => {
     async function getCollectionData() {
+      if (isMinting) {
+        return;
+      }
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
       const WAIT_TIME = 1000;
 
+      dispatch({
+        type: ProgressActions.ADVANCE_PROGRESS_BY,
+        payload: { advanceProgressBy: 50 },
+      });
       try {
-        dispatch({
-          type: ProgressActions.ADVANCE_PROGRESS_BY,
-          payload: { advanceProgressBy: 50 },
-        });
         const collection = await getCollection(paramChainId, address);
         dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
         await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
         dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
+        setMintingQuantity(MIN_AMOUNT_ALLOWED);
         setMintingData(collection);
         setUsdValue(
           await getDollarValue(collection.price.toString(), collection.chainId)
