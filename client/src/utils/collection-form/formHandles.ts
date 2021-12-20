@@ -6,6 +6,7 @@ import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
 import { Market__factory as MarketFactory } from "typechain";
+import { ML_URL } from "utils/constants";
 import {
   addDeployedAddress,
   startLoading,
@@ -181,7 +182,7 @@ const handleIfNotLastStep = async (
     try {
       await axios
         .get(
-          `http://localhost:4000/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
+          `${ML_URL}/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
         )
         .then((res) => {
           console.log(res);
