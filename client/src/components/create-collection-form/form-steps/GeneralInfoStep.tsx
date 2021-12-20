@@ -5,7 +5,7 @@ import Input from "components/common/Input";
 import PageHeader from "components/common/PageHeader";
 import SvgLogo from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useRef } from "react";
 import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const DESCRIPTION_ROWS = 4;
@@ -69,6 +69,7 @@ const GeneralInfoStep = ({
   handleMplaceRoyaltyChange,
 }: PropsT): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
+  const ref = useRef<HTMLInputElement>(null);
   const priceInputPropsMemo = useMemo(
     () => priceInputProps(selectedNet),
     [selectedNet]
@@ -80,6 +81,15 @@ const GeneralInfoStep = ({
   ) {
     return <></>;
   }
+
+  const handleRadioKeyPress: React.KeyboardEventHandler<HTMLLabelElement> = (
+    e
+  ) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      ref.current?.click();
+    }
+  };
 
   return (
     <>
@@ -149,12 +159,14 @@ const GeneralInfoStep = ({
 
       <FormGroup>
         <FormControlLabel
+          ref={ref}
           control={
             <Checkbox
               checked={state.marketplace.wanted}
               onChange={handleMplaceWantedChange}
             />
           }
+          onKeyPress={handleRadioKeyPress}
           label="Select to deploy your own Marketplace"
         />
       </FormGroup>
