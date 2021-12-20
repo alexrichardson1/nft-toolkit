@@ -180,14 +180,10 @@ const handleIfNotLastStep = async (
   if (isGeneralInfoStep(generative, stepNumber)) {
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
     try {
-      await axios
-        .get(
-          `${ML_URL}/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
-        )
-        .then((res) => {
-          console.log(res);
-          handlePredictionsChange(res.data as MlDataI, dispatch);
-        });
+      const res = await axios.get(
+        `${ML_URL}/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
+      );
+      handlePredictionsChange(res.data as MlDataI, dispatch);
     } catch (err) {
       console.log(err);
     }
