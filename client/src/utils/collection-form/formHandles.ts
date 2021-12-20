@@ -6,6 +6,7 @@ import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
 import { Market__factory as MarketFactory } from "typechain";
+import { ML_URL } from "utils/constants";
 import {
   addDeployedAddress,
   startLoading,
@@ -179,16 +180,12 @@ const handleIfNotLastStep = async (
   if (isGeneralInfoStep(generative, stepNumber)) {
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
     try {
-      await axios
-        .get(
-          `http://localhost:4000/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
-        )
-        .then((res) => {
-          console.log(res);
-          handlePredictionsChange(res.data as MlDataI, dispatch);
-        });
+      const res = await axios.get(
+        `${ML_URL}/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
+      );
+      handlePredictionsChange(res.data as MlDataI, dispatch);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
     stopLoading(setLoadingMessage, setIsLoading);
     setNewCollName(state.collectionName);

@@ -43,6 +43,10 @@ export const API_URL = process.env.REACT_APP_API_LOCAL
   ? "http://localhost:5000"
   : "http://nftoolkit.eu-west-2.elasticbeanstalk.com/server";
 
+export const ML_URL = process.env.REACT_APP_API_LOCAL
+  ? "http://localhost:4000"
+  : "http://nftoolkit.eu-west-2.elasticbeanstalk.com/ml";
+
 export const accessibilityProps = (
   index: number,
   vertical = false
