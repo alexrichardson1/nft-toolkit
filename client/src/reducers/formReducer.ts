@@ -59,7 +59,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { names: [], hype: -1 },
+  predictions: { names: [], hype: -1, price: -1 },
 };
 
 /**
@@ -359,7 +359,7 @@ const resetTypeOfArt = (state: FormStateI): FormStateI => {
       numberOfLayers: 0,
       quantity: DEFAULT_STRING,
     },
-    predictions: { names: [], hype: -1 },
+    predictions: { names: [], hype: -1, price: -1 },
   };
 };
 const changeSymbol = (state: FormStateI, action: FormActionI): FormStateI => {
