@@ -1,5 +1,4 @@
 import { ProgressActionI } from "actions/progressActions";
-import { undefinedCheck } from "utils/typeUtils";
 
 interface ProgressStateI {
   inProgress: boolean;
@@ -47,10 +46,10 @@ const progressReducer = (
     finishProgress,
     stopProgress,
   ];
-  const reducer = undefinedCheck(
-    reducers[action.type],
-    "Invalid action provided"
-  );
+  const reducer = reducers[action.type];
+  if (!reducer) {
+    return state;
+  }
   return reducer(state, action);
 };
 
