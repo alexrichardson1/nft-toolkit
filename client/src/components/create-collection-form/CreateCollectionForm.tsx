@@ -76,7 +76,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { names: [], hype: -1 },
+  predictions: { names: [], hype: -1, price: -1 },
 };
 const formFooterStyle: SxProps = {
   display: "flex",
@@ -98,6 +98,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const [generative, setGenerative] = useState(false);
   const [txAddress, setTxAddress] = useState("");
   const [newCollName, setNewCollName] = useState("");
+  const [newMintingPrice, setNewMintingPrice] = useState(0);
   useEffect(() => {
     if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
@@ -134,8 +135,10 @@ const CreateCollectionForm = (): JSX.Element => {
           setIsLoading,
           dispatch,
           setNewCollName,
+          setNewMintingPrice,
           handleNextStep,
           newCollName,
+          newMintingPrice,
           library,
           setTxAddress
         )
@@ -208,6 +211,8 @@ const CreateCollectionForm = (): JSX.Element => {
         generative={generative}
         changedCollName={newCollName}
         handleChangeCollName={setNewCollName}
+        changedMintingPrice={newMintingPrice}
+        handleChangeMintingPrice={setNewMintingPrice}
       />
       <Box sx={formFooterStyle}>
         <FormAlert

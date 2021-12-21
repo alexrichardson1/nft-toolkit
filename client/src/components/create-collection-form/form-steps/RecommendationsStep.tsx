@@ -21,6 +21,8 @@ const HYPE_TT_TEXT =
   "This indicates how well we think your collection will do based on the data you have provided.";
 const NAME_REC_TT_TEXT =
   "These are some suggestions for alternative names based on the data you have provided.";
+const PRICE_REC_TT_TEXT =
+  "This is our suggestion for an alternative minting price based on the data you have provided.";
 
 const listItemStyle: SxProps<Theme> = {
   bgcolor: "background.paper",
@@ -36,6 +38,8 @@ interface PropsT {
   state: FormStateI;
   handleChangeCollName: SetStateAction<string>;
   changedCollName: string;
+  changedMintingPrice: number;
+  handleChangeMintingPrice: SetStateAction<number>;
   isLoading: boolean;
 }
 
@@ -80,17 +84,25 @@ const RecommendationsStep = ({
   generative,
   stepNumber,
   state,
+  handleChangeMintingPrice,
+  changedMintingPrice,
   handleChangeCollName,
   changedCollName,
   isLoading,
 }: PropsT): JSX.Element => {
-  // TODO: connect with ML
   if (
     wrongStepStatic(generative, stepNumber, REC_STEP_NUMBER_STATIC) &&
     wrongStepGenerative(generative, stepNumber, REC_STEP_NUMBER_GEN)
   ) {
     return <></>;
   }
+
+  const mintingPriceChange = (newPrice: number) => {
+    if (isLoading) {
+      return;
+    }
+    handleChangeMintingPrice(newPrice);
+  };
 
   const RecommendedNamesList = () => (
     <List>
@@ -151,6 +163,32 @@ const RecommendationsStep = ({
       </Typography>
       <Recommendation title="Collection Name" tooltipText={NAME_REC_TT_TEXT}>
         <RecommendedNamesList />
+      </Recommendation>
+      <Recommendation title="Minting Price" tooltipText={PRICE_REC_TT_TEXT}>
+        <List>
+          <ListItem
+            sx={{
+              ...listItemStyle,
+              border:
+                changedMintingPrice === parseInt(state.mintingPrice)
+                  ? "3px solid"
+                  : "none",
+            }}
+            onClick={() => mintingPriceChange(Number(state.mintingPrice))}>
+            <ListItemText>Old: {state.mintingPrice}</ListItemText>
+          </ListItem>
+          <ListItem
+            sx={{
+              ...listItemStyle,
+              border:
+                changedMintingPrice === state.predictions.price
+                  ? "3px solid"
+                  : "none",
+            }}
+            onClick={() => mintingPriceChange(state.predictions.price)}>
+            <ListItemText>Recommended: {changedMintingPrice}</ListItemText>
+          </ListItem>
+        </List>
       </Recommendation>
     </>
   );
