@@ -1104,7 +1104,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               >
                                                 Mint for 0.000000000000000001
                                                 <img
-                                                  alt="logo"
+                                                  alt="network-icon"
                                                   height="20px"
                                                   src="ethereum-logo.svg"
                                                   style="margin: 0px 5px;"
@@ -1311,7 +1311,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                             variant="contained"
                                           >
                                             Mint for 0.000000000000000001
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="network-icon"
                                               height="20px"
                                               icon="ethereum-logo.svg"
                                               margins={true}
@@ -1525,7 +1526,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                 variant="contained"
                                               >
                                                 Mint for 0.000000000000000001
-                                                <pure(SvgLogo)
+                                                <pure(SvgIcon)
+                                                  alt="network-icon"
                                                   height="20px"
                                                   icon="ethereum-logo.svg"
                                                   margins={true}
@@ -1724,7 +1726,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                     variant="contained"
                                                   >
                                                     Mint for 0.000000000000000001
-                                                    <pure(SvgLogo)
+                                                    <pure(SvgIcon)
+                                                      alt="network-icon"
                                                       height="20px"
                                                       icon="ethereum-logo.svg"
                                                       margins={true}
@@ -3417,7 +3420,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                   variant="contained"
                                                                 >
                                                                   Mint for 0.000000000000000001
-                                                                  <pure(SvgLogo)
+                                                                  <pure(SvgIcon)
+                                                                    alt="network-icon"
                                                                     height="20px"
                                                                     icon="ethereum-logo.svg"
                                                                     margins={true}
@@ -4468,7 +4472,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                       Object {
                                                                         "children": Array [
                                                                           "Mint for 0.000000000000000001",
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="network-icon"
                                                                             height="20px"
                                                                             icon="ethereum-logo.svg"
                                                                             margins={true}
@@ -4532,7 +4537,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                           Object {
                                                                             "children": <React.Fragment>
                                                                               Mint for 0.000000000000000001
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="network-icon"
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
                                                                                 margins={true}
@@ -4617,7 +4623,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                   undefined,
                                                                                   <React.Fragment>
                                                                                     Mint for 0.000000000000000001
-                                                                                    <pure(SvgLogo)
+                                                                                    <pure(SvgIcon)
+                                                                                      alt="network-icon"
                                                                                       height="20px"
                                                                                       icon="ethereum-logo.svg"
                                                                                       margins={true}
@@ -4675,20 +4682,22 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                               type="button"
                                                                             >
                                                                               Mint for 0.000000000000000001
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="network-icon"
                                                                                 height="20px"
                                                                                 icon="ethereum-logo.svg"
                                                                                 margins={true}
                                                                                 width="20px"
                                                                               >
-                                                                                <SvgLogo
+                                                                                <SvgIcon
+                                                                                  alt="network-icon"
                                                                                   height="20px"
                                                                                   icon="ethereum-logo.svg"
                                                                                   margins={true}
                                                                                   width="20px"
                                                                                 >
                                                                                   <img
-                                                                                    alt="logo"
+                                                                                    alt="network-icon"
                                                                                     height="20px"
                                                                                     src="ethereum-logo.svg"
                                                                                     style={
@@ -4698,8 +4707,8 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                                                                     }
                                                                                     width="20px"
                                                                                   />
-                                                                                </SvgLogo>
-                                                                              </pure(SvgLogo)>
+                                                                                </SvgIcon>
+                                                                              </pure(SvgIcon)>
                                                                                
                                                                               $
                                                                               (0.00)

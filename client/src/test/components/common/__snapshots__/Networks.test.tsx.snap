@@ -23,7 +23,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="Avalanche"
               height="70%"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -50,7 +50,7 @@ Object {
               type="button"
             >
               <img
-                alt="logo"
+                alt="Ethereum"
                 height="70%"
                 src="ethereum-logo.svg"
                 style="margin: 0px;"
@@ -71,7 +71,7 @@ Object {
               type="button"
             >
               <img
-                alt="logo"
+                alt="Cardano"
                 height="70%"
                 src="cardano-logo.svg"
                 style="margin: 0px;"
@@ -92,7 +92,7 @@ Object {
               type="button"
             >
               <img
-                alt="logo"
+                alt="Avalanche"
                 height="70%"
                 src="avalanche-logo.svg"
                 style="margin: 0px;"
@@ -113,7 +113,7 @@ Object {
               type="button"
             >
               <img
-                alt="logo"
+                alt="Solana"
                 height="70%"
                 src="solana-logo.svg"
                 style="margin: 0px;"
@@ -134,7 +134,7 @@ Object {
               type="button"
             >
               <img
-                alt="logo"
+                alt="Polygon"
                 height="70%"
                 src="polygon-logo.svg"
                 style="margin: 0px;"
@@ -155,7 +155,7 @@ Object {
               type="button"
             >
               <img
-                alt="logo"
+                alt="BSC"
                 height="70%"
                 src="binance-logo.svg"
                 style="margin: 0px;"
@@ -189,7 +189,7 @@ Object {
           type="button"
         >
           <img
-            alt="logo"
+            alt="Avalanche"
             height="70%"
             src="avalanche-logo.svg"
             style="margin: 0px;"
@@ -216,7 +216,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="Ethereum"
               height="70%"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -237,7 +237,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="Cardano"
               height="70%"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -258,7 +258,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="Avalanche"
               height="70%"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -279,7 +279,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="Solana"
               height="70%"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -300,7 +300,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="Polygon"
               height="70%"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -321,7 +321,7 @@ Object {
             type="button"
           >
             <img
-              alt="logo"
+              alt="BSC"
               height="70%"
               src="binance-logo.svg"
               style="margin: 0px;"
@@ -1384,7 +1384,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                       ariaLabel="network selection"
                       direction="down"
                       icon={
-                        <pure(SvgLogo)
+                        <pure(SvgIcon)
+                          alt="Ethereum"
                           height="70%"
                           icon="ethereum-logo.svg"
                           width="70%"
@@ -1424,7 +1425,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Ethereum"
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Ethereum"
                                     height="70%"
                                     icon="ethereum-logo.svg"
                                     width="70%"
@@ -1443,7 +1445,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Cardano"
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Cardano"
                                     height="70%"
                                     icon="cardano-logo.svg"
                                     width="70%"
@@ -1462,7 +1465,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Avalanche"
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Avalanche"
                                     height="70%"
                                     icon="avalanche-logo.svg"
                                     width="70%"
@@ -1481,7 +1485,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Solana"
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Solana"
                                     height="70%"
                                     icon="solana-logo.svg"
                                     width="70%"
@@ -1500,7 +1505,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Polygon"
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Polygon"
                                     height="70%"
                                     icon="polygon-logo.svg"
                                     width="70%"
@@ -1519,7 +1525,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="BSC"
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="BSC"
                                     height="70%"
                                     icon="binance-logo.svg"
                                     width="70%"
@@ -1530,7 +1537,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                               />,
                             ],
                             "direction": "down",
-                            "icon": <pure(SvgLogo)
+                            "icon": <pure(SvgIcon)
+                              alt="Ethereum"
                               height="70%"
                               icon="ethereum-logo.svg"
                               width="70%"
@@ -1580,7 +1588,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     type="button"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Ethereum"
                                       height="70%"
                                       src="ethereum-logo.svg"
                                       style="margin: 0px;"
@@ -1640,7 +1648,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Ethereum"
                                         icon={
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Ethereum"
                                             height="70%"
                                             icon="ethereum-logo.svg"
                                             width="70%"
@@ -1659,7 +1668,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Cardano"
                                         icon={
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Cardano"
                                             height="70%"
                                             icon="cardano-logo.svg"
                                             width="70%"
@@ -1678,7 +1688,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Avalanche"
                                         icon={
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Avalanche"
                                             height="70%"
                                             icon="avalanche-logo.svg"
                                             width="70%"
@@ -1697,7 +1708,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Solana"
                                         icon={
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Solana"
                                             height="70%"
                                             icon="solana-logo.svg"
                                             width="70%"
@@ -1716,7 +1728,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Polygon"
                                         icon={
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Polygon"
                                             height="70%"
                                             icon="polygon-logo.svg"
                                             width="70%"
@@ -1735,7 +1748,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="BSC"
                                         icon={
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="BSC"
                                             height="70%"
                                             icon="binance-logo.svg"
                                             width="70%"
@@ -1746,7 +1760,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       />,
                                     ],
                                     "direction": "down",
-                                    "icon": <pure(SvgLogo)
+                                    "icon": <pure(SvgIcon)
+                                      alt="Ethereum"
                                       height="70%"
                                       icon="ethereum-logo.svg"
                                       width="70%"
@@ -1804,7 +1819,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         "aria-expanded": false,
                                         "aria-haspopup": "true",
                                         "aria-label": "network selection",
-                                        "children": <pure(SvgLogo)
+                                        "children": <pure(SvgIcon)
+                                          alt="Ethereum"
                                           height="70%"
                                           icon="ethereum-logo.svg"
                                           width="70%"
@@ -1877,7 +1893,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             "aria-haspopup": "true",
                                             "aria-label": "network selection",
                                             "centerRipple": false,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="Ethereum"
                                               height="70%"
                                               icon="ethereum-logo.svg"
                                               width="70%"
@@ -1937,18 +1954,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           tabIndex={0}
                                           type="button"
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Ethereum"
                                             height="70%"
                                             icon="ethereum-logo.svg"
                                             width="70%"
                                           >
-                                            <SvgLogo
+                                            <SvgIcon
+                                              alt="Ethereum"
                                               height="70%"
                                               icon="ethereum-logo.svg"
                                               width="70%"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Ethereum"
                                                 height="70%"
                                                 src="ethereum-logo.svg"
                                                 style={
@@ -1958,8 +1977,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 }
                                                 width="70%"
                                               />
-                                            </SvgLogo>
-                                          </pure(SvgLogo)>
+                                            </SvgIcon>
+                                          </pure(SvgIcon)>
                                           <ForwardRef(TouchRipple)
                                             center={false}
                                           >
@@ -2016,7 +2035,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Ethereum"
                                     icon={
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Ethereum"
                                         height="70%"
                                         icon="ethereum-logo.svg"
                                         width="70%"
@@ -2035,7 +2055,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Cardano"
                                     icon={
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Cardano"
                                         height="70%"
                                         icon="cardano-logo.svg"
                                         width="70%"
@@ -2054,7 +2075,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Avalanche"
                                     icon={
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Avalanche"
                                         height="70%"
                                         icon="avalanche-logo.svg"
                                         width="70%"
@@ -2073,7 +2095,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Solana"
                                     icon={
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Solana"
                                         height="70%"
                                         icon="solana-logo.svg"
                                         width="70%"
@@ -2092,7 +2115,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Polygon"
                                     icon={
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Polygon"
                                         height="70%"
                                         icon="polygon-logo.svg"
                                         width="70%"
@@ -2111,7 +2135,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="BSC"
                                     icon={
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="BSC"
                                         height="70%"
                                         icon="binance-logo.svg"
                                         width="70%"
@@ -2122,7 +2147,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                   />,
                                 ],
                                 "direction": "down",
-                                "icon": <pure(SvgLogo)
+                                "icon": <pure(SvgIcon)
+                                  alt="Ethereum"
                                   height="70%"
                                   icon="ethereum-logo.svg"
                                   width="70%"
@@ -2153,7 +2179,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Ethereum"
                                 delay={180}
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Ethereum"
                                     height="70%"
                                     icon="ethereum-logo.svg"
                                     width="70%"
@@ -2201,7 +2228,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Ethereum",
                                         "delay": 180,
-                                        "icon": <pure(SvgLogo)
+                                        "icon": <pure(SvgIcon)
+                                          alt="Ethereum"
                                           height="70%"
                                           icon="ethereum-logo.svg"
                                           width="70%"
@@ -2273,7 +2301,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Ethereum",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="Ethereum"
                                               height="70%"
                                               icon="ethereum-logo.svg"
                                               width="70%"
@@ -2362,7 +2391,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Ethereum",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgLogo)
+                                                "children": <pure(SvgIcon)
+                                                  alt="Ethereum"
                                                   height="70%"
                                                   icon="ethereum-logo.svg"
                                                   width="70%"
@@ -2431,18 +2461,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Ethereum"
                                                 height="70%"
                                                 icon="ethereum-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgLogo
+                                                <SvgIcon
+                                                  alt="Ethereum"
                                                   height="70%"
                                                   icon="ethereum-logo.svg"
                                                   width="70%"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Ethereum"
                                                     height="70%"
                                                     src="ethereum-logo.svg"
                                                     style={
@@ -2452,8 +2484,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                     }
                                                     width="70%"
                                                   />
-                                                </SvgLogo>
-                                              </pure(SvgLogo)>
+                                                </SvgIcon>
+                                              </pure(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -2491,7 +2523,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         type="button"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Ethereum"
                                           height="70%"
                                           src="ethereum-logo.svg"
                                           style="margin: 0px;"
@@ -2546,7 +2578,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Ethereum",
                                               "delay": 180,
-                                              "icon": <pure(SvgLogo)
+                                              "icon": <pure(SvgIcon)
+                                                alt="Ethereum"
                                                 height="70%"
                                                 icon="ethereum-logo.svg"
                                                 width="70%"
@@ -2574,7 +2607,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Ethereum"
                                             height="70%"
                                             icon="ethereum-logo.svg"
                                             width="70%"
@@ -2630,7 +2664,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           type="button"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Ethereum"
                                             height="70%"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -2683,7 +2717,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             type="button"
                                           >
                                             <img
-                                              alt="logo"
+                                              alt="Ethereum"
                                               height="70%"
                                               src="ethereum-logo.svg"
                                               style="margin: 0px;"
@@ -2740,7 +2774,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Cardano"
                                 delay={150}
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Cardano"
                                     height="70%"
                                     icon="cardano-logo.svg"
                                     width="70%"
@@ -2786,7 +2821,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Cardano",
                                         "delay": 150,
-                                        "icon": <pure(SvgLogo)
+                                        "icon": <pure(SvgIcon)
+                                          alt="Cardano"
                                           height="70%"
                                           icon="cardano-logo.svg"
                                           width="70%"
@@ -2856,7 +2892,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Cardano",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="Cardano"
                                               height="70%"
                                               icon="cardano-logo.svg"
                                               width="70%"
@@ -2945,7 +2982,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Cardano",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgLogo)
+                                                "children": <pure(SvgIcon)
+                                                  alt="Cardano"
                                                   height="70%"
                                                   icon="cardano-logo.svg"
                                                   width="70%"
@@ -3014,18 +3052,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Cardano"
                                                 height="70%"
                                                 icon="cardano-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgLogo
+                                                <SvgIcon
+                                                  alt="Cardano"
                                                   height="70%"
                                                   icon="cardano-logo.svg"
                                                   width="70%"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Cardano"
                                                     height="70%"
                                                     src="cardano-logo.svg"
                                                     style={
@@ -3035,8 +3075,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                     }
                                                     width="70%"
                                                   />
-                                                </SvgLogo>
-                                              </pure(SvgLogo)>
+                                                </SvgIcon>
+                                              </pure(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -3074,7 +3114,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         type="button"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Cardano"
                                           height="70%"
                                           src="cardano-logo.svg"
                                           style="margin: 0px;"
@@ -3127,7 +3167,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Cardano",
                                               "delay": 150,
-                                              "icon": <pure(SvgLogo)
+                                              "icon": <pure(SvgIcon)
+                                                alt="Cardano"
                                                 height="70%"
                                                 icon="cardano-logo.svg"
                                                 width="70%"
@@ -3153,7 +3194,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Cardano"
                                             height="70%"
                                             icon="cardano-logo.svg"
                                             width="70%"
@@ -3209,7 +3251,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           type="button"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Cardano"
                                             height="70%"
                                             src="cardano-logo.svg"
                                             style="margin: 0px;"
@@ -3262,7 +3304,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             type="button"
                                           >
                                             <img
-                                              alt="logo"
+                                              alt="Cardano"
                                               height="70%"
                                               src="cardano-logo.svg"
                                               style="margin: 0px;"
@@ -3319,7 +3361,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Avalanche"
                                 delay={120}
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Avalanche"
                                     height="70%"
                                     icon="avalanche-logo.svg"
                                     width="70%"
@@ -3365,7 +3408,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Avalanche",
                                         "delay": 120,
-                                        "icon": <pure(SvgLogo)
+                                        "icon": <pure(SvgIcon)
+                                          alt="Avalanche"
                                           height="70%"
                                           icon="avalanche-logo.svg"
                                           width="70%"
@@ -3435,7 +3479,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Avalanche",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="Avalanche"
                                               height="70%"
                                               icon="avalanche-logo.svg"
                                               width="70%"
@@ -3524,7 +3569,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Avalanche",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgLogo)
+                                                "children": <pure(SvgIcon)
+                                                  alt="Avalanche"
                                                   height="70%"
                                                   icon="avalanche-logo.svg"
                                                   width="70%"
@@ -3593,18 +3639,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Avalanche"
                                                 height="70%"
                                                 icon="avalanche-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgLogo
+                                                <SvgIcon
+                                                  alt="Avalanche"
                                                   height="70%"
                                                   icon="avalanche-logo.svg"
                                                   width="70%"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Avalanche"
                                                     height="70%"
                                                     src="avalanche-logo.svg"
                                                     style={
@@ -3614,8 +3662,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                     }
                                                     width="70%"
                                                   />
-                                                </SvgLogo>
-                                              </pure(SvgLogo)>
+                                                </SvgIcon>
+                                              </pure(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -3653,7 +3701,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         type="button"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Avalanche"
                                           height="70%"
                                           src="avalanche-logo.svg"
                                           style="margin: 0px;"
@@ -3706,7 +3754,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Avalanche",
                                               "delay": 120,
-                                              "icon": <pure(SvgLogo)
+                                              "icon": <pure(SvgIcon)
+                                                alt="Avalanche"
                                                 height="70%"
                                                 icon="avalanche-logo.svg"
                                                 width="70%"
@@ -3732,7 +3781,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Avalanche"
                                             height="70%"
                                             icon="avalanche-logo.svg"
                                             width="70%"
@@ -3788,7 +3838,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           type="button"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Avalanche"
                                             height="70%"
                                             src="avalanche-logo.svg"
                                             style="margin: 0px;"
@@ -3841,7 +3891,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             type="button"
                                           >
                                             <img
-                                              alt="logo"
+                                              alt="Avalanche"
                                               height="70%"
                                               src="avalanche-logo.svg"
                                               style="margin: 0px;"
@@ -3898,7 +3948,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Solana"
                                 delay={90}
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Solana"
                                     height="70%"
                                     icon="solana-logo.svg"
                                     width="70%"
@@ -3944,7 +3995,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Solana",
                                         "delay": 90,
-                                        "icon": <pure(SvgLogo)
+                                        "icon": <pure(SvgIcon)
+                                          alt="Solana"
                                           height="70%"
                                           icon="solana-logo.svg"
                                           width="70%"
@@ -4014,7 +4066,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Solana",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="Solana"
                                               height="70%"
                                               icon="solana-logo.svg"
                                               width="70%"
@@ -4103,7 +4156,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Solana",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgLogo)
+                                                "children": <pure(SvgIcon)
+                                                  alt="Solana"
                                                   height="70%"
                                                   icon="solana-logo.svg"
                                                   width="70%"
@@ -4172,18 +4226,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Solana"
                                                 height="70%"
                                                 icon="solana-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgLogo
+                                                <SvgIcon
+                                                  alt="Solana"
                                                   height="70%"
                                                   icon="solana-logo.svg"
                                                   width="70%"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Solana"
                                                     height="70%"
                                                     src="solana-logo.svg"
                                                     style={
@@ -4193,8 +4249,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                     }
                                                     width="70%"
                                                   />
-                                                </SvgLogo>
-                                              </pure(SvgLogo)>
+                                                </SvgIcon>
+                                              </pure(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -4232,7 +4288,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         type="button"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Solana"
                                           height="70%"
                                           src="solana-logo.svg"
                                           style="margin: 0px;"
@@ -4285,7 +4341,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Solana",
                                               "delay": 90,
-                                              "icon": <pure(SvgLogo)
+                                              "icon": <pure(SvgIcon)
+                                                alt="Solana"
                                                 height="70%"
                                                 icon="solana-logo.svg"
                                                 width="70%"
@@ -4311,7 +4368,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Solana"
                                             height="70%"
                                             icon="solana-logo.svg"
                                             width="70%"
@@ -4367,7 +4425,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           type="button"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Solana"
                                             height="70%"
                                             src="solana-logo.svg"
                                             style="margin: 0px;"
@@ -4420,7 +4478,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             type="button"
                                           >
                                             <img
-                                              alt="logo"
+                                              alt="Solana"
                                               height="70%"
                                               src="solana-logo.svg"
                                               style="margin: 0px;"
@@ -4477,7 +4535,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Polygon"
                                 delay={60}
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="Polygon"
                                     height="70%"
                                     icon="polygon-logo.svg"
                                     width="70%"
@@ -4523,7 +4582,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Polygon",
                                         "delay": 60,
-                                        "icon": <pure(SvgLogo)
+                                        "icon": <pure(SvgIcon)
+                                          alt="Polygon"
                                           height="70%"
                                           icon="polygon-logo.svg"
                                           width="70%"
@@ -4593,7 +4653,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Polygon",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="Polygon"
                                               height="70%"
                                               icon="polygon-logo.svg"
                                               width="70%"
@@ -4682,7 +4743,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Polygon",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgLogo)
+                                                "children": <pure(SvgIcon)
+                                                  alt="Polygon"
                                                   height="70%"
                                                   icon="polygon-logo.svg"
                                                   width="70%"
@@ -4751,18 +4813,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Polygon"
                                                 height="70%"
                                                 icon="polygon-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgLogo
+                                                <SvgIcon
+                                                  alt="Polygon"
                                                   height="70%"
                                                   icon="polygon-logo.svg"
                                                   width="70%"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Polygon"
                                                     height="70%"
                                                     src="polygon-logo.svg"
                                                     style={
@@ -4772,8 +4836,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                     }
                                                     width="70%"
                                                   />
-                                                </SvgLogo>
-                                              </pure(SvgLogo)>
+                                                </SvgIcon>
+                                              </pure(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -4811,7 +4875,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         type="button"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Polygon"
                                           height="70%"
                                           src="polygon-logo.svg"
                                           style="margin: 0px;"
@@ -4864,7 +4928,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Polygon",
                                               "delay": 60,
-                                              "icon": <pure(SvgLogo)
+                                              "icon": <pure(SvgIcon)
+                                                alt="Polygon"
                                                 height="70%"
                                                 icon="polygon-logo.svg"
                                                 width="70%"
@@ -4890,7 +4955,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Polygon"
                                             height="70%"
                                             icon="polygon-logo.svg"
                                             width="70%"
@@ -4946,7 +5012,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           type="button"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Polygon"
                                             height="70%"
                                             src="polygon-logo.svg"
                                             style="margin: 0px;"
@@ -4999,7 +5065,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             type="button"
                                           >
                                             <img
-                                              alt="logo"
+                                              alt="Polygon"
                                               height="70%"
                                               src="polygon-logo.svg"
                                               style="margin: 0px;"
@@ -5056,7 +5122,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="BSC"
                                 delay={30}
                                 icon={
-                                  <pure(SvgLogo)
+                                  <pure(SvgIcon)
+                                    alt="BSC"
                                     height="70%"
                                     icon="binance-logo.svg"
                                     width="70%"
@@ -5102,7 +5169,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "BSC",
                                         "delay": 30,
-                                        "icon": <pure(SvgLogo)
+                                        "icon": <pure(SvgIcon)
+                                          alt="BSC"
                                           height="70%"
                                           icon="binance-logo.svg"
                                           width="70%"
@@ -5172,7 +5240,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "BSC",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgLogo)
+                                            "children": <pure(SvgIcon)
+                                              alt="BSC"
                                               height="70%"
                                               icon="binance-logo.svg"
                                               width="70%"
@@ -5261,7 +5330,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "BSC",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgLogo)
+                                                "children": <pure(SvgIcon)
+                                                  alt="BSC"
                                                   height="70%"
                                                   icon="binance-logo.svg"
                                                   width="70%"
@@ -5330,18 +5400,20 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="BSC"
                                                 height="70%"
                                                 icon="binance-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgLogo
+                                                <SvgIcon
+                                                  alt="BSC"
                                                   height="70%"
                                                   icon="binance-logo.svg"
                                                   width="70%"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="BSC"
                                                     height="70%"
                                                     src="binance-logo.svg"
                                                     style={
@@ -5351,8 +5423,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                     }
                                                     width="70%"
                                                   />
-                                                </SvgLogo>
-                                              </pure(SvgLogo)>
+                                                </SvgIcon>
+                                              </pure(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -5390,7 +5462,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         type="button"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="BSC"
                                           height="70%"
                                           src="binance-logo.svg"
                                           style="margin: 0px;"
@@ -5443,7 +5515,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "BSC",
                                               "delay": 30,
-                                              "icon": <pure(SvgLogo)
+                                              "icon": <pure(SvgIcon)
+                                                alt="BSC"
                                                 height="70%"
                                                 icon="binance-logo.svg"
                                                 width="70%"
@@ -5469,7 +5542,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="BSC"
                                             height="70%"
                                             icon="binance-logo.svg"
                                             width="70%"
@@ -5525,7 +5599,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           type="button"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="BSC"
                                             height="70%"
                                             src="binance-logo.svg"
                                             style="margin: 0px;"
@@ -5578,7 +5652,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             type="button"
                                           >
                                             <img
-                                              alt="logo"
+                                              alt="BSC"
                                               height="70%"
                                               src="binance-logo.svg"
                                               style="margin: 0px;"
