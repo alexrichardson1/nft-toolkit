@@ -1,7 +1,7 @@
 import { Skeleton } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import SvgLogo from "components/common/SvgLogo";
+import SvgIcon from "components/common/SvgLogo";
 import { BigNumber, utils } from "ethers";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
@@ -25,7 +25,13 @@ const priceCard = (logo: string, price: BigNumber) => {
       <Typography variant="h6" color="primary" className="card-price">
         Price: {utils.formatEther(price)}
       </Typography>
-      <SvgLogo icon={logo} width="20px" height="20px" margins />
+      <SvgIcon
+        alt="network-symb"
+        icon={logo}
+        width="20px"
+        height="20px"
+        margins
+      />
     </Box>
   );
 };

@@ -10,7 +10,7 @@ import {
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
-import SvgLogo from "components/common/SvgLogo";
+import SvgIcon from "components/common/SvgLogo";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
 import { formatEther } from "ethers/lib/utils";
@@ -246,7 +246,13 @@ const MintingPage = (): JSX.Element => {
                     BigNumber.from(mintingData.price).mul(mintingQuantity)
                   )}`}
                   {!isMinting && (
-                    <SvgLogo icon={logo} width="20px" height="20px" margins />
+                    <SvgIcon
+                      alt="network-icon"
+                      icon={logo}
+                      width="20px"
+                      height="20px"
+                      margins
+                    />
                   )}{" "}
                   ${`(${(mintingQuantity * usdValue).toFixed(DECIMALS)})`}
                 </LoadingButton>

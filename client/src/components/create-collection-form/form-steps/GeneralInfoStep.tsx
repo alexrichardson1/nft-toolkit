@@ -3,7 +3,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import Input from "components/common/Input";
 import PageHeader from "components/common/PageHeader";
-import SvgLogo from "components/common/SvgLogo";
+import SvgIcon from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useMemo, useRef } from "react";
 import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
@@ -36,7 +36,12 @@ const priceInputProps = (selectedNet: NetworkT) => ({
   inputProps: { min: 0, step: "any" },
   endAdornment: (
     <InputAdornment position="end">
-      <SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />
+      <SvgIcon
+        alt={selectedNet.name}
+        icon={selectedNet.icon}
+        width={ICON_SIZE}
+        height={ICON_SIZE}
+      />
     </InputAdornment>
   ),
 });
