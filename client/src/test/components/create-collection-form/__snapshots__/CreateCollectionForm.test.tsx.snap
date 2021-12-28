@@ -701,6 +701,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "hype": -1,
                             "names": Array [],
+                            "price": -1,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3621,6 +3622,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "hype": -1,
                             "names": Array [],
+                            "price": -1,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3659,6 +3661,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "hype": -1,
                             "names": Array [],
+                            "price": -1,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3697,6 +3700,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "hype": -1,
                             "names": Array [],
+                            "price": -1,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3737,6 +3741,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "hype": -1,
                             "names": Array [],
+                            "price": -1,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3751,8 +3756,10 @@ exports[`CreateCollectionForm snapshot 1`] = `
                     />
                     <RecommendationsStep
                       changedCollName=""
+                      changedMintingPrice={0}
                       generative={false}
                       handleChangeCollName={[Function]}
+                      handleChangeMintingPrice={[Function]}
                       isLoading={false}
                       state={
                         Object {
@@ -3774,6 +3781,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "hype": -1,
                             "names": Array [],
+                            "price": -1,
                           },
                           "redditHandle": "",
                           "static": Object {
