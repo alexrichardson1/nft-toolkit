@@ -3,7 +3,7 @@ name: Deploy to DockerHub & AWS EB
 on:
   push:
     branches:
-      - "price-prediction"
+      - "master"
 
 jobs:
   docker:
