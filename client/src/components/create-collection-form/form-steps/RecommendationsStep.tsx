@@ -101,6 +101,7 @@ const RecommendationsStep = ({
     if (isLoading) {
       return;
     }
+    console.log(newPrice);
     handleChangeMintingPrice(newPrice);
   };
 
@@ -141,6 +142,8 @@ const RecommendationsStep = ({
     </List>
   );
 
+  console.log(parseFloat(state.mintingPrice), changedMintingPrice);
+
   return (
     <>
       <PageHeader text="Predictions & Recommendations" />
@@ -170,7 +173,7 @@ const RecommendationsStep = ({
             sx={{
               ...listItemStyle,
               border:
-                changedMintingPrice === parseInt(state.mintingPrice)
+                changedMintingPrice === parseFloat(state.mintingPrice)
                   ? "3px solid"
                   : "none",
             }}
@@ -186,7 +189,7 @@ const RecommendationsStep = ({
                   : "none",
             }}
             onClick={() => mintingPriceChange(state.predictions.price)}>
-            <ListItemText>Recommended: {changedMintingPrice}</ListItemText>
+            <ListItemText>Recommended: {state.predictions.price}</ListItemText>
           </ListItem>
         </List>
       </Recommendation>
