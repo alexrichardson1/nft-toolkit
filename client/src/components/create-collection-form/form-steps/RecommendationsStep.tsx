@@ -101,7 +101,6 @@ const RecommendationsStep = ({
     if (isLoading) {
       return;
     }
-    console.log(newPrice);
     handleChangeMintingPrice(newPrice);
   };
 
@@ -141,8 +140,6 @@ const RecommendationsStep = ({
       })}
     </List>
   );
-
-  console.log(parseFloat(state.mintingPrice), changedMintingPrice);
 
   return (
     <>
