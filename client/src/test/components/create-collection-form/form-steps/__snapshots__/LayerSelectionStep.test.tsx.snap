@@ -663,6 +663,7 @@ exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
               "predictions": Object {
                 "hype": -1,
                 "names": Array [],
+                "price": -1,
               },
               "redditHandle": "",
               "static": Object {
@@ -1344,6 +1345,7 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
               "predictions": Object {
                 "hype": -1,
                 "names": Array [],
+                "price": -1,
               },
               "redditHandle": "",
               "static": Object {

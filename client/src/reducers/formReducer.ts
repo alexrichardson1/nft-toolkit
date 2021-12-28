@@ -1,4 +1,5 @@
 import { arrayMove } from "@dnd-kit/sortable";
+import { undefinedCheck } from "utils/typeUtils";
 import { FormActionI } from "./formReducerTypes";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
@@ -59,21 +60,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { names: [], hype: -1 },
-};
-
-/**
- * Checks if `value` is undefined. Used for type narrowing from `T | undefined` to `T`
- * @param value - Any value
- * @param message - Error message if value is `undefined`
- * @throws - Error with `message`
- * @returns `value` with type T
- */
-const undefinedCheck = <T>(value: T | undefined, message: string): T => {
-  if (value === void 0) {
-    throw new Error(message);
-  }
-  return value;
+  predictions: { names: [], hype: -1, price: -1 },
 };
 
 const containsDuplicates = (name: string, items: { name: string }[]) => {
@@ -359,7 +346,7 @@ const resetTypeOfArt = (state: FormStateI): FormStateI => {
       numberOfLayers: 0,
       quantity: DEFAULT_STRING,
     },
-    predictions: { names: [], hype: -1 },
+    predictions: { names: [], hype: -1, price: -1 },
   };
 };
 const changeSymbol = (state: FormStateI, action: FormActionI): FormStateI => {

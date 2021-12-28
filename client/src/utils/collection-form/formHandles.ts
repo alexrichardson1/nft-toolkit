@@ -151,6 +151,7 @@ const handleIfNotLastStep = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   setNewCollName: SetStateAction<string>,
+  setNewMintingPrice: SetStateAction<number>,
   handleNextStep: () => void
 ): Promise<boolean> => {
   if (isLastStep) {
@@ -189,6 +190,7 @@ const handleIfNotLastStep = async (
     }
     stopLoading(setLoadingMessage, setIsLoading);
     setNewCollName(state.collectionName);
+    setNewMintingPrice(Number(state.mintingPrice));
   }
   handleNextStep();
   return false;
@@ -199,6 +201,7 @@ const handleLastStep = async (
   setIsLoading: SetStateAction<boolean>,
   state: FormStateI,
   newCollName: string,
+  newMintingPrice: number,
   generative: boolean,
   account: string,
   chainId: number,
@@ -208,7 +211,11 @@ const handleLastStep = async (
 ) => {
   startLoading(setLoadingMessage, setIsLoading, "Uploading...");
   let tx: Deferrable<TransactionRequest>;
-  const modifiedState = { ...state, collectionName: newCollName };
+  const modifiedState = {
+    ...state,
+    collectionName: newCollName,
+    mintingPrice: newMintingPrice.toString(),
+  };
   if (generative) {
     const layers = await uploadGenImages(
       state.generative.layers,
@@ -254,8 +261,10 @@ export const handleFormSubmit = async (
   setIsLoading: SetStateAction<boolean>,
   dispatch: React.Dispatch<FormActionI>,
   setNewCollName: SetStateAction<string>,
+  setNewMintingPrice: SetStateAction<number>,
   handleNextStep: () => void,
   newCollName: string,
+  newMintingPrice: number,
   library: Web3Provider,
   setTxAddress: SetStateAction<string>
 ): Promise<void> => {
@@ -275,6 +284,7 @@ export const handleFormSubmit = async (
       setLoadingMessage,
       setIsLoading,
       setNewCollName,
+      setNewMintingPrice,
       handleNextStep
     ))
   ) {
@@ -286,6 +296,7 @@ export const handleFormSubmit = async (
       setIsLoading,
       state,
       newCollName,
+      newMintingPrice,
       generative,
       account,
       chainId,
