@@ -63,5 +63,5 @@ export const s3 = new S3({
 });
 
 export const siderbarMenuItems = [
-  { text: "Create New Collection", location: "/" },
+  { text: "Create New Collection", location: "/create-new-collection" },
 ];
