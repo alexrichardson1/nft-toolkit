@@ -7,7 +7,7 @@ import NetworkContext from "context/network/NetworkContext";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { useContext } from "react";
 import { NETWORKS } from "utils/constants";
-import SvgLogo from "./SvgLogo";
+import SvgIcon from "./SvgLogo";
 
 const NETWORK_DIMENSIONS = "70%";
 
@@ -41,7 +41,8 @@ const NetworkSpeedDial = (): JSX.Element => {
   const { library } = useWeb3React();
 
   const speedDialIcon = (
-    <SvgLogo
+    <SvgIcon
+      alt={selectedNet.name}
       icon={selectedNet.icon}
       width={NETWORK_DIMENSIONS}
       height={NETWORK_DIMENSIONS}
@@ -60,7 +61,8 @@ const NetworkSpeedDial = (): JSX.Element => {
             FabProps={{ sx: getSmallFabStyle(network, selectedNet) }}
             key={network.name}
             icon={
-              <SvgLogo
+              <SvgIcon
+                alt={network.name}
                 icon={network.icon}
                 width={NETWORK_DIMENSIONS}
                 height={NETWORK_DIMENSIONS}
