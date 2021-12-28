@@ -764,7 +764,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Ethereum"
                             height={24}
                             icon="ethereum-logo.svg"
                             width={24}
@@ -928,7 +929,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="Ethereum"
                                     height="24"
                                     src="ethereum-logo.svg"
                                     style="margin: 0px;"
@@ -981,7 +982,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="0"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="Ethereum"
                                     height="24"
                                     src="ethereum-logo.svg"
                                     style="margin: 0px;"
@@ -1003,7 +1004,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="Cardano"
                                     height="24"
                                     src="cardano-logo.svg"
                                     style="margin: 0px;"
@@ -1025,7 +1026,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="Avalanche"
                                     height="24"
                                     src="avalanche-logo.svg"
                                     style="margin: 0px;"
@@ -1047,7 +1048,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="Solana"
                                     height="24"
                                     src="solana-logo.svg"
                                     style="margin: 0px;"
@@ -1069,7 +1070,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="Polygon"
                                     height="24"
                                     src="polygon-logo.svg"
                                     style="margin: 0px;"
@@ -1091,7 +1092,7 @@ exports[`MobileMenu snapshot 1`] = `
                                   tabindex="-1"
                                 >
                                   <img
-                                    alt="logo"
+                                    alt="BSC"
                                     height="24"
                                     src="binance-logo.svg"
                                     style="margin: 0px;"
@@ -1223,7 +1224,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="Ethereum"
                                 height={24}
                                 icon="ethereum-logo.svg"
                                 width={24}
@@ -1317,7 +1319,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Ethereum"
                                       height="24"
                                       src="ethereum-logo.svg"
                                       style="margin: 0px;"
@@ -1370,7 +1372,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="0"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Ethereum"
                                       height="24"
                                       src="ethereum-logo.svg"
                                       style="margin: 0px;"
@@ -1392,7 +1394,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Cardano"
                                       height="24"
                                       src="cardano-logo.svg"
                                       style="margin: 0px;"
@@ -1414,7 +1416,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Avalanche"
                                       height="24"
                                       src="avalanche-logo.svg"
                                       style="margin: 0px;"
@@ -1436,7 +1438,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Solana"
                                       height="24"
                                       src="solana-logo.svg"
                                       style="margin: 0px;"
@@ -1458,7 +1460,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="Polygon"
                                       height="24"
                                       src="polygon-logo.svg"
                                       style="margin: 0px;"
@@ -1480,7 +1482,7 @@ exports[`MobileMenu snapshot 1`] = `
                                     tabindex="-1"
                                   >
                                     <img
-                                      alt="logo"
+                                      alt="BSC"
                                       height="24"
                                       src="binance-logo.svg"
                                       style="margin: 0px;"
@@ -1637,7 +1639,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="Ethereum"
                                         height="24"
                                         src="ethereum-logo.svg"
                                         style="margin: 0px;"
@@ -1690,7 +1692,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="0"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="Ethereum"
                                         height="24"
                                         src="ethereum-logo.svg"
                                         style="margin: 0px;"
@@ -1712,7 +1714,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="Cardano"
                                         height="24"
                                         src="cardano-logo.svg"
                                         style="margin: 0px;"
@@ -1734,7 +1736,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="Avalanche"
                                         height="24"
                                         src="avalanche-logo.svg"
                                         style="margin: 0px;"
@@ -1756,7 +1758,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="Solana"
                                         height="24"
                                         src="solana-logo.svg"
                                         style="margin: 0px;"
@@ -1778,7 +1780,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="Polygon"
                                         height="24"
                                         src="polygon-logo.svg"
                                         style="margin: 0px;"
@@ -1800,7 +1802,7 @@ exports[`MobileMenu snapshot 1`] = `
                                       tabindex="-1"
                                     >
                                       <img
-                                        alt="logo"
+                                        alt="BSC"
                                         height="24"
                                         src="binance-logo.svg"
                                         style="margin: 0px;"
@@ -1899,7 +1901,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Ethereum"
                                           height="24"
                                           src="ethereum-logo.svg"
                                           style="margin: 0px;"
@@ -1952,7 +1954,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="0"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Ethereum"
                                           height="24"
                                           src="ethereum-logo.svg"
                                           style="margin: 0px;"
@@ -1974,7 +1976,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Cardano"
                                           height="24"
                                           src="cardano-logo.svg"
                                           style="margin: 0px;"
@@ -1996,7 +1998,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Avalanche"
                                           height="24"
                                           src="avalanche-logo.svg"
                                           style="margin: 0px;"
@@ -2018,7 +2020,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Solana"
                                           height="24"
                                           src="solana-logo.svg"
                                           style="margin: 0px;"
@@ -2040,7 +2042,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="Polygon"
                                           height="24"
                                           src="polygon-logo.svg"
                                           style="margin: 0px;"
@@ -2062,7 +2064,7 @@ exports[`MobileMenu snapshot 1`] = `
                                         tabindex="-1"
                                       >
                                         <img
-                                          alt="logo"
+                                          alt="BSC"
                                           height="24"
                                           src="binance-logo.svg"
                                           style="margin: 0px;"
@@ -2149,7 +2151,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Ethereum"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -2202,7 +2204,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="0"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Ethereum"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -2224,7 +2226,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Cardano"
                                             height="24"
                                             src="cardano-logo.svg"
                                             style="margin: 0px;"
@@ -2246,7 +2248,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Avalanche"
                                             height="24"
                                             src="avalanche-logo.svg"
                                             style="margin: 0px;"
@@ -2268,7 +2270,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Solana"
                                             height="24"
                                             src="solana-logo.svg"
                                             style="margin: 0px;"
@@ -2290,7 +2292,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Polygon"
                                             height="24"
                                             src="polygon-logo.svg"
                                             style="margin: 0px;"
@@ -2312,7 +2314,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="BSC"
                                             height="24"
                                             src="binance-logo.svg"
                                             style="margin: 0px;"
@@ -2465,7 +2467,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Ethereum"
                                               height={24}
                                               icon="ethereum-logo.svg"
                                               width={24}
@@ -2562,7 +2565,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Ethereum"
                                                 height="24"
                                                 src="ethereum-logo.svg"
                                                 style="margin: 0px;"
@@ -2615,7 +2618,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="0"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Ethereum"
                                                 height="24"
                                                 src="ethereum-logo.svg"
                                                 style="margin: 0px;"
@@ -2637,7 +2640,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Cardano"
                                                 height="24"
                                                 src="cardano-logo.svg"
                                                 style="margin: 0px;"
@@ -2659,7 +2662,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Avalanche"
                                                 height="24"
                                                 src="avalanche-logo.svg"
                                                 style="margin: 0px;"
@@ -2681,7 +2684,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Solana"
                                                 height="24"
                                                 src="solana-logo.svg"
                                                 style="margin: 0px;"
@@ -2703,7 +2706,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="Polygon"
                                                 height="24"
                                                 src="polygon-logo.svg"
                                                 style="margin: 0px;"
@@ -2725,7 +2728,7 @@ exports[`MobileMenu snapshot 1`] = `
                                               tabindex="-1"
                                             >
                                               <img
-                                                alt="logo"
+                                                alt="BSC"
                                                 height="24"
                                                 src="binance-logo.svg"
                                                 style="margin: 0px;"
@@ -2997,7 +3000,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Ethereum"
                                                     height="24"
                                                     src="ethereum-logo.svg"
                                                     style="margin: 0px;"
@@ -3212,7 +3215,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="Ethereum"
                                                         height={24}
                                                         icon="ethereum-logo.svg"
                                                         width={24}
@@ -3349,7 +3353,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="Ethereum"
                                                               height={24}
                                                               icon="ethereum-logo.svg"
                                                               width={24}
@@ -3464,7 +3469,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="Ethereum"
                                                                         height={24}
                                                                         icon="ethereum-logo.svg"
                                                                         width={24}
@@ -3758,7 +3764,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Ethereum"
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
@@ -3828,7 +3835,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="Ethereum"
                                                                                 height={24}
                                                                                 icon="ethereum-logo.svg"
                                                                                 width={24}
@@ -3877,18 +3885,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Ethereum"
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="Ethereum"
                                                                               height={24}
                                                                               icon="ethereum-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="Ethereum"
                                                                                 height={24}
                                                                                 src="ethereum-logo.svg"
                                                                                 style={
@@ -3898,8 +3908,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -4095,7 +4105,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Ethereum"
                             height={24}
                             icon="ethereum-logo.svg"
                             width={24}
@@ -4114,7 +4125,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Cardano"
                             height={24}
                             icon="cardano-logo.svg"
                             width={24}
@@ -4133,7 +4145,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Avalanche"
                             height={24}
                             icon="avalanche-logo.svg"
                             width={24}
@@ -4152,7 +4165,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Solana"
                             height={24}
                             icon="solana-logo.svg"
                             width={24}
@@ -4171,7 +4185,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Polygon"
                             height={24}
                             icon="polygon-logo.svg"
                             width={24}
@@ -4190,7 +4205,8 @@ exports[`MobileMenu snapshot 1`] = `
                             }
                           }
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="BSC"
                             height={24}
                             icon="binance-logo.svg"
                             width={24}
@@ -4384,7 +4400,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="Ethereum"
                                 height={24}
                                 icon="ethereum-logo.svg"
                                 width={24}
@@ -4403,7 +4420,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="Cardano"
                                 height={24}
                                 icon="cardano-logo.svg"
                                 width={24}
@@ -4422,7 +4440,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="Avalanche"
                                 height={24}
                                 icon="avalanche-logo.svg"
                                 width={24}
@@ -4441,7 +4460,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="Solana"
                                 height={24}
                                 icon="solana-logo.svg"
                                 width={24}
@@ -4460,7 +4480,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="Polygon"
                                 height={24}
                                 icon="polygon-logo.svg"
                                 width={24}
@@ -4479,7 +4500,8 @@ exports[`MobileMenu snapshot 1`] = `
                                 }
                               }
                             >
-                              <pure(SvgLogo)
+                              <pure(SvgIcon)
+                                alt="BSC"
                                 height={24}
                                 icon="binance-logo.svg"
                                 width={24}
@@ -4661,7 +4683,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Ethereum"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -4714,7 +4736,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="0"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Ethereum"
                                             height="24"
                                             src="ethereum-logo.svg"
                                             style="margin: 0px;"
@@ -4736,7 +4758,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Cardano"
                                             height="24"
                                             src="cardano-logo.svg"
                                             style="margin: 0px;"
@@ -4758,7 +4780,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Avalanche"
                                             height="24"
                                             src="avalanche-logo.svg"
                                             style="margin: 0px;"
@@ -4780,7 +4802,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Solana"
                                             height="24"
                                             src="solana-logo.svg"
                                             style="margin: 0px;"
@@ -4802,7 +4824,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="Polygon"
                                             height="24"
                                             src="polygon-logo.svg"
                                             style="margin: 0px;"
@@ -4824,7 +4846,7 @@ exports[`MobileMenu snapshot 1`] = `
                                           tabindex="-1"
                                         >
                                           <img
-                                            alt="logo"
+                                            alt="BSC"
                                             height="24"
                                             src="binance-logo.svg"
                                             style="margin: 0px;"
@@ -4961,7 +4983,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Ethereum"
                                               height={24}
                                               icon="ethereum-logo.svg"
                                               width={24}
@@ -4980,7 +5003,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Cardano"
                                               height={24}
                                               icon="cardano-logo.svg"
                                               width={24}
@@ -4999,7 +5023,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Avalanche"
                                               height={24}
                                               icon="avalanche-logo.svg"
                                               width={24}
@@ -5018,7 +5043,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Solana"
                                               height={24}
                                               icon="solana-logo.svg"
                                               width={24}
@@ -5037,7 +5063,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Polygon"
                                               height={24}
                                               icon="polygon-logo.svg"
                                               width={24}
@@ -5056,7 +5083,8 @@ exports[`MobileMenu snapshot 1`] = `
                                               }
                                             }
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="BSC"
                                               height={24}
                                               icon="binance-logo.svg"
                                               width={24}
@@ -5317,7 +5345,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="0"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Ethereum"
                                                     height="24"
                                                     src="ethereum-logo.svg"
                                                     style="margin: 0px;"
@@ -5339,7 +5367,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Cardano"
                                                     height="24"
                                                     src="cardano-logo.svg"
                                                     style="margin: 0px;"
@@ -5361,7 +5389,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Avalanche"
                                                     height="24"
                                                     src="avalanche-logo.svg"
                                                     style="margin: 0px;"
@@ -5383,7 +5411,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Solana"
                                                     height="24"
                                                     src="solana-logo.svg"
                                                     style="margin: 0px;"
@@ -5405,7 +5433,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="Polygon"
                                                     height="24"
                                                     src="polygon-logo.svg"
                                                     style="margin: 0px;"
@@ -5427,7 +5455,7 @@ exports[`MobileMenu snapshot 1`] = `
                                                   tabindex="-1"
                                                 >
                                                   <img
-                                                    alt="logo"
+                                                    alt="BSC"
                                                     height="24"
                                                     src="binance-logo.svg"
                                                     style="margin: 0px;"
@@ -5627,7 +5655,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="Ethereum"
                                                         height={24}
                                                         icon="ethereum-logo.svg"
                                                         width={24}
@@ -5646,7 +5675,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="Cardano"
                                                         height={24}
                                                         icon="cardano-logo.svg"
                                                         width={24}
@@ -5665,7 +5695,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="Avalanche"
                                                         height={24}
                                                         icon="avalanche-logo.svg"
                                                         width={24}
@@ -5684,7 +5715,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="Solana"
                                                         height={24}
                                                         icon="solana-logo.svg"
                                                         width={24}
@@ -5703,7 +5735,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="Polygon"
                                                         height={24}
                                                         icon="polygon-logo.svg"
                                                         width={24}
@@ -5722,7 +5755,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                         }
                                                       }
                                                     >
-                                                      <pure(SvgLogo)
+                                                      <pure(SvgIcon)
+                                                        alt="BSC"
                                                         height={24}
                                                         icon="binance-logo.svg"
                                                         width={24}
@@ -5844,7 +5878,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="Ethereum"
                                                               height={24}
                                                               icon="ethereum-logo.svg"
                                                               width={24}
@@ -5863,7 +5898,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="Cardano"
                                                               height={24}
                                                               icon="cardano-logo.svg"
                                                               width={24}
@@ -5882,7 +5918,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="Avalanche"
                                                               height={24}
                                                               icon="avalanche-logo.svg"
                                                               width={24}
@@ -5901,7 +5938,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="Solana"
                                                               height={24}
                                                               icon="solana-logo.svg"
                                                               width={24}
@@ -5920,7 +5958,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="Polygon"
                                                               height={24}
                                                               icon="polygon-logo.svg"
                                                               width={24}
@@ -5939,7 +5978,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                               }
                                                             }
                                                           >
-                                                            <pure(SvgLogo)
+                                                            <pure(SvgIcon)
+                                                              alt="BSC"
                                                               height={24}
                                                               icon="binance-logo.svg"
                                                               width={24}
@@ -6038,7 +6078,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                       }
                                                                       tabIndex={0}
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="Ethereum"
                                                                         height={24}
                                                                         icon="ethereum-logo.svg"
                                                                         width={24}
@@ -6057,7 +6098,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="Cardano"
                                                                         height={24}
                                                                         icon="cardano-logo.svg"
                                                                         width={24}
@@ -6076,7 +6118,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="Avalanche"
                                                                         height={24}
                                                                         icon="avalanche-logo.svg"
                                                                         width={24}
@@ -6095,7 +6138,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="Solana"
                                                                         height={24}
                                                                         icon="solana-logo.svg"
                                                                         width={24}
@@ -6114,7 +6158,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="Polygon"
                                                                         height={24}
                                                                         icon="polygon-logo.svg"
                                                                         width={24}
@@ -6133,7 +6178,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                         }
                                                                       }
                                                                     >
-                                                                      <pure(SvgLogo)
+                                                                      <pure(SvgIcon)
+                                                                        alt="BSC"
                                                                         height={24}
                                                                         icon="binance-logo.svg"
                                                                         width={24}
@@ -6187,7 +6233,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Ethereum"
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
@@ -6258,7 +6305,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="Ethereum"
                                                                                 height={24}
                                                                                 icon="ethereum-logo.svg"
                                                                                 width={24}
@@ -6307,18 +6355,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={0}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Ethereum"
                                                                             height={24}
                                                                             icon="ethereum-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="Ethereum"
                                                                               height={24}
                                                                               icon="ethereum-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="Ethereum"
                                                                                 height={24}
                                                                                 src="ethereum-logo.svg"
                                                                                 style={
@@ -6328,8 +6378,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -6424,7 +6474,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Cardano"
                                                                             height={24}
                                                                             icon="cardano-logo.svg"
                                                                             width={24}
@@ -6494,7 +6545,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="Cardano"
                                                                                 height={24}
                                                                                 icon="cardano-logo.svg"
                                                                                 width={24}
@@ -6543,18 +6595,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Cardano"
                                                                             height={24}
                                                                             icon="cardano-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="Cardano"
                                                                               height={24}
                                                                               icon="cardano-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="Cardano"
                                                                                 height={24}
                                                                                 src="cardano-logo.svg"
                                                                                 style={
@@ -6564,8 +6618,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -6660,7 +6714,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Avalanche"
                                                                             height={24}
                                                                             icon="avalanche-logo.svg"
                                                                             width={24}
@@ -6730,7 +6785,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="Avalanche"
                                                                                 height={24}
                                                                                 icon="avalanche-logo.svg"
                                                                                 width={24}
@@ -6779,18 +6835,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Avalanche"
                                                                             height={24}
                                                                             icon="avalanche-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="Avalanche"
                                                                               height={24}
                                                                               icon="avalanche-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="Avalanche"
                                                                                 height={24}
                                                                                 src="avalanche-logo.svg"
                                                                                 style={
@@ -6800,8 +6858,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -6896,7 +6954,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Solana"
                                                                             height={24}
                                                                             icon="solana-logo.svg"
                                                                             width={24}
@@ -6966,7 +7025,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="Solana"
                                                                                 height={24}
                                                                                 icon="solana-logo.svg"
                                                                                 width={24}
@@ -7015,18 +7075,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Solana"
                                                                             height={24}
                                                                             icon="solana-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="Solana"
                                                                               height={24}
                                                                               icon="solana-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="Solana"
                                                                                 height={24}
                                                                                 src="solana-logo.svg"
                                                                                 style={
@@ -7036,8 +7098,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -7132,7 +7194,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Polygon"
                                                                             height={24}
                                                                             icon="polygon-logo.svg"
                                                                             width={24}
@@ -7202,7 +7265,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="Polygon"
                                                                                 height={24}
                                                                                 icon="polygon-logo.svg"
                                                                                 width={24}
@@ -7251,18 +7315,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="Polygon"
                                                                             height={24}
                                                                             icon="polygon-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="Polygon"
                                                                               height={24}
                                                                               icon="polygon-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="Polygon"
                                                                                 height={24}
                                                                                 src="polygon-logo.svg"
                                                                                 style={
@@ -7272,8 +7338,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -7368,7 +7434,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                     ownerState={
                                                                       Object {
                                                                         "children": Array [
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="BSC"
                                                                             height={24}
                                                                             icon="binance-logo.svg"
                                                                             width={24}
@@ -7438,7 +7505,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           Object {
                                                                             "centerRipple": false,
                                                                             "children": Array [
-                                                                              <pure(SvgLogo)
+                                                                              <pure(SvgIcon)
+                                                                                alt="BSC"
                                                                                 height={24}
                                                                                 icon="binance-logo.svg"
                                                                                 width={24}
@@ -7487,18 +7555,20 @@ exports[`MobileMenu snapshot 1`] = `
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <pure(SvgLogo)
+                                                                          <pure(SvgIcon)
+                                                                            alt="BSC"
                                                                             height={24}
                                                                             icon="binance-logo.svg"
                                                                             width={24}
                                                                           >
-                                                                            <SvgLogo
+                                                                            <SvgIcon
+                                                                              alt="BSC"
                                                                               height={24}
                                                                               icon="binance-logo.svg"
                                                                               width={24}
                                                                             >
                                                                               <img
-                                                                                alt="logo"
+                                                                                alt="BSC"
                                                                                 height={24}
                                                                                 src="binance-logo.svg"
                                                                                 style={
@@ -7508,8 +7578,8 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 }
                                                                                 width={24}
                                                                               />
-                                                                            </SvgLogo>
-                                                                          </pure(SvgLogo)>
+                                                                            </SvgIcon>
+                                                                          </pure(SvgIcon)>
                                                                           <ForwardRef(Typography)>
                                                                             <MuiTypographyRoot
                                                                               as="p"
@@ -7681,7 +7751,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Cardano"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -7733,7 +7803,7 @@ Object {
             tabindex="0"
           >
             <img
-              alt="logo"
+              alt="Ethereum"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -7755,7 +7825,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Cardano"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -7777,7 +7847,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Avalanche"
               height="24"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -7799,7 +7869,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Solana"
               height="24"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -7821,7 +7891,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Polygon"
               height="24"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -7843,7 +7913,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="BSC"
               height="24"
               src="binance-logo.svg"
               style="margin: 0px;"
@@ -7986,7 +8056,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Ethereum"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -8038,7 +8108,7 @@ Object {
             tabindex="0"
           >
             <img
-              alt="logo"
+              alt="Ethereum"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -8060,7 +8130,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Cardano"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -8082,7 +8152,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Avalanche"
               height="24"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -8104,7 +8174,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Solana"
               height="24"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -8126,7 +8196,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Polygon"
               height="24"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -8148,7 +8218,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="BSC"
               height="24"
               src="binance-logo.svg"
               style="margin: 0px;"
@@ -8230,7 +8300,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Ethereum"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -8283,7 +8353,7 @@ Object {
             tabindex="0"
           >
             <img
-              alt="logo"
+              alt="Ethereum"
               height="24"
               src="ethereum-logo.svg"
               style="margin: 0px;"
@@ -8305,7 +8375,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Cardano"
               height="24"
               src="cardano-logo.svg"
               style="margin: 0px;"
@@ -8327,7 +8397,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Avalanche"
               height="24"
               src="avalanche-logo.svg"
               style="margin: 0px;"
@@ -8349,7 +8419,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Solana"
               height="24"
               src="solana-logo.svg"
               style="margin: 0px;"
@@ -8371,7 +8441,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="Polygon"
               height="24"
               src="polygon-logo.svg"
               style="margin: 0px;"
@@ -8393,7 +8463,7 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="logo"
+              alt="BSC"
               height="24"
               src="binance-logo.svg"
               style="margin: 0px;"

@@ -5281,7 +5281,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <pure(SvgLogo)
+                            <pure(SvgIcon)
+                              alt="Ethereum"
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -5317,7 +5318,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                         "endAdornment": <ForwardRef(InputAdornment)
                           position="end"
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Ethereum"
                             height={25}
                             icon="ethereum-logo.svg"
                             width={25}
@@ -5342,7 +5344,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <pure(SvgLogo)
+                            <pure(SvgIcon)
+                              alt="Ethereum"
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -5375,7 +5378,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                               "endAdornment": <ForwardRef(InputAdornment)
                                 position="end"
                               >
-                                <pure(SvgLogo)
+                                <pure(SvgIcon)
+                                  alt="Ethereum"
                                   height={25}
                                   icon="ethereum-logo.svg"
                                   width={25}
@@ -5436,7 +5440,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                       <ForwardRef(InputAdornment)
                                         position="end"
                                       >
-                                        <pure(SvgLogo)
+                                        <pure(SvgIcon)
+                                          alt="Ethereum"
                                           height={25}
                                           icon="ethereum-logo.svg"
                                           width={25}
@@ -5616,7 +5621,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                   <ForwardRef(InputAdornment)
                                     position="end"
                                   >
-                                    <pure(SvgLogo)
+                                    <pure(SvgIcon)
+                                      alt="Ethereum"
                                       height={25}
                                       icon="ethereum-logo.svg"
                                       width={25}
@@ -5699,7 +5705,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                     <ForwardRef(InputAdornment)
                                       position="end"
                                     >
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Ethereum"
                                         height={25}
                                         icon="ethereum-logo.svg"
                                         width={25}
@@ -6125,7 +6132,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                         "endAdornment": <ForwardRef(InputAdornment)
                                           position="end"
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Ethereum"
                                             height={25}
                                             icon="ethereum-logo.svg"
                                             width={25}
@@ -6252,7 +6260,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                             "endAdornment": <ForwardRef(InputAdornment)
                                               position="end"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Ethereum"
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -6336,7 +6345,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                           className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium"
                                           ownerState={
                                             Object {
-                                              "children": <pure(SvgLogo)
+                                              "children": <pure(SvgIcon)
+                                                alt="Ethereum"
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -6353,18 +6363,20 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                           <div
                                             className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Ethereum"
                                               height={25}
                                               icon="ethereum-logo.svg"
                                               width={25}
                                             >
-                                              <SvgLogo
+                                              <SvgIcon
+                                                alt="Ethereum"
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
                                               >
                                                 <img
-                                                  alt="logo"
+                                                  alt="Ethereum"
                                                   height={25}
                                                   src="ethereum-logo.svg"
                                                   style={
@@ -6374,8 +6386,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                                   }
                                                   width={25}
                                                 />
-                                              </SvgLogo>
-                                            </pure(SvgLogo)>
+                                              </SvgIcon>
+                                            </pure(SvgIcon)>
                                           </div>
                                         </MuiInputAdornmentRoot>
                                       </ForwardRef(InputAdornment)>
@@ -8366,6 +8378,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                         />
                       }
                       label="Select to deploy your own Marketplace"
+                      onKeyPress={[Function]}
                     />,
                     "row": false,
                   }
@@ -8382,9 +8395,11 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                       />
                     }
                     label="Select to deploy your own Marketplace"
+                    onKeyPress={[Function]}
                   >
                     <MuiFormControlLabelRoot
                       className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd"
+                      onKeyPress={[Function]}
                       ownerState={
                         Object {
                           "control": <ForwardRef(Checkbox)
@@ -8393,12 +8408,14 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                           "disabled": undefined,
                           "label": "Select to deploy your own Marketplace",
                           "labelPlacement": "end",
+                          "onKeyPress": [Function],
                         }
                       }
                     >
                       <Noop />
                       <label
                         className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                        onKeyPress={[Function]}
                       >
                         <ForwardRef(Checkbox)
                           checked={false}
@@ -12687,7 +12704,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <pure(SvgLogo)
+                            <pure(SvgIcon)
+                              alt="Ethereum"
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -12723,7 +12741,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                         "endAdornment": <ForwardRef(InputAdornment)
                           position="end"
                         >
-                          <pure(SvgLogo)
+                          <pure(SvgIcon)
+                            alt="Ethereum"
                             height={25}
                             icon="ethereum-logo.svg"
                             width={25}
@@ -12748,7 +12767,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                           "endAdornment": <ForwardRef(InputAdornment)
                             position="end"
                           >
-                            <pure(SvgLogo)
+                            <pure(SvgIcon)
+                              alt="Ethereum"
                               height={25}
                               icon="ethereum-logo.svg"
                               width={25}
@@ -12781,7 +12801,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                               "endAdornment": <ForwardRef(InputAdornment)
                                 position="end"
                               >
-                                <pure(SvgLogo)
+                                <pure(SvgIcon)
+                                  alt="Ethereum"
                                   height={25}
                                   icon="ethereum-logo.svg"
                                   width={25}
@@ -12842,7 +12863,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                       <ForwardRef(InputAdornment)
                                         position="end"
                                       >
-                                        <pure(SvgLogo)
+                                        <pure(SvgIcon)
+                                          alt="Ethereum"
                                           height={25}
                                           icon="ethereum-logo.svg"
                                           width={25}
@@ -13022,7 +13044,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                   <ForwardRef(InputAdornment)
                                     position="end"
                                   >
-                                    <pure(SvgLogo)
+                                    <pure(SvgIcon)
+                                      alt="Ethereum"
                                       height={25}
                                       icon="ethereum-logo.svg"
                                       width={25}
@@ -13105,7 +13128,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                     <ForwardRef(InputAdornment)
                                       position="end"
                                     >
-                                      <pure(SvgLogo)
+                                      <pure(SvgIcon)
+                                        alt="Ethereum"
                                         height={25}
                                         icon="ethereum-logo.svg"
                                         width={25}
@@ -13531,7 +13555,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                         "endAdornment": <ForwardRef(InputAdornment)
                                           position="end"
                                         >
-                                          <pure(SvgLogo)
+                                          <pure(SvgIcon)
+                                            alt="Ethereum"
                                             height={25}
                                             icon="ethereum-logo.svg"
                                             width={25}
@@ -13658,7 +13683,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                             "endAdornment": <ForwardRef(InputAdornment)
                                               position="end"
                                             >
-                                              <pure(SvgLogo)
+                                              <pure(SvgIcon)
+                                                alt="Ethereum"
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -13742,7 +13768,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                           className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium"
                                           ownerState={
                                             Object {
-                                              "children": <pure(SvgLogo)
+                                              "children": <pure(SvgIcon)
+                                                alt="Ethereum"
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
@@ -13759,18 +13786,20 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                           <div
                                             className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
                                           >
-                                            <pure(SvgLogo)
+                                            <pure(SvgIcon)
+                                              alt="Ethereum"
                                               height={25}
                                               icon="ethereum-logo.svg"
                                               width={25}
                                             >
-                                              <SvgLogo
+                                              <SvgIcon
+                                                alt="Ethereum"
                                                 height={25}
                                                 icon="ethereum-logo.svg"
                                                 width={25}
                                               >
                                                 <img
-                                                  alt="logo"
+                                                  alt="Ethereum"
                                                   height={25}
                                                   src="ethereum-logo.svg"
                                                   style={
@@ -13780,8 +13809,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                                   }
                                                   width={25}
                                                 />
-                                              </SvgLogo>
-                                            </pure(SvgLogo)>
+                                              </SvgIcon>
+                                            </pure(SvgIcon)>
                                           </div>
                                         </MuiInputAdornmentRoot>
                                       </ForwardRef(InputAdornment)>
@@ -15772,6 +15801,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                         />
                       }
                       label="Select to deploy your own Marketplace"
+                      onKeyPress={[Function]}
                     />,
                     "row": false,
                   }
@@ -15788,9 +15818,11 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                       />
                     }
                     label="Select to deploy your own Marketplace"
+                    onKeyPress={[Function]}
                   >
                     <MuiFormControlLabelRoot
                       className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd"
+                      onKeyPress={[Function]}
                       ownerState={
                         Object {
                           "control": <ForwardRef(Checkbox)
@@ -15799,12 +15831,14 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                           "disabled": undefined,
                           "label": "Select to deploy your own Marketplace",
                           "labelPlacement": "end",
+                          "onKeyPress": [Function],
                         }
                       }
                     >
                       <Noop />
                       <label
                         className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+                        onKeyPress={[Function]}
                       >
                         <ForwardRef(Checkbox)
                           checked={false}
