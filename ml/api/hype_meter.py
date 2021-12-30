@@ -5,7 +5,7 @@ Helper functions to calculate hype
 import os
 import json
 import requests
-import pymongo
+# import pymongo
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -45,7 +45,7 @@ def get_num_of_reddit_members(reddit_handle):
     """
     subreddits = get_subreddits_with_handle(reddit_handle=reddit_handle)
     if len(subreddits) == 0:
-        return 0
+        return (0, None)
     return (int(subreddits[0]['subscriber_count']), subreddits)
 
 
@@ -61,7 +61,7 @@ def get_score_from_reddit(reddit_data):
     total = 0
     for subreddit in subreddits:
         total += int(subreddit['subscriber_count']) + \
-            2 * int(subreddit['active_user_count'])
+            int(subreddit['active_user_count'])
     return total
 
 
@@ -92,12 +92,12 @@ def get_overall_score(collection_name):
     """
     Returns overall hype from Database or via requesting APIs
     """
-    client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
-    collection = client.CollectionDB.collections
-    for document in collection.find({"name": collection_name}):
-        return document["reddit_members"] + document["twitter_followers"]
+    # client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
+    # collection = client.CollectionDB.collections
+    # for document in collection.find({"name": collection_name}):
+    #     return document["reddit_members"] + document["twitter_followers"]
 
-    reddit_score = get_score_from_reddit(collection_name)
+    reddit_score = get_score_from_reddit((collection_name, None))
     twitter_score = get_score_from_twitter(collection_name)
     return reddit_score + twitter_score
 

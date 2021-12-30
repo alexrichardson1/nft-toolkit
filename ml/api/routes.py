@@ -48,7 +48,7 @@ def get_similar_collections(collection_name, twitter, reddit):
     names = [{"name": i}
              for i in similar_collections]
 
-    hype = get_hype(similar_collections, twitter, (reddit, subreddits))
+    (hype, names) = get_hype(similar_collections, twitter, (reddit, subreddits))
     price = get_price(similar_collections, hype)
 
     return {"names": names, "hype": hype * 100, "price": price}
@@ -106,14 +106,28 @@ def get_hype(names, twitter_handle, reddit_data):
         - twitter_handle: Collection/Artists' twitter username
         - reddit_handle: Collection subreddit name
     """
-    avg_score = sum([hype_meter.get_overall_score(collection)
-                     for collection in names]) / len(names)
-
     score_of_request = hype_meter.get_overall_score_using_handles(
         twitter_handle, reddit_data)
+
+    stripped_names = []
+    for collection in names:
+        score = hype_meter.get_overall_score(collection)
+        stripped_names.append({"name": collection, "score": score})
+
+    stripped_names = sorted(stripped_names, key=lambda d: abs(
+        d['score'] - score_of_request), reverse=False)
+
+    total = 0
+    count = 0
+    for collection in stripped_names[:6]:
+        total += collection['score']
+        count += 1
+
+    avg_score = total
+
     if score_of_request > avg_score:
-        return 1
-    return score_of_request / avg_score
+        return (1, stripped_names[:6])
+    return (score_of_request / avg_score, stripped_names[:6])
 
 
 def get_price(names, hype):

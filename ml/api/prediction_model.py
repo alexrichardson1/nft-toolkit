@@ -63,7 +63,7 @@ class PredictionModel:
             ) for cluster_id in np.unique(self.model.labels_)])
         (index, _) = min(enumerate(lev_similarity), key=lambda x: x[1])
         return np.unique([col["name"] for col in self.collections[np.nonzero(
-            self.model.labels_ == np.unique(self.model.labels_)[index])]])[:6]
+            self.model.labels_ == np.unique(self.model.labels_)[index])]])[:16]
 
     def save_model(self):
         """
