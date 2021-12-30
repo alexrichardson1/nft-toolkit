@@ -5,7 +5,7 @@ Helper functions to calculate hype
 import os
 import json
 import requests
-# import pymongo
+import pymongo
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -92,10 +92,10 @@ def get_overall_score(collection_name):
     """
     Returns overall hype from Database or via requesting APIs
     """
-    # client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
-    # collection = client.CollectionDB.collections
-    # for document in collection.find({"name": collection_name}):
-    #     return document["reddit_members"] + document["twitter_followers"]
+    client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
+    collection = client.CollectionDB.collections
+    for document in collection.find({"name": collection_name}):
+        return document["reddit_members"] + document["twitter_followers"]
 
     reddit_score = get_score_from_reddit((collection_name, None))
     twitter_score = get_score_from_twitter(collection_name)
