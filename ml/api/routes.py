@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 import hype_meter
 from flask_cors import CORS
 
+
 load_dotenv()
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
 
@@ -31,12 +32,8 @@ def get_similar_collections(collection_name, twitter, reddit):
                 price: float
             }
     """
-    with open('api/collection_model', 'rb') as file:
+    with open('collection_model', 'rb') as file:
         model = pickle.load(file)
-
-    similar_collections = model.predict(collection_name)
-    names = [{"name": i[0], "distance": i[1]}
-             for i in similar_collections]
 
     if twitter == "":
         twitter = collection_name
@@ -44,7 +41,14 @@ def get_similar_collections(collection_name, twitter, reddit):
     if reddit == "":
         reddit = collection_name
 
-    hype = get_hype(similar_collections, twitter, reddit)
+    (reddit_members, subreddits) = hype_meter.get_num_of_reddit_members(reddit)
+    twitter_followers = hype_meter.get_num_of_twitter_followers(twitter)
+    similar_collections = model.predict(
+        collection_name, reddit_members, twitter_followers)
+    names = [{"name": i}
+             for i in similar_collections]
+
+    hype = get_hype(similar_collections, twitter, (reddit, subreddits))
     price = get_price(similar_collections, hype)
 
     return {"names": names, "hype": hype * 100, "price": price}
@@ -93,7 +97,7 @@ def create_app(test_config=None):
     return app
 
 
-def get_hype(names, twitter_handle, reddit_handle):
+def get_hype(names, twitter_handle, reddit_data):
     """
     Returns hype from 0 to 1
 
@@ -103,10 +107,10 @@ def get_hype(names, twitter_handle, reddit_handle):
         - reddit_handle: Collection subreddit name
     """
     avg_score = sum([hype_meter.get_overall_score(collection)
-                     for collection, _ in names]) / len(names)
+                     for collection in names]) / len(names)
 
     score_of_request = hype_meter.get_overall_score_using_handles(
-        twitter_handle, reddit_handle)
+        twitter_handle, reddit_data)
     if score_of_request > avg_score:
         return 1
     return score_of_request / avg_score
@@ -125,8 +129,6 @@ def get_price(names, hype):
 
 
 def get_avg_price(names):
-    # get the average sale price for each name
-    # average that out
     """
     Returns average price of an asset from the list of similar collections
 
