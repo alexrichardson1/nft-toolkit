@@ -55,11 +55,11 @@ class PredictionModel:
             ) +
             math.log10(
                 abs(self.collections[self.model.cluster_centers_indices_[
-                    cluster_id]]["reddit_members"] - reddit_members)
+                    cluster_id]]["reddit_members"] - reddit_members) + 1
             ) +
             math.log10(
                 abs(self.collections[self.model.cluster_centers_indices_[
-                    cluster_id]]["twitter_followers"] - twitter_followers)
+                    cluster_id]]["twitter_followers"] - twitter_followers) + 1
             ) for cluster_id in np.unique(self.model.labels_)])
         (index, _) = min(enumerate(lev_similarity), key=lambda x: x[1])
         return np.unique([col["name"] for col in self.collections[np.nonzero(
