@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import { LoadingButton } from "@mui/lab";
-import { Collapse, Grid } from "@mui/material";
+import { Collapse, Grid, Stack, Switch } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -11,22 +11,27 @@ import { SxProps } from "@mui/system/styleFunctionSx";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import Input from "components/common/Input";
+import SvgIcon from "components/common/SvgLogo";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
+import { parseUnits } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
-import { useEffect, useState } from "react";
+import tetherLogo from "images/tether.svg";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Market__factory as MarketFactory,
   NFT__factory as NftFactory,
 } from "typechain";
+import { getLogoByChainId } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 import { TokenI } from "./Market";
 
 const dummyData: TokenI = {
   name: "APE 1",
-  description:
-    "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
+  description: "dummy_description",
   image: "",
   attributes: { tier: "Legendary" },
   id: 0,
@@ -52,6 +57,9 @@ const PurchasePage = (): JSX.Element => {
   const [token, setToken] = useState<TokenI>(dummyData);
   const [symbol, setSymbol] = useState("");
   const [loadingButton, setLoadingButton] = useState(false);
+  const [listPrice, setListPrice] = useState("");
+  const { showSnackbar } = useContext(SnackbarContext);
+  const [stableCoinList, setStableCoinList] = useState(false);
 
   useEffect(() => {
     async function getTokenData() {
@@ -69,22 +77,25 @@ const PurchasePage = (): JSX.Element => {
         payload: { advanceProgressBy: 50 },
       });
 
-      const tokenURI = await nftContract.tokenURI(tokenId);
-      const res = await axios.get(tokenURI);
-      res.data.id = parseInt(tokenId);
-      const attributeMap: AttributeI = {};
-      res.data.attributes.forEach((attr: ContractAttributeI) => {
-        attributeMap[attr.trait_type] = attr.value;
-      });
-      res.data.attributes = attributeMap;
-      res.data.price = await marketContract.listings(res.data.id);
-      const curOwner = await nftContract.ownerOf(tokenId);
-      res.data.isOwner = curOwner === account;
-      const token = res.data;
-      setToken(token);
-      const symbol = await nftContract.symbol();
-      setSymbol(symbol);
-
+      try {
+        const tokenURI = await nftContract.tokenURI(tokenId);
+        const res = await axios.get(tokenURI);
+        res.data.id = parseInt(tokenId);
+        const attributeMap: AttributeI = {};
+        res.data.attributes.forEach((attr: ContractAttributeI) => {
+          attributeMap[attr.trait_type] = attr.value;
+        });
+        res.data.attributes = attributeMap;
+        res.data.price = await marketContract.listings(res.data.id);
+        const curOwner = await nftContract.ownerOf(tokenId);
+        res.data.isOwner = curOwner === account;
+        const token = res.data;
+        setToken(token);
+        const symbol = await nftContract.symbol();
+        setSymbol(symbol);
+      } catch (e) {
+        console.error(e);
+      }
       dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
     }
@@ -97,25 +108,44 @@ const PurchasePage = (): JSX.Element => {
       library.getSigner()
     );
     setLoadingButton(true);
-    const tx = await marketContract.buy(tokenId, {
-      value: BigNumber.from(token.price),
-    });
-    await tx.wait();
-    setLoadingButton(false);
+    try {
+      const tx = await marketContract.buy(tokenId, {
+        value: BigNumber.from(token.price),
+      });
+      await tx.wait();
+      showSnackbar("success", "Purchase successful");
+    } catch (e) {
+      console.error(e);
+      showSnackbar("error", "An error occurred. Please try again!");
+    } finally {
+      setLoadingButton(false);
+    }
   };
 
-  const handleListing = async () => {
+  const handleListing: React.FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
     const marketContract = MarketFactory.connect(
       marketAddress,
       library.getSigner()
     );
     const nftContract = NftFactory.connect(address, library.getSigner());
     setLoadingButton(true);
+    let price;
+    if (stableCoinList) {
+      // TODO: fix this
+      price = parseUnits(listPrice).toString();
+    } else {
+      price = parseUnits(listPrice).toString();
+    }
     try {
       const approveTx = await nftContract.approve(marketAddress, tokenId);
       await approveTx.wait();
-      const tx = await marketContract.sellListing(tokenId, "100000", false);
+      const tx = await marketContract.sellListing(tokenId, price, false);
       await tx.wait();
+      showSnackbar("success", "Listing successful");
+    } catch (e) {
+      console.error(e);
+      showSnackbar("error", "An error occurred. Please try again!");
     } finally {
       setLoadingButton(false);
     }
@@ -130,6 +160,10 @@ const PurchasePage = (): JSX.Element => {
     try {
       const tx = await marketContract.delist(tokenId);
       await tx.wait();
+      showSnackbar("success", "Delisting successful");
+    } catch (e) {
+      showSnackbar("error", "An error occurred. Please try again!");
+      console.error(e);
     } finally {
       setLoadingButton(false);
     }
@@ -150,14 +184,47 @@ const PurchasePage = (): JSX.Element => {
         );
       }
       return (
-        <LoadingButton
-          loading={loadingButton}
-          variant="contained"
-          size="large"
-          border-radius="10px"
-          onClick={handleListing}>
-          List Token
-        </LoadingButton>
+        <Stack
+          component="form"
+          onSubmit={handleListing}
+          direction="row"
+          alignItems="center"
+          spacing={2}>
+          <Input
+            required
+            notFullWidth
+            onChange={(e) => setListPrice(e.target.value || "0")}
+            InputProps={{
+              inputProps: { min: 0, step: "any" },
+            }}
+            label="Enter listing price"
+            value={listPrice}
+            type="number"
+            placeholder="0"
+          />
+          <Stack alignItems="center" direction="row">
+            <SvgIcon
+              width="20px"
+              height="20px"
+              alt="coin"
+              icon={getLogoByChainId(Number(paramChainId))}
+            />
+            <Switch
+              checked={stableCoinList}
+              onChange={() => setStableCoinList((prev) => !prev)}
+              inputProps={{ "aria-label": "controlled" }}
+            />
+            <SvgIcon width="20px" height="20px" alt="coin" icon={tetherLogo} />
+          </Stack>
+          <LoadingButton
+            type="submit"
+            loading={loadingButton}
+            variant="contained"
+            size="large"
+            border-radius="10px">
+            List Token
+          </LoadingButton>
+        </Stack>
       );
     }
     if (!token.price.eq(0)) {
@@ -188,7 +255,11 @@ const PurchasePage = (): JSX.Element => {
           />
         </Box>
         <Box sx={paperStyle}>
-          <Box display="flex" flexDirection="column" alignItems="center">
+          <Box
+            display="flex"
+            gap="10px"
+            flexDirection="column"
+            alignItems="center">
             <ListItem>
               <Box>
                 <Typography
@@ -207,35 +278,24 @@ const PurchasePage = (): JSX.Element => {
               </Box>
             </ListItem>
             <Divider variant="middle" flexItem={true} />
-            <Divider variant="middle" />
             <ListItem>
-              <Grid container>
+              <Grid container spacing={2}>
                 {Object.entries(token.attributes).map((attr, index) => {
                   const [key, value] = attr;
                   return (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
-                      <ListItem key={index}>
-                        <Button
-                          fullWidth
-                          variant="outlined"
-                          color="info"
-                          border-radius="5px">
-                          <ListItemText primary={key} secondary={value} />
-                        </Button>
-                      </ListItem>
+                    <Grid item xs={12} sm={6} md={3.5} key={index}>
+                      <Button
+                        fullWidth
+                        variant="outlined"
+                        color="info"
+                        border-radius="5px">
+                        <ListItemText primary={key} secondary={value} />
+                      </Button>
                     </Grid>
                   );
                 })}
               </Grid>
             </ListItem>
-            <Divider variant="middle" />
-            {/* <ListItem>
-              <Box>
-                <Typography textAlign="left" color="secondary">
-                  Floor Price: xx ETH
-                </Typography>
-              </Box>
-            </ListItem> */}
             <Box>{buttons(token)}</Box>
           </Box>
         </Box>
