@@ -49,9 +49,9 @@ def get_similar_collections(collection_name, twitter, reddit):
              for i in similar_collections]
 
     (hype, names) = get_hype(similar_collections, twitter, (reddit, subreddits))
-    price = get_price(similar_collections, hype)
+    (price, final_similar_collections) = get_recommended_price(names, hype)
 
-    return {"names": names, "hype": hype * 100, "price": price}
+    return {"similar_collections": final_similar_collections, "hype": hype * 100, "price": price}
 
 
 @price_blueprint.route('/')
@@ -130,7 +130,7 @@ def get_hype(names, twitter_handle, reddit_data):
     return (score_of_request / avg_score, stripped_names[:6])
 
 
-def get_price(names, hype):
+def get_recommended_price(names, hype):
     """
     Returns predicted minting price
 
@@ -138,8 +138,8 @@ def get_price(names, hype):
         - names: Names of similar collections
         - hype: Hype from 0 to 1
     """
-    similar_collections_avg_price = get_avg_price(names)
-    return similar_collections_avg_price * hype * 0.1
+    (similar_collections_avg_price, similar_collections) = get_avg_price(names)
+    return (similar_collections_avg_price * hype * 0.1, similar_collections)
 
 
 def get_avg_price(names):
@@ -150,11 +150,14 @@ def get_avg_price(names):
         - names: Names of similar collections
     """
     client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
-    collection = client.CollectionDB.collections
+    collection = client.CollectionDB.collection_copy
     prices = []
+    collection_data = []
     for name in names:
-        for document in collection.find({"name": name[0]}):
-            prices.append(document["avg_sale_price"])
+        document = collection.find_one({"name": name['name']})
+        prices.append(document["avg_sale_price"])
+        collection_data.append(
+            {"name": name['name'], "preview_img": document['preview_img']})
     if len(prices) == 0:
-        return 0
-    return sum(prices) / len(prices)
+        return (0, collection_data)
+    return (sum(prices) / len(prices), collection_data)
