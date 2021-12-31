@@ -97,4 +97,5 @@ interface CollDataI {
   address: string;
   balance: string;
   image: string;
+  owner: string;
 }

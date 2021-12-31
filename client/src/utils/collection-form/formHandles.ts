@@ -185,7 +185,7 @@ const handleIfNotLastStep = async (
       );
       handlePredictionsChange(res.data as MlDataI, dispatch);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
     stopLoading(setLoadingMessage, setIsLoading);
     setNewCollName(state.collectionName);
