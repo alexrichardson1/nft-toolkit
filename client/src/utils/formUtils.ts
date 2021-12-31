@@ -97,6 +97,11 @@ interface TransactionT {
   transaction: Deferrable<TransactionRequest>;
 }
 
+const getRoyaltyNum = (royalty: string): number => {
+  const toPercent = 100;
+  return royalty === "" ? 0 : parseInt(royalty) * toPercent;
+};
+
 export const uploadGenCollection = async (
   layers: ServerLayerI[],
   state: FormStateI,
@@ -107,6 +112,7 @@ export const uploadGenCollection = async (
     name: state.collectionName,
     symbol: state.symbol,
     description: state.description,
+    royalty: getRoyaltyNum(state.marketplace.royalty),
     price: parseUnits(state.mintingPrice).toString(),
     chainId: chainId,
     creator: account,
@@ -137,6 +143,7 @@ export const uploadCollection = async (
     name: state.collectionName,
     symbol: state.symbol,
     description: state.description,
+    royalty: getRoyaltyNum(state.marketplace.royalty),
     price: parseUnits(state.mintingPrice).toString(),
     chainId: chainId,
     tokens: tokens,
