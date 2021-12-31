@@ -10,23 +10,17 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
  */
 contract Market {
   NFT private _collection;
-  uint256 public royalty;
   ERC20 private _stable;
   mapping(uint256 => uint256) public listings;
   mapping(uint256 => bool) public areStable;
 
   /**
    * @notice Construct a new royalty
-   * @param cut The royalty for the creator of the NFT collection
    * @param addr The address of the NFT collection contract
+   * @param stable The address of the stable token contract
    */
-  constructor(
-    uint256 cut,
-    address addr,
-    address stable
-  ) {
+  constructor(address addr, address stable) {
     _collection = NFT(addr);
-    royalty = cut;
     _stable = ERC20(stable);
   }
 
@@ -90,8 +84,9 @@ contract Market {
         msg.value == price,
       "Must send correct price"
     );
-    uint256 cut = (price * royalty) / 100;
-    address payable artist = payable(_collection.owner());
+    address royaltyReceiver;
+    uint256 royaltyAmount;
+    (royaltyReceiver, royaltyAmount) = _collection.royaltyInfo(0, price);
     address payable seller = payable(_collection.ownerOf(tokenId));
 
     // Transfer NFT to market contract
@@ -99,13 +94,15 @@ contract Market {
     // Transfer NFT from market contract to buyer
     _collection.transferFrom(address(this), msg.sender, tokenId);
 
-    // Transfer cut to artist & seller
+    uint256 sellerCut = price - royaltyAmount;
+
+    // Transfer cut to royalty receiver & seller
     if (isStable) {
-      _stable.transferFrom(address(this), artist, price);
-      _stable.transferFrom(address(this), seller, price - cut);
+      _stable.transferFrom(address(this), royaltyReceiver, price);
+      _stable.transferFrom(address(this), seller, sellerCut);
     } else {
-      artist.transfer(cut);
-      seller.transfer(price - cut);
+      payable(royaltyReceiver).transfer(royaltyAmount);
+      seller.transfer(sellerCut);
     }
 
     delete listings[tokenId];
