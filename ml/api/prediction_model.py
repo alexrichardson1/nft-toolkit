@@ -34,7 +34,7 @@ class PredictionModel:
             round(0.3 * distance.levenshtein(c1["name"], c2["name"])) +
             math.log10(abs(c1["reddit_members"] - c2["reddit_members"]) + 1) +
             math.log10(abs(c1["twitter_followers"] -
-                       c2["twitter_followers"]) + 1)
+                           c2["twitter_followers"]) + 1)
             for c1 in self.collections] for c2 in self.collections])
         print("Starting Model")
         self.model = AffinityPropagation(
