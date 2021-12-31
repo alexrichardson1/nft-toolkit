@@ -2,7 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { FunctionFragment, Result } from "@ethersproject/abi";
+import { EventFragment, FunctionFragment, Result } from "@ethersproject/abi";
 import { BytesLike } from "@ethersproject/bytes";
 import { Listener, Provider } from "@ethersproject/providers";
 import {
@@ -52,8 +52,24 @@ interface RoyaltyInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
 
-  events: {};
+  events: {
+    "Buy(uint256)": EventFragment;
+    "Delist(uint256)": EventFragment;
+    "SellListing(uint256,uint256)": EventFragment;
+  };
+
+  getEvent(nameOrSignatureOrTopic: "Buy"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Delist"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "SellListing"): EventFragment;
 }
+
+export type BuyEvent = TypedEvent<[BigNumber] & { tokenId: BigNumber }>;
+
+export type DelistEvent = TypedEvent<[BigNumber] & { tokenId: BigNumber }>;
+
+export type SellListingEvent = TypedEvent<
+  [BigNumber, BigNumber] & { tokenId: BigNumber; price: BigNumber }
+>;
 
 export class Royalty extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
@@ -159,7 +175,37 @@ export class Royalty extends BaseContract {
     ): Promise<void>;
   };
 
-  filters: {};
+  filters: {
+    "Buy(uint256)"(
+      tokenId?: null
+    ): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    Buy(tokenId?: null): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    "Delist(uint256)"(
+      tokenId?: null
+    ): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    Delist(
+      tokenId?: null
+    ): TypedEventFilter<[BigNumber], { tokenId: BigNumber }>;
+
+    "SellListing(uint256,uint256)"(
+      tokenId?: null,
+      price?: null
+    ): TypedEventFilter<
+      [BigNumber, BigNumber],
+      { tokenId: BigNumber; price: BigNumber }
+    >;
+
+    SellListing(
+      tokenId?: null,
+      price?: null
+    ): TypedEventFilter<
+      [BigNumber, BigNumber],
+      { tokenId: BigNumber; price: BigNumber }
+    >;
+  };
 
   estimateGas: {
     buy(
