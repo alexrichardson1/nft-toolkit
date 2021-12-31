@@ -1,10 +1,7 @@
 import { getCollectionFromDB } from "@controllers/collection";
 import { BaseProvider } from "@ethersproject/providers";
 import { CollectionT } from "@models/collection";
-import {
-  Market__factory as MarketFactory,
-  NFT__factory as NFTFactory,
-} from "@server/../smart-contracts/typechain";
+import { NFT__factory as NFTFactory } from "@server/../smart-contracts/typechain";
 import { ethers, utils } from "ethers";
 import { RequestHandler } from "express";
 
@@ -99,13 +96,9 @@ export const getCollectionMetadata: RequestHandler = async (req, res, next) => {
   };
 
   if (collection.marketAddress) {
-    const marketContract = MarketFactory.connect(
-      collection.marketAddress,
-      provider
-    );
-    const toSellerFee = 100;
-    const seller_fee_basis_points =
-      (await marketContract.royalty()).toNumber() * toSellerFee;
+    const toSellerFee = 10000;
+    const [, royaltyInfo] = await nftContract.royaltyInfo(0, toSellerFee);
+    const seller_fee_basis_points = royaltyInfo.toNumber();
     return res.json({ ...result, seller_fee_basis_points });
   }
 
