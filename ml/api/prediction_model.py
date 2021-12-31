@@ -27,24 +27,29 @@ class PredictionModel:
         """
         Set the collections numpy array
         """
-        self.collections = collections
+        self.collections = np.array(collections)
         np.random.shuffle(self.collections)
         split_idx = int(0.8 * len(self.collections))
         self.collections_training = self.collections[:split_idx]
         self.collections_testing = self.collections[split_idx:]
 
-    def train(self, damping=0.6, max_iter=400):
+    def train(self, damping=0.5, max_iter=1000, use_all_data=False):
         """
         Train model for clustering collections
         """
         print("Computing Similarity Matrix")
+        if use_all_data:
+            dataset = self.collections
+        else:
+            dataset = self.collections_training
+
         self.lev_similarity = -1 * np.array([[
             round(0.3 * distance.levenshtein(c1["name"], c2["name"])) +
             math.log10(abs(c1["reddit_score"] - c2["reddit_score"]) + 1) +
             math.log10(abs(c1["twitter_score"] -
                            c2["twitter_score"]) + 1)
-            for c1 in self.collections_training] for c2 in self.collections_training])
-        print("Starting Model")
+            for c1 in dataset] for c2 in dataset])
+        print("Creating Model")
         self.model = AffinityPropagation(
             affinity="precomputed",
             damping=damping,
@@ -71,9 +76,9 @@ class PredictionModel:
                     cluster_id]]["twitter_score"] - twitter_score) + 1
             ) for cluster_id in np.unique(self.model.labels_)])
         (index, _) = min(enumerate(lev_similarity), key=lambda x: x[1])
-
-        return list(dict((v['name'], v) for v in self.collections_training[np.nonzero(
-            self.model.labels_ == np.unique(self.model.labels_)[index])]).values())[:16]
+        collections = list(dict((v['name'], v) for v in self.collections_training[np.nonzero(
+            self.model.labels_ == np.unique(self.model.labels_)[index])]).values())
+        return collections[:16]
 
     def get_mse(self):
         """
