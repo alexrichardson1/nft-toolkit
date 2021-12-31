@@ -42,7 +42,7 @@ contract NFT is ERC721Enumerable, Ownable {
    * @notice Convert from byte to character
    * @param b Byte to convert
    */
-  function char(bytes1 b) internal pure returns (bytes1 c) {
+  function char(bytes1 b) private pure returns (bytes1 c) {
     if (uint8(b) < 10) {
       return bytes1(uint8(b) + 0x30);
     }
@@ -53,7 +53,7 @@ contract NFT is ERC721Enumerable, Ownable {
    * @notice Convert from address to string
    * @param x Address to convert
    */
-  function toAsciiString(address x) internal pure returns (string memory) {
+  function toAsciiString(address x) private pure returns (string memory) {
     bytes memory s = new bytes(40);
     for (uint256 i = 0; i < 20; i++) {
       bytes1 b = bytes1(uint8(uint256(uint160(x)) / (2**(8 * (19 - i)))));
@@ -76,7 +76,7 @@ contract NFT is ERC721Enumerable, Ownable {
    * @notice Mint a number of NFTs
    * @param amount The number of NFTs to mint
    */
-  function mint(uint256 amount) public payable {
+  function mint(uint256 amount) external payable {
     require(msg.value == price * amount, "Must send correct price");
     require(
       tokenIdTracker.current() + amount <= collectionLimit,
