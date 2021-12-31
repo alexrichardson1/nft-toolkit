@@ -3,7 +3,7 @@ Script to update collection_model
 """
 
 import os
-import prediction_model
+import pickle
 import pymongo
 from dotenv import load_dotenv
 
@@ -19,7 +19,11 @@ collections = [{"name": doc["name"],
                 "avg_sale_price": doc["avg_sale_price"]}
                for doc in db_collection.find({})]
 
-model = prediction_model.PredictionModel(collections)
+
+with open('collection_model', 'rb') as file:
+    model = pickle.load(file)
+
+model.set_collections(collections)
 print("Training...")
 model.train()
 print("Training Complete")
