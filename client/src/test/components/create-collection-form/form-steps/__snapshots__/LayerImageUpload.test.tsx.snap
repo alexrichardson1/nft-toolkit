@@ -3478,6 +3478,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                             className="img-upload-input"
                                             data-testid="img-upload-input"
                                             id="upload-images"
+                                            max-size="50mb"
                                             multiple={true}
                                             onChange={[Function]}
                                             type="file"
