@@ -65,6 +65,7 @@ describe("Deploy contracts", () => {
     mockRequest.body.name = mockValidCollectionName;
     mockRequest.body.symbol = "MNKYS";
     mockRequest.body.price = "1230000000000";
+    mockRequest.body.royalty = 0;
     deployContracts(mockRequest, mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({

@@ -19,6 +19,7 @@ export interface CollectionI {
   gifSrc: string;
   chainId: number;
   price: BigNumber;
+  marketAddress?: string;
 }
 
 export const getCollection = async (

@@ -37,6 +37,7 @@ interface CollectionInfo {
   name: string;
   symbol: string;
   price: string;
+  royalty: number;
 }
 
 export const deployContracts: RequestHandler = (req, res) => {
@@ -47,6 +48,7 @@ export const deployContracts: RequestHandler = (req, res) => {
     price,
     creator,
     chainId,
+    royalty,
   }: CollectionT & CollectionInfo = req.body;
   const signer = new ethers.VoidSigner(creator);
   const NFTContract = new NftFactory(signer);
@@ -55,7 +57,8 @@ export const deployContracts: RequestHandler = (req, res) => {
     symbol,
     `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${chainId}/`,
     tokens.length,
-    BigNumber.from(price)
+    BigNumber.from(price),
+    royalty
   );
   tx.chainId = chainId;
   tx.from = creator;

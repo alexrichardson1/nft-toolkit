@@ -88,7 +88,7 @@ const createCollection = async (
   showFormAlert: (severity: AlertColor, message: string) => void,
   setIsLoading: SetStateAction<boolean>,
   setTxAddress: SetStateAction<string>,
-  royalty?: string
+  wantedMarketplace: boolean
 ) => {
   const signer = library.getSigner();
   setLoadingMessage("Deploying...");
@@ -96,11 +96,10 @@ const createCollection = async (
   setLoadingMessage("Confirming...");
   const txReceipt = await txResponse.wait();
   let marketAddress;
-  if (royalty) {
+  if (wantedMarketplace) {
     const marketFactory = new MarketFactory(signer);
     setLoadingMessage("Deploying Market...");
     const marketContract = await marketFactory.deploy(
-      royalty,
       txReceipt.contractAddress,
       "0x3b00ef435fa4fcff5c209a37d1f3dcff37c705ad"
     );
@@ -242,7 +241,7 @@ const handleLastStep = async (
     showFormAlert,
     setIsLoading,
     setTxAddress,
-    state.marketplace.wanted ? state.marketplace.royalty : void 0
+    state.marketplace.wanted
   );
 };
 

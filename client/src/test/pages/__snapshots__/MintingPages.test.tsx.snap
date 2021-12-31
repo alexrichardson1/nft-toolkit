@@ -1210,6 +1210,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                       >
                                         DummyDescription
                                       </ForwardRef(Typography)>
+                                      <React.Fragment />
                                     </ForwardRef(Box)>
                                     <ForwardRef(Box)
                                       display="flex"
@@ -1425,6 +1426,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                           >
                                             DummyDescription
                                           </ForwardRef(Typography)>
+                                          <React.Fragment />
                                         </ForwardRef(Box)>
                                         <ForwardRef(Box)
                                           display="flex"
@@ -1625,6 +1627,7 @@ exports[`MintingPage tests MintingPage snapshot 1`] = `
                                               >
                                                 DummyDescription
                                               </ForwardRef(Typography)>
+                                              <React.Fragment />
                                             </ForwardRef(Box)>
                                             <ForwardRef(Box)
                                               display="flex"
