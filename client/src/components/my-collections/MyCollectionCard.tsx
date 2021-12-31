@@ -17,6 +17,7 @@ interface PropsT {
 
 const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
+  const [balance, setBalance] = useState(info.balance);
   const { showSnackbar } = useContext(SnackbarContext);
   const { account, library } = useWeb3React();
 
@@ -26,7 +27,8 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
     try {
       const tx = await nftContract.withdraw();
       await tx.wait();
-      showSnackbar("success", "Purchase successful");
+      showSnackbar("success", "Withdrawal successful");
+      setBalance("0");
     } catch (e) {
       console.error(e);
       showSnackbar("error", "An error occurred. Please try again!");
@@ -52,7 +54,7 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
           <>
             <Stack gap="10px" alignItems="center" direction="row">
               <Typography gutterBottom noWrap>
-                Balance: {utils.formatEther(info.balance)}
+                Balance: {utils.formatEther(balance)}
               </Typography>
               <SvgIcon
                 width="20px"
