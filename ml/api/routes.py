@@ -45,8 +45,6 @@ def get_similar_collections(collection_name, twitter, reddit):
     twitter_followers = hype_meter.get_num_of_twitter_followers(twitter)
     similar_collections = model.predict(
         collection_name, reddit_members, twitter_followers)
-    names = [{"name": i}
-             for i in similar_collections]
 
     (hype, names) = get_hype(similar_collections, twitter, (reddit, subreddits))
     (price, final_similar_collections) = get_recommended_price(names, hype)
@@ -111,8 +109,9 @@ def get_hype(names, twitter_handle, reddit_data):
 
     stripped_names = []
     for collection in names:
-        score = hype_meter.get_overall_score(collection)
-        stripped_names.append({"name": collection, "score": score})
+        stripped_names.append({'name': collection['name'],
+                               'score': collection['twitter_score'] + collection['reddit_score'],
+                               'avg_sale_price': collection['avg_sale_price']})
 
     stripped_names = sorted(stripped_names, key=lambda d: abs(
         d['score'] - score_of_request), reverse=False)
