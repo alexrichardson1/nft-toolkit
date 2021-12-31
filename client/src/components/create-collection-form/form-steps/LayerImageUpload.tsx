@@ -137,19 +137,26 @@ const LayerImageUpload = ({
           );
         })}
       </Box>
-      <Paper>
-        <Input
-          type="number"
-          value={state.generative.quantity}
-          onChange={handleQuantityChange}
-          placeholder="0"
-          label="Collection Quantity"
-          InputProps={{
-            inputProps: { min: 1, max: getMaxQuantity() },
-          }}
-          required
-        />
-      </Paper>
+      {getMaxQuantity() === 0 ? (
+        <></>
+      ) : (
+        <>
+          <p>There are a total {getMaxQuantity()} different combinations</p>
+          <Paper>
+            <Input
+              type="number"
+              value={state.generative.quantity}
+              onChange={handleQuantityChange}
+              placeholder="0"
+              label="Collection Quantity"
+              InputProps={{
+                inputProps: { min: 1, max: getMaxQuantity() },
+              }}
+              required
+            />
+          </Paper>
+        </>
+      )}
     </>
   );
 };
