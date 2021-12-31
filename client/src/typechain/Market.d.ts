@@ -25,7 +25,6 @@ interface MarketInterface extends ethers.utils.Interface {
     "buy(uint256)": FunctionFragment;
     "delist(uint256)": FunctionFragment;
     "listings(uint256)": FunctionFragment;
-    "royalty()": FunctionFragment;
     "sellListing(uint256,uint256,bool)": FunctionFragment;
   };
 
@@ -42,7 +41,6 @@ interface MarketInterface extends ethers.utils.Interface {
     functionFragment: "listings",
     values: [BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "royalty", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "sellListing",
     values: [BigNumberish, BigNumberish, boolean]
@@ -52,7 +50,6 @@ interface MarketInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "buy", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "delist", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "listings", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "royalty", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "sellListing",
     data: BytesLike
@@ -141,8 +138,6 @@ export class Market extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    royalty(overrides?: CallOverrides): Promise<[BigNumber]>;
-
     sellListing(
       tokenId: BigNumberish,
       price: BigNumberish,
@@ -165,8 +160,6 @@ export class Market extends BaseContract {
 
   listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
-  royalty(overrides?: CallOverrides): Promise<BigNumber>;
-
   sellListing(
     tokenId: BigNumberish,
     price: BigNumberish,
@@ -182,8 +175,6 @@ export class Market extends BaseContract {
     delist(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
 
     listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
-
-    royalty(overrides?: CallOverrides): Promise<BigNumber>;
 
     sellListing(
       tokenId: BigNumberish,
@@ -243,8 +234,6 @@ export class Market extends BaseContract {
 
     listings(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
-    royalty(overrides?: CallOverrides): Promise<BigNumber>;
-
     sellListing(
       tokenId: BigNumberish,
       price: BigNumberish,
@@ -273,8 +262,6 @@ export class Market extends BaseContract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
-
-    royalty(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     sellListing(
       tokenId: BigNumberish,
