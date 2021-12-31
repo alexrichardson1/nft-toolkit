@@ -3,7 +3,7 @@ API - flask app factory creation.
 """
 import os
 import pickle
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, request
 import pymongo
 from dotenv import load_dotenv
 import hype_meter
@@ -14,9 +14,8 @@ load_dotenv()
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
 
 
-@price_blueprint.route("/api/recommendations/" +
-                       "<string:collection_name>/<string:twitter>/<string:reddit>")
-def get_similar_collections(collection_name, twitter, reddit):
+@price_blueprint.route("/api/recommendations/<string:collection_name>")
+def get_similar_collections(collection_name):
     """
     Route:
         /api/similar-collections
@@ -35,14 +34,14 @@ def get_similar_collections(collection_name, twitter, reddit):
     with open('collection_model', 'rb') as file:
         model = pickle.load(file)
 
-    if twitter == "":
-        twitter = collection_name
-
-    if reddit == "":
-        reddit = collection_name
+    twitter = request.args.get('twitter-handle')
+    reddit = request.args.get('reddit-handle')
 
     (reddit_members, subreddits) = hype_meter.get_num_of_reddit_members(reddit)
     twitter_followers = hype_meter.get_num_of_twitter_followers(twitter)
+    print("Reddit " + str(reddit_members))
+    print("Twitter " + str(twitter_followers))
+
     similar_collections = model.predict(
         collection_name, reddit_members, twitter_followers)
 

@@ -28,6 +28,9 @@ def get_subreddits_with_handle(reddit_handle):
     """
     Get all subreddits with a similar name as the reddit_handle
     """
+    if reddit_handle is None:
+        return []
+
     params = {'query': reddit_handle}
     res = requests.post(
         'https://oauth.reddit.com/api/search_subreddits',
@@ -43,6 +46,9 @@ def get_num_of_reddit_members(reddit_handle):
     """
     Get number of subscribers to the subreddit
     """
+    if reddit_handle is None:
+        return (0, [])
+
     subreddits = get_subreddits_with_handle(reddit_handle=reddit_handle)
     if len(subreddits) == 0:
         return (0, None)
@@ -54,6 +60,9 @@ def get_score_from_reddit(reddit_data):
     Returns hype given a reddit handle
     """
     (handle, subreddits) = reddit_data
+
+    if handle is None:
+        return 0
 
     if subreddits is None:
         subreddits = get_subreddits_with_handle(reddit_handle=handle)
@@ -85,6 +94,9 @@ def get_score_from_twitter(twitter_handle):
     """
     Returns hype given a twitter handle
     """
+    if twitter_handle is None:
+        return 0
+
     return get_num_of_twitter_followers(twitter_handle)
 
 
