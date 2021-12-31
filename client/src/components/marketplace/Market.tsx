@@ -113,7 +113,7 @@ const Market = (): JSX.Element => {
                 startIcon={<ArrowBackIcon />}
                 variant="outlined"
                 href={`/${paramChainId}/${address}`}>
-                {"Minting Page"}
+                Minting Page
               </Button>
             </Box>
             <Typography
