@@ -13,11 +13,11 @@ load_dotenv()
 
 key = os.getenv("MONGO_STRING")
 client = pymongo.MongoClient(key)
-collection = client.CollectionDB.collections
+db_collection = client.CollectionDB.collection_copy
 collections = np.array([{"name": doc["name"],
                          "reddit_members": doc["reddit_members"],
                          "twitter_followers": doc["twitter_followers"]}
-                        for doc in collection.find({})])
+                        for doc in db_collection.find({})])
 
 model = prediction_model.PredictionModel(collections)
 print("Training...")
