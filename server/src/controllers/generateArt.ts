@@ -239,10 +239,10 @@ const addTiers = (tokens: TokenT[], sortedTokens: TokenT[], tiers: TierI[]) => {
     if (!tier) {
       throw new Error("Cannot find tier");
     }
-    if (tier.probability < current * toPercent) {
+    current += increment;
+    if (tier.probability <= current * toPercent) {
       curLayer++;
     }
-    current += increment;
     token.attributes.push({ trait_type: "tier", value: tier.name });
   });
 };
