@@ -1,4 +1,5 @@
-import { Collapse, Stack, Typography } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Button, Collapse, Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
 import { ProgressActions } from "actions/progressActions";
@@ -106,7 +107,15 @@ const Market = (): JSX.Element => {
     <Box alignItems="center" flexGrow={1} display="flex">
       <Collapse sx={{ width: 1 }} in={tokens !== dummyData}>
         <Stack spacing={2} justifyContent="center">
-          <Box display="flex" flexDirection="column" alignItems="center">
+          <Box display="flex" flexDirection="column">
+            <Box alignItems="left">
+              <Button
+                startIcon={<ArrowBackIcon />}
+                variant="outlined"
+                href={`/${paramChainId}/${address}`}>
+                {"Minting Page"}
+              </Button>
+            </Box>
             <Typography
               textAlign="center"
               sx={textStyle}
