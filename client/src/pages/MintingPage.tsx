@@ -4,6 +4,7 @@ import {
   Button,
   ButtonGroup,
   Collapse,
+  Link,
   Paper,
   Typography,
 } from "@mui/material";
@@ -195,6 +196,13 @@ const MintingPage = (): JSX.Element => {
             <Typography textAlign={{ xs: "center", lg: "left" }}>
               {mintingData.description}
             </Typography>
+            {mintingData.marketAddress ? (
+              <Link
+                underline="none"
+                href={`/${paramChainId}/${address}/${mintingData.marketAddress}`}>
+                <Button variant="contained">{"Go to Market"}</Button>
+              </Link>
+            ) : null}
           </Box>
 
           <Box pt={10} pl={2} display="flex" justifyContent="center">
