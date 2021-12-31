@@ -6,10 +6,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
+import "./ERC2981/ERC2981ContractWideRoyalties.sol";
+
 /** @title NFT Collection Contract
  *  @notice NFT Collection
  */
-contract NFT is ERC721Enumerable, Ownable {
+contract NFT is ERC721Enumerable, Ownable, ERC2981ContractWideRoyalties {
   uint256 public price;
   uint256 public collectionLimit;
   string private _baseURIString;
@@ -28,7 +30,8 @@ contract NFT is ERC721Enumerable, Ownable {
     string memory symbol,
     string memory baseURI,
     uint256 limit,
-    uint256 _price
+    uint256 _price,
+    uint256 royalty
   ) ERC721(name, symbol) {
     collectionLimit = limit;
     price = _price;
@@ -36,6 +39,7 @@ contract NFT is ERC721Enumerable, Ownable {
       abi.encodePacked(baseURI, "0x", toAsciiString(address(this)), "/")
     );
     contractURI = string(abi.encodePacked(_baseURIString, "contract/data"));
+    _setRoyalties(msg.sender, royalty);
   }
 
   /**
@@ -63,6 +67,17 @@ contract NFT is ERC721Enumerable, Ownable {
       s[2 * i + 1] = char(lo);
     }
     return string(s);
+  }
+
+  /// @inheritdoc	ERC165
+  function supportsInterface(bytes4 interfaceId)
+    public
+    view
+    virtual
+    override(ERC721Enumerable, ERC2981Base)
+    returns (bool)
+  {
+    return super.supportsInterface(interfaceId);
   }
 
   /**
