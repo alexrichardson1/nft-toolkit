@@ -1,48 +1,45 @@
 import LoadingButton from "@mui/lab/LoadingButton";
 import { Divider, Paper, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { useWeb3React } from "@web3-react/core";
 import SvgIcon from "components/common/SvgLogo";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import { utils } from "ethers";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { NFT__factory as NftFactory } from "typechain";
 import { getLogoByChainId } from "utils/constants";
 import "./myCollCard.css";
-// import {  NFT__factory as NftFactory
-// } from "typechain";
 
 interface PropsT {
   info: CollDataI;
 }
 
 const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
-  // const [isLoading, setIsLoading] = useState(false);
-  // const { account, library } = useWeb3React();
-  // const handleWithdraw = async () => {
-  // const nftContract = NFTFactory.connect(
-  //   info.address,
-  //   library.getSigner()
-  // );
-  // setIsLoading(true);
-  //   try {
-  //     const tx = await nftContract.buy(tokenId, {
-  //       value: BigNumber.from(token.price),
-  //     });
-  //     await tx.wait();
-  //     showSnackbar("success", "Purchase successful");
-  //   } catch (e) {
-  //     console.error(e);
-  //     showSnackbar("error", "An error occurred. Please try again!");
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }
+  const [isLoading, setIsLoading] = useState(false);
+  const { showSnackbar } = useContext(SnackbarContext);
+  const { account, library } = useWeb3React();
+
+  const handleWithdraw = async () => {
+    const nftContract = NftFactory.connect(info.address, library.getSigner());
+    setIsLoading(true);
+    try {
+      const tx = await nftContract.withdraw();
+      await tx.wait();
+      showSnackbar("success", "Purchase successful");
+    } catch (e) {
+      console.error(e);
+      showSnackbar("error", "An error occurred. Please try again!");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <Paper
-      component={Link}
-      className="mycoll-card"
-      sx={{ borderRadius: "10px" }}
-      to={`/${info.chainId}/${info.address}`}>
-      <img className="mycoll-card-img" src={info.image} alt="card-img" />
+    <Paper className="mycoll-card" sx={{ borderRadius: "10px" }}>
+      <Link to={`/${info.chainId}/${info.address}`}>
+        <img className="mycoll-card-img" src={info.image} alt="card-img" />
+      </Link>
       <Stack padding="10px">
         <Divider />
         <Typography noWrap variant="h6" color="primary">
@@ -51,20 +48,28 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
         <Typography gutterBottom noWrap color="secondary">
           {info.symbol}
         </Typography>
-        <Stack gap="10px" alignItems="center" direction="row">
-          <Typography gutterBottom noWrap>
-            Balance: {utils.formatEther(info.balance)}
-          </Typography>
-          <SvgIcon
-            width="20px"
-            height="20px"
-            icon={getLogoByChainId(info.chainId)}
-            alt="network-logo"
-          />
-        </Stack>
-        <LoadingButton variant="contained" fullWidth>
-          Withdraw
-        </LoadingButton>
+        {account === info.owner && (
+          <>
+            <Stack gap="10px" alignItems="center" direction="row">
+              <Typography gutterBottom noWrap>
+                Balance: {utils.formatEther(info.balance)}
+              </Typography>
+              <SvgIcon
+                width="20px"
+                height="20px"
+                icon={getLogoByChainId(info.chainId)}
+                alt="network-logo"
+              />
+            </Stack>
+            <LoadingButton
+              variant="contained"
+              fullWidth
+              loading={isLoading}
+              onClick={handleWithdraw}>
+              Withdraw
+            </LoadingButton>
+          </>
+        )}
       </Stack>
     </Paper>
   );
