@@ -18,7 +18,8 @@ describe("NFT Collection Contract", () => {
       "MNKY",
       BASE_URI,
       COLLECTION_SIZE,
-      COLLECTION_WEI_PRICE
+      COLLECTION_WEI_PRICE,
+      0
     );
     await nftContract.deployed();
   });
