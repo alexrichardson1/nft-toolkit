@@ -87,7 +87,7 @@ class PredictionModel:
             predictions = self.predict(
                 collection['name'], collection['reddit_score'], collection['twitter_score'])
             pred_avg_price = sum([col['avg_sale_price']
-                                 for col in predictions]) / len(predictions)
+                                  for col in predictions]) / len(predictions)
             print("Got prediction avg price of " + str(pred_avg_price))
             print("Actual price of " + str(collection['avg_sale_price']))
             mse += math.pow(pred_avg_price - collection['avg_sale_price'], 2)
