@@ -24,12 +24,62 @@ TOKEN = token_response.json()['access_token']
 headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
 
 
-def get_score_from_twitter(collection_name):
+def get_subreddits_with_handle(reddit_handle):
     """
-    Returns hype given a twitter handle
+    Get all subreddits with a similar name as the reddit_handle
+    """
+    if reddit_handle is None:
+        return []
+
+    params = {'query': reddit_handle}
+    res = requests.post(
+        'https://oauth.reddit.com/api/search_subreddits',
+        headers=headers,
+        params=params)
+    if res.status_code != 200:
+        return []
+
+    return res.json()['subreddits']
+
+
+def get_num_of_reddit_members(reddit_handle):
+    """
+    Get number of subscribers to the subreddit
+    """
+    if reddit_handle is None:
+        return (0, [])
+
+    subreddits = get_subreddits_with_handle(reddit_handle=reddit_handle)
+    if len(subreddits) == 0:
+        return (0, None)
+    return (int(subreddits[0]['subscriber_count']), subreddits)
+
+
+def get_score_from_reddit(reddit_data):
+    """
+    Returns hype given a reddit handle
+    """
+    (handle, subreddits) = reddit_data
+
+    if handle is None:
+        return 0
+
+    if subreddits is None:
+        subreddits = get_subreddits_with_handle(reddit_handle=handle)
+
+    total = 0
+    for subreddit in subreddits:
+        total += int(subreddit['subscriber_count']) + \
+            int(subreddit['active_user_count'])
+    return total
+
+
+def get_num_of_twitter_followers(twitter_handle):
+    """
+    Get number of subscribers to the twitter
     """
     url = "https://api.twitter.com/1.1/users/show.json"
-    querystring = {"screen_name": collection_name}
+    querystring = {"screen_name": twitter_handle}
     twitter_headers = {"Authorization": "Bearer " +
                        os.getenv("TWITTER_BEARER_TOKEN")}
     response = requests.request(
@@ -40,23 +90,14 @@ def get_score_from_twitter(collection_name):
     return 0
 
 
-def get_score_from_reddit(collection_name):
+def get_score_from_twitter(twitter_handle):
     """
-    Returns hype given a reddit handle
+    Returns hype given a twitter handle
     """
-    params = {'query': collection_name}
-    res = requests.post(
-        'https://oauth.reddit.com/api/search_subreddits', headers=headers, params=params)
-    if res.status_code != 200:
+    if twitter_handle is None:
         return 0
 
-    subreddits = [item['name'] for item in res.json()['subreddits']]
-    total = 0
-    for subreddit in subreddits:
-        url = 'https://oauth.reddit.com/r/' + subreddit + '/about.json'
-        res = requests.get(url, headers=headers)
-        total += int(res.json()['data']['subscribers'])
-    return total
+    return get_num_of_twitter_followers(twitter_handle)
 
 
 def get_overall_score(collection_name):
@@ -68,25 +109,14 @@ def get_overall_score(collection_name):
     for document in collection.find({"name": collection_name}):
         return document["reddit_members"] + document["twitter_followers"]
 
-    reddit = get_score_from_reddit(collection_name)
-    twitter = get_score_from_twitter(collection_name)
-
-    collection_data = [
-        {
-            'name': collection_name,
-            "reddit_members": reddit,
-            "twitter_followers": twitter
-        },
-    ]
-
-    collection.insert_many(collection_data)
-
-    return reddit + twitter
+    reddit_score = get_score_from_reddit((collection_name, None))
+    twitter_score = get_score_from_twitter(collection_name)
+    return reddit_score + twitter_score
 
 
-def get_overall_score_using_handles(twitter_handle, reddit_handle):
+def get_overall_score_using_handles(twitter_handle, reddit_data):
     """
     Returns overall hype via requesting APIs
     """
-    return get_score_from_reddit(reddit_handle) + \
+    return get_score_from_reddit(reddit_data) + \
         get_score_from_twitter(twitter_handle)
