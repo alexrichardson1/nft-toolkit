@@ -102,4 +102,8 @@ contract NFT is ERC721Enumerable, Ownable, ERC2981ContractWideRoyalties {
       tokenIdTracker.increment();
     }
   }
+
+  function withdraw() external onlyOwner {
+    payable(owner()).transfer(address(this).balance);
+  }
 }
