@@ -134,6 +134,9 @@ def get_hype(names, twitter_handle, reddit_data):
 
     if score_of_request > avg_score:
         return (1, stripped_names[:6])
+
+    if avg_score == 0:
+        return (0, stripped_names[:6])
     return (score_of_request / avg_score, stripped_names[:6])
 
 
@@ -146,6 +149,8 @@ def get_recommended_price(names, hype):
         - hype: Hype from 0 to 1
     """
     (similar_collections_avg_price, similar_collections) = get_avg_price(names)
+    if hype == 0:
+        return (similar_collections_avg_price * 0.1, similar_collections)
     return (similar_collections_avg_price * hype * 0.1, similar_collections)
 
 
