@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: UNLICENSED
-
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -36,7 +35,7 @@ contract NFT is ERC721Enumerable, Ownable {
     _baseURIString = string(
       abi.encodePacked(baseURI, "0x", toAsciiString(address(this)), "/")
     );
-    contractURI = string(abi.encodePacked(baseURI, "/contract/data"));
+    contractURI = string(abi.encodePacked(_baseURIString, "contract/data"));
   }
 
   /**
