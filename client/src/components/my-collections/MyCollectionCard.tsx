@@ -5,7 +5,7 @@ import SvgIcon from "components/common/SvgLogo";
 import { utils } from "ethers";
 import { Link } from "react-router-dom";
 import { getLogoByChainId } from "utils/constants";
-import "./card.css";
+import "./myCollCard.css";
 // import {  NFT__factory as NftFactory
 // } from "typechain";
 
