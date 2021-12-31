@@ -19,7 +19,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { names: [], hype: -1, price: -1 },
+  predictions: { names: [], hype: -1, price: 0 },
 };
 
 describe("LayerSelectionStep snapshots", () => {
