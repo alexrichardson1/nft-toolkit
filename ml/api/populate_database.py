@@ -4,12 +4,15 @@ Script to refresh the database
 import os
 import pymongo
 from dotenv import load_dotenv
+from routes import get_collection
 
 load_dotenv()
 
-client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
+# pylint: disable=duplicate-code
+client = pymongo.MongoClient(
+    os.getenv("MONGO_STRING"))
 collection = client.CollectionDB.collections
-collection_copy = client.CollectionDB.collection_copy
+collection_copy = get_collection()
 
 collection_copy.delete_many({})
 

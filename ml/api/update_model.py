@@ -2,17 +2,14 @@
 Script to update collection_model
 """
 
-import os
 import pickle
-import pymongo
+from routes import get_collection
 from dotenv import load_dotenv
 
 
 load_dotenv()
 
-key = os.getenv("MONGO_STRING")
-client = pymongo.MongoClient(key)
-db_collection = client.CollectionDB.collection_copy
+db_collection = get_collection()
 collections = [{"name": doc["name"],
                 "reddit_score": doc["reddit_score"],
                 "twitter_score": doc["twitter_score"],

@@ -64,6 +64,15 @@ def home_page():
     return "This is the ML API server"
 
 
+def get_collection():
+    """
+    Returns MondoDB's CollectionDB.collection_copy
+    """
+    client = pymongo.MongoClient(
+        os.getenv("MONGO_STRING"))
+    return client.CollectionDB.collection_copy
+
+
 def create_app(test_config=None):
     """
     Creating an instance of the flask app

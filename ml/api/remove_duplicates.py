@@ -1,15 +1,13 @@
 """
 Script to remove duplicates in the database
 """
-import os
-import pymongo
 from dotenv import load_dotenv
+from routes import get_collection
 
 
 load_dotenv()
 
-client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
-collection = client.CollectionDB.collection_copy
+collection = get_collection()
 
 for document in collection.find():
     collection_name = document['name']

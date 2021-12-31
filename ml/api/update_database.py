@@ -1,9 +1,8 @@
 """
 Script to update the documents in the database
 """
-import os
 import time
-import pymongo
+from routes import get_collection
 from dotenv import load_dotenv
 import hype_meter
 import requests
@@ -11,17 +10,15 @@ import requests
 
 load_dotenv()
 
-client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
-collection = client.CollectionDB.collection_copy
+collection = get_collection()
 
 failed_collections = []
 
 for document in collection.find():
     collection_name = document['name']
     print("Getting scores for : " + collection_name)
-    reddit = hype_meter.get_score_from_reddit((collection_name, None))
-    twitter = hype_meter.get_score_from_twitter(collection_name)
-
+    REDDIT = hype_meter.get_score_from_reddit((collection_name, None))
+    TWITTER = hype_meter.get_score_from_twitter(collection_name)
     print("Requesting collection data from Opensea for : " + collection_name)
     img = document['preview_img']
     avg_price = document['avg_sale_price']
@@ -41,8 +38,8 @@ for document in collection.find():
         print("Failed to request Opensea for collection: " + collection_name)
 
     collection.update_one({"name": collection_name},
-                          {'$set': {'reddit_score': reddit,
-                                    'twitter_score': twitter,
+                          {'$set': {'reddit_score': REDDIT,
+                                    'twitter_score': TWITTER,
                                     'preview_img': img,
                                     'avg_sale_price': avg_price,
                                     'volume': volume
