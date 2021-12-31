@@ -17,8 +17,8 @@ const DEFAULT_MAPPING_VALUE = BigNumber.from("0");
 const COLLECTION_SIZE = 10;
 const COLLECTION_WEI_PRICE = ethers.utils.parseEther("1");
 const BASE_URI = "";
-// Market Contract
-const CUT = 20;
+// 20% royalty
+const CUT = 2000;
 
 describe("Market Contract", () => {
   let marketContract: Market;
@@ -35,7 +35,8 @@ describe("Market Contract", () => {
       "MNKY",
       BASE_URI,
       COLLECTION_SIZE,
-      COLLECTION_WEI_PRICE
+      COLLECTION_WEI_PRICE,
+      CUT
     );
     await nftContract.deployed();
     await nftContract.mint(NUM_NFTS, {
@@ -47,7 +48,6 @@ describe("Market Contract", () => {
     // Market Contract
     const MarketContract = await ethers.getContractFactory("Market");
     marketContract = await MarketContract.deploy(
-      CUT,
       nftContract.address,
       tetherContract.address
     );
