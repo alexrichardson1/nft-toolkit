@@ -200,9 +200,11 @@ const MintingPage = (): JSX.Element => {
               <Link
                 underline="none"
                 href={`/${paramChainId}/${address}/${mintingData.marketAddress}`}>
-                <Button variant="contained">{"Go to Market"}</Button>
+                <Button variant="contained">Go to Market</Button>
               </Link>
-            ) : null}
+            ) : (
+              <></>
+            )}
           </Box>
 
           <Box pt={10} pl={2} display="flex" justifyContent="center">
