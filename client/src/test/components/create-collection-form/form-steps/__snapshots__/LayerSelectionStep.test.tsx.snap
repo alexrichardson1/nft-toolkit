@@ -661,8 +661,8 @@ exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
               },
               "mintingPrice": "",
               "predictions": Object {
+                "collections": Array [],
                 "hype": -1,
-                "names": Array [],
                 "price": 0,
               },
               "redditHandle": "",
@@ -1343,8 +1343,8 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
               },
               "mintingPrice": "",
               "predictions": Object {
+                "collections": Array [],
                 "hype": -1,
-                "names": Array [],
                 "price": 0,
               },
               "redditHandle": "",

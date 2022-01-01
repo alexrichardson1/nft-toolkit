@@ -39,8 +39,6 @@ def get_similar_collections(collection_name):
 
     (reddit_members, subreddits) = hype_meter.get_num_of_reddit_members(reddit)
     twitter_followers = hype_meter.get_num_of_twitter_followers(twitter)
-    print("Reddit " + str(reddit_members))
-    print("Twitter " + str(twitter_followers))
 
     similar_collections = model.predict(
         collection_name, reddit_members, twitter_followers)
@@ -48,7 +46,7 @@ def get_similar_collections(collection_name):
     (hype, names) = get_hype(similar_collections, twitter, (reddit, subreddits))
     (price, final_similar_collections) = get_recommended_price(names, hype)
 
-    return {"similar_collections": final_similar_collections, "hype": hype * 100, "price": price}
+    return {"collections": final_similar_collections, "hype": hype * 100, "price": price}
 
 
 @price_blueprint.route('/')
@@ -169,7 +167,7 @@ def get_avg_price(names):
         document = collection.find_one({"name": name['name']})
         prices.append(document["avg_sale_price"])
         collection_data.append(
-            {"name": name['name'], "preview_img": document['preview_img']})
+            {"name": name['name'], "img": document['preview_img']})
     if len(prices) == 0:
         return (0, collection_data)
     return (sum(prices) / len(prices), collection_data)

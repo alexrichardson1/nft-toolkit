@@ -13,14 +13,17 @@ import Box from "@mui/system/Box";
 import InfoTooltip from "components/common/InfoToolTip";
 import PageHeader from "components/common/PageHeader";
 import { ReactNode } from "react";
+import Carousel from "react-material-ui-carousel";
 import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const REC_STEP_NUMBER_STATIC = 3;
 const REC_STEP_NUMBER_GEN = 5;
+const BAD_HYPE_UPPER_BOUND = 30;
+const GOOD_HYPE_UPPER_BOUND = 60;
 const HYPE_TT_TEXT =
-  "This indicates how well we think your collection will do based on the data you have provided.";
+  "This indicates how hyped your collection is based on the data you have provided.";
 const NAME_REC_TT_TEXT =
-  "These are some suggestions for alternative names based on the data you have provided.";
+  "These are some similar NFT collections based on the data you have provided.";
 const PRICE_REC_TT_TEXT =
   "This is our suggestion for an alternative minting price based on the data you have provided.";
 
@@ -36,8 +39,6 @@ interface PropsT {
   stepNumber: number;
   generative: boolean;
   state: FormStateI;
-  handleChangeCollName: SetStateAction<string>;
-  changedCollName: string;
   changedMintingPrice: number;
   handleChangeMintingPrice: SetStateAction<number>;
   isLoading: boolean;
@@ -52,7 +53,9 @@ interface SectionProps {
 const Prediction = ({ title, children, tooltipText }: SectionProps) => (
   <Box alignItems="center" display="flex" justifyContent="space-between">
     <Box alignItems="center" display="flex" gap={2}>
-      <Typography>{title}</Typography>
+      <Typography color="secondary" variant="h5">
+        {title}
+      </Typography>
       <InfoTooltip text={tooltipText} />
     </Box>
     {children}
@@ -62,7 +65,9 @@ const Prediction = ({ title, children, tooltipText }: SectionProps) => (
 const Recommendation = ({ title, children, tooltipText }: SectionProps) => (
   <>
     <Box alignItems="center" display="flex" gap={2}>
-      <Typography>{title}</Typography>
+      <Typography color="secondary" variant="h5">
+        {title}
+      </Typography>
       <InfoTooltip text={tooltipText} />
     </Box>
     {children}
@@ -86,8 +91,6 @@ const RecommendationsStep = ({
   state,
   handleChangeMintingPrice,
   changedMintingPrice,
-  handleChangeCollName,
-  changedCollName,
   isLoading,
 }: PropsT): JSX.Element => {
   if (
@@ -104,50 +107,73 @@ const RecommendationsStep = ({
     handleChangeMintingPrice(newPrice);
   };
 
-  const RecommendedNamesList = () => (
-    <List>
-      <ListItem
-        onClick={() => {
-          if (isLoading) {
-            return;
-          }
-          handleChangeCollName(state.collectionName);
-        }}
-        sx={{
-          ...listItemStyle,
-          border:
-            changedCollName === state.collectionName ? "3px solid" : "none",
-        }}>
-        <ListItemText>{state.collectionName}</ListItemText>
-      </ListItem>
-      {state.predictions.names.map((nameObj, idx) => {
-        return (
-          <ListItem
-            onClick={() => {
-              if (isLoading) {
-                return;
-              }
-              handleChangeCollName(nameObj.name);
-            }}
+  const RecommendedNamesList = () => {
+    return (
+      <Carousel>
+        {state.predictions.collections.map(({ name, img }, idx) => (
+          <Stack
+            component="a"
+            href={`https://opensea.io/collection/${name}`}
+            target="_blank"
+            direction="row"
+            height="500px"
+            key={idx}
             sx={{
-              ...listItemStyle,
-              border: changedCollName === nameObj.name ? "3px solid" : "none",
-            }}
-            key={idx}>
-            <ListItemText>{nameObj.name}</ListItemText>
-          </ListItem>
-        );
-      })}
-    </List>
-  );
+              border: "2px solid white",
+              bgcolor: "primary.main",
+              borderRadius: "20px",
+              textDecoration: "none",
+            }}>
+            <img
+              width="auto"
+              style={{
+                maxWidth: "50%",
+                flexGrow: 1,
+                borderRadius: "20px 0 0 20px",
+              }}
+              src={img}
+              // Need to provide alternative image
+              alt={name}
+            />
+            <Stack
+              flexGrow={1}
+              spacing={5}
+              height="100%"
+              alignItems="center"
+              justifyContent="center">
+              <Typography
+                align="center"
+                variant="h1"
+                color="black"
+                sx={{ textTransform: "capitalize" }}>
+                {name}
+              </Typography>
+              <Typography align="center" variant="h6" color="black">
+                Click here to see further details of the collections
+              </Typography>
+            </Stack>
+          </Stack>
+        ))}
+      </Carousel>
+    );
+  };
+
+  const generateHypeExplaination = () => {
+    if (state.redditHandle === "" && state.twitterHandle === "") {
+      return "Unfortunately we are unable to calculate the hype of you and your collection as you haven't provided your Twitter or Reddit handles. Please go back and add your usernames to calculate your hype";
+    }
+    if (state.predictions.hype < BAD_HYPE_UPPER_BOUND) {
+      return "Based on the information provided, you should grow the community who are awaiting your next collection!";
+    } else if (state.predictions.hype < GOOD_HYPE_UPPER_BOUND) {
+      return "Well done, you hase a strong community foundation. You can still grow it and reap the benefits";
+    }
+    return "Wow! You have a huge community awaiting for your collection :)";
+  };
 
   return (
     <>
-      <PageHeader text="Predictions & Recommendations" />
-      <Typography color="primary" variant="h5">
-        Predictions
-      </Typography>
-      <Prediction title="Predicted Hype" tooltipText={HYPE_TT_TEXT}>
+      <PageHeader text="Recommendations" />
+      <Prediction title="Hype Evaluation" tooltipText={HYPE_TT_TEXT}>
         <Stack minWidth={300} spacing={2} direction="row" alignItems="center">
           <FireIcon color="info" fontSize="small" />
           <Slider
@@ -158,10 +184,10 @@ const RecommendationsStep = ({
           <FireIcon color="error" fontSize="large" />
         </Stack>
       </Prediction>
-      <Typography color="primary" variant="h5">
-        Recommendations
-      </Typography>
-      <Recommendation title="Collection Name" tooltipText={NAME_REC_TT_TEXT}>
+      <Typography>{generateHypeExplaination()}</Typography>
+      <Recommendation
+        title="Similar Collections"
+        tooltipText={NAME_REC_TT_TEXT}>
         <RecommendedNamesList />
       </Recommendation>
       <Recommendation title="Minting Price" tooltipText={PRICE_REC_TT_TEXT}>
@@ -175,7 +201,10 @@ const RecommendationsStep = ({
                   : "none",
             }}
             onClick={() => mintingPriceChange(Number(state.mintingPrice))}>
-            <ListItemText>Old: {state.mintingPrice}</ListItemText>
+            <ListItemText>Old:</ListItemText>
+            <ListItemText sx={{ textAlign: "right" }}>
+              {state.mintingPrice}
+            </ListItemText>
           </ListItem>
           <ListItem
             sx={{
@@ -186,7 +215,10 @@ const RecommendationsStep = ({
                   : "none",
             }}
             onClick={() => mintingPriceChange(state.predictions.price)}>
-            <ListItemText>Recommended: {state.predictions.price}</ListItemText>
+            <ListItemText>Recommended:</ListItemText>
+            <ListItemText sx={{ textAlign: "right" }}>
+              {state.predictions.price}
+            </ListItemText>
           </ListItem>
         </List>
       </Recommendation>

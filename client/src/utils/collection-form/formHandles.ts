@@ -149,13 +149,25 @@ const handleIfNotLastStep = async (
   showFormAlert: (severity: AlertColor, message: string) => void,
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
-  setNewCollName: SetStateAction<string>,
   setNewMintingPrice: SetStateAction<number>,
   handleNextStep: () => void
 ): Promise<boolean> => {
   if (isLastStep) {
     return true;
   }
+
+  const generateQuery = () => {
+    const query: string[] = [];
+    if (state.twitterHandle !== "") {
+      query.push(`twitter-handle=${state.twitterHandle}`);
+    }
+
+    if (state.redditHandle !== "") {
+      query.push(`reddit-handle=${state.redditHandle}`);
+    }
+    return `${query.length === 0 ? "" : "?"}${query.join("&")}`;
+  };
+
   if (
     generative &&
     stepNumber === LAYER_SELECTION_STEP &&
@@ -181,14 +193,15 @@ const handleIfNotLastStep = async (
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
     try {
       const res = await axios.get(
-        `${ML_URL}/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
+        `${ML_URL}/api/recommendations/${
+          state.collectionName
+        }${generateQuery()}`
       );
       handlePredictionsChange(res.data as MlDataI, dispatch);
     } catch (err) {
       console.error(err);
     }
     stopLoading(setLoadingMessage, setIsLoading);
-    setNewCollName(state.collectionName);
     setNewMintingPrice(Number(state.mintingPrice));
   }
   handleNextStep();
@@ -199,7 +212,6 @@ const handleLastStep = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   state: FormStateI,
-  newCollName: string,
   newMintingPrice: number,
   generative: boolean,
   account: string,
@@ -212,14 +224,13 @@ const handleLastStep = async (
   let tx: Deferrable<TransactionRequest>;
   const modifiedState = {
     ...state,
-    collectionName: newCollName,
     mintingPrice: newMintingPrice.toString(),
   };
   if (generative) {
     const layers = await uploadGenImages(
       state.generative.layers,
       account,
-      newCollName
+      state.collectionName
     );
     setLoadingMessage("Generating...");
     tx = await uploadGenCollection(layers, modifiedState, account, chainId);
@@ -227,7 +238,7 @@ const handleLastStep = async (
     await uploadImages(
       Object.values(state.static.images),
       account,
-      newCollName
+      state.collectionName
     );
     setLoadingMessage("Saving...");
     tx = await uploadCollection(modifiedState, account, chainId);
@@ -259,10 +270,8 @@ export const handleFormSubmit = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   dispatch: React.Dispatch<FormActionI>,
-  setNewCollName: SetStateAction<string>,
   setNewMintingPrice: SetStateAction<number>,
   handleNextStep: () => void,
-  newCollName: string,
   newMintingPrice: number,
   library: Web3Provider,
   setTxAddress: SetStateAction<string>
@@ -282,7 +291,6 @@ export const handleFormSubmit = async (
       showFormAlert,
       setLoadingMessage,
       setIsLoading,
-      setNewCollName,
       setNewMintingPrice,
       handleNextStep
     ))
@@ -294,7 +302,6 @@ export const handleFormSubmit = async (
       setLoadingMessage,
       setIsLoading,
       state,
-      newCollName,
       newMintingPrice,
       generative,
       account,

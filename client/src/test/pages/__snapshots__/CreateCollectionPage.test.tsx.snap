@@ -700,8 +700,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": 0,
                             },
                             "redditHandle": "",
@@ -3621,8 +3621,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": 0,
                             },
                             "redditHandle": "",
@@ -3660,8 +3660,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": 0,
                             },
                             "redditHandle": "",
@@ -3699,8 +3699,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": 0,
                             },
                             "redditHandle": "",
@@ -3740,8 +3740,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": 0,
                             },
                             "redditHandle": "",
@@ -3756,10 +3756,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                         stepNumber={0}
                       />
                       <RecommendationsStep
-                        changedCollName=""
                         changedMintingPrice={0}
                         generative={false}
-                        handleChangeCollName={[Function]}
                         handleChangeMintingPrice={[Function]}
                         isLoading={false}
                         state={
@@ -3780,8 +3778,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": 0,
                             },
                             "redditHandle": "",
