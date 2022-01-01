@@ -3,7 +3,7 @@ name: Deploy to DockerHub & AWS EB
 on:
   push:
     branches:
-      - "master"
+      - "ml-fixes"
 
 jobs:
   docker:
