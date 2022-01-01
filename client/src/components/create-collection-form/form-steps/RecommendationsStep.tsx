@@ -143,8 +143,12 @@ const RecommendationsStep = ({
               height="100%"
               alignItems="center"
               justifyContent="center">
-              <Typography align="center" variant="h1" color="black">
-                {name.charAt(0).toUpperCase() + name.slice(1)}
+              <Typography
+                align="center"
+                variant="h1"
+                color="black"
+                sx={{ textTransform: "capitalize" }}>
+                {name}
               </Typography>
               <Typography align="center" variant="h6" color="black">
                 Click here to see further details of the collections
