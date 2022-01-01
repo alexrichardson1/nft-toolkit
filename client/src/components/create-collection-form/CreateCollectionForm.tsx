@@ -76,7 +76,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { collections: [], hype: -1, price: 0 },
+  predictions: { collections: [], hype: -1, price: "0" },
 };
 const formFooterStyle: SxProps = {
   display: "flex",
@@ -97,7 +97,7 @@ const CreateCollectionForm = (): JSX.Element => {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
   const [txAddress, setTxAddress] = useState("");
-  const [newMintingPrice, setNewMintingPrice] = useState(0);
+  const [newMintingPrice, setNewMintingPrice] = useState("");
   useEffect(() => {
     if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
