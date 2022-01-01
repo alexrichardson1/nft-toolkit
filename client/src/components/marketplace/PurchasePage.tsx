@@ -21,10 +21,11 @@ import tetherLogo from "images/tether.svg";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
+  ERC20__factory as ERC20Factory,
   Market__factory as MarketFactory,
   NFT__factory as NftFactory,
 } from "typechain";
-import { getLogoByChainId } from "utils/constants";
+import { getLogoByChainId, tetherAddress, toTether } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 import { TokenI } from "./Market";
@@ -36,6 +37,7 @@ const dummyData: TokenI = {
   attributes: { tier: "Legendary" },
   id: 0,
   price: BigNumber.from(0),
+  isStable: false,
   isOwner: true,
 };
 
@@ -87,6 +89,7 @@ const PurchasePage = (): JSX.Element => {
         });
         res.data.attributes = attributeMap;
         res.data.price = await marketContract.listings(res.data.id);
+        res.data.isStable = await marketContract.areStable(res.data.id);
         const curOwner = await nftContract.ownerOf(tokenId);
         res.data.isOwner = curOwner === account;
         const token = res.data;
@@ -100,7 +103,7 @@ const PurchasePage = (): JSX.Element => {
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
     }
     getTokenData();
-  }, [loadingButton]);
+  }, [loadingButton, account]);
 
   const handlePurchase = async () => {
     const marketContract = MarketFactory.connect(
@@ -109,8 +112,20 @@ const PurchasePage = (): JSX.Element => {
     );
     setLoadingButton(true);
     try {
+      if (token.isStable) {
+        const tetherContract = ERC20Factory.connect(
+          tetherAddress,
+          library.getSigner()
+        );
+        const approveTx = await tetherContract.approve(
+          marketContract.address,
+          token.price
+        );
+        await approveTx.wait();
+        showSnackbar("success", "Tether approval successful");
+      }
       const tx = await marketContract.buy(tokenId, {
-        value: BigNumber.from(token.price),
+        value: BigNumber.from(token.isStable ? 0 : token.price),
       });
       await tx.wait();
       showSnackbar("success", "Purchase successful");
@@ -132,15 +147,18 @@ const PurchasePage = (): JSX.Element => {
     setLoadingButton(true);
     let price;
     if (stableCoinList) {
-      // TODO: fix this
-      price = parseUnits(listPrice).toString();
+      price = parseUnits(listPrice, toTether);
     } else {
-      price = parseUnits(listPrice).toString();
+      price = parseUnits(listPrice);
     }
     try {
       const approveTx = await nftContract.approve(marketAddress, tokenId);
       await approveTx.wait();
-      const tx = await marketContract.sellListing(tokenId, price, false);
+      const tx = await marketContract.sellListing(
+        tokenId,
+        price,
+        stableCoinList
+      );
       await tx.wait();
       showSnackbar("success", "Listing successful");
     } catch (e) {
