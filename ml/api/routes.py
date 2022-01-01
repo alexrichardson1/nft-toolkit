@@ -31,7 +31,6 @@ def get_similar_collections(collection_name):
                 price: float
             }
     """
-    print(os.listdir())
     with open('api/collection_model', 'rb') as file:
         model = pickle.load(file)
 
