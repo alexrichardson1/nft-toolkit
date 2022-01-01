@@ -666,7 +666,7 @@ exports[`GeneralInfoStep Step Number does not match when generative 1`] = `
                 "predictions": Object {
                   "collections": Array [],
                   "hype": -1,
-                  "price": -1,
+                  "price": 0,
                 },
                 "redditHandle": "",
                 "static": Object {
@@ -1352,7 +1352,7 @@ exports[`GeneralInfoStep Step Number does not match when not generative 1`] = `
                 "predictions": Object {
                   "collections": Array [],
                   "hype": -1,
-                  "price": -1,
+                  "price": 0,
                 },
                 "redditHandle": "",
                 "static": Object {
@@ -2038,7 +2038,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                 "predictions": Object {
                   "collections": Array [],
                   "hype": -1,
-                  "price": -1,
+                  "price": 0,
                 },
                 "redditHandle": "",
                 "static": Object {
@@ -9461,7 +9461,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                 "predictions": Object {
                   "collections": Array [],
                   "hype": -1,
-                  "price": -1,
+                  "price": 0,
                 },
                 "redditHandle": "",
                 "static": Object {

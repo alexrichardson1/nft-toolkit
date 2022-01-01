@@ -20,7 +20,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { collections: [], hype: -1, price: -1 },
+  predictions: { collections: [], hype: -1, price: 0 },
 };
 
 describe("TierSelectionStep", () => {

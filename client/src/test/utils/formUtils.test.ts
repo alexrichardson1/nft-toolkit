@@ -61,7 +61,7 @@ describe("formUtils unit tests", () => {
     const mockState = {
       twitterHandle: "twitter",
       redditHandle: "reddit",
-      predictions: { collections: [], hype: 0, price: -1 },
+      predictions: { collections: [], hype: -1, price: 0 },
       collectionName: "Test Collection",
       description: "Example description",
       static: { numberOfImages: 1, images: mockImages },

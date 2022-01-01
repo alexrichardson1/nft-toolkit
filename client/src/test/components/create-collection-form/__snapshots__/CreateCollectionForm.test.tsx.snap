@@ -701,7 +701,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "collections": Array [],
                             "hype": -1,
-                            "price": -1,
+                            "price": 0,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3622,7 +3622,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "collections": Array [],
                             "hype": -1,
-                            "price": -1,
+                            "price": 0,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3661,7 +3661,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "collections": Array [],
                             "hype": -1,
-                            "price": -1,
+                            "price": 0,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3700,7 +3700,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "collections": Array [],
                             "hype": -1,
-                            "price": -1,
+                            "price": 0,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3741,7 +3741,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "collections": Array [],
                             "hype": -1,
-                            "price": -1,
+                            "price": 0,
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3779,7 +3779,7 @@ exports[`CreateCollectionForm snapshot 1`] = `
                           "predictions": Object {
                             "collections": Array [],
                             "hype": -1,
-                            "price": -1,
+                            "price": 0,
                           },
                           "redditHandle": "",
                           "static": Object {

@@ -22,9 +22,11 @@ export const addDeployedAddress: RequestHandler = async (req, res, next) => {
     if (!collection) {
       throw new Error("Collection not found");
     }
+    const image = collection.tokens[0]?.image ?? "";
     const userCollection = new UserCollection({
       address,
       chainId: parseInt(chainId),
+      image,
     });
     const user = await User.findByIdAndUpdate(creator, {
       $push: { collections: userCollection },

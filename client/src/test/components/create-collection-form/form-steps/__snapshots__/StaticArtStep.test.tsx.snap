@@ -668,7 +668,7 @@ exports[`StaticArtStep generative does not match 1`] = `
                   "predictions": Object {
                     "collections": Array [],
                     "hype": -1,
-                    "price": -1,
+                    "price": 0,
                   },
                   "redditHandle": "",
                   "static": Object {
@@ -1357,7 +1357,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                   "predictions": Object {
                     "collections": Array [],
                     "hype": -1,
-                    "price": -1,
+                    "price": 0,
                   },
                   "redditHandle": "",
                   "static": Object {
@@ -2591,7 +2591,7 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                   "predictions": Object {
                     "collections": Array [],
                     "hype": -1,
-                    "price": -1,
+                    "price": 0,
                   },
                   "redditHandle": "",
                   "static": Object {

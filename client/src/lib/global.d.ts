@@ -83,3 +83,19 @@ interface ParamsI {
   paramChainId: string;
   address: string;
 }
+
+interface CollAddrI {
+  address: string;
+  chainId: number;
+  image: string;
+}
+
+interface CollDataI {
+  name: string;
+  symbol: string;
+  chainId: number;
+  address: string;
+  balance: string;
+  image: string;
+  owner: string;
+}
