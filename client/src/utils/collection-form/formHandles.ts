@@ -6,7 +6,7 @@ import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
 import { Market__factory as MarketFactory } from "typechain";
-import { ML_URL } from "utils/constants";
+import { ML_URL, tetherAddress } from "utils/constants";
 import {
   addDeployedAddress,
   startLoading,
@@ -101,7 +101,7 @@ const createCollection = async (
     setLoadingMessage("Deploying Market...");
     const marketContract = await marketFactory.deploy(
       txReceipt.contractAddress,
-      "0x3b00ef435fa4fcff5c209a37d1f3dcff37c705ad"
+      tetherAddress
     );
     marketAddress = marketContract.address;
   }
@@ -185,7 +185,7 @@ const handleIfNotLastStep = async (
       );
       handlePredictionsChange(res.data as MlDataI, dispatch);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
     stopLoading(setLoadingMessage, setIsLoading);
     setNewCollName(state.collectionName);

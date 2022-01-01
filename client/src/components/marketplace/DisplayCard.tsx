@@ -3,9 +3,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import SvgIcon from "components/common/SvgLogo";
 import { BigNumber, utils } from "ethers";
+import tetherLogo from "images/tether.svg";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { getLogoByChainId } from "utils/constants";
+import { getLogoByChainId, toTether } from "utils/constants";
 import "./displaycard.css";
 import { TokenI } from "./Market";
 
@@ -16,18 +17,21 @@ interface PropsT {
   chainId: number;
 }
 
-const priceCard = (logo: string, price: BigNumber) => {
+const priceCard = (logo: string, price: BigNumber, isStable: boolean) => {
   if (price.eq(0)) {
     return <></>;
   }
   return (
     <Box className="card-price-container">
       <Typography variant="h6" color="primary" className="card-price">
-        Price: {utils.formatEther(price)}
+        Price:{" "}
+        {isStable
+          ? utils.formatUnits(price, toTether)
+          : utils.formatEther(price)}
       </Typography>
       <SvgIcon
         alt="network-symb"
-        icon={logo}
+        icon={isStable ? tetherLogo : logo}
         width="20px"
         height="20px"
         margins
@@ -62,7 +66,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
           <>
             <Box bgcolor="background.paper" className="card-front">
               <img src={data.image} alt={data.name} className="card-img" />
-              {priceCard(logo, data.price)}
+              {priceCard(logo, data.price, data.isStable)}
             </Box>
             <Box bgcolor="background.paper" className="card-back">
               <Box className="card-title-container">
@@ -77,7 +81,7 @@ const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
                 <Typography className="card-description">
                   {data.description}
                 </Typography>
-                {priceCard(logo, data.price)}
+                {priceCard(logo, data.price, data.isStable)}
               </Box>
             </Box>
           </>

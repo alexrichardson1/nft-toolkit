@@ -22,6 +22,7 @@ export interface TokenI {
   description: string;
   image: string;
   price: BigNumber;
+  isStable: boolean;
   isOwner?: boolean;
   attributes: AttributeI;
 }
@@ -33,6 +34,7 @@ const dummyData: TokenI[] = [
     image: "",
     attributes: {},
     id: 0,
+    isStable: false,
     price: BigNumber.from(0),
   },
 ];
@@ -85,11 +87,13 @@ const Market = (): JSX.Element => {
             attributeMap[attr.trait_type] = attr.value;
           });
           const price = await marketContract.listings(index);
+          const isStable = await marketContract.areStable(index);
           return {
             ...token,
             id: index,
             attributes: attributeMap,
             price,
+            isStable,
           };
         })
       );

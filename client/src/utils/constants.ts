@@ -65,3 +65,7 @@ export const s3 = new S3({
 export const siderbarMenuItems = [
   { text: "Create New Collection", location: "/create-new-collection" },
 ];
+
+export const tetherAddress = "0xD92E713d051C37EbB2561803a3b5FBAbc4962431";
+
+export const toTether = 6;

@@ -10,6 +10,7 @@ import CreateCollectionPage from "pages/CreateCollectionPage";
 import Error404Page from "pages/Error404";
 import HomePage from "pages/HomePage";
 import MintingPage from "pages/MintingPage";
+import MyCollectionsPage from "pages/MyCollectionsPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NAVBAR_HEIGHT } from "utils/constants";
 
@@ -58,6 +59,11 @@ const App = (): JSX.Element => {
                 exact
                 path="/create-new-collection"
                 component={CreateCollectionPage}
+              />
+              <Route
+                exact
+                path="/:address([0-9a-zA-Z]{26,})"
+                component={MyCollectionsPage}
               />
               <Route
                 exact
