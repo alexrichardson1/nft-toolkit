@@ -149,7 +149,6 @@ const handleIfNotLastStep = async (
   showFormAlert: (severity: AlertColor, message: string) => void,
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
-  setNewCollName: SetStateAction<string>,
   setNewMintingPrice: SetStateAction<number>,
   handleNextStep: () => void
 ): Promise<boolean> => {
@@ -203,7 +202,6 @@ const handleIfNotLastStep = async (
       console.log(err);
     }
     stopLoading(setLoadingMessage, setIsLoading);
-    setNewCollName(state.collectionName);
     setNewMintingPrice(Number(state.mintingPrice));
   }
   handleNextStep();
@@ -214,7 +212,6 @@ const handleLastStep = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   state: FormStateI,
-  newCollName: string,
   newMintingPrice: number,
   generative: boolean,
   account: string,
@@ -227,14 +224,13 @@ const handleLastStep = async (
   let tx: Deferrable<TransactionRequest>;
   const modifiedState = {
     ...state,
-    collectionName: newCollName,
     mintingPrice: newMintingPrice.toString(),
   };
   if (generative) {
     const layers = await uploadGenImages(
       state.generative.layers,
       account,
-      newCollName
+      state.collectionName
     );
     setLoadingMessage("Generating...");
     tx = await uploadGenCollection(layers, modifiedState, account, chainId);
@@ -242,7 +238,7 @@ const handleLastStep = async (
     await uploadImages(
       Object.values(state.static.images),
       account,
-      newCollName
+      state.collectionName
     );
     setLoadingMessage("Saving...");
     tx = await uploadCollection(modifiedState, account, chainId);
@@ -274,10 +270,8 @@ export const handleFormSubmit = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   dispatch: React.Dispatch<FormActionI>,
-  setNewCollName: SetStateAction<string>,
   setNewMintingPrice: SetStateAction<number>,
   handleNextStep: () => void,
-  newCollName: string,
   newMintingPrice: number,
   library: Web3Provider,
   setTxAddress: SetStateAction<string>
@@ -297,7 +291,6 @@ export const handleFormSubmit = async (
       showFormAlert,
       setLoadingMessage,
       setIsLoading,
-      setNewCollName,
       setNewMintingPrice,
       handleNextStep
     ))
@@ -309,7 +302,6 @@ export const handleFormSubmit = async (
       setLoadingMessage,
       setIsLoading,
       state,
-      newCollName,
       newMintingPrice,
       generative,
       account,

@@ -39,8 +39,6 @@ interface PropsT {
   stepNumber: number;
   generative: boolean;
   state: FormStateI;
-  handleChangeCollName: SetStateAction<string>;
-  changedCollName: string;
   changedMintingPrice: number;
   handleChangeMintingPrice: SetStateAction<number>;
   isLoading: boolean;

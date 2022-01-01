@@ -97,7 +97,6 @@ const CreateCollectionForm = (): JSX.Element => {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
   const [txAddress, setTxAddress] = useState("");
-  const [newCollName, setNewCollName] = useState("");
   const [newMintingPrice, setNewMintingPrice] = useState(0);
   useEffect(() => {
     if (stepNumber === INITIAL_STEP_NUMBER) {
@@ -134,10 +133,8 @@ const CreateCollectionForm = (): JSX.Element => {
           setLoadingMessage,
           setIsLoading,
           dispatch,
-          setNewCollName,
           setNewMintingPrice,
           handleNextStep,
-          newCollName,
           newMintingPrice,
           library,
           setTxAddress
@@ -209,8 +206,6 @@ const CreateCollectionForm = (): JSX.Element => {
         isLoading={isLoading}
         stepNumber={stepNumber}
         generative={generative}
-        changedCollName={newCollName}
-        handleChangeCollName={setNewCollName}
         changedMintingPrice={newMintingPrice}
         handleChangeMintingPrice={setNewMintingPrice}
       />
