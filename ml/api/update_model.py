@@ -17,7 +17,7 @@ collections = [{"name": doc["name"],
                for doc in db_collection.find({})]
 
 
-with open('./collection_model', 'rb') as file:
+with open('api/collection_model', 'rb') as file:
     model = pickle.load(file)
 
 model.set_collections(collections)

@@ -103,7 +103,7 @@ class PredictionModel:
         """
         Save the model
         """
-        with open('./collection_model', 'wb') as file:
+        with open('api/collection_model', 'wb') as file:
             pickle.dump(self, file)
 
     def __str__(self):
