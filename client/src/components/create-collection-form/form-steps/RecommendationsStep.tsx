@@ -13,6 +13,7 @@ import Box from "@mui/system/Box";
 import InfoTooltip from "components/common/InfoToolTip";
 import PageHeader from "components/common/PageHeader";
 import { ReactNode } from "react";
+import Carousel from "react-material-ui-carousel";
 import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const REC_STEP_NUMBER_STATIC = 3;
@@ -20,7 +21,7 @@ const REC_STEP_NUMBER_GEN = 5;
 const HYPE_TT_TEXT =
   "This indicates how well we think your collection will do based on the data you have provided.";
 const NAME_REC_TT_TEXT =
-  "These are some suggestions for alternative names based on the data you have provided.";
+  "These are some similar NFT collections based on the data you have provided.";
 const PRICE_REC_TT_TEXT =
   "This is our suggestion for an alternative minting price based on the data you have provided.";
 
@@ -86,8 +87,6 @@ const RecommendationsStep = ({
   state,
   handleChangeMintingPrice,
   changedMintingPrice,
-  handleChangeCollName,
-  changedCollName,
   isLoading,
 }: PropsT): JSX.Element => {
   if (
@@ -104,42 +103,54 @@ const RecommendationsStep = ({
     handleChangeMintingPrice(newPrice);
   };
 
-  const RecommendedNamesList = () => (
-    <List>
-      <ListItem
-        onClick={() => {
-          if (isLoading) {
-            return;
-          }
-          handleChangeCollName(state.collectionName);
-        }}
-        sx={{
-          ...listItemStyle,
-          border:
-            changedCollName === state.collectionName ? "3px solid" : "none",
-        }}>
-        <ListItemText>{state.collectionName}</ListItemText>
-      </ListItem>
-      {state.predictions.names.map((nameObj, idx) => {
-        return (
-          <ListItem
-            onClick={() => {
-              if (isLoading) {
-                return;
-              }
-              handleChangeCollName(nameObj.name);
-            }}
+  // {collections: [{name: "", img: ""}], price: 0, hype: 0]
+  console.log(state.predictions);
+
+  const RecommendedNamesList = () => {
+    return (
+      <Carousel>
+        {state.predictions.collections.map(({ name, img }, idx) => (
+          <Stack
+            component="a"
+            href={`https://opensea.io/collection/${name}`}
+            target="_blank"
+            direction="row"
+            height="500px"
+            key={idx}
             sx={{
-              ...listItemStyle,
-              border: changedCollName === nameObj.name ? "3px solid" : "none",
-            }}
-            key={idx}>
-            <ListItemText>{nameObj.name}</ListItemText>
-          </ListItem>
-        );
-      })}
-    </List>
-  );
+              border: "2px solid white",
+              bgcolor: "primary.main",
+              borderRadius: "20px",
+              textDecoration: "none",
+            }}>
+            <img
+              width="auto"
+              style={{
+                maxWidth: "50%",
+                flexGrow: 1,
+                borderRadius: "20px 0 0 20px",
+              }}
+              src={img}
+              alt={name}
+            />
+            <Stack
+              flexGrow={1}
+              spacing={5}
+              height="100%"
+              alignItems="center"
+              justifyContent="center">
+              <Typography align="center" variant="h1" color="black">
+                {name}
+              </Typography>
+              <Typography align="center" variant="h6" color="black">
+                Click here to see further details of the collections
+              </Typography>
+            </Stack>
+          </Stack>
+        ))}
+      </Carousel>
+    );
+  };
 
   return (
     <>
@@ -161,7 +172,9 @@ const RecommendationsStep = ({
       <Typography color="primary" variant="h5">
         Recommendations
       </Typography>
-      <Recommendation title="Collection Name" tooltipText={NAME_REC_TT_TEXT}>
+      <Recommendation
+        title="Similar Collections"
+        tooltipText={NAME_REC_TT_TEXT}>
         <RecommendedNamesList />
       </Recommendation>
       <Recommendation title="Minting Price" tooltipText={PRICE_REC_TT_TEXT}>
