@@ -31,7 +31,7 @@ def get_similar_collections(collection_name):
                 price: float
             }
     """
-    with open('collection_model', 'rb') as file:
+    with open('./collection_model', 'rb') as file:
         model = pickle.load(file)
 
     twitter = request.args.get('twitter-handle')
