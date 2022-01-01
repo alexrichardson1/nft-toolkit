@@ -156,6 +156,19 @@ const handleIfNotLastStep = async (
   if (isLastStep) {
     return true;
   }
+
+  const generateQuery = () => {
+    const query: string[] = [];
+    if (state.twitterHandle !== "") {
+      query.push(`twitter-handle=${state.twitterHandle}`);
+    }
+
+    if (state.redditHandle !== "") {
+      query.push(`reddit-handle=${state.redditHandle}`);
+    }
+    return `${query.length === 0 ? "" : "?"}${query.join("&")}`;
+  };
+
   if (
     generative &&
     stepNumber === LAYER_SELECTION_STEP &&
@@ -181,7 +194,9 @@ const handleIfNotLastStep = async (
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
     try {
       const res = await axios.get(
-        `${ML_URL}/api/recommendations/${state.collectionName}/${state.twitterHandle}/${state.redditHandle}`
+        `${ML_URL}/api/recommendations/${
+          state.collectionName
+        }${generateQuery()}`
       );
       handlePredictionsChange(res.data as MlDataI, dispatch);
     } catch (err) {
