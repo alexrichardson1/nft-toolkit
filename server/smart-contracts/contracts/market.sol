@@ -98,8 +98,8 @@ contract Market {
 
     // Transfer cut to royalty receiver & seller
     if (isStable) {
-      _stable.transferFrom(address(this), royaltyReceiver, price);
-      _stable.transferFrom(address(this), seller, sellerCut);
+      _stable.transfer(royaltyReceiver, royaltyAmount);
+      _stable.transfer(seller, sellerCut);
     } else {
       payable(royaltyReceiver).transfer(royaltyAmount);
       seller.transfer(sellerCut);
