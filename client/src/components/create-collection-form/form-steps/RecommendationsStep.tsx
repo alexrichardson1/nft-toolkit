@@ -18,8 +18,10 @@ import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const REC_STEP_NUMBER_STATIC = 3;
 const REC_STEP_NUMBER_GEN = 5;
+const BAD_HYPE_UPPER_BOUND = 30;
+const GOOD_HYPE_UPPER_BOUND = 60;
 const HYPE_TT_TEXT =
-  "This indicates how well we think your collection will do based on the data you have provided.";
+  "This indicates how hyped your collection is based on the data you have provided.";
 const NAME_REC_TT_TEXT =
   "These are some similar NFT collections based on the data you have provided.";
 const PRICE_REC_TT_TEXT =
@@ -53,7 +55,9 @@ interface SectionProps {
 const Prediction = ({ title, children, tooltipText }: SectionProps) => (
   <Box alignItems="center" display="flex" justifyContent="space-between">
     <Box alignItems="center" display="flex" gap={2}>
-      <Typography>{title}</Typography>
+      <Typography color="secondary" variant="h5">
+        {title}
+      </Typography>
       <InfoTooltip text={tooltipText} />
     </Box>
     {children}
@@ -63,7 +67,9 @@ const Prediction = ({ title, children, tooltipText }: SectionProps) => (
 const Recommendation = ({ title, children, tooltipText }: SectionProps) => (
   <>
     <Box alignItems="center" display="flex" gap={2}>
-      <Typography>{title}</Typography>
+      <Typography color="secondary" variant="h5">
+        {title}
+      </Typography>
       <InfoTooltip text={tooltipText} />
     </Box>
     {children}
@@ -103,9 +109,6 @@ const RecommendationsStep = ({
     handleChangeMintingPrice(newPrice);
   };
 
-  // {collections: [{name: "", img: ""}], price: 0, hype: 0]
-  console.log(state.predictions);
-
   const RecommendedNamesList = () => {
     return (
       <Carousel>
@@ -131,6 +134,7 @@ const RecommendationsStep = ({
                 borderRadius: "20px 0 0 20px",
               }}
               src={img}
+              // Need to provide alternative image
               alt={name}
             />
             <Stack
@@ -140,7 +144,7 @@ const RecommendationsStep = ({
               alignItems="center"
               justifyContent="center">
               <Typography align="center" variant="h1" color="black">
-                {name}
+                {name.charAt(0).toUpperCase() + name.slice(1)}
               </Typography>
               <Typography align="center" variant="h6" color="black">
                 Click here to see further details of the collections
@@ -152,13 +156,22 @@ const RecommendationsStep = ({
     );
   };
 
+  const generateHypeExplaination = () => {
+    if (state.redditHandle === "" && state.twitterHandle === "") {
+      return "Unfortunately we are unable to calculate the hype of you and your collection as you haven't provided your Twitter or Reddit handles. Please go back and add your usernames to calculate your hype";
+    }
+    if (state.predictions.hype < BAD_HYPE_UPPER_BOUND) {
+      return "Based on the information provided, you should grow the community who are awaiting your next collection!";
+    } else if (state.predictions.hype < GOOD_HYPE_UPPER_BOUND) {
+      return "Well done, you hase a strong community foundation. You can still grow it and reap the benefits";
+    }
+    return "Wow! You have a huge community awaiting for your collection :)";
+  };
+
   return (
     <>
-      <PageHeader text="Predictions & Recommendations" />
-      <Typography color="primary" variant="h5">
-        Predictions
-      </Typography>
-      <Prediction title="Predicted Hype" tooltipText={HYPE_TT_TEXT}>
+      <PageHeader text="Recommendations" />
+      <Prediction title="Hype Evaluation" tooltipText={HYPE_TT_TEXT}>
         <Stack minWidth={300} spacing={2} direction="row" alignItems="center">
           <FireIcon color="info" fontSize="small" />
           <Slider
@@ -169,9 +182,7 @@ const RecommendationsStep = ({
           <FireIcon color="error" fontSize="large" />
         </Stack>
       </Prediction>
-      <Typography color="primary" variant="h5">
-        Recommendations
-      </Typography>
+      <Typography>{generateHypeExplaination()}</Typography>
       <Recommendation
         title="Similar Collections"
         tooltipText={NAME_REC_TT_TEXT}>
@@ -188,7 +199,10 @@ const RecommendationsStep = ({
                   : "none",
             }}
             onClick={() => mintingPriceChange(Number(state.mintingPrice))}>
-            <ListItemText>Old: {state.mintingPrice}</ListItemText>
+            <ListItemText>Old:</ListItemText>
+            <ListItemText sx={{ textAlign: "right" }}>
+              {state.mintingPrice}
+            </ListItemText>
           </ListItem>
           <ListItem
             sx={{
@@ -199,7 +213,10 @@ const RecommendationsStep = ({
                   : "none",
             }}
             onClick={() => mintingPriceChange(state.predictions.price)}>
-            <ListItemText>Recommended: {state.predictions.price}</ListItemText>
+            <ListItemText>Recommended:</ListItemText>
+            <ListItemText sx={{ textAlign: "right" }}>
+              {state.predictions.price}
+            </ListItemText>
           </ListItem>
         </List>
       </Recommendation>
