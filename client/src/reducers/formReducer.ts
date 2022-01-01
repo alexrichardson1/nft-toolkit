@@ -60,7 +60,7 @@ const INITIAL_STATE: FormStateI = {
     quantity: "1",
   },
   marketplace: { wanted: false, royalty: "" },
-  predictions: { collections: [], hype: -1, price: 0 },
+  predictions: { collections: [], hype: -1, price: "0" },
 };
 
 const containsDuplicates = (name: string, items: { name: string }[]) => {
@@ -346,7 +346,7 @@ const resetTypeOfArt = (state: FormStateI): FormStateI => {
       numberOfLayers: 0,
       quantity: DEFAULT_STRING,
     },
-    predictions: { collections: [], hype: -1, price: 0 },
+    predictions: { collections: [], hype: -1, price: "0" },
   };
 };
 const changeSymbol = (state: FormStateI, action: FormActionI): FormStateI => {
