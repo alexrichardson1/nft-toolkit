@@ -21,7 +21,7 @@ const INITIAL_STATE: FormStateI = {
   },
   marketplace: { wanted: false, royalty: "" },
 
-  predictions: { names: [], hype: -1, price: -1 },
+  predictions: { collections: [], hype: -1, price: -1 },
 };
 
 describe("LayerImageUpload snapshots", () => {

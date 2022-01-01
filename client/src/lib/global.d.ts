@@ -34,11 +34,11 @@ interface LayerI {
 
 type NameRecommendationT = {
   name: string;
-  distance: number;
+  img: string;
 };
 
 interface MlDataI {
-  names: NameRecommendationT[];
+  collections: NameRecommendationT[];
   hype: number;
   price: number;
 }
