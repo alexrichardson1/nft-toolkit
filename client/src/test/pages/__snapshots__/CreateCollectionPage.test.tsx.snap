@@ -3756,10 +3756,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                         stepNumber={0}
                       />
                       <RecommendationsStep
-                        changedCollName=""
                         changedMintingPrice={0}
                         generative={false}
-                        handleChangeCollName={[Function]}
                         handleChangeMintingPrice={[Function]}
                         isLoading={false}
                         state={
