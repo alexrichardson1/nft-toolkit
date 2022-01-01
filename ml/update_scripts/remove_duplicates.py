@@ -1,11 +1,10 @@
 """
 Script to remove duplicates in the database
 """
-from dotenv import load_dotenv
-from routes import get_collection
+import sys
 
-
-load_dotenv()
+sys.path.insert(1, '../api')
+from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
 collection = get_collection()
 

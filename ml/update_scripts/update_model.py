@@ -3,11 +3,11 @@ Script to update collection_model
 """
 
 import pickle
-from routes import get_collection
-from dotenv import load_dotenv
+import sys
 
+sys.path.insert(1, '../api')
+from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
-load_dotenv()
 
 db_collection = get_collection()
 collections = [{"name": doc["name"],
@@ -17,7 +17,7 @@ collections = [{"name": doc["name"],
                for doc in db_collection.find({})]
 
 
-with open('collection_model', 'rb') as file:
+with open('../collection_model', 'rb') as file:
     model = pickle.load(file)
 
 model.set_collections(collections)

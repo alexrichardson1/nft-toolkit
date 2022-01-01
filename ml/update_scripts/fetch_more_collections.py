@@ -2,12 +2,12 @@
 Script to add more collections to the database
 """
 import time
-from routes import get_collection
-from dotenv import load_dotenv
+import sys
 import requests
 
+sys.path.insert(1, '../api')
+from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
-load_dotenv()
 
 db_collection = get_collection()
 NUMBER_OF_COLLECTIONS_TO_FETCH = 500
