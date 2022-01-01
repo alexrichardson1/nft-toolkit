@@ -662,8 +662,8 @@ exports[`TierSelectionStep generative does not match 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",
@@ -1346,8 +1346,8 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",
@@ -4316,8 +4316,8 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",

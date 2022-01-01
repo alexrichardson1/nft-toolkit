@@ -700,8 +700,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": -1,
                             },
                             "redditHandle": "",
@@ -3621,8 +3621,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": -1,
                             },
                             "redditHandle": "",
@@ -3660,8 +3660,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": -1,
                             },
                             "redditHandle": "",
@@ -3699,8 +3699,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": -1,
                             },
                             "redditHandle": "",
@@ -3740,8 +3740,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": -1,
                             },
                             "redditHandle": "",
@@ -3780,8 +3780,8 @@ exports[`CreateCollectionPage snapshot 1`] = `
                             },
                             "mintingPrice": "",
                             "predictions": Object {
+                              "collections": Array [],
                               "hype": -1,
-                              "names": Array [],
                               "price": -1,
                             },
                             "redditHandle": "",

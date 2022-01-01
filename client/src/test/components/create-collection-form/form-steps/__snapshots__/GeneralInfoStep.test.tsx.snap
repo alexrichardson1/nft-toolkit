@@ -664,8 +664,8 @@ exports[`GeneralInfoStep Step Number does not match when generative 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",
@@ -1350,8 +1350,8 @@ exports[`GeneralInfoStep Step Number does not match when not generative 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",
@@ -2036,8 +2036,8 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",
@@ -9459,8 +9459,8 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                 },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
                   "price": -1,
                 },
                 "redditHandle": "",
