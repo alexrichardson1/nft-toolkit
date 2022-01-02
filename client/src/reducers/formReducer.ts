@@ -334,21 +334,6 @@ const changePredictions = (state: FormStateI, action: FormActionI) => {
   );
   return { ...state, predictions };
 };
-const resetTypeOfArt = (state: FormStateI): FormStateI => {
-  return {
-    ...state,
-    static: { images: {}, numberOfImages: 0 },
-    generative: {
-      numberOfTiers: 0,
-      tiers: [],
-      layers: [],
-      totalTierRarity: 0,
-      numberOfLayers: 0,
-      quantity: DEFAULT_STRING,
-    },
-    predictions: { collections: [], hype: -1, price: "0" },
-  };
-};
 const changeSymbol = (state: FormStateI, action: FormActionI): FormStateI => {
   return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
 };
@@ -401,7 +386,7 @@ const changeQuantity = (state: FormStateI, action: FormActionI): FormStateI => {
   };
 };
 const resetState = (): FormStateI => {
-  return { ...INITIAL_STATE };
+  return JSON.parse(JSON.stringify(INITIAL_STATE));
 };
 const changeMarketplaceWanted = (
   state: FormStateI,
@@ -460,7 +445,6 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     changeLayerProb,
     changeQuantity,
     // resets
-    resetTypeOfArt,
     resetState,
     // predictions
     changePredictions,
