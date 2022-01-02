@@ -5,6 +5,7 @@ Script to update collection_model
 import pickle
 import sys
 
+# If running locally change to sys.path.insert(1, 'api')
 sys.path.insert(1, '/api')
 from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
@@ -17,7 +18,8 @@ collections = [{"name": doc["name"],
                for doc in db_collection.find({})]
 
 
-with open('app/api/collection_model', 'rb') as file:
+# If running locally change to with open('api/collection_model', 'rb') as file:
+with open('/api/collection_model', 'rb') as file:
     model = pickle.load(file)
 
 model.set_collections(collections)
