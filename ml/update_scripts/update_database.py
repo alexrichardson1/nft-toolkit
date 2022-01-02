@@ -2,23 +2,23 @@
 Script to update the documents in the database
 """
 import time
-from routes import get_collection
-from dotenv import load_dotenv
-import hype_meter
+import sys
 import requests
 
+# If running locally change to sys.path.insert(1, 'api')
+sys.path.insert(1, '/api')
+from hype_meter import get_score_from_reddit, get_score_from_twitter  # noqa # pylint:disable=import-error, wrong-import-position
+from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
-load_dotenv()
 
 collection = get_collection()
-
 failed_collections = []
 
 for document in collection.find():
     collection_name = document['name']
     print("Getting scores for : " + collection_name)
-    REDDIT = hype_meter.get_score_from_reddit((collection_name, None))
-    TWITTER = hype_meter.get_score_from_twitter(collection_name)
+    REDDIT = get_score_from_reddit((collection_name, None))
+    TWITTER = get_score_from_twitter(collection_name)
     print("Requesting collection data from Opensea for : " + collection_name)
     img = document['preview_img']
     avg_price = document['avg_sale_price']
