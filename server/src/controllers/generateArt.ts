@@ -222,7 +222,7 @@ const sortByRarity = (aToken: TokenT, bToken: TokenT): number => {
   const aRarityScore = aToken.attributes[aToken.attributes.length - 1];
   const bRarityScore = bToken.attributes[bToken.attributes.length - 1];
   if (aRarityScore && bRarityScore) {
-    return (
+    return -(
       parseInt(aRarityScore.value.toString()) -
       parseInt(bRarityScore.value.toString())
     );
