@@ -39,8 +39,8 @@ interface PropsT {
   stepNumber: number;
   generative: boolean;
   state: FormStateI;
-  changedMintingPrice: number;
-  handleChangeMintingPrice: SetStateAction<number>;
+  changedMintingPrice: string;
+  handleChangeMintingPrice: SetStateAction<string>;
   isLoading: boolean;
 }
 
@@ -100,7 +100,7 @@ const RecommendationsStep = ({
     return <></>;
   }
 
-  const mintingPriceChange = (newPrice: number) => {
+  const mintingPriceChange = (newPrice: string) => {
     if (isLoading) {
       return;
     }
@@ -196,11 +196,11 @@ const RecommendationsStep = ({
             sx={{
               ...listItemStyle,
               border:
-                changedMintingPrice === parseFloat(state.mintingPrice)
+                changedMintingPrice === state.mintingPrice
                   ? "3px solid"
                   : "none",
             }}
-            onClick={() => mintingPriceChange(Number(state.mintingPrice))}>
+            onClick={() => mintingPriceChange(state.mintingPrice)}>
             <ListItemText>Old:</ListItemText>
             <ListItemText sx={{ textAlign: "right" }}>
               {state.mintingPrice}

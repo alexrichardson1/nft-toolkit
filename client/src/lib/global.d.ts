@@ -40,7 +40,7 @@ type NameRecommendationT = {
 interface MlDataI {
   collections: NameRecommendationT[];
   hype: number;
-  price: number;
+  price: string;
 }
 
 interface FormStateI {
