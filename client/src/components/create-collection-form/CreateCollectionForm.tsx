@@ -101,7 +101,7 @@ const CreateCollectionForm = (): JSX.Element => {
   useEffect(() => {
     if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
-      dispatch({ type: FormActions.RESET_TYPE_OF_ART, payload: {} });
+      dispatch({ type: FormActions.RESET_STATE, payload: {} });
     }
   }, [stepNumber]);
   const IS_LAST_STEP =
