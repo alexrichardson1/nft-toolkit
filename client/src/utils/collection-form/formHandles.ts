@@ -168,23 +168,6 @@ const handleIfNotLastStep = async (
     return `${query.length === 0 ? "" : "?"}${query.join("&")}`;
   };
 
-  const GENERAL_INFO_STEP_GEN = 4;
-  const GENERAL_INFO_STEP_STATIC = 2;
-  const MAX_DECIMALS = 18;
-  if (
-    ((generative && stepNumber === GENERAL_INFO_STEP_GEN) ||
-      (!generative && stepNumber === GENERAL_INFO_STEP_STATIC)) &&
-    state.mintingPrice.indexOf(".") > 0 &&
-    state.mintingPrice.indexOf(".") + 1 <
-      state.mintingPrice.length - MAX_DECIMALS
-  ) {
-    showFormAlert(
-      "error",
-      "Minting price should not have more than 18 digits after decimal point."
-    );
-    return false;
-  }
-
   if (
     generative &&
     stepNumber === LAYER_SELECTION_STEP &&
@@ -204,6 +187,19 @@ const handleIfNotLastStep = async (
       (stepNumber === LAYER_IMG_UPLOAD_STEP &&
         !checkLayers(state.generative.layers, showFormAlert)))
   ) {
+    return false;
+  }
+  const MAX_DECIMALS = 18;
+  if (
+    isGeneralInfoStep(generative, stepNumber) &&
+    state.mintingPrice.indexOf(".") > 0 &&
+    state.mintingPrice.indexOf(".") + 1 <
+      state.mintingPrice.length - MAX_DECIMALS
+  ) {
+    showFormAlert(
+      "error",
+      "Minting price should not have more than 18 digits after decimal point."
+    );
     return false;
   }
   if (isGeneralInfoStep(generative, stepNumber)) {
