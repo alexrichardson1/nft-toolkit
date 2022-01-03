@@ -65,7 +65,7 @@ const MyCollectionsPage = (): JSX.Element => {
       }
     }
     getCollectionData();
-  }, []);
+  }, [address]);
 
   return (
     <Stack height="100%" spacing={2} overflow="auto">
