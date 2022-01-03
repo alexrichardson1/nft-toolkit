@@ -12,7 +12,7 @@ import { TokenI } from "./Market";
 
 interface PropsT {
   data: TokenI;
-  to: string;
+  to?: string;
   loading?: boolean;
   chainId: number;
 }
@@ -42,9 +42,15 @@ const priceCard = (logo: string, price: BigNumber, isStable: boolean) => {
 
 const DisplayCard = ({ chainId, to, data, loading }: PropsT): JSX.Element => {
   const logo = useMemo(() => getLogoByChainId(chainId), [chainId]);
-
+  const link = to
+    ? {
+        component: Link,
+        to,
+        sx: { cursor: "pointer" },
+      }
+    : {};
   return (
-    <Box tabIndex={0} component={Link} to={to} className="marketplace-card">
+    <Box tabIndex={0} className="marketplace-card" {...link}>
       <Box
         color="text.primary"
         sx={{ bgcolor: "background.paper", boxShadow: 3 }}
