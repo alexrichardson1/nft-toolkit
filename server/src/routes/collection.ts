@@ -1,6 +1,7 @@
 import {
   deployContracts,
   generateTokens,
+  getAllCollections,
   getCollection,
   getUserCollections,
   saveCollectionToDB,
@@ -57,6 +58,8 @@ collectionRoutes.get(
   errorHandler,
   getUserCollections
 );
+
+collectionRoutes.get("/", getAllCollections);
 
 collectionRoutes.get(
   "/:chainId/:address",
