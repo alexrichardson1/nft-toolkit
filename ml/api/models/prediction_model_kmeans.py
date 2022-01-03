@@ -3,7 +3,6 @@ Model for clustering collections
 """
 
 import math
-import pickle
 import sys
 import distance
 import numpy as np
@@ -108,13 +107,6 @@ class PredictionModelKMeans:
             mse += math.pow(pred_avg_price - price, 2)
             print("-----------------")
         return math.sqrt(mse / total_validated)
-
-    def save_model(self):
-        """
-        Save the model
-        """
-        with open('/api/collection_model', 'wb') as file:
-            pickle.dump(self, file)
 
 
 # sys.path.insert(1, "api/")
