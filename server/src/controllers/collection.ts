@@ -1,6 +1,10 @@
 import { s3 } from "@controllers/common";
-import { GenCollectionI, generate } from "@controllers/generateArt";
-import { Collection, CollectionT, Token } from "@models/collection";
+import {
+  GenCollectionI,
+  generate,
+  MIN_IMG_UPLOAD,
+} from "@controllers/generateArt";
+import { Collection, CollectionT, Token, TokenT } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
@@ -25,9 +29,35 @@ export const uploadImages = multer({
 export const successHandler: RequestHandler = (_req, res) =>
   res.json({ success: true });
 
+const makeGif = (
+  tokens: TokenT[]
+  // creator: string,
+  // name: string
+): string => {
+  const MIDPOINT = 0.5;
+  const NUM_FRAMES = 1;
+  const [randomToken] = tokens
+    .sort(() => MIDPOINT - Math.random())
+    .slice(0, NUM_FRAMES);
+
+  // const uploadKey = `${creator}/${name}/collection.gif`;
+  // const uploadParams = {
+  //   Bucket: "nft-toolkit-collections",
+  //   Key: uploadKey,
+  //   ACL: "public-read",
+  //   Body: await gif.render,
+  // };
+  // await s3.upload(uploadParams).promise();
+  return randomToken
+    ? randomToken.image
+    : `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/images/1.png`;
+};
+
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT = req.body;
   userCollection.tokens.map((token) => new Token(token));
+  const { tokens } = userCollection;
+  userCollection.image = makeGif(tokens.slice(0, MIN_IMG_UPLOAD));
   const collection = new Collection(userCollection);
   await collection.save();
   next();
