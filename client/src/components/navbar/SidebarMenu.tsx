@@ -1,5 +1,6 @@
 import BrushIcon from "@mui/icons-material/Brush";
 import CollectionsIcon from "@mui/icons-material/Collections";
+import ImageIcon from "@mui/icons-material/Image";
 import { Divider } from "@mui/material";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
@@ -54,12 +55,23 @@ const SidebarMenu = ({ handleDrawerToggle }: PropsT): JSX.Element => {
           </ListItem>
         ))}
         {active && (
-          <ListItem component={LinkBehavior} to={`/${account}`} button>
-            <ListItemIcon sx={{ minWidth: 0, pr: 2 }}>
-              <CollectionsIcon />
-            </ListItemIcon>
-            <ListItemText primary={"My Collections"} />
-          </ListItem>
+          <>
+            <ListItem component={LinkBehavior} to={`/${account}`} button>
+              <ListItemIcon sx={{ minWidth: 0, pr: 2 }}>
+                <CollectionsIcon />
+              </ListItemIcon>
+              <ListItemText primary={"My Collections"} />
+            </ListItem>
+            <ListItem
+              component={LinkBehavior}
+              to={`/${account}/my-nfts`}
+              button>
+              <ListItemIcon sx={{ minWidth: 0, pr: 2 }}>
+                <ImageIcon />
+              </ListItemIcon>
+              <ListItemText primary={"My NFTs"} />
+            </ListItem>
+          </>
         )}
       </List>
     </Box>
