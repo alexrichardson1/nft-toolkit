@@ -77,7 +77,7 @@ const Market = (): JSX.Element => {
         `${API_URL}/metadata/${paramChainId}/${address}`
       );
       let { tokens }: { tokens: ContractTokenI[] } = res.data;
-      if (tokens.length < totalSupply.toNumber()) {
+      if (tokens.length > totalSupply.toNumber()) {
         tokens = tokens.slice(0, totalSupply.toNumber());
       }
       const transTokens = await Promise.all(
