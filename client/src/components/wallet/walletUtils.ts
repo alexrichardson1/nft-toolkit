@@ -40,7 +40,6 @@ export const switchChain = (
     setNetwork(network);
     return;
   }
-  // TODO: Solana and Cardano
   if (!chainId) {
     return;
   }
