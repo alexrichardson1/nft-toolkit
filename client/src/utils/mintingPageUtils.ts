@@ -7,7 +7,7 @@ import { API_URL } from "./constants";
 interface TokenI {
   image: string;
 }
-// TODO: collection gif
+
 export interface CollectionI {
   name: string;
   address: string;
@@ -16,7 +16,7 @@ export interface CollectionI {
   description: string;
   limit: BigNumber;
   tokens: TokenI[];
-  gifSrc: string;
+  image: string;
   chainId: number;
   price: BigNumber;
   marketAddress?: string;
@@ -34,10 +34,10 @@ export const getCollection = async (
   );
   collection.limit = await NFTContract.collectionLimit();
   collection.mintedAmount = await NFTContract.tokenIdTracker();
-  collection.tokens.forEach((token) => {
-    collection.gifSrc = token.image;
-  });
-  collection.gifSrc = collection.gifSrc?.replaceAll(" ", "%20");
+  if (!collection.image) {
+    collection.image = collection.tokens[0] ? collection.tokens[0].image : "";
+  }
+  collection.image = collection.image.replaceAll(" ", "%20");
   collection.price = await NFTContract.price();
   collection.name = await NFTContract.name();
   collection.symbol = await NFTContract.symbol();

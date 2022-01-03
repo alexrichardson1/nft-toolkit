@@ -29,7 +29,7 @@ const DUMMY_DATA = {
   description: "DummyDescription",
   address: "DummyAddress",
   tokens: [],
-  gifSrc: "DummyGIFAddress",
+  image: "DummyGIFAddress",
   chainId: 1,
   price: BigNumber.from("1"),
   mintedAmount: BigNumber.from("1"),
@@ -67,7 +67,7 @@ const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
     position: "absolute",
     width: 250,
     height: 250,
-    background: `url(${mintingData.gifSrc})`,
+    background: `url(${mintingData.image})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "250px 250px",
   };
