@@ -2,7 +2,6 @@ export const HEXADECIMAL = 16;
 export const NOT_ADDED_NETWORK_ERROR = 4902;
 export const CURRENCY_DECIMALS = 18;
 
-// TODO: Testnet chain ids
 const ETH_ID = 4;
 const MATIC_ID = 137;
 const AVAX_ID = 43114;
