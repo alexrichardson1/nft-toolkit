@@ -61,23 +61,24 @@ const OrderableListItem = ({
       <ListItemText primary={itemName} />
       <Box display="flex" alignItems="center" gap="10px">
         {typeof numericInput !== "undefined" && (
-          <Input
-            notFullWidth
-            required
-            value={numericInput.numberInputValue}
-            label={numericInput.numberInputLabel}
-            placeholder="0"
-            type="number"
-            onChange={numericInput.handleNumberInputChange}
-            InputProps={{
-              inputProps: { min: 1, max: 100 },
-              endAdornment: (
-                <InputAdornment position="end">
-                  <InfoTooltip text={numericInput.tooltipText} />
-                </InputAdornment>
-              ),
-            }}
-          />
+          <Box minWidth="150px">
+            <Input
+              required
+              value={numericInput.numberInputValue}
+              label={numericInput.numberInputLabel}
+              placeholder="0"
+              type="number"
+              onChange={numericInput.handleNumberInputChange}
+              InputProps={{
+                inputProps: { min: 1, max: 100 },
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <InfoTooltip text={numericInput.tooltipText} />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Box>
         )}
         <IconButton {...attributes} {...listeners}>
           <DragIndicatorIcon fontSize="large" color="action" />
