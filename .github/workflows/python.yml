@@ -21,7 +21,7 @@ jobs:
       - name: Format
         run: autopep8 -r --diff --exit-code .
       - name: Lint
-        run: pylint $(find . -name "*.py" | xargs)
+        run: pylint $(find . -name "*.py" | xargs) --rcfile=.pylintrc
       - name: Commit Convention
         run: python3 git-hooks/commit_checker.py
       - name: ESLint disabled warnings
