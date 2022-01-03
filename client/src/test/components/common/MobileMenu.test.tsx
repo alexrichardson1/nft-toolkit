@@ -65,7 +65,7 @@ describe("MobileMenu unit tests", () => {
   });
 
   test("changing network on mobile menu changes network", () => {
-    const item = tree.getByTestId("cardano-mobile-option");
+    const item = tree.getByTestId("polygon-mobile-option");
     fireEvent(item, createEvent.click(item));
     expect(tree).toMatchSnapshot();
   });
