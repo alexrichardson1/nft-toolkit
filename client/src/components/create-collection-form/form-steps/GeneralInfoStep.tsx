@@ -162,6 +162,18 @@ const GeneralInfoStep = ({
         />
       </Paper>
 
+      <Paper>
+        <Input
+          value={state.marketplace.royalty}
+          onChange={handleMplaceRoyaltyChange}
+          placeholder="% on all sales to go to creator"
+          label="Royalty (%)"
+          type="number"
+          InputProps={royaltyInputProps}
+          required
+        />
+      </Paper>
+
       <FormGroup>
         <FormControlLabel
           ref={ref}
@@ -175,20 +187,6 @@ const GeneralInfoStep = ({
           label="Select to deploy your own Marketplace"
         />
       </FormGroup>
-
-      {state.marketplace.wanted && (
-        <Paper>
-          <Input
-            value={state.marketplace.royalty}
-            onChange={handleMplaceRoyaltyChange}
-            placeholder="0"
-            label="Royalty (%)"
-            type="number"
-            InputProps={royaltyInputProps}
-            required
-          />
-        </Paper>
-      )}
     </>
   );
 };
