@@ -99,13 +99,16 @@ const createCollection = async (
   if (wantedMarketplace) {
     const marketFactory = new MarketFactory(signer);
     setLoadingMessage("Deploying Market...");
-    const marketContract = await marketFactory.deploy(
+    const marketTx = await marketFactory.getDeployTransaction(
       txReceipt.contractAddress,
       tetherAddress
     );
-    marketAddress = marketContract.address;
+    const marketTxRes = await signer.sendTransaction(marketTx);
+    setLoadingMessage("Confirming Market...");
+    const marketTxReceipt = await marketTxRes.wait();
+    marketAddress = marketTxReceipt.contractAddress;
   }
-  addDeployedAddress(
+  await addDeployedAddress(
     account,
     chainId,
     txReceipt.contractAddress,
