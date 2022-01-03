@@ -1,7 +1,8 @@
-import { Box, Collapse, Pagination, Stack, Typography } from "@mui/material";
+import { Box, Collapse, Stack, Typography } from "@mui/material";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import { getItemsPerPage, PageNumbers } from "components/common/PageNumbers";
 import DisplayCard from "components/marketplace/DisplayCard";
 import { TokenI } from "components/marketplace/Market";
 import { BigNumber } from "ethers";
@@ -44,7 +45,6 @@ const MyNFTsPage = (): JSX.Element => {
 
   const MAX_PROGRESS = 100;
   const LAST_INDEX = -1;
-  const MAX_PER_PAGE = 24;
 
   useEffect(() => {
     const getCollectionData = async () => {
@@ -135,16 +135,14 @@ const MyNFTsPage = (): JSX.Element => {
     }
     return (
       <>
-        {myNFTs
-          .slice((page - 1) * MAX_PER_PAGE, page * MAX_PER_PAGE)
-          .map((token) => (
-            <DisplayCard
-              chainId={token.chainId}
-              to={token.url}
-              key={token.url}
-              data={token}
-            />
-          ))}
+        {getItemsPerPage(page, myNFTs).map((token) => (
+          <DisplayCard
+            chainId={token.chainId}
+            to={token.url}
+            key={token.url}
+            data={token}
+          />
+        ))}
       </>
     );
   };
@@ -168,16 +166,11 @@ const MyNFTsPage = (): JSX.Element => {
           <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
             <GenerateTokens />
           </Box>
-          <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
-            <Pagination
-              count={Math.ceil(myNFTs.length / MAX_PER_PAGE)}
-              size="large"
-              page={page}
-              onChange={(_e, page) => {
-                setPage(page);
-              }}
-            />
-          </Box>
+          <PageNumbers
+            page={page}
+            setPage={setPage}
+            arrayLength={myNFTs.length}
+          />
         </Stack>
       </Collapse>
     </Box>
