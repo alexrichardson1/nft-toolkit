@@ -12,7 +12,8 @@ from flask_cors import CORS
 
 
 load_dotenv()
-sys.path.insert(1, 'api/models')
+# If running locally change to sys.path.insert(1, 'api/models')
+sys.path.insert(1, '/api/models')
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
 
 
