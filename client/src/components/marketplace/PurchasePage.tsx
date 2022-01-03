@@ -1,4 +1,5 @@
 /* eslint-disable max-lines-per-function */
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { LoadingButton } from "@mui/lab";
 import { Collapse, Grid, Stack, Switch } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -262,63 +263,71 @@ const PurchasePage = (): JSX.Element => {
   };
 
   return (
-    <Collapse sx={{ width: 1 }} in={token !== dummyData}>
-      <Box alignItems="center" flexGrow={1} display="flex" gap={10}>
-        <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
-          <DisplayCard
-            chainId={Number(paramChainId)}
-            to={`/${paramChainId}/${address}/${marketAddress}/${tokenId}`}
-            key={token.id}
-            data={token}
-          />
-        </Box>
-        <Box sx={paperStyle}>
-          <Box
-            display="flex"
-            gap="10px"
-            flexDirection="column"
-            alignItems="center">
-            <ListItem>
-              <Box>
-                <Typography
-                  textAlign="left"
-                  variant="h3"
-                  color="secondary"
-                  fontWeight="medium">
-                  {token.name}
-                </Typography>
-                <Typography
-                  textAlign="left"
-                  color="primary"
-                  fontStyle="oblique">
-                  {symbol}
-                </Typography>
-              </Box>
-            </ListItem>
-            <Divider variant="middle" flexItem={true} />
-            <ListItem>
-              <Grid container spacing={2}>
-                {Object.entries(token.attributes).map((attr, index) => {
-                  const [key, value] = attr;
-                  return (
-                    <Grid item xs={12} sm={6} md={3.5} key={index}>
-                      <Button
-                        fullWidth
-                        variant="outlined"
-                        color="info"
-                        border-radius="5px">
-                        <ListItemText primary={key} secondary={value} />
-                      </Button>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </ListItem>
-            <Box>{buttons(token)}</Box>
+    <>
+      <Collapse sx={{ width: 1 }} in={token !== dummyData}>
+        <Button
+          startIcon={<ArrowBackIcon />}
+          variant="outlined"
+          href={`/${paramChainId}/${address}/${marketAddress}`}
+          sx={{ mb: 2 }}>
+          Marketplace
+        </Button>
+        <Box alignItems="center" flexGrow={1} display="flex" gap={10}>
+          <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
+            <DisplayCard
+              chainId={Number(paramChainId)}
+              key={token.id}
+              data={token}
+            />
+          </Box>
+          <Box sx={paperStyle}>
+            <Box
+              display="flex"
+              gap="10px"
+              flexDirection="column"
+              alignItems="center">
+              <ListItem>
+                <Box>
+                  <Typography
+                    textAlign="left"
+                    variant="h3"
+                    color="secondary"
+                    fontWeight="medium">
+                    {token.name}
+                  </Typography>
+                  <Typography
+                    textAlign="left"
+                    color="primary"
+                    fontStyle="oblique">
+                    {symbol}
+                  </Typography>
+                </Box>
+              </ListItem>
+              <Divider variant="middle" flexItem={true} />
+              <ListItem>
+                <Grid container spacing={2}>
+                  {Object.entries(token.attributes).map((attr, index) => {
+                    const [key, value] = attr;
+                    return (
+                      <Grid item xs={12} sm={6} md={3.5} key={index}>
+                        <Button
+                          fullWidth
+                          variant="outlined"
+                          color="info"
+                          border-radius="5px">
+                          <ListItemText primary={key} secondary={value} />
+                        </Button>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </ListItem>
+              <Box>{buttons(token)}</Box>
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Collapse>
+      </Collapse>
+    </>
   );
 };
 
