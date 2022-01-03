@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
@@ -11,7 +10,7 @@ import "./ERC2981/ERC2981ContractWideRoyalties.sol";
 /** @title NFT Collection Contract
  *  @notice NFT Collection
  */
-contract NFT is ERC721Enumerable, Ownable, ERC2981ContractWideRoyalties {
+contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
   uint256 public price;
   uint256 public collectionLimit;
   string private _baseURIString;
@@ -74,7 +73,7 @@ contract NFT is ERC721Enumerable, Ownable, ERC2981ContractWideRoyalties {
     public
     view
     virtual
-    override(ERC721Enumerable, ERC2981Base)
+    override(ERC721, ERC2981Base)
     returns (bool)
   {
     return super.supportsInterface(interfaceId);
@@ -103,6 +102,9 @@ contract NFT is ERC721Enumerable, Ownable, ERC2981ContractWideRoyalties {
     }
   }
 
+  /**
+   * @notice Withdraw balance of contract from minting fees
+   */
   function withdraw() external onlyOwner {
     payable(owner()).transfer(address(this).balance);
   }
