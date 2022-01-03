@@ -1,6 +1,5 @@
 .mycoll-card {
   background: "transparent";
-  height: 425px;
   width: 300px;
   box-shadow: 0px 0px 5px black;
   text-decoration: none;
@@ -14,7 +13,7 @@
 
 .mycoll-card-img {
   border-radius: 10px 10px 0 0;
-  height: 60%;
+  height: 300px;
   width: 100%;
   cursor: pointer;
   transition: 0.2s ease-out;

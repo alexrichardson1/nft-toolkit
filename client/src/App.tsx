@@ -40,7 +40,7 @@ const App = (): JSX.Element => {
         <Navbar />
         <Box sx={mainContainerStyle}>
           <Container sx={containerStyle}>
-            <Collapse in={inProgress}>
+            <Collapse in={inProgress} sx={{ mb: 2 }}>
               <LinearProgress variant="determinate" value={progressAmount} />
             </Collapse>
             <Switch>
