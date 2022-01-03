@@ -2,6 +2,7 @@ import { model, Schema } from "mongoose";
 
 export interface UserCollectionI {
   address: string;
+  marketAddress?: string;
   chainId: number;
   image: string;
 }
@@ -13,6 +14,7 @@ export interface UserT {
 
 const userCollectionSchema = new Schema<UserCollectionI>({
   address: String,
+  marketAddress: String,
   chainId: Number,
   image: String,
 });
