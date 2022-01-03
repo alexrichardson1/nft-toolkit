@@ -12,7 +12,7 @@ import "./ERC2981/ERC2981ContractWideRoyalties.sol";
  */
 contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
   uint256 public price;
-  uint256 public collectionLimit;
+  uint256 public limit;
   string private _baseURIString;
   string public contractURI;
   using Counters for Counters.Counter;
@@ -28,17 +28,58 @@ contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
     string memory name,
     string memory symbol,
     string memory baseURI,
-    uint256 limit,
+    uint256 _limit,
     uint256 _price,
     uint256 royalty
   ) ERC721(name, symbol) {
-    collectionLimit = limit;
+    limit = _limit;
     price = _price;
     _baseURIString = string(
       abi.encodePacked(baseURI, "0x", toAsciiString(address(this)), "/")
     );
     contractURI = string(abi.encodePacked(_baseURIString, "contract/data"));
     _setRoyalties(msg.sender, royalty);
+  }
+
+  /**
+   * @notice Mint a number of NFTs
+   * @param amount The number of NFTs to mint
+   */
+  function mint(uint256 amount) external payable {
+    require(msg.value == price * amount, "Must send correct price");
+    require(
+      tokenIdTracker.current() + amount <= limit,
+      "Not enough in the collection left to mint amount"
+    );
+    for (uint256 i = 0; i < amount; i++) {
+      _mint(msg.sender, tokenIdTracker.current());
+      tokenIdTracker.increment();
+    }
+  }
+
+  /**
+   * @notice Withdraw balance of contract from minting fees
+   */
+  function withdraw() external onlyOwner {
+    payable(owner()).transfer(address(this).balance);
+  }
+
+  /// @inheritdoc	ERC165
+  function supportsInterface(bytes4 interfaceId)
+    public
+    view
+    virtual
+    override(ERC721, ERC2981Base)
+    returns (bool)
+  {
+    return super.supportsInterface(interfaceId);
+  }
+
+  /**
+   * @return The baseURI for the NFT collection
+   */
+  function _baseURI() internal view virtual override returns (string memory) {
+    return _baseURIString;
   }
 
   /**
@@ -66,46 +107,5 @@ contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
       s[2 * i + 1] = char(lo);
     }
     return string(s);
-  }
-
-  /// @inheritdoc	ERC165
-  function supportsInterface(bytes4 interfaceId)
-    public
-    view
-    virtual
-    override(ERC721, ERC2981Base)
-    returns (bool)
-  {
-    return super.supportsInterface(interfaceId);
-  }
-
-  /**
-   * @return The baseURI for the NFT collection
-   */
-  function _baseURI() internal view virtual override returns (string memory) {
-    return _baseURIString;
-  }
-
-  /**
-   * @notice Mint a number of NFTs
-   * @param amount The number of NFTs to mint
-   */
-  function mint(uint256 amount) external payable {
-    require(msg.value == price * amount, "Must send correct price");
-    require(
-      tokenIdTracker.current() + amount <= collectionLimit,
-      "Not enough in the collection left to mint amount"
-    );
-    for (uint256 i = 0; i < amount; i++) {
-      _mint(msg.sender, tokenIdTracker.current());
-      tokenIdTracker.increment();
-    }
-  }
-
-  /**
-   * @notice Withdraw balance of contract from minting fees
-   */
-  function withdraw() external onlyOwner {
-    payable(owner()).transfer(address(this).balance);
   }
 }
