@@ -45,7 +45,7 @@ Object {
               data-mui-internal-clone-element="true"
               data-testid="Ethereum"
               role="menuitem"
-              style="transition-delay: 180ms;"
+              style="transition-delay: 120ms;"
               tabindex="-1"
               type="button"
             >
@@ -61,33 +61,12 @@ Object {
               />
             </button>
             <button
-              aria-label="Cardano"
-              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-              data-mui-internal-clone-element="true"
-              data-testid="Cardano"
-              role="menuitem"
-              style="transition-delay: 150ms;"
-              tabindex="-1"
-              type="button"
-            >
-              <img
-                alt="Cardano"
-                height="70%"
-                src="cardano-logo.svg"
-                style="margin: 0px;"
-                width="70%"
-              />
-              <span
-                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-              />
-            </button>
-            <button
               aria-label="Avalanche"
               class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
               data-mui-internal-clone-element="true"
               data-testid="Avalanche"
               role="menuitem"
-              style="transition-delay: 120ms;"
+              style="transition-delay: 90ms;"
               tabindex="-1"
               type="button"
             >
@@ -95,27 +74,6 @@ Object {
                 alt="Avalanche"
                 height="70%"
                 src="avalanche-logo.svg"
-                style="margin: 0px;"
-                width="70%"
-              />
-              <span
-                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-              />
-            </button>
-            <button
-              aria-label="Solana"
-              class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-              data-mui-internal-clone-element="true"
-              data-testid="Solana"
-              role="menuitem"
-              style="transition-delay: 90ms;"
-              tabindex="-1"
-              type="button"
-            >
-              <img
-                alt="Solana"
-                height="70%"
-                src="solana-logo.svg"
                 style="margin: 0px;"
                 width="70%"
               />
@@ -211,7 +169,7 @@ Object {
             data-mui-internal-clone-element="true"
             data-testid="Ethereum"
             role="menuitem"
-            style="transition-delay: 180ms;"
+            style="transition-delay: 120ms;"
             tabindex="-1"
             type="button"
           >
@@ -227,33 +185,12 @@ Object {
             />
           </button>
           <button
-            aria-label="Cardano"
-            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-            data-mui-internal-clone-element="true"
-            data-testid="Cardano"
-            role="menuitem"
-            style="transition-delay: 150ms;"
-            tabindex="-1"
-            type="button"
-          >
-            <img
-              alt="Cardano"
-              height="70%"
-              src="cardano-logo.svg"
-              style="margin: 0px;"
-              width="70%"
-            />
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </button>
-          <button
             aria-label="Avalanche"
             class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-e9eogy-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
             data-mui-internal-clone-element="true"
             data-testid="Avalanche"
             role="menuitem"
-            style="transition-delay: 120ms;"
+            style="transition-delay: 90ms;"
             tabindex="-1"
             type="button"
           >
@@ -261,27 +198,6 @@ Object {
               alt="Avalanche"
               height="70%"
               src="avalanche-logo.svg"
-              style="margin: 0px;"
-              width="70%"
-            />
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </button>
-          <button
-            aria-label="Solana"
-            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-            data-mui-internal-clone-element="true"
-            data-testid="Solana"
-            role="menuitem"
-            style="transition-delay: 90ms;"
-            tabindex="-1"
-            type="button"
-          >
-            <img
-              alt="Solana"
-              height="70%"
-              src="solana-logo.svg"
               style="margin: 0px;"
               width="70%"
             />
@@ -1443,26 +1359,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     },
                                   }
                                 }
-                                data-testid="Cardano"
-                                icon={
-                                  <pure(SvgIcon)
-                                    alt="Cardano"
-                                    height="70%"
-                                    icon="cardano-logo.svg"
-                                    width="70%"
-                                  />
-                                }
-                                onClick={[Function]}
-                                tooltipTitle="Cardano"
-                              />,
-                              <ForwardRef(SpeedDialAction)
-                                FabProps={
-                                  Object {
-                                    "sx": Object {
-                                      "background": "white",
-                                    },
-                                  }
-                                }
                                 data-testid="Avalanche"
                                 icon={
                                   <pure(SvgIcon)
@@ -1474,26 +1370,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 onClick={[Function]}
                                 tooltipTitle="Avalanche"
-                              />,
-                              <ForwardRef(SpeedDialAction)
-                                FabProps={
-                                  Object {
-                                    "sx": Object {
-                                      "background": "white",
-                                    },
-                                  }
-                                }
-                                data-testid="Solana"
-                                icon={
-                                  <pure(SvgIcon)
-                                    alt="Solana"
-                                    height="70%"
-                                    icon="solana-logo.svg"
-                                    width="70%"
-                                  />
-                                }
-                                onClick={[Function]}
-                                tooltipTitle="Solana"
                               />,
                               <ForwardRef(SpeedDialAction)
                                 FabProps={
@@ -1666,26 +1542,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             },
                                           }
                                         }
-                                        data-testid="Cardano"
-                                        icon={
-                                          <pure(SvgIcon)
-                                            alt="Cardano"
-                                            height="70%"
-                                            icon="cardano-logo.svg"
-                                            width="70%"
-                                          />
-                                        }
-                                        onClick={[Function]}
-                                        tooltipTitle="Cardano"
-                                      />,
-                                      <ForwardRef(SpeedDialAction)
-                                        FabProps={
-                                          Object {
-                                            "sx": Object {
-                                              "background": "white",
-                                            },
-                                          }
-                                        }
                                         data-testid="Avalanche"
                                         icon={
                                           <pure(SvgIcon)
@@ -1697,26 +1553,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         onClick={[Function]}
                                         tooltipTitle="Avalanche"
-                                      />,
-                                      <ForwardRef(SpeedDialAction)
-                                        FabProps={
-                                          Object {
-                                            "sx": Object {
-                                              "background": "white",
-                                            },
-                                          }
-                                        }
-                                        data-testid="Solana"
-                                        icon={
-                                          <pure(SvgIcon)
-                                            alt="Solana"
-                                            height="70%"
-                                            icon="solana-logo.svg"
-                                            width="70%"
-                                          />
-                                        }
-                                        onClick={[Function]}
-                                        tooltipTitle="Solana"
                                       />,
                                       <ForwardRef(SpeedDialAction)
                                         FabProps={
@@ -2053,26 +1889,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                       }
                                     }
-                                    data-testid="Cardano"
-                                    icon={
-                                      <pure(SvgIcon)
-                                        alt="Cardano"
-                                        height="70%"
-                                        icon="cardano-logo.svg"
-                                        width="70%"
-                                      />
-                                    }
-                                    onClick={[Function]}
-                                    tooltipTitle="Cardano"
-                                  />,
-                                  <ForwardRef(SpeedDialAction)
-                                    FabProps={
-                                      Object {
-                                        "sx": Object {
-                                          "background": "white",
-                                        },
-                                      }
-                                    }
                                     data-testid="Avalanche"
                                     icon={
                                       <pure(SvgIcon)
@@ -2084,26 +1900,6 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     onClick={[Function]}
                                     tooltipTitle="Avalanche"
-                                  />,
-                                  <ForwardRef(SpeedDialAction)
-                                    FabProps={
-                                      Object {
-                                        "sx": Object {
-                                          "background": "white",
-                                        },
-                                      }
-                                    }
-                                    data-testid="Solana"
-                                    icon={
-                                      <pure(SvgIcon)
-                                        alt="Solana"
-                                        height="70%"
-                                        icon="solana-logo.svg"
-                                        width="70%"
-                                      />
-                                    }
-                                    onClick={[Function]}
-                                    tooltipTitle="Solana"
                                   />,
                                   <ForwardRef(SpeedDialAction)
                                     FabProps={
@@ -2177,7 +1973,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                   }
                                 }
                                 data-testid="Ethereum"
-                                delay={180}
+                                delay={120}
                                 icon={
                                   <pure(SvgIcon)
                                     alt="Ethereum"
@@ -2227,7 +2023,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           },
                                         },
                                         "data-testid": "Ethereum",
-                                        "delay": 180,
+                                        "delay": 120,
                                         "icon": <pure(SvgIcon)
                                           alt="Ethereum"
                                           height="70%"
@@ -2245,7 +2041,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     size="small"
                                     style={
                                       Object {
-                                        "transitionDelay": "180ms",
+                                        "transitionDelay": "120ms",
                                       }
                                     }
                                     sx={
@@ -2275,7 +2071,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       size="small"
                                       style={
                                         Object {
-                                          "transitionDelay": "180ms",
+                                          "transitionDelay": "120ms",
                                         }
                                       }
                                       tabIndex={-1}
@@ -2324,7 +2120,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             "role": "menuitem",
                                             "size": "small",
                                             "style": Object {
-                                              "transitionDelay": "180ms",
+                                              "transitionDelay": "120ms",
                                             },
                                             "tabIndex": -1,
                                             "variant": "circular",
@@ -2333,7 +2129,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         role="menuitem"
                                         style={
                                           Object {
-                                            "transitionDelay": "180ms",
+                                            "transitionDelay": "120ms",
                                           }
                                         }
                                         tabIndex={-1}
@@ -2359,7 +2155,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           role="menuitem"
                                           style={
                                             Object {
-                                              "transitionDelay": "180ms",
+                                              "transitionDelay": "120ms",
                                             }
                                           }
                                           tabIndex={-1}
@@ -2416,7 +2212,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "onTouchStart": [Function],
                                                 "role": "menuitem",
                                                 "style": Object {
-                                                  "transitionDelay": "180ms",
+                                                  "transitionDelay": "120ms",
                                                 },
                                                 "tabIndex": -1,
                                               }
@@ -2424,7 +2220,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             role="menuitem"
                                             style={
                                               Object {
-                                                "transitionDelay": "180ms",
+                                                "transitionDelay": "120ms",
                                               }
                                             }
                                             tabIndex={-1}
@@ -2455,7 +2251,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               role="menuitem"
                                               style={
                                                 Object {
-                                                  "transitionDelay": "180ms",
+                                                  "transitionDelay": "120ms",
                                                 }
                                               }
                                               tabIndex={-1}
@@ -2518,7 +2314,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         data-mui-internal-clone-element="true"
                                         data-testid="Ethereum"
                                         role="menuitem"
-                                        style="transition-delay: 180ms;"
+                                        style="transition-delay: 120ms;"
                                         tabindex="-1"
                                         type="button"
                                       >
@@ -2577,7 +2373,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 },
                                               },
                                               "data-testid": "Ethereum",
-                                              "delay": 180,
+                                              "delay": 120,
                                               "icon": <pure(SvgIcon)
                                                 alt="Ethereum"
                                                 height="70%"
@@ -2595,7 +2391,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           size="small"
                                           style={
                                             Object {
-                                              "transitionDelay": "180ms",
+                                              "transitionDelay": "120ms",
                                             }
                                           }
                                           sx={
@@ -2659,7 +2455,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           data-mui-internal-clone-element="true"
                                           data-testid="Ethereum"
                                           role="menuitem"
-                                          style="transition-delay: 180ms;"
+                                          style="transition-delay: 120ms;"
                                           tabindex="-1"
                                           type="button"
                                         >
@@ -2712,7 +2508,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             data-mui-internal-clone-element="true"
                                             data-testid="Ethereum"
                                             role="menuitem"
-                                            style="transition-delay: 180ms;"
+                                            style="transition-delay: 120ms;"
                                             tabindex="-1"
                                             type="button"
                                           >
@@ -2771,595 +2567,8 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     },
                                   }
                                 }
-                                data-testid="Cardano"
-                                delay={150}
-                                icon={
-                                  <pure(SvgIcon)
-                                    alt="Cardano"
-                                    height="70%"
-                                    icon="cardano-logo.svg"
-                                    width="70%"
-                                  />
-                                }
-                                id="networkselection-action-1"
-                                key=".$Cardano"
-                                onClick={[Function]}
-                                open={false}
-                                tooltipPlacement="left"
-                                tooltipTitle="Cardano"
-                              >
-                                <ForwardRef(Tooltip)
-                                  data-testid="Cardano"
-                                  id="networkselection-action-1"
-                                  onClick={[Function]}
-                                  onClose={[Function]}
-                                  onOpen={[Function]}
-                                  open={false}
-                                  placement="left"
-                                  title="Cardano"
-                                >
-                                  <MuiSpeedDialActionFab
-                                    aria-label="Cardano"
-                                    aria-labelledby={null}
-                                    className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
-                                    data-mui-internal-clone-element={true}
-                                    data-testid="Cardano"
-                                    onBlur={[Function]}
-                                    onClick={[Function]}
-                                    onFocus={[Function]}
-                                    onMouseLeave={[Function]}
-                                    onMouseOver={[Function]}
-                                    onTouchEnd={[Function]}
-                                    onTouchStart={[Function]}
-                                    ownerState={
-                                      Object {
-                                        "FabProps": Object {
-                                          "ref": [Function],
-                                          "sx": Object {
-                                            "background": "white",
-                                          },
-                                        },
-                                        "data-testid": "Cardano",
-                                        "delay": 150,
-                                        "icon": <pure(SvgIcon)
-                                          alt="Cardano"
-                                          height="70%"
-                                          icon="cardano-logo.svg"
-                                          width="70%"
-                                        />,
-                                        "id": "networkselection-action-1",
-                                        "onClick": [Function],
-                                        "open": false,
-                                        "tooltipPlacement": "left",
-                                        "tooltipTitle": "Cardano",
-                                      }
-                                    }
-                                    role="menuitem"
-                                    size="small"
-                                    style={
-                                      Object {
-                                        "transitionDelay": "150ms",
-                                      }
-                                    }
-                                    sx={
-                                      Object {
-                                        "background": "white",
-                                      }
-                                    }
-                                    tabIndex={-1}
-                                  >
-                                    <Noop />
-                                    <ForwardRef(Fab)
-                                      aria-label="Cardano"
-                                      aria-labelledby={null}
-                                      className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
-                                      data-mui-internal-clone-element={true}
-                                      data-testid="Cardano"
-                                      onBlur={[Function]}
-                                      onClick={[Function]}
-                                      onFocus={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseOver={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchStart={[Function]}
-                                      role="menuitem"
-                                      size="small"
-                                      style={
-                                        Object {
-                                          "transitionDelay": "150ms",
-                                        }
-                                      }
-                                      tabIndex={-1}
-                                    >
-                                      <MuiFabRoot
-                                        aria-label="Cardano"
-                                        aria-labelledby={null}
-                                        className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
-                                        component="button"
-                                        data-mui-internal-clone-element={true}
-                                        data-testid="Cardano"
-                                        disabled={false}
-                                        focusRipple={true}
-                                        focusVisibleClassName=""
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onMouseLeave={[Function]}
-                                        onMouseOver={[Function]}
-                                        onTouchEnd={[Function]}
-                                        onTouchStart={[Function]}
-                                        ownerState={
-                                          Object {
-                                            "aria-label": "Cardano",
-                                            "aria-labelledby": null,
-                                            "children": <pure(SvgIcon)
-                                              alt="Cardano"
-                                              height="70%"
-                                              icon="cardano-logo.svg"
-                                              width="70%"
-                                            />,
-                                            "className": "MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab",
-                                            "color": "default",
-                                            "component": "button",
-                                            "data-mui-internal-clone-element": true,
-                                            "data-testid": "Cardano",
-                                            "disableFocusRipple": false,
-                                            "disabled": false,
-                                            "onBlur": [Function],
-                                            "onClick": [Function],
-                                            "onFocus": [Function],
-                                            "onMouseLeave": [Function],
-                                            "onMouseOver": [Function],
-                                            "onTouchEnd": [Function],
-                                            "onTouchStart": [Function],
-                                            "role": "menuitem",
-                                            "size": "small",
-                                            "style": Object {
-                                              "transitionDelay": "150ms",
-                                            },
-                                            "tabIndex": -1,
-                                            "variant": "circular",
-                                          }
-                                        }
-                                        role="menuitem"
-                                        style={
-                                          Object {
-                                            "transitionDelay": "150ms",
-                                          }
-                                        }
-                                        tabIndex={-1}
-                                      >
-                                        <Noop />
-                                        <ForwardRef(ButtonBase)
-                                          aria-label="Cardano"
-                                          aria-labelledby={null}
-                                          className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
-                                          component="button"
-                                          data-mui-internal-clone-element={true}
-                                          data-testid="Cardano"
-                                          disabled={false}
-                                          focusRipple={true}
-                                          focusVisibleClassName=""
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onMouseLeave={[Function]}
-                                          onMouseOver={[Function]}
-                                          onTouchEnd={[Function]}
-                                          onTouchStart={[Function]}
-                                          role="menuitem"
-                                          style={
-                                            Object {
-                                              "transitionDelay": "150ms",
-                                            }
-                                          }
-                                          tabIndex={-1}
-                                        >
-                                          <MuiButtonBaseRoot
-                                            aria-label="Cardano"
-                                            aria-labelledby={null}
-                                            as="button"
-                                            className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
-                                            data-mui-internal-clone-element={true}
-                                            data-testid="Cardano"
-                                            disabled={false}
-                                            onBlur={[Function]}
-                                            onClick={[Function]}
-                                            onContextMenu={[Function]}
-                                            onDragLeave={[Function]}
-                                            onFocus={[Function]}
-                                            onKeyDown={[Function]}
-                                            onKeyUp={[Function]}
-                                            onMouseDown={[Function]}
-                                            onMouseLeave={[Function]}
-                                            onMouseOver={[Function]}
-                                            onMouseUp={[Function]}
-                                            onTouchEnd={[Function]}
-                                            onTouchMove={[Function]}
-                                            onTouchStart={[Function]}
-                                            ownerState={
-                                              Object {
-                                                "aria-label": "Cardano",
-                                                "aria-labelledby": null,
-                                                "centerRipple": false,
-                                                "children": <pure(SvgIcon)
-                                                  alt="Cardano"
-                                                  height="70%"
-                                                  icon="cardano-logo.svg"
-                                                  width="70%"
-                                                />,
-                                                "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
-                                                "component": "button",
-                                                "data-mui-internal-clone-element": true,
-                                                "data-testid": "Cardano",
-                                                "disableRipple": false,
-                                                "disableTouchRipple": false,
-                                                "disabled": false,
-                                                "focusRipple": true,
-                                                "focusVisible": false,
-                                                "focusVisibleClassName": "",
-                                                "onBlur": [Function],
-                                                "onClick": [Function],
-                                                "onFocus": [Function],
-                                                "onMouseLeave": [Function],
-                                                "onMouseOver": [Function],
-                                                "onTouchEnd": [Function],
-                                                "onTouchStart": [Function],
-                                                "role": "menuitem",
-                                                "style": Object {
-                                                  "transitionDelay": "150ms",
-                                                },
-                                                "tabIndex": -1,
-                                              }
-                                            }
-                                            role="menuitem"
-                                            style={
-                                              Object {
-                                                "transitionDelay": "150ms",
-                                              }
-                                            }
-                                            tabIndex={-1}
-                                            type="button"
-                                          >
-                                            <Noop />
-                                            <button
-                                              aria-label="Cardano"
-                                              aria-labelledby={null}
-                                              className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                              data-mui-internal-clone-element={true}
-                                              data-testid="Cardano"
-                                              disabled={false}
-                                              onBlur={[Function]}
-                                              onClick={[Function]}
-                                              onContextMenu={[Function]}
-                                              onDragLeave={[Function]}
-                                              onFocus={[Function]}
-                                              onKeyDown={[Function]}
-                                              onKeyUp={[Function]}
-                                              onMouseDown={[Function]}
-                                              onMouseLeave={[Function]}
-                                              onMouseOver={[Function]}
-                                              onMouseUp={[Function]}
-                                              onTouchEnd={[Function]}
-                                              onTouchMove={[Function]}
-                                              onTouchStart={[Function]}
-                                              role="menuitem"
-                                              style={
-                                                Object {
-                                                  "transitionDelay": "150ms",
-                                                }
-                                              }
-                                              tabIndex={-1}
-                                              type="button"
-                                            >
-                                              <pure(SvgIcon)
-                                                alt="Cardano"
-                                                height="70%"
-                                                icon="cardano-logo.svg"
-                                                width="70%"
-                                              >
-                                                <SvgIcon
-                                                  alt="Cardano"
-                                                  height="70%"
-                                                  icon="cardano-logo.svg"
-                                                  width="70%"
-                                                >
-                                                  <img
-                                                    alt="Cardano"
-                                                    height="70%"
-                                                    src="cardano-logo.svg"
-                                                    style={
-                                                      Object {
-                                                        "margin": "0",
-                                                      }
-                                                    }
-                                                    width="70%"
-                                                  />
-                                                </SvgIcon>
-                                              </pure(SvgIcon)>
-                                              <ForwardRef(TouchRipple)
-                                                center={false}
-                                              >
-                                                <MuiTouchRippleRoot
-                                                  className="MuiTouchRipple-root"
-                                                >
-                                                  <Noop />
-                                                  <span
-                                                    className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                  >
-                                                    <TransitionGroup
-                                                      childFactory={[Function]}
-                                                      component={null}
-                                                      exit={true}
-                                                    />
-                                                  </span>
-                                                </MuiTouchRippleRoot>
-                                              </ForwardRef(TouchRipple)>
-                                            </button>
-                                          </MuiButtonBaseRoot>
-                                        </ForwardRef(ButtonBase)>
-                                      </MuiFabRoot>
-                                    </ForwardRef(Fab)>
-                                  </MuiSpeedDialActionFab>
-                                  <MuiTooltipPopper
-                                    anchorEl={
-                                      <button
-                                        aria-label="Cardano"
-                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="Cardano"
-                                        role="menuitem"
-                                        style="transition-delay: 150ms;"
-                                        tabindex="-1"
-                                        type="button"
-                                      >
-                                        <img
-                                          alt="Cardano"
-                                          height="70%"
-                                          src="cardano-logo.svg"
-                                          style="margin: 0px;"
-                                          width="70%"
-                                        />
-                                        <span
-                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                        />
-                                      </button>
-                                    }
-                                    as={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "propTypes": Object {
-                                          "anchorEl": [Function],
-                                          "children": [Function],
-                                          "container": [Function],
-                                          "disablePortal": [Function],
-                                          "keepMounted": [Function],
-                                          "modifiers": [Function],
-                                          "open": [Function],
-                                          "placement": [Function],
-                                          "popperOptions": [Function],
-                                          "popperRef": [Function],
-                                          "transition": [Function],
-                                        },
-                                        "render": [Function],
-                                      }
-                                    }
-                                    className="MuiTooltip-popper MuiTooltip-popperInteractive"
-                                    id="networkselection-action-1"
-                                    onBlur={[Function]}
-                                    onFocus={[Function]}
-                                    onMouseLeave={[Function]}
-                                    onMouseOver={[Function]}
-                                    open={false}
-                                    ownerState={
-                                      Object {
-                                        "PopperComponentProp": undefined,
-                                        "arrow": false,
-                                        "children": <MuiSpeedDialActionFab
-                                          className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
-                                          ownerState={
-                                            Object {
-                                              "FabProps": Object {
-                                                "ref": [Function],
-                                                "sx": Object {
-                                                  "background": "white",
-                                                },
-                                              },
-                                              "data-testid": "Cardano",
-                                              "delay": 150,
-                                              "icon": <pure(SvgIcon)
-                                                alt="Cardano"
-                                                height="70%"
-                                                icon="cardano-logo.svg"
-                                                width="70%"
-                                              />,
-                                              "id": "networkselection-action-1",
-                                              "onClick": [Function],
-                                              "open": false,
-                                              "tooltipPlacement": "left",
-                                              "tooltipTitle": "Cardano",
-                                            }
-                                          }
-                                          role="menuitem"
-                                          size="small"
-                                          style={
-                                            Object {
-                                              "transitionDelay": "150ms",
-                                            }
-                                          }
-                                          sx={
-                                            Object {
-                                              "background": "white",
-                                            }
-                                          }
-                                          tabIndex={-1}
-                                        >
-                                          <pure(SvgIcon)
-                                            alt="Cardano"
-                                            height="70%"
-                                            icon="cardano-logo.svg"
-                                            width="70%"
-                                          />
-                                        </MuiSpeedDialActionFab>,
-                                        "classes": undefined,
-                                        "data-testid": "Cardano",
-                                        "disableInteractive": false,
-                                        "id": "networkselection-action-1",
-                                        "isRtl": false,
-                                        "onClick": [Function],
-                                        "onClose": [Function],
-                                        "onOpen": [Function],
-                                        "open": false,
-                                        "placement": "left",
-                                        "title": "Cardano",
-                                        "touch": false,
-                                      }
-                                    }
-                                    placement="left"
-                                    popperOptions={
-                                      Object {
-                                        "modifiers": Array [
-                                          Object {
-                                            "enabled": false,
-                                            "name": "arrow",
-                                            "options": Object {
-                                              "element": null,
-                                              "padding": 4,
-                                            },
-                                          },
-                                        ],
-                                      }
-                                    }
-                                    popperRef={
-                                      Object {
-                                        "current": undefined,
-                                      }
-                                    }
-                                    transition={true}
-                                  >
-                                    <Noop />
-                                    <ForwardRef(Popper)
-                                      anchorEl={
-                                        <button
-                                          aria-label="Cardano"
-                                          class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="Cardano"
-                                          role="menuitem"
-                                          style="transition-delay: 150ms;"
-                                          tabindex="-1"
-                                          type="button"
-                                        >
-                                          <img
-                                            alt="Cardano"
-                                            height="70%"
-                                            src="cardano-logo.svg"
-                                            style="margin: 0px;"
-                                            width="70%"
-                                          />
-                                          <span
-                                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                          />
-                                        </button>
-                                      }
-                                      className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                      id="networkselection-action-1"
-                                      onBlur={[Function]}
-                                      onFocus={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseOver={[Function]}
-                                      open={false}
-                                      placement="left"
-                                      popperOptions={
-                                        Object {
-                                          "modifiers": Array [
-                                            Object {
-                                              "enabled": false,
-                                              "name": "arrow",
-                                              "options": Object {
-                                                "element": null,
-                                                "padding": 4,
-                                              },
-                                            },
-                                          ],
-                                        }
-                                      }
-                                      popperRef={
-                                        Object {
-                                          "current": undefined,
-                                        }
-                                      }
-                                      transition={true}
-                                    >
-                                      <ForwardRef(PopperUnstyled)
-                                        anchorEl={
-                                          <button
-                                            aria-label="Cardano"
-                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                            data-mui-internal-clone-element="true"
-                                            data-testid="Cardano"
-                                            role="menuitem"
-                                            style="transition-delay: 150ms;"
-                                            tabindex="-1"
-                                            type="button"
-                                          >
-                                            <img
-                                              alt="Cardano"
-                                              height="70%"
-                                              src="cardano-logo.svg"
-                                              style="margin: 0px;"
-                                              width="70%"
-                                            />
-                                            <span
-                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                            />
-                                          </button>
-                                        }
-                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                        direction="ltr"
-                                        id="networkselection-action-1"
-                                        onBlur={[Function]}
-                                        onFocus={[Function]}
-                                        onMouseLeave={[Function]}
-                                        onMouseOver={[Function]}
-                                        open={false}
-                                        placement="left"
-                                        popperOptions={
-                                          Object {
-                                            "modifiers": Array [
-                                              Object {
-                                                "enabled": false,
-                                                "name": "arrow",
-                                                "options": Object {
-                                                  "element": null,
-                                                  "padding": 4,
-                                                },
-                                              },
-                                            ],
-                                          }
-                                        }
-                                        popperRef={
-                                          Object {
-                                            "current": undefined,
-                                          }
-                                        }
-                                        transition={true}
-                                      />
-                                    </ForwardRef(Popper)>
-                                  </MuiTooltipPopper>
-                                </ForwardRef(Tooltip)>
-                              </ForwardRef(SpeedDialAction)>
-                              <ForwardRef(SpeedDialAction)
-                                FabProps={
-                                  Object {
-                                    "ref": [Function],
-                                    "sx": Object {
-                                      "background": "white",
-                                    },
-                                  }
-                                }
                                 data-testid="Avalanche"
-                                delay={120}
+                                delay={90}
                                 icon={
                                   <pure(SvgIcon)
                                     alt="Avalanche"
@@ -3368,7 +2577,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     width="70%"
                                   />
                                 }
-                                id="networkselection-action-2"
+                                id="networkselection-action-1"
                                 key=".$Avalanche"
                                 onClick={[Function]}
                                 open={false}
@@ -3377,7 +2586,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                               >
                                 <ForwardRef(Tooltip)
                                   data-testid="Avalanche"
-                                  id="networkselection-action-2"
+                                  id="networkselection-action-1"
                                   onClick={[Function]}
                                   onClose={[Function]}
                                   onOpen={[Function]}
@@ -3407,14 +2616,14 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           },
                                         },
                                         "data-testid": "Avalanche",
-                                        "delay": 120,
+                                        "delay": 90,
                                         "icon": <pure(SvgIcon)
                                           alt="Avalanche"
                                           height="70%"
                                           icon="avalanche-logo.svg"
                                           width="70%"
                                         />,
-                                        "id": "networkselection-action-2",
+                                        "id": "networkselection-action-1",
                                         "onClick": [Function],
                                         "open": false,
                                         "tooltipPlacement": "left",
@@ -3425,7 +2634,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     size="small"
                                     style={
                                       Object {
-                                        "transitionDelay": "120ms",
+                                        "transitionDelay": "90ms",
                                       }
                                     }
                                     sx={
@@ -3453,7 +2662,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       size="small"
                                       style={
                                         Object {
-                                          "transitionDelay": "120ms",
+                                          "transitionDelay": "90ms",
                                         }
                                       }
                                       tabIndex={-1}
@@ -3502,7 +2711,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             "role": "menuitem",
                                             "size": "small",
                                             "style": Object {
-                                              "transitionDelay": "120ms",
+                                              "transitionDelay": "90ms",
                                             },
                                             "tabIndex": -1,
                                             "variant": "circular",
@@ -3511,7 +2720,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         role="menuitem"
                                         style={
                                           Object {
-                                            "transitionDelay": "120ms",
+                                            "transitionDelay": "90ms",
                                           }
                                         }
                                         tabIndex={-1}
@@ -3537,7 +2746,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           role="menuitem"
                                           style={
                                             Object {
-                                              "transitionDelay": "120ms",
+                                              "transitionDelay": "90ms",
                                             }
                                           }
                                           tabIndex={-1}
@@ -3594,7 +2803,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "onTouchStart": [Function],
                                                 "role": "menuitem",
                                                 "style": Object {
-                                                  "transitionDelay": "120ms",
+                                                  "transitionDelay": "90ms",
                                                 },
                                                 "tabIndex": -1,
                                               }
@@ -3602,7 +2811,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             role="menuitem"
                                             style={
                                               Object {
-                                                "transitionDelay": "120ms",
+                                                "transitionDelay": "90ms",
                                               }
                                             }
                                             tabIndex={-1}
@@ -3633,7 +2842,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               role="menuitem"
                                               style={
                                                 Object {
-                                                  "transitionDelay": "120ms",
+                                                  "transitionDelay": "90ms",
                                                 }
                                               }
                                               tabIndex={-1}
@@ -3696,7 +2905,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         data-mui-internal-clone-element="true"
                                         data-testid="Avalanche"
                                         role="menuitem"
-                                        style="transition-delay: 120ms;"
+                                        style="transition-delay: 90ms;"
                                         tabindex="-1"
                                         type="button"
                                       >
@@ -3732,7 +2941,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       }
                                     }
                                     className="MuiTooltip-popper MuiTooltip-popperInteractive"
-                                    id="networkselection-action-2"
+                                    id="networkselection-action-1"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                     onMouseLeave={[Function]}
@@ -3753,14 +2962,14 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 },
                                               },
                                               "data-testid": "Avalanche",
-                                              "delay": 120,
+                                              "delay": 90,
                                               "icon": <pure(SvgIcon)
                                                 alt="Avalanche"
                                                 height="70%"
                                                 icon="avalanche-logo.svg"
                                                 width="70%"
                                               />,
-                                              "id": "networkselection-action-2",
+                                              "id": "networkselection-action-1",
                                               "onClick": [Function],
                                               "open": false,
                                               "tooltipPlacement": "left",
@@ -3771,7 +2980,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           size="small"
                                           style={
                                             Object {
-                                              "transitionDelay": "120ms",
+                                              "transitionDelay": "90ms",
                                             }
                                           }
                                           sx={
@@ -3791,7 +3000,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         "classes": undefined,
                                         "data-testid": "Avalanche",
                                         "disableInteractive": false,
-                                        "id": "networkselection-action-2",
+                                        "id": "networkselection-action-1",
                                         "isRtl": false,
                                         "onClick": [Function],
                                         "onClose": [Function],
@@ -3833,7 +3042,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           data-mui-internal-clone-element="true"
                                           data-testid="Avalanche"
                                           role="menuitem"
-                                          style="transition-delay: 120ms;"
+                                          style="transition-delay: 90ms;"
                                           tabindex="-1"
                                           type="button"
                                         >
@@ -3850,7 +3059,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         </button>
                                       }
                                       className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                      id="networkselection-action-2"
+                                      id="networkselection-action-1"
                                       onBlur={[Function]}
                                       onFocus={[Function]}
                                       onMouseLeave={[Function]}
@@ -3886,7 +3095,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             data-mui-internal-clone-element="true"
                                             data-testid="Avalanche"
                                             role="menuitem"
-                                            style="transition-delay: 120ms;"
+                                            style="transition-delay: 90ms;"
                                             tabindex="-1"
                                             type="button"
                                           >
@@ -3904,594 +3113,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                         direction="ltr"
-                                        id="networkselection-action-2"
-                                        onBlur={[Function]}
-                                        onFocus={[Function]}
-                                        onMouseLeave={[Function]}
-                                        onMouseOver={[Function]}
-                                        open={false}
-                                        placement="left"
-                                        popperOptions={
-                                          Object {
-                                            "modifiers": Array [
-                                              Object {
-                                                "enabled": false,
-                                                "name": "arrow",
-                                                "options": Object {
-                                                  "element": null,
-                                                  "padding": 4,
-                                                },
-                                              },
-                                            ],
-                                          }
-                                        }
-                                        popperRef={
-                                          Object {
-                                            "current": undefined,
-                                          }
-                                        }
-                                        transition={true}
-                                      />
-                                    </ForwardRef(Popper)>
-                                  </MuiTooltipPopper>
-                                </ForwardRef(Tooltip)>
-                              </ForwardRef(SpeedDialAction)>
-                              <ForwardRef(SpeedDialAction)
-                                FabProps={
-                                  Object {
-                                    "ref": [Function],
-                                    "sx": Object {
-                                      "background": "white",
-                                    },
-                                  }
-                                }
-                                data-testid="Solana"
-                                delay={90}
-                                icon={
-                                  <pure(SvgIcon)
-                                    alt="Solana"
-                                    height="70%"
-                                    icon="solana-logo.svg"
-                                    width="70%"
-                                  />
-                                }
-                                id="networkselection-action-3"
-                                key=".$Solana"
-                                onClick={[Function]}
-                                open={false}
-                                tooltipPlacement="left"
-                                tooltipTitle="Solana"
-                              >
-                                <ForwardRef(Tooltip)
-                                  data-testid="Solana"
-                                  id="networkselection-action-3"
-                                  onClick={[Function]}
-                                  onClose={[Function]}
-                                  onOpen={[Function]}
-                                  open={false}
-                                  placement="left"
-                                  title="Solana"
-                                >
-                                  <MuiSpeedDialActionFab
-                                    aria-label="Solana"
-                                    aria-labelledby={null}
-                                    className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
-                                    data-mui-internal-clone-element={true}
-                                    data-testid="Solana"
-                                    onBlur={[Function]}
-                                    onClick={[Function]}
-                                    onFocus={[Function]}
-                                    onMouseLeave={[Function]}
-                                    onMouseOver={[Function]}
-                                    onTouchEnd={[Function]}
-                                    onTouchStart={[Function]}
-                                    ownerState={
-                                      Object {
-                                        "FabProps": Object {
-                                          "ref": [Function],
-                                          "sx": Object {
-                                            "background": "white",
-                                          },
-                                        },
-                                        "data-testid": "Solana",
-                                        "delay": 90,
-                                        "icon": <pure(SvgIcon)
-                                          alt="Solana"
-                                          height="70%"
-                                          icon="solana-logo.svg"
-                                          width="70%"
-                                        />,
-                                        "id": "networkselection-action-3",
-                                        "onClick": [Function],
-                                        "open": false,
-                                        "tooltipPlacement": "left",
-                                        "tooltipTitle": "Solana",
-                                      }
-                                    }
-                                    role="menuitem"
-                                    size="small"
-                                    style={
-                                      Object {
-                                        "transitionDelay": "90ms",
-                                      }
-                                    }
-                                    sx={
-                                      Object {
-                                        "background": "white",
-                                      }
-                                    }
-                                    tabIndex={-1}
-                                  >
-                                    <Noop />
-                                    <ForwardRef(Fab)
-                                      aria-label="Solana"
-                                      aria-labelledby={null}
-                                      className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
-                                      data-mui-internal-clone-element={true}
-                                      data-testid="Solana"
-                                      onBlur={[Function]}
-                                      onClick={[Function]}
-                                      onFocus={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseOver={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchStart={[Function]}
-                                      role="menuitem"
-                                      size="small"
-                                      style={
-                                        Object {
-                                          "transitionDelay": "90ms",
-                                        }
-                                      }
-                                      tabIndex={-1}
-                                    >
-                                      <MuiFabRoot
-                                        aria-label="Solana"
-                                        aria-labelledby={null}
-                                        className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab"
-                                        component="button"
-                                        data-mui-internal-clone-element={true}
-                                        data-testid="Solana"
-                                        disabled={false}
-                                        focusRipple={true}
-                                        focusVisibleClassName=""
-                                        onBlur={[Function]}
-                                        onClick={[Function]}
-                                        onFocus={[Function]}
-                                        onMouseLeave={[Function]}
-                                        onMouseOver={[Function]}
-                                        onTouchEnd={[Function]}
-                                        onTouchStart={[Function]}
-                                        ownerState={
-                                          Object {
-                                            "aria-label": "Solana",
-                                            "aria-labelledby": null,
-                                            "children": <pure(SvgIcon)
-                                              alt="Solana"
-                                              height="70%"
-                                              icon="solana-logo.svg"
-                                              width="70%"
-                                            />,
-                                            "className": "MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-18utn5s-MuiSpeedDialAction-fab",
-                                            "color": "default",
-                                            "component": "button",
-                                            "data-mui-internal-clone-element": true,
-                                            "data-testid": "Solana",
-                                            "disableFocusRipple": false,
-                                            "disabled": false,
-                                            "onBlur": [Function],
-                                            "onClick": [Function],
-                                            "onFocus": [Function],
-                                            "onMouseLeave": [Function],
-                                            "onMouseOver": [Function],
-                                            "onTouchEnd": [Function],
-                                            "onTouchStart": [Function],
-                                            "role": "menuitem",
-                                            "size": "small",
-                                            "style": Object {
-                                              "transitionDelay": "90ms",
-                                            },
-                                            "tabIndex": -1,
-                                            "variant": "circular",
-                                          }
-                                        }
-                                        role="menuitem"
-                                        style={
-                                          Object {
-                                            "transitionDelay": "90ms",
-                                          }
-                                        }
-                                        tabIndex={-1}
-                                      >
-                                        <Noop />
-                                        <ForwardRef(ButtonBase)
-                                          aria-label="Solana"
-                                          aria-labelledby={null}
-                                          className="MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
-                                          component="button"
-                                          data-mui-internal-clone-element={true}
-                                          data-testid="Solana"
-                                          disabled={false}
-                                          focusRipple={true}
-                                          focusVisibleClassName=""
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onMouseLeave={[Function]}
-                                          onMouseOver={[Function]}
-                                          onTouchEnd={[Function]}
-                                          onTouchStart={[Function]}
-                                          role="menuitem"
-                                          style={
-                                            Object {
-                                              "transitionDelay": "90ms",
-                                            }
-                                          }
-                                          tabIndex={-1}
-                                        >
-                                          <MuiButtonBaseRoot
-                                            aria-label="Solana"
-                                            aria-labelledby={null}
-                                            as="button"
-                                            className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab"
-                                            data-mui-internal-clone-element={true}
-                                            data-testid="Solana"
-                                            disabled={false}
-                                            onBlur={[Function]}
-                                            onClick={[Function]}
-                                            onContextMenu={[Function]}
-                                            onDragLeave={[Function]}
-                                            onFocus={[Function]}
-                                            onKeyDown={[Function]}
-                                            onKeyUp={[Function]}
-                                            onMouseDown={[Function]}
-                                            onMouseLeave={[Function]}
-                                            onMouseOver={[Function]}
-                                            onMouseUp={[Function]}
-                                            onTouchEnd={[Function]}
-                                            onTouchMove={[Function]}
-                                            onTouchStart={[Function]}
-                                            ownerState={
-                                              Object {
-                                                "aria-label": "Solana",
-                                                "aria-labelledby": null,
-                                                "centerRipple": false,
-                                                "children": <pure(SvgIcon)
-                                                  alt="Solana"
-                                                  height="70%"
-                                                  icon="solana-logo.svg"
-                                                  width="70%"
-                                                />,
-                                                "className": "MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-v83fjo-MuiFab-root-MuiSpeedDialAction-fab",
-                                                "component": "button",
-                                                "data-mui-internal-clone-element": true,
-                                                "data-testid": "Solana",
-                                                "disableRipple": false,
-                                                "disableTouchRipple": false,
-                                                "disabled": false,
-                                                "focusRipple": true,
-                                                "focusVisible": false,
-                                                "focusVisibleClassName": "",
-                                                "onBlur": [Function],
-                                                "onClick": [Function],
-                                                "onFocus": [Function],
-                                                "onMouseLeave": [Function],
-                                                "onMouseOver": [Function],
-                                                "onTouchEnd": [Function],
-                                                "onTouchStart": [Function],
-                                                "role": "menuitem",
-                                                "style": Object {
-                                                  "transitionDelay": "90ms",
-                                                },
-                                                "tabIndex": -1,
-                                              }
-                                            }
-                                            role="menuitem"
-                                            style={
-                                              Object {
-                                                "transitionDelay": "90ms",
-                                              }
-                                            }
-                                            tabIndex={-1}
-                                            type="button"
-                                          >
-                                            <Noop />
-                                            <button
-                                              aria-label="Solana"
-                                              aria-labelledby={null}
-                                              className="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                              data-mui-internal-clone-element={true}
-                                              data-testid="Solana"
-                                              disabled={false}
-                                              onBlur={[Function]}
-                                              onClick={[Function]}
-                                              onContextMenu={[Function]}
-                                              onDragLeave={[Function]}
-                                              onFocus={[Function]}
-                                              onKeyDown={[Function]}
-                                              onKeyUp={[Function]}
-                                              onMouseDown={[Function]}
-                                              onMouseLeave={[Function]}
-                                              onMouseOver={[Function]}
-                                              onMouseUp={[Function]}
-                                              onTouchEnd={[Function]}
-                                              onTouchMove={[Function]}
-                                              onTouchStart={[Function]}
-                                              role="menuitem"
-                                              style={
-                                                Object {
-                                                  "transitionDelay": "90ms",
-                                                }
-                                              }
-                                              tabIndex={-1}
-                                              type="button"
-                                            >
-                                              <pure(SvgIcon)
-                                                alt="Solana"
-                                                height="70%"
-                                                icon="solana-logo.svg"
-                                                width="70%"
-                                              >
-                                                <SvgIcon
-                                                  alt="Solana"
-                                                  height="70%"
-                                                  icon="solana-logo.svg"
-                                                  width="70%"
-                                                >
-                                                  <img
-                                                    alt="Solana"
-                                                    height="70%"
-                                                    src="solana-logo.svg"
-                                                    style={
-                                                      Object {
-                                                        "margin": "0",
-                                                      }
-                                                    }
-                                                    width="70%"
-                                                  />
-                                                </SvgIcon>
-                                              </pure(SvgIcon)>
-                                              <ForwardRef(TouchRipple)
-                                                center={false}
-                                              >
-                                                <MuiTouchRippleRoot
-                                                  className="MuiTouchRipple-root"
-                                                >
-                                                  <Noop />
-                                                  <span
-                                                    className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                  >
-                                                    <TransitionGroup
-                                                      childFactory={[Function]}
-                                                      component={null}
-                                                      exit={true}
-                                                    />
-                                                  </span>
-                                                </MuiTouchRippleRoot>
-                                              </ForwardRef(TouchRipple)>
-                                            </button>
-                                          </MuiButtonBaseRoot>
-                                        </ForwardRef(ButtonBase)>
-                                      </MuiFabRoot>
-                                    </ForwardRef(Fab)>
-                                  </MuiSpeedDialActionFab>
-                                  <MuiTooltipPopper
-                                    anchorEl={
-                                      <button
-                                        aria-label="Solana"
-                                        class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                        data-mui-internal-clone-element="true"
-                                        data-testid="Solana"
-                                        role="menuitem"
-                                        style="transition-delay: 90ms;"
-                                        tabindex="-1"
-                                        type="button"
-                                      >
-                                        <img
-                                          alt="Solana"
-                                          height="70%"
-                                          src="solana-logo.svg"
-                                          style="margin: 0px;"
-                                          width="70%"
-                                        />
-                                        <span
-                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                        />
-                                      </button>
-                                    }
-                                    as={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "propTypes": Object {
-                                          "anchorEl": [Function],
-                                          "children": [Function],
-                                          "container": [Function],
-                                          "disablePortal": [Function],
-                                          "keepMounted": [Function],
-                                          "modifiers": [Function],
-                                          "open": [Function],
-                                          "placement": [Function],
-                                          "popperOptions": [Function],
-                                          "popperRef": [Function],
-                                          "transition": [Function],
-                                        },
-                                        "render": [Function],
-                                      }
-                                    }
-                                    className="MuiTooltip-popper MuiTooltip-popperInteractive"
-                                    id="networkselection-action-3"
-                                    onBlur={[Function]}
-                                    onFocus={[Function]}
-                                    onMouseLeave={[Function]}
-                                    onMouseOver={[Function]}
-                                    open={false}
-                                    ownerState={
-                                      Object {
-                                        "PopperComponentProp": undefined,
-                                        "arrow": false,
-                                        "children": <MuiSpeedDialActionFab
-                                          className="MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed"
-                                          ownerState={
-                                            Object {
-                                              "FabProps": Object {
-                                                "ref": [Function],
-                                                "sx": Object {
-                                                  "background": "white",
-                                                },
-                                              },
-                                              "data-testid": "Solana",
-                                              "delay": 90,
-                                              "icon": <pure(SvgIcon)
-                                                alt="Solana"
-                                                height="70%"
-                                                icon="solana-logo.svg"
-                                                width="70%"
-                                              />,
-                                              "id": "networkselection-action-3",
-                                              "onClick": [Function],
-                                              "open": false,
-                                              "tooltipPlacement": "left",
-                                              "tooltipTitle": "Solana",
-                                            }
-                                          }
-                                          role="menuitem"
-                                          size="small"
-                                          style={
-                                            Object {
-                                              "transitionDelay": "90ms",
-                                            }
-                                          }
-                                          sx={
-                                            Object {
-                                              "background": "white",
-                                            }
-                                          }
-                                          tabIndex={-1}
-                                        >
-                                          <pure(SvgIcon)
-                                            alt="Solana"
-                                            height="70%"
-                                            icon="solana-logo.svg"
-                                            width="70%"
-                                          />
-                                        </MuiSpeedDialActionFab>,
-                                        "classes": undefined,
-                                        "data-testid": "Solana",
-                                        "disableInteractive": false,
-                                        "id": "networkselection-action-3",
-                                        "isRtl": false,
-                                        "onClick": [Function],
-                                        "onClose": [Function],
-                                        "onOpen": [Function],
-                                        "open": false,
-                                        "placement": "left",
-                                        "title": "Solana",
-                                        "touch": false,
-                                      }
-                                    }
-                                    placement="left"
-                                    popperOptions={
-                                      Object {
-                                        "modifiers": Array [
-                                          Object {
-                                            "enabled": false,
-                                            "name": "arrow",
-                                            "options": Object {
-                                              "element": null,
-                                              "padding": 4,
-                                            },
-                                          },
-                                        ],
-                                      }
-                                    }
-                                    popperRef={
-                                      Object {
-                                        "current": undefined,
-                                      }
-                                    }
-                                    transition={true}
-                                  >
-                                    <Noop />
-                                    <ForwardRef(Popper)
-                                      anchorEl={
-                                        <button
-                                          aria-label="Solana"
-                                          class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                          data-mui-internal-clone-element="true"
-                                          data-testid="Solana"
-                                          role="menuitem"
-                                          style="transition-delay: 90ms;"
-                                          tabindex="-1"
-                                          type="button"
-                                        >
-                                          <img
-                                            alt="Solana"
-                                            height="70%"
-                                            src="solana-logo.svg"
-                                            style="margin: 0px;"
-                                            width="70%"
-                                          />
-                                          <span
-                                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                          />
-                                        </button>
-                                      }
-                                      className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                      id="networkselection-action-3"
-                                      onBlur={[Function]}
-                                      onFocus={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseOver={[Function]}
-                                      open={false}
-                                      placement="left"
-                                      popperOptions={
-                                        Object {
-                                          "modifiers": Array [
-                                            Object {
-                                              "enabled": false,
-                                              "name": "arrow",
-                                              "options": Object {
-                                                "element": null,
-                                                "padding": 4,
-                                              },
-                                            },
-                                          ],
-                                        }
-                                      }
-                                      popperRef={
-                                        Object {
-                                          "current": undefined,
-                                        }
-                                      }
-                                      transition={true}
-                                    >
-                                      <ForwardRef(PopperUnstyled)
-                                        anchorEl={
-                                          <button
-                                            aria-label="Solana"
-                                            class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiSpeedDialAction-fab MuiSpeedDialAction-fabClosed css-1na0t7t-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab"
-                                            data-mui-internal-clone-element="true"
-                                            data-testid="Solana"
-                                            role="menuitem"
-                                            style="transition-delay: 90ms;"
-                                            tabindex="-1"
-                                            type="button"
-                                          >
-                                            <img
-                                              alt="Solana"
-                                              height="70%"
-                                              src="solana-logo.svg"
-                                              style="margin: 0px;"
-                                              width="70%"
-                                            />
-                                            <span
-                                              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                            />
-                                          </button>
-                                        }
-                                        className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                        direction="ltr"
-                                        id="networkselection-action-3"
+                                        id="networkselection-action-1"
                                         onBlur={[Function]}
                                         onFocus={[Function]}
                                         onMouseLeave={[Function]}
@@ -4542,7 +3164,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     width="70%"
                                   />
                                 }
-                                id="networkselection-action-4"
+                                id="networkselection-action-2"
                                 key=".$Polygon"
                                 onClick={[Function]}
                                 open={false}
@@ -4551,7 +3173,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                               >
                                 <ForwardRef(Tooltip)
                                   data-testid="Polygon"
-                                  id="networkselection-action-4"
+                                  id="networkselection-action-2"
                                   onClick={[Function]}
                                   onClose={[Function]}
                                   onOpen={[Function]}
@@ -4588,7 +3210,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           icon="polygon-logo.svg"
                                           width="70%"
                                         />,
-                                        "id": "networkselection-action-4",
+                                        "id": "networkselection-action-2",
                                         "onClick": [Function],
                                         "open": false,
                                         "tooltipPlacement": "left",
@@ -4906,7 +3528,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       }
                                     }
                                     className="MuiTooltip-popper MuiTooltip-popperInteractive"
-                                    id="networkselection-action-4"
+                                    id="networkselection-action-2"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                     onMouseLeave={[Function]}
@@ -4934,7 +3556,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 icon="polygon-logo.svg"
                                                 width="70%"
                                               />,
-                                              "id": "networkselection-action-4",
+                                              "id": "networkselection-action-2",
                                               "onClick": [Function],
                                               "open": false,
                                               "tooltipPlacement": "left",
@@ -4965,7 +3587,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         "classes": undefined,
                                         "data-testid": "Polygon",
                                         "disableInteractive": false,
-                                        "id": "networkselection-action-4",
+                                        "id": "networkselection-action-2",
                                         "isRtl": false,
                                         "onClick": [Function],
                                         "onClose": [Function],
@@ -5024,7 +3646,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         </button>
                                       }
                                       className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                      id="networkselection-action-4"
+                                      id="networkselection-action-2"
                                       onBlur={[Function]}
                                       onFocus={[Function]}
                                       onMouseLeave={[Function]}
@@ -5078,7 +3700,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                         direction="ltr"
-                                        id="networkselection-action-4"
+                                        id="networkselection-action-2"
                                         onBlur={[Function]}
                                         onFocus={[Function]}
                                         onMouseLeave={[Function]}
@@ -5129,7 +3751,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     width="70%"
                                   />
                                 }
-                                id="networkselection-action-5"
+                                id="networkselection-action-3"
                                 key=".$BSC"
                                 onClick={[Function]}
                                 open={false}
@@ -5138,7 +3760,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                               >
                                 <ForwardRef(Tooltip)
                                   data-testid="BSC"
-                                  id="networkselection-action-5"
+                                  id="networkselection-action-3"
                                   onClick={[Function]}
                                   onClose={[Function]}
                                   onOpen={[Function]}
@@ -5175,7 +3797,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           icon="binance-logo.svg"
                                           width="70%"
                                         />,
-                                        "id": "networkselection-action-5",
+                                        "id": "networkselection-action-3",
                                         "onClick": [Function],
                                         "open": false,
                                         "tooltipPlacement": "left",
@@ -5493,7 +4115,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       }
                                     }
                                     className="MuiTooltip-popper MuiTooltip-popperInteractive"
-                                    id="networkselection-action-5"
+                                    id="networkselection-action-3"
                                     onBlur={[Function]}
                                     onFocus={[Function]}
                                     onMouseLeave={[Function]}
@@ -5521,7 +4143,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 icon="binance-logo.svg"
                                                 width="70%"
                                               />,
-                                              "id": "networkselection-action-5",
+                                              "id": "networkselection-action-3",
                                               "onClick": [Function],
                                               "open": false,
                                               "tooltipPlacement": "left",
@@ -5552,7 +4174,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         "classes": undefined,
                                         "data-testid": "BSC",
                                         "disableInteractive": false,
-                                        "id": "networkselection-action-5",
+                                        "id": "networkselection-action-3",
                                         "isRtl": false,
                                         "onClick": [Function],
                                         "onClose": [Function],
@@ -5611,7 +4233,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         </button>
                                       }
                                       className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
-                                      id="networkselection-action-5"
+                                      id="networkselection-action-3"
                                       onBlur={[Function]}
                                       onFocus={[Function]}
                                       onMouseLeave={[Function]}
@@ -5665,7 +4287,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         className="MuiTooltip-popper MuiTooltip-popperInteractive css-1433tg5-MuiTooltip-popper"
                                         direction="ltr"
-                                        id="networkselection-action-5"
+                                        id="networkselection-action-3"
                                         onBlur={[Function]}
                                         onFocus={[Function]}
                                         onMouseLeave={[Function]}
