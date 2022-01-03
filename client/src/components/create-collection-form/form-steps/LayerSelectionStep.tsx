@@ -67,6 +67,9 @@ const LayerSelectionStep = ({
     <>
       <PageHeader text="Add Layers For Your Collection" />
       <Collapse in={state.generative.numberOfLayers > 0}>
+        <Collapse in={state.generative.numberOfLayers > 1}>
+          <p>Bottom Layer</p>
+        </Collapse>
         <OrderableList
           items={state.generative.layers}
           handleItemReorder={handleLayerReorder}>
@@ -85,8 +88,10 @@ const LayerSelectionStep = ({
             />
           ))}
         </OrderableList>
+        <Collapse in={state.generative.numberOfLayers > 1}>
+          <p>Top Layer</p>
+        </Collapse>
       </Collapse>
-
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
         text={text}

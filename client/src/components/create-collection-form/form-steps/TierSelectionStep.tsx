@@ -58,6 +58,9 @@ const TierSelectionStep = ({
       <Collapse in={state.generative.numberOfTiers > 0}>
         <RarityProgressBar totalRarity={state.generative.totalTierRarity} />
       </Collapse>
+      <Collapse in={state.generative.numberOfTiers > 1}>
+        <p>Rarest Tier</p>
+      </Collapse>
       <OrderableList
         handleItemReorder={handleTierReorder}
         items={state.generative.tiers}>
@@ -76,6 +79,9 @@ const TierSelectionStep = ({
           />
         ))}
       </OrderableList>
+      <Collapse in={state.generative.numberOfTiers > 1}>
+        <p>Most Common Tier</p>
+      </Collapse>
 
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
