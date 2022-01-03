@@ -163,7 +163,7 @@ const addTiers = (tokens: TokenT[], sortedTokens: TokenT[], tiers: TierI[]) => {
 };
 
 // The minimum number of tokens to upload to S3 before resolving HTTP request
-const MIN_IMG_UPLOAD = 20;
+export const MIN_IMG_UPLOAD = 20;
 
 /**
  * PRE: Layer images are assumed to be of equal dimensions, so that we don't
