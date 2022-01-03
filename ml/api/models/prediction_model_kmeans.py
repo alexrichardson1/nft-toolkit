@@ -10,13 +10,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-
-
-def get_distance(df1, df2):
-    """
-    Calculate Euclideun distance ^2 between to dataframes
-    """
-    return math.pow(df1[0][0] - df2[0], 2) + math.pow(df1[0][1] - df2[1], 2)
+from select_model import get_distance
 
 
 class PredictionModelKMeans:
