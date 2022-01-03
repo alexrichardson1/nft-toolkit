@@ -2,8 +2,6 @@
 Main for running flask app
 """
 
-# pylint: disable=unused-import
-from prediction_model import PredictionModel
 import routes
 
 

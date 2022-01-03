@@ -3,6 +3,7 @@ API - flask app factory creation.
 """
 import os
 import pickle
+import sys
 from flask import Flask, Blueprint, request
 import pymongo
 from dotenv import load_dotenv
@@ -11,6 +12,7 @@ from flask_cors import CORS
 
 
 load_dotenv()
+sys.path.insert(1, 'api/models')
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
 
 
@@ -31,6 +33,7 @@ def get_similar_collections(collection_name):
                 price: float
             }
     """
+    # If running locally change to sys.path.insert(1, 'api/collection_model')
     with open('api/collection_model', 'rb') as file:
         model = pickle.load(file)
 
