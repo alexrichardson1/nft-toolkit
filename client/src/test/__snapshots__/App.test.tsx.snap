@@ -12315,6 +12315,11 @@ exports[`App snapshot 1`] = `
                                         <Route
                                           component={[Function]}
                                           exact={true}
+                                          path="/:address([0-9a-zA-Z]{26,})/my-nfts"
+                                        />
+                                        <Route
+                                          component={[Function]}
+                                          exact={true}
                                           path="/:address([0-9a-zA-Z]{26,})"
                                         />
                                         <Route
