@@ -65,7 +65,7 @@ const Market = (): JSX.Element => {
         marketAddress,
         getRPCProvider(parseInt(paramChainId))
       );
-      const totalSupply = await nftContract.totalSupply();
+      const totalSupply = await nftContract.tokenIdTracker();
       const name = await nftContract.name();
       const symbol = await nftContract.symbol();
 
