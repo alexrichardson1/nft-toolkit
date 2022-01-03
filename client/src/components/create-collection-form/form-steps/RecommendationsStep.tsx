@@ -12,8 +12,10 @@ import { SxProps } from "@mui/system";
 import Box from "@mui/system/Box";
 import InfoTooltip from "components/common/InfoToolTip";
 import PageHeader from "components/common/PageHeader";
+import NoImageFallback from "images/no-image.jpg";
 import { ReactNode } from "react";
 import Carousel from "react-material-ui-carousel";
+import getComponentByMode from "utils/getComponentByMode";
 import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const REC_STEP_NUMBER_STATIC = 3;
@@ -111,48 +113,64 @@ const RecommendationsStep = ({
     return (
       <Carousel>
         {state.predictions.collections.map(({ name, img }, idx) => (
-          <Stack
+          <Box
+            display="flex"
             component="a"
             href={`https://opensea.io/collection/${name}`}
             target="_blank"
-            direction="row"
-            height="500px"
+            height="60vh"
             key={idx}
             sx={{
-              border: "2px solid white",
+              flexDirection: { xs: "column", md: "row" },
+              border: (theme) =>
+                `2px solid ${getComponentByMode(
+                  theme.palette.mode,
+                  "black",
+                  "white"
+                )}`,
               bgcolor: "primary.main",
               borderRadius: "20px",
               textDecoration: "none",
             }}>
-            <img
-              width="auto"
-              style={{
-                maxWidth: "50%",
-                flexGrow: 1,
-                borderRadius: "20px 0 0 20px",
-              }}
-              src={img}
-              // Need to provide alternative image
-              alt={name}
-            />
+            <Box
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                height: { xs: "50%", md: "100%" },
+                borderRadius: { xs: "20px 20px 0 0", md: "20px 0 0 20px" },
+                overflow: "hidden",
+                backgroundImage: `url(${NoImageFallback})`,
+                backgroundSize: "100% 100%",
+                backgroundRepeat: "no-repeat",
+              }}>
+              <img
+                style={{ color: "transparent" }}
+                width="100%"
+                height="100%"
+                src={img}
+                alt={name}
+              />
+            </Box>
             <Stack
-              flexGrow={1}
-              spacing={5}
-              height="100%"
+              padding="10px"
+              width={{ xs: "100%", md: "50%" }}
+              height={{ xs: "50%", md: "100%" }}
               alignItems="center"
               justifyContent="center">
               <Typography
                 align="center"
-                variant="h1"
+                variant="h2"
                 color="black"
-                sx={{ textTransform: "capitalize" }}>
+                gutterBottom
+                noWrap
+                width="100%"
+                sx={{ fontFamily: "monospace", textTransform: "capitalize" }}>
                 {name}
               </Typography>
               <Typography align="center" variant="h6" color="black">
                 Click here to see further details of the collections
               </Typography>
             </Stack>
-          </Stack>
+          </Box>
         ))}
       </Carousel>
     );
