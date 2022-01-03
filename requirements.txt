@@ -10,3 +10,4 @@ Distance~=0.1.3
 numpy~=1.21.2
 python-dotenv~=0.19.2
 Flask-Cors~=3.0.10
+pandas~=1.3.3
