@@ -1,4 +1,4 @@
-import { Tab } from "@mui/material";
+import { Collapse, Tab } from "@mui/material";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
@@ -17,6 +17,8 @@ const INITIAL_VALUE = 0;
 
 const layerImgUplContainerStyle = { width: "100%" };
 const layerImgUplTabsStyle = { borderBottom: 1, borderColor: "divider" };
+
+const SIZE_RECOMMENDATION = 0.9;
 
 interface PropsT {
   stepNumber: number;
@@ -137,26 +139,34 @@ const LayerImageUpload = ({
           );
         })}
       </Box>
-      {getMaxQuantity() === 0 ? (
-        <></>
-      ) : (
-        <>
-          <p>There are a total {getMaxQuantity()} different combinations</p>
-          <Paper>
-            <Input
-              type="number"
-              value={state.generative.quantity}
-              onChange={handleQuantityChange}
-              placeholder="0"
-              label="Collection Quantity"
-              InputProps={{
-                inputProps: { min: 1, max: getMaxQuantity() },
-              }}
-              required
-            />
-          </Paper>
-        </>
-      )}
+      <Collapse in={getMaxQuantity() > 0}>
+        <p>
+          There are a total {getMaxQuantity()} different combinations.{" "}
+          <Collapse
+            in={
+              getMaxQuantity() !==
+              Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())
+            }>
+            <p>
+              We recommend generating up to{" "}
+              {Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())}.
+            </p>
+          </Collapse>
+        </p>
+        <Paper>
+          <Input
+            type="number"
+            value={state.generative.quantity}
+            onChange={handleQuantityChange}
+            placeholder="0"
+            label="Collection Quantity"
+            InputProps={{
+              inputProps: { min: 1, max: getMaxQuantity() },
+            }}
+            required
+          />
+        </Paper>
+      </Collapse>
     </>
   );
 };
