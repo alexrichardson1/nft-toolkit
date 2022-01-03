@@ -71,7 +71,7 @@ class PredictionModelKMeans:
         row = pd.DataFrame({'reddit_score': pd.Series(
             dtype='float'), 'twitter_score': pd.Series(dtype='float')})
         row = row.append({'reddit_score': reddit_score,
-                         'twitter_score': twitter_score}, ignore_index=True)
+                          'twitter_score': twitter_score}, ignore_index=True)
         scaled_row = self.scaler.transform(row)
         cluster_id = 0
         best_distance = sys.maxsize
