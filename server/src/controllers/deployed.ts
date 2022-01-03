@@ -25,6 +25,7 @@ export const addDeployedAddress: RequestHandler = async (req, res, next) => {
     const { image } = collection;
     const userCollection = new UserCollection({
       address,
+      marketAddress,
       chainId: parseInt(chainId),
       image,
     });
