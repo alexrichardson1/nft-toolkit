@@ -95,6 +95,13 @@ export const deployContracts: RequestHandler = (req, res) => {
   res.json({ transaction: tx });
 };
 
+export const getAllCollections: RequestHandler = async (_req, res) => {
+  const users = await User.find();
+  const collections: UserCollectionI[] = [];
+  users.forEach((user) => collections.push(...user.collections));
+  res.json({ collections });
+};
+
 const getCollectionsFromDB = async (
   creator: string
 ): Promise<UserCollectionI[]> => {
