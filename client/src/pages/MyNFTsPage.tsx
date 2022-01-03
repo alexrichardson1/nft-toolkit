@@ -1,8 +1,8 @@
-import { Box, Collapse, Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
-import { getItemsPerPage, PageNumbers } from "components/common/PageNumbers";
+import { getItemsPerPage } from "components/common/PageNumbers";
 import DisplayCard from "components/marketplace/DisplayCard";
 import { TokenI } from "components/marketplace/Market";
 import { BigNumber } from "ethers";
@@ -13,6 +13,7 @@ import { NFT__factory as NftFactory } from "typechain";
 import { API_URL } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import { undefinedCheck } from "utils/typeUtils";
+import TemplatePage from "./TemplatePage";
 
 interface ParamsI {
   address: string;
@@ -41,14 +42,12 @@ const MyNFTsPage = (): JSX.Element => {
   const { account } = useWeb3React();
   const dispatch = useAppDispatch();
   const [myNFTs, setMyNFTs] = useState<NFTType[]>(dummyData);
-  const [page, setPage] = useState(1);
 
   const MAX_PROGRESS = 100;
   const LAST_INDEX = -1;
 
   useEffect(() => {
     const getCollectionData = async () => {
-      setMyNFTs(dummyData);
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
 
       try {
@@ -118,7 +117,16 @@ const MyNFTsPage = (): JSX.Element => {
     getCollectionData();
   }, [address]);
 
-  const GenerateTokens = (): JSX.Element => {
+  useEffect(() => {
+    setMyNFTs(dummyData);
+  }, [address]);
+
+  interface PropsT {
+    page: number;
+    data: NFTType[];
+  }
+
+  const GenerateTokens = ({ page, data }: PropsT): JSX.Element => {
     if (myNFTs.length === 0) {
       return (
         <Typography variant="h4" color="primary">
@@ -135,7 +143,7 @@ const MyNFTsPage = (): JSX.Element => {
     }
     return (
       <>
-        {getItemsPerPage(page, myNFTs).map((token) => (
+        {getItemsPerPage(page, data).map((token) => (
           <DisplayCard
             chainId={token.chainId}
             to={token.url}
@@ -148,32 +156,13 @@ const MyNFTsPage = (): JSX.Element => {
   };
 
   return (
-    <Box flexGrow={1} display="flex">
-      <Collapse sx={{ width: 1 }} in={myNFTs !== dummyData}>
-        <Stack spacing={2} justifyContent="center">
-          <Box display="flex" flexDirection="column">
-            <Typography
-              textAlign="center"
-              sx={{
-                textTransform: "uppercase",
-                overflowWrap: "break-word",
-              }}
-              variant="h3"
-              color="secondary">
-              My NFTs
-            </Typography>
-          </Box>
-          <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
-            <GenerateTokens />
-          </Box>
-          <PageNumbers
-            page={page}
-            setPage={setPage}
-            arrayLength={myNFTs.length}
-          />
-        </Stack>
-      </Collapse>
-    </Box>
+    <TemplatePage
+      title={"Owned NFTs"}
+      address={address}
+      data={myNFTs}
+      dummyData={dummyData}
+      Component={GenerateTokens}
+    />
   );
 };
 

@@ -1,9 +1,6 @@
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import { SxProps } from "@mui/system";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import { getItemsPerPage } from "components/common/PageNumbers";
 import MyCollectionCard from "components/my-collections/MyCollectionCard";
 import useAppDispatch from "hooks/useAppDispatch";
 import { useEffect, useState } from "react";
@@ -11,11 +8,7 @@ import { useParams } from "react-router-dom";
 import { NFT__factory as NftFactory } from "typechain";
 import { API_URL } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
-
-const textStyle: SxProps = {
-  textTransform: "uppercase",
-  overflowWrap: "break-word",
-};
+import TemplatePage from "./TemplatePage";
 
 interface ParamsI {
   address: string;
@@ -68,31 +61,29 @@ const MyCollectionsPage = (): JSX.Element => {
     getCollectionData();
   }, [address]);
 
-  return (
-    <Stack height="100%" spacing={2} overflow="auto">
-      <Box display="flex" flexDirection="column" alignItems="center">
-        <Typography
-          textAlign="center"
-          sx={textStyle}
-          variant="h3"
-          color="secondary">
-          Created Collections
-        </Typography>
-        <Typography textAlign="center" sx={textStyle} color="primary">
-          {address}
-        </Typography>
-      </Box>
-      <Box
-        padding="10px"
-        display="flex"
-        justifyContent="center"
-        flexWrap="wrap"
-        gap={3}>
-        {myCollections.map((col, index) => (
+  interface PropsT {
+    page: number;
+    data: CollDataI[];
+  }
+
+  const CollectionCards = ({ page, data }: PropsT): JSX.Element => {
+    return (
+      <>
+        {getItemsPerPage(page, data).map((col, index) => (
           <MyCollectionCard key={index} info={col} />
         ))}
-      </Box>
-    </Stack>
+      </>
+    );
+  };
+
+  return (
+    <TemplatePage
+      title={"Created Collections"}
+      address={address}
+      data={myCollections}
+      dummyData={[]}
+      Component={CollectionCards}
+    />
   );
 };
 
