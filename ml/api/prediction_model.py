@@ -80,11 +80,12 @@ class PredictionModel:
             self.model.labels_ == np.unique(self.model.labels_)[index])]).values())
         return collections[:16]
 
-    def get_mse(self):
+    def get_rmse(self):
         """
         Gets mean squared error of model
         """
         mse = 0
+        total_validated = 0
         for collection in self.collections_testing:
             if collection['avg_sale_price'] == 0:
                 continue
@@ -95,15 +96,16 @@ class PredictionModel:
                                   for col in predictions]) / len(predictions)
             print("Got prediction avg price of " + str(pred_avg_price))
             print("Actual price of " + str(collection['avg_sale_price']))
+            total_validated += 1
             mse += math.pow(pred_avg_price - collection['avg_sale_price'], 2)
             print("-----------------")
-        return mse
+        return math.sqrt(mse / total_validated)
 
     def save_model(self):
         """
         Save the model
         """
-        with open('api/collection_model', 'wb') as file:
+        with open('/api/collection_model', 'wb') as file:
             pickle.dump(self, file)
 
     def __str__(self):
