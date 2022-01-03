@@ -6,6 +6,7 @@ import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import { getItemsPerPage, PageNumbers } from "components/common/PageNumbers";
 import SvgLogo from "components/common/SvgLogo";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
@@ -67,6 +68,7 @@ const Market = (): JSX.Element => {
   const { showSnackbar } = useContext(SnackbarContext);
   const [royalties, setRoyalties] = useState(DEFAULT_ROYALTY);
   const [royaltyLoading, setRoyaltyLoading] = useState(false);
+  const [page, setPage] = useState(1);
   const [symbol, setSymbol] = useState("");
   const { paramChainId, address, marketAddress } = useParams<
     ParamsI & { marketAddress: string }
@@ -221,7 +223,7 @@ const Market = (): JSX.Element => {
                 Nothing to see here yet, please mint some tokens!
               </Typography>
             ) : (
-              tokens.map((token) => (
+              getItemsPerPage(page, tokens).map((token) => (
                 <DisplayCard
                   chainId={Number(paramChainId)}
                   to={`/${paramChainId}/${address}/${marketAddress}/${token.id}`}
@@ -231,6 +233,11 @@ const Market = (): JSX.Element => {
               ))
             )}
           </Box>
+          <PageNumbers
+            page={page}
+            setPage={setPage}
+            arrayLength={tokens.length}
+          />
         </Stack>
       </Collapse>
     </Box>
