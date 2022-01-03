@@ -999,28 +999,6 @@ exports[`MobileMenu snapshot 1`] = `
                                 </li>
                                 <li
                                   class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                  data-testid="cardano-mobile-option"
-                                  role="menuitem"
-                                  tabindex="-1"
-                                >
-                                  <img
-                                    alt="Cardano"
-                                    height="24"
-                                    src="cardano-logo.svg"
-                                    style="margin: 0px;"
-                                    width="24"
-                                  />
-                                  <p
-                                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                  >
-                                    Cardano
-                                  </p>
-                                  <span
-                                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                  />
-                                </li>
-                                <li
-                                  class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                   data-testid="avalanche-mobile-option"
                                   role="menuitem"
                                   tabindex="-1"
@@ -1036,28 +1014,6 @@ exports[`MobileMenu snapshot 1`] = `
                                     class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                   >
                                     Avalanche
-                                  </p>
-                                  <span
-                                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                  />
-                                </li>
-                                <li
-                                  class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                  data-testid="solana-mobile-option"
-                                  role="menuitem"
-                                  tabindex="-1"
-                                >
-                                  <img
-                                    alt="Solana"
-                                    height="24"
-                                    src="solana-logo.svg"
-                                    style="margin: 0px;"
-                                    width="24"
-                                  />
-                                  <p
-                                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                  >
-                                    Solana
                                   </p>
                                   <span
                                     class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -1389,28 +1345,6 @@ exports[`MobileMenu snapshot 1`] = `
                                   </li>
                                   <li
                                     class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                    data-testid="cardano-mobile-option"
-                                    role="menuitem"
-                                    tabindex="-1"
-                                  >
-                                    <img
-                                      alt="Cardano"
-                                      height="24"
-                                      src="cardano-logo.svg"
-                                      style="margin: 0px;"
-                                      width="24"
-                                    />
-                                    <p
-                                      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                    >
-                                      Cardano
-                                    </p>
-                                    <span
-                                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                    />
-                                  </li>
-                                  <li
-                                    class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                     data-testid="avalanche-mobile-option"
                                     role="menuitem"
                                     tabindex="-1"
@@ -1426,28 +1360,6 @@ exports[`MobileMenu snapshot 1`] = `
                                       class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                     >
                                       Avalanche
-                                    </p>
-                                    <span
-                                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                    />
-                                  </li>
-                                  <li
-                                    class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                    data-testid="solana-mobile-option"
-                                    role="menuitem"
-                                    tabindex="-1"
-                                  >
-                                    <img
-                                      alt="Solana"
-                                      height="24"
-                                      src="solana-logo.svg"
-                                      style="margin: 0px;"
-                                      width="24"
-                                    />
-                                    <p
-                                      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                    >
-                                      Solana
                                     </p>
                                     <span
                                       class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -1709,28 +1621,6 @@ exports[`MobileMenu snapshot 1`] = `
                                     </li>
                                     <li
                                       class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                      data-testid="cardano-mobile-option"
-                                      role="menuitem"
-                                      tabindex="-1"
-                                    >
-                                      <img
-                                        alt="Cardano"
-                                        height="24"
-                                        src="cardano-logo.svg"
-                                        style="margin: 0px;"
-                                        width="24"
-                                      />
-                                      <p
-                                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                      >
-                                        Cardano
-                                      </p>
-                                      <span
-                                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                      />
-                                    </li>
-                                    <li
-                                      class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                       data-testid="avalanche-mobile-option"
                                       role="menuitem"
                                       tabindex="-1"
@@ -1746,28 +1636,6 @@ exports[`MobileMenu snapshot 1`] = `
                                         class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                       >
                                         Avalanche
-                                      </p>
-                                      <span
-                                        class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                      />
-                                    </li>
-                                    <li
-                                      class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                      data-testid="solana-mobile-option"
-                                      role="menuitem"
-                                      tabindex="-1"
-                                    >
-                                      <img
-                                        alt="Solana"
-                                        height="24"
-                                        src="solana-logo.svg"
-                                        style="margin: 0px;"
-                                        width="24"
-                                      />
-                                      <p
-                                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                      >
-                                        Solana
                                       </p>
                                       <span
                                         class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -1971,28 +1839,6 @@ exports[`MobileMenu snapshot 1`] = `
                                       </li>
                                       <li
                                         class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                        data-testid="cardano-mobile-option"
-                                        role="menuitem"
-                                        tabindex="-1"
-                                      >
-                                        <img
-                                          alt="Cardano"
-                                          height="24"
-                                          src="cardano-logo.svg"
-                                          style="margin: 0px;"
-                                          width="24"
-                                        />
-                                        <p
-                                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                        >
-                                          Cardano
-                                        </p>
-                                        <span
-                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                        />
-                                      </li>
-                                      <li
-                                        class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                         data-testid="avalanche-mobile-option"
                                         role="menuitem"
                                         tabindex="-1"
@@ -2008,28 +1854,6 @@ exports[`MobileMenu snapshot 1`] = `
                                           class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                         >
                                           Avalanche
-                                        </p>
-                                        <span
-                                          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                        />
-                                      </li>
-                                      <li
-                                        class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                        data-testid="solana-mobile-option"
-                                        role="menuitem"
-                                        tabindex="-1"
-                                      >
-                                        <img
-                                          alt="Solana"
-                                          height="24"
-                                          src="solana-logo.svg"
-                                          style="margin: 0px;"
-                                          width="24"
-                                        />
-                                        <p
-                                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                        >
-                                          Solana
                                         </p>
                                         <span
                                           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -2221,28 +2045,6 @@ exports[`MobileMenu snapshot 1`] = `
                                         </li>
                                         <li
                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                          data-testid="cardano-mobile-option"
-                                          role="menuitem"
-                                          tabindex="-1"
-                                        >
-                                          <img
-                                            alt="Cardano"
-                                            height="24"
-                                            src="cardano-logo.svg"
-                                            style="margin: 0px;"
-                                            width="24"
-                                          />
-                                          <p
-                                            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                          >
-                                            Cardano
-                                          </p>
-                                          <span
-                                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                          />
-                                        </li>
-                                        <li
-                                          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                           data-testid="avalanche-mobile-option"
                                           role="menuitem"
                                           tabindex="-1"
@@ -2258,28 +2060,6 @@ exports[`MobileMenu snapshot 1`] = `
                                             class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                           >
                                             Avalanche
-                                          </p>
-                                          <span
-                                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                          />
-                                        </li>
-                                        <li
-                                          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                          data-testid="solana-mobile-option"
-                                          role="menuitem"
-                                          tabindex="-1"
-                                        >
-                                          <img
-                                            alt="Solana"
-                                            height="24"
-                                            src="solana-logo.svg"
-                                            style="margin: 0px;"
-                                            width="24"
-                                          />
-                                          <p
-                                            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                          >
-                                            Solana
                                           </p>
                                           <span
                                             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -2635,28 +2415,6 @@ exports[`MobileMenu snapshot 1`] = `
                                             </li>
                                             <li
                                               class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                              data-testid="cardano-mobile-option"
-                                              role="menuitem"
-                                              tabindex="-1"
-                                            >
-                                              <img
-                                                alt="Cardano"
-                                                height="24"
-                                                src="cardano-logo.svg"
-                                                style="margin: 0px;"
-                                                width="24"
-                                              />
-                                              <p
-                                                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                              >
-                                                Cardano
-                                              </p>
-                                              <span
-                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                              />
-                                            </li>
-                                            <li
-                                              class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                               data-testid="avalanche-mobile-option"
                                               role="menuitem"
                                               tabindex="-1"
@@ -2672,28 +2430,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                 class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                               >
                                                 Avalanche
-                                              </p>
-                                              <span
-                                                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                              />
-                                            </li>
-                                            <li
-                                              class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                              data-testid="solana-mobile-option"
-                                              role="menuitem"
-                                              tabindex="-1"
-                                            >
-                                              <img
-                                                alt="Solana"
-                                                height="24"
-                                                src="solana-logo.svg"
-                                                style="margin: 0px;"
-                                                width="24"
-                                              />
-                                              <p
-                                                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                              >
-                                                Solana
                                               </p>
                                               <span
                                                 class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -4116,26 +3852,6 @@ exports[`MobileMenu snapshot 1`] = `
                           </ForwardRef(Typography)>
                         </ForwardRef(MenuItem)>,
                         <ForwardRef(MenuItem)
-                          data-testid="cardano-mobile-option"
-                          onClick={[Function]}
-                          sx={
-                            Object {
-                              "display": "flex",
-                              "gap": "5px",
-                            }
-                          }
-                        >
-                          <pure(SvgIcon)
-                            alt="Cardano"
-                            height={24}
-                            icon="cardano-logo.svg"
-                            width={24}
-                          />
-                          <ForwardRef(Typography)>
-                            Cardano
-                          </ForwardRef(Typography)>
-                        </ForwardRef(MenuItem)>,
-                        <ForwardRef(MenuItem)
                           data-testid="avalanche-mobile-option"
                           onClick={[Function]}
                           sx={
@@ -4153,26 +3869,6 @@ exports[`MobileMenu snapshot 1`] = `
                           />
                           <ForwardRef(Typography)>
                             Avalanche
-                          </ForwardRef(Typography)>
-                        </ForwardRef(MenuItem)>,
-                        <ForwardRef(MenuItem)
-                          data-testid="solana-mobile-option"
-                          onClick={[Function]}
-                          sx={
-                            Object {
-                              "display": "flex",
-                              "gap": "5px",
-                            }
-                          }
-                        >
-                          <pure(SvgIcon)
-                            alt="Solana"
-                            height={24}
-                            icon="solana-logo.svg"
-                            width={24}
-                          />
-                          <ForwardRef(Typography)>
-                            Solana
                           </ForwardRef(Typography)>
                         </ForwardRef(MenuItem)>,
                         <ForwardRef(MenuItem)
@@ -4411,26 +4107,6 @@ exports[`MobileMenu snapshot 1`] = `
                               </ForwardRef(Typography)>
                             </ForwardRef(MenuItem)>
                             <ForwardRef(MenuItem)
-                              data-testid="cardano-mobile-option"
-                              onClick={[Function]}
-                              sx={
-                                Object {
-                                  "display": "flex",
-                                  "gap": "5px",
-                                }
-                              }
-                            >
-                              <pure(SvgIcon)
-                                alt="Cardano"
-                                height={24}
-                                icon="cardano-logo.svg"
-                                width={24}
-                              />
-                              <ForwardRef(Typography)>
-                                Cardano
-                              </ForwardRef(Typography)>
-                            </ForwardRef(MenuItem)>
-                            <ForwardRef(MenuItem)
                               data-testid="avalanche-mobile-option"
                               onClick={[Function]}
                               sx={
@@ -4448,26 +4124,6 @@ exports[`MobileMenu snapshot 1`] = `
                               />
                               <ForwardRef(Typography)>
                                 Avalanche
-                              </ForwardRef(Typography)>
-                            </ForwardRef(MenuItem)>
-                            <ForwardRef(MenuItem)
-                              data-testid="solana-mobile-option"
-                              onClick={[Function]}
-                              sx={
-                                Object {
-                                  "display": "flex",
-                                  "gap": "5px",
-                                }
-                              }
-                            >
-                              <pure(SvgIcon)
-                                alt="Solana"
-                                height={24}
-                                icon="solana-logo.svg"
-                                width={24}
-                              />
-                              <ForwardRef(Typography)>
-                                Solana
                               </ForwardRef(Typography)>
                             </ForwardRef(MenuItem)>
                             <ForwardRef(MenuItem)
@@ -4753,28 +4409,6 @@ exports[`MobileMenu snapshot 1`] = `
                                         </li>
                                         <li
                                           class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                          data-testid="cardano-mobile-option"
-                                          role="menuitem"
-                                          tabindex="-1"
-                                        >
-                                          <img
-                                            alt="Cardano"
-                                            height="24"
-                                            src="cardano-logo.svg"
-                                            style="margin: 0px;"
-                                            width="24"
-                                          />
-                                          <p
-                                            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                          >
-                                            Cardano
-                                          </p>
-                                          <span
-                                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                          />
-                                        </li>
-                                        <li
-                                          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                           data-testid="avalanche-mobile-option"
                                           role="menuitem"
                                           tabindex="-1"
@@ -4790,28 +4424,6 @@ exports[`MobileMenu snapshot 1`] = `
                                             class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                           >
                                             Avalanche
-                                          </p>
-                                          <span
-                                            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                          />
-                                        </li>
-                                        <li
-                                          class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                          data-testid="solana-mobile-option"
-                                          role="menuitem"
-                                          tabindex="-1"
-                                        >
-                                          <img
-                                            alt="Solana"
-                                            height="24"
-                                            src="solana-logo.svg"
-                                            style="margin: 0px;"
-                                            width="24"
-                                          />
-                                          <p
-                                            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                          >
-                                            Solana
                                           </p>
                                           <span
                                             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -4994,26 +4606,6 @@ exports[`MobileMenu snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>
                                           <ForwardRef(MenuItem)
-                                            data-testid="cardano-mobile-option"
-                                            onClick={[Function]}
-                                            sx={
-                                              Object {
-                                                "display": "flex",
-                                                "gap": "5px",
-                                              }
-                                            }
-                                          >
-                                            <pure(SvgIcon)
-                                              alt="Cardano"
-                                              height={24}
-                                              icon="cardano-logo.svg"
-                                              width={24}
-                                            />
-                                            <ForwardRef(Typography)>
-                                              Cardano
-                                            </ForwardRef(Typography)>
-                                          </ForwardRef(MenuItem)>
-                                          <ForwardRef(MenuItem)
                                             data-testid="avalanche-mobile-option"
                                             onClick={[Function]}
                                             sx={
@@ -5031,26 +4623,6 @@ exports[`MobileMenu snapshot 1`] = `
                                             />
                                             <ForwardRef(Typography)>
                                               Avalanche
-                                            </ForwardRef(Typography)>
-                                          </ForwardRef(MenuItem)>
-                                          <ForwardRef(MenuItem)
-                                            data-testid="solana-mobile-option"
-                                            onClick={[Function]}
-                                            sx={
-                                              Object {
-                                                "display": "flex",
-                                                "gap": "5px",
-                                              }
-                                            }
-                                          >
-                                            <pure(SvgIcon)
-                                              alt="Solana"
-                                              height={24}
-                                              icon="solana-logo.svg"
-                                              width={24}
-                                            />
-                                            <ForwardRef(Typography)>
-                                              Solana
                                             </ForwardRef(Typography)>
                                           </ForwardRef(MenuItem)>
                                           <ForwardRef(MenuItem)
@@ -5362,28 +4934,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                 </li>
                                                 <li
                                                   class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                                  data-testid="cardano-mobile-option"
-                                                  role="menuitem"
-                                                  tabindex="-1"
-                                                >
-                                                  <img
-                                                    alt="Cardano"
-                                                    height="24"
-                                                    src="cardano-logo.svg"
-                                                    style="margin: 0px;"
-                                                    width="24"
-                                                  />
-                                                  <p
-                                                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                                  >
-                                                    Cardano
-                                                  </p>
-                                                  <span
-                                                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                  />
-                                                </li>
-                                                <li
-                                                  class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
                                                   data-testid="avalanche-mobile-option"
                                                   role="menuitem"
                                                   tabindex="-1"
@@ -5399,28 +4949,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                     class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                   >
                                                     Avalanche
-                                                  </p>
-                                                  <span
-                                                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                  />
-                                                </li>
-                                                <li
-                                                  class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                                  data-testid="solana-mobile-option"
-                                                  role="menuitem"
-                                                  tabindex="-1"
-                                                >
-                                                  <img
-                                                    alt="Solana"
-                                                    height="24"
-                                                    src="solana-logo.svg"
-                                                    style="margin: 0px;"
-                                                    width="24"
-                                                  />
-                                                  <p
-                                                    class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                                  >
-                                                    Solana
                                                   </p>
                                                   <span
                                                     class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -5666,26 +5194,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                       </ForwardRef(Typography)>
                                                     </ForwardRef(MenuItem)>
                                                     <ForwardRef(MenuItem)
-                                                      data-testid="cardano-mobile-option"
-                                                      onClick={[Function]}
-                                                      sx={
-                                                        Object {
-                                                          "display": "flex",
-                                                          "gap": "5px",
-                                                        }
-                                                      }
-                                                    >
-                                                      <pure(SvgIcon)
-                                                        alt="Cardano"
-                                                        height={24}
-                                                        icon="cardano-logo.svg"
-                                                        width={24}
-                                                      />
-                                                      <ForwardRef(Typography)>
-                                                        Cardano
-                                                      </ForwardRef(Typography)>
-                                                    </ForwardRef(MenuItem)>
-                                                    <ForwardRef(MenuItem)
                                                       data-testid="avalanche-mobile-option"
                                                       onClick={[Function]}
                                                       sx={
@@ -5703,26 +5211,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                       />
                                                       <ForwardRef(Typography)>
                                                         Avalanche
-                                                      </ForwardRef(Typography)>
-                                                    </ForwardRef(MenuItem)>
-                                                    <ForwardRef(MenuItem)
-                                                      data-testid="solana-mobile-option"
-                                                      onClick={[Function]}
-                                                      sx={
-                                                        Object {
-                                                          "display": "flex",
-                                                          "gap": "5px",
-                                                        }
-                                                      }
-                                                    >
-                                                      <pure(SvgIcon)
-                                                        alt="Solana"
-                                                        height={24}
-                                                        icon="solana-logo.svg"
-                                                        width={24}
-                                                      />
-                                                      <ForwardRef(Typography)>
-                                                        Solana
                                                       </ForwardRef(Typography)>
                                                     </ForwardRef(MenuItem)>
                                                     <ForwardRef(MenuItem)
@@ -5889,26 +5377,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                             </ForwardRef(Typography)>
                                                           </ForwardRef(MenuItem)>
                                                           <ForwardRef(MenuItem)
-                                                            data-testid="cardano-mobile-option"
-                                                            onClick={[Function]}
-                                                            sx={
-                                                              Object {
-                                                                "display": "flex",
-                                                                "gap": "5px",
-                                                              }
-                                                            }
-                                                          >
-                                                            <pure(SvgIcon)
-                                                              alt="Cardano"
-                                                              height={24}
-                                                              icon="cardano-logo.svg"
-                                                              width={24}
-                                                            />
-                                                            <ForwardRef(Typography)>
-                                                              Cardano
-                                                            </ForwardRef(Typography)>
-                                                          </ForwardRef(MenuItem)>
-                                                          <ForwardRef(MenuItem)
                                                             data-testid="avalanche-mobile-option"
                                                             onClick={[Function]}
                                                             sx={
@@ -5926,26 +5394,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                             />
                                                             <ForwardRef(Typography)>
                                                               Avalanche
-                                                            </ForwardRef(Typography)>
-                                                          </ForwardRef(MenuItem)>
-                                                          <ForwardRef(MenuItem)
-                                                            data-testid="solana-mobile-option"
-                                                            onClick={[Function]}
-                                                            sx={
-                                                              Object {
-                                                                "display": "flex",
-                                                                "gap": "5px",
-                                                              }
-                                                            }
-                                                          >
-                                                            <pure(SvgIcon)
-                                                              alt="Solana"
-                                                              height={24}
-                                                              icon="solana-logo.svg"
-                                                              width={24}
-                                                            />
-                                                            <ForwardRef(Typography)>
-                                                              Solana
                                                             </ForwardRef(Typography)>
                                                           </ForwardRef(MenuItem)>
                                                           <ForwardRef(MenuItem)
@@ -6089,26 +5537,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>,
                                                                     <ForwardRef(MenuItem)
-                                                                      data-testid="cardano-mobile-option"
-                                                                      onClick={[Function]}
-                                                                      sx={
-                                                                        Object {
-                                                                          "display": "flex",
-                                                                          "gap": "5px",
-                                                                        }
-                                                                      }
-                                                                    >
-                                                                      <pure(SvgIcon)
-                                                                        alt="Cardano"
-                                                                        height={24}
-                                                                        icon="cardano-logo.svg"
-                                                                        width={24}
-                                                                      />
-                                                                      <ForwardRef(Typography)>
-                                                                        Cardano
-                                                                      </ForwardRef(Typography)>
-                                                                    </ForwardRef(MenuItem)>,
-                                                                    <ForwardRef(MenuItem)
                                                                       data-testid="avalanche-mobile-option"
                                                                       onClick={[Function]}
                                                                       sx={
@@ -6126,26 +5554,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                       />
                                                                       <ForwardRef(Typography)>
                                                                         Avalanche
-                                                                      </ForwardRef(Typography)>
-                                                                    </ForwardRef(MenuItem)>,
-                                                                    <ForwardRef(MenuItem)
-                                                                      data-testid="solana-mobile-option"
-                                                                      onClick={[Function]}
-                                                                      sx={
-                                                                        Object {
-                                                                          "display": "flex",
-                                                                          "gap": "5px",
-                                                                        }
-                                                                      }
-                                                                    >
-                                                                      <pure(SvgIcon)
-                                                                        alt="Solana"
-                                                                        height={24}
-                                                                        icon="solana-logo.svg"
-                                                                        width={24}
-                                                                      />
-                                                                      <ForwardRef(Typography)>
-                                                                        Solana
                                                                       </ForwardRef(Typography)>
                                                                     </ForwardRef(MenuItem)>,
                                                                     <ForwardRef(MenuItem)
@@ -6451,246 +5859,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                   </MuiMenuItemRoot>
                                                                 </ForwardRef(MenuItem)>
                                                                 <ForwardRef(MenuItem)
-                                                                  data-testid="cardano-mobile-option"
-                                                                  key=".$Cardano"
-                                                                  onClick={[Function]}
-                                                                  sx={
-                                                                    Object {
-                                                                      "display": "flex",
-                                                                      "gap": "5px",
-                                                                    }
-                                                                  }
-                                                                >
-                                                                  <MuiMenuItemRoot
-                                                                    classes={
-                                                                      Object {
-                                                                        "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                      }
-                                                                    }
-                                                                    component="li"
-                                                                    data-testid="cardano-mobile-option"
-                                                                    focusVisibleClassName=""
-                                                                    onClick={[Function]}
-                                                                    ownerState={
-                                                                      Object {
-                                                                        "children": Array [
-                                                                          <pure(SvgIcon)
-                                                                            alt="Cardano"
-                                                                            height={24}
-                                                                            icon="cardano-logo.svg"
-                                                                            width={24}
-                                                                          />,
-                                                                          <ForwardRef(Typography)>
-                                                                            Cardano
-                                                                          </ForwardRef(Typography)>,
-                                                                        ],
-                                                                        "data-testid": "cardano-mobile-option",
-                                                                        "dense": false,
-                                                                        "disableGutters": false,
-                                                                        "divider": false,
-                                                                        "onClick": [Function],
-                                                                        "sx": Object {
-                                                                          "display": "flex",
-                                                                          "gap": "5px",
-                                                                        },
-                                                                      }
-                                                                    }
-                                                                    role="menuitem"
-                                                                    sx={
-                                                                      Object {
-                                                                        "display": "flex",
-                                                                        "gap": "5px",
-                                                                      }
-                                                                    }
-                                                                    tabIndex={-1}
-                                                                  >
-                                                                    <Noop />
-                                                                    <ForwardRef(ButtonBase)
-                                                                      className="css-13i87ox-MuiMenuItem-root"
-                                                                      classes={
-                                                                        Object {
-                                                                          "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                        }
-                                                                      }
-                                                                      component="li"
-                                                                      data-testid="cardano-mobile-option"
-                                                                      focusVisibleClassName=""
-                                                                      onClick={[Function]}
-                                                                      role="menuitem"
-                                                                      tabIndex={-1}
-                                                                    >
-                                                                      <MuiButtonBaseRoot
-                                                                        as="li"
-                                                                        className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-13i87ox-MuiMenuItem-root"
-                                                                        classes={
-                                                                          Object {
-                                                                            "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                          }
-                                                                        }
-                                                                        data-testid="cardano-mobile-option"
-                                                                        onBlur={[Function]}
-                                                                        onClick={[Function]}
-                                                                        onContextMenu={[Function]}
-                                                                        onDragLeave={[Function]}
-                                                                        onFocus={[Function]}
-                                                                        onKeyDown={[Function]}
-                                                                        onKeyUp={[Function]}
-                                                                        onMouseDown={[Function]}
-                                                                        onMouseLeave={[Function]}
-                                                                        onMouseUp={[Function]}
-                                                                        onTouchEnd={[Function]}
-                                                                        onTouchMove={[Function]}
-                                                                        onTouchStart={[Function]}
-                                                                        ownerState={
-                                                                          Object {
-                                                                            "centerRipple": false,
-                                                                            "children": Array [
-                                                                              <pure(SvgIcon)
-                                                                                alt="Cardano"
-                                                                                height={24}
-                                                                                icon="cardano-logo.svg"
-                                                                                width={24}
-                                                                              />,
-                                                                              <ForwardRef(Typography)>
-                                                                                Cardano
-                                                                              </ForwardRef(Typography)>,
-                                                                            ],
-                                                                            "className": "css-13i87ox-MuiMenuItem-root",
-                                                                            "classes": Object {
-                                                                              "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                            },
-                                                                            "component": "li",
-                                                                            "data-testid": "cardano-mobile-option",
-                                                                            "disableRipple": false,
-                                                                            "disableTouchRipple": false,
-                                                                            "disabled": false,
-                                                                            "focusRipple": false,
-                                                                            "focusVisible": false,
-                                                                            "focusVisibleClassName": "",
-                                                                            "onClick": [Function],
-                                                                            "role": "menuitem",
-                                                                            "tabIndex": -1,
-                                                                          }
-                                                                        }
-                                                                        role="menuitem"
-                                                                        tabIndex={-1}
-                                                                      >
-                                                                        <Noop />
-                                                                        <li
-                                                                          className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                                                          data-testid="cardano-mobile-option"
-                                                                          onBlur={[Function]}
-                                                                          onClick={[Function]}
-                                                                          onContextMenu={[Function]}
-                                                                          onDragLeave={[Function]}
-                                                                          onFocus={[Function]}
-                                                                          onKeyDown={[Function]}
-                                                                          onKeyUp={[Function]}
-                                                                          onMouseDown={[Function]}
-                                                                          onMouseLeave={[Function]}
-                                                                          onMouseUp={[Function]}
-                                                                          onTouchEnd={[Function]}
-                                                                          onTouchMove={[Function]}
-                                                                          onTouchStart={[Function]}
-                                                                          role="menuitem"
-                                                                          tabIndex={-1}
-                                                                        >
-                                                                          <pure(SvgIcon)
-                                                                            alt="Cardano"
-                                                                            height={24}
-                                                                            icon="cardano-logo.svg"
-                                                                            width={24}
-                                                                          >
-                                                                            <SvgIcon
-                                                                              alt="Cardano"
-                                                                              height={24}
-                                                                              icon="cardano-logo.svg"
-                                                                              width={24}
-                                                                            >
-                                                                              <img
-                                                                                alt="Cardano"
-                                                                                height={24}
-                                                                                src="cardano-logo.svg"
-                                                                                style={
-                                                                                  Object {
-                                                                                    "margin": "0",
-                                                                                  }
-                                                                                }
-                                                                                width={24}
-                                                                              />
-                                                                            </SvgIcon>
-                                                                          </pure(SvgIcon)>
-                                                                          <ForwardRef(Typography)>
-                                                                            <MuiTypographyRoot
-                                                                              as="p"
-                                                                              className="MuiTypography-root MuiTypography-body1"
-                                                                              ownerState={
-                                                                                Object {
-                                                                                  "align": "inherit",
-                                                                                  "children": "Cardano",
-                                                                                  "className": undefined,
-                                                                                  "color": undefined,
-                                                                                  "component": undefined,
-                                                                                  "gutterBottom": false,
-                                                                                  "noWrap": false,
-                                                                                  "paragraph": false,
-                                                                                  "sx": Object {
-                                                                                    "color": undefined,
-                                                                                  },
-                                                                                  "variant": "body1",
-                                                                                  "variantMapping": Object {
-                                                                                    "body1": "p",
-                                                                                    "body2": "p",
-                                                                                    "h1": "h1",
-                                                                                    "h2": "h2",
-                                                                                    "h3": "h3",
-                                                                                    "h4": "h4",
-                                                                                    "h5": "h5",
-                                                                                    "h6": "h6",
-                                                                                    "inherit": "p",
-                                                                                    "subtitle1": "h6",
-                                                                                    "subtitle2": "h6",
-                                                                                  },
-                                                                                }
-                                                                              }
-                                                                              sx={
-                                                                                Object {
-                                                                                  "color": undefined,
-                                                                                }
-                                                                              }
-                                                                            >
-                                                                              <Noop />
-                                                                              <p
-                                                                                className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                                                              >
-                                                                                Cardano
-                                                                              </p>
-                                                                            </MuiTypographyRoot>
-                                                                          </ForwardRef(Typography)>
-                                                                          <ForwardRef(TouchRipple)
-                                                                            center={false}
-                                                                          >
-                                                                            <MuiTouchRippleRoot
-                                                                              className="MuiTouchRipple-root"
-                                                                            >
-                                                                              <Noop />
-                                                                              <span
-                                                                                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                                              >
-                                                                                <TransitionGroup
-                                                                                  childFactory={[Function]}
-                                                                                  component={null}
-                                                                                  exit={true}
-                                                                                />
-                                                                              </span>
-                                                                            </MuiTouchRippleRoot>
-                                                                          </ForwardRef(TouchRipple)>
-                                                                        </li>
-                                                                      </MuiButtonBaseRoot>
-                                                                    </ForwardRef(ButtonBase)>
-                                                                  </MuiMenuItemRoot>
-                                                                </ForwardRef(MenuItem)>
-                                                                <ForwardRef(MenuItem)
                                                                   data-testid="avalanche-mobile-option"
                                                                   key=".$Avalanche"
                                                                   onClick={[Function]}
@@ -6904,246 +6072,6 @@ exports[`MobileMenu snapshot 1`] = `
                                                                                 className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                                                                               >
                                                                                 Avalanche
-                                                                              </p>
-                                                                            </MuiTypographyRoot>
-                                                                          </ForwardRef(Typography)>
-                                                                          <ForwardRef(TouchRipple)
-                                                                            center={false}
-                                                                          >
-                                                                            <MuiTouchRippleRoot
-                                                                              className="MuiTouchRipple-root"
-                                                                            >
-                                                                              <Noop />
-                                                                              <span
-                                                                                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-                                                                              >
-                                                                                <TransitionGroup
-                                                                                  childFactory={[Function]}
-                                                                                  component={null}
-                                                                                  exit={true}
-                                                                                />
-                                                                              </span>
-                                                                            </MuiTouchRippleRoot>
-                                                                          </ForwardRef(TouchRipple)>
-                                                                        </li>
-                                                                      </MuiButtonBaseRoot>
-                                                                    </ForwardRef(ButtonBase)>
-                                                                  </MuiMenuItemRoot>
-                                                                </ForwardRef(MenuItem)>
-                                                                <ForwardRef(MenuItem)
-                                                                  data-testid="solana-mobile-option"
-                                                                  key=".$Solana"
-                                                                  onClick={[Function]}
-                                                                  sx={
-                                                                    Object {
-                                                                      "display": "flex",
-                                                                      "gap": "5px",
-                                                                    }
-                                                                  }
-                                                                >
-                                                                  <MuiMenuItemRoot
-                                                                    classes={
-                                                                      Object {
-                                                                        "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                      }
-                                                                    }
-                                                                    component="li"
-                                                                    data-testid="solana-mobile-option"
-                                                                    focusVisibleClassName=""
-                                                                    onClick={[Function]}
-                                                                    ownerState={
-                                                                      Object {
-                                                                        "children": Array [
-                                                                          <pure(SvgIcon)
-                                                                            alt="Solana"
-                                                                            height={24}
-                                                                            icon="solana-logo.svg"
-                                                                            width={24}
-                                                                          />,
-                                                                          <ForwardRef(Typography)>
-                                                                            Solana
-                                                                          </ForwardRef(Typography)>,
-                                                                        ],
-                                                                        "data-testid": "solana-mobile-option",
-                                                                        "dense": false,
-                                                                        "disableGutters": false,
-                                                                        "divider": false,
-                                                                        "onClick": [Function],
-                                                                        "sx": Object {
-                                                                          "display": "flex",
-                                                                          "gap": "5px",
-                                                                        },
-                                                                      }
-                                                                    }
-                                                                    role="menuitem"
-                                                                    sx={
-                                                                      Object {
-                                                                        "display": "flex",
-                                                                        "gap": "5px",
-                                                                      }
-                                                                    }
-                                                                    tabIndex={-1}
-                                                                  >
-                                                                    <Noop />
-                                                                    <ForwardRef(ButtonBase)
-                                                                      className="css-13i87ox-MuiMenuItem-root"
-                                                                      classes={
-                                                                        Object {
-                                                                          "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                        }
-                                                                      }
-                                                                      component="li"
-                                                                      data-testid="solana-mobile-option"
-                                                                      focusVisibleClassName=""
-                                                                      onClick={[Function]}
-                                                                      role="menuitem"
-                                                                      tabIndex={-1}
-                                                                    >
-                                                                      <MuiButtonBaseRoot
-                                                                        as="li"
-                                                                        className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-13i87ox-MuiMenuItem-root"
-                                                                        classes={
-                                                                          Object {
-                                                                            "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                          }
-                                                                        }
-                                                                        data-testid="solana-mobile-option"
-                                                                        onBlur={[Function]}
-                                                                        onClick={[Function]}
-                                                                        onContextMenu={[Function]}
-                                                                        onDragLeave={[Function]}
-                                                                        onFocus={[Function]}
-                                                                        onKeyDown={[Function]}
-                                                                        onKeyUp={[Function]}
-                                                                        onMouseDown={[Function]}
-                                                                        onMouseLeave={[Function]}
-                                                                        onMouseUp={[Function]}
-                                                                        onTouchEnd={[Function]}
-                                                                        onTouchMove={[Function]}
-                                                                        onTouchStart={[Function]}
-                                                                        ownerState={
-                                                                          Object {
-                                                                            "centerRipple": false,
-                                                                            "children": Array [
-                                                                              <pure(SvgIcon)
-                                                                                alt="Solana"
-                                                                                height={24}
-                                                                                icon="solana-logo.svg"
-                                                                                width={24}
-                                                                              />,
-                                                                              <ForwardRef(Typography)>
-                                                                                Solana
-                                                                              </ForwardRef(Typography)>,
-                                                                            ],
-                                                                            "className": "css-13i87ox-MuiMenuItem-root",
-                                                                            "classes": Object {
-                                                                              "root": "MuiMenuItem-root MuiMenuItem-gutters",
-                                                                            },
-                                                                            "component": "li",
-                                                                            "data-testid": "solana-mobile-option",
-                                                                            "disableRipple": false,
-                                                                            "disableTouchRipple": false,
-                                                                            "disabled": false,
-                                                                            "focusRipple": false,
-                                                                            "focusVisible": false,
-                                                                            "focusVisibleClassName": "",
-                                                                            "onClick": [Function],
-                                                                            "role": "menuitem",
-                                                                            "tabIndex": -1,
-                                                                          }
-                                                                        }
-                                                                        role="menuitem"
-                                                                        tabIndex={-1}
-                                                                      >
-                                                                        <Noop />
-                                                                        <li
-                                                                          className="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-                                                                          data-testid="solana-mobile-option"
-                                                                          onBlur={[Function]}
-                                                                          onClick={[Function]}
-                                                                          onContextMenu={[Function]}
-                                                                          onDragLeave={[Function]}
-                                                                          onFocus={[Function]}
-                                                                          onKeyDown={[Function]}
-                                                                          onKeyUp={[Function]}
-                                                                          onMouseDown={[Function]}
-                                                                          onMouseLeave={[Function]}
-                                                                          onMouseUp={[Function]}
-                                                                          onTouchEnd={[Function]}
-                                                                          onTouchMove={[Function]}
-                                                                          onTouchStart={[Function]}
-                                                                          role="menuitem"
-                                                                          tabIndex={-1}
-                                                                        >
-                                                                          <pure(SvgIcon)
-                                                                            alt="Solana"
-                                                                            height={24}
-                                                                            icon="solana-logo.svg"
-                                                                            width={24}
-                                                                          >
-                                                                            <SvgIcon
-                                                                              alt="Solana"
-                                                                              height={24}
-                                                                              icon="solana-logo.svg"
-                                                                              width={24}
-                                                                            >
-                                                                              <img
-                                                                                alt="Solana"
-                                                                                height={24}
-                                                                                src="solana-logo.svg"
-                                                                                style={
-                                                                                  Object {
-                                                                                    "margin": "0",
-                                                                                  }
-                                                                                }
-                                                                                width={24}
-                                                                              />
-                                                                            </SvgIcon>
-                                                                          </pure(SvgIcon)>
-                                                                          <ForwardRef(Typography)>
-                                                                            <MuiTypographyRoot
-                                                                              as="p"
-                                                                              className="MuiTypography-root MuiTypography-body1"
-                                                                              ownerState={
-                                                                                Object {
-                                                                                  "align": "inherit",
-                                                                                  "children": "Solana",
-                                                                                  "className": undefined,
-                                                                                  "color": undefined,
-                                                                                  "component": undefined,
-                                                                                  "gutterBottom": false,
-                                                                                  "noWrap": false,
-                                                                                  "paragraph": false,
-                                                                                  "sx": Object {
-                                                                                    "color": undefined,
-                                                                                  },
-                                                                                  "variant": "body1",
-                                                                                  "variantMapping": Object {
-                                                                                    "body1": "p",
-                                                                                    "body2": "p",
-                                                                                    "h1": "h1",
-                                                                                    "h2": "h2",
-                                                                                    "h3": "h3",
-                                                                                    "h4": "h4",
-                                                                                    "h5": "h5",
-                                                                                    "h6": "h6",
-                                                                                    "inherit": "p",
-                                                                                    "subtitle1": "h6",
-                                                                                    "subtitle2": "h6",
-                                                                                  },
-                                                                                }
-                                                                              }
-                                                                              sx={
-                                                                                Object {
-                                                                                  "color": undefined,
-                                                                                }
-                                                                              }
-                                                                            >
-                                                                              <Noop />
-                                                                              <p
-                                                                                className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                                                              >
-                                                                                Solana
                                                                               </p>
                                                                             </MuiTypographyRoot>
                                                                           </ForwardRef(Typography)>
@@ -7751,16 +6679,16 @@ Object {
             tabindex="-1"
           >
             <img
-              alt="Cardano"
+              alt="Polygon"
               height="24"
-              src="cardano-logo.svg"
+              src="polygon-logo.svg"
               style="margin: 0px;"
               width="24"
             />
             <p
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
             >
-              Cardano
+              Polygon
             </p>
             <span
               class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -7820,28 +6748,6 @@ Object {
           </li>
           <li
             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-            data-testid="cardano-mobile-option"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <img
-              alt="Cardano"
-              height="24"
-              src="cardano-logo.svg"
-              style="margin: 0px;"
-              width="24"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-            >
-              Cardano
-            </p>
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
             data-testid="avalanche-mobile-option"
             role="menuitem"
             tabindex="-1"
@@ -7857,28 +6763,6 @@ Object {
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
             >
               Avalanche
-            </p>
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-            data-testid="solana-mobile-option"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <img
-              alt="Solana"
-              height="24"
-              src="solana-logo.svg"
-              style="margin: 0px;"
-              width="24"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-            >
-              Solana
             </p>
             <span
               class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -8125,28 +7009,6 @@ Object {
           </li>
           <li
             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-            data-testid="cardano-mobile-option"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <img
-              alt="Cardano"
-              height="24"
-              src="cardano-logo.svg"
-              style="margin: 0px;"
-              width="24"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-            >
-              Cardano
-            </p>
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
             data-testid="avalanche-mobile-option"
             role="menuitem"
             tabindex="-1"
@@ -8162,28 +7024,6 @@ Object {
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
             >
               Avalanche
-            </p>
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-            data-testid="solana-mobile-option"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <img
-              alt="Solana"
-              height="24"
-              src="solana-logo.svg"
-              style="margin: 0px;"
-              width="24"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-            >
-              Solana
             </p>
             <span
               class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -8370,28 +7210,6 @@ Object {
           </li>
           <li
             class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-            data-testid="cardano-mobile-option"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <img
-              alt="Cardano"
-              height="24"
-              src="cardano-logo.svg"
-              style="margin: 0px;"
-              width="24"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-            >
-              Cardano
-            </p>
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
             data-testid="avalanche-mobile-option"
             role="menuitem"
             tabindex="-1"
@@ -8407,28 +7225,6 @@ Object {
               class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
             >
               Avalanche
-            </p>
-            <span
-              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-            />
-          </li>
-          <li
-            class="MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root css-fxspsi-MuiButtonBase-root-MuiMenuItem-root"
-            data-testid="solana-mobile-option"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <img
-              alt="Solana"
-              height="24"
-              src="solana-logo.svg"
-              style="margin: 0px;"
-              width="24"
-            />
-            <p
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-            >
-              Solana
             </p>
             <span
               class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
