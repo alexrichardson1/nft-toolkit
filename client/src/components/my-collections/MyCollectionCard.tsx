@@ -1,5 +1,6 @@
+import StorefrontIcon from "@mui/icons-material/Storefront";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { Divider, Paper, Stack } from "@mui/material";
+import { Button, Divider, Paper, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useWeb3React } from "@web3-react/core";
 import SvgIcon from "components/common/SvgLogo";
@@ -53,7 +54,7 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
         {account === info.owner && (
           <>
             <Stack gap="10px" alignItems="center" direction="row">
-              <Typography gutterBottom noWrap>
+              <Typography noWrap>
                 Balance: {utils.formatEther(balance)}
               </Typography>
               <SvgIcon
@@ -67,10 +68,20 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
               variant="contained"
               fullWidth
               loading={isLoading}
+              sx={{ mb: 1, mt: 1 }}
               onClick={handleWithdraw}>
               Withdraw
             </LoadingButton>
           </>
+        )}
+        {info.marketAddress && (
+          <Button
+            variant="outlined"
+            fullWidth
+            startIcon={<StorefrontIcon />}
+            href={`/${info.chainId}/${info.address}/${info.marketAddress}`}>
+            Marketplace
+          </Button>
         )}
       </Stack>
     </Paper>
