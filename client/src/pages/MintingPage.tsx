@@ -1,3 +1,4 @@
+import StorefrontIcon from "@mui/icons-material/Storefront";
 import LoadingButton from "@mui/lab/LoadingButton";
 import {
   Box,
@@ -200,7 +201,9 @@ const MintingPage = (): JSX.Element => {
               <Link
                 underline="none"
                 href={`/${paramChainId}/${address}/${mintingData.marketAddress}`}>
-                <Button variant="contained">Go to Market</Button>
+                <Button variant="contained" startIcon={<StorefrontIcon />}>
+                  Marketplace
+                </Button>
               </Link>
             )}
           </Box>
