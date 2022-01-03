@@ -45,6 +45,7 @@ const MyCollectionsPage = (): JSX.Element => {
               chainId: col.chainId,
               address: col.address,
               image: col.image ?? "",
+              marketAddress: col.marketAddress,
               balance: (await provider.getBalance(col.address)).toString(),
               owner: await nftContract.owner(),
             };
