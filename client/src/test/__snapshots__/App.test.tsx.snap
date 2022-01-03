@@ -12280,6 +12280,11 @@ exports[`App snapshot 1`] = `
                                     "children": Array [
                                       <ForwardRef(Collapse)
                                         in={false}
+                                        sx={
+                                          Object {
+                                            "mb": 2,
+                                          }
+                                        }
                                       >
                                         <ForwardRef(LinearProgress)
                                           value={0}
@@ -12347,6 +12352,11 @@ exports[`App snapshot 1`] = `
                                 >
                                   <ForwardRef(Collapse)
                                     in={false}
+                                    sx={
+                                      Object {
+                                        "mb": 2,
+                                      }
+                                    }
                                   >
                                     <Transition
                                       addEndListener={[Function]}
@@ -12358,7 +12368,7 @@ exports[`App snapshot 1`] = `
                                       nodeRef={
                                         Object {
                                           "current": <div
-                                            class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                                            class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-az7l8d-MuiCollapse-root"
                                             style="min-height: 0px;"
                                           >
                                             <div
@@ -12390,6 +12400,11 @@ exports[`App snapshot 1`] = `
                                       onExit={[Function]}
                                       onExited={[Function]}
                                       onExiting={[Function]}
+                                      sx={
+                                        Object {
+                                          "mb": 2,
+                                        }
+                                      }
                                       timeout={300}
                                       unmountOnExit={false}
                                     >
@@ -12405,6 +12420,9 @@ exports[`App snapshot 1`] = `
                                             "in": false,
                                             "orientation": "vertical",
                                             "state": "exited",
+                                            "sx": Object {
+                                              "mb": 2,
+                                            },
                                           }
                                         }
                                         style={
@@ -12412,10 +12430,15 @@ exports[`App snapshot 1`] = `
                                             "minHeight": "0px",
                                           }
                                         }
+                                        sx={
+                                          Object {
+                                            "mb": 2,
+                                          }
+                                        }
                                       >
                                         <Noop />
                                         <div
-                                          className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                                          className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-az7l8d-MuiCollapse-root"
                                           style={
                                             Object {
                                               "minHeight": "0px",
@@ -12434,6 +12457,9 @@ exports[`App snapshot 1`] = `
                                                 "in": false,
                                                 "orientation": "vertical",
                                                 "state": "exited",
+                                                "sx": Object {
+                                                  "mb": 2,
+                                                },
                                               }
                                             }
                                           >
@@ -12453,6 +12479,9 @@ exports[`App snapshot 1`] = `
                                                     "in": false,
                                                     "orientation": "vertical",
                                                     "state": "exited",
+                                                    "sx": Object {
+                                                      "mb": 2,
+                                                    },
                                                   }
                                                 }
                                               >
