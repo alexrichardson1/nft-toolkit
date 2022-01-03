@@ -1,18 +1,24 @@
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import { LoadingButton } from "@mui/lab";
 import { Button, Collapse, Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
+import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
 import axios from "axios";
+import SvgLogo from "components/common/SvgLogo";
+import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
+import { formatEther, formatUnits } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
-import { useEffect, useState } from "react";
+import tetherIcon from "images/tether.svg";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Market__factory as MarketFactory,
   NFT__factory as NftFactory,
 } from "typechain";
-import { API_URL } from "utils/constants";
+import { API_URL, getLogoByChainId, toTether } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
@@ -44,9 +50,23 @@ const textStyle: SxProps = {
   overflowWrap: "break-word",
 };
 
+interface RoyaltiesI {
+  native: BigNumber;
+  stable: BigNumber;
+}
+
+const DEFAULT_ROYALTY: RoyaltiesI = {
+  native: BigNumber.from(0),
+  stable: BigNumber.from(0),
+};
+
 const Market = (): JSX.Element => {
   const [tokens, setCollections] = useState<TokenI[]>(dummyData);
   const [collectionName, setCollectionName] = useState("");
+  const { account, library } = useWeb3React();
+  const { showSnackbar } = useContext(SnackbarContext);
+  const [royalties, setRoyalties] = useState(DEFAULT_ROYALTY);
+  const [royaltyLoading, setRoyaltyLoading] = useState(false);
   const [symbol, setSymbol] = useState("");
   const { paramChainId, address, marketAddress } = useParams<
     ParamsI & { marketAddress: string }
@@ -105,20 +125,86 @@ const Market = (): JSX.Element => {
       setCollections(transTokens);
     }
     getCollectionData();
-  }, []);
+  }, [account]);
+
+  useEffect(() => {
+    const updateRoyalties = async () => {
+      const marketContract = MarketFactory.connect(
+        marketAddress,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      if (account) {
+        setRoyalties(await marketContract.royalties(account));
+      } else {
+        setRoyalties(DEFAULT_ROYALTY);
+      }
+    };
+    updateRoyalties();
+  }, [account, royaltyLoading]);
+
+  const handleClaimRoyalties = async () => {
+    const marketContract = MarketFactory.connect(
+      marketAddress,
+      library.getSigner()
+    );
+    try {
+      setRoyaltyLoading(true);
+      const tx = await marketContract.claimRoyalties();
+      await tx.wait();
+      showSnackbar("success", "Royalty claim successful");
+    } catch (error) {
+      showSnackbar("error", "An error occurred. Please try again!");
+    } finally {
+      setRoyaltyLoading(false);
+    }
+  };
 
   return (
     <Box alignItems="center" flexGrow={1} display="flex">
       <Collapse sx={{ width: 1 }} in={tokens !== dummyData}>
         <Stack spacing={2} justifyContent="center">
           <Box display="flex" flexDirection="column">
-            <Box alignItems="left">
+            <Box display="flex" justifyContent="space-between">
               <Button
-                startIcon={<ArrowBackIcon />}
+                startIcon={<ConstructionIcon />}
                 variant="outlined"
                 href={`/${paramChainId}/${address}`}>
                 Minting Page
               </Button>
+              {royalties.stable.gt(0) || royalties.native.gt(0) ? (
+                <Stack alignItems="center" gap={2} direction="row">
+                  {(royalties.stable.gt(0) && (
+                    <Stack gap={1} direction="row">
+                      {formatUnits(royalties.stable, toTether)}
+                      <SvgLogo
+                        width="20px"
+                        height="20px"
+                        alt="stable-icon"
+                        icon={tetherIcon}
+                      />
+                    </Stack>
+                  )) ?? <></>}
+                  {(royalties.native.gt(0) && (
+                    <Stack gap={1} direction="row">
+                      {formatEther(royalties.native)}
+                      <SvgLogo
+                        width="20px"
+                        height="20px"
+                        alt="native-icon"
+                        icon={getLogoByChainId(Number(paramChainId))}
+                      />
+                    </Stack>
+                  )) ?? <></>}
+                  <LoadingButton
+                    variant="contained"
+                    onClick={handleClaimRoyalties}
+                    loading={royaltyLoading}>
+                    Claim Royalties
+                  </LoadingButton>
+                </Stack>
+              ) : (
+                <></>
+              )}
             </Box>
             <Typography
               textAlign="center"
