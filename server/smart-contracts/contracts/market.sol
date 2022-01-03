@@ -9,10 +9,16 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
  *  @notice Market for NFT Collection Owners
  */
 contract Market {
+  struct Royalties {
+    uint256 stable;
+    uint256 native;
+  }
+
   NFT private _collection;
   ERC20 private _stable;
   mapping(uint256 => uint256) public listings;
   mapping(uint256 => bool) public areStable;
+  mapping(address => Royalties) public royalties;
 
   /**
    * @notice Construct a new royalty
@@ -98,14 +104,27 @@ contract Market {
 
     // Transfer cut to royalty receiver & seller
     if (isStable) {
-      _stable.transfer(royaltyReceiver, royaltyAmount);
+      royalties[royaltyReceiver].stable += royaltyAmount;
       _stable.transfer(seller, sellerCut);
     } else {
-      payable(royaltyReceiver).transfer(royaltyAmount);
+      royalties[royaltyReceiver].native += royaltyAmount;
       seller.transfer(sellerCut);
     }
 
     delete listings[tokenId];
     emit Buy(tokenId);
+  }
+
+  function claimRoyalties() external {
+    Royalties storage royalty = royalties[msg.sender];
+    require(royalty.stable > 0 || royalty.native > 0, "No royalties to claim");
+    if (royalty.stable > 0) {
+      _stable.transfer(msg.sender, royalty.stable);
+      royalty.stable = 0;
+    }
+    if (royalty.native > 0) {
+      payable(msg.sender).transfer(royalty.native);
+      royalty.native = 0;
+    }
   }
 }
