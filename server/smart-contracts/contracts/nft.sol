@@ -12,7 +12,7 @@ import "./ERC2981/ERC2981ContractWideRoyalties.sol";
  */
 contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
   uint256 public price;
-  uint256 public limit;
+  uint256 public collectionLimit;
   string private _baseURIString;
   string public contractURI;
   using Counters for Counters.Counter;
@@ -32,7 +32,7 @@ contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
     uint256 _price,
     uint256 royalty
   ) ERC721(name, symbol) {
-    limit = _limit;
+    collectionLimit = _limit;
     price = _price;
     _baseURIString = string(
       abi.encodePacked(baseURI, "0x", toAsciiString(address(this)), "/")
@@ -48,7 +48,7 @@ contract NFT is ERC721, Ownable, ERC2981ContractWideRoyalties {
   function mint(uint256 amount) external payable {
     require(msg.value == price * amount, "Must send correct price");
     require(
-      tokenIdTracker.current() + amount <= limit,
+      tokenIdTracker.current() + amount <= collectionLimit,
       "Not enough in the collection left to mint amount"
     );
     for (uint256 i = 0; i < amount; i++) {
