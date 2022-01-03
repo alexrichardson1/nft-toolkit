@@ -160,7 +160,7 @@ const Market = (): JSX.Element => {
   };
 
   return (
-    <Box alignItems="center" flexGrow={1} display="flex">
+    <Box flexGrow={1} display="flex">
       <Collapse sx={{ width: 1 }} in={tokens !== dummyData}>
         <Stack spacing={2} justifyContent="center">
           <Box display="flex" flexDirection="column">
@@ -171,9 +171,9 @@ const Market = (): JSX.Element => {
                 href={`/${paramChainId}/${address}`}>
                 Minting Page
               </Button>
-              {royalties.stable.gt(0) || royalties.native.gt(0) ? (
+              {(royalties.stable.gt(0) || royalties.native.gt(0)) && (
                 <Stack alignItems="center" gap={2} direction="row">
-                  {(royalties.stable.gt(0) && (
+                  {royalties.stable.gt(0) && (
                     <Stack gap={1} direction="row">
                       {formatUnits(royalties.stable, toTether)}
                       <SvgLogo
@@ -183,8 +183,8 @@ const Market = (): JSX.Element => {
                         icon={tetherIcon}
                       />
                     </Stack>
-                  )) ?? <></>}
-                  {(royalties.native.gt(0) && (
+                  )}
+                  {royalties.native.gt(0) && (
                     <Stack gap={1} direction="row">
                       {formatEther(royalties.native)}
                       <SvgLogo
@@ -194,7 +194,7 @@ const Market = (): JSX.Element => {
                         icon={getLogoByChainId(Number(paramChainId))}
                       />
                     </Stack>
-                  )) ?? <></>}
+                  )}
                   <LoadingButton
                     variant="contained"
                     onClick={handleClaimRoyalties}
@@ -202,8 +202,6 @@ const Market = (): JSX.Element => {
                     Claim Royalties
                   </LoadingButton>
                 </Stack>
-              ) : (
-                <></>
               )}
             </Box>
             <Typography
@@ -218,14 +216,20 @@ const Market = (): JSX.Element => {
             </Typography>
           </Box>
           <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
-            {tokens.map((token) => (
-              <DisplayCard
-                chainId={Number(paramChainId)}
-                to={`/${paramChainId}/${address}/${marketAddress}/${token.id}`}
-                key={token.id}
-                data={token}
-              />
-            ))}
+            {tokens.length === 0 ? (
+              <Typography variant="h4" color="primary">
+                Nothing to see here yet, please mint some tokens!
+              </Typography>
+            ) : (
+              tokens.map((token) => (
+                <DisplayCard
+                  chainId={Number(paramChainId)}
+                  to={`/${paramChainId}/${address}/${marketAddress}/${token.id}`}
+                  key={token.id}
+                  data={token}
+                />
+              ))
+            )}
           </Box>
         </Stack>
       </Collapse>
