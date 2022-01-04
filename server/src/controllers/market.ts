@@ -5,6 +5,14 @@ import { RequestHandler } from "express";
 
 const RINKEBY_CHAIN_ID = 4;
 
+interface OpenSeaInfo {
+  slug: string;
+}
+
+interface OpenSeaCol {
+  collection?: OpenSeaInfo;
+}
+
 export const getMarketURL: RequestHandler = async (req, res, next) => {
   const { chainId, address } = req.params;
   if (!chainId || !address) {
@@ -19,8 +27,11 @@ export const getMarketURL: RequestHandler = async (req, res, next) => {
     const openseaRes = await axios.get(
       `https://testnets-api.opensea.io/asset_contract/${address}`
     );
-    const { slug } = openseaRes.data.collection;
-    const marketURL = `https://testnets.opensea.io/collection/${slug}`;
+    const { collection: openseaCollection }: OpenSeaCol = openseaRes.data;
+    if (!openseaCollection) {
+      return next("Collection not found");
+    }
+    const marketURL = `https://testnets.opensea.io/collection/${openseaCollection.slug}`;
     const collection = await Collection.findOneAndUpdate(
       { address, chainId: chainIdNum },
       { marketURL },
