@@ -3,6 +3,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import { Button, Divider, Paper, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useWeb3React } from "@web3-react/core";
+import OpenseaButton from "components/common/OpenseaButton";
 import SvgIcon from "components/common/SvgLogo";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { utils } from "ethers";
@@ -74,7 +75,7 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
             </LoadingButton>
           </>
         )}
-        {info.marketAddress && (
+        {info.marketAddress ? (
           <Button
             variant="outlined"
             fullWidth
@@ -82,6 +83,12 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
             href={`/${info.chainId}/${info.address}/${info.marketAddress}`}>
             Marketplace
           </Button>
+        ) : (
+          <OpenseaButton
+            chainId={info.chainId}
+            address={info.address}
+            isOutlined
+          />
         )}
       </Stack>
     </Paper>

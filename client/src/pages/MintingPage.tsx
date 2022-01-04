@@ -5,13 +5,13 @@ import {
   Button,
   ButtonGroup,
   Collapse,
-  Link,
   Paper,
   Typography,
 } from "@mui/material";
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
+import OpenseaButton from "components/common/OpenseaButton";
 import SvgIcon from "components/common/SvgLogo";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
@@ -82,6 +82,14 @@ const mintingQuantityStyle = {
 };
 const DECIMALS = 2;
 
+const getTokenTracking = (mintingData: CollectionI) => {
+  return `${mintingData.mintedAmount.toString()}/${mintingData.limit.toString()} MINTED`;
+};
+
+const getMaxTokensLeft = (mintingData: CollectionI) => {
+  return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
+};
+
 const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const { active, library, chainId } = useWeb3React();
@@ -112,7 +120,6 @@ const MintingPage = (): JSX.Element => {
       mintingData.address,
       library.getSigner()
     );
-
     try {
       setIsMinting(true);
       const txResp = await NFTContract.mint(mintingQuantity, {
@@ -129,14 +136,6 @@ const MintingPage = (): JSX.Element => {
     }
   };
 
-  const getTokenTracking = () => {
-    return `${mintingData.mintedAmount.toString()}/${mintingData.limit.toString()} MINTED`;
-  };
-
-  const getMaxTokensLeft = () => {
-    return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
-  };
-
   useEffect(() => {
     async function getCollectionData() {
       if (isMinting) {
@@ -144,7 +143,6 @@ const MintingPage = (): JSX.Element => {
       }
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
       const WAIT_TIME = 1000;
-
       dispatch({
         type: ProgressActions.ADVANCE_PROGRESS_BY,
         payload: { advanceProgressBy: 50 },
@@ -197,17 +195,24 @@ const MintingPage = (): JSX.Element => {
             <Typography textAlign={{ xs: "center", lg: "left" }}>
               {mintingData.description}
             </Typography>
-            {mintingData.marketAddress && (
-              <Link
-                underline="none"
-                href={`/${paramChainId}/${address}/${mintingData.marketAddress}`}>
-                <Button variant="contained" startIcon={<StorefrontIcon />}>
+            <Box
+              display="flex"
+              justifyContent={{ xs: "center", lg: "left" }}
+              gap="10px">
+              {mintingData.marketAddress && (
+                <Button
+                  variant="contained"
+                  startIcon={<StorefrontIcon />}
+                  href={`/${paramChainId}/${address}/${mintingData.marketAddress}`}>
                   Marketplace
                 </Button>
-              </Link>
-            )}
+              )}
+              <OpenseaButton
+                chainId={mintingData.chainId}
+                address={mintingData.address}
+              />
+            </Box>
           </Box>
-
           <Box pt={10} pl={2} display="flex" justifyContent="center">
             <Paper sx={mintingCardStyle} elevation={6}>
               <Paper sx={mintingCardImgStyle(mintingData)} />
@@ -222,7 +227,7 @@ const MintingPage = (): JSX.Element => {
                   textAlign="center"
                   variant="h6"
                   color="primary">
-                  {getTokenTracking()}
+                  {getTokenTracking(mintingData)}
                 </Typography>
                 <ButtonGroup fullWidth>
                   <Button
@@ -240,7 +245,7 @@ const MintingPage = (): JSX.Element => {
                   </Button>
                   <Button
                     id="increase-quantity"
-                    disabled={mintingQuantity >= getMaxTokensLeft()}
+                    disabled={mintingQuantity >= getMaxTokensLeft(mintingData)}
                     onClick={handleQuantityIncrease}
                     variant="contained">
                     +
@@ -252,7 +257,7 @@ const MintingPage = (): JSX.Element => {
                   variant="contained"
                   onClick={handleMint}
                   loading={isMinting}
-                  disabled={getMaxTokensLeft() === 0}>
+                  disabled={getMaxTokensLeft(mintingData) === 0}>
                   {`Mint for ${formatEther(
                     BigNumber.from(mintingData.price).mul(mintingQuantity)
                   )}`}
