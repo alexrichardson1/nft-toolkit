@@ -2,7 +2,7 @@ import { BaseProvider } from "@ethersproject/providers";
 import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 import { NFT__factory as NftFactory } from "typechain";
-import { API_URL } from "./constants";
+import { API_URL, DEFAULT_NET } from "./constants";
 
 interface TokenI {
   image: string;
@@ -50,4 +50,24 @@ export const getRPCProvider = (_chainId: number): BaseProvider => {
     network,
     "2f3b86cc63ff4530aee2c42dea69b22a"
   );
+};
+
+export const getExternalMarket = async (
+  chainId: number,
+  address: string,
+  setExternalMarket: SetStateAction<string>
+): Promise<void> => {
+  if (chainId === DEFAULT_NET.chainId) {
+    try {
+      const res = await axios.get(
+        `https://testnets-api.opensea.io/asset_contract/${address}`
+      );
+      const marketURL = res.data.collection.slug
+        ? `https://testnets.opensea.io/collection/${res.data.collection.slug}`
+        : "";
+      setExternalMarket(marketURL);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
