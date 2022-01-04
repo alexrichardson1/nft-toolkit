@@ -35,7 +35,7 @@ def get_similar_collections(collection_name):
             }
     """
     # If running locally change to sys.path.insert(1, 'api/collection_model')
-    with open('api/collection_model', 'rb') as file:
+    with open('/api/collection_model', 'rb') as file:
         model = pickle.load(file)
 
     twitter = request.args.get('twitter-handle')
@@ -47,8 +47,9 @@ def get_similar_collections(collection_name):
     similar_collections = model.predict(
         collection_name, reddit_members, twitter_followers)
 
-    (hype, names) = get_hype(similar_collections, twitter, (reddit, subreddits))
-    (price, final_similar_collections) = get_recommended_price(names, hype)
+    hype = get_hype(similar_collections, twitter, (reddit, subreddits))
+    (price, final_similar_collections) = get_recommended_price(
+        similar_collections, hype)
 
     return {"collections": final_similar_collections, "hype": hype * 100, "price": price}
 
@@ -105,7 +106,7 @@ def create_app(test_config=None):
     return app
 
 
-def get_hype(names, twitter_handle, reddit_data):
+def get_hype(collections, twitter_handle, reddit_data):
     """
     Returns hype from 0 to 1
 
@@ -117,61 +118,49 @@ def get_hype(names, twitter_handle, reddit_data):
     score_of_request = hype_meter.get_overall_score_using_handles(
         twitter_handle, reddit_data)
 
-    stripped_names = []
-    for collection in names:
-        stripped_names.append({'name': collection['name'],
-                               'score': collection['twitter_score'] + collection['reddit_score'],
-                               'avg_sale_price': collection['avg_sale_price']})
-
-    stripped_names = sorted(stripped_names, key=lambda d: abs(
-        d['score'] - score_of_request), reverse=False)
-
     total = 0
     count = 0
-    for collection in stripped_names[:6]:
-        total += collection['score']
+    for collection in collections:
+        total += collection['twitter_score'] + collection['reddit_score']
         count += 1
 
-    avg_score = total
+    avg_score = total / count
 
     if score_of_request > avg_score:
-        return (1, stripped_names[:6])
+        return 1
 
     if avg_score == 0:
-        return (0, stripped_names[:6])
-    return (score_of_request / avg_score, stripped_names[:6])
+        return 0
+    return score_of_request / avg_score
 
 
-def get_recommended_price(names, hype):
+def get_recommended_price(collections, hype):
     """
     Returns predicted minting price
 
     Args:
-        - names: Names of similar collections
+        - collections: Names of similar collections
         - hype: Hype from 0 to 1
     """
-    (similar_collections_avg_price, similar_collections) = get_avg_price(names)
+    (similar_collections_avg_price, similar_collections) = get_avg_price(collections)
     if hype == 0:
         return (similar_collections_avg_price * 0.1, similar_collections)
     return (similar_collections_avg_price * hype * 0.1, similar_collections)
 
 
-def get_avg_price(names):
+def get_avg_price(collections):
     """
     Returns average price of an asset from the list of similar collections
 
     Args:
-        - names: Names of similar collections
+        - collections: Names of similar collections
     """
-    client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
-    collection = client.CollectionDB.collection_copy
     prices = []
     collection_data = []
-    for name in names:
-        document = collection.find_one({"name": name['name']})
-        prices.append(document["avg_sale_price"])
+    for collection in collections:
+        prices.append(collection["avg_sale_price"])
         collection_data.append(
-            {"name": name['name'], "img": document['preview_img']})
+            {"name": collection['name'], "img": collection['preview_img']})
     if len(prices) == 0:
         return (0, collection_data)
     return (sum(prices) / len(prices), collection_data)
