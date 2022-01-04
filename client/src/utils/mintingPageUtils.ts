@@ -54,20 +54,20 @@ export const getRPCProvider = (_chainId: number): BaseProvider => {
 
 export const getExternalMarket = async (
   chainId: number,
-  address: string,
-  setExternalMarket: SetStateAction<string>
-): Promise<void> => {
+  address: string
+): Promise<string> => {
+  let marketURL = "";
   if (chainId === DEFAULT_NET.chainId) {
     try {
       const res = await axios.get(
         `https://testnets-api.opensea.io/asset_contract/${address}`
       );
-      const marketURL = res.data.collection.slug
+      marketURL = res.data.collection.slug
         ? `https://testnets.opensea.io/collection/${res.data.collection.slug}`
         : "";
-      setExternalMarket(marketURL);
     } catch (error) {
       console.log(error);
     }
   }
+  return marketURL;
 };
