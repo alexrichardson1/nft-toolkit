@@ -1,4 +1,5 @@
 import { getCollectionFromDB } from "@controllers/collection";
+import { SITE_URL } from "@controllers/common";
 import { BaseProvider } from "@ethersproject/providers";
 import { CollectionT } from "@models/collection";
 import { NFT__factory as NFTFactory } from "@server/../smart-contracts/typechain";
@@ -82,16 +83,13 @@ export const getCollectionMetadata: RequestHandler = async (req, res, next) => {
 
   const provider = getRPCProvider(chainIdNum);
   const nftContract = NFTFactory.connect(collection.address, provider);
-  const half = 2;
-  const midToken = collection.tokens[collection.tokens.length / half];
-  if (!midToken) {
-    return next(new Error("Tokens not configured properly"));
-  }
+  const external_link = `${SITE_URL}/${collection.chainId}/${collection.address}`;
 
   const result = {
     name: await nftContract.name(),
-    image: midToken.image,
+    image: collection.image,
     description: collection.description,
+    external_link,
     fee_recipient: collection.creator,
   };
 
