@@ -1,4 +1,5 @@
 import collectionRoutes from "@routes/collection";
+import marketRoutes from "@routes/market";
 import metadataRoutes from "@routes/metadata";
 import cors from "cors";
 import express from "express";
@@ -20,6 +21,7 @@ app.use(
 // Routes to handle requests
 app.use("/collection", collectionRoutes);
 app.use("/metadata", metadataRoutes);
+app.use("/market", marketRoutes);
 
 // define a route handler for the default home page
 app.get("/", (_req, res) => {
