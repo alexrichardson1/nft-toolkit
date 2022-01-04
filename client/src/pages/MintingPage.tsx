@@ -208,6 +208,9 @@ const MintingPage = (): JSX.Element => {
                 </Button>
               )}
               <OpenseaButton
+                marketURL={
+                  mintingData.marketURL === "" ? void 0 : mintingData.marketURL
+                }
                 chainId={mintingData.chainId}
                 address={mintingData.address}
               />

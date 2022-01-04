@@ -20,6 +20,7 @@ export interface CollectionI {
   chainId: number;
   price: BigNumber;
   marketAddress?: string;
+  marketURL?: string;
 }
 
 export const getCollection = async (

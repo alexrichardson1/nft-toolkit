@@ -87,6 +87,7 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
           <OpenseaButton
             chainId={info.chainId}
             address={info.address}
+            marketURL={info.marketURL}
             isOutlined
           />
         )}

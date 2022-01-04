@@ -89,6 +89,7 @@ interface CollAddrI {
   chainId: number;
   image: string;
   marketAddress?: string;
+  marketURL?: string;
 }
 
 interface CollDataI {
@@ -100,4 +101,5 @@ interface CollDataI {
   image: string;
   owner: string;
   marketAddress?: string;
+  marketURL?: string;
 }

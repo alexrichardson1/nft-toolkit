@@ -6,12 +6,14 @@ import { getExternalMarket } from "utils/mintingPageUtils";
 import SvgLogo from "./SvgLogo";
 
 interface PropsT {
+  marketURL?: string;
   chainId: number;
   address: string;
   isOutlined?: boolean;
 }
 
 const OpenseaButton = ({
+  marketURL,
   chainId,
   address,
   isOutlined,
@@ -23,10 +25,12 @@ const OpenseaButton = ({
       const url = await getExternalMarket(chainId, address);
       setExternalMarket(url);
     };
-    getMarketURL();
+    if (!marketURL) {
+      getMarketURL();
+    }
   }, [address, chainId]);
 
-  return externalMarket === "" ? (
+  return externalMarket === "" && !marketURL ? (
     <></>
   ) : (
     <Button
@@ -40,7 +44,7 @@ const OpenseaButton = ({
         />
       }
       target="_blank"
-      href={externalMarket}>
+      href={marketURL ? marketURL : externalMarket}>
       OpenSea
     </Button>
   );
