@@ -9,7 +9,6 @@ import sys
 sys.path.insert(1, '/api')
 sys.path.insert(1, '/api/models')
 from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
-from select_model import save_model  # noqa # pylint:disable=import-error, wrong-import-position
 
 
 db_collection = get_collection()
@@ -31,5 +30,5 @@ print("Training Complete")
 print("Fetching Accuracy")
 mse = model.get_rmse()
 print("RMSE is " + str(mse))
-save_model(model)
+model.save_model()
 print("Saved Model")
