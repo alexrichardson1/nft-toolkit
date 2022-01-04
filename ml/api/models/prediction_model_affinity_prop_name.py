@@ -14,8 +14,7 @@ class PredictionModelAffinityPropagationNaming(prediction_model_abstract.Predict
     Model for clustering collections
     """
 
-    def __init__(self, collections):
-        super().__init__(collections)
+    def __init__(self, collections):  # pylint:disable=super-init-not-called
         self.collections = np.array(
             [col for col in collections if col['avg_sale_price'] != 0])
         np.random.shuffle(self.collections)
@@ -70,7 +69,14 @@ class PredictionModelAffinityPropagationNaming(prediction_model_abstract.Predict
         (index, _) = min(enumerate(lev_similarity), key=lambda x: x[1])
         collections = list(dict((v['name'], v) for v in self.collections_training[np.nonzero(
             self.model.labels_ == np.unique(self.model.labels_)[index])]).values())
-        return collections[:16]
+        return collections[:6]
+
+    def preprocess_data(self):
+        split_idx_training = int(0.6 * len(self.collections))
+        split_idx_validation = int(0.8 * len(self.collections))
+        self.collections_training = self.collections[:split_idx_training]
+        self.collections_validation = self.collections[split_idx_training:split_idx_validation]
+        self.collections_testing = self.collections[split_idx_validation:]
 
     def get_rmse(self):
         """
