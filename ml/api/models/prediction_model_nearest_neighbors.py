@@ -34,10 +34,10 @@ class PredictionModelNearestNeighbors(prediction_model_abstract.PredictionModel)
 
         for i in self.x_training.index:
             data_row = self.data.iloc[i]
-            distance_to_point = self.levenshtein_scale * \
-                distance.levenshtein(word, data_row['name']) + \
-                self.score_scaler * np.sqrt(prediction_model_abstract.get_distance(
-                    scaled_row, self.x_training.iloc[i]))
+            distance_to_point = (self.levenshtein_scale *
+                                 distance.levenshtein(word, data_row['name'])) + \
+                (self.score_scaler * np.sqrt(prediction_model_abstract.get_distance(
+                    scaled_row, self.x_training.iloc[i])))
             dataset = dataset.append(
                 {'distance': distance_to_point, 'index': i}, ignore_index=True)
 
