@@ -2,7 +2,6 @@
 Model for clustering collections
 """
 
-from select_model import get_distance
 import distance
 import numpy as np
 import pandas as pd
@@ -30,23 +29,10 @@ class PredictionModelNearestNeighbors(prediction_model_abstract.PredictionModel)
 
         for i in self.x_training.index:
             data_row = self.data.iloc[i]
-            distance_to_point = distance.levenshtein(
-                word, data_row['name']) + np.sqrt(get_distance(scaled_row, self.x_training.iloc[i]))
+            distance_to_point = distance.levenshtein(word, data_row['name']) + \
+                np.sqrt(prediction_model_abstract.get_distance(
+                    scaled_row, self.x_training.iloc[i]))
             dataset = dataset.append(
                 {'distance': distance_to_point, 'index': i}, ignore_index=True)
 
         return self.data.iloc[dataset.sort_values('distance').index[:16]].to_dict(orient='records')
-
-# import sys
-# sys.path.insert(1, "api/")
-
-# from routes import get_collection
-
-# db_collection = get_collection()
-# collections = db_collection.find({})
-
-# model = PredictionModelNearestNeighbors(list(collections))
-
-# model.preprocess_data()
-# model.train()
-# print(f"RMSE is {model.get_rmse()}")
