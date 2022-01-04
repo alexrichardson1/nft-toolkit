@@ -45,4 +45,4 @@ class PredictionModelKMeans(prediction_model_abstract.PredictionModel):
 
         indices = np.where(self.kmeans_model.labels_ == cluster_id)[0]
         return sorted(self.data.iloc[indices].to_dict(orient='records'),
-                      key=lambda dict: distance.levenshtein(dict['name'], word))[:16]
+                      key=lambda dict: distance.levenshtein(dict['name'], word))[:6]
