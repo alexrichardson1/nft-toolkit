@@ -92,19 +92,13 @@ class PredictionModel:
         total_validated = 0
         for i in self.x_validation.index:
             row = self.data.iloc[i]
-            name = row['name']
             price = row['avg_sale_price']
-            print("Getting accuracy of " + name)
             predictions = self.predict(
-                name, row['reddit_score'], row['twitter_score'])
-
+                row['name'], row['reddit_score'], row['twitter_score'])
             pred_avg_price = sum([col['avg_sale_price']
                                   for col in predictions]) / len(predictions)
-            print("Got prediction avg price of " + str(pred_avg_price))
-            print("Actual price of " + str(price))
             total_validated += 1
             mse += math.pow(pred_avg_price - price, 2)
-            print("-----------------")
         return math.sqrt(mse / total_validated)
 
     def save_model(self):
@@ -113,3 +107,10 @@ class PredictionModel:
         """
         with open('/api/collection_model', 'wb') as file:
             pickle.dump(self, file)
+
+
+def get_distance(df1, df2):
+    """
+    Calculate Euclideun distance ^2 between to dataframes
+    """
+    return math.pow(df1[0][0] - df2[0], 2) + math.pow(df1[0][1] - df2[1], 2)
