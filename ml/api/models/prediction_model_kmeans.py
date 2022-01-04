@@ -7,7 +7,6 @@ import distance
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
-from select_model import get_distance
 import prediction_model_abstract
 
 
@@ -16,9 +15,9 @@ class PredictionModelKMeans(prediction_model_abstract.PredictionModel):
     Model for clustering collections
     """
 
-    def __init__(self, collections):
+    def __init__(self, collections, n_clusters=20):
         super().__init__(collections)
-        self.kmeans_model = KMeans(n_clusters=20, max_iter=600)
+        self.kmeans_model = KMeans(n_clusters=n_clusters, max_iter=600)
 
     def train(self):
         """
@@ -39,7 +38,7 @@ class PredictionModelKMeans(prediction_model_abstract.PredictionModel):
         best_distance = sys.maxsize
 
         for i, center in enumerate(self.kmeans_model.cluster_centers_):
-            dist = get_distance(scaled_row, center)
+            dist = prediction_model_abstract.get_distance(scaled_row, center)
             if dist < best_distance:
                 best_distance = dist
                 cluster_id = i
@@ -47,16 +46,3 @@ class PredictionModelKMeans(prediction_model_abstract.PredictionModel):
         indices = np.where(self.kmeans_model.labels_ == cluster_id)[0]
         return sorted(self.data.iloc[indices].to_dict(orient='records'),
                       key=lambda dict: distance.levenshtein(dict['name'], word))[:16]
-
-
-# sys.path.insert(1, "api/")
-# from routes import get_collection
-
-# db_collection = get_collection()
-# collections = db_collection.find({})
-
-# model = PredictionModelKMeans(list(collections))
-
-# model.preprocess_data()
-# model.train()
-# print(f"RMSE is {model.get_rmse()}")
