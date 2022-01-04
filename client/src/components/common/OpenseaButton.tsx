@@ -1,15 +1,34 @@
 import { Button } from "@mui/material";
 import OpenseaBlackLogo from "images/opensea-black.svg";
 import OpenseaColorLogo from "images/opensea-colour.svg";
+import { useEffect, useState } from "react";
+import { getExternalMarket } from "utils/mintingPageUtils";
 import SvgLogo from "./SvgLogo";
 
 interface PropsT {
-  externalMarket: string;
+  chainId: number;
+  address: string;
   isOutlined?: boolean;
 }
 
-const OpenseaButton = ({ externalMarket, isOutlined }: PropsT): JSX.Element => {
-  return (
+const OpenseaButton = ({
+  chainId,
+  address,
+  isOutlined,
+}: PropsT): JSX.Element => {
+  const [externalMarket, setExternalMarket] = useState("");
+
+  useEffect(() => {
+    const getMarketURL = async () => {
+      const url = await getExternalMarket(chainId, address);
+      setExternalMarket(url);
+    };
+    getMarketURL();
+  }, [address, chainId]);
+
+  return externalMarket === "" ? (
+    <></>
+  ) : (
     <Button
       variant={isOutlined ? "outlined" : "contained"}
       startIcon={
