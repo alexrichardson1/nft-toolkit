@@ -1,4 +1,4 @@
-import { s3 } from "@controllers/common";
+import { s3, SITE_URL } from "@controllers/common";
 import {
   GenCollectionI,
   generate,
@@ -85,7 +85,7 @@ export const deployContracts: RequestHandler = (req, res) => {
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${chainId}/`,
+    `${SITE_URL}/server/metadata/${chainId}/`,
     tokens.length,
     BigNumber.from(price),
     royalty
