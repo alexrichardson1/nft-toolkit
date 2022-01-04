@@ -71,10 +71,9 @@ class PredictionModelAffinityPropagationNamingScore(prediction_model_abstract.Pr
         """
         try:
             lev_similarity = np.array([
-                round(
-                    self.levenshtein_scale * distance.levenshtein(
-                        self.collections_training[self.model.cluster_centers_indices_[
-                            cluster_id]]["name"], word)) +
+                (self.levenshtein_scale * distance.levenshtein(
+                    self.collections_training[self.model.cluster_centers_indices_[
+                        cluster_id]]["name"], word)) +
                 self.score_scaler_func(np.square(self.collections_training[
                     self.model.cluster_centers_indices_[cluster_id]]["reddit_score"] -
                     reddit_score) + 1) +
