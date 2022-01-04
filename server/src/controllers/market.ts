@@ -1,8 +1,9 @@
+import { Collection } from "@models/collection";
+import { User } from "@models/user";
 import axios from "axios";
 import { RequestHandler } from "express";
 
 const RINKEBY_CHAIN_ID = 4;
-const OPENSEA_API_URL = "https://testnets-api.opensea.io";
 
 export const getMarketURL: RequestHandler = async (req, res, next) => {
   const { chainId, address } = req.params;
@@ -11,16 +12,34 @@ export const getMarketURL: RequestHandler = async (req, res, next) => {
   }
 
   const chainIdNum = parseInt(chainId);
-  if (chainIdNum === RINKEBY_CHAIN_ID) {
+  if (chainIdNum !== RINKEBY_CHAIN_ID) {
+    return next(new Error("Invalid chainId"));
+  }
+  try {
     const openseaRes = await axios.get(
-      `${OPENSEA_API_URL}/asset_contract/${address}`
+      `https://testnets-api.opensea.io/asset_contract/${address}`
     );
     const { slug } = openseaRes.data.collection;
-    if (slug) {
-      return res.json({
-        marketURL: `${OPENSEA_API_URL}/collection/${slug}`,
-      });
+    const marketURL = `https://testnets.opensea.io/collection/${slug}`;
+    const collection = await Collection.findOneAndUpdate(
+      { address, chainId: chainIdNum },
+      { marketURL },
+      {
+        returnOriginal: false,
+      }
+    ).exec();
+    if (!collection) {
+      throw new Error("Collection not found");
     }
+    const { creator } = collection;
+    await User.findOneAndUpdate(
+      { _id: creator, "collections.address": address },
+      { $set: { "collections.$.marketURL": marketURL } }
+    ).exec();
+    return res.json({
+      marketURL,
+    });
+  } catch (error) {
+    return next(error);
   }
-  return next(new Error("Collection not found"));
 };
