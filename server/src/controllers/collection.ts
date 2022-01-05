@@ -7,22 +7,9 @@ import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
 import { RequestHandler } from "express";
 import GIFEncoder from "gifencoder";
-import multer from "multer";
-import multerS3 from "multer-s3";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 
 dotenv.config();
-
-export const uploadImages = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: "nft-toolkit-collections",
-    acl: "public-read",
-    key: function (_req, file, cbKey) {
-      cbKey(null, `${file.fieldname}/images/${file.originalname}`);
-    },
-  }),
-}).any();
 
 export const successHandler: RequestHandler = (_req, res) =>
   res.json({ success: true });
