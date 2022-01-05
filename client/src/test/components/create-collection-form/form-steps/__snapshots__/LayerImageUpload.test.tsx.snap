@@ -3499,423 +3499,6 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
               </div>
             </Styled(div)>
           </ForwardRef(Box)>
-          <ForwardRef(Collapse)
-            in={false}
-          >
-            <Transition
-              addEndListener={[Function]}
-              appear={false}
-              enter={true}
-              exit={true}
-              in={false}
-              mountOnEnter={false}
-              nodeRef={
-                Object {
-                  "current": <div
-                    class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                    style="min-height: 0px;"
-                  >
-                    <div
-                      class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                    >
-                      <div
-                        class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                      >
-                        <p
-                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                        >
-                          Maximum possible collection quantity: 
-                          0
-                          .
-                           
-                        </p>
-                        <div
-                          class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                          style="min-height: 0px;"
-                        >
-                          <div
-                            class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                          >
-                            <div
-                              class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                            >
-                              <p
-                                class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                              >
-                                We recommend generating up to
-                                 
-                                0
-                                .
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>,
-                }
-              }
-              onEnter={[Function]}
-              onEntered={[Function]}
-              onEntering={[Function]}
-              onExit={[Function]}
-              onExited={[Function]}
-              onExiting={[Function]}
-              timeout={300}
-              unmountOnExit={false}
-            >
-              <MuiCollapseRoot
-                className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
-                ownerState={
-                  Object {
-                    "children": Array [
-                      <ForwardRef(Typography)>
-                        Maximum possible collection quantity: 
-                        0
-                        .
-                         
-                      </ForwardRef(Typography)>,
-                      <ForwardRef(Collapse)
-                        in={false}
-                      >
-                        <ForwardRef(Typography)>
-                          We recommend generating up to
-                           
-                          0
-                          .
-                        </ForwardRef(Typography)>
-                      </ForwardRef(Collapse)>,
-                    ],
-                    "collapsedSize": "0px",
-                    "in": false,
-                    "orientation": "vertical",
-                    "state": "exited",
-                  }
-                }
-                style={
-                  Object {
-                    "minHeight": "0px",
-                  }
-                }
-              >
-                <Noop />
-                <div
-                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                  style={
-                    Object {
-                      "minHeight": "0px",
-                    }
-                  }
-                >
-                  <MuiCollapseWrapper
-                    className="MuiCollapse-wrapper MuiCollapse-vertical"
-                    ownerState={
-                      Object {
-                        "children": Array [
-                          <ForwardRef(Typography)>
-                            Maximum possible collection quantity: 
-                            0
-                            .
-                             
-                          </ForwardRef(Typography)>,
-                          <ForwardRef(Collapse)
-                            in={false}
-                          >
-                            <ForwardRef(Typography)>
-                              We recommend generating up to
-                               
-                              0
-                              .
-                            </ForwardRef(Typography)>
-                          </ForwardRef(Collapse)>,
-                        ],
-                        "collapsedSize": "0px",
-                        "in": false,
-                        "orientation": "vertical",
-                        "state": "exited",
-                      }
-                    }
-                  >
-                    <Noop />
-                    <div
-                      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                    >
-                      <MuiCollapseWrapperInner
-                        className="MuiCollapse-wrapperInner MuiCollapse-vertical"
-                        ownerState={
-                          Object {
-                            "children": Array [
-                              <ForwardRef(Typography)>
-                                Maximum possible collection quantity: 
-                                0
-                                .
-                                 
-                              </ForwardRef(Typography)>,
-                              <ForwardRef(Collapse)
-                                in={false}
-                              >
-                                <ForwardRef(Typography)>
-                                  We recommend generating up to
-                                   
-                                  0
-                                  .
-                                </ForwardRef(Typography)>
-                              </ForwardRef(Collapse)>,
-                            ],
-                            "collapsedSize": "0px",
-                            "in": false,
-                            "orientation": "vertical",
-                            "state": "exited",
-                          }
-                        }
-                      >
-                        <Noop />
-                        <div
-                          className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                        >
-                          <ForwardRef(Typography)>
-                            <MuiTypographyRoot
-                              as="p"
-                              className="MuiTypography-root MuiTypography-body1"
-                              ownerState={
-                                Object {
-                                  "align": "inherit",
-                                  "children": Array [
-                                    "Maximum possible collection quantity: ",
-                                    0,
-                                    ".",
-                                    " ",
-                                  ],
-                                  "className": undefined,
-                                  "color": undefined,
-                                  "component": undefined,
-                                  "gutterBottom": false,
-                                  "noWrap": false,
-                                  "paragraph": false,
-                                  "sx": Object {
-                                    "color": undefined,
-                                  },
-                                  "variant": "body1",
-                                  "variantMapping": Object {
-                                    "body1": "p",
-                                    "body2": "p",
-                                    "h1": "h1",
-                                    "h2": "h2",
-                                    "h3": "h3",
-                                    "h4": "h4",
-                                    "h5": "h5",
-                                    "h6": "h6",
-                                    "inherit": "p",
-                                    "subtitle1": "h6",
-                                    "subtitle2": "h6",
-                                  },
-                                }
-                              }
-                              sx={
-                                Object {
-                                  "color": undefined,
-                                }
-                              }
-                            >
-                              <Noop />
-                              <p
-                                className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                              >
-                                Maximum possible collection quantity: 
-                                0
-                                .
-                                 
-                              </p>
-                            </MuiTypographyRoot>
-                          </ForwardRef(Typography)>
-                          <ForwardRef(Collapse)
-                            in={false}
-                          >
-                            <Transition
-                              addEndListener={[Function]}
-                              appear={false}
-                              enter={true}
-                              exit={true}
-                              in={false}
-                              mountOnEnter={false}
-                              nodeRef={
-                                Object {
-                                  "current": <div
-                                    class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                                    style="min-height: 0px;"
-                                  >
-                                    <div
-                                      class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                                    >
-                                      <div
-                                        class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                                      >
-                                        <p
-                                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                        >
-                                          We recommend generating up to
-                                           
-                                          0
-                                          .
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>,
-                                }
-                              }
-                              onEnter={[Function]}
-                              onEntered={[Function]}
-                              onEntering={[Function]}
-                              onExit={[Function]}
-                              onExited={[Function]}
-                              onExiting={[Function]}
-                              timeout={300}
-                              unmountOnExit={false}
-                            >
-                              <MuiCollapseRoot
-                                className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
-                                ownerState={
-                                  Object {
-                                    "children": <ForwardRef(Typography)>
-                                      We recommend generating up to
-                                       
-                                      0
-                                      .
-                                    </ForwardRef(Typography)>,
-                                    "collapsedSize": "0px",
-                                    "in": false,
-                                    "orientation": "vertical",
-                                    "state": "exited",
-                                  }
-                                }
-                                style={
-                                  Object {
-                                    "minHeight": "0px",
-                                  }
-                                }
-                              >
-                                <Noop />
-                                <div
-                                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
-                                  style={
-                                    Object {
-                                      "minHeight": "0px",
-                                    }
-                                  }
-                                >
-                                  <MuiCollapseWrapper
-                                    className="MuiCollapse-wrapper MuiCollapse-vertical"
-                                    ownerState={
-                                      Object {
-                                        "children": <ForwardRef(Typography)>
-                                          We recommend generating up to
-                                           
-                                          0
-                                          .
-                                        </ForwardRef(Typography)>,
-                                        "collapsedSize": "0px",
-                                        "in": false,
-                                        "orientation": "vertical",
-                                        "state": "exited",
-                                      }
-                                    }
-                                  >
-                                    <Noop />
-                                    <div
-                                      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
-                                    >
-                                      <MuiCollapseWrapperInner
-                                        className="MuiCollapse-wrapperInner MuiCollapse-vertical"
-                                        ownerState={
-                                          Object {
-                                            "children": <ForwardRef(Typography)>
-                                              We recommend generating up to
-                                               
-                                              0
-                                              .
-                                            </ForwardRef(Typography)>,
-                                            "collapsedSize": "0px",
-                                            "in": false,
-                                            "orientation": "vertical",
-                                            "state": "exited",
-                                          }
-                                        }
-                                      >
-                                        <Noop />
-                                        <div
-                                          className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
-                                        >
-                                          <ForwardRef(Typography)>
-                                            <MuiTypographyRoot
-                                              as="p"
-                                              className="MuiTypography-root MuiTypography-body1"
-                                              ownerState={
-                                                Object {
-                                                  "align": "inherit",
-                                                  "children": Array [
-                                                    "We recommend generating up to",
-                                                    " ",
-                                                    0,
-                                                    ".",
-                                                  ],
-                                                  "className": undefined,
-                                                  "color": undefined,
-                                                  "component": undefined,
-                                                  "gutterBottom": false,
-                                                  "noWrap": false,
-                                                  "paragraph": false,
-                                                  "sx": Object {
-                                                    "color": undefined,
-                                                  },
-                                                  "variant": "body1",
-                                                  "variantMapping": Object {
-                                                    "body1": "p",
-                                                    "body2": "p",
-                                                    "h1": "h1",
-                                                    "h2": "h2",
-                                                    "h3": "h3",
-                                                    "h4": "h4",
-                                                    "h5": "h5",
-                                                    "h6": "h6",
-                                                    "inherit": "p",
-                                                    "subtitle1": "h6",
-                                                    "subtitle2": "h6",
-                                                  },
-                                                }
-                                              }
-                                              sx={
-                                                Object {
-                                                  "color": undefined,
-                                                }
-                                              }
-                                            >
-                                              <Noop />
-                                              <p
-                                                className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                                              >
-                                                We recommend generating up to
-                                                 
-                                                0
-                                                .
-                                              </p>
-                                            </MuiTypographyRoot>
-                                          </ForwardRef(Typography)>
-                                        </div>
-                                      </MuiCollapseWrapperInner>
-                                    </div>
-                                  </MuiCollapseWrapper>
-                                </div>
-                              </MuiCollapseRoot>
-                            </Transition>
-                          </ForwardRef(Collapse)>
-                        </div>
-                      </MuiCollapseWrapperInner>
-                    </div>
-                  </MuiCollapseWrapper>
-                </div>
-              </MuiCollapseRoot>
-            </Transition>
-          </ForwardRef(Collapse)>
           <ForwardRef(Paper)>
             <MuiPaperRoot
               as="div"
@@ -3925,6 +3508,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                   "children": <Input
                     InputProps={
                       Object {
+                        "endAdornment": <ForwardRef(InputAdornment)
+                          position="end"
+                        >
+                          <pure(InfoTooltip)
+                            text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                          />
+                        </ForwardRef(InputAdornment)>,
                         "inputProps": Object {
                           "max": 0,
                           "min": 1,
@@ -3952,6 +3542,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                 <Input
                   InputProps={
                     Object {
+                      "endAdornment": <ForwardRef(InputAdornment)
+                        position="end"
+                      >
+                        <pure(InfoTooltip)
+                          text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                        />
+                      </ForwardRef(InputAdornment)>,
                       "inputProps": Object {
                         "max": 0,
                         "min": 1,
@@ -3968,6 +3565,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                   <ForwardRef(TextField)
                     InputProps={
                       Object {
+                        "endAdornment": <ForwardRef(InputAdornment)
+                          position="end"
+                        >
+                          <pure(InfoTooltip)
+                            text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                          />
+                        </ForwardRef(InputAdornment)>,
                         "inputProps": Object {
                           "max": 0,
                           "min": 1,
@@ -3992,6 +3596,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                       ownerState={
                         Object {
                           "InputProps": Object {
+                            "endAdornment": <ForwardRef(InputAdornment)
+                              position="end"
+                            >
+                              <pure(InfoTooltip)
+                                text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                              />
+                            </ForwardRef(InputAdornment)>,
                             "inputProps": Object {
                               "max": 0,
                               "min": 1,
@@ -4043,6 +3654,15 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                 </ForwardRef(InputLabel)>,
                                 <ForwardRef(OutlinedInput)
                                   autoFocus={false}
+                                  endAdornment={
+                                    <ForwardRef(InputAdornment)
+                                      position="end"
+                                    >
+                                      <pure(InfoTooltip)
+                                        text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                      />
+                                    </ForwardRef(InputAdornment)>
+                                  }
                                   fullWidth={true}
                                   inputProps={
                                     Object {
@@ -4212,6 +3832,15 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                             </ForwardRef(InputLabel)>
                             <ForwardRef(OutlinedInput)
                               autoFocus={false}
+                              endAdornment={
+                                <ForwardRef(InputAdornment)
+                                  position="end"
+                                >
+                                  <pure(InfoTooltip)
+                                    text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                  />
+                                </ForwardRef(InputAdornment)>
+                              }
                               fullWidth={true}
                               inputProps={
                                 Object {
@@ -4283,6 +3912,15 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                       "withComponent": [Function],
                                     },
                                   }
+                                }
+                                endAdornment={
+                                  <ForwardRef(InputAdornment)
+                                    position="end"
+                                  >
+                                    <pure(InfoTooltip)
+                                      text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                    />
+                                  </ForwardRef(InputAdornment)>
                                 }
                                 fullWidth={true}
                                 inputComponent="input"
@@ -4636,7 +4274,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                   </GlobalStyles>
                                 </GlobalStyles>
                                 <MuiOutlinedInputRoot
-                                  className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl"
+                                  className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd"
                                   classes={
                                     Object {
                                       "input": "MuiOutlinedInput-input",
@@ -4700,7 +4338,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                       },
                                       "defaultValue": undefined,
                                       "disabled": false,
-                                      "endAdornment": undefined,
+                                      "endAdornment": <ForwardRef(InputAdornment)
+                                        position="end"
+                                      >
+                                        <pure(InfoTooltip)
+                                          text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                        />
+                                      </ForwardRef(InputAdornment)>,
                                       "error": false,
                                       "focused": false,
                                       "formControl": Object {
@@ -4750,14 +4394,14 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                 >
                                   <Noop />
                                   <div
-                                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
+                                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-1gvv60k-MuiInputBase-root-MuiOutlinedInput-root"
                                     onClick={[Function]}
                                   >
                                     <MuiOutlinedInputInput
                                       aria-invalid={false}
                                       as="input"
                                       autoFocus={false}
-                                      className="MuiOutlinedInput-input MuiInputBase-input"
+                                      className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd"
                                       disabled={false}
                                       max={0}
                                       min={1}
@@ -4820,7 +4464,13 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                           },
                                           "defaultValue": undefined,
                                           "disabled": false,
-                                          "endAdornment": undefined,
+                                          "endAdornment": <ForwardRef(InputAdornment)
+                                            position="end"
+                                          >
+                                            <pure(InfoTooltip)
+                                              text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                            />
+                                          </ForwardRef(InputAdornment)>,
                                           "error": false,
                                           "focused": false,
                                           "formControl": Object {
@@ -4876,7 +4526,7 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                       <input
                                         aria-invalid={false}
                                         autoFocus={false}
-                                        className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                                        className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"
                                         disabled={false}
                                         max={0}
                                         min={1}
@@ -4890,6 +4540,308 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                                         value="1"
                                       />
                                     </MuiOutlinedInputInput>
+                                    <ForwardRef(InputAdornment)
+                                      position="end"
+                                    >
+                                      <MuiInputAdornmentRoot
+                                        as="div"
+                                        className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium"
+                                        ownerState={
+                                          Object {
+                                            "children": <pure(InfoTooltip)
+                                              text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                            />,
+                                            "disablePointerEvents": false,
+                                            "hiddenLabel": false,
+                                            "position": "end",
+                                            "size": "medium",
+                                            "variant": "outlined",
+                                          }
+                                        }
+                                      >
+                                        <Noop />
+                                        <div
+                                          className="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-1laqsz7-MuiInputAdornment-root"
+                                        >
+                                          <pure(InfoTooltip)
+                                            text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                          >
+                                            <InfoTooltip
+                                              text="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                            >
+                                              <ForwardRef(Tooltip)
+                                                arrow={true}
+                                                placement="top"
+                                                title="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                              >
+                                                <ForwardRef(InfoIcon)
+                                                  aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                  aria-labelledby={null}
+                                                  className=""
+                                                  color="primary"
+                                                  data-mui-internal-clone-element={true}
+                                                  onBlur={[Function]}
+                                                  onFocus={[Function]}
+                                                  onMouseLeave={[Function]}
+                                                  onMouseOver={[Function]}
+                                                  onTouchEnd={[Function]}
+                                                  onTouchStart={[Function]}
+                                                >
+                                                  <ForwardRef(SvgIcon)
+                                                    aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                    aria-labelledby={null}
+                                                    className=""
+                                                    color="primary"
+                                                    data-mui-internal-clone-element={true}
+                                                    data-testid="InfoIcon"
+                                                    onBlur={[Function]}
+                                                    onFocus={[Function]}
+                                                    onMouseLeave={[Function]}
+                                                    onMouseOver={[Function]}
+                                                    onTouchEnd={[Function]}
+                                                    onTouchStart={[Function]}
+                                                  >
+                                                    <MuiSvgIconRoot
+                                                      aria-hidden={true}
+                                                      aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                      aria-labelledby={null}
+                                                      as="svg"
+                                                      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium"
+                                                      data-mui-internal-clone-element={true}
+                                                      data-testid="InfoIcon"
+                                                      focusable="false"
+                                                      onBlur={[Function]}
+                                                      onFocus={[Function]}
+                                                      onMouseLeave={[Function]}
+                                                      onMouseOver={[Function]}
+                                                      onTouchEnd={[Function]}
+                                                      onTouchStart={[Function]}
+                                                      ownerState={
+                                                        Object {
+                                                          "aria-label": "Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images.",
+                                                          "aria-labelledby": null,
+                                                          "children": <path
+                                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                          />,
+                                                          "className": "",
+                                                          "color": "primary",
+                                                          "component": "svg",
+                                                          "data-mui-internal-clone-element": true,
+                                                          "data-testid": "InfoIcon",
+                                                          "fontSize": "medium",
+                                                          "onBlur": [Function],
+                                                          "onFocus": [Function],
+                                                          "onMouseLeave": [Function],
+                                                          "onMouseOver": [Function],
+                                                          "onTouchEnd": [Function],
+                                                          "onTouchStart": [Function],
+                                                          "viewBox": "0 0 24 24",
+                                                        }
+                                                      }
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <Noop />
+                                                      <svg
+                                                        aria-hidden={true}
+                                                        aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                        aria-labelledby={null}
+                                                        className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                        data-mui-internal-clone-element={true}
+                                                        data-testid="InfoIcon"
+                                                        focusable="false"
+                                                        onBlur={[Function]}
+                                                        onFocus={[Function]}
+                                                        onMouseLeave={[Function]}
+                                                        onMouseOver={[Function]}
+                                                        onTouchEnd={[Function]}
+                                                        onTouchStart={[Function]}
+                                                        viewBox="0 0 24 24"
+                                                      >
+                                                        <path
+                                                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                        />
+                                                      </svg>
+                                                    </MuiSvgIconRoot>
+                                                  </ForwardRef(SvgIcon)>
+                                                </ForwardRef(InfoIcon)>
+                                                <MuiTooltipPopper
+                                                  anchorEl={
+                                                    <svg
+                                                      aria-hidden="true"
+                                                      aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                      class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                      data-mui-internal-clone-element="true"
+                                                      data-testid="InfoIcon"
+                                                      focusable="false"
+                                                      viewBox="0 0 24 24"
+                                                    >
+                                                      <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                      />
+                                                    </svg>
+                                                  }
+                                                  as={
+                                                    Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "propTypes": Object {
+                                                        "anchorEl": [Function],
+                                                        "children": [Function],
+                                                        "container": [Function],
+                                                        "disablePortal": [Function],
+                                                        "keepMounted": [Function],
+                                                        "modifiers": [Function],
+                                                        "open": [Function],
+                                                        "placement": [Function],
+                                                        "popperOptions": [Function],
+                                                        "popperRef": [Function],
+                                                        "transition": [Function],
+                                                      },
+                                                      "render": [Function],
+                                                    }
+                                                  }
+                                                  className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow"
+                                                  id="mui-923507181"
+                                                  onBlur={[Function]}
+                                                  onFocus={[Function]}
+                                                  onMouseLeave={[Function]}
+                                                  onMouseOver={[Function]}
+                                                  open={false}
+                                                  ownerState={
+                                                    Object {
+                                                      "PopperComponentProp": undefined,
+                                                      "arrow": true,
+                                                      "children": <Memo
+                                                        color="primary"
+                                                      />,
+                                                      "disableInteractive": false,
+                                                      "isRtl": false,
+                                                      "placement": "top",
+                                                      "title": "Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images.",
+                                                      "touch": false,
+                                                    }
+                                                  }
+                                                  placement="top"
+                                                  popperOptions={
+                                                    Object {
+                                                      "modifiers": Array [
+                                                        Object {
+                                                          "enabled": false,
+                                                          "name": "arrow",
+                                                          "options": Object {
+                                                            "element": null,
+                                                            "padding": 4,
+                                                          },
+                                                        },
+                                                      ],
+                                                    }
+                                                  }
+                                                  popperRef={
+                                                    Object {
+                                                      "current": undefined,
+                                                    }
+                                                  }
+                                                  transition={true}
+                                                >
+                                                  <Noop />
+                                                  <ForwardRef(Popper)
+                                                    anchorEl={
+                                                      <svg
+                                                        aria-hidden="true"
+                                                        aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                        class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                        data-mui-internal-clone-element="true"
+                                                        data-testid="InfoIcon"
+                                                        focusable="false"
+                                                        viewBox="0 0 24 24"
+                                                      >
+                                                        <path
+                                                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                        />
+                                                      </svg>
+                                                    }
+                                                    className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
+                                                    id="mui-923507181"
+                                                    onBlur={[Function]}
+                                                    onFocus={[Function]}
+                                                    onMouseLeave={[Function]}
+                                                    onMouseOver={[Function]}
+                                                    open={false}
+                                                    placement="top"
+                                                    popperOptions={
+                                                      Object {
+                                                        "modifiers": Array [
+                                                          Object {
+                                                            "enabled": false,
+                                                            "name": "arrow",
+                                                            "options": Object {
+                                                              "element": null,
+                                                              "padding": 4,
+                                                            },
+                                                          },
+                                                        ],
+                                                      }
+                                                    }
+                                                    popperRef={
+                                                      Object {
+                                                        "current": undefined,
+                                                      }
+                                                    }
+                                                    transition={true}
+                                                  >
+                                                    <ForwardRef(PopperUnstyled)
+                                                      anchorEl={
+                                                        <svg
+                                                          aria-hidden="true"
+                                                          aria-label="Maximum possible amount of images that can be generated: 0. We recommend generating up to 0 images."
+                                                          class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-3b6oxn-MuiSvgIcon-root"
+                                                          data-mui-internal-clone-element="true"
+                                                          data-testid="InfoIcon"
+                                                          focusable="false"
+                                                          viewBox="0 0 24 24"
+                                                        >
+                                                          <path
+                                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                                          />
+                                                        </svg>
+                                                      }
+                                                      className="MuiTooltip-popper MuiTooltip-popperInteractive MuiTooltip-popperArrow css-pnutvq-MuiTooltip-popper"
+                                                      direction="ltr"
+                                                      id="mui-923507181"
+                                                      onBlur={[Function]}
+                                                      onFocus={[Function]}
+                                                      onMouseLeave={[Function]}
+                                                      onMouseOver={[Function]}
+                                                      open={false}
+                                                      placement="top"
+                                                      popperOptions={
+                                                        Object {
+                                                          "modifiers": Array [
+                                                            Object {
+                                                              "enabled": false,
+                                                              "name": "arrow",
+                                                              "options": Object {
+                                                                "element": null,
+                                                                "padding": 4,
+                                                              },
+                                                            },
+                                                          ],
+                                                        }
+                                                      }
+                                                      popperRef={
+                                                        Object {
+                                                          "current": undefined,
+                                                        }
+                                                      }
+                                                      transition={true}
+                                                    />
+                                                  </ForwardRef(Popper)>
+                                                </MuiTooltipPopper>
+                                              </ForwardRef(Tooltip)>
+                                            </InfoTooltip>
+                                          </pure(InfoTooltip)>
+                                        </div>
+                                      </MuiInputAdornmentRoot>
+                                    </ForwardRef(InputAdornment)>
                                     <MuiOutlinedInputNotchedOutline
                                       className="MuiOutlinedInput-notchedOutline"
                                       label={
