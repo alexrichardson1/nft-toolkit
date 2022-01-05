@@ -5,10 +5,12 @@ Script to find best model
 import math
 import sys
 import threading
+import numpy as np
 from prediction_model_affinity_prop_name_score import PredictionModelAffinityPropagationNamingScore
 from prediction_model_affinity_prop_name import PredictionModelAffinityPropagationNaming
 from prediction_model_kmeans import PredictionModelKMeans
 from prediction_model_nearest_neighbors import PredictionModelNearestNeighbors
+from prediction_model_birch import PredictionModelBirch
 
 sys.path.insert(1, "api/")
 
@@ -18,101 +20,96 @@ db_collection = get_collection()
 collections = db_collection.find({})
 collections = list(collections)
 
-model1 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.4, score_scaler_func=math.log10)
-model2 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.4, score_scaler_func=math.log2)
-model3 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.4, score_scaler_func=lambda num: num)
-model4 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.7, score_scaler_func=math.log10)
-model5 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.7, score_scaler_func=math.log2)
-model6 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.2, score_scaler_func=lambda num: num)
-model7 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.2, score_scaler_func=math.log10)
-model8 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.2, score_scaler_func=math.log2)
-model9 = PredictionModelAffinityPropagationNamingScore(
-    collections, levenshtein_scale=0.2, score_scaler_func=lambda num: num)
 
-model10 = PredictionModelAffinityPropagationNaming(collections)
-
-affinity_models = [model1, model2, model3, model4,
-                   model5, model6, model7, model8, model9, model10]
-
-model11 = PredictionModelKMeans(collections, n_clusters=10)
-model12 = PredictionModelKMeans(collections, n_clusters=20)
-model13 = PredictionModelKMeans(collections, n_clusters=30)
-model14 = PredictionModelKMeans(collections, n_clusters=40)
-
-m = PredictionModelKMeans(collections=collections, n_clusters=32)
-m.preprocess_data()
-m.train()
-print(m.get_rmse())
-
-k_means_models = [model11, model12, model13, model14]
-
-model15 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.25, score_scaler=1)
-model16 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.5, score_scaler=1)
-model17 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.75, score_scaler=1)
-model18 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=1, score_scaler=1)
-model19 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.25, score_scaler=0.75)
-model20 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.5, score_scaler=0.75)
-model21 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.75, score_scaler=0.75)
-model22 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=1, score_scaler=0.75)
-model23 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.25, score_scaler=0.5)
-model24 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.5, score_scaler=0.5)
-model25 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.75, score_scaler=0.5)
-model26 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=1, score_scaler=0.5)
-model27 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.25, score_scaler=0.25)
-model28 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.5, score_scaler=0.25)
-model29 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=0.75, score_scaler=0.25)
-model30 = PredictionModelNearestNeighbors(
-    collections, levenshtein_scale=1, score_scaler=0.25)
-
-nn_models = [model15, model16, model17, model18, model19, model20, model21, model22, model23,
-             model24, model25, model26, model27, model28, model29, model30]
-
-
-def get_rmse_for_models(name, models):
+def get_rmse_for_affinity_name_score():
     """
-    Thread body to get all RMSEs
+    Thread body to get all RMSEs using PredictionModelAffinityPropagationNamingScore
     """
-    for i, model in enumerate(models):
+    for lev_scale in np.arange(0, 2, 0.2):
+        model1 = PredictionModelAffinityPropagationNamingScore(
+            collections, lev_scale, math.log10)
+        model2 = PredictionModelAffinityPropagationNamingScore(
+            collections, lev_scale, np.sqrt)
+        model3 = PredictionModelAffinityPropagationNamingScore(
+            collections, lev_scale, lambda n: n)
+        model1.preprocess_data()
+        model2.preprocess_data()
+        model3.preprocess_data()
+        model1.train()
+        model2.train()
+        model3.train()
+        print(
+            f"AFFINITY WITH SCORE: lev_scale={lev_scale}," +
+            " scaler_func={math.log} ----- RMSE:{model1.get_rmse()}")
+        print(
+            f"AFFINITY WITH SCORE: lev_scale={lev_scale}," +
+            " scaler_func={np.sqrt} ----- RMSE:{model2.get_rmse()}")
+        print(
+            f"AFFINITY WITH SCORE: lev_scale={lev_scale}," +
+            " scaler_func={(lambda n: n)} ----- RMSE:{model3.get_rmse()}")
+
+
+def get_rmse_for_affinity_name():
+    """
+    Thread body to get all RMSEs using PredictionModelAffinityPropagationNaming
+    """
+    model1 = PredictionModelAffinityPropagationNaming(collections)
+    model1.preprocess_data()
+    model1.train()
+    print(f"AFFINITY ---- RMSE:{model1.get_rmse()}")
+
+
+def get_rmse_for_kmeans():
+    """
+    Thread body to get all RMSEs using PredictionModelKMeans
+    """
+    for n_clusters in range(3, 50, 3):
+        model = PredictionModelKMeans(collections, n_clusters=n_clusters)
         model.preprocess_data()
         model.train()
-        rmse = model.get_rmse()
-        print(f"{name}: RMSE for model number {i+1} is {rmse}")
+        print(f"KMEANS: n_clusters={n_clusters} ----- RMSE:{model.get_rmse()}")
 
 
-thread_affinity = threading.Thread(
-    target=get_rmse_for_models, args=("AFFINITY", affinity_models,))
-thread_kmeans = threading.Thread(
-    target=get_rmse_for_models, args=("KMEANS", k_means_models,))
-thread_nn = threading.Thread(
-    target=get_rmse_for_models, args=("NEAREST NEIGHBORS", nn_models,))
+def get_rmse_for_nn():
+    """
+    Thread body to get all RMSEs using PredictionModelNearestNeighbors
+    """
+    for lev_scale in np.arange(0, 0.2, 5):
+        for score_scale in np.arange(0, 0.2, 5):
+            model = PredictionModelNearestNeighbors(
+                collections, lev_scale, score_scale)
+            model.preprocess_data()
+            model.train()
+            print(
+                f"NEAREST NEIGHBORS: lev_scale={lev_scale}" +
+                " score_scale={score_scale} ----- RMSE:{model.get_rmse()}")
 
-thread_affinity.start()
+
+def get_rmse_for_birch():
+    """
+    Thread body to get all RMSEs using PredictionModelBirch
+    """
+    for n_clusters in range(1, 15):
+        model = PredictionModelBirch(collections, n_clusters=n_clusters)
+        model.preprocess_data()
+        model.train()
+        print(f"BIRCH: n_clusters={n_clusters} ----- RMSE:{model.get_rmse()}")
+
+
+get_rmse_for_affinity_name()
+
+thread_affinity_name_score = threading.Thread(
+    target=get_rmse_for_affinity_name_score)
+thread_kmeans = threading.Thread(target=get_rmse_for_kmeans)
+thread_nn = threading.Thread(target=get_rmse_for_nn)
+thread_birch = threading.Thread(target=get_rmse_for_birch)
+
+thread_affinity_name_score.start()
 thread_kmeans.start()
 thread_nn.start()
+thread_birch.start()
 
-thread_affinity.join()
+thread_affinity_name_score.join()
 thread_kmeans.join()
 thread_nn.join()
+thread_birch.join()
