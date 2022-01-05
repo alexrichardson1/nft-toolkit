@@ -38,7 +38,7 @@ export const getCollection = async (
   if (!collection.image) {
     collection.image = collection.tokens[0] ? collection.tokens[0].image : "";
   }
-  collection.image = collection.image.replaceAll(" ", "%20");
+  collection.image = collection.image.replaceAll(" ", "+");
   collection.price = await NFTContract.price();
   collection.name = await NFTContract.name();
   collection.symbol = await NFTContract.symbol();
