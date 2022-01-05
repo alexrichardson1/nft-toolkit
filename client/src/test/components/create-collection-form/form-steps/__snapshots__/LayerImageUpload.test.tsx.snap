@@ -3522,9 +3522,9 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                         class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                       >
                         <p>
-                          There are a total 
+                          Maximum possible collection quantity: 
                           0
-                           different combinations.
+                          .
                            
                           <div
                             class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
@@ -3614,9 +3614,9 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                   Object {
                     "children": Array [
                       <p>
-                        There are a total 
+                        Maximum possible collection quantity: 
                         0
-                         different combinations.
+                        .
                          
                         <ForwardRef(Collapse)
                           in={false}
@@ -3675,9 +3675,9 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                       Object {
                         "children": Array [
                           <p>
-                            There are a total 
+                            Maximum possible collection quantity: 
                             0
-                             different combinations.
+                            .
                              
                             <ForwardRef(Collapse)
                               in={false}
@@ -3726,9 +3726,9 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                           Object {
                             "children": Array [
                               <p>
-                                There are a total 
+                                Maximum possible collection quantity: 
                                 0
-                                 different combinations.
+                                .
                                  
                                 <ForwardRef(Collapse)
                                   in={false}
@@ -3772,9 +3772,9 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
                           className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                         >
                           <p>
-                            There are a total 
+                            Maximum possible collection quantity: 
                             0
-                             different combinations.
+                            .
                              
                             <ForwardRef(Collapse)
                               in={false}
