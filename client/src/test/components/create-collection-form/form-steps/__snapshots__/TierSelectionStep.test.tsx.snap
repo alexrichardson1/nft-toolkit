@@ -2004,6 +2004,120 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 </MuiCollapseRoot>
               </Transition>
             </ForwardRef(Collapse)>
+            <ForwardRef(Collapse)
+              in={false}
+            >
+              <Transition
+                addEndListener={[Function]}
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                nodeRef={
+                  Object {
+                    "current": <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <p>
+                            Rarest Tier
+                          </p>
+                        </div>
+                      </div>
+                    </div>,
+                  }
+                }
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={300}
+                unmountOnExit={false}
+              >
+                <MuiCollapseRoot
+                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                  ownerState={
+                    Object {
+                      "children": <p>
+                        Rarest Tier
+                      </p>,
+                      "collapsedSize": "0px",
+                      "in": false,
+                      "orientation": "vertical",
+                      "state": "exited",
+                    }
+                  }
+                  style={
+                    Object {
+                      "minHeight": "0px",
+                    }
+                  }
+                >
+                  <Noop />
+                  <div
+                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                    style={
+                      Object {
+                        "minHeight": "0px",
+                      }
+                    }
+                  >
+                    <MuiCollapseWrapper
+                      className="MuiCollapse-wrapper MuiCollapse-vertical"
+                      ownerState={
+                        Object {
+                          "children": <p>
+                            Rarest Tier
+                          </p>,
+                          "collapsedSize": "0px",
+                          "in": false,
+                          "orientation": "vertical",
+                          "state": "exited",
+                        }
+                      }
+                    >
+                      <Noop />
+                      <div
+                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <MuiCollapseWrapperInner
+                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                          ownerState={
+                            Object {
+                              "children": <p>
+                                Rarest Tier
+                              </p>,
+                              "collapsedSize": "0px",
+                              "in": false,
+                              "orientation": "vertical",
+                              "state": "exited",
+                            }
+                          }
+                        >
+                          <Noop />
+                          <div
+                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                          >
+                            <p>
+                              Rarest Tier
+                            </p>
+                          </div>
+                        </MuiCollapseWrapperInner>
+                      </div>
+                    </MuiCollapseWrapper>
+                  </div>
+                </MuiCollapseRoot>
+              </Transition>
+            </ForwardRef(Collapse)>
             <OrderableList
               handleItemReorder={[MockFunction]}
               items={Array []}
@@ -2160,6 +2274,120 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 </Accessibility>
               </Memo(DndContext)>
             </OrderableList>
+            <ForwardRef(Collapse)
+              in={false}
+            >
+              <Transition
+                addEndListener={[Function]}
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                nodeRef={
+                  Object {
+                    "current": <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <p>
+                            Most Common Tier
+                          </p>
+                        </div>
+                      </div>
+                    </div>,
+                  }
+                }
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={300}
+                unmountOnExit={false}
+              >
+                <MuiCollapseRoot
+                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                  ownerState={
+                    Object {
+                      "children": <p>
+                        Most Common Tier
+                      </p>,
+                      "collapsedSize": "0px",
+                      "in": false,
+                      "orientation": "vertical",
+                      "state": "exited",
+                    }
+                  }
+                  style={
+                    Object {
+                      "minHeight": "0px",
+                    }
+                  }
+                >
+                  <Noop />
+                  <div
+                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                    style={
+                      Object {
+                        "minHeight": "0px",
+                      }
+                    }
+                  >
+                    <MuiCollapseWrapper
+                      className="MuiCollapse-wrapper MuiCollapse-vertical"
+                      ownerState={
+                        Object {
+                          "children": <p>
+                            Most Common Tier
+                          </p>,
+                          "collapsedSize": "0px",
+                          "in": false,
+                          "orientation": "vertical",
+                          "state": "exited",
+                        }
+                      }
+                    >
+                      <Noop />
+                      <div
+                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <MuiCollapseWrapperInner
+                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                          ownerState={
+                            Object {
+                              "children": <p>
+                                Most Common Tier
+                              </p>,
+                              "collapsedSize": "0px",
+                              "in": false,
+                              "orientation": "vertical",
+                              "state": "exited",
+                            }
+                          }
+                        >
+                          <Noop />
+                          <div
+                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                          >
+                            <p>
+                              Most Common Tier
+                            </p>
+                          </div>
+                        </MuiCollapseWrapperInner>
+                      </div>
+                    </MuiCollapseWrapper>
+                  </div>
+                </MuiCollapseRoot>
+              </Transition>
+            </ForwardRef(Collapse)>
             <OrderableListInput
               label="Type Tier Name Here"
               onChange={[Function]}

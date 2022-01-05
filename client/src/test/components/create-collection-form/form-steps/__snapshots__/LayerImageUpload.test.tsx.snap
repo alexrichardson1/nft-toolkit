@@ -3493,1059 +3493,1474 @@ exports[`LayerImageUpload snapshots Step Number and generative match 1`] = `
               </div>
             </Styled(div)>
           </ForwardRef(Box)>
-          <ForwardRef(Paper)>
-            <MuiPaperRoot
-              as="div"
-              className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1"
-              ownerState={
+          <ForwardRef(Collapse)
+            in={false}
+          >
+            <Transition
+              addEndListener={[Function]}
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              mountOnEnter={false}
+              nodeRef={
                 Object {
-                  "children": <Input
-                    InputProps={
-                      Object {
-                        "inputProps": Object {
-                          "max": 0,
-                          "min": 1,
-                        },
-                      }
-                    }
-                    label="Collection Quantity"
-                    onChange={[MockFunction]}
-                    placeholder="0"
-                    required={true}
-                    type="number"
-                    value="1"
-                  />,
-                  "component": "div",
-                  "elevation": 1,
-                  "square": false,
-                  "variant": "elevation",
-                }
-              }
-            >
-              <Noop />
-              <div
-                className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
-              >
-                <Input
-                  InputProps={
-                    Object {
-                      "inputProps": Object {
-                        "max": 0,
-                        "min": 1,
-                      },
-                    }
-                  }
-                  label="Collection Quantity"
-                  onChange={[MockFunction]}
-                  placeholder="0"
-                  required={true}
-                  type="number"
-                  value="1"
-                >
-                  <ForwardRef(TextField)
-                    InputProps={
-                      Object {
-                        "inputProps": Object {
-                          "max": 0,
-                          "min": 1,
-                        },
-                      }
-                    }
-                    fullWidth={true}
-                    label="Collection Quantity"
-                    onChange={[MockFunction]}
-                    placeholder="0"
-                    required={true}
-                    type="number"
-                    value="1"
-                    variant="outlined"
+                  "current": <div
+                    class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                    style="min-height: 0px;"
                   >
-                    <MuiTextFieldRoot
-                      className="MuiTextField-root"
-                      color="primary"
-                      disabled={false}
-                      error={false}
-                      fullWidth={true}
-                      ownerState={
-                        Object {
-                          "InputProps": Object {
-                            "inputProps": Object {
-                              "max": 0,
-                              "min": 1,
-                            },
-                          },
-                          "autoFocus": false,
-                          "color": "primary",
-                          "defaultValue": undefined,
-                          "disabled": false,
-                          "error": false,
-                          "fullWidth": true,
-                          "inputProps": undefined,
-                          "label": "Collection Quantity",
-                          "multiline": false,
-                          "name": undefined,
-                          "onChange": [MockFunction],
-                          "onKeyPress": undefined,
-                          "placeholder": "0",
-                          "required": true,
-                          "rows": undefined,
-                          "select": false,
-                          "sx": undefined,
-                          "type": "number",
-                          "value": "1",
-                          "variant": "outlined",
-                        }
-                      }
-                      required={true}
-                      variant="outlined"
+                    <div
+                      class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
                     >
-                      <Noop />
-                      <ForwardRef(FormControl)
-                        className="MuiTextField-root css-1xj1k15-MuiTextField-root"
-                        color="primary"
-                        disabled={false}
-                        error={false}
-                        fullWidth={true}
-                        required={true}
-                        variant="outlined"
+                      <div
+                        class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                       >
-                        <MuiFormControlRoot
-                          as="div"
-                          className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1xj1k15-MuiTextField-root"
-                          ownerState={
-                            Object {
-                              "children": Array [
-                                <ForwardRef(InputLabel)>
-                                  Collection Quantity
-                                </ForwardRef(InputLabel)>,
-                                <ForwardRef(OutlinedInput)
-                                  autoFocus={false}
-                                  fullWidth={true}
-                                  inputProps={
-                                    Object {
-                                      "max": 0,
-                                      "min": 1,
-                                    }
-                                  }
-                                  label={
-                                    <React.Fragment>
-                                      Collection Quantity
-                                       *
-                                    </React.Fragment>
-                                  }
-                                  multiline={false}
-                                  onChange={[MockFunction]}
-                                  placeholder="0"
-                                  type="number"
-                                  value="1"
-                                />,
-                                undefined,
-                              ],
-                              "className": "MuiTextField-root css-1xj1k15-MuiTextField-root",
-                              "color": "primary",
-                              "component": "div",
-                              "disabled": false,
-                              "error": false,
-                              "fullWidth": true,
-                              "hiddenLabel": false,
-                              "margin": "none",
-                              "onKeyPress": undefined,
-                              "required": true,
-                              "size": "medium",
-                              "variant": "outlined",
-                            }
-                          }
-                        >
-                          <Noop />
+                        <p>
+                          There are a total 
+                          0
+                           different combinations.
+                           
                           <div
-                            className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                            class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                            style="min-height: 0px;"
                           >
-                            <ForwardRef(InputLabel)>
-                              <MuiInputLabelRoot
-                                classes={
-                                  Object {
-                                    "asterisk": "MuiInputLabel-asterisk",
-                                    "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
-                                  }
-                                }
-                                data-shrink={true}
-                                ownerState={
-                                  Object {
-                                    "children": "Collection Quantity",
-                                    "disableAnimation": false,
-                                    "formControl": Object {
-                                      "adornedStart": false,
-                                      "color": "primary",
-                                      "disabled": false,
-                                      "error": false,
-                                      "filled": true,
-                                      "focused": false,
-                                      "fullWidth": true,
-                                      "hiddenLabel": false,
-                                      "onBlur": [Function],
-                                      "onEmpty": [Function],
-                                      "onFilled": [Function],
-                                      "onFocus": [Function],
-                                      "registerEffect": [Function],
-                                      "required": true,
-                                      "setAdornedStart": [Function],
-                                      "size": "medium",
-                                      "variant": "outlined",
-                                    },
-                                    "htmlFor": undefined,
-                                    "id": undefined,
-                                    "required": true,
-                                    "shrink": true,
-                                    "size": "medium",
-                                    "variant": "outlined",
-                                  }
-                                }
-                              >
-                                <Noop />
-                                <ForwardRef(FormLabel)
-                                  className="css-1bzvmy4-MuiInputLabel-root"
-                                  classes={
-                                    Object {
-                                      "asterisk": "MuiInputLabel-asterisk",
-                                      "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
-                                    }
-                                  }
-                                  data-shrink={true}
-                                >
-                                  <MuiFormLabelRoot
-                                    as="label"
-                                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-1bzvmy4-MuiInputLabel-root"
-                                    classes={
-                                      Object {
-                                        "asterisk": "MuiInputLabel-asterisk",
-                                        "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
-                                      }
-                                    }
-                                    data-shrink={true}
-                                    ownerState={
-                                      Object {
-                                        "children": "Collection Quantity",
-                                        "className": "css-1bzvmy4-MuiInputLabel-root",
-                                        "classes": Object {
-                                          "asterisk": "MuiInputLabel-asterisk",
-                                          "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
-                                        },
-                                        "color": "primary",
-                                        "component": "label",
-                                        "data-shrink": true,
-                                        "disabled": false,
-                                        "error": false,
-                                        "filled": true,
-                                        "focused": false,
-                                        "htmlFor": undefined,
-                                        "id": undefined,
-                                        "required": true,
-                                      }
-                                    }
-                                  >
-                                    <Noop />
-                                    <label
-                                      className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
-                                      data-shrink={true}
-                                    >
-                                      Collection Quantity
-                                      <MuiFormLabelAsterisk
-                                        aria-hidden={true}
-                                        className="MuiInputLabel-asterisk MuiFormLabel-asterisk"
-                                        ownerState={
-                                          Object {
-                                            "children": "Collection Quantity",
-                                            "className": "css-1bzvmy4-MuiInputLabel-root",
-                                            "classes": Object {
-                                              "asterisk": "MuiInputLabel-asterisk",
-                                              "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
-                                            },
-                                            "color": "primary",
-                                            "component": "label",
-                                            "data-shrink": true,
-                                            "disabled": false,
-                                            "error": false,
-                                            "filled": true,
-                                            "focused": false,
-                                            "htmlFor": undefined,
-                                            "id": undefined,
-                                            "required": true,
-                                          }
-                                        }
-                                      >
-                                        <Noop />
-                                        <span
-                                          aria-hidden={true}
-                                          className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
-                                        >
-                                           
-                                          *
-                                        </span>
-                                      </MuiFormLabelAsterisk>
-                                    </label>
-                                  </MuiFormLabelRoot>
-                                </ForwardRef(FormLabel)>
-                              </MuiInputLabelRoot>
-                            </ForwardRef(InputLabel)>
-                            <ForwardRef(OutlinedInput)
-                              autoFocus={false}
-                              fullWidth={true}
-                              inputProps={
-                                Object {
-                                  "max": 0,
-                                  "min": 1,
-                                }
-                              }
-                              label={
-                                <React.Fragment>
-                                  Collection Quantity
-                                   *
-                                </React.Fragment>
-                              }
-                              multiline={false}
-                              onChange={[MockFunction]}
-                              placeholder="0"
-                              type="number"
-                              value="1"
+                            <div
+                              class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
                             >
-                              <ForwardRef(InputBase)
-                                autoFocus={false}
-                                classes={
-                                  Object {
-                                    "input": "MuiOutlinedInput-input",
-                                    "notchedOutline": null,
-                                    "root": "MuiOutlinedInput-root",
-                                  }
-                                }
-                                components={
-                                  Object {
-                                    "Input": Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "__emotion_base": "input",
-                                      "__emotion_forwardProp": [Function],
-                                      "__emotion_real": [Circular],
-                                      "__emotion_styles": Array [
-                                        "label:MuiInputBase-input;",
-                                        [Function],
-                                        [Function],
-                                        [Function],
-                                        "label:MuiOutlinedInput-input;",
-                                        [Function],
-                                        [Function],
-                                        [Function],
-                                      ],
-                                      "defaultProps": undefined,
-                                      "render": [Function],
-                                      "withComponent": [Function],
-                                    },
-                                    "Root": Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "__emotion_base": "div",
-                                      "__emotion_forwardProp": [Function],
-                                      "__emotion_real": [Circular],
-                                      "__emotion_styles": Array [
-                                        "label:MuiInputBase-root;",
-                                        [Function],
-                                        [Function],
-                                        [Function],
-                                        [Function],
-                                        "label:MuiOutlinedInput-root;",
-                                        [Function],
-                                        [Function],
-                                        [Function],
-                                        [Function],
-                                      ],
-                                      "defaultProps": undefined,
-                                      "render": [Function],
-                                      "withComponent": [Function],
-                                    },
-                                  }
-                                }
-                                fullWidth={true}
-                                inputComponent="input"
-                                inputProps={
-                                  Object {
-                                    "max": 0,
-                                    "min": 1,
-                                  }
-                                }
-                                multiline={false}
-                                onChange={[MockFunction]}
+                              <div
+                                class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                              >
+                                <p>
+                                  We recommend generating up to
+                                   
+                                  0
+                                  .
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </p>
+                        <div
+                          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
+                        >
+                          <div
+                            class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                          >
+                            <label
+                              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
+                              data-shrink="true"
+                            >
+                              Collection Quantity
+                              <span
+                                aria-hidden="true"
+                                class="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                              >
+                                 
+                                *
+                              </span>
+                            </label>
+                            <div
+                              class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
+                            >
+                              <input
+                                aria-invalid="false"
+                                class="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                                max="0"
+                                min="1"
                                 placeholder="0"
-                                renderSuffix={[Function]}
+                                required=""
                                 type="number"
                                 value="1"
+                              />
+                              <fieldset
+                                aria-hidden="true"
+                                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
                               >
-                                <GlobalStyles
-                                  styles={
-                                    Object {
-                                      "@keyframes mui-auto-fill": Object {
-                                        "from": Object {
-                                          "display": "block",
-                                        },
-                                      },
-                                      "@keyframes mui-auto-fill-cancel": Object {
-                                        "from": Object {
-                                          "display": "block",
-                                        },
-                                      },
-                                    }
-                                  }
+                                <legend
+                                  class="css-1z7n62"
                                 >
-                                  <GlobalStyles
-                                    defaultTheme={
-                                      Object {
-                                        "breakpoints": Object {
-                                          "between": [Function],
-                                          "down": [Function],
-                                          "keys": Array [
-                                            "xs",
-                                            "sm",
-                                            "md",
-                                            "lg",
-                                            "xl",
-                                          ],
-                                          "only": [Function],
-                                          "unit": "px",
-                                          "up": [Function],
-                                          "values": Object {
-                                            "lg": 1200,
-                                            "md": 900,
-                                            "sm": 600,
-                                            "xl": 1536,
-                                            "xs": 0,
-                                          },
-                                        },
-                                        "components": Object {},
-                                        "direction": "ltr",
-                                        "mixins": Object {
-                                          "toolbar": Object {
-                                            "@media (min-width:0px) and (orientation: landscape)": Object {
-                                              "minHeight": 48,
-                                            },
-                                            "@media (min-width:600px)": Object {
-                                              "minHeight": 64,
-                                            },
-                                            "minHeight": 56,
-                                          },
-                                        },
-                                        "palette": Object {
-                                          "action": Object {
-                                            "activatedOpacity": 0.12,
-                                            "active": "rgba(0, 0, 0, 0.54)",
-                                            "disabled": "rgba(0, 0, 0, 0.26)",
-                                            "disabledBackground": "rgba(0, 0, 0, 0.12)",
-                                            "disabledOpacity": 0.38,
-                                            "focus": "rgba(0, 0, 0, 0.12)",
-                                            "focusOpacity": 0.12,
-                                            "hover": "rgba(0, 0, 0, 0.04)",
-                                            "hoverOpacity": 0.04,
-                                            "selected": "rgba(0, 0, 0, 0.08)",
-                                            "selectedOpacity": 0.08,
-                                          },
-                                          "augmentColor": [Function],
-                                          "background": Object {
-                                            "default": "#fff",
-                                            "paper": "#fff",
-                                          },
-                                          "common": Object {
-                                            "black": "#000",
-                                            "white": "#fff",
-                                          },
-                                          "contrastThreshold": 3,
-                                          "divider": "rgba(0, 0, 0, 0.12)",
-                                          "error": Object {
-                                            "contrastText": "#fff",
-                                            "dark": "#c62828",
-                                            "light": "#ef5350",
-                                            "main": "#d32f2f",
-                                          },
-                                          "getContrastText": [Function],
-                                          "grey": Object {
-                                            "100": "#f5f5f5",
-                                            "200": "#eeeeee",
-                                            "300": "#e0e0e0",
-                                            "400": "#bdbdbd",
-                                            "50": "#fafafa",
-                                            "500": "#9e9e9e",
-                                            "600": "#757575",
-                                            "700": "#616161",
-                                            "800": "#424242",
-                                            "900": "#212121",
-                                            "A100": "#f5f5f5",
-                                            "A200": "#eeeeee",
-                                            "A400": "#bdbdbd",
-                                            "A700": "#616161",
-                                          },
-                                          "info": Object {
-                                            "contrastText": "#fff",
-                                            "dark": "#01579b",
-                                            "light": "#03a9f4",
-                                            "main": "#0288d1",
-                                          },
-                                          "mode": "light",
-                                          "primary": Object {
-                                            "contrastText": "#fff",
-                                            "dark": "#1565c0",
-                                            "light": "#42a5f5",
-                                            "main": "#1976d2",
-                                          },
-                                          "secondary": Object {
-                                            "contrastText": "#fff",
-                                            "dark": "#7b1fa2",
-                                            "light": "#ba68c8",
-                                            "main": "#9c27b0",
-                                          },
-                                          "success": Object {
-                                            "contrastText": "#fff",
-                                            "dark": "#1b5e20",
-                                            "light": "#4caf50",
-                                            "main": "#2e7d32",
-                                          },
-                                          "text": Object {
-                                            "disabled": "rgba(0, 0, 0, 0.38)",
-                                            "primary": "rgba(0, 0, 0, 0.87)",
-                                            "secondary": "rgba(0, 0, 0, 0.6)",
-                                          },
-                                          "tonalOffset": 0.2,
-                                          "warning": Object {
-                                            "contrastText": "#fff",
-                                            "dark": "#e65100",
-                                            "light": "#ff9800",
-                                            "main": "#ed6c02",
-                                          },
-                                        },
-                                        "shadows": Array [
-                                          "none",
-                                          "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-                                          "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-                                          "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-                                          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
-                                          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
-                                          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
-                                          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
-                                          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
-                                          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
-                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
-                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
-                                          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
-                                          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
-                                          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
-                                          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
-                                          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
-                                          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
-                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
-                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
-                                          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
-                                          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
-                                          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
-                                        ],
-                                        "shape": Object {
-                                          "borderRadius": 4,
-                                        },
-                                        "spacing": [Function],
-                                        "transitions": Object {
-                                          "create": [Function],
-                                          "duration": Object {
-                                            "complex": 375,
-                                            "enteringScreen": 225,
-                                            "leavingScreen": 195,
-                                            "short": 250,
-                                            "shorter": 200,
-                                            "shortest": 150,
-                                            "standard": 300,
-                                          },
-                                          "easing": Object {
-                                            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-                                            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-                                            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-                                            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-                                          },
-                                          "getAutoHeightDuration": [Function],
-                                        },
-                                        "typography": Object {
-                                          "body1": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "1rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0.00938em",
-                                            "lineHeight": 1.5,
-                                          },
-                                          "body2": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "0.875rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0.01071em",
-                                            "lineHeight": 1.43,
-                                          },
-                                          "button": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "0.875rem",
-                                            "fontWeight": 500,
-                                            "letterSpacing": "0.02857em",
-                                            "lineHeight": 1.75,
-                                            "textTransform": "uppercase",
-                                          },
-                                          "caption": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "0.75rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0.03333em",
-                                            "lineHeight": 1.66,
-                                          },
-                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                          "fontSize": 14,
-                                          "fontWeightBold": 700,
-                                          "fontWeightLight": 300,
-                                          "fontWeightMedium": 500,
-                                          "fontWeightRegular": 400,
-                                          "h1": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "6rem",
-                                            "fontWeight": 300,
-                                            "letterSpacing": "-0.01562em",
-                                            "lineHeight": 1.167,
-                                          },
-                                          "h2": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "3.75rem",
-                                            "fontWeight": 300,
-                                            "letterSpacing": "-0.00833em",
-                                            "lineHeight": 1.2,
-                                          },
-                                          "h3": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "3rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0em",
-                                            "lineHeight": 1.167,
-                                          },
-                                          "h4": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "2.125rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0.00735em",
-                                            "lineHeight": 1.235,
-                                          },
-                                          "h5": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "1.5rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0em",
-                                            "lineHeight": 1.334,
-                                          },
-                                          "h6": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "1.25rem",
-                                            "fontWeight": 500,
-                                            "letterSpacing": "0.0075em",
-                                            "lineHeight": 1.6,
-                                          },
-                                          "htmlFontSize": 16,
-                                          "overline": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "0.75rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0.08333em",
-                                            "lineHeight": 2.66,
-                                            "textTransform": "uppercase",
-                                          },
-                                          "pxToRem": [Function],
-                                          "subtitle1": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "1rem",
-                                            "fontWeight": 400,
-                                            "letterSpacing": "0.00938em",
-                                            "lineHeight": 1.75,
-                                          },
-                                          "subtitle2": Object {
-                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                                            "fontSize": "0.875rem",
-                                            "fontWeight": 500,
-                                            "letterSpacing": "0.00714em",
-                                            "lineHeight": 1.57,
-                                          },
-                                        },
-                                        "zIndex": Object {
-                                          "appBar": 1100,
-                                          "drawer": 1200,
-                                          "mobileStepper": 1000,
-                                          "modal": 1300,
-                                          "snackbar": 1400,
-                                          "speedDial": 1050,
-                                          "tooltip": 1500,
-                                        },
-                                      }
-                                    }
-                                    styles={
-                                      Object {
-                                        "@keyframes mui-auto-fill": Object {
-                                          "from": Object {
-                                            "display": "block",
-                                          },
-                                        },
-                                        "@keyframes mui-auto-fill-cancel": Object {
-                                          "from": Object {
-                                            "display": "block",
-                                          },
-                                        },
-                                      }
-                                    }
-                                  >
-                                    <EmotionGlobal
-                                      styles={
-                                        Object {
-                                          "@keyframes mui-auto-fill": Object {
-                                            "from": Object {
-                                              "display": "block",
-                                            },
-                                          },
-                                          "@keyframes mui-auto-fill-cancel": Object {
-                                            "from": Object {
-                                              "display": "block",
-                                            },
-                                          },
-                                        }
-                                      }
-                                    />
-                                  </GlobalStyles>
-                                </GlobalStyles>
-                                <MuiOutlinedInputRoot
-                                  className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl"
-                                  classes={
+                                  <span>
+                                    Collection Quantity
+                                     *
+                                  </span>
+                                </legend>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>,
+                }
+              }
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={300}
+              unmountOnExit={false}
+            >
+              <MuiCollapseRoot
+                className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                ownerState={
+                  Object {
+                    "children": Array [
+                      <p>
+                        There are a total 
+                        0
+                         different combinations.
+                         
+                        <ForwardRef(Collapse)
+                          in={false}
+                        >
+                          <p>
+                            We recommend generating up to
+                             
+                            0
+                            .
+                          </p>
+                        </ForwardRef(Collapse)>
+                      </p>,
+                      <ForwardRef(Paper)>
+                        <Input
+                          InputProps={
+                            Object {
+                              "inputProps": Object {
+                                "max": 0,
+                                "min": 1,
+                              },
+                            }
+                          }
+                          label="Collection Quantity"
+                          onChange={[MockFunction]}
+                          placeholder="0"
+                          required={true}
+                          type="number"
+                          value="1"
+                        />
+                      </ForwardRef(Paper)>,
+                    ],
+                    "collapsedSize": "0px",
+                    "in": false,
+                    "orientation": "vertical",
+                    "state": "exited",
+                  }
+                }
+                style={
+                  Object {
+                    "minHeight": "0px",
+                  }
+                }
+              >
+                <Noop />
+                <div
+                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                  style={
+                    Object {
+                      "minHeight": "0px",
+                    }
+                  }
+                >
+                  <MuiCollapseWrapper
+                    className="MuiCollapse-wrapper MuiCollapse-vertical"
+                    ownerState={
+                      Object {
+                        "children": Array [
+                          <p>
+                            There are a total 
+                            0
+                             different combinations.
+                             
+                            <ForwardRef(Collapse)
+                              in={false}
+                            >
+                              <p>
+                                We recommend generating up to
+                                 
+                                0
+                                .
+                              </p>
+                            </ForwardRef(Collapse)>
+                          </p>,
+                          <ForwardRef(Paper)>
+                            <Input
+                              InputProps={
+                                Object {
+                                  "inputProps": Object {
+                                    "max": 0,
+                                    "min": 1,
+                                  },
+                                }
+                              }
+                              label="Collection Quantity"
+                              onChange={[MockFunction]}
+                              placeholder="0"
+                              required={true}
+                              type="number"
+                              value="1"
+                            />
+                          </ForwardRef(Paper)>,
+                        ],
+                        "collapsedSize": "0px",
+                        "in": false,
+                        "orientation": "vertical",
+                        "state": "exited",
+                      }
+                    }
+                  >
+                    <Noop />
+                    <div
+                      className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                    >
+                      <MuiCollapseWrapperInner
+                        className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                        ownerState={
+                          Object {
+                            "children": Array [
+                              <p>
+                                There are a total 
+                                0
+                                 different combinations.
+                                 
+                                <ForwardRef(Collapse)
+                                  in={false}
+                                >
+                                  <p>
+                                    We recommend generating up to
+                                     
+                                    0
+                                    .
+                                  </p>
+                                </ForwardRef(Collapse)>
+                              </p>,
+                              <ForwardRef(Paper)>
+                                <Input
+                                  InputProps={
                                     Object {
-                                      "input": "MuiOutlinedInput-input",
-                                      "notchedOutline": null,
-                                      "root": "MuiOutlinedInput-root",
-                                    }
-                                  }
-                                  onClick={[Function]}
-                                  ownerState={
-                                    Object {
-                                      "aria-describedby": undefined,
-                                      "autoComplete": undefined,
-                                      "autoFocus": false,
-                                      "classes": Object {
-                                        "input": "MuiOutlinedInput-input",
-                                        "notchedOutline": null,
-                                        "root": "MuiOutlinedInput-root",
-                                      },
-                                      "color": "primary",
-                                      "components": Object {
-                                        "Input": Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "__emotion_base": "input",
-                                          "__emotion_forwardProp": [Function],
-                                          "__emotion_real": [Circular],
-                                          "__emotion_styles": Array [
-                                            "label:MuiInputBase-input;",
-                                            [Function],
-                                            [Function],
-                                            [Function],
-                                            "label:MuiOutlinedInput-input;",
-                                            [Function],
-                                            [Function],
-                                            [Function],
-                                          ],
-                                          "defaultProps": undefined,
-                                          "render": [Function],
-                                          "withComponent": [Function],
-                                        },
-                                        "Root": Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "__emotion_base": "div",
-                                          "__emotion_forwardProp": [Function],
-                                          "__emotion_real": [Circular],
-                                          "__emotion_styles": Array [
-                                            "label:MuiInputBase-root;",
-                                            [Function],
-                                            [Function],
-                                            [Function],
-                                            [Function],
-                                            "label:MuiOutlinedInput-root;",
-                                            [Function],
-                                            [Function],
-                                            [Function],
-                                            [Function],
-                                          ],
-                                          "defaultProps": undefined,
-                                          "render": [Function],
-                                          "withComponent": [Function],
-                                        },
-                                      },
-                                      "defaultValue": undefined,
-                                      "disabled": false,
-                                      "endAdornment": undefined,
-                                      "error": false,
-                                      "focused": false,
-                                      "formControl": Object {
-                                        "adornedStart": false,
-                                        "color": "primary",
-                                        "disabled": false,
-                                        "error": false,
-                                        "filled": true,
-                                        "focused": false,
-                                        "fullWidth": true,
-                                        "hiddenLabel": false,
-                                        "onBlur": [Function],
-                                        "onEmpty": [Function],
-                                        "onFilled": [Function],
-                                        "onFocus": [Function],
-                                        "registerEffect": [Function],
-                                        "required": true,
-                                        "setAdornedStart": [Function],
-                                        "size": "medium",
-                                        "variant": "outlined",
-                                      },
-                                      "fullWidth": true,
-                                      "hiddenLabel": false,
-                                      "id": undefined,
-                                      "inputComponent": "input",
                                       "inputProps": Object {
                                         "max": 0,
                                         "min": 1,
                                       },
-                                      "inputRef": undefined,
-                                      "maxRows": undefined,
-                                      "minRows": undefined,
-                                      "multiline": false,
-                                      "name": undefined,
-                                      "onBlur": undefined,
-                                      "onChange": [MockFunction],
-                                      "onFocus": undefined,
-                                      "placeholder": "0",
-                                      "renderSuffix": [Function],
-                                      "rows": undefined,
-                                      "size": "medium",
-                                      "startAdornment": undefined,
-                                      "type": "number",
-                                      "value": "1",
+                                    }
+                                  }
+                                  label="Collection Quantity"
+                                  onChange={[MockFunction]}
+                                  placeholder="0"
+                                  required={true}
+                                  type="number"
+                                  value="1"
+                                />
+                              </ForwardRef(Paper)>,
+                            ],
+                            "collapsedSize": "0px",
+                            "in": false,
+                            "orientation": "vertical",
+                            "state": "exited",
+                          }
+                        }
+                      >
+                        <Noop />
+                        <div
+                          className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <p>
+                            There are a total 
+                            0
+                             different combinations.
+                             
+                            <ForwardRef(Collapse)
+                              in={false}
+                            >
+                              <Transition
+                                addEndListener={[Function]}
+                                appear={false}
+                                enter={true}
+                                exit={true}
+                                in={false}
+                                mountOnEnter={false}
+                                nodeRef={
+                                  Object {
+                                    "current": <div
+                                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                                      style="min-height: 0px;"
+                                    >
+                                      <div
+                                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                                      >
+                                        <div
+                                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                                        >
+                                          <p>
+                                            We recommend generating up to
+                                             
+                                            0
+                                            .
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>,
+                                  }
+                                }
+                                onEnter={[Function]}
+                                onEntered={[Function]}
+                                onEntering={[Function]}
+                                onExit={[Function]}
+                                onExited={[Function]}
+                                onExiting={[Function]}
+                                timeout={300}
+                                unmountOnExit={false}
+                              >
+                                <MuiCollapseRoot
+                                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                                  ownerState={
+                                    Object {
+                                      "children": <p>
+                                        We recommend generating up to
+                                         
+                                        0
+                                        .
+                                      </p>,
+                                      "collapsedSize": "0px",
+                                      "in": false,
+                                      "orientation": "vertical",
+                                      "state": "exited",
+                                    }
+                                  }
+                                  style={
+                                    Object {
+                                      "minHeight": "0px",
                                     }
                                   }
                                 >
                                   <Noop />
                                   <div
-                                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
-                                    onClick={[Function]}
+                                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                                    style={
+                                      Object {
+                                        "minHeight": "0px",
+                                      }
+                                    }
                                   >
-                                    <MuiOutlinedInputInput
-                                      aria-invalid={false}
-                                      as="input"
-                                      autoFocus={false}
-                                      className="MuiOutlinedInput-input MuiInputBase-input"
-                                      disabled={false}
-                                      max={0}
-                                      min={1}
-                                      onAnimationStart={[Function]}
-                                      onBlur={[Function]}
-                                      onChange={[Function]}
-                                      onFocus={[Function]}
+                                    <MuiCollapseWrapper
+                                      className="MuiCollapse-wrapper MuiCollapse-vertical"
                                       ownerState={
                                         Object {
-                                          "aria-describedby": undefined,
-                                          "autoComplete": undefined,
-                                          "autoFocus": false,
-                                          "classes": Object {
-                                            "input": "MuiOutlinedInput-input",
-                                            "notchedOutline": null,
-                                            "root": "MuiOutlinedInput-root",
-                                          },
-                                          "color": "primary",
-                                          "components": Object {
-                                            "Input": Object {
-                                              "$$typeof": Symbol(react.forward_ref),
-                                              "__emotion_base": "input",
-                                              "__emotion_forwardProp": [Function],
-                                              "__emotion_real": [Circular],
-                                              "__emotion_styles": Array [
-                                                "label:MuiInputBase-input;",
-                                                [Function],
-                                                [Function],
-                                                [Function],
-                                                "label:MuiOutlinedInput-input;",
-                                                [Function],
-                                                [Function],
-                                                [Function],
-                                              ],
-                                              "defaultProps": undefined,
-                                              "render": [Function],
-                                              "withComponent": [Function],
-                                            },
-                                            "Root": Object {
-                                              "$$typeof": Symbol(react.forward_ref),
-                                              "__emotion_base": "div",
-                                              "__emotion_forwardProp": [Function],
-                                              "__emotion_real": [Circular],
-                                              "__emotion_styles": Array [
-                                                "label:MuiInputBase-root;",
-                                                [Function],
-                                                [Function],
-                                                [Function],
-                                                [Function],
-                                                "label:MuiOutlinedInput-root;",
-                                                [Function],
-                                                [Function],
-                                                [Function],
-                                                [Function],
-                                              ],
-                                              "defaultProps": undefined,
-                                              "render": [Function],
-                                              "withComponent": [Function],
-                                            },
-                                          },
-                                          "defaultValue": undefined,
-                                          "disabled": false,
-                                          "endAdornment": undefined,
-                                          "error": false,
-                                          "focused": false,
-                                          "formControl": Object {
-                                            "adornedStart": false,
-                                            "color": "primary",
-                                            "disabled": false,
-                                            "error": false,
-                                            "filled": true,
-                                            "focused": false,
-                                            "fullWidth": true,
-                                            "hiddenLabel": false,
-                                            "onBlur": [Function],
-                                            "onEmpty": [Function],
-                                            "onFilled": [Function],
-                                            "onFocus": [Function],
-                                            "registerEffect": [Function],
-                                            "required": true,
-                                            "setAdornedStart": [Function],
-                                            "size": "medium",
-                                            "variant": "outlined",
-                                          },
-                                          "fullWidth": true,
-                                          "hiddenLabel": false,
-                                          "id": undefined,
-                                          "inputComponent": "input",
-                                          "inputProps": Object {
-                                            "max": 0,
-                                            "min": 1,
-                                          },
-                                          "inputRef": undefined,
-                                          "maxRows": undefined,
-                                          "minRows": undefined,
-                                          "multiline": false,
-                                          "name": undefined,
-                                          "onBlur": undefined,
-                                          "onChange": [MockFunction],
-                                          "onFocus": undefined,
-                                          "placeholder": "0",
-                                          "renderSuffix": [Function],
-                                          "rows": undefined,
-                                          "size": "medium",
-                                          "startAdornment": undefined,
-                                          "type": "number",
-                                          "value": "1",
+                                          "children": <p>
+                                            We recommend generating up to
+                                             
+                                            0
+                                            .
+                                          </p>,
+                                          "collapsedSize": "0px",
+                                          "in": false,
+                                          "orientation": "vertical",
+                                          "state": "exited",
                                         }
                                       }
-                                      placeholder="0"
-                                      required={true}
-                                      type="number"
-                                      value="1"
                                     >
                                       <Noop />
-                                      <input
-                                        aria-invalid={false}
-                                        autoFocus={false}
-                                        className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
-                                        disabled={false}
-                                        max={0}
-                                        min={1}
-                                        onAnimationStart={[Function]}
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        onFocus={[Function]}
-                                        placeholder="0"
-                                        required={true}
-                                        type="number"
-                                        value="1"
-                                      />
-                                    </MuiOutlinedInputInput>
-                                    <MuiOutlinedInputNotchedOutline
-                                      className="MuiOutlinedInput-notchedOutline"
-                                      label={
-                                        <React.Fragment>
-                                          Collection Quantity
-                                           *
-                                        </React.Fragment>
-                                      }
-                                      notched={true}
-                                    >
-                                      <Noop />
-                                      <NotchedOutline
-                                        className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
-                                        label={
-                                          <React.Fragment>
-                                            Collection Quantity
-                                             *
-                                          </React.Fragment>
-                                        }
-                                        notched={true}
+                                      <div
+                                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
                                       >
-                                        <Styled(fieldset)
-                                          aria-hidden={true}
-                                          className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
+                                        <MuiCollapseWrapperInner
+                                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
                                           ownerState={
                                             Object {
-                                              "className": "MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline",
-                                              "label": <React.Fragment>
-                                                Collection Quantity
-                                                 *
-                                              </React.Fragment>,
-                                              "notched": true,
+                                              "children": <p>
+                                                We recommend generating up to
+                                                 
+                                                0
+                                                .
+                                              </p>,
+                                              "collapsedSize": "0px",
+                                              "in": false,
+                                              "orientation": "vertical",
+                                              "state": "exited",
                                             }
                                           }
                                         >
                                           <Noop />
-                                          <fieldset
-                                            aria-hidden={true}
-                                            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                                          <div
+                                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
                                           >
-                                            <Styled(legend)
-                                              ownerState={
+                                            <p>
+                                              We recommend generating up to
+                                               
+                                              0
+                                              .
+                                            </p>
+                                          </div>
+                                        </MuiCollapseWrapperInner>
+                                      </div>
+                                    </MuiCollapseWrapper>
+                                  </div>
+                                </MuiCollapseRoot>
+                              </Transition>
+                            </ForwardRef(Collapse)>
+                          </p>
+                          <ForwardRef(Paper)>
+                            <MuiPaperRoot
+                              as="div"
+                              className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1"
+                              ownerState={
+                                Object {
+                                  "children": <Input
+                                    InputProps={
+                                      Object {
+                                        "inputProps": Object {
+                                          "max": 0,
+                                          "min": 1,
+                                        },
+                                      }
+                                    }
+                                    label="Collection Quantity"
+                                    onChange={[MockFunction]}
+                                    placeholder="0"
+                                    required={true}
+                                    type="number"
+                                    value="1"
+                                  />,
+                                  "component": "div",
+                                  "elevation": 1,
+                                  "square": false,
+                                  "variant": "elevation",
+                                }
+                              }
+                            >
+                              <Noop />
+                              <div
+                                className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-1ps6pg7-MuiPaper-root"
+                              >
+                                <Input
+                                  InputProps={
+                                    Object {
+                                      "inputProps": Object {
+                                        "max": 0,
+                                        "min": 1,
+                                      },
+                                    }
+                                  }
+                                  label="Collection Quantity"
+                                  onChange={[MockFunction]}
+                                  placeholder="0"
+                                  required={true}
+                                  type="number"
+                                  value="1"
+                                >
+                                  <ForwardRef(TextField)
+                                    InputProps={
+                                      Object {
+                                        "inputProps": Object {
+                                          "max": 0,
+                                          "min": 1,
+                                        },
+                                      }
+                                    }
+                                    fullWidth={true}
+                                    label="Collection Quantity"
+                                    onChange={[MockFunction]}
+                                    placeholder="0"
+                                    required={true}
+                                    type="number"
+                                    value="1"
+                                    variant="outlined"
+                                  >
+                                    <MuiTextFieldRoot
+                                      className="MuiTextField-root"
+                                      color="primary"
+                                      disabled={false}
+                                      error={false}
+                                      fullWidth={true}
+                                      ownerState={
+                                        Object {
+                                          "InputProps": Object {
+                                            "inputProps": Object {
+                                              "max": 0,
+                                              "min": 1,
+                                            },
+                                          },
+                                          "autoFocus": false,
+                                          "color": "primary",
+                                          "defaultValue": undefined,
+                                          "disabled": false,
+                                          "error": false,
+                                          "fullWidth": true,
+                                          "inputProps": undefined,
+                                          "label": "Collection Quantity",
+                                          "multiline": false,
+                                          "name": undefined,
+                                          "onChange": [MockFunction],
+                                          "onKeyPress": undefined,
+                                          "placeholder": "0",
+                                          "required": true,
+                                          "rows": undefined,
+                                          "select": false,
+                                          "sx": undefined,
+                                          "type": "number",
+                                          "value": "1",
+                                          "variant": "outlined",
+                                        }
+                                      }
+                                      required={true}
+                                      variant="outlined"
+                                    >
+                                      <Noop />
+                                      <ForwardRef(FormControl)
+                                        className="MuiTextField-root css-1xj1k15-MuiTextField-root"
+                                        color="primary"
+                                        disabled={false}
+                                        error={false}
+                                        fullWidth={true}
+                                        required={true}
+                                        variant="outlined"
+                                      >
+                                        <MuiFormControlRoot
+                                          as="div"
+                                          className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1xj1k15-MuiTextField-root"
+                                          ownerState={
+                                            Object {
+                                              "children": Array [
+                                                <ForwardRef(InputLabel)>
+                                                  Collection Quantity
+                                                </ForwardRef(InputLabel)>,
+                                                <ForwardRef(OutlinedInput)
+                                                  autoFocus={false}
+                                                  fullWidth={true}
+                                                  inputProps={
+                                                    Object {
+                                                      "max": 0,
+                                                      "min": 1,
+                                                    }
+                                                  }
+                                                  label={
+                                                    <React.Fragment>
+                                                      Collection Quantity
+                                                       *
+                                                    </React.Fragment>
+                                                  }
+                                                  multiline={false}
+                                                  onChange={[MockFunction]}
+                                                  placeholder="0"
+                                                  type="number"
+                                                  value="1"
+                                                />,
+                                                undefined,
+                                              ],
+                                              "className": "MuiTextField-root css-1xj1k15-MuiTextField-root",
+                                              "color": "primary",
+                                              "component": "div",
+                                              "disabled": false,
+                                              "error": false,
+                                              "fullWidth": true,
+                                              "hiddenLabel": false,
+                                              "margin": "none",
+                                              "onKeyPress": undefined,
+                                              "required": true,
+                                              "size": "medium",
+                                              "variant": "outlined",
+                                            }
+                                          }
+                                        >
+                                          <Noop />
+                                          <div
+                                            className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+                                          >
+                                            <ForwardRef(InputLabel)>
+                                              <MuiInputLabelRoot
+                                                classes={
+                                                  Object {
+                                                    "asterisk": "MuiInputLabel-asterisk",
+                                                    "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                  }
+                                                }
+                                                data-shrink={true}
+                                                ownerState={
+                                                  Object {
+                                                    "children": "Collection Quantity",
+                                                    "disableAnimation": false,
+                                                    "formControl": Object {
+                                                      "adornedStart": false,
+                                                      "color": "primary",
+                                                      "disabled": false,
+                                                      "error": false,
+                                                      "filled": true,
+                                                      "focused": false,
+                                                      "fullWidth": true,
+                                                      "hiddenLabel": false,
+                                                      "onBlur": [Function],
+                                                      "onEmpty": [Function],
+                                                      "onFilled": [Function],
+                                                      "onFocus": [Function],
+                                                      "registerEffect": [Function],
+                                                      "required": true,
+                                                      "setAdornedStart": [Function],
+                                                      "size": "medium",
+                                                      "variant": "outlined",
+                                                    },
+                                                    "htmlFor": undefined,
+                                                    "id": undefined,
+                                                    "required": true,
+                                                    "shrink": true,
+                                                    "size": "medium",
+                                                    "variant": "outlined",
+                                                  }
+                                                }
+                                              >
+                                                <Noop />
+                                                <ForwardRef(FormLabel)
+                                                  className="css-1bzvmy4-MuiInputLabel-root"
+                                                  classes={
+                                                    Object {
+                                                      "asterisk": "MuiInputLabel-asterisk",
+                                                      "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                    }
+                                                  }
+                                                  data-shrink={true}
+                                                >
+                                                  <MuiFormLabelRoot
+                                                    as="label"
+                                                    className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-1bzvmy4-MuiInputLabel-root"
+                                                    classes={
+                                                      Object {
+                                                        "asterisk": "MuiInputLabel-asterisk",
+                                                        "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                      }
+                                                    }
+                                                    data-shrink={true}
+                                                    ownerState={
+                                                      Object {
+                                                        "children": "Collection Quantity",
+                                                        "className": "css-1bzvmy4-MuiInputLabel-root",
+                                                        "classes": Object {
+                                                          "asterisk": "MuiInputLabel-asterisk",
+                                                          "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                        },
+                                                        "color": "primary",
+                                                        "component": "label",
+                                                        "data-shrink": true,
+                                                        "disabled": false,
+                                                        "error": false,
+                                                        "filled": true,
+                                                        "focused": false,
+                                                        "htmlFor": undefined,
+                                                        "id": undefined,
+                                                        "required": true,
+                                                      }
+                                                    }
+                                                  >
+                                                    <Noop />
+                                                    <label
+                                                      className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled Mui-required css-qwb5gr-MuiFormLabel-root-MuiInputLabel-root"
+                                                      data-shrink={true}
+                                                    >
+                                                      Collection Quantity
+                                                      <MuiFormLabelAsterisk
+                                                        aria-hidden={true}
+                                                        className="MuiInputLabel-asterisk MuiFormLabel-asterisk"
+                                                        ownerState={
+                                                          Object {
+                                                            "children": "Collection Quantity",
+                                                            "className": "css-1bzvmy4-MuiInputLabel-root",
+                                                            "classes": Object {
+                                                              "asterisk": "MuiInputLabel-asterisk",
+                                                              "root": "MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined",
+                                                            },
+                                                            "color": "primary",
+                                                            "component": "label",
+                                                            "data-shrink": true,
+                                                            "disabled": false,
+                                                            "error": false,
+                                                            "filled": true,
+                                                            "focused": false,
+                                                            "htmlFor": undefined,
+                                                            "id": undefined,
+                                                            "required": true,
+                                                          }
+                                                        }
+                                                      >
+                                                        <Noop />
+                                                        <span
+                                                          aria-hidden={true}
+                                                          className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
+                                                        >
+                                                           
+                                                          *
+                                                        </span>
+                                                      </MuiFormLabelAsterisk>
+                                                    </label>
+                                                  </MuiFormLabelRoot>
+                                                </ForwardRef(FormLabel)>
+                                              </MuiInputLabelRoot>
+                                            </ForwardRef(InputLabel)>
+                                            <ForwardRef(OutlinedInput)
+                                              autoFocus={false}
+                                              fullWidth={true}
+                                              inputProps={
                                                 Object {
-                                                  "className": "MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline",
-                                                  "label": <React.Fragment>
-                                                    Collection Quantity
-                                                     *
-                                                  </React.Fragment>,
-                                                  "notched": true,
+                                                  "max": 0,
+                                                  "min": 1,
                                                 }
                                               }
-                                            >
-                                              <Noop />
-                                              <legend
-                                                className="css-1z7n62"
-                                              >
-                                                <span>
+                                              label={
+                                                <React.Fragment>
                                                   Collection Quantity
                                                    *
-                                                </span>
-                                              </legend>
-                                            </Styled(legend)>
-                                          </fieldset>
-                                        </Styled(fieldset)>
-                                      </NotchedOutline>
-                                    </MuiOutlinedInputNotchedOutline>
-                                  </div>
-                                </MuiOutlinedInputRoot>
-                              </ForwardRef(InputBase)>
-                            </ForwardRef(OutlinedInput)>
-                          </div>
-                        </MuiFormControlRoot>
-                      </ForwardRef(FormControl)>
-                    </MuiTextFieldRoot>
-                  </ForwardRef(TextField)>
-                </Input>
-              </div>
-            </MuiPaperRoot>
-          </ForwardRef(Paper)>
+                                                </React.Fragment>
+                                              }
+                                              multiline={false}
+                                              onChange={[MockFunction]}
+                                              placeholder="0"
+                                              type="number"
+                                              value="1"
+                                            >
+                                              <ForwardRef(InputBase)
+                                                autoFocus={false}
+                                                classes={
+                                                  Object {
+                                                    "input": "MuiOutlinedInput-input",
+                                                    "notchedOutline": null,
+                                                    "root": "MuiOutlinedInput-root",
+                                                  }
+                                                }
+                                                components={
+                                                  Object {
+                                                    "Input": Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "__emotion_base": "input",
+                                                      "__emotion_forwardProp": [Function],
+                                                      "__emotion_real": [Circular],
+                                                      "__emotion_styles": Array [
+                                                        "label:MuiInputBase-input;",
+                                                        [Function],
+                                                        [Function],
+                                                        [Function],
+                                                        "label:MuiOutlinedInput-input;",
+                                                        [Function],
+                                                        [Function],
+                                                        [Function],
+                                                      ],
+                                                      "defaultProps": undefined,
+                                                      "render": [Function],
+                                                      "withComponent": [Function],
+                                                    },
+                                                    "Root": Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "__emotion_base": "div",
+                                                      "__emotion_forwardProp": [Function],
+                                                      "__emotion_real": [Circular],
+                                                      "__emotion_styles": Array [
+                                                        "label:MuiInputBase-root;",
+                                                        [Function],
+                                                        [Function],
+                                                        [Function],
+                                                        [Function],
+                                                        "label:MuiOutlinedInput-root;",
+                                                        [Function],
+                                                        [Function],
+                                                        [Function],
+                                                        [Function],
+                                                      ],
+                                                      "defaultProps": undefined,
+                                                      "render": [Function],
+                                                      "withComponent": [Function],
+                                                    },
+                                                  }
+                                                }
+                                                fullWidth={true}
+                                                inputComponent="input"
+                                                inputProps={
+                                                  Object {
+                                                    "max": 0,
+                                                    "min": 1,
+                                                  }
+                                                }
+                                                multiline={false}
+                                                onChange={[MockFunction]}
+                                                placeholder="0"
+                                                renderSuffix={[Function]}
+                                                type="number"
+                                                value="1"
+                                              >
+                                                <GlobalStyles
+                                                  styles={
+                                                    Object {
+                                                      "@keyframes mui-auto-fill": Object {
+                                                        "from": Object {
+                                                          "display": "block",
+                                                        },
+                                                      },
+                                                      "@keyframes mui-auto-fill-cancel": Object {
+                                                        "from": Object {
+                                                          "display": "block",
+                                                        },
+                                                      },
+                                                    }
+                                                  }
+                                                >
+                                                  <GlobalStyles
+                                                    defaultTheme={
+                                                      Object {
+                                                        "breakpoints": Object {
+                                                          "between": [Function],
+                                                          "down": [Function],
+                                                          "keys": Array [
+                                                            "xs",
+                                                            "sm",
+                                                            "md",
+                                                            "lg",
+                                                            "xl",
+                                                          ],
+                                                          "only": [Function],
+                                                          "unit": "px",
+                                                          "up": [Function],
+                                                          "values": Object {
+                                                            "lg": 1200,
+                                                            "md": 900,
+                                                            "sm": 600,
+                                                            "xl": 1536,
+                                                            "xs": 0,
+                                                          },
+                                                        },
+                                                        "components": Object {},
+                                                        "direction": "ltr",
+                                                        "mixins": Object {
+                                                          "toolbar": Object {
+                                                            "@media (min-width:0px) and (orientation: landscape)": Object {
+                                                              "minHeight": 48,
+                                                            },
+                                                            "@media (min-width:600px)": Object {
+                                                              "minHeight": 64,
+                                                            },
+                                                            "minHeight": 56,
+                                                          },
+                                                        },
+                                                        "palette": Object {
+                                                          "action": Object {
+                                                            "activatedOpacity": 0.12,
+                                                            "active": "rgba(0, 0, 0, 0.54)",
+                                                            "disabled": "rgba(0, 0, 0, 0.26)",
+                                                            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                                            "disabledOpacity": 0.38,
+                                                            "focus": "rgba(0, 0, 0, 0.12)",
+                                                            "focusOpacity": 0.12,
+                                                            "hover": "rgba(0, 0, 0, 0.04)",
+                                                            "hoverOpacity": 0.04,
+                                                            "selected": "rgba(0, 0, 0, 0.08)",
+                                                            "selectedOpacity": 0.08,
+                                                          },
+                                                          "augmentColor": [Function],
+                                                          "background": Object {
+                                                            "default": "#fff",
+                                                            "paper": "#fff",
+                                                          },
+                                                          "common": Object {
+                                                            "black": "#000",
+                                                            "white": "#fff",
+                                                          },
+                                                          "contrastThreshold": 3,
+                                                          "divider": "rgba(0, 0, 0, 0.12)",
+                                                          "error": Object {
+                                                            "contrastText": "#fff",
+                                                            "dark": "#c62828",
+                                                            "light": "#ef5350",
+                                                            "main": "#d32f2f",
+                                                          },
+                                                          "getContrastText": [Function],
+                                                          "grey": Object {
+                                                            "100": "#f5f5f5",
+                                                            "200": "#eeeeee",
+                                                            "300": "#e0e0e0",
+                                                            "400": "#bdbdbd",
+                                                            "50": "#fafafa",
+                                                            "500": "#9e9e9e",
+                                                            "600": "#757575",
+                                                            "700": "#616161",
+                                                            "800": "#424242",
+                                                            "900": "#212121",
+                                                            "A100": "#f5f5f5",
+                                                            "A200": "#eeeeee",
+                                                            "A400": "#bdbdbd",
+                                                            "A700": "#616161",
+                                                          },
+                                                          "info": Object {
+                                                            "contrastText": "#fff",
+                                                            "dark": "#01579b",
+                                                            "light": "#03a9f4",
+                                                            "main": "#0288d1",
+                                                          },
+                                                          "mode": "light",
+                                                          "primary": Object {
+                                                            "contrastText": "#fff",
+                                                            "dark": "#1565c0",
+                                                            "light": "#42a5f5",
+                                                            "main": "#1976d2",
+                                                          },
+                                                          "secondary": Object {
+                                                            "contrastText": "#fff",
+                                                            "dark": "#7b1fa2",
+                                                            "light": "#ba68c8",
+                                                            "main": "#9c27b0",
+                                                          },
+                                                          "success": Object {
+                                                            "contrastText": "#fff",
+                                                            "dark": "#1b5e20",
+                                                            "light": "#4caf50",
+                                                            "main": "#2e7d32",
+                                                          },
+                                                          "text": Object {
+                                                            "disabled": "rgba(0, 0, 0, 0.38)",
+                                                            "primary": "rgba(0, 0, 0, 0.87)",
+                                                            "secondary": "rgba(0, 0, 0, 0.6)",
+                                                          },
+                                                          "tonalOffset": 0.2,
+                                                          "warning": Object {
+                                                            "contrastText": "#fff",
+                                                            "dark": "#e65100",
+                                                            "light": "#ff9800",
+                                                            "main": "#ed6c02",
+                                                          },
+                                                        },
+                                                        "shadows": Array [
+                                                          "none",
+                                                          "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+                                                          "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+                                                          "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+                                                          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                                          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                                          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                                          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                                          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                                          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                                          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                                          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                                          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                                          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                                          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                                          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                                          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                                          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                                          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                                          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                                          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                                          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                                        ],
+                                                        "shape": Object {
+                                                          "borderRadius": 4,
+                                                        },
+                                                        "spacing": [Function],
+                                                        "transitions": Object {
+                                                          "create": [Function],
+                                                          "duration": Object {
+                                                            "complex": 375,
+                                                            "enteringScreen": 225,
+                                                            "leavingScreen": 195,
+                                                            "short": 250,
+                                                            "shorter": 200,
+                                                            "shortest": 150,
+                                                            "standard": 300,
+                                                          },
+                                                          "easing": Object {
+                                                            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                                            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                                            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                                            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                                          },
+                                                          "getAutoHeightDuration": [Function],
+                                                        },
+                                                        "typography": Object {
+                                                          "body1": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "1rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0.00938em",
+                                                            "lineHeight": 1.5,
+                                                          },
+                                                          "body2": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "0.875rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0.01071em",
+                                                            "lineHeight": 1.43,
+                                                          },
+                                                          "button": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "0.875rem",
+                                                            "fontWeight": 500,
+                                                            "letterSpacing": "0.02857em",
+                                                            "lineHeight": 1.75,
+                                                            "textTransform": "uppercase",
+                                                          },
+                                                          "caption": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "0.75rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0.03333em",
+                                                            "lineHeight": 1.66,
+                                                          },
+                                                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                          "fontSize": 14,
+                                                          "fontWeightBold": 700,
+                                                          "fontWeightLight": 300,
+                                                          "fontWeightMedium": 500,
+                                                          "fontWeightRegular": 400,
+                                                          "h1": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "6rem",
+                                                            "fontWeight": 300,
+                                                            "letterSpacing": "-0.01562em",
+                                                            "lineHeight": 1.167,
+                                                          },
+                                                          "h2": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "3.75rem",
+                                                            "fontWeight": 300,
+                                                            "letterSpacing": "-0.00833em",
+                                                            "lineHeight": 1.2,
+                                                          },
+                                                          "h3": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "3rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0em",
+                                                            "lineHeight": 1.167,
+                                                          },
+                                                          "h4": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "2.125rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0.00735em",
+                                                            "lineHeight": 1.235,
+                                                          },
+                                                          "h5": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "1.5rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0em",
+                                                            "lineHeight": 1.334,
+                                                          },
+                                                          "h6": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "1.25rem",
+                                                            "fontWeight": 500,
+                                                            "letterSpacing": "0.0075em",
+                                                            "lineHeight": 1.6,
+                                                          },
+                                                          "htmlFontSize": 16,
+                                                          "overline": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "0.75rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0.08333em",
+                                                            "lineHeight": 2.66,
+                                                            "textTransform": "uppercase",
+                                                          },
+                                                          "pxToRem": [Function],
+                                                          "subtitle1": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "1rem",
+                                                            "fontWeight": 400,
+                                                            "letterSpacing": "0.00938em",
+                                                            "lineHeight": 1.75,
+                                                          },
+                                                          "subtitle2": Object {
+                                                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                            "fontSize": "0.875rem",
+                                                            "fontWeight": 500,
+                                                            "letterSpacing": "0.00714em",
+                                                            "lineHeight": 1.57,
+                                                          },
+                                                        },
+                                                        "zIndex": Object {
+                                                          "appBar": 1100,
+                                                          "drawer": 1200,
+                                                          "mobileStepper": 1000,
+                                                          "modal": 1300,
+                                                          "snackbar": 1400,
+                                                          "speedDial": 1050,
+                                                          "tooltip": 1500,
+                                                        },
+                                                      }
+                                                    }
+                                                    styles={
+                                                      Object {
+                                                        "@keyframes mui-auto-fill": Object {
+                                                          "from": Object {
+                                                            "display": "block",
+                                                          },
+                                                        },
+                                                        "@keyframes mui-auto-fill-cancel": Object {
+                                                          "from": Object {
+                                                            "display": "block",
+                                                          },
+                                                        },
+                                                      }
+                                                    }
+                                                  >
+                                                    <EmotionGlobal
+                                                      styles={
+                                                        Object {
+                                                          "@keyframes mui-auto-fill": Object {
+                                                            "from": Object {
+                                                              "display": "block",
+                                                            },
+                                                          },
+                                                          "@keyframes mui-auto-fill-cancel": Object {
+                                                            "from": Object {
+                                                              "display": "block",
+                                                            },
+                                                          },
+                                                        }
+                                                      }
+                                                    />
+                                                  </GlobalStyles>
+                                                </GlobalStyles>
+                                                <MuiOutlinedInputRoot
+                                                  className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl"
+                                                  classes={
+                                                    Object {
+                                                      "input": "MuiOutlinedInput-input",
+                                                      "notchedOutline": null,
+                                                      "root": "MuiOutlinedInput-root",
+                                                    }
+                                                  }
+                                                  onClick={[Function]}
+                                                  ownerState={
+                                                    Object {
+                                                      "aria-describedby": undefined,
+                                                      "autoComplete": undefined,
+                                                      "autoFocus": false,
+                                                      "classes": Object {
+                                                        "input": "MuiOutlinedInput-input",
+                                                        "notchedOutline": null,
+                                                        "root": "MuiOutlinedInput-root",
+                                                      },
+                                                      "color": "primary",
+                                                      "components": Object {
+                                                        "Input": Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "__emotion_base": "input",
+                                                          "__emotion_forwardProp": [Function],
+                                                          "__emotion_real": [Circular],
+                                                          "__emotion_styles": Array [
+                                                            "label:MuiInputBase-input;",
+                                                            [Function],
+                                                            [Function],
+                                                            [Function],
+                                                            "label:MuiOutlinedInput-input;",
+                                                            [Function],
+                                                            [Function],
+                                                            [Function],
+                                                          ],
+                                                          "defaultProps": undefined,
+                                                          "render": [Function],
+                                                          "withComponent": [Function],
+                                                        },
+                                                        "Root": Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "__emotion_base": "div",
+                                                          "__emotion_forwardProp": [Function],
+                                                          "__emotion_real": [Circular],
+                                                          "__emotion_styles": Array [
+                                                            "label:MuiInputBase-root;",
+                                                            [Function],
+                                                            [Function],
+                                                            [Function],
+                                                            [Function],
+                                                            "label:MuiOutlinedInput-root;",
+                                                            [Function],
+                                                            [Function],
+                                                            [Function],
+                                                            [Function],
+                                                          ],
+                                                          "defaultProps": undefined,
+                                                          "render": [Function],
+                                                          "withComponent": [Function],
+                                                        },
+                                                      },
+                                                      "defaultValue": undefined,
+                                                      "disabled": false,
+                                                      "endAdornment": undefined,
+                                                      "error": false,
+                                                      "focused": false,
+                                                      "formControl": Object {
+                                                        "adornedStart": false,
+                                                        "color": "primary",
+                                                        "disabled": false,
+                                                        "error": false,
+                                                        "filled": true,
+                                                        "focused": false,
+                                                        "fullWidth": true,
+                                                        "hiddenLabel": false,
+                                                        "onBlur": [Function],
+                                                        "onEmpty": [Function],
+                                                        "onFilled": [Function],
+                                                        "onFocus": [Function],
+                                                        "registerEffect": [Function],
+                                                        "required": true,
+                                                        "setAdornedStart": [Function],
+                                                        "size": "medium",
+                                                        "variant": "outlined",
+                                                      },
+                                                      "fullWidth": true,
+                                                      "hiddenLabel": false,
+                                                      "id": undefined,
+                                                      "inputComponent": "input",
+                                                      "inputProps": Object {
+                                                        "max": 0,
+                                                        "min": 1,
+                                                      },
+                                                      "inputRef": undefined,
+                                                      "maxRows": undefined,
+                                                      "minRows": undefined,
+                                                      "multiline": false,
+                                                      "name": undefined,
+                                                      "onBlur": undefined,
+                                                      "onChange": [MockFunction],
+                                                      "onFocus": undefined,
+                                                      "placeholder": "0",
+                                                      "renderSuffix": [Function],
+                                                      "rows": undefined,
+                                                      "size": "medium",
+                                                      "startAdornment": undefined,
+                                                      "type": "number",
+                                                      "value": "1",
+                                                    }
+                                                  }
+                                                >
+                                                  <Noop />
+                                                  <div
+                                                    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-1ten8y9-MuiInputBase-root-MuiOutlinedInput-root"
+                                                    onClick={[Function]}
+                                                  >
+                                                    <MuiOutlinedInputInput
+                                                      aria-invalid={false}
+                                                      as="input"
+                                                      autoFocus={false}
+                                                      className="MuiOutlinedInput-input MuiInputBase-input"
+                                                      disabled={false}
+                                                      max={0}
+                                                      min={1}
+                                                      onAnimationStart={[Function]}
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      onFocus={[Function]}
+                                                      ownerState={
+                                                        Object {
+                                                          "aria-describedby": undefined,
+                                                          "autoComplete": undefined,
+                                                          "autoFocus": false,
+                                                          "classes": Object {
+                                                            "input": "MuiOutlinedInput-input",
+                                                            "notchedOutline": null,
+                                                            "root": "MuiOutlinedInput-root",
+                                                          },
+                                                          "color": "primary",
+                                                          "components": Object {
+                                                            "Input": Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "__emotion_base": "input",
+                                                              "__emotion_forwardProp": [Function],
+                                                              "__emotion_real": [Circular],
+                                                              "__emotion_styles": Array [
+                                                                "label:MuiInputBase-input;",
+                                                                [Function],
+                                                                [Function],
+                                                                [Function],
+                                                                "label:MuiOutlinedInput-input;",
+                                                                [Function],
+                                                                [Function],
+                                                                [Function],
+                                                              ],
+                                                              "defaultProps": undefined,
+                                                              "render": [Function],
+                                                              "withComponent": [Function],
+                                                            },
+                                                            "Root": Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "__emotion_base": "div",
+                                                              "__emotion_forwardProp": [Function],
+                                                              "__emotion_real": [Circular],
+                                                              "__emotion_styles": Array [
+                                                                "label:MuiInputBase-root;",
+                                                                [Function],
+                                                                [Function],
+                                                                [Function],
+                                                                [Function],
+                                                                "label:MuiOutlinedInput-root;",
+                                                                [Function],
+                                                                [Function],
+                                                                [Function],
+                                                                [Function],
+                                                              ],
+                                                              "defaultProps": undefined,
+                                                              "render": [Function],
+                                                              "withComponent": [Function],
+                                                            },
+                                                          },
+                                                          "defaultValue": undefined,
+                                                          "disabled": false,
+                                                          "endAdornment": undefined,
+                                                          "error": false,
+                                                          "focused": false,
+                                                          "formControl": Object {
+                                                            "adornedStart": false,
+                                                            "color": "primary",
+                                                            "disabled": false,
+                                                            "error": false,
+                                                            "filled": true,
+                                                            "focused": false,
+                                                            "fullWidth": true,
+                                                            "hiddenLabel": false,
+                                                            "onBlur": [Function],
+                                                            "onEmpty": [Function],
+                                                            "onFilled": [Function],
+                                                            "onFocus": [Function],
+                                                            "registerEffect": [Function],
+                                                            "required": true,
+                                                            "setAdornedStart": [Function],
+                                                            "size": "medium",
+                                                            "variant": "outlined",
+                                                          },
+                                                          "fullWidth": true,
+                                                          "hiddenLabel": false,
+                                                          "id": undefined,
+                                                          "inputComponent": "input",
+                                                          "inputProps": Object {
+                                                            "max": 0,
+                                                            "min": 1,
+                                                          },
+                                                          "inputRef": undefined,
+                                                          "maxRows": undefined,
+                                                          "minRows": undefined,
+                                                          "multiline": false,
+                                                          "name": undefined,
+                                                          "onBlur": undefined,
+                                                          "onChange": [MockFunction],
+                                                          "onFocus": undefined,
+                                                          "placeholder": "0",
+                                                          "renderSuffix": [Function],
+                                                          "rows": undefined,
+                                                          "size": "medium",
+                                                          "startAdornment": undefined,
+                                                          "type": "number",
+                                                          "value": "1",
+                                                        }
+                                                      }
+                                                      placeholder="0"
+                                                      required={true}
+                                                      type="number"
+                                                      value="1"
+                                                    >
+                                                      <Noop />
+                                                      <input
+                                                        aria-invalid={false}
+                                                        autoFocus={false}
+                                                        className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                                                        disabled={false}
+                                                        max={0}
+                                                        min={1}
+                                                        onAnimationStart={[Function]}
+                                                        onBlur={[Function]}
+                                                        onChange={[Function]}
+                                                        onFocus={[Function]}
+                                                        placeholder="0"
+                                                        required={true}
+                                                        type="number"
+                                                        value="1"
+                                                      />
+                                                    </MuiOutlinedInputInput>
+                                                    <MuiOutlinedInputNotchedOutline
+                                                      className="MuiOutlinedInput-notchedOutline"
+                                                      label={
+                                                        <React.Fragment>
+                                                          Collection Quantity
+                                                           *
+                                                        </React.Fragment>
+                                                      }
+                                                      notched={true}
+                                                    >
+                                                      <Noop />
+                                                      <NotchedOutline
+                                                        className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
+                                                        label={
+                                                          <React.Fragment>
+                                                            Collection Quantity
+                                                             *
+                                                          </React.Fragment>
+                                                        }
+                                                        notched={true}
+                                                      >
+                                                        <Styled(fieldset)
+                                                          aria-hidden={true}
+                                                          className="MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline"
+                                                          ownerState={
+                                                            Object {
+                                                              "className": "MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline",
+                                                              "label": <React.Fragment>
+                                                                Collection Quantity
+                                                                 *
+                                                              </React.Fragment>,
+                                                              "notched": true,
+                                                            }
+                                                          }
+                                                        >
+                                                          <Noop />
+                                                          <fieldset
+                                                            aria-hidden={true}
+                                                            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                                                          >
+                                                            <Styled(legend)
+                                                              ownerState={
+                                                                Object {
+                                                                  "className": "MuiOutlinedInput-notchedOutline css-rki20w-MuiOutlinedInput-notchedOutline",
+                                                                  "label": <React.Fragment>
+                                                                    Collection Quantity
+                                                                     *
+                                                                  </React.Fragment>,
+                                                                  "notched": true,
+                                                                }
+                                                              }
+                                                            >
+                                                              <Noop />
+                                                              <legend
+                                                                className="css-1z7n62"
+                                                              >
+                                                                <span>
+                                                                  Collection Quantity
+                                                                   *
+                                                                </span>
+                                                              </legend>
+                                                            </Styled(legend)>
+                                                          </fieldset>
+                                                        </Styled(fieldset)>
+                                                      </NotchedOutline>
+                                                    </MuiOutlinedInputNotchedOutline>
+                                                  </div>
+                                                </MuiOutlinedInputRoot>
+                                              </ForwardRef(InputBase)>
+                                            </ForwardRef(OutlinedInput)>
+                                          </div>
+                                        </MuiFormControlRoot>
+                                      </ForwardRef(FormControl)>
+                                    </MuiTextFieldRoot>
+                                  </ForwardRef(TextField)>
+                                </Input>
+                              </div>
+                            </MuiPaperRoot>
+                          </ForwardRef(Paper)>
+                        </div>
+                      </MuiCollapseWrapperInner>
+                    </div>
+                  </MuiCollapseWrapper>
+                </div>
+              </MuiCollapseRoot>
+            </Transition>
+          </ForwardRef(Collapse)>
         </LayerImageUpload>
       </InnerThemeProvider>
     </ThemeProvider>
