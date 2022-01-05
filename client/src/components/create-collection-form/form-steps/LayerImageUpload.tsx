@@ -157,20 +157,20 @@ const LayerImageUpload = ({
             {Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())}.
           </Typography>
         </Collapse>
-        <Paper>
-          <Input
-            type="number"
-            value={state.generative.quantity}
-            onChange={handleQuantityChange}
-            placeholder="0"
-            label="Collection Quantity"
-            InputProps={{
-              inputProps: { min: 1, max: getMaxQuantity() },
-            }}
-            required
-          />
-        </Paper>
       </Collapse>
+      <Paper>
+        <Input
+          type="number"
+          value={state.generative.quantity}
+          onChange={handleQuantityChange}
+          placeholder="0"
+          label="Collection Quantity"
+          InputProps={{
+            inputProps: { min: 1, max: getMaxQuantity() },
+          }}
+          required
+        />
+      </Paper>
     </>
   );
 };
