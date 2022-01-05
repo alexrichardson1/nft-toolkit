@@ -645,6 +645,8 @@ exports[`OrderableListItem snapshot 1`] = `
                 "images": Object {},
                 "name": "test-name",
                 "numberOfImages": 0,
+                "probability": "100%",
+                "totalImageRarities": 0,
               },
             ]
           }
