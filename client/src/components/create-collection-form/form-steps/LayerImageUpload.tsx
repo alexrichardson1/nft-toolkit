@@ -155,7 +155,7 @@ const LayerImageUpload = ({
           placeholder="0"
           label="Collection Quantity"
           InputProps={{
-            inputProps: { min: 1, max: MAX_QUANTITY },
+            inputProps: { min: Math.min(MAX_QUANTITY, 1), max: MAX_QUANTITY },
             endAdornment: (
               <InputAdornment position="end">
                 <InfoToolTip
