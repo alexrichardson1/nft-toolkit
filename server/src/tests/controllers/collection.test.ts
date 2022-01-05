@@ -16,6 +16,15 @@ import {
 import db from "@tests/testDB";
 import { NextFunction, Request, Response } from "express";
 
+jest.mock("@controllers/common", () => ({
+  ...jest.requireActual("@controllers/common"),
+  s3: {
+    upload: jest.fn((req) => ({
+      promise: jest.fn(() => new Promise((resolve) => resolve(req))),
+    })),
+  },
+}));
+
 let mockResponse: Response;
 let mockNext: NextFunction;
 
@@ -47,6 +56,7 @@ describe("Success Handler", () => {
   });
 });
 
+// TODO: Mock S3 upload
 describe("Save collection to db", () => {
   it("Should successfully add a new user and collection", async () => {
     const mockRequest = {
