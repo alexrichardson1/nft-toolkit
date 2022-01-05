@@ -1,0 +1,1 @@
+0 0 * * 0 (/usr/local/bin/python3 /update_scripts/fetch_more_collections.py && /usr/local/bin/python3 /update_scripts/update_database.py && /usr/local/bin/python3 /update_scripts/update_model.py) >> /var/log/cron.log 2>&1

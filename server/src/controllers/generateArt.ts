@@ -1,9 +1,10 @@
+import {
+  compileImageNoReq,
+  compileImageReq,
+  LayersQI,
+} from "@controllers/generateArtCompile";
 import { AttributeI, TokenT } from "@models/collection";
 import axios from "axios";
-import fs from "fs";
-import path from "path";
-import sharp from "sharp";
-import { s3 } from "./common";
 
 interface ImageI {
   name: string;
@@ -112,92 +113,6 @@ export async function getImages(layers: LayerI[]): Promise<LayerBuffersI> {
   return res;
 }
 
-interface LayerQI {
-  [key: string]: number;
-  total: number;
-}
-
-interface LayersQI {
-  [key: string]: LayerQI;
-}
-
-const updateLayerQuantities = (
-  layerName: string,
-  imgName: string,
-  quantities: LayersQI
-) => {
-  let layer: LayerQI | undefined;
-  if (quantities[layerName]) {
-    layer = quantities[layerName];
-  } else {
-    quantities[layerName] = { total: 0 };
-    layer = quantities[layerName];
-  }
-
-  if (layer) {
-    if (layer[imgName]) {
-      layer[imgName]++;
-      layer.total++;
-    } else {
-      layer[imgName] = 1;
-      layer.total++;
-    }
-  }
-};
-
-async function compileImage(
-  generatedImage: GeneratedImageI,
-  layerBuffers: LayerBuffersI,
-  index: number,
-  name: string,
-  creator: string,
-  layerQuantities: LayersQI
-): Promise<TokenT> {
-  let resultImage: sharp.Sharp | undefined;
-
-  const composites: sharp.OverlayOptions[] = [];
-  generatedImage.images.forEach(([layerIndex, layerName, imgName], index) => {
-    updateLayerQuantities(layerName, imgName, layerQuantities);
-
-    const buffer = layerBuffers[layerName]?.[layerIndex];
-    if (index) {
-      composites.push({ input: buffer });
-    } else {
-      resultImage = sharp(buffer);
-    }
-  });
-
-  if (!resultImage) {
-    throw new Error("Cannot compile image when none is given");
-  }
-
-  const filePath = path.resolve(__dirname, `./${index}.png`);
-
-  await resultImage
-    .composite(composites)
-    .toFormat("png", { quality: 80 })
-    .toFile(filePath);
-
-  const uploadKey = `${creator}/${name}/images/${index}.png`;
-  const uploadParams = {
-    Bucket: "nft-toolkit-collections",
-    Body: fs.readFileSync(filePath),
-    Key: uploadKey,
-    ACL: "public-read",
-  };
-
-  s3.upload(uploadParams)
-    .promise()
-    .then(() => fs.unlinkSync(filePath));
-
-  return {
-    name: `${name} ${index}`,
-    image: `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${uploadKey}`,
-    attributes: generatedImage.attributes,
-    description: "",
-  };
-}
-
 const toPercent = 100;
 
 const addRarityScore = (img: TokenT, layerQuantities: LayersQI) => {
@@ -212,6 +127,9 @@ const addRarityScore = (img: TokenT, layerQuantities: LayersQI) => {
     }
   });
 
+  const normaliseProb = 1000;
+  prob = Math.round((1 / prob) * normaliseProb);
+
   img.attributes.push({ trait_type: "rarity_score", value: prob });
 };
 
@@ -219,7 +137,7 @@ const sortByRarity = (aToken: TokenT, bToken: TokenT): number => {
   const aRarityScore = aToken.attributes[aToken.attributes.length - 1];
   const bRarityScore = bToken.attributes[bToken.attributes.length - 1];
   if (aRarityScore && bRarityScore) {
-    return (
+    return -(
       parseInt(aRarityScore.value.toString()) -
       parseInt(bRarityScore.value.toString())
     );
@@ -236,13 +154,16 @@ const addTiers = (tokens: TokenT[], sortedTokens: TokenT[], tiers: TierI[]) => {
     if (!tier) {
       throw new Error("Cannot find tier");
     }
-    if (tier.probability < current * toPercent) {
+    current += increment;
+    if (tier.probability <= current * toPercent) {
       curLayer++;
     }
-    current += increment;
     token.attributes.push({ trait_type: "tier", value: tier.name });
   });
 };
+
+// The minimum number of tokens to upload to S3 before resolving HTTP request
+export const MIN_IMG_UPLOAD = 20;
 
 /**
  * PRE: Layer images are assumed to be of equal dimensions, so that we don't
@@ -264,22 +185,37 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
 
   const images = [];
   const generatedHashes = new Set();
-  const layerBuffers = await getImages(layers);
+  const layerBufs = await getImages(layers);
   const layerFreq: LayersQI = {};
 
-  for (let i = 0; i < quantity; i++) {
+  for (let index = 0; index < quantity; index++) {
     const image = generateOneCombination(layers);
 
     if (generatedHashes.has(image.hash)) {
       // Duplicate made - repeat loop
-      i--;
+      index--;
       continue;
     }
 
-    images.push(compileImage(image, layerBuffers, i, name, creator, layerFreq));
+    images.push({ image, index });
     generatedHashes.add(image.hash);
   }
-  const tokens = await Promise.all(images);
+
+  const compInfo = {
+    name,
+    creator,
+    layerBufs,
+    layerFreq,
+  };
+
+  const tokens = await Promise.all(
+    images.slice(0, MIN_IMG_UPLOAD).map((img) => compileImageReq(img, compInfo))
+  );
+  tokens.push(
+    ...images
+      .slice(MIN_IMG_UPLOAD)
+      .map((img) => compileImageNoReq(img, compInfo))
+  );
   tokens.forEach((token) => addRarityScore(token, layerFreq));
   const sortedTokens = [...tokens].sort(sortByRarity);
 
@@ -287,4 +223,4 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
   return tokens;
 }
 
-export { generate, compileImage, GeneratedImageI, ImageI };
+export { generate, LayerBuffersI, GeneratedImageI, ImageI };

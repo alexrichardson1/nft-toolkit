@@ -1,76 +1,48 @@
-import { Collapse, Stack, Typography } from "@mui/material";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import { LoadingButton } from "@mui/lab";
+import { Button, Collapse, Stack, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system";
+import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
+import axios from "axios";
+import { getItemsPerPage, PageNumbers } from "components/common/PageNumbers";
+import SvgLogo from "components/common/SvgLogo";
+import SnackbarContext from "context/snackbar/SnackbarContext";
+import { BigNumber } from "ethers";
+import { formatEther, formatUnits } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
-import { useEffect, useState } from "react";
+import tetherIcon from "images/tether.svg";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+  Market__factory as MarketFactory,
+  NFT__factory as NftFactory,
+} from "typechain";
+import { API_URL, getLogoByChainId, toTether } from "utils/constants";
+import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
-const dummyData: CollectionI[] = [
+export interface TokenI {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: BigNumber;
+  isStable: boolean;
+  isOwner?: boolean;
+  attributes: AttributeI;
+}
+
+const dummyData: TokenI[] = [
   {
     name: "Dummy",
     description: "DummyDescription",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
+    image: "",
     attributes: {},
     id: 0,
-    price: "69",
-  },
-];
-
-const dummyData2: CollectionI[] = [
-  {
-    id: 0,
-    name: "APE 0",
-    description: "",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 1,
-    name: "APE 1",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 2,
-    name: "APE 2",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 3,
-    name: "APE 3",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 4,
-    name: "APE 4",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
-  },
-  {
-    id: 5,
-    name: "APE 5",
-    description:
-      "This is a collection where you can do something and get something done but also a collection where you can not do something and get nothing done because if you think about it carefully, you can basically get everything but nothing done at the same time which is a bit annoying.",
-    image: "https://pbs.twimg.com/media/FFaFHBNXMAAR41l.jpg",
-    attributes: { tier: "Legendary" },
-    price: "69",
+    isStable: false,
+    price: BigNumber.from(0),
   },
 ];
 
@@ -79,36 +51,161 @@ const textStyle: SxProps = {
   overflowWrap: "break-word",
 };
 
+interface RoyaltiesI {
+  native: BigNumber;
+  stable: BigNumber;
+}
+
+const DEFAULT_ROYALTY: RoyaltiesI = {
+  native: BigNumber.from(0),
+  stable: BigNumber.from(0),
+};
+
 const Market = (): JSX.Element => {
-  const [collections, setCollections] = useState<CollectionI[]>(dummyData);
+  const [tokens, setCollections] = useState<TokenI[]>(dummyData);
   const [collectionName, setCollectionName] = useState("");
-  const { paramChainId } = useParams<ParamsI>();
+  const { account, library } = useWeb3React();
+  const { showSnackbar } = useContext(SnackbarContext);
+  const [royalties, setRoyalties] = useState(DEFAULT_ROYALTY);
+  const [royaltyLoading, setRoyaltyLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [symbol, setSymbol] = useState("");
+  const { paramChainId, address, marketAddress } = useParams<
+    ParamsI & { marketAddress: string }
+  >();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     async function getCollectionData() {
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
-      const WAIT_TIME = 1000;
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
+
+      const nftContract = NftFactory.connect(
+        address,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      const marketContract = MarketFactory.connect(
+        marketAddress,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      const totalSupply = await nftContract.tokenIdTracker();
+      const name = await nftContract.name();
+      const symbol = await nftContract.symbol();
+
       dispatch({
         type: ProgressActions.ADVANCE_PROGRESS_BY,
         payload: { advanceProgressBy: 50 },
       });
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
+      const res = await axios.get(
+        `${API_URL}/metadata/${paramChainId}/${address}`
+      );
+      let { tokens }: { tokens: ContractTokenI[] } = res.data;
+      if (tokens.length > totalSupply.toNumber()) {
+        tokens = tokens.slice(0, totalSupply.toNumber());
+      }
+      const transTokens = await Promise.all(
+        tokens.map(async (token, index) => {
+          const attributeMap: AttributeI = {};
+          token.attributes.forEach((attr: ContractAttributeI) => {
+            attributeMap[attr.trait_type] = attr.value;
+          });
+          const price = await marketContract.listings(index);
+          const isStable = await marketContract.areStable(index);
+          return {
+            ...token,
+            id: index,
+            attributes: attributeMap,
+            price,
+            isStable,
+          };
+        })
+      );
+
       dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
-      await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
       dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
-      setCollectionName("Aayush Babies");
-      setCollections(dummyData2);
+      setCollectionName(name);
+      setSymbol(symbol);
+      setCollections(transTokens);
     }
     getCollectionData();
-  }, []);
+  }, [account]);
+
+  useEffect(() => {
+    const updateRoyalties = async () => {
+      const marketContract = MarketFactory.connect(
+        marketAddress,
+        getRPCProvider(parseInt(paramChainId))
+      );
+      if (account) {
+        setRoyalties(await marketContract.royalties(account));
+      } else {
+        setRoyalties(DEFAULT_ROYALTY);
+      }
+    };
+    updateRoyalties();
+  }, [account, royaltyLoading]);
+
+  const handleClaimRoyalties = async () => {
+    const marketContract = MarketFactory.connect(
+      marketAddress,
+      library.getSigner()
+    );
+    try {
+      setRoyaltyLoading(true);
+      const tx = await marketContract.claimRoyalties();
+      await tx.wait();
+      showSnackbar("success", "Royalty claim successful");
+    } catch (error) {
+      showSnackbar("error", "An error occurred. Please try again!");
+    } finally {
+      setRoyaltyLoading(false);
+    }
+  };
 
   return (
-    <Box alignItems="center" flexGrow={1} display="flex">
-      <Collapse sx={{ width: 1 }} in={collections !== dummyData}>
+    <Box flexGrow={1} display="flex">
+      <Collapse sx={{ width: 1 }} in={tokens !== dummyData}>
         <Stack spacing={2} justifyContent="center">
-          <Box display="flex" flexDirection="column" alignItems="center">
+          <Box display="flex" flexDirection="column">
+            <Box display="flex" justifyContent="space-between">
+              <Button
+                startIcon={<ConstructionIcon />}
+                variant="outlined"
+                href={`/${paramChainId}/${address}`}>
+                Minting Page
+              </Button>
+              {(royalties.stable.gt(0) || royalties.native.gt(0)) && (
+                <Stack alignItems="center" gap={2} direction="row">
+                  {royalties.stable.gt(0) && (
+                    <Stack gap={1} direction="row">
+                      {formatUnits(royalties.stable, toTether)}
+                      <SvgLogo
+                        width="20px"
+                        height="20px"
+                        alt="stable-icon"
+                        icon={tetherIcon}
+                      />
+                    </Stack>
+                  )}
+                  {royalties.native.gt(0) && (
+                    <Stack gap={1} direction="row">
+                      {formatEther(royalties.native)}
+                      <SvgLogo
+                        width="20px"
+                        height="20px"
+                        alt="native-icon"
+                        icon={getLogoByChainId(Number(paramChainId))}
+                      />
+                    </Stack>
+                  )}
+                  <LoadingButton
+                    variant="contained"
+                    onClick={handleClaimRoyalties}
+                    loading={royaltyLoading}>
+                    Claim Royalties
+                  </LoadingButton>
+                </Stack>
+              )}
+            </Box>
             <Typography
               textAlign="center"
               sx={textStyle}
@@ -117,19 +214,30 @@ const Market = (): JSX.Element => {
               {collectionName}
             </Typography>
             <Typography textAlign="center" sx={textStyle} color="primary">
-              Aayu
+              {symbol}
             </Typography>
           </Box>
           <Box gap={2} display="flex" flexWrap="wrap" justifyContent="center">
-            {collections.map((dummy) => (
-              <DisplayCard
-                chainId={Number(paramChainId)}
-                to="/purchase"
-                key={dummy.id}
-                data={dummy}
-              />
-            ))}
+            {tokens.length === 0 ? (
+              <Typography variant="h4" color="primary">
+                Nothing to see here yet, please mint some tokens!
+              </Typography>
+            ) : (
+              getItemsPerPage(page, tokens).map((token) => (
+                <DisplayCard
+                  chainId={Number(paramChainId)}
+                  to={`/${paramChainId}/${address}/${marketAddress}/${token.id}`}
+                  key={token.id}
+                  data={token}
+                />
+              ))
+            )}
           </Box>
+          <PageNumbers
+            page={page}
+            setPage={setPage}
+            arrayLength={tokens.length}
+          />
         </Stack>
       </Collapse>
     </Box>

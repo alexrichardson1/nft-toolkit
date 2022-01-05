@@ -18,7 +18,8 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  predictions: { names: [], hype: -1 },
+  marketplace: { wanted: false, royalty: "" },
+  predictions: { collections: [], hype: -1, price: "0" },
 };
 
 describe("LayerSelectionStep snapshots", () => {

@@ -9,24 +9,24 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
  *  @notice Market for NFT Collection Owners
  */
 contract Market {
+  struct Royalties {
+    uint256 stable;
+    uint256 native;
+  }
+
   NFT private _collection;
-  uint256 public royalty;
   ERC20 private _stable;
   mapping(uint256 => uint256) public listings;
   mapping(uint256 => bool) public areStable;
+  mapping(address => Royalties) public royalties;
 
   /**
    * @notice Construct a new royalty
-   * @param cut The royalty for the creator of the NFT collection
    * @param addr The address of the NFT collection contract
+   * @param stable The address of the stable token contract
    */
-  constructor(
-    uint256 cut,
-    address addr,
-    address stable
-  ) {
+  constructor(address addr, address stable) {
     _collection = NFT(addr);
-    royalty = cut;
     _stable = ERC20(stable);
   }
 
@@ -90,8 +90,9 @@ contract Market {
         msg.value == price,
       "Must send correct price"
     );
-    uint256 cut = (price * royalty) / 100;
-    address payable artist = payable(_collection.owner());
+    address royaltyReceiver;
+    uint256 royaltyAmount;
+    (royaltyReceiver, royaltyAmount) = _collection.royaltyInfo(0, price);
     address payable seller = payable(_collection.ownerOf(tokenId));
 
     // Transfer NFT to market contract
@@ -99,16 +100,31 @@ contract Market {
     // Transfer NFT from market contract to buyer
     _collection.transferFrom(address(this), msg.sender, tokenId);
 
-    // Transfer cut to artist & seller
+    uint256 sellerCut = price - royaltyAmount;
+
+    // Transfer cut to royalty receiver & seller
     if (isStable) {
-      _stable.transferFrom(address(this), artist, price);
-      _stable.transferFrom(address(this), seller, price - cut);
+      royalties[royaltyReceiver].stable += royaltyAmount;
+      _stable.transfer(seller, sellerCut);
     } else {
-      artist.transfer(cut);
-      seller.transfer(price - cut);
+      royalties[royaltyReceiver].native += royaltyAmount;
+      seller.transfer(sellerCut);
     }
 
     delete listings[tokenId];
     emit Buy(tokenId);
+  }
+
+  function claimRoyalties() external {
+    Royalties storage royalty = royalties[msg.sender];
+    require(royalty.stable > 0 || royalty.native > 0, "No royalties to claim");
+    if (royalty.stable > 0) {
+      _stable.transfer(msg.sender, royalty.stable);
+      royalty.stable = 0;
+    }
+    if (royalty.native > 0) {
+      payable(msg.sender).transfer(royalty.native);
+      royalty.native = 0;
+    }
   }
 }

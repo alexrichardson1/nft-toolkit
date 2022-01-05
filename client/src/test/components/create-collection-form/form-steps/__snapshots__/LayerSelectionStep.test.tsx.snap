@@ -655,10 +655,15 @@ exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
                 "tiers": Array [],
                 "totalTierRarity": 0,
               },
+              "marketplace": Object {
+                "royalty": "",
+                "wanted": false,
+              },
               "mintingPrice": "",
               "predictions": Object {
+                "collections": Array [],
                 "hype": -1,
-                "names": Array [],
+                "price": "0",
               },
               "redditHandle": "",
               "static": Object {
@@ -1332,10 +1337,15 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
                 "tiers": Array [],
                 "totalTierRarity": 0,
               },
+              "marketplace": Object {
+                "royalty": "",
+                "wanted": false,
+              },
               "mintingPrice": "",
               "predictions": Object {
+                "collections": Array [],
                 "hype": -1,
-                "names": Array [],
+                "price": "0",
               },
               "redditHandle": "",
               "static": Object {

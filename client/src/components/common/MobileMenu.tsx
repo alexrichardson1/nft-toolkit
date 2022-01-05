@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import NetworkContext from "context/network/NetworkContext";
 import { useContext, useState } from "react";
 import { DEFAULT_MUI_ICON_SIZE, NETWORKS } from "utils/constants";
-import SvgLogo from "./SvgLogo";
+import SvgIcon from "./SvgLogo";
 
 const menuItemStyle = { display: "flex", gap: "5px" };
 
@@ -57,10 +57,11 @@ const MobileMenu = ({
           sx={menuItemStyle}
           data-testid="menuItemMobile"
           onClick={handleNetworkMenuOpen}>
-          <SvgLogo
+          <SvgIcon
             icon={selectedNet.icon}
             width={DEFAULT_MUI_ICON_SIZE}
             height={DEFAULT_MUI_ICON_SIZE}
+            alt={selectedNet.name}
           />
           <Typography>{selectedNet.name}</Typography>
         </MenuItem>
@@ -79,7 +80,8 @@ const MobileMenu = ({
             key={network.name}
             data-testid={`${network.name.toLowerCase()}-mobile-option`}
             sx={menuItemStyle}>
-            <SvgLogo
+            <SvgIcon
+              alt={network.name}
               icon={network.icon}
               width={DEFAULT_MUI_ICON_SIZE}
               height={DEFAULT_MUI_ICON_SIZE}

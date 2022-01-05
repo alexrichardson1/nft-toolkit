@@ -676,6 +676,8 @@ exports[`CreateCollectionForm snapshot 1`] = `
                       handleCollNameChange={[Function]}
                       handleDescriptionChange={[Function]}
                       handleMintPriceChange={[Function]}
+                      handleMplaceRoyaltyChange={[Function]}
+                      handleMplaceWantedChange={[Function]}
                       handleRedditChange={[Function]}
                       handleSymbolChange={[Function]}
                       handleTwitterChange={[Function]}
@@ -687,14 +689,19 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
-                            "quantity": "",
+                            "quantity": "1",
                             "tiers": Array [],
                             "totalTierRarity": 0,
                           },
+                          "marketplace": Object {
+                            "royalty": "",
+                            "wanted": false,
+                          },
                           "mintingPrice": "",
                           "predictions": Object {
+                            "collections": Array [],
                             "hype": -1,
-                            "names": Array [],
+                            "price": "0",
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3603,14 +3610,19 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
-                            "quantity": "",
+                            "quantity": "1",
                             "tiers": Array [],
                             "totalTierRarity": 0,
                           },
+                          "marketplace": Object {
+                            "royalty": "",
+                            "wanted": false,
+                          },
                           "mintingPrice": "",
                           "predictions": Object {
+                            "collections": Array [],
                             "hype": -1,
-                            "names": Array [],
+                            "price": "0",
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3637,14 +3649,19 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
-                            "quantity": "",
+                            "quantity": "1",
                             "tiers": Array [],
                             "totalTierRarity": 0,
                           },
+                          "marketplace": Object {
+                            "royalty": "",
+                            "wanted": false,
+                          },
                           "mintingPrice": "",
                           "predictions": Object {
+                            "collections": Array [],
                             "hype": -1,
-                            "names": Array [],
+                            "price": "0",
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3671,14 +3688,19 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
-                            "quantity": "",
+                            "quantity": "1",
                             "tiers": Array [],
                             "totalTierRarity": 0,
                           },
+                          "marketplace": Object {
+                            "royalty": "",
+                            "wanted": false,
+                          },
                           "mintingPrice": "",
                           "predictions": Object {
+                            "collections": Array [],
                             "hype": -1,
-                            "names": Array [],
+                            "price": "0",
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3707,14 +3729,19 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
-                            "quantity": "",
+                            "quantity": "1",
                             "tiers": Array [],
                             "totalTierRarity": 0,
                           },
+                          "marketplace": Object {
+                            "royalty": "",
+                            "wanted": false,
+                          },
                           "mintingPrice": "",
                           "predictions": Object {
+                            "collections": Array [],
                             "hype": -1,
-                            "names": Array [],
+                            "price": "0",
                           },
                           "redditHandle": "",
                           "static": Object {
@@ -3728,9 +3755,9 @@ exports[`CreateCollectionForm snapshot 1`] = `
                       stepNumber={0}
                     />
                     <RecommendationsStep
-                      changedCollName=""
+                      changedMintingPrice=""
                       generative={false}
-                      handleChangeCollName={[Function]}
+                      handleChangeMintingPrice={[Function]}
                       isLoading={false}
                       state={
                         Object {
@@ -3740,14 +3767,19 @@ exports[`CreateCollectionForm snapshot 1`] = `
                             "layers": Array [],
                             "numberOfLayers": 0,
                             "numberOfTiers": 0,
-                            "quantity": "",
+                            "quantity": "1",
                             "tiers": Array [],
                             "totalTierRarity": 0,
                           },
+                          "marketplace": Object {
+                            "royalty": "",
+                            "wanted": false,
+                          },
                           "mintingPrice": "",
                           "predictions": Object {
+                            "collections": Array [],
                             "hype": -1,
-                            "names": Array [],
+                            "price": "0",
                           },
                           "redditHandle": "",
                           "static": Object {

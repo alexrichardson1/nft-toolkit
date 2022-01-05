@@ -15,6 +15,7 @@ const mockRequest = {
     chainId: "4",
     address: mockDeployedAddress,
   },
+  body: { marketAddress: "0x123" },
 } as unknown as Request;
 let mockResponse: Response;
 let mockNext: NextFunction;
@@ -44,6 +45,7 @@ describe("Add contract address to collection", () => {
   it("Should fail if called with undefined params", async () => {
     const mockRequest = {
       params: {},
+      body: { marketAddress: "0x123" },
     } as unknown as Request;
     await addDeployedAddress(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));

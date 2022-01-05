@@ -60,6 +60,18 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165__factory>;
     getContractFactory(
+      name: "ERC2981Base",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC2981Base__factory>;
+    getContractFactory(
+      name: "ERC2981ContractWideRoyalties",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC2981ContractWideRoyalties__factory>;
+    getContractFactory(
+      name: "IERC2981Royalties",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC2981Royalties__factory>;
+    getContractFactory(
       name: "Market",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Market__factory>;
@@ -67,10 +79,6 @@ declare module "hardhat/types/runtime" {
       name: "NFT",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.NFT__factory>;
-    getContractFactory(
-      name: "Royalty",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Royalty__factory>;
 
     getContractAt(
       name: "Ownable",
@@ -133,6 +141,21 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC165>;
     getContractAt(
+      name: "ERC2981Base",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC2981Base>;
+    getContractAt(
+      name: "ERC2981ContractWideRoyalties",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC2981ContractWideRoyalties>;
+    getContractAt(
+      name: "IERC2981Royalties",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC2981Royalties>;
+    getContractAt(
       name: "Market",
       address: string,
       signer?: ethers.Signer
@@ -142,11 +165,6 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.NFT>;
-    getContractAt(
-      name: "Royalty",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Royalty>;
 
     // default types
     getContractFactory(

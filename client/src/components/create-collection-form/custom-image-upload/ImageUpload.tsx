@@ -76,6 +76,7 @@ const ImageUpload = ({
       <input
         ref={ref}
         accept="image/*"
+        max-size="50mb"
         onChange={(e) => handleImageDrop(e, e.target.files)}
         id={UPLOAD_INPUT_ID}
         className="img-upload-input"

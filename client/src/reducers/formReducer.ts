@@ -1,4 +1,5 @@
 import { arrayMove } from "@dnd-kit/sortable";
+import { undefinedCheck } from "utils/typeUtils";
 import { FormActionI } from "./formReducerTypes";
 
 const FILE_EXTENSION = /\.[^/.]+$/;
@@ -58,21 +59,8 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  predictions: { names: [], hype: -1 },
-};
-
-/**
- * Checks if `value` is undefined. Used for type narrowing from `T | undefined` to `T`
- * @param value - Any value
- * @param message - Error message if value is `undefined`
- * @throws - Error with `message`
- * @returns `value` with type T
- */
-const undefinedCheck = <T>(value: T | undefined, message: string): T => {
-  if (!value) {
-    throw new Error(message);
-  }
-  return value;
+  marketplace: { wanted: false, royalty: "" },
+  predictions: { collections: [], hype: -1, price: "0" },
 };
 
 const containsDuplicates = (name: string, items: { name: string }[]) => {
@@ -346,21 +334,6 @@ const changePredictions = (state: FormStateI, action: FormActionI) => {
   );
   return { ...state, predictions };
 };
-const resetTypeOfArt = (state: FormStateI): FormStateI => {
-  return {
-    ...state,
-    static: { images: {}, numberOfImages: 0 },
-    generative: {
-      numberOfTiers: 0,
-      tiers: [],
-      layers: [],
-      totalTierRarity: 0,
-      numberOfLayers: 0,
-      quantity: DEFAULT_STRING,
-    },
-    predictions: { names: [], hype: -1 },
-  };
-};
 const changeSymbol = (state: FormStateI, action: FormActionI): FormStateI => {
   return { ...state, symbol: action.payload.symbol ?? DEFAULT_STRING };
 };
@@ -413,8 +386,31 @@ const changeQuantity = (state: FormStateI, action: FormActionI): FormStateI => {
   };
 };
 const resetState = (): FormStateI => {
-  return { ...INITIAL_STATE };
+  return JSON.parse(JSON.stringify(INITIAL_STATE));
 };
+const changeMarketplaceWanted = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  const newWanted = undefinedCheck(
+    action.payload.mplaceWantedChange,
+    "mplaceWantedChange required"
+  );
+  return { ...state, marketplace: { ...state.marketplace, wanted: newWanted } };
+};
+const changeMarketplaceRoyalty = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  return {
+    ...state,
+    marketplace: {
+      ...state.marketplace,
+      royalty: action.payload.mplaceRoyaltyChange ?? DEFAULT_STRING,
+    },
+  };
+};
+
 /**
  * @param state - current state of the form
  * @param action - object containting type of action to perform and payload
@@ -449,12 +445,14 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     changeLayerProb,
     changeQuantity,
     // resets
-    resetTypeOfArt,
     resetState,
     // predictions
     changePredictions,
     changeTwitterHandle,
     changeRedditHandle,
+    // marketplace
+    changeMarketplaceWanted,
+    changeMarketplaceRoyalty,
   ];
   const reducer = undefinedCheck(
     reducers[action.type],

@@ -5,16 +5,23 @@ interface PropsT {
   width: string | number;
   height: string | number;
   margins?: boolean;
+  alt: string;
 }
 
-const SvgLogo = ({ icon, width, height, margins }: PropsT): JSX.Element => (
+const SvgIcon = ({
+  alt,
+  icon,
+  width,
+  height,
+  margins,
+}: PropsT): JSX.Element => (
   <img
     style={{ margin: margins ? "0 5px" : "0" }}
     width={width}
     height={height}
     src={icon}
-    alt="logo"
+    alt={alt}
   />
 );
 
-export default pure(SvgLogo);
+export default pure(SvgIcon);

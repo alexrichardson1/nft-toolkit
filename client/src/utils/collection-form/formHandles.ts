@@ -1,9 +1,12 @@
 import { TransactionRequest, Web3Provider } from "@ethersproject/providers";
 import { AlertColor } from "@mui/material";
 import FormActions from "actions/formActions";
+import axios from "axios";
 import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
+import { Market__factory as MarketFactory } from "typechain";
+import { ML_URL, tetherAddress } from "utils/constants";
 import {
   addDeployedAddress,
   startLoading,
@@ -34,11 +37,6 @@ const LAYER_IMG_UPLOAD_STEP = 3;
 const PAGE_IDX_OFFSET = 2;
 export const STATIC_STEPS = 4;
 export const GEN_STEPS = 6;
-
-const DUMMY_ML_DATA = {
-  names: [{ name: "name1", distance: 3 }],
-  hype: 2,
-};
 
 const isGeneralInfoStep = (generative: boolean, stepNumber: number) => {
   return (
@@ -89,14 +87,33 @@ const createCollection = async (
   chainId: number,
   showFormAlert: (severity: AlertColor, message: string) => void,
   setIsLoading: SetStateAction<boolean>,
-  setTxAddress: SetStateAction<string>
+  setTxAddress: SetStateAction<string>,
+  wantedMarketplace: boolean
 ) => {
   const signer = library.getSigner();
   setLoadingMessage("Deploying...");
   const txResponse = await signer.sendTransaction(tx);
   setLoadingMessage("Confirming...");
   const txReceipt = await txResponse.wait();
-  addDeployedAddress(account, chainId, txReceipt.contractAddress);
+  let marketAddress;
+  if (wantedMarketplace) {
+    const marketFactory = new MarketFactory(signer);
+    setLoadingMessage("Deploying Market...");
+    const marketTx = await marketFactory.getDeployTransaction(
+      txReceipt.contractAddress,
+      tetherAddress
+    );
+    const marketTxRes = await signer.sendTransaction(marketTx);
+    setLoadingMessage("Confirming Market...");
+    const marketTxReceipt = await marketTxRes.wait();
+    marketAddress = marketTxReceipt.contractAddress;
+  }
+  await addDeployedAddress(
+    account,
+    chainId,
+    txReceipt.contractAddress,
+    marketAddress
+  );
   showFormAlert("success", "Collection Creation Successful");
   stopLoading(setLoadingMessage, setIsLoading);
   setTxAddress(txReceipt.contractAddress);
@@ -135,12 +152,25 @@ const handleIfNotLastStep = async (
   showFormAlert: (severity: AlertColor, message: string) => void,
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
-  setNewCollName: SetStateAction<string>,
+  setNewMintingPrice: SetStateAction<string>,
   handleNextStep: () => void
 ): Promise<boolean> => {
   if (isLastStep) {
     return true;
   }
+
+  const generateQuery = () => {
+    const query: string[] = [];
+    if (state.twitterHandle !== "") {
+      query.push(`twitter-handle=${state.twitterHandle}`);
+    }
+
+    if (state.redditHandle !== "") {
+      query.push(`reddit-handle=${state.redditHandle}`);
+    }
+    return `${query.length === 0 ? "" : "?"}${query.join("&")}`;
+  };
+
   if (
     generative &&
     stepNumber === LAYER_SELECTION_STEP &&
@@ -162,13 +192,38 @@ const handleIfNotLastStep = async (
   ) {
     return false;
   }
+  const MAX_DECIMALS = 18;
+  if (
+    isGeneralInfoStep(generative, stepNumber) &&
+    state.mintingPrice.indexOf(".") > 0 &&
+    state.mintingPrice.indexOf(".") + 1 <
+      state.mintingPrice.length - MAX_DECIMALS
+  ) {
+    showFormAlert(
+      "error",
+      "Minting price should not have more than 18 digits after decimal point."
+    );
+    return false;
+  }
   if (isGeneralInfoStep(generative, stepNumber)) {
     startLoading(setLoadingMessage, setIsLoading, "Getting Predictions");
-    const DUMMY_WAIT_TIME = 5000;
-    await new Promise((resolve) => setTimeout(resolve, DUMMY_WAIT_TIME));
-    handlePredictionsChange(DUMMY_ML_DATA, dispatch);
+    try {
+      const res = await axios.get(
+        `${ML_URL}/api/recommendations/${
+          state.collectionName
+        }${generateQuery()}`
+      );
+      const MAX_DECIMALS = 18;
+      const newPredictionsData = {
+        ...(res.data as MlDataI),
+        price: res.data.price.toFixed(MAX_DECIMALS),
+      };
+      handlePredictionsChange(newPredictionsData, dispatch);
+    } catch (err) {
+      console.error(err);
+    }
     stopLoading(setLoadingMessage, setIsLoading);
-    setNewCollName(state.collectionName);
+    setNewMintingPrice(state.mintingPrice);
   }
   handleNextStep();
   return false;
@@ -178,7 +233,7 @@ const handleLastStep = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   state: FormStateI,
-  newCollName: string,
+  newMintingPrice: string,
   generative: boolean,
   account: string,
   chainId: number,
@@ -188,12 +243,15 @@ const handleLastStep = async (
 ) => {
   startLoading(setLoadingMessage, setIsLoading, "Uploading...");
   let tx: Deferrable<TransactionRequest>;
-  const modifiedState = { ...state, collectionName: newCollName };
+  const modifiedState = {
+    ...state,
+    mintingPrice: newMintingPrice,
+  };
   if (generative) {
     const layers = await uploadGenImages(
       state.generative.layers,
       account,
-      newCollName
+      state.collectionName
     );
     setLoadingMessage("Generating...");
     tx = await uploadGenCollection(layers, modifiedState, account, chainId);
@@ -201,7 +259,7 @@ const handleLastStep = async (
     await uploadImages(
       Object.values(state.static.images),
       account,
-      newCollName
+      state.collectionName
     );
     setLoadingMessage("Saving...");
     tx = await uploadCollection(modifiedState, account, chainId);
@@ -214,7 +272,8 @@ const handleLastStep = async (
     chainId,
     showFormAlert,
     setIsLoading,
-    setTxAddress
+    setTxAddress,
+    state.marketplace.wanted
   );
 };
 
@@ -232,9 +291,9 @@ export const handleFormSubmit = async (
   setLoadingMessage: SetStateAction<string>,
   setIsLoading: SetStateAction<boolean>,
   dispatch: React.Dispatch<FormActionI>,
-  setNewCollName: SetStateAction<string>,
+  setNewMintingPrice: SetStateAction<string>,
   handleNextStep: () => void,
-  newCollName: string,
+  newMintingPrice: string,
   library: Web3Provider,
   setTxAddress: SetStateAction<string>
 ): Promise<void> => {
@@ -253,7 +312,7 @@ export const handleFormSubmit = async (
       showFormAlert,
       setLoadingMessage,
       setIsLoading,
-      setNewCollName,
+      setNewMintingPrice,
       handleNextStep
     ))
   ) {
@@ -264,7 +323,7 @@ export const handleFormSubmit = async (
       setLoadingMessage,
       setIsLoading,
       state,
-      newCollName,
+      newMintingPrice,
       generative,
       account,
       chainId,

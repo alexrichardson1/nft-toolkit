@@ -656,10 +656,15 @@ exports[`TierSelectionStep generative does not match 1`] = `
                   "tiers": Array [],
                   "totalTierRarity": 0,
                 },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
+                },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
+                  "price": "0",
                 },
                 "redditHandle": "",
                 "static": Object {
@@ -1335,10 +1340,15 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                   "tiers": Array [],
                   "totalTierRarity": 0,
                 },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
+                },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
+                  "price": "0",
                 },
                 "redditHandle": "",
                 "static": Object {
@@ -4528,10 +4538,15 @@ exports[`TierSelectionStep pageNumber does not match 1`] = `
                   "tiers": Array [],
                   "totalTierRarity": 0,
                 },
+                "marketplace": Object {
+                  "royalty": "",
+                  "wanted": false,
+                },
                 "mintingPrice": "",
                 "predictions": Object {
+                  "collections": Array [],
                   "hype": -1,
-                  "names": Array [],
+                  "price": "0",
                 },
                 "redditHandle": "",
                 "static": Object {

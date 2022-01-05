@@ -1,3 +1,4 @@
+import StorefrontIcon from "@mui/icons-material/Storefront";
 import LoadingButton from "@mui/lab/LoadingButton";
 import {
   Box,
@@ -10,7 +11,8 @@ import {
 import { SxProps } from "@mui/system";
 import { useWeb3React } from "@web3-react/core";
 import { ProgressActions } from "actions/progressActions";
-import SvgLogo from "components/common/SvgLogo";
+import OpenseaButton from "components/common/OpenseaButton";
+import SvgIcon from "components/common/SvgLogo";
 import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
 import { formatEther } from "ethers/lib/utils";
@@ -28,7 +30,7 @@ const DUMMY_DATA = {
   description: "DummyDescription",
   address: "DummyAddress",
   tokens: [],
-  gifSrc: "DummyGIFAddress",
+  image: "DummyGIFAddress",
   chainId: 1,
   price: BigNumber.from("1"),
   mintedAmount: BigNumber.from("1"),
@@ -66,7 +68,7 @@ const mintingCardImgStyle = (mintingData: CollectionI): SxProps => {
     position: "absolute",
     width: 250,
     height: 250,
-    background: `url(${mintingData.gifSrc})`,
+    background: `url(${mintingData.image})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "250px 250px",
   };
@@ -79,6 +81,14 @@ const mintingQuantityStyle = {
   },
 };
 const DECIMALS = 2;
+
+const getTokenTracking = (mintingData: CollectionI) => {
+  return `${mintingData.mintedAmount.toString()}/${mintingData.limit.toString()} MINTED`;
+};
+
+const getMaxTokensLeft = (mintingData: CollectionI) => {
+  return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
+};
 
 const MintingPage = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -110,7 +120,6 @@ const MintingPage = (): JSX.Element => {
       mintingData.address,
       library.getSigner()
     );
-
     try {
       setIsMinting(true);
       const txResp = await NFTContract.mint(mintingQuantity, {
@@ -127,28 +136,23 @@ const MintingPage = (): JSX.Element => {
     }
   };
 
-  const getTokenTracking = () => {
-    return `${mintingData.mintedAmount.toString()}/${mintingData.limit.toString()} MINTED`;
-  };
-
-  const getMaxTokensLeft = () => {
-    return mintingData.limit.sub(mintingData.mintedAmount).toNumber();
-  };
-
   useEffect(() => {
     async function getCollectionData() {
+      if (isMinting) {
+        return;
+      }
       dispatch({ type: ProgressActions.START_PROGRESS, payload: {} });
       const WAIT_TIME = 1000;
-
+      dispatch({
+        type: ProgressActions.ADVANCE_PROGRESS_BY,
+        payload: { advanceProgressBy: 50 },
+      });
       try {
-        dispatch({
-          type: ProgressActions.ADVANCE_PROGRESS_BY,
-          payload: { advanceProgressBy: 50 },
-        });
         const collection = await getCollection(paramChainId, address);
         dispatch({ type: ProgressActions.FINISH_PROGRESS, payload: {} });
         await new Promise((resolve) => setTimeout(resolve, WAIT_TIME));
         dispatch({ type: ProgressActions.STOP_PROGRESS, payload: {} });
+        setMintingQuantity(MIN_AMOUNT_ALLOWED);
         setMintingData(collection);
         setUsdValue(
           await getDollarValue(collection.price.toString(), collection.chainId)
@@ -191,8 +195,24 @@ const MintingPage = (): JSX.Element => {
             <Typography textAlign={{ xs: "center", lg: "left" }}>
               {mintingData.description}
             </Typography>
+            <Box
+              display="flex"
+              justifyContent={{ xs: "center", lg: "left" }}
+              gap="10px">
+              {mintingData.marketAddress && (
+                <Button
+                  variant="contained"
+                  startIcon={<StorefrontIcon />}
+                  href={`/${paramChainId}/${address}/${mintingData.marketAddress}`}>
+                  Marketplace
+                </Button>
+              )}
+              <OpenseaButton
+                chainId={mintingData.chainId}
+                address={mintingData.address}
+              />
+            </Box>
           </Box>
-
           <Box pt={10} pl={2} display="flex" justifyContent="center">
             <Paper sx={mintingCardStyle} elevation={6}>
               <Paper sx={mintingCardImgStyle(mintingData)} />
@@ -207,7 +227,7 @@ const MintingPage = (): JSX.Element => {
                   textAlign="center"
                   variant="h6"
                   color="primary">
-                  {getTokenTracking()}
+                  {getTokenTracking(mintingData)}
                 </Typography>
                 <ButtonGroup fullWidth>
                   <Button
@@ -225,7 +245,7 @@ const MintingPage = (): JSX.Element => {
                   </Button>
                   <Button
                     id="increase-quantity"
-                    disabled={mintingQuantity >= getMaxTokensLeft()}
+                    disabled={mintingQuantity >= getMaxTokensLeft(mintingData)}
                     onClick={handleQuantityIncrease}
                     variant="contained">
                     +
@@ -237,12 +257,18 @@ const MintingPage = (): JSX.Element => {
                   variant="contained"
                   onClick={handleMint}
                   loading={isMinting}
-                  disabled={getMaxTokensLeft() === 0}>
+                  disabled={getMaxTokensLeft(mintingData) === 0}>
                   {`Mint for ${formatEther(
                     BigNumber.from(mintingData.price).mul(mintingQuantity)
                   )}`}
                   {!isMinting && (
-                    <SvgLogo icon={logo} width="20px" height="20px" margins />
+                    <SvgIcon
+                      alt="network-icon"
+                      icon={logo}
+                      width="20px"
+                      height="20px"
+                      margins
+                    />
                   )}{" "}
                   ${`(${(mintingQuantity * usdValue).toFixed(DECIMALS)})`}
                 </LoadingButton>

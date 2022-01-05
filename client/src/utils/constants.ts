@@ -1,10 +1,8 @@
 import { S3 } from "aws-sdk";
 import AvalancheLogo from "images/avalanche-logo.svg";
 import BinanceLogo from "images/binance-logo.svg";
-import CardanoLogo from "images/cardano-logo.svg";
 import EthereumLogo from "images/ethereum-logo.svg";
 import PolygonLogo from "images/polygon-logo.svg";
-import SolanaLogo from "images/solana-logo.svg";
 
 export const DEFAULT_PADDING = 3;
 export const DEFAULT_GAP = "10px";
@@ -16,9 +14,7 @@ export const NAVBAR_HEIGHT = 90;
 
 export const NETWORKS: NetworkT[] = [
   { name: "Ethereum", icon: EthereumLogo, chainId: 4 },
-  { name: "Cardano", icon: CardanoLogo },
   { name: "Avalanche", icon: AvalancheLogo, chainId: 43114 },
-  { name: "Solana", icon: SolanaLogo },
   { name: "Polygon", icon: PolygonLogo, chainId: 137 },
   { name: "BSC", icon: BinanceLogo, chainId: 56 },
 ];
@@ -43,6 +39,10 @@ export const API_URL = process.env.REACT_APP_API_LOCAL
   ? "http://localhost:5000"
   : "http://nftoolkit.eu-west-2.elasticbeanstalk.com/server";
 
+export const ML_URL = process.env.REACT_APP_API_LOCAL
+  ? "http://localhost:4000"
+  : "http://nftoolkit.eu-west-2.elasticbeanstalk.com/ml";
+
 export const accessibilityProps = (
   index: number,
   vertical = false
@@ -59,5 +59,9 @@ export const s3 = new S3({
 });
 
 export const siderbarMenuItems = [
-  { text: "Create New Collection", location: "/" },
+  { text: "Create New Collection", location: "/create-new-collection" },
 ];
+
+export const tetherAddress = "0xD92E713d051C37EbB2561803a3b5FBAbc4962431";
+
+export const toTether = 6;

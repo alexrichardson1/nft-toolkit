@@ -30,7 +30,17 @@
     "no-use-before-define": "error",
     // Suggestions
     "block-scoped-var": "error",
-    "camelcase": ["error", { "allow": ["trait_type"] }],
+    "camelcase": [
+      "error",
+      {
+        "allow": [
+          "trait_type",
+          "fee_recipient",
+          "seller_fee_basis_points",
+          "external_link"
+        ]
+      }
+    ],
     "class-methods-use-this": "error",
     "consistent-return": "error",
     "consistent-this": "warn",

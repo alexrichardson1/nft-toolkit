@@ -34,12 +34,13 @@ interface LayerI {
 
 type NameRecommendationT = {
   name: string;
-  distance: number;
+  img: string;
 };
 
 interface MlDataI {
-  names: NameRecommendationT[];
+  collections: NameRecommendationT[];
   hype: number;
+  price: string;
 }
 
 interface FormStateI {
@@ -58,23 +59,45 @@ interface FormStateI {
     layers: LayerI[];
     quantity: string;
   };
+  marketplace: { wanted: boolean; royalty: string };
   predictions: MlDataI;
 }
 
 interface AttributeI {
-  [trait_type: string]: string;
+  [trait_type: string]: string | number;
 }
 
-interface CollectionI {
-  id: number;
+interface ContractAttributeI {
+  trait_type: string;
+  value: string | number;
+}
+
+interface ContractTokenI {
   name: string;
   description: string;
   image: string;
-  price: string;
-  attributes: AttributeI;
+  attributes: ContractAttributeI[];
 }
 
 interface ParamsI {
   paramChainId: string;
   address: string;
+}
+
+interface CollAddrI {
+  address: string;
+  chainId: number;
+  image: string;
+  marketAddress?: string;
+}
+
+interface CollDataI {
+  name: string;
+  symbol: string;
+  chainId: number;
+  address: string;
+  balance: string;
+  image: string;
+  owner: string;
+  marketAddress?: string;
 }

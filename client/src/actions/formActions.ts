@@ -28,12 +28,14 @@ enum FormActions {
   CHANGE_LAYER_PROBABILITY,
   CHANGE_QUANTITY,
   // resets
-  RESET_TYPE_OF_ART,
   RESET_STATE,
   // predictions
   CHANGE_PREDICTIONS,
   CHANGE_TWITTER_HANDLE,
   CHANGE_REDDIT_HANDLE,
+  // marketplace
+  CHANGE_WANTED,
+  CHANGE_ROYALTY,
 }
 
 export default FormActions;

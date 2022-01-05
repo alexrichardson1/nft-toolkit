@@ -1,10 +1,11 @@
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import Input from "components/common/Input";
 import PageHeader from "components/common/PageHeader";
-import SvgLogo from "components/common/SvgLogo";
+import SvgIcon from "components/common/SvgLogo";
 import NetworkContext from "context/network/NetworkContext";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useRef } from "react";
 import { wrongStepGenerative, wrongStepStatic } from "utils/pages";
 
 const DESCRIPTION_ROWS = 4;
@@ -22,6 +23,8 @@ interface PropsT {
   handleSymbolChange: (e: InputEventT) => void;
   handleTwitterChange: (e: InputEventT) => void;
   handleRedditChange: (e: InputEventT) => void;
+  handleMplaceRoyaltyChange: (e: InputEventT) => void;
+  handleMplaceWantedChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
@@ -33,10 +36,17 @@ const priceInputProps = (selectedNet: NetworkT) => ({
   inputProps: { min: 0, step: "any" },
   endAdornment: (
     <InputAdornment position="end">
-      <SvgLogo icon={selectedNet.icon} width={ICON_SIZE} height={ICON_SIZE} />
+      <SvgIcon
+        alt={selectedNet.name}
+        icon={selectedNet.icon}
+        width={ICON_SIZE}
+        height={ICON_SIZE}
+      />
     </InputAdornment>
   ),
 });
+
+const royaltyInputProps = { inputProps: { min: 0, max: 100 } };
 
 /**
  * @param generative - true if the user has chosen generative art, else false
@@ -60,8 +70,11 @@ const GeneralInfoStep = ({
   handleSymbolChange,
   handleRedditChange,
   handleTwitterChange,
+  handleMplaceWantedChange,
+  handleMplaceRoyaltyChange,
 }: PropsT): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
+  const ref = useRef<HTMLInputElement>(null);
   const priceInputPropsMemo = useMemo(
     () => priceInputProps(selectedNet),
     [selectedNet]
@@ -73,6 +86,15 @@ const GeneralInfoStep = ({
   ) {
     return <></>;
   }
+
+  const handleRadioKeyPress: React.KeyboardEventHandler<HTMLLabelElement> = (
+    e
+  ) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      ref.current?.click();
+    }
+  };
 
   return (
     <>
@@ -139,6 +161,32 @@ const GeneralInfoStep = ({
           label="Reddit Handle"
         />
       </Paper>
+
+      <Paper>
+        <Input
+          value={state.marketplace.royalty}
+          onChange={handleMplaceRoyaltyChange}
+          placeholder="% on all sales to go to creator"
+          label="Royalty (%)"
+          type="number"
+          InputProps={royaltyInputProps}
+          required
+        />
+      </Paper>
+
+      <FormGroup>
+        <FormControlLabel
+          ref={ref}
+          control={
+            <Checkbox
+              checked={state.marketplace.wanted}
+              onChange={handleMplaceWantedChange}
+            />
+          }
+          onKeyPress={handleRadioKeyPress}
+          label="Select to deploy your own Marketplace"
+        />
+      </FormGroup>
     </>
   );
 };

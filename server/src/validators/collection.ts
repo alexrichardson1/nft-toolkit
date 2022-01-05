@@ -34,6 +34,7 @@ export const deployedValidator: ValidationChain[] = [
   invalidAddress("creator"),
   invalidChainId,
   invalidAddress("address"),
+  invalidAddress("marketAddress").optional({ nullable: true }),
 ];
 
 export const getCollectionsValidator: ValidationChain[] = [

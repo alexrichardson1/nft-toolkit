@@ -1,6 +1,10 @@
-import { s3 } from "@controllers/common";
-import { GenCollectionI, generate } from "@controllers/generateArt";
-import { Collection, CollectionT, Token } from "@models/collection";
+import { s3, SITE_URL } from "@controllers/common";
+import {
+  GenCollectionI,
+  generate,
+  MIN_IMG_UPLOAD,
+} from "@controllers/generateArt";
+import { Collection, CollectionT, Token, TokenT } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
@@ -25,9 +29,35 @@ export const uploadImages = multer({
 export const successHandler: RequestHandler = (_req, res) =>
   res.json({ success: true });
 
+const makeGif = (
+  tokens: TokenT[]
+  // creator: string,
+  // name: string
+): string => {
+  const MIDPOINT = 0.5;
+  const NUM_FRAMES = 1;
+  const [randomToken] = tokens
+    .sort(() => MIDPOINT - Math.random())
+    .slice(0, NUM_FRAMES);
+
+  // const uploadKey = `${creator}/${name}/collection.gif`;
+  // const uploadParams = {
+  //   Bucket: "nft-toolkit-collections",
+  //   Key: uploadKey,
+  //   ACL: "public-read",
+  //   Body: await gif.render,
+  // };
+  // await s3.upload(uploadParams).promise();
+  return randomToken
+    ? randomToken.image
+    : `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/images/1.png`;
+};
+
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT = req.body;
   userCollection.tokens.map((token) => new Token(token));
+  const { tokens } = userCollection;
+  userCollection.image = makeGif(tokens.slice(0, MIN_IMG_UPLOAD));
   const collection = new Collection(userCollection);
   await collection.save();
   next();
@@ -37,6 +67,7 @@ interface CollectionInfo {
   name: string;
   symbol: string;
   price: string;
+  royalty: number;
 }
 
 export const deployContracts: RequestHandler = (req, res) => {
@@ -47,19 +78,28 @@ export const deployContracts: RequestHandler = (req, res) => {
     price,
     creator,
     chainId,
+    royalty,
   }: CollectionT & CollectionInfo = req.body;
   const signer = new ethers.VoidSigner(creator);
   const NFTContract = new NftFactory(signer);
   const tx = NFTContract.getDeployTransaction(
     name,
     symbol,
-    `http://nftoolkit.eu-west-2.elasticbeanstalk.com/server/metadata/${chainId}/`,
+    `${SITE_URL}/server/metadata/${chainId}/`,
     tokens.length,
-    BigNumber.from(price)
+    BigNumber.from(price),
+    royalty
   );
   tx.chainId = chainId;
   tx.from = creator;
   res.json({ transaction: tx });
+};
+
+export const getAllCollections: RequestHandler = async (_req, res) => {
+  const users = await User.find();
+  const collections: UserCollectionI[] = [];
+  users.forEach((user) => collections.push(...user.collections));
+  res.json({ collections });
 };
 
 const getCollectionsFromDB = async (

@@ -34,6 +34,10 @@ import {
   handleQuantityChange,
 } from "utils/collection-form/layerHandles";
 import {
+  handleMplaceRoyaltyChange,
+  handleMplaceWantedChange,
+} from "utils/collection-form/marketplaceHandles";
+import {
   handleRedditChange,
   handleTwitterChange,
 } from "utils/collection-form/predictionHandles";
@@ -54,7 +58,6 @@ import TierSelectionStep from "./form-steps/TierSelectionStep";
 import TypeOfArtStep from "./form-steps/TypeOfArtStep";
 import FormAlert from "./FormAlert";
 import FormButtons from "./FormButtons";
-
 const INITIAL_STEP_NUMBER = 0;
 const INITIAL_STATE: FormStateI = {
   twitterHandle: "",
@@ -72,7 +75,8 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  predictions: { names: [], hype: -1 },
+  marketplace: { wanted: false, royalty: "" },
+  predictions: { collections: [], hype: -1, price: "0" },
 };
 const formFooterStyle: SxProps = {
   display: "flex",
@@ -93,11 +97,11 @@ const CreateCollectionForm = (): JSX.Element => {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [generative, setGenerative] = useState(false);
   const [txAddress, setTxAddress] = useState("");
-  const [newCollName, setNewCollName] = useState("");
+  const [newMintingPrice, setNewMintingPrice] = useState("");
   useEffect(() => {
     if (stepNumber === INITIAL_STEP_NUMBER) {
       setGenerative(false);
-      dispatch({ type: FormActions.RESET_TYPE_OF_ART, payload: {} });
+      dispatch({ type: FormActions.RESET_STATE, payload: {} });
     }
   }, [stepNumber]);
   const IS_LAST_STEP =
@@ -108,7 +112,6 @@ const CreateCollectionForm = (): JSX.Element => {
     showAlert(setAlertSeverity, severity, setAlertMessage, message);
     setTimeout(closeAlert, DEFAULT_ALERT_DURATION);
   };
-
   if (txAddress !== "") {
     return <Redirect to={`/${chainId}/${txAddress}`} />;
   }
@@ -130,9 +133,9 @@ const CreateCollectionForm = (): JSX.Element => {
           setLoadingMessage,
           setIsLoading,
           dispatch,
-          setNewCollName,
+          setNewMintingPrice,
           handleNextStep,
-          newCollName,
+          newMintingPrice,
           library,
           setTxAddress
         )
@@ -151,6 +154,8 @@ const CreateCollectionForm = (): JSX.Element => {
         handleCollNameChange={handleCollNameChange(dispatch)}
         handleMintPriceChange={handleMintPriceChange(dispatch)}
         handleDescriptionChange={handleDescriptionChange(dispatch)}
+        handleMplaceWantedChange={handleMplaceWantedChange(dispatch)}
+        handleMplaceRoyaltyChange={handleMplaceRoyaltyChange(dispatch)}
       />
       <TypeOfArtStep
         stepNumber={stepNumber}
@@ -201,8 +206,8 @@ const CreateCollectionForm = (): JSX.Element => {
         isLoading={isLoading}
         stepNumber={stepNumber}
         generative={generative}
-        changedCollName={newCollName}
-        handleChangeCollName={setNewCollName}
+        changedMintingPrice={newMintingPrice}
+        handleChangeMintingPrice={setNewMintingPrice}
       />
       <Box sx={formFooterStyle}>
         <FormAlert

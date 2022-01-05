@@ -17,7 +17,8 @@ const EMPTY_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  predictions: { names: [], hype: -1 },
+  marketplace: { wanted: false, royalty: "" },
+  predictions: { collections: [], hype: -1, price: "0" },
 };
 
 const getImageObj = (name: string, url: string, image: File): ImageI => ({
@@ -82,7 +83,8 @@ describe("formReducer", () => {
         layers: [],
         numberOfLayers: 0,
       },
-      predictions: { names: [], hype: -1 },
+      marketplace: { wanted: false, royalty: "" },
+      predictions: { collections: [], hype: -1, price: "0" },
       mintingPrice: "0",
     };
   });
