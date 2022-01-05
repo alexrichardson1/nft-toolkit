@@ -319,6 +319,8 @@ export const handleFormSubmit = async (
     return;
   }
   try {
+    state.generative.layers = [...state.generative.layers].reverse();
+    console.log(state.generative.layers);
     await handleLastStep(
       setLoadingMessage,
       setIsLoading,
@@ -332,6 +334,9 @@ export const handleFormSubmit = async (
       setTxAddress
     );
   } catch (error) {
+    // Reverse necessary incase uploading fails and then the user goes back to layer selection step
+    state.generative.layers = [...state.generative.layers].reverse();
+    console.log(state.generative.layers);
     console.error(error);
     stopLoading(setLoadingMessage, setIsLoading);
     showFormAlert("error", "Unable to create collection");

@@ -1,5 +1,5 @@
 import { DragEndEvent } from "@dnd-kit/core";
-import { Collapse } from "@mui/material";
+import { Collapse, Typography } from "@mui/material";
 import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
 import PageHeader from "components/common/PageHeader";
@@ -68,12 +68,12 @@ const LayerSelectionStep = ({
       <PageHeader text="Add Layers For Your Collection" />
       <Collapse in={state.generative.numberOfLayers > 0}>
         <Collapse in={state.generative.numberOfLayers > 1}>
-          <p>Top Layer</p>
+          <Typography>Top Layer</Typography>
         </Collapse>
         <OrderableList
           items={state.generative.layers}
           handleItemReorder={handleLayerReorder}>
-          {[...state.generative.layers].reverse().map((layer) => (
+          {state.generative.layers.map((layer) => (
             <OrderableListItem
               id={layer.name}
               key={layer.name}
@@ -89,7 +89,7 @@ const LayerSelectionStep = ({
           ))}
         </OrderableList>
         <Collapse in={state.generative.numberOfLayers > 1}>
-          <p>Bottom Layer</p>
+          <Typography>Bottom Layer</Typography>
         </Collapse>
       </Collapse>
       <OrderableListInput
