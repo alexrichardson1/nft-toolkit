@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { pure } from "recompose";
+import React from "react";
 
 interface PropsT {
   text: string;
@@ -19,4 +19,4 @@ const PageHeader = ({ text }: PropsT): JSX.Element => {
   );
 };
 
-export default pure(PageHeader);
+export default React.memo(PageHeader);

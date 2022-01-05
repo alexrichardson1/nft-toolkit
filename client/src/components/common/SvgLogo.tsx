@@ -1,4 +1,4 @@
-import { pure } from "recompose";
+import React from "react";
 
 interface PropsT {
   icon: string;
@@ -24,4 +24,4 @@ const SvgIcon = ({
   />
 );
 
-export default pure(SvgIcon);
+export default React.memo(SvgIcon);
