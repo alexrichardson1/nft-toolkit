@@ -73,7 +73,7 @@ const LayerSelectionStep = ({
         <OrderableList
           items={state.generative.layers}
           handleItemReorder={handleLayerReorder}>
-          {[...state.generative.layers].reverse().map((layer) => (
+          {state.generative.layers.map((layer) => (
             <OrderableListItem
               id={layer.name}
               key={layer.name}
