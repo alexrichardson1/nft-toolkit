@@ -1,7 +1,9 @@
-import { Collapse, Tab, Typography } from "@mui/material";
+import { Tab } from "@mui/material";
 import Box from "@mui/material/Box";
+import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
+import InfoToolTip from "components/common/InfoToolTip";
 import Input from "components/common/Input";
 import RarityProgressBar from "components/common/RarityProgressBar";
 import { useState } from "react";
@@ -84,6 +86,8 @@ const LayerImageUpload = ({
     return max;
   };
 
+  const MAX_QUANTITY = getMaxQuantity();
+
   return (
     <>
       <PageHeader text="Upload Images for Each Layer" />
@@ -143,21 +147,6 @@ const LayerImageUpload = ({
           );
         })}
       </Box>
-      <Collapse in={getMaxQuantity() > 0}>
-        <Typography>
-          Maximum possible collection quantity: {getMaxQuantity()}.{" "}
-        </Typography>
-        <Collapse
-          in={
-            getMaxQuantity() !==
-            Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())
-          }>
-          <Typography>
-            We recommend generating up to{" "}
-            {Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())}.
-          </Typography>
-        </Collapse>
-      </Collapse>
       <Paper>
         <Input
           type="number"
@@ -166,7 +155,16 @@ const LayerImageUpload = ({
           placeholder="0"
           label="Collection Quantity"
           InputProps={{
-            inputProps: { min: 1, max: getMaxQuantity() },
+            inputProps: { min: 1, max: MAX_QUANTITY },
+            endAdornment: (
+              <InputAdornment position="end">
+                <InfoToolTip
+                  text={`Maximum possible amount of images that can be generated: ${MAX_QUANTITY}. We recommend generating up to ${Math.ceil(
+                    SIZE_RECOMMENDATION * MAX_QUANTITY
+                  )} images.`}
+                />
+              </InputAdornment>
+            ),
           }}
           required
         />
