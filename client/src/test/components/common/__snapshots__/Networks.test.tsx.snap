@@ -1300,7 +1300,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                       ariaLabel="network selection"
                       direction="down"
                       icon={
-                        <pure(SvgIcon)
+                        <Memo(SvgIcon)
                           alt="Ethereum"
                           height="70%"
                           icon="ethereum-logo.svg"
@@ -1341,7 +1341,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Ethereum"
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="Ethereum"
                                     height="70%"
                                     icon="ethereum-logo.svg"
@@ -1361,7 +1361,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Avalanche"
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="Avalanche"
                                     height="70%"
                                     icon="avalanche-logo.svg"
@@ -1381,7 +1381,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="Polygon"
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="Polygon"
                                     height="70%"
                                     icon="polygon-logo.svg"
@@ -1401,7 +1401,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 }
                                 data-testid="BSC"
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="BSC"
                                     height="70%"
                                     icon="binance-logo.svg"
@@ -1413,7 +1413,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                               />,
                             ],
                             "direction": "down",
-                            "icon": <pure(SvgIcon)
+                            "icon": <Memo(SvgIcon)
                               alt="Ethereum"
                               height="70%"
                               icon="ethereum-logo.svg"
@@ -1524,7 +1524,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Ethereum"
                                         icon={
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Ethereum"
                                             height="70%"
                                             icon="ethereum-logo.svg"
@@ -1544,7 +1544,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Avalanche"
                                         icon={
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Avalanche"
                                             height="70%"
                                             icon="avalanche-logo.svg"
@@ -1564,7 +1564,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="Polygon"
                                         icon={
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Polygon"
                                             height="70%"
                                             icon="polygon-logo.svg"
@@ -1584,7 +1584,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         }
                                         data-testid="BSC"
                                         icon={
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="BSC"
                                             height="70%"
                                             icon="binance-logo.svg"
@@ -1596,7 +1596,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                       />,
                                     ],
                                     "direction": "down",
-                                    "icon": <pure(SvgIcon)
+                                    "icon": <Memo(SvgIcon)
                                       alt="Ethereum"
                                       height="70%"
                                       icon="ethereum-logo.svg"
@@ -1655,7 +1655,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         "aria-expanded": false,
                                         "aria-haspopup": "true",
                                         "aria-label": "network selection",
-                                        "children": <pure(SvgIcon)
+                                        "children": <Memo(SvgIcon)
                                           alt="Ethereum"
                                           height="70%"
                                           icon="ethereum-logo.svg"
@@ -1729,7 +1729,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                             "aria-haspopup": "true",
                                             "aria-label": "network selection",
                                             "centerRipple": false,
-                                            "children": <pure(SvgIcon)
+                                            "children": <Memo(SvgIcon)
                                               alt="Ethereum"
                                               height="70%"
                                               icon="ethereum-logo.svg"
@@ -1790,31 +1790,24 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           tabIndex={0}
                                           type="button"
                                         >
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Ethereum"
                                             height="70%"
                                             icon="ethereum-logo.svg"
                                             width="70%"
                                           >
-                                            <SvgIcon
+                                            <img
                                               alt="Ethereum"
                                               height="70%"
-                                              icon="ethereum-logo.svg"
-                                              width="70%"
-                                            >
-                                              <img
-                                                alt="Ethereum"
-                                                height="70%"
-                                                src="ethereum-logo.svg"
-                                                style={
-                                                  Object {
-                                                    "margin": "0",
-                                                  }
+                                              src="ethereum-logo.svg"
+                                              style={
+                                                Object {
+                                                  "margin": "0",
                                                 }
-                                                width="70%"
-                                              />
-                                            </SvgIcon>
-                                          </pure(SvgIcon)>
+                                              }
+                                              width="70%"
+                                            />
+                                          </Memo(SvgIcon)>
                                           <ForwardRef(TouchRipple)
                                             center={false}
                                           >
@@ -1871,7 +1864,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Ethereum"
                                     icon={
-                                      <pure(SvgIcon)
+                                      <Memo(SvgIcon)
                                         alt="Ethereum"
                                         height="70%"
                                         icon="ethereum-logo.svg"
@@ -1891,7 +1884,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Avalanche"
                                     icon={
-                                      <pure(SvgIcon)
+                                      <Memo(SvgIcon)
                                         alt="Avalanche"
                                         height="70%"
                                         icon="avalanche-logo.svg"
@@ -1911,7 +1904,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="Polygon"
                                     icon={
-                                      <pure(SvgIcon)
+                                      <Memo(SvgIcon)
                                         alt="Polygon"
                                         height="70%"
                                         icon="polygon-logo.svg"
@@ -1931,7 +1924,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                     }
                                     data-testid="BSC"
                                     icon={
-                                      <pure(SvgIcon)
+                                      <Memo(SvgIcon)
                                         alt="BSC"
                                         height="70%"
                                         icon="binance-logo.svg"
@@ -1943,7 +1936,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                   />,
                                 ],
                                 "direction": "down",
-                                "icon": <pure(SvgIcon)
+                                "icon": <Memo(SvgIcon)
                                   alt="Ethereum"
                                   height="70%"
                                   icon="ethereum-logo.svg"
@@ -1975,7 +1968,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Ethereum"
                                 delay={120}
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="Ethereum"
                                     height="70%"
                                     icon="ethereum-logo.svg"
@@ -2024,7 +2017,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Ethereum",
                                         "delay": 120,
-                                        "icon": <pure(SvgIcon)
+                                        "icon": <Memo(SvgIcon)
                                           alt="Ethereum"
                                           height="70%"
                                           icon="ethereum-logo.svg"
@@ -2097,7 +2090,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Ethereum",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgIcon)
+                                            "children": <Memo(SvgIcon)
                                               alt="Ethereum"
                                               height="70%"
                                               icon="ethereum-logo.svg"
@@ -2187,7 +2180,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Ethereum",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgIcon)
+                                                "children": <Memo(SvgIcon)
                                                   alt="Ethereum"
                                                   height="70%"
                                                   icon="ethereum-logo.svg"
@@ -2257,31 +2250,24 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgIcon)
+                                              <Memo(SvgIcon)
                                                 alt="Ethereum"
                                                 height="70%"
                                                 icon="ethereum-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgIcon
+                                                <img
                                                   alt="Ethereum"
                                                   height="70%"
-                                                  icon="ethereum-logo.svg"
-                                                  width="70%"
-                                                >
-                                                  <img
-                                                    alt="Ethereum"
-                                                    height="70%"
-                                                    src="ethereum-logo.svg"
-                                                    style={
-                                                      Object {
-                                                        "margin": "0",
-                                                      }
+                                                  src="ethereum-logo.svg"
+                                                  style={
+                                                    Object {
+                                                      "margin": "0",
                                                     }
-                                                    width="70%"
-                                                  />
-                                                </SvgIcon>
-                                              </pure(SvgIcon)>
+                                                  }
+                                                  width="70%"
+                                                />
+                                              </Memo(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -2374,7 +2360,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Ethereum",
                                               "delay": 120,
-                                              "icon": <pure(SvgIcon)
+                                              "icon": <Memo(SvgIcon)
                                                 alt="Ethereum"
                                                 height="70%"
                                                 icon="ethereum-logo.svg"
@@ -2403,7 +2389,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Ethereum"
                                             height="70%"
                                             icon="ethereum-logo.svg"
@@ -2570,7 +2556,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Avalanche"
                                 delay={90}
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="Avalanche"
                                     height="70%"
                                     icon="avalanche-logo.svg"
@@ -2617,7 +2603,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Avalanche",
                                         "delay": 90,
-                                        "icon": <pure(SvgIcon)
+                                        "icon": <Memo(SvgIcon)
                                           alt="Avalanche"
                                           height="70%"
                                           icon="avalanche-logo.svg"
@@ -2688,7 +2674,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Avalanche",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgIcon)
+                                            "children": <Memo(SvgIcon)
                                               alt="Avalanche"
                                               height="70%"
                                               icon="avalanche-logo.svg"
@@ -2778,7 +2764,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Avalanche",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgIcon)
+                                                "children": <Memo(SvgIcon)
                                                   alt="Avalanche"
                                                   height="70%"
                                                   icon="avalanche-logo.svg"
@@ -2848,31 +2834,24 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgIcon)
+                                              <Memo(SvgIcon)
                                                 alt="Avalanche"
                                                 height="70%"
                                                 icon="avalanche-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgIcon
+                                                <img
                                                   alt="Avalanche"
                                                   height="70%"
-                                                  icon="avalanche-logo.svg"
-                                                  width="70%"
-                                                >
-                                                  <img
-                                                    alt="Avalanche"
-                                                    height="70%"
-                                                    src="avalanche-logo.svg"
-                                                    style={
-                                                      Object {
-                                                        "margin": "0",
-                                                      }
+                                                  src="avalanche-logo.svg"
+                                                  style={
+                                                    Object {
+                                                      "margin": "0",
                                                     }
-                                                    width="70%"
-                                                  />
-                                                </SvgIcon>
-                                              </pure(SvgIcon)>
+                                                  }
+                                                  width="70%"
+                                                />
+                                              </Memo(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -2963,7 +2942,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Avalanche",
                                               "delay": 90,
-                                              "icon": <pure(SvgIcon)
+                                              "icon": <Memo(SvgIcon)
                                                 alt="Avalanche"
                                                 height="70%"
                                                 icon="avalanche-logo.svg"
@@ -2990,7 +2969,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Avalanche"
                                             height="70%"
                                             icon="avalanche-logo.svg"
@@ -3157,7 +3136,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="Polygon"
                                 delay={60}
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="Polygon"
                                     height="70%"
                                     icon="polygon-logo.svg"
@@ -3204,7 +3183,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "Polygon",
                                         "delay": 60,
-                                        "icon": <pure(SvgIcon)
+                                        "icon": <Memo(SvgIcon)
                                           alt="Polygon"
                                           height="70%"
                                           icon="polygon-logo.svg"
@@ -3275,7 +3254,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "Polygon",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgIcon)
+                                            "children": <Memo(SvgIcon)
                                               alt="Polygon"
                                               height="70%"
                                               icon="polygon-logo.svg"
@@ -3365,7 +3344,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "Polygon",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgIcon)
+                                                "children": <Memo(SvgIcon)
                                                   alt="Polygon"
                                                   height="70%"
                                                   icon="polygon-logo.svg"
@@ -3435,31 +3414,24 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgIcon)
+                                              <Memo(SvgIcon)
                                                 alt="Polygon"
                                                 height="70%"
                                                 icon="polygon-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgIcon
+                                                <img
                                                   alt="Polygon"
                                                   height="70%"
-                                                  icon="polygon-logo.svg"
-                                                  width="70%"
-                                                >
-                                                  <img
-                                                    alt="Polygon"
-                                                    height="70%"
-                                                    src="polygon-logo.svg"
-                                                    style={
-                                                      Object {
-                                                        "margin": "0",
-                                                      }
+                                                  src="polygon-logo.svg"
+                                                  style={
+                                                    Object {
+                                                      "margin": "0",
                                                     }
-                                                    width="70%"
-                                                  />
-                                                </SvgIcon>
-                                              </pure(SvgIcon)>
+                                                  }
+                                                  width="70%"
+                                                />
+                                              </Memo(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -3550,7 +3522,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "Polygon",
                                               "delay": 60,
-                                              "icon": <pure(SvgIcon)
+                                              "icon": <Memo(SvgIcon)
                                                 alt="Polygon"
                                                 height="70%"
                                                 icon="polygon-logo.svg"
@@ -3577,7 +3549,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="Polygon"
                                             height="70%"
                                             icon="polygon-logo.svg"
@@ -3744,7 +3716,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                 data-testid="BSC"
                                 delay={30}
                                 icon={
-                                  <pure(SvgIcon)
+                                  <Memo(SvgIcon)
                                     alt="BSC"
                                     height="70%"
                                     icon="binance-logo.svg"
@@ -3791,7 +3763,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                         },
                                         "data-testid": "BSC",
                                         "delay": 30,
-                                        "icon": <pure(SvgIcon)
+                                        "icon": <Memo(SvgIcon)
                                           alt="BSC"
                                           height="70%"
                                           icon="binance-logo.svg"
@@ -3862,7 +3834,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           Object {
                                             "aria-label": "BSC",
                                             "aria-labelledby": null,
-                                            "children": <pure(SvgIcon)
+                                            "children": <Memo(SvgIcon)
                                               alt="BSC"
                                               height="70%"
                                               icon="binance-logo.svg"
@@ -3952,7 +3924,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                                 "aria-label": "BSC",
                                                 "aria-labelledby": null,
                                                 "centerRipple": false,
-                                                "children": <pure(SvgIcon)
+                                                "children": <Memo(SvgIcon)
                                                   alt="BSC"
                                                   height="70%"
                                                   icon="binance-logo.svg"
@@ -4022,31 +3994,24 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               tabIndex={-1}
                                               type="button"
                                             >
-                                              <pure(SvgIcon)
+                                              <Memo(SvgIcon)
                                                 alt="BSC"
                                                 height="70%"
                                                 icon="binance-logo.svg"
                                                 width="70%"
                                               >
-                                                <SvgIcon
+                                                <img
                                                   alt="BSC"
                                                   height="70%"
-                                                  icon="binance-logo.svg"
-                                                  width="70%"
-                                                >
-                                                  <img
-                                                    alt="BSC"
-                                                    height="70%"
-                                                    src="binance-logo.svg"
-                                                    style={
-                                                      Object {
-                                                        "margin": "0",
-                                                      }
+                                                  src="binance-logo.svg"
+                                                  style={
+                                                    Object {
+                                                      "margin": "0",
                                                     }
-                                                    width="70%"
-                                                  />
-                                                </SvgIcon>
-                                              </pure(SvgIcon)>
+                                                  }
+                                                  width="70%"
+                                                />
+                                              </Memo(SvgIcon)>
                                               <ForwardRef(TouchRipple)
                                                 center={false}
                                               >
@@ -4137,7 +4102,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                               },
                                               "data-testid": "BSC",
                                               "delay": 30,
-                                              "icon": <pure(SvgIcon)
+                                              "icon": <Memo(SvgIcon)
                                                 alt="BSC"
                                                 height="70%"
                                                 icon="binance-logo.svg"
@@ -4164,7 +4129,7 @@ exports[`NetworksSpeedDial snapshot 1`] = `
                                           }
                                           tabIndex={-1}
                                         >
-                                          <pure(SvgIcon)
+                                          <Memo(SvgIcon)
                                             alt="BSC"
                                             height="70%"
                                             icon="binance-logo.svg"
