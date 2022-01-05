@@ -57,7 +57,12 @@ export const getExternalMarket = async (
   chainId: number,
   address: string
 ): Promise<string> => {
-  const res = await axios.get(`${API_URL}/market/${chainId}/${address}`);
-  const { marketURL } = res.data;
-  return marketURL ?? "";
+  try {
+    const res = await axios.get(`${API_URL}/market/${chainId}/${address}`);
+    const { marketURL } = res.data;
+    return marketURL;
+  catch (error) {
+    console.error(error);
+    return "";
+  }
 };
