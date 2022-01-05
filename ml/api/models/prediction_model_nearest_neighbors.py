@@ -13,10 +13,10 @@ class PredictionModelNearestNeighbors(prediction_model_abstract.PredictionModel)
     Model for clustering collections
     """
 
-    def __init__(self, collections, levenshtein_scale=0.5, score_scaler=0.5):
+    def __init__(self, collections, levenshtein_scale=0.5, score_scale=0.5):
         super().__init__(collections)
         self.levenshtein_scale = levenshtein_scale
-        self.score_scaler = score_scaler
+        self.score_scale = score_scale
 
     def train(self):
         pass
@@ -36,7 +36,7 @@ class PredictionModelNearestNeighbors(prediction_model_abstract.PredictionModel)
             data_row = self.data.iloc[i]
             distance_to_point = (self.levenshtein_scale *
                                  distance.levenshtein(word, data_row['name'])) + \
-                (self.score_scaler * np.sqrt(prediction_model_abstract.get_distance(
+                (self.score_scale * np.sqrt(prediction_model_abstract.get_distance(
                     scaled_row, self.x_training.iloc[i])))
             dataset = dataset.append(
                 {'distance': distance_to_point, 'index': i}, ignore_index=True)
