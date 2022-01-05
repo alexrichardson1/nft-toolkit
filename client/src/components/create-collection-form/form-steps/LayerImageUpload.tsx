@@ -75,7 +75,11 @@ const LayerImageUpload = ({
   const getMaxQuantity = (): number => {
     let max = 1;
     state.generative.layers.forEach((layer) => {
-      max *= layer.numberOfImages;
+      if (layer.numberOfImages > 0) {
+        max *= layer.numberOfImages + (layer.probability === "100" ? 0 : 1);
+      } else {
+        max = 0;
+      }
     });
     return max;
   };
@@ -141,7 +145,7 @@ const LayerImageUpload = ({
       </Box>
       <Collapse in={getMaxQuantity() > 0}>
         <p>
-          There are a total {getMaxQuantity()} different combinations.{" "}
+          Maximum possible collection quantity: {getMaxQuantity()}.{" "}
           <Collapse
             in={
               getMaxQuantity() !==
