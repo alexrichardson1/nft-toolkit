@@ -1,9 +1,5 @@
-import { s3, SITE_URL } from "@controllers/common";
-import {
-  GenCollectionI,
-  generate,
-  MIN_IMG_UPLOAD,
-} from "@controllers/generateArt";
+import { s3, shuffleTokens, SITE_URL } from "@controllers/common";
+import { GenCollectionI, generate } from "@controllers/generateArt";
 import { Collection, CollectionT, Token, TokenT } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
 import { createCanvas, loadImage } from "canvas";
@@ -36,17 +32,14 @@ export const makeGif = async (
   creator: string,
   name: string
 ): Promise<string> => {
-  const MIDPOINT = 0.5;
   const NUM_FRAMES = 10;
   const FRAME_DELAY = 500;
-  const [randomToken, ...randomTokens] = tokens
-    .sort(() => MIDPOINT - Math.random())
-    .slice(0, NUM_FRAMES);
+  const [randToken, ...randTokens] = shuffleTokens(tokens).slice(0, NUM_FRAMES);
 
-  if (!randomToken) {
+  if (!randToken) {
     throw Error("Invalid tokens, must include at least one");
   }
-  const img = await loadImage(randomToken.image);
+  const img = await loadImage(randToken.image);
   const encoder = new GIFEncoder(img.width, img.height);
 
   encoder.start();
@@ -58,7 +51,7 @@ export const makeGif = async (
   ctx.drawImage(img, 0, 0);
   encoder.addFrame(ctx);
 
-  for (const token of randomTokens) {
+  for (const token of randTokens) {
     ctx.drawImage(await loadImage(token.image), 0, 0);
     encoder.addFrame(ctx);
   }
@@ -79,12 +72,8 @@ export const makeGif = async (
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
   const userCollection: CollectionT & { name: string } = req.body;
   userCollection.tokens.map((token) => new Token(token));
-  const { tokens } = userCollection;
-  userCollection.image = await makeGif(
-    tokens.slice(0, MIN_IMG_UPLOAD),
-    userCollection.creator,
-    userCollection.name
-  );
+  const { tokens, creator, name } = userCollection;
+  userCollection.image = await makeGif(tokens, creator, name);
   const collection = new Collection(userCollection);
   await collection.save();
   next();
