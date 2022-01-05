@@ -1,4 +1,4 @@
-import { Collapse, Tab } from "@mui/material";
+import { Collapse, Tab, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
@@ -144,19 +144,19 @@ const LayerImageUpload = ({
         })}
       </Box>
       <Collapse in={getMaxQuantity() > 0}>
-        <p>
+        <Typography>
           Maximum possible collection quantity: {getMaxQuantity()}.{" "}
-          <Collapse
-            in={
-              getMaxQuantity() !==
-              Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())
-            }>
-            <p>
-              We recommend generating up to{" "}
-              {Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())}.
-            </p>
-          </Collapse>
-        </p>
+        </Typography>
+        <Collapse
+          in={
+            getMaxQuantity() !==
+            Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())
+          }>
+          <Typography>
+            We recommend generating up to{" "}
+            {Math.ceil(SIZE_RECOMMENDATION * getMaxQuantity())}.
+          </Typography>
+        </Collapse>
         <Paper>
           <Input
             type="number"
