@@ -199,7 +199,7 @@ const MintingPage = (): JSX.Element => {
               display="flex"
               justifyContent={{ xs: "center", lg: "left" }}
               gap="10px">
-              {mintingData.marketAddress && (
+              {mintingData.marketAddress && !mintingData.mintedAmount.eq(0) && (
                 <Button
                   variant="contained"
                   startIcon={<StorefrontIcon />}

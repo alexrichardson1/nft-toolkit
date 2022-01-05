@@ -102,4 +102,5 @@ interface CollDataI {
   owner: string;
   marketAddress?: string;
   marketURL?: string;
+  minted: BigNumber;
 }

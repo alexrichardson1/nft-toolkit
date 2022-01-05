@@ -42,6 +42,7 @@ const MyCollectionsPage = (): JSX.Element => {
               marketURL: col.marketURL,
               balance: (await provider.getBalance(col.address)).toString(),
               owner: await nftContract.owner(),
+              minted: await nftContract.tokenIdTracker(),
             };
           })
         );
