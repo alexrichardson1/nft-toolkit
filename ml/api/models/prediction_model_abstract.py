@@ -4,6 +4,7 @@ Model for clustering collections
 
 import math
 import pickle
+import sys
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -95,8 +96,11 @@ class PredictionModel:
             price = row['avg_sale_price']
             predictions = self.predict(
                 row['name'], row['reddit_score'], row['twitter_score'])
-            pred_avg_price = sum([col['avg_sale_price']
-                                  for col in predictions]) / len(predictions)
+            if len(predictions) == 0:
+                pred_avg_price = sys.maxsize
+            else:
+                pred_avg_price = sum([col['avg_sale_price']
+                                      for col in predictions]) / len(predictions)
             total_validated += 1
             mse += math.pow(pred_avg_price - price, 2)
         return math.sqrt(mse / total_validated)
