@@ -206,7 +206,7 @@ const addLayer = (state: FormStateI, action: FormActionI) => {
     ...state,
     generative: {
       ...state.generative,
-      layers: [...state.generative.layers, getLayerObj(newLayer.name)],
+      layers: [getLayerObj(newLayer.name), ...state.generative.layers],
       numberOfLayers: state.generative.numberOfLayers + 1,
     },
   };
