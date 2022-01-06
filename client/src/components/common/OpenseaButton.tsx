@@ -2,7 +2,9 @@ import { Button } from "@mui/material";
 import OpenseaBlackLogo from "images/opensea-black.svg";
 import OpenseaColorLogo from "images/opensea-colour.svg";
 import { useEffect, useState } from "react";
-import { getExternalMarket } from "utils/mintingPageUtils";
+import { NFT__factory as NFTFactory } from "typechain";
+import { DEFAULT_NET } from "utils/constants";
+import { getExternalMarket, getRPCProvider } from "utils/mintingPageUtils";
 import SvgLogo from "./SvgLogo";
 
 interface PropsT {
@@ -22,10 +24,15 @@ const OpenseaButton = ({
 
   useEffect(() => {
     const getMarketURL = async () => {
+      const nftContract = NFTFactory.connect(address, getRPCProvider(chainId));
+      const curToken = await nftContract.tokenIdTracker();
+      if (curToken.eq(0)) {
+        return;
+      }
       const url = await getExternalMarket(chainId, address);
       setExternalMarket(url);
     };
-    if (!marketURL) {
+    if (!marketURL && chainId === DEFAULT_NET.chainId) {
       getMarketURL();
     }
   }, [address, chainId]);
