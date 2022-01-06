@@ -5,7 +5,10 @@ import axios from "axios";
 import { Deferrable } from "ethers/lib/utils";
 import { FormEvent } from "react";
 import { FormActionI } from "reducers/formReducerTypes";
-import { Market__factory as MarketFactory } from "typechain";
+import {
+  Market__factory as MarketFactory,
+  NFT__factory as NftFactory,
+} from "typechain";
 import { ML_URL, tetherAddress } from "utils/constants";
 import {
   addDeployedAddress,
@@ -88,7 +91,8 @@ const createCollection = async (
   showFormAlert: (severity: AlertColor, message: string) => void,
   setIsLoading: SetStateAction<boolean>,
   setTxAddress: SetStateAction<string>,
-  wantedMarketplace: boolean
+  wantedMarketplace: boolean,
+  allMint: boolean
 ) => {
   const signer = library.getSigner();
   setLoadingMessage("Deploying...");
@@ -115,8 +119,17 @@ const createCollection = async (
     marketAddress
   );
   showFormAlert("success", "Collection Creation Successful");
+  const address = txReceipt.contractAddress;
+  if (allMint) {
+    const nftContract = NftFactory.connect(address, signer);
+    const limit = await nftContract.collectionLimit();
+    setLoadingMessage("Approving Minting...");
+    const mintTx = await nftContract.mint(limit);
+    setLoadingMessage("Confirming Minting...");
+    await mintTx.wait();
+  }
   stopLoading(setLoadingMessage, setIsLoading);
-  setTxAddress(txReceipt.contractAddress);
+  setTxAddress(address);
 };
 
 const checkChance = (
@@ -273,7 +286,8 @@ const handleLastStep = async (
     showFormAlert,
     setIsLoading,
     setTxAddress,
-    state.marketplace.wanted
+    state.marketplace.wanted,
+    state.marketplace.allMint
   );
 };
 
