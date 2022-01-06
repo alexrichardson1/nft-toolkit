@@ -5,9 +5,7 @@ import {
   getCollection,
   getUserCollections,
   saveCollectionToDB,
-  successHandler,
   transformTiers,
-  uploadImages,
 } from "@controllers/collection";
 import { errorHandler } from "@controllers/common";
 import { addDeployedAddress } from "@controllers/deployed";
@@ -42,8 +40,6 @@ collectionRoutes.post(
   saveCollectionToDB,
   deployContracts
 );
-
-collectionRoutes.post("/images", uploadImages, successHandler);
 
 collectionRoutes.post(
   "/deployed/:creator/:chainId/:address",

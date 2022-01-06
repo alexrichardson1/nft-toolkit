@@ -59,7 +59,7 @@ interface FormStateI {
     layers: LayerI[];
     quantity: string;
   };
-  marketplace: { wanted: boolean; royalty: string };
+  marketplace: { wanted: boolean; royalty: string; allMint: boolean };
   predictions: MlDataI;
 }
 
@@ -89,6 +89,7 @@ interface CollAddrI {
   chainId: number;
   image: string;
   marketAddress?: string;
+  marketURL?: string;
 }
 
 interface CollDataI {
@@ -100,4 +101,6 @@ interface CollDataI {
   image: string;
   owner: string;
   marketAddress?: string;
+  marketURL?: string;
+  minted: BigNumber;
 }

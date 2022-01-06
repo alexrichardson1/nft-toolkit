@@ -2,8 +2,7 @@ import Grid from "@mui/material/Grid";
 import ChoiceCard from "components/common/ChoiceCard";
 import genArtImg from "images/generative-icon.svg";
 import staticArtImg from "images/static-icon.svg";
-import { useCallback } from "react";
-import { pure } from "recompose";
+import React, { useCallback } from "react";
 import { wrongStep } from "utils/pages";
 
 const ART_TYPE_STEP_NUMBER = 0;
@@ -82,4 +81,4 @@ const TypeOfArtStep = ({
   );
 };
 
-export default pure(TypeOfArtStep);
+export default React.memo(TypeOfArtStep);

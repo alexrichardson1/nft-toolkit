@@ -656,6 +656,7 @@ exports[`LayerSelectionStep snapshots Step Number does not match 1`] = `
                 "totalTierRarity": 0,
               },
               "marketplace": Object {
+                "allMint": false,
                 "royalty": "",
                 "wanted": false,
               },
@@ -1338,6 +1339,7 @@ exports[`LayerSelectionStep snapshots generative does not match 1`] = `
                 "totalTierRarity": 0,
               },
               "marketplace": Object {
+                "allMint": false,
                 "royalty": "",
                 "wanted": false,
               },

@@ -1,63 +1,66 @@
-import { s3, SITE_URL } from "@controllers/common";
-import {
-  GenCollectionI,
-  generate,
-  MIN_IMG_UPLOAD,
-} from "@controllers/generateArt";
+import { s3, shuffleTokens, SITE_URL } from "@controllers/common";
+import { GenCollectionI, generate } from "@controllers/generateArt";
 import { Collection, CollectionT, Token, TokenT } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
+import { createCanvas, loadImage } from "canvas";
 import dotenv from "dotenv";
 import { BigNumber, ethers } from "ethers";
 import { RequestHandler } from "express";
-import multer from "multer";
-import multerS3 from "multer-s3";
+import GIFEncoder from "gifencoder";
 import { NFT__factory as NftFactory } from "../../smart-contracts/typechain";
 
 dotenv.config();
 
-export const uploadImages = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: "nft-toolkit-collections",
-    acl: "public-read",
-    key: function (_req, file, cbKey) {
-      cbKey(null, `${file.fieldname}/images/${file.originalname}`);
-    },
-  }),
-}).any();
-
 export const successHandler: RequestHandler = (_req, res) =>
   res.json({ success: true });
 
-const makeGif = (
-  tokens: TokenT[]
-  // creator: string,
-  // name: string
-): string => {
-  const MIDPOINT = 0.5;
-  const NUM_FRAMES = 1;
-  const [randomToken] = tokens
-    .sort(() => MIDPOINT - Math.random())
-    .slice(0, NUM_FRAMES);
+export const makeGif = async (
+  tokens: TokenT[],
+  creator: string,
+  name: string
+): Promise<string> => {
+  const NUM_FRAMES = 10;
+  const FRAME_DELAY = 500;
+  const [randToken, ...randTokens] = shuffleTokens(tokens).slice(0, NUM_FRAMES);
 
-  // const uploadKey = `${creator}/${name}/collection.gif`;
-  // const uploadParams = {
-  //   Bucket: "nft-toolkit-collections",
-  //   Key: uploadKey,
-  //   ACL: "public-read",
-  //   Body: await gif.render,
-  // };
-  // await s3.upload(uploadParams).promise();
-  return randomToken
-    ? randomToken.image
-    : `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/images/1.png`;
+  if (!randToken) {
+    throw Error("Invalid tokens, must include at least one");
+  }
+  const img = await loadImage(randToken.image);
+  const encoder = new GIFEncoder(img.width, img.height);
+
+  encoder.start();
+  encoder.setRepeat(0);
+  encoder.setDelay(FRAME_DELAY);
+
+  const canvas = createCanvas(img.width, img.height);
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  encoder.addFrame(ctx);
+
+  for (const token of randTokens) {
+    ctx.drawImage(await loadImage(token.image), 0, 0);
+    encoder.addFrame(ctx);
+  }
+
+  encoder.finish();
+
+  const uploadKey = `${creator}/${name}/collection.gif`;
+  const uploadParams = {
+    Bucket: "nft-toolkit-collections",
+    Key: uploadKey,
+    ACL: "public-read",
+    Body: encoder.out.getData(),
+  };
+  await s3.upload(uploadParams).promise();
+  return `https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/${uploadKey}`;
 };
 
 export const saveCollectionToDB: RequestHandler = async (req, _res, next) => {
-  const userCollection: CollectionT = req.body;
+  const userCollection: CollectionT & { name: string } = req.body;
   userCollection.tokens.map((token) => new Token(token));
-  const { tokens } = userCollection;
-  userCollection.image = makeGif(tokens.slice(0, MIN_IMG_UPLOAD));
+  const { tokens, creator, name } = userCollection;
+  userCollection.image = await makeGif(tokens, creator, name);
   const collection = new Collection(userCollection);
   await collection.save();
   next();

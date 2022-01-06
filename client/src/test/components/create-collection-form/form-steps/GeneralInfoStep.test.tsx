@@ -19,7 +19,7 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  marketplace: { wanted: false, royalty: "" },
+  marketplace: { wanted: false, royalty: "", allMint: false },
   predictions: { collections: [], hype: -1, price: "0" },
 };
 
@@ -29,6 +29,7 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleMplaceAllMintChange={jest.fn()}
             handleRedditChange={jest.fn()}
             handleTwitterChange={jest.fn()}
             generative
@@ -51,6 +52,7 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleMplaceAllMintChange={jest.fn()}
             handleMplaceRoyaltyChange={jest.fn()}
             handleMplaceWantedChange={jest.fn()}
             handleRedditChange={jest.fn()}
@@ -73,6 +75,7 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleMplaceAllMintChange={jest.fn()}
             handleMplaceRoyaltyChange={jest.fn()}
             handleMplaceWantedChange={jest.fn()}
             handleRedditChange={jest.fn()}
@@ -95,6 +98,7 @@ describe("GeneralInfoStep", () => {
       <ThemeProvider>
         <NetworkProvider>
           <GeneralInfoStep
+            handleMplaceAllMintChange={jest.fn()}
             handleMplaceRoyaltyChange={jest.fn()}
             handleMplaceWantedChange={jest.fn()}
             handleRedditChange={jest.fn()}

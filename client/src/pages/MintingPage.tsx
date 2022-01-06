@@ -199,7 +199,7 @@ const MintingPage = (): JSX.Element => {
               display="flex"
               justifyContent={{ xs: "center", lg: "left" }}
               gap="10px">
-              {mintingData.marketAddress && (
+              {mintingData.marketAddress && !mintingData.mintedAmount.eq(0) && (
                 <Button
                   variant="contained"
                   startIcon={<StorefrontIcon />}
@@ -208,6 +208,9 @@ const MintingPage = (): JSX.Element => {
                 </Button>
               )}
               <OpenseaButton
+                marketURL={
+                  mintingData.marketURL === "" ? void 0 : mintingData.marketURL
+                }
                 chainId={mintingData.chainId}
                 address={mintingData.address}
               />

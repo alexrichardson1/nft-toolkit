@@ -36,6 +36,7 @@ enum FormActions {
   // marketplace
   CHANGE_WANTED,
   CHANGE_ROYALTY,
+  CHANGE_ALL_MINT,
 }
 
 export default FormActions;

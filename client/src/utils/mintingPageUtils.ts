@@ -2,7 +2,7 @@ import { BaseProvider } from "@ethersproject/providers";
 import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 import { NFT__factory as NftFactory } from "typechain";
-import { API_URL, DEFAULT_NET } from "./constants";
+import { API_URL } from "./constants";
 
 interface TokenI {
   image: string;
@@ -20,6 +20,7 @@ export interface CollectionI {
   chainId: number;
   price: BigNumber;
   marketAddress?: string;
+  marketURL?: string;
 }
 
 export const getCollection = async (
@@ -37,7 +38,7 @@ export const getCollection = async (
   if (!collection.image) {
     collection.image = collection.tokens[0] ? collection.tokens[0].image : "";
   }
-  collection.image = collection.image.replaceAll(" ", "%20");
+  collection.image = collection.image.replaceAll(" ", "+");
   collection.price = await NFTContract.price();
   collection.name = await NFTContract.name();
   collection.symbol = await NFTContract.symbol();
@@ -56,18 +57,12 @@ export const getExternalMarket = async (
   chainId: number,
   address: string
 ): Promise<string> => {
-  let marketURL = "";
-  if (chainId === DEFAULT_NET.chainId) {
-    try {
-      const res = await axios.get(
-        `https://testnets-api.opensea.io/asset_contract/${address}`
-      );
-      marketURL = res.data.collection.slug
-        ? `https://testnets.opensea.io/collection/${res.data.collection.slug}`
-        : "";
-    } catch (error) {
-      console.log(error);
-    }
+  try {
+    const res = await axios.get(`${API_URL}/market/${chainId}/${address}`);
+    const { marketURL } = res.data;
+    return marketURL;
+  } catch (error) {
+    console.error(error);
+    return "";
   }
-  return marketURL;
 };

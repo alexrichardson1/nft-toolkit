@@ -75,7 +75,7 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
             </LoadingButton>
           </>
         )}
-        {info.marketAddress ? (
+        {info.marketAddress && !info.minted.eq(0) ? (
           <Button
             variant="outlined"
             fullWidth
@@ -87,6 +87,7 @@ const MyCollectionCard = ({ info }: PropsT): JSX.Element => {
           <OpenseaButton
             chainId={info.chainId}
             address={info.address}
+            marketURL={info.marketURL}
             isOutlined
           />
         )}

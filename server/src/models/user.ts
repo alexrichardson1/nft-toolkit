@@ -3,6 +3,7 @@ import { model, Schema } from "mongoose";
 export interface UserCollectionI {
   address: string;
   marketAddress?: string;
+  marketURL: string;
   chainId: number;
   image: string;
 }
@@ -15,6 +16,7 @@ export interface UserT {
 const userCollectionSchema = new Schema<UserCollectionI>({
   address: String,
   marketAddress: String,
+  marketURL: String,
   chainId: Number,
   image: String,
 });

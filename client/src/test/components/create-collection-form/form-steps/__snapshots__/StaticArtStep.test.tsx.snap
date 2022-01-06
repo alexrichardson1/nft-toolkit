@@ -661,6 +661,7 @@ exports[`StaticArtStep generative does not match 1`] = `
                     "totalTierRarity": 0,
                   },
                   "marketplace": Object {
+                    "allMint": false,
                     "royalty": "",
                     "wanted": false,
                   },
@@ -1350,6 +1351,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     "totalTierRarity": 0,
                   },
                   "marketplace": Object {
+                    "allMint": false,
                     "royalty": "",
                     "wanted": false,
                   },
@@ -1370,70 +1372,66 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
               }
               stepNumber={1}
             >
-              <pure(PageHeader)
+              <Memo(PageHeader)
                 text="Upload your Static Images"
               >
-                <PageHeader
-                  text="Upload your Static Images"
+                <ForwardRef(Typography)
+                  color="secondary"
+                  component="div"
+                  gutterBottom={true}
+                  noWrap={true}
+                  textAlign="center"
+                  variant="h4"
                 >
-                  <ForwardRef(Typography)
-                    color="secondary"
-                    component="div"
-                    gutterBottom={true}
-                    noWrap={true}
-                    textAlign="center"
-                    variant="h4"
-                  >
-                    <MuiTypographyRoot
-                      as="div"
-                      className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
-                      ownerState={
-                        Object {
-                          "align": "inherit",
-                          "children": "Upload your Static Images",
-                          "className": undefined,
-                          "color": "secondary.main",
-                          "component": "div",
-                          "gutterBottom": true,
-                          "noWrap": true,
-                          "paragraph": false,
-                          "sx": Object {
-                            "color": "secondary.main",
-                            "textAlign": "center",
-                          },
-                          "variant": "h4",
-                          "variantMapping": Object {
-                            "body1": "p",
-                            "body2": "p",
-                            "h1": "h1",
-                            "h2": "h2",
-                            "h3": "h3",
-                            "h4": "h4",
-                            "h5": "h5",
-                            "h6": "h6",
-                            "inherit": "p",
-                            "subtitle1": "h6",
-                            "subtitle2": "h6",
-                          },
-                        }
-                      }
-                      sx={
-                        Object {
+                  <MuiTypographyRoot
+                    as="div"
+                    className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap"
+                    ownerState={
+                      Object {
+                        "align": "inherit",
+                        "children": "Upload your Static Images",
+                        "className": undefined,
+                        "color": "secondary.main",
+                        "component": "div",
+                        "gutterBottom": true,
+                        "noWrap": true,
+                        "paragraph": false,
+                        "sx": Object {
                           "color": "secondary.main",
                           "textAlign": "center",
-                        }
+                        },
+                        "variant": "h4",
+                        "variantMapping": Object {
+                          "body1": "p",
+                          "body2": "p",
+                          "h1": "h1",
+                          "h2": "h2",
+                          "h3": "h3",
+                          "h4": "h4",
+                          "h5": "h5",
+                          "h6": "h6",
+                          "inherit": "p",
+                          "subtitle1": "h6",
+                          "subtitle2": "h6",
+                        },
                       }
+                    }
+                    sx={
+                      Object {
+                        "color": "secondary.main",
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Noop />
+                    <div
+                      className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
                     >
-                      <Noop />
-                      <div
-                        className="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-noWrap css-sxtouj-MuiTypography-root"
-                      >
-                        Upload your Static Images
-                      </div>
-                    </MuiTypographyRoot>
-                  </ForwardRef(Typography)>
-                </PageHeader>
-              </pure(PageHeader)>
+                      Upload your Static Images
+                    </div>
+                  </MuiTypographyRoot>
+                </ForwardRef(Typography)>
+              </Memo(PageHeader)>
               <ImageUploadWithTabs
                 NUMBER_OF_IMAGES={0}
                 handleImgDelete={[MockFunction]}
@@ -2584,6 +2582,7 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                     "totalTierRarity": 0,
                   },
                   "marketplace": Object {
+                    "allMint": false,
                     "royalty": "",
                     "wanted": false,
                   },

@@ -25,3 +25,14 @@ export const handleMplaceWantedChange = (
     });
   };
 };
+
+export const handleMplaceAllMintChange = (
+  dispatch: React.Dispatch<FormActionI>
+) => {
+  return (e: React.ChangeEvent<HTMLInputElement>): void => {
+    dispatch({
+      type: FormActions.CHANGE_ALL_MINT,
+      payload: { mplaceAllMintChange: e.target.checked },
+    });
+  };
+};

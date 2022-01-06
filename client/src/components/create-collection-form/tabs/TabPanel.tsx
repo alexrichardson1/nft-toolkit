@@ -1,6 +1,5 @@
 import { Box, SxProps, Theme } from "@mui/system";
-import { ReactNode } from "react";
-import { pure } from "recompose";
+import React, { ReactNode } from "react";
 
 const tabPanelStyle = { width: 1, height: 1 };
 const tabPanelBoxStyle: SxProps<Theme> = {
@@ -49,4 +48,4 @@ const TabPanel = ({
   );
 };
 
-export default pure(TabPanel);
+export default React.memo(TabPanel);

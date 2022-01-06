@@ -18,6 +18,7 @@ export interface CollectionT {
   chainId: number;
   address?: string;
   marketAddress?: string;
+  marketURL?: string;
   image: string;
   tokens: TokenT[];
 }
@@ -39,6 +40,7 @@ export const collectionSchema = new Schema<CollectionT>({
   description: String,
   address: String,
   marketAddress: String,
+  marketURL: String,
   chainId: Number,
   image: String,
   tokens: [tokenSchema],

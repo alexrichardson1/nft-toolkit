@@ -1,3 +1,4 @@
+import { shuffleTokens } from "@controllers/common";
 import { Collection } from "@models/collection";
 import { User, UserCollection } from "@models/user";
 import { RequestHandler } from "express";
@@ -22,12 +23,16 @@ export const addDeployedAddress: RequestHandler = async (req, res, next) => {
     if (!collection) {
       throw new Error("Collection not found");
     }
-    const { image } = collection;
+    const { tokens } = collection;
+    const randomTokens = shuffleTokens(tokens);
+    if (!randomTokens[0]) {
+      throw new Error("Tokens must include at least one");
+    }
     const userCollection = new UserCollection({
       address,
       marketAddress,
       chainId: parseInt(chainId),
-      image,
+      image: randomTokens[0].image,
     });
     const user = await User.findByIdAndUpdate(creator, {
       $push: { collections: userCollection },
