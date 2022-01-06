@@ -1,5 +1,7 @@
 import { DragEndEvent } from "@dnd-kit/core";
-import { Collapse } from "@mui/material";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { Collapse, Stack, Typography } from "@mui/material";
 import OrderableList from "components/common/OrderableList";
 import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
@@ -58,6 +60,17 @@ const TierSelectionStep = ({
       <Collapse in={state.generative.numberOfTiers > 0}>
         <RarityProgressBar totalRarity={state.generative.totalTierRarity} />
       </Collapse>
+      <Collapse in={state.generative.numberOfTiers > 1}>
+        <Stack
+          justifyContent="center"
+          spacing={1}
+          direction="row"
+          alignItems="center">
+          <ArrowDownwardIcon />
+          <Typography variant="h5">Rarest Tier</Typography>
+          <ArrowDownwardIcon />
+        </Stack>
+      </Collapse>
       <OrderableList
         handleItemReorder={handleTierReorder}
         items={state.generative.tiers}>
@@ -76,7 +89,17 @@ const TierSelectionStep = ({
           />
         ))}
       </OrderableList>
-
+      <Collapse in={state.generative.numberOfTiers > 1}>
+        <Stack
+          justifyContent="center"
+          spacing={1}
+          direction="row"
+          alignItems="center">
+          <ArrowUpwardIcon />
+          <Typography variant="h5">Most Common Tier</Typography>
+          <ArrowUpwardIcon />
+        </Stack>
+      </Collapse>
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
         text={text}

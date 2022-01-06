@@ -2,11 +2,13 @@
 
 exports[`SvgLogo snapshot 1`] = `
 <Memo(SvgIcon)
+  alt="test"
   height="50"
   icon="avalanche-logo.svg"
   width="50"
 >
   <img
+    alt="test"
     height="50"
     src="avalanche-logo.svg"
     style={

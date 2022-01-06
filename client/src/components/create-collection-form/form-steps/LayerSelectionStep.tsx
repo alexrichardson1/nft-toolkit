@@ -1,5 +1,7 @@
 import { DragEndEvent } from "@dnd-kit/core";
-import { Collapse } from "@mui/material";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { Collapse, Stack, Typography } from "@mui/material";
 import OrderableListInput from "components/common/OrderableListInput";
 import OrderableListItem from "components/common/OrderableListItem";
 import PageHeader from "components/common/PageHeader";
@@ -67,26 +69,47 @@ const LayerSelectionStep = ({
     <>
       <PageHeader text="Add Layers For Your Collection" />
       <Collapse in={state.generative.numberOfLayers > 0}>
-        <OrderableList
-          items={state.generative.layers}
-          handleItemReorder={handleLayerReorder}>
-          {state.generative.layers.map((layer) => (
-            <OrderableListItem
-              id={layer.name}
-              key={layer.name}
-              itemName={layer.name}
-              handleItemRemoval={handleLayerRemoval}
-              numericInput={{
-                tooltipText: CHANCE_INPUT_INFO,
-                numberInputLabel: "Chance (%)",
-                numberInputValue: layer.probability,
-                handleNumberInputChange: handleLayerProbChange(layer.name),
-              }}
-            />
-          ))}
-        </OrderableList>
+        <Collapse in={state.generative.numberOfLayers > 1}>
+          <Stack
+            justifyContent="center"
+            spacing={1}
+            direction="row"
+            alignItems="center">
+            <ArrowDownwardIcon />
+            <Typography variant="h5">Bottom Layer</Typography>
+            <ArrowDownwardIcon />
+          </Stack>
+        </Collapse>
       </Collapse>
-
+      <OrderableList
+        items={state.generative.layers}
+        handleItemReorder={handleLayerReorder}>
+        {state.generative.layers.map((layer) => (
+          <OrderableListItem
+            id={layer.name}
+            key={layer.name}
+            itemName={layer.name}
+            handleItemRemoval={handleLayerRemoval}
+            numericInput={{
+              tooltipText: CHANCE_INPUT_INFO,
+              numberInputLabel: "Chance (%)",
+              numberInputValue: layer.probability,
+              handleNumberInputChange: handleLayerProbChange(layer.name),
+            }}
+          />
+        ))}
+      </OrderableList>
+      <Collapse in={state.generative.numberOfLayers > 1}>
+        <Stack
+          justifyContent="center"
+          spacing={1}
+          direction="row"
+          alignItems="center">
+          <ArrowUpwardIcon />
+          <Typography variant="h5">Top Layer</Typography>
+          <ArrowUpwardIcon />
+        </Stack>
+      </Collapse>
       <OrderableListInput
         onKeyPress={handleInputKeyPress}
         text={text}

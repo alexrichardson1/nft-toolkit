@@ -1,7 +1,9 @@
 import { Tab } from "@mui/material";
 import Box from "@mui/material/Box";
+import InputAdornment from "@mui/material/InputAdornment";
 import Paper from "@mui/material/Paper";
 import Tabs from "@mui/material/Tabs";
+import InfoToolTip from "components/common/InfoToolTip";
 import Input from "components/common/Input";
 import RarityProgressBar from "components/common/RarityProgressBar";
 import { useState } from "react";
@@ -17,6 +19,8 @@ const INITIAL_VALUE = 0;
 
 const layerImgUplContainerStyle = { width: "100%" };
 const layerImgUplTabsStyle = { borderBottom: 1, borderColor: "divider" };
+
+const SIZE_RECOMMENDATION = 0.9;
 
 interface PropsT {
   stepNumber: number;
@@ -73,10 +77,16 @@ const LayerImageUpload = ({
   const getMaxQuantity = (): number => {
     let max = 1;
     state.generative.layers.forEach((layer) => {
-      max *= layer.numberOfImages;
+      if (layer.numberOfImages > 0) {
+        max *= layer.numberOfImages + (layer.probability === "100" ? 0 : 1);
+      } else {
+        max = 0;
+      }
     });
     return max;
   };
+
+  const MAX_QUANTITY = getMaxQuantity();
 
   return (
     <>
@@ -145,7 +155,16 @@ const LayerImageUpload = ({
           placeholder="0"
           label="Collection Quantity"
           InputProps={{
-            inputProps: { min: 1, max: getMaxQuantity() },
+            inputProps: { min: Math.min(MAX_QUANTITY, 1), max: MAX_QUANTITY },
+            endAdornment: (
+              <InputAdornment position="end">
+                <InfoToolTip
+                  text={`Maximum possible amount of images that can be generated: ${MAX_QUANTITY}. We recommend generating up to ${Math.ceil(
+                    SIZE_RECOMMENDATION * MAX_QUANTITY
+                  )} images.`}
+                />
+              </InputAdornment>
+            ),
           }}
           required
         />
