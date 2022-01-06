@@ -25,6 +25,7 @@ interface PropsT {
   handleRedditChange: (e: InputEventT) => void;
   handleMplaceRoyaltyChange: (e: InputEventT) => void;
   handleMplaceWantedChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleMplaceAllMintChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
@@ -72,6 +73,7 @@ const GeneralInfoStep = ({
   handleTwitterChange,
   handleMplaceWantedChange,
   handleMplaceRoyaltyChange,
+  handleMplaceAllMintChange,
 }: PropsT): JSX.Element => {
   const { selectedNet } = useContext(NetworkContext);
   const ref = useRef<HTMLInputElement>(null);
@@ -185,6 +187,17 @@ const GeneralInfoStep = ({
           }
           onKeyPress={handleRadioKeyPress}
           label="Select to deploy your own Marketplace"
+        />
+        <FormControlLabel
+          ref={ref}
+          control={
+            <Checkbox
+              checked={state.marketplace.allMint}
+              onChange={handleMplaceAllMintChange}
+            />
+          }
+          onKeyPress={handleRadioKeyPress}
+          label="Self mint all tokens"
         />
       </FormGroup>
     </>
