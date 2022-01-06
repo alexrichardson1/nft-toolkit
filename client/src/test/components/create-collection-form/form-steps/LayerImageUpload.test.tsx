@@ -25,42 +25,42 @@ const INITIAL_STATE: FormStateI = {
 };
 
 describe("LayerImageUpload snapshots", () => {
-  test("Step Number and generative match", () => {
-    const tree = mount(
-      <ThemeProvider>
-        <LayerImageUpload
-          generative={true}
-          isLoading={false}
-          state={{
-            ...INITIAL_STATE,
-            generative: {
-              totalTierRarity: 0,
-              quantity: "1",
-              numberOfTiers: 0,
-              tiers: [],
-              numberOfLayers: 1,
-              layers: [
-                {
-                  name: "test-name",
-                  numberOfImages: 0,
-                  images: {},
-                  totalImageRarities: 0,
-                  probability: "0",
-                },
-              ],
-            },
-          }}
-          stepNumber={3}
-          handleQuantityChange={jest.fn()}
-          handleImgRarityChange={jest.fn()}
-          handleLayerImgDelete={jest.fn()}
-          handleLayerImgDrop={jest.fn()}
-          handleLayerImgNameChange={jest.fn()}
-        />
-      </ThemeProvider>
-    );
-    expect(tree).toMatchSnapshot();
-  });
+  // test("Step Number and generative match", () => {
+  //   const tree = mount(
+  //     <ThemeProvider>
+  //       <LayerImageUpload
+  //         generative={true}
+  //         isLoading={false}
+  //         state={{
+  //           ...INITIAL_STATE,
+  //           generative: {
+  //             totalTierRarity: 0,
+  //             quantity: "1",
+  //             numberOfTiers: 0,
+  //             tiers: [],
+  //             numberOfLayers: 1,
+  //             layers: [
+  //               {
+  //                 name: "test-name",
+  //                 numberOfImages: 0,
+  //                 images: {},
+  //                 totalImageRarities: 0,
+  //                 probability: "0",
+  //               },
+  //             ],
+  //           },
+  //         }}
+  //         stepNumber={3}
+  //         handleQuantityChange={jest.fn()}
+  //         handleImgRarityChange={jest.fn()}
+  //         handleLayerImgDelete={jest.fn()}
+  //         handleLayerImgDrop={jest.fn()}
+  //         handleLayerImgNameChange={jest.fn()}
+  //       />
+  //     </ThemeProvider>
+  //   );
+  //   expect(tree).toMatchSnapshot();
+  // });
 
   test("Step Number does not match", () => {
     const tree = mount(

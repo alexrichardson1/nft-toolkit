@@ -12,6 +12,8 @@ test("OrderableListItem snapshot", () => {
             images: {},
             name: "test-name",
             numberOfImages: 0,
+            probability: "100%",
+            totalImageRarities: 0,
           },
         ]}>
         child1

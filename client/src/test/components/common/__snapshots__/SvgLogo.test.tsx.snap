@@ -2,16 +2,19 @@
 
 exports[`SvgLogo snapshot 1`] = `
 <pure(SvgIcon)
+  alt="test"
   height="50"
   icon="avalanche-logo.svg"
   width="50"
 >
   <SvgIcon
+    alt="test"
     height="50"
     icon="avalanche-logo.svg"
     width="50"
   >
     <img
+      alt="test"
       height="50"
       src="avalanche-logo.svg"
       style={

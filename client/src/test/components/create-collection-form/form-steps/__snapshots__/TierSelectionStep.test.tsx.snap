@@ -2014,6 +2014,333 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 </MuiCollapseRoot>
               </Transition>
             </ForwardRef(Collapse)>
+            <ForwardRef(Collapse)
+              in={false}
+            >
+              <Transition
+                addEndListener={[Function]}
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                nodeRef={
+                  Object {
+                    "current": <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="css-14nhf42-MuiStack-root"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="ArrowDownwardIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                              />
+                            </svg>
+                            <h5
+                              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+                            >
+                              Rarest Tier
+                            </h5>
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="ArrowDownwardIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>,
+                  }
+                }
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={300}
+                unmountOnExit={false}
+              >
+                <MuiCollapseRoot
+                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                  ownerState={
+                    Object {
+                      "children": <ForwardRef(Stack)
+                        alignItems="center"
+                        direction="row"
+                        justifyContent="center"
+                        spacing={1}
+                      >
+                        <Memo />
+                        <ForwardRef(Typography)
+                          variant="h5"
+                        >
+                          Rarest Tier
+                        </ForwardRef(Typography)>
+                        <Memo />
+                      </ForwardRef(Stack)>,
+                      "collapsedSize": "0px",
+                      "in": false,
+                      "orientation": "vertical",
+                      "state": "exited",
+                    }
+                  }
+                  style={
+                    Object {
+                      "minHeight": "0px",
+                    }
+                  }
+                >
+                  <Noop />
+                  <div
+                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                    style={
+                      Object {
+                        "minHeight": "0px",
+                      }
+                    }
+                  >
+                    <MuiCollapseWrapper
+                      className="MuiCollapse-wrapper MuiCollapse-vertical"
+                      ownerState={
+                        Object {
+                          "children": <ForwardRef(Stack)
+                            alignItems="center"
+                            direction="row"
+                            justifyContent="center"
+                            spacing={1}
+                          >
+                            <Memo />
+                            <ForwardRef(Typography)
+                              variant="h5"
+                            >
+                              Rarest Tier
+                            </ForwardRef(Typography)>
+                            <Memo />
+                          </ForwardRef(Stack)>,
+                          "collapsedSize": "0px",
+                          "in": false,
+                          "orientation": "vertical",
+                          "state": "exited",
+                        }
+                      }
+                    >
+                      <Noop />
+                      <div
+                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <MuiCollapseWrapperInner
+                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                          ownerState={
+                            Object {
+                              "children": <ForwardRef(Stack)
+                                alignItems="center"
+                                direction="row"
+                                justifyContent="center"
+                                spacing={1}
+                              >
+                                <Memo />
+                                <ForwardRef(Typography)
+                                  variant="h5"
+                                >
+                                  Rarest Tier
+                                </ForwardRef(Typography)>
+                                <Memo />
+                              </ForwardRef(Stack)>,
+                              "collapsedSize": "0px",
+                              "in": false,
+                              "orientation": "vertical",
+                              "state": "exited",
+                            }
+                          }
+                        >
+                          <Noop />
+                          <div
+                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                          >
+                            <ForwardRef(Stack)
+                              alignItems="center"
+                              direction="row"
+                              justifyContent="center"
+                              spacing={1}
+                            >
+                              <MuiStackRoot
+                                as="div"
+                                ownerState={
+                                  Object {
+                                    "direction": "row",
+                                    "spacing": 1,
+                                  }
+                                }
+                                sx={
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  }
+                                }
+                              >
+                                <Noop />
+                                <div
+                                  className="css-14nhf42-MuiStack-root"
+                                >
+                                  <ForwardRef(ArrowDownwardIcon)>
+                                    <ForwardRef(SvgIcon)
+                                      data-testid="ArrowDownwardIcon"
+                                    >
+                                      <MuiSvgIconRoot
+                                        aria-hidden={true}
+                                        as="svg"
+                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                        data-testid="ArrowDownwardIcon"
+                                        focusable="false"
+                                        ownerState={
+                                          Object {
+                                            "children": <path
+                                              d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                                            />,
+                                            "color": "inherit",
+                                            "component": "svg",
+                                            "data-testid": "ArrowDownwardIcon",
+                                            "fontSize": "medium",
+                                            "viewBox": "0 0 24 24",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Noop />
+                                        <svg
+                                          aria-hidden={true}
+                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-testid="ArrowDownwardIcon"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                                          />
+                                        </svg>
+                                      </MuiSvgIconRoot>
+                                    </ForwardRef(SvgIcon)>
+                                  </ForwardRef(ArrowDownwardIcon)>
+                                  <ForwardRef(Typography)
+                                    variant="h5"
+                                  >
+                                    <MuiTypographyRoot
+                                      as="h5"
+                                      className="MuiTypography-root MuiTypography-h5"
+                                      ownerState={
+                                        Object {
+                                          "align": "inherit",
+                                          "children": "Rarest Tier",
+                                          "className": undefined,
+                                          "color": undefined,
+                                          "component": undefined,
+                                          "gutterBottom": false,
+                                          "noWrap": false,
+                                          "paragraph": false,
+                                          "sx": Object {
+                                            "color": undefined,
+                                          },
+                                          "variant": "h5",
+                                          "variantMapping": Object {
+                                            "body1": "p",
+                                            "body2": "p",
+                                            "h1": "h1",
+                                            "h2": "h2",
+                                            "h3": "h3",
+                                            "h4": "h4",
+                                            "h5": "h5",
+                                            "h6": "h6",
+                                            "inherit": "p",
+                                            "subtitle1": "h6",
+                                            "subtitle2": "h6",
+                                          },
+                                        }
+                                      }
+                                      sx={
+                                        Object {
+                                          "color": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Noop />
+                                      <h5
+                                        className="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+                                      >
+                                        Rarest Tier
+                                      </h5>
+                                    </MuiTypographyRoot>
+                                  </ForwardRef(Typography)>
+                                  <ForwardRef(ArrowDownwardIcon)>
+                                    <ForwardRef(SvgIcon)
+                                      data-testid="ArrowDownwardIcon"
+                                    >
+                                      <MuiSvgIconRoot
+                                        aria-hidden={true}
+                                        as="svg"
+                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                        data-testid="ArrowDownwardIcon"
+                                        focusable="false"
+                                        ownerState={
+                                          Object {
+                                            "children": <path
+                                              d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                                            />,
+                                            "color": "inherit",
+                                            "component": "svg",
+                                            "data-testid": "ArrowDownwardIcon",
+                                            "fontSize": "medium",
+                                            "viewBox": "0 0 24 24",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Noop />
+                                        <svg
+                                          aria-hidden={true}
+                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-testid="ArrowDownwardIcon"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                                          />
+                                        </svg>
+                                      </MuiSvgIconRoot>
+                                    </ForwardRef(SvgIcon)>
+                                  </ForwardRef(ArrowDownwardIcon)>
+                                </div>
+                              </MuiStackRoot>
+                            </ForwardRef(Stack)>
+                          </div>
+                        </MuiCollapseWrapperInner>
+                      </div>
+                    </MuiCollapseWrapper>
+                  </div>
+                </MuiCollapseRoot>
+              </Transition>
+            </ForwardRef(Collapse)>
             <OrderableList
               handleItemReorder={[MockFunction]}
               items={Array []}
@@ -2170,6 +2497,333 @@ exports[`TierSelectionStep pageNumber and generative match 1`] = `
                 </Accessibility>
               </Memo(DndContext)>
             </OrderableList>
+            <ForwardRef(Collapse)
+              in={false}
+            >
+              <Transition
+                addEndListener={[Function]}
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                nodeRef={
+                  Object {
+                    "current": <div
+                      class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                      style="min-height: 0px;"
+                    >
+                      <div
+                        class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <div
+                          class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                        >
+                          <div
+                            class="css-14nhf42-MuiStack-root"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="ArrowUpwardIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                              />
+                            </svg>
+                            <h5
+                              class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+                            >
+                              Most Common Tier
+                            </h5>
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                              data-testid="ArrowUpwardIcon"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>,
+                  }
+                }
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={300}
+                unmountOnExit={false}
+              >
+                <MuiCollapseRoot
+                  className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden"
+                  ownerState={
+                    Object {
+                      "children": <ForwardRef(Stack)
+                        alignItems="center"
+                        direction="row"
+                        justifyContent="center"
+                        spacing={1}
+                      >
+                        <Memo />
+                        <ForwardRef(Typography)
+                          variant="h5"
+                        >
+                          Most Common Tier
+                        </ForwardRef(Typography)>
+                        <Memo />
+                      </ForwardRef(Stack)>,
+                      "collapsedSize": "0px",
+                      "in": false,
+                      "orientation": "vertical",
+                      "state": "exited",
+                    }
+                  }
+                  style={
+                    Object {
+                      "minHeight": "0px",
+                    }
+                  }
+                >
+                  <Noop />
+                  <div
+                    className="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+                    style={
+                      Object {
+                        "minHeight": "0px",
+                      }
+                    }
+                  >
+                    <MuiCollapseWrapper
+                      className="MuiCollapse-wrapper MuiCollapse-vertical"
+                      ownerState={
+                        Object {
+                          "children": <ForwardRef(Stack)
+                            alignItems="center"
+                            direction="row"
+                            justifyContent="center"
+                            spacing={1}
+                          >
+                            <Memo />
+                            <ForwardRef(Typography)
+                              variant="h5"
+                            >
+                              Most Common Tier
+                            </ForwardRef(Typography)>
+                            <Memo />
+                          </ForwardRef(Stack)>,
+                          "collapsedSize": "0px",
+                          "in": false,
+                          "orientation": "vertical",
+                          "state": "exited",
+                        }
+                      }
+                    >
+                      <Noop />
+                      <div
+                        className="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+                      >
+                        <MuiCollapseWrapperInner
+                          className="MuiCollapse-wrapperInner MuiCollapse-vertical"
+                          ownerState={
+                            Object {
+                              "children": <ForwardRef(Stack)
+                                alignItems="center"
+                                direction="row"
+                                justifyContent="center"
+                                spacing={1}
+                              >
+                                <Memo />
+                                <ForwardRef(Typography)
+                                  variant="h5"
+                                >
+                                  Most Common Tier
+                                </ForwardRef(Typography)>
+                                <Memo />
+                              </ForwardRef(Stack)>,
+                              "collapsedSize": "0px",
+                              "in": false,
+                              "orientation": "vertical",
+                              "state": "exited",
+                            }
+                          }
+                        >
+                          <Noop />
+                          <div
+                            className="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                          >
+                            <ForwardRef(Stack)
+                              alignItems="center"
+                              direction="row"
+                              justifyContent="center"
+                              spacing={1}
+                            >
+                              <MuiStackRoot
+                                as="div"
+                                ownerState={
+                                  Object {
+                                    "direction": "row",
+                                    "spacing": 1,
+                                  }
+                                }
+                                sx={
+                                  Object {
+                                    "alignItems": "center",
+                                    "justifyContent": "center",
+                                  }
+                                }
+                              >
+                                <Noop />
+                                <div
+                                  className="css-14nhf42-MuiStack-root"
+                                >
+                                  <ForwardRef(ArrowUpwardIcon)>
+                                    <ForwardRef(SvgIcon)
+                                      data-testid="ArrowUpwardIcon"
+                                    >
+                                      <MuiSvgIconRoot
+                                        aria-hidden={true}
+                                        as="svg"
+                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                        data-testid="ArrowUpwardIcon"
+                                        focusable="false"
+                                        ownerState={
+                                          Object {
+                                            "children": <path
+                                              d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                                            />,
+                                            "color": "inherit",
+                                            "component": "svg",
+                                            "data-testid": "ArrowUpwardIcon",
+                                            "fontSize": "medium",
+                                            "viewBox": "0 0 24 24",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Noop />
+                                        <svg
+                                          aria-hidden={true}
+                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-testid="ArrowUpwardIcon"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                                          />
+                                        </svg>
+                                      </MuiSvgIconRoot>
+                                    </ForwardRef(SvgIcon)>
+                                  </ForwardRef(ArrowUpwardIcon)>
+                                  <ForwardRef(Typography)
+                                    variant="h5"
+                                  >
+                                    <MuiTypographyRoot
+                                      as="h5"
+                                      className="MuiTypography-root MuiTypography-h5"
+                                      ownerState={
+                                        Object {
+                                          "align": "inherit",
+                                          "children": "Most Common Tier",
+                                          "className": undefined,
+                                          "color": undefined,
+                                          "component": undefined,
+                                          "gutterBottom": false,
+                                          "noWrap": false,
+                                          "paragraph": false,
+                                          "sx": Object {
+                                            "color": undefined,
+                                          },
+                                          "variant": "h5",
+                                          "variantMapping": Object {
+                                            "body1": "p",
+                                            "body2": "p",
+                                            "h1": "h1",
+                                            "h2": "h2",
+                                            "h3": "h3",
+                                            "h4": "h4",
+                                            "h5": "h5",
+                                            "h6": "h6",
+                                            "inherit": "p",
+                                            "subtitle1": "h6",
+                                            "subtitle2": "h6",
+                                          },
+                                        }
+                                      }
+                                      sx={
+                                        Object {
+                                          "color": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Noop />
+                                      <h5
+                                        className="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+                                      >
+                                        Most Common Tier
+                                      </h5>
+                                    </MuiTypographyRoot>
+                                  </ForwardRef(Typography)>
+                                  <ForwardRef(ArrowUpwardIcon)>
+                                    <ForwardRef(SvgIcon)
+                                      data-testid="ArrowUpwardIcon"
+                                    >
+                                      <MuiSvgIconRoot
+                                        aria-hidden={true}
+                                        as="svg"
+                                        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium"
+                                        data-testid="ArrowUpwardIcon"
+                                        focusable="false"
+                                        ownerState={
+                                          Object {
+                                            "children": <path
+                                              d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                                            />,
+                                            "color": "inherit",
+                                            "component": "svg",
+                                            "data-testid": "ArrowUpwardIcon",
+                                            "fontSize": "medium",
+                                            "viewBox": "0 0 24 24",
+                                          }
+                                        }
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <Noop />
+                                        <svg
+                                          aria-hidden={true}
+                                          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                          data-testid="ArrowUpwardIcon"
+                                          focusable="false"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                                          />
+                                        </svg>
+                                      </MuiSvgIconRoot>
+                                    </ForwardRef(SvgIcon)>
+                                  </ForwardRef(ArrowUpwardIcon)>
+                                </div>
+                              </MuiStackRoot>
+                            </ForwardRef(Stack)>
+                          </div>
+                        </MuiCollapseWrapperInner>
+                      </div>
+                    </MuiCollapseWrapper>
+                  </div>
+                </MuiCollapseRoot>
+              </Transition>
+            </ForwardRef(Collapse)>
             <OrderableListInput
               label="Type Tier Name Here"
               onChange={[Function]}
