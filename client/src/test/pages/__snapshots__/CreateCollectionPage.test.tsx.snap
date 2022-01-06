@@ -677,6 +677,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                         handleCollNameChange={[Function]}
                         handleDescriptionChange={[Function]}
                         handleMintPriceChange={[Function]}
+                        handleMplaceAllMintChange={[Function]}
                         handleMplaceRoyaltyChange={[Function]}
                         handleMplaceWantedChange={[Function]}
                         handleRedditChange={[Function]}
@@ -695,6 +696,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "totalTierRarity": 0,
                             },
                             "marketplace": Object {
+                              "allMint": false,
                               "royalty": "",
                               "wanted": false,
                             },
@@ -3610,6 +3612,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "totalTierRarity": 0,
                             },
                             "marketplace": Object {
+                              "allMint": false,
                               "royalty": "",
                               "wanted": false,
                             },
@@ -3649,6 +3652,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "totalTierRarity": 0,
                             },
                             "marketplace": Object {
+                              "allMint": false,
                               "royalty": "",
                               "wanted": false,
                             },
@@ -3688,6 +3692,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "totalTierRarity": 0,
                             },
                             "marketplace": Object {
+                              "allMint": false,
                               "royalty": "",
                               "wanted": false,
                             },
@@ -3729,6 +3734,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "totalTierRarity": 0,
                             },
                             "marketplace": Object {
+                              "allMint": false,
                               "royalty": "",
                               "wanted": false,
                             },
@@ -3767,6 +3773,7 @@ exports[`CreateCollectionPage snapshot 1`] = `
                               "totalTierRarity": 0,
                             },
                             "marketplace": Object {
+                              "allMint": false,
                               "royalty": "",
                               "wanted": false,
                             },
