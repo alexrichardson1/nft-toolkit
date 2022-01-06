@@ -661,6 +661,7 @@ exports[`StaticArtStep generative does not match 1`] = `
                     "totalTierRarity": 0,
                   },
                   "marketplace": Object {
+                    "allMint": false,
                     "royalty": "",
                     "wanted": false,
                   },
@@ -1350,6 +1351,7 @@ exports[`StaticArtStep pageNumber and generative match 1`] = `
                     "totalTierRarity": 0,
                   },
                   "marketplace": Object {
+                    "allMint": false,
                     "royalty": "",
                     "wanted": false,
                   },
@@ -2580,6 +2582,7 @@ exports[`StaticArtStep pageNumber does not match 1`] = `
                     "totalTierRarity": 0,
                   },
                   "marketplace": Object {
+                    "allMint": false,
                     "royalty": "",
                     "wanted": false,
                   },

@@ -643,6 +643,7 @@ exports[`GeneralInfoStep Step Number does not match when generative 1`] = `
             handleCollNameChange={[MockFunction]}
             handleDescriptionChange={[MockFunction]}
             handleMintPriceChange={[MockFunction]}
+            handleMplaceAllMintChange={[MockFunction]}
             handleMplaceRoyaltyChange={[MockFunction]}
             handleMplaceWantedChange={[MockFunction]}
             handleRedditChange={[MockFunction]}
@@ -661,6 +662,7 @@ exports[`GeneralInfoStep Step Number does not match when generative 1`] = `
                   "totalTierRarity": 0,
                 },
                 "marketplace": Object {
+                  "allMint": false,
                   "royalty": "",
                   "wanted": false,
                 },
@@ -1331,6 +1333,7 @@ exports[`GeneralInfoStep Step Number does not match when not generative 1`] = `
             handleCollNameChange={[MockFunction]}
             handleDescriptionChange={[MockFunction]}
             handleMintPriceChange={[MockFunction]}
+            handleMplaceAllMintChange={[MockFunction]}
             handleMplaceRoyaltyChange={[MockFunction]}
             handleMplaceWantedChange={[MockFunction]}
             handleRedditChange={[MockFunction]}
@@ -1349,6 +1352,7 @@ exports[`GeneralInfoStep Step Number does not match when not generative 1`] = `
                   "totalTierRarity": 0,
                 },
                 "marketplace": Object {
+                  "allMint": false,
                   "royalty": "",
                   "wanted": false,
                 },
@@ -2019,6 +2023,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
             handleCollNameChange={[MockFunction]}
             handleDescriptionChange={[MockFunction]}
             handleMintPriceChange={[MockFunction]}
+            handleMplaceAllMintChange={[MockFunction]}
             handleMplaceRoyaltyChange={[MockFunction]}
             handleMplaceWantedChange={[MockFunction]}
             handleRedditChange={[MockFunction]}
@@ -2037,6 +2042,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                   "totalTierRarity": 0,
                 },
                 "marketplace": Object {
+                  "allMint": false,
                   "royalty": "",
                   "wanted": false,
                 },
@@ -9431,7 +9437,12 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                         onKeyPress={[Function]}
                       />,
                       <ForwardRef(FormControlLabel)
-                        control={<ForwardRef(Checkbox) />}
+                        control={
+                          <ForwardRef(Checkbox)
+                            checked={false}
+                            onChange={[MockFunction]}
+                          />
+                        }
                         label="Self mint all tokens"
                         onKeyPress={[Function]}
                       />,
@@ -9846,7 +9857,12 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                     </MuiFormControlLabelRoot>
                   </ForwardRef(FormControlLabel)>
                   <ForwardRef(FormControlLabel)
-                    control={<ForwardRef(Checkbox) />}
+                    control={
+                      <ForwardRef(Checkbox)
+                        checked={false}
+                        onChange={[MockFunction]}
+                      />
+                    }
                     label="Self mint all tokens"
                     onKeyPress={[Function]}
                   >
@@ -9855,7 +9871,10 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                       onKeyPress={[Function]}
                       ownerState={
                         Object {
-                          "control": <ForwardRef(Checkbox) />,
+                          "control": <ForwardRef(Checkbox)
+                            checked={false}
+                            onChange={[MockFunction]}
+                          />,
                           "disabled": undefined,
                           "label": "Self mint all tokens",
                           "labelPlacement": "end",
@@ -9868,8 +9887,12 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                         className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
                         onKeyPress={[Function]}
                       >
-                        <ForwardRef(Checkbox)>
+                        <ForwardRef(Checkbox)
+                          checked={false}
+                          onChange={[MockFunction]}
+                        >
                           <MuiCheckboxRoot
+                            checked={false}
                             checkedIcon={
                               <Memo
                                 fontSize="medium"
@@ -9890,13 +9913,14 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                 "data-indeterminate": false,
                               }
                             }
+                            onChange={[MockFunction]}
                             ownerState={
                               Object {
-                                "checked": undefined,
+                                "checked": false,
                                 "color": "primary",
                                 "disabled": undefined,
                                 "indeterminate": false,
-                                "onChange": undefined,
+                                "onChange": [MockFunction],
                                 "size": "medium",
                               }
                             }
@@ -9904,6 +9928,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                           >
                             <Noop />
                             <ForwardRef(SwitchBase)
+                              checked={false}
                               checkedIcon={
                                 <Memo
                                   fontSize="medium"
@@ -9925,6 +9950,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                   "data-indeterminate": false,
                                 }
                               }
+                              onChange={[MockFunction]}
                               type="checkbox"
                             >
                               <Styled(ForwardRef(ButtonBase))
@@ -9958,7 +9984,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                     "inputProps": Object {
                                       "data-indeterminate": false,
                                     },
-                                    "onChange": undefined,
+                                    "onChange": [MockFunction],
                                     "type": "checkbox",
                                   }
                                 }
@@ -10004,6 +10030,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                         "centerRipple": true,
                                         "children": Array [
                                           <Styled(input)
+                                            checked={false}
                                             className="PrivateSwitchBase-input"
                                             data-indeterminate={false}
                                             onChange={[Function]}
@@ -10026,7 +10053,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                                 "inputProps": Object {
                                                   "data-indeterminate": false,
                                                 },
-                                                "onChange": undefined,
+                                                "onChange": [MockFunction],
                                                 "type": "checkbox",
                                               }
                                             }
@@ -10072,6 +10099,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                       tabIndex={null}
                                     >
                                       <Styled(input)
+                                        checked={false}
                                         className="PrivateSwitchBase-input"
                                         data-indeterminate={false}
                                         onChange={[Function]}
@@ -10094,7 +10122,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                             "inputProps": Object {
                                               "data-indeterminate": false,
                                             },
-                                            "onChange": undefined,
+                                            "onChange": [MockFunction],
                                             "type": "checkbox",
                                           }
                                         }
@@ -10102,6 +10130,7 @@ exports[`GeneralInfoStep Step Number matches with generative 1`] = `
                                       >
                                         <Noop />
                                         <input
+                                          checked={false}
                                           className="PrivateSwitchBase-input css-1m9pwf3"
                                           data-indeterminate={false}
                                           onChange={[Function]}
@@ -10882,6 +10911,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
             handleCollNameChange={[MockFunction]}
             handleDescriptionChange={[MockFunction]}
             handleMintPriceChange={[MockFunction]}
+            handleMplaceAllMintChange={[MockFunction]}
             handleMplaceRoyaltyChange={[MockFunction]}
             handleMplaceWantedChange={[MockFunction]}
             handleRedditChange={[MockFunction]}
@@ -10900,6 +10930,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                   "totalTierRarity": 0,
                 },
                 "marketplace": Object {
+                  "allMint": false,
                   "royalty": "",
                   "wanted": false,
                 },
@@ -18294,7 +18325,12 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                         onKeyPress={[Function]}
                       />,
                       <ForwardRef(FormControlLabel)
-                        control={<ForwardRef(Checkbox) />}
+                        control={
+                          <ForwardRef(Checkbox)
+                            checked={false}
+                            onChange={[MockFunction]}
+                          />
+                        }
                         label="Self mint all tokens"
                         onKeyPress={[Function]}
                       />,
@@ -18709,7 +18745,12 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                     </MuiFormControlLabelRoot>
                   </ForwardRef(FormControlLabel)>
                   <ForwardRef(FormControlLabel)
-                    control={<ForwardRef(Checkbox) />}
+                    control={
+                      <ForwardRef(Checkbox)
+                        checked={false}
+                        onChange={[MockFunction]}
+                      />
+                    }
                     label="Self mint all tokens"
                     onKeyPress={[Function]}
                   >
@@ -18718,7 +18759,10 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                       onKeyPress={[Function]}
                       ownerState={
                         Object {
-                          "control": <ForwardRef(Checkbox) />,
+                          "control": <ForwardRef(Checkbox)
+                            checked={false}
+                            onChange={[MockFunction]}
+                          />,
                           "disabled": undefined,
                           "label": "Self mint all tokens",
                           "labelPlacement": "end",
@@ -18731,8 +18775,12 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                         className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
                         onKeyPress={[Function]}
                       >
-                        <ForwardRef(Checkbox)>
+                        <ForwardRef(Checkbox)
+                          checked={false}
+                          onChange={[MockFunction]}
+                        >
                           <MuiCheckboxRoot
+                            checked={false}
                             checkedIcon={
                               <Memo
                                 fontSize="medium"
@@ -18753,13 +18801,14 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                 "data-indeterminate": false,
                               }
                             }
+                            onChange={[MockFunction]}
                             ownerState={
                               Object {
-                                "checked": undefined,
+                                "checked": false,
                                 "color": "primary",
                                 "disabled": undefined,
                                 "indeterminate": false,
-                                "onChange": undefined,
+                                "onChange": [MockFunction],
                                 "size": "medium",
                               }
                             }
@@ -18767,6 +18816,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                           >
                             <Noop />
                             <ForwardRef(SwitchBase)
+                              checked={false}
                               checkedIcon={
                                 <Memo
                                   fontSize="medium"
@@ -18788,6 +18838,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                   "data-indeterminate": false,
                                 }
                               }
+                              onChange={[MockFunction]}
                               type="checkbox"
                             >
                               <Styled(ForwardRef(ButtonBase))
@@ -18821,7 +18872,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                     "inputProps": Object {
                                       "data-indeterminate": false,
                                     },
-                                    "onChange": undefined,
+                                    "onChange": [MockFunction],
                                     "type": "checkbox",
                                   }
                                 }
@@ -18867,6 +18918,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                         "centerRipple": true,
                                         "children": Array [
                                           <Styled(input)
+                                            checked={false}
                                             className="PrivateSwitchBase-input"
                                             data-indeterminate={false}
                                             onChange={[Function]}
@@ -18889,7 +18941,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                                 "inputProps": Object {
                                                   "data-indeterminate": false,
                                                 },
-                                                "onChange": undefined,
+                                                "onChange": [MockFunction],
                                                 "type": "checkbox",
                                               }
                                             }
@@ -18935,6 +18987,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                       tabIndex={null}
                                     >
                                       <Styled(input)
+                                        checked={false}
                                         className="PrivateSwitchBase-input"
                                         data-indeterminate={false}
                                         onChange={[Function]}
@@ -18957,7 +19010,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                             "inputProps": Object {
                                               "data-indeterminate": false,
                                             },
-                                            "onChange": undefined,
+                                            "onChange": [MockFunction],
                                             "type": "checkbox",
                                           }
                                         }
@@ -18965,6 +19018,7 @@ exports[`GeneralInfoStep Step Number matches without generative 1`] = `
                                       >
                                         <Noop />
                                         <input
+                                          checked={false}
                                           className="PrivateSwitchBase-input css-1m9pwf3"
                                           data-indeterminate={false}
                                           onChange={[Function]}
