@@ -31,6 +31,7 @@ interface FormActionPayloadI {
   redditHandleChange?: string;
   mplaceWantedChange?: boolean;
   mplaceRoyaltyChange?: string;
+  mplaceAllMintChange?: boolean;
 }
 
 export interface FormActionI {

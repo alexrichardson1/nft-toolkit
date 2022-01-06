@@ -34,6 +34,7 @@ import {
   handleQuantityChange,
 } from "utils/collection-form/layerHandles";
 import {
+  handleMplaceAllMintChange,
   handleMplaceRoyaltyChange,
   handleMplaceWantedChange,
 } from "utils/collection-form/marketplaceHandles";
@@ -75,7 +76,7 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  marketplace: { wanted: false, royalty: "" },
+  marketplace: { wanted: false, royalty: "", allMint: false },
   predictions: { collections: [], hype: -1, price: "0" },
 };
 const formFooterStyle: SxProps = {
@@ -156,6 +157,7 @@ const CreateCollectionForm = (): JSX.Element => {
         handleDescriptionChange={handleDescriptionChange(dispatch)}
         handleMplaceWantedChange={handleMplaceWantedChange(dispatch)}
         handleMplaceRoyaltyChange={handleMplaceRoyaltyChange(dispatch)}
+        handleMplaceAllMintChange={handleMplaceAllMintChange(dispatch)}
       />
       <TypeOfArtStep
         stepNumber={stepNumber}

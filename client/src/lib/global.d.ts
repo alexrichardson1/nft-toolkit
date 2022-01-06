@@ -59,7 +59,7 @@ interface FormStateI {
     layers: LayerI[];
     quantity: string;
   };
-  marketplace: { wanted: boolean; royalty: string };
+  marketplace: { wanted: boolean; royalty: string; allMint: boolean };
   predictions: MlDataI;
 }
 

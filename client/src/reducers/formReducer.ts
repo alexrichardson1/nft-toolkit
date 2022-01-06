@@ -59,7 +59,7 @@ const INITIAL_STATE: FormStateI = {
     numberOfLayers: 0,
     quantity: "1",
   },
-  marketplace: { wanted: false, royalty: "" },
+  marketplace: { wanted: false, royalty: "", allMint: false },
   predictions: { collections: [], hype: -1, price: "0" },
 };
 
@@ -410,6 +410,19 @@ const changeMarketplaceRoyalty = (
     },
   };
 };
+const changeMarketplaceAllMint = (
+  state: FormStateI,
+  action: FormActionI
+): FormStateI => {
+  const newAllMint = undefinedCheck(
+    action.payload.mplaceAllMintChange,
+    "mplaceAllMintChange required"
+  );
+  return {
+    ...state,
+    marketplace: { ...state.marketplace, allMint: newAllMint },
+  };
+};
 
 /**
  * @param state - current state of the form
@@ -453,6 +466,7 @@ const formReducer = (state: FormStateI, action: FormActionI): FormStateI => {
     // marketplace
     changeMarketplaceWanted,
     changeMarketplaceRoyalty,
+    changeMarketplaceAllMint,
   ];
   const reducer = undefinedCheck(
     reducers[action.type],
