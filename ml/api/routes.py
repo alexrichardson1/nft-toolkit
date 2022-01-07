@@ -161,7 +161,6 @@ def get_avg_price(collections):
     for collection in collections:
         document = db_collection.find_one({'name': collection['name']})
         prices.append(document["avg_sale_price"])
-        print(document)
         collection_data.append(
             {"name": document['name'], "img": document['preview_img']})
     if len(prices) == 0:
