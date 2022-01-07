@@ -155,12 +155,15 @@ def get_avg_price(collections):
     Args:
         - collections: Names of similar collections
     """
+    db_collection = get_collection()
     prices = []
     collection_data = []
     for collection in collections:
-        prices.append(collection["avg_sale_price"])
+        document = db_collection.find_one({'name': collection['name']})
+        prices.append(document["avg_sale_price"])
+        print(document)
         collection_data.append(
-            {"name": collection['name'], "img": collection['preview_img']})
+            {"name": document['name'], "img": document['preview_img']})
     if len(prices) == 0:
         return (0, collection_data)
     return (sum(prices) / len(prices), collection_data)
