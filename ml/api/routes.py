@@ -47,6 +47,9 @@ def get_similar_collections(collection_name):
     similar_collections = model.predict(
         collection_name, reddit_members, twitter_followers)
 
+    if similar_collections is None:
+        return {"collections": [], "hype": 0, "price": 0}
+
     hype = get_hype(similar_collections, twitter, (reddit, subreddits))
     (price, final_similar_collections) = get_recommended_price(
         similar_collections, hype)
