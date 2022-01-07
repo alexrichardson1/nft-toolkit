@@ -138,18 +138,10 @@ const RecommendationsStep = ({
                 height: { xs: "50%", md: "100%" },
                 borderRadius: { xs: "20px 20px 0 0", md: "20px 0 0 20px" },
                 overflow: "hidden",
-                backgroundImage: `url(${NoImageFallback})`,
+                backgroundImage: `url(${img === "" ? NoImageFallback : img})`,
                 backgroundSize: "100% 100%",
                 backgroundRepeat: "no-repeat",
-              }}>
-              <img
-                style={{ color: "transparent" }}
-                width="100%"
-                height="100%"
-                src={img}
-                alt={name}
-              />
-            </Box>
+              }}></Box>
             <Stack
               padding="10px"
               width={{ xs: "100%", md: "50%" }}
