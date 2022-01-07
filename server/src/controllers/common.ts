@@ -19,6 +19,7 @@ export const s3 = new S3({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   },
+  correctClockSkew: true,
 });
 
 export const SITE_URL = "http://nftoolkit.eu-west-2.elasticbeanstalk.com";
