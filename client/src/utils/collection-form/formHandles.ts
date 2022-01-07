@@ -9,7 +9,7 @@ import {
   Market__factory as MarketFactory,
   NFT__factory as NftFactory,
 } from "typechain";
-import { ML_URL, tetherAddress } from "utils/constants";
+import { getCircleByChainId, ML_URL } from "utils/constants";
 import {
   addDeployedAddress,
   startLoading,
@@ -105,7 +105,7 @@ const createCollection = async (
     setLoadingMessage("Deploying Market...");
     const marketTx = await marketFactory.getDeployTransaction(
       txReceipt.contractAddress,
-      tetherAddress
+      getCircleByChainId(chainId)
     );
     const marketTxRes = await signer.sendTransaction(marketTx);
     setLoadingMessage("Confirming Market...");

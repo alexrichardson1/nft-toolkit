@@ -12,14 +12,14 @@ import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
 import { formatEther, formatUnits } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
-import tetherIcon from "images/tether.svg";
+import circleIcon from "images/circle.svg";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Market__factory as MarketFactory,
   NFT__factory as NftFactory,
 } from "typechain";
-import { API_URL, getLogoByChainId, toTether } from "utils/constants";
+import { API_URL, getLogoByChainId, toCircle } from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 
@@ -177,12 +177,12 @@ const Market = (): JSX.Element => {
                 <Stack alignItems="center" gap={2} direction="row">
                   {royalties.stable.gt(0) && (
                     <Stack gap={1} direction="row">
-                      {formatUnits(royalties.stable, toTether)}
+                      {formatUnits(royalties.stable, toCircle)}
                       <SvgLogo
                         width="20px"
                         height="20px"
                         alt="stable-icon"
-                        icon={tetherIcon}
+                        icon={circleIcon}
                       />
                     </Stack>
                   )}

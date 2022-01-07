@@ -18,7 +18,7 @@ import SnackbarContext from "context/snackbar/SnackbarContext";
 import { BigNumber } from "ethers";
 import { parseUnits } from "ethers/lib/utils";
 import useAppDispatch from "hooks/useAppDispatch";
-import tetherLogo from "images/tether.svg";
+import circleLogo from "images/circle.svg";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
@@ -26,7 +26,11 @@ import {
   Market__factory as MarketFactory,
   NFT__factory as NftFactory,
 } from "typechain";
-import { getLogoByChainId, tetherAddress, toTether } from "utils/constants";
+import {
+  getCircleByChainId,
+  getLogoByChainId,
+  toCircle,
+} from "utils/constants";
 import { getRPCProvider } from "utils/mintingPageUtils";
 import DisplayCard from "./DisplayCard";
 import { TokenI } from "./Market";
@@ -114,16 +118,16 @@ const PurchasePage = (): JSX.Element => {
     setLoadingButton(true);
     try {
       if (token.isStable) {
-        const tetherContract = ERC20Factory.connect(
-          tetherAddress,
+        const circleContract = ERC20Factory.connect(
+          getCircleByChainId(parseInt(paramChainId)),
           library.getSigner()
         );
-        const approveTx = await tetherContract.approve(
+        const approveTx = await circleContract.approve(
           marketContract.address,
           token.price
         );
         await approveTx.wait();
-        showSnackbar("success", "Tether approval successful");
+        showSnackbar("success", "Circle approval successful");
       }
       const tx = await marketContract.buy(tokenId, {
         value: BigNumber.from(token.isStable ? 0 : token.price),
@@ -148,7 +152,7 @@ const PurchasePage = (): JSX.Element => {
     setLoadingButton(true);
     let price;
     if (stableCoinList) {
-      price = parseUnits(listPrice, toTether);
+      price = parseUnits(listPrice, toCircle);
     } else {
       price = parseUnits(listPrice);
     }
@@ -233,7 +237,7 @@ const PurchasePage = (): JSX.Element => {
               onChange={() => setStableCoinList((prev) => !prev)}
               inputProps={{ "aria-label": "controlled" }}
             />
-            <SvgIcon width="20px" height="20px" alt="coin" icon={tetherLogo} />
+            <SvgIcon width="20px" height="20px" alt="coin" icon={circleLogo} />
           </Stack>
           <LoadingButton
             type="submit"
