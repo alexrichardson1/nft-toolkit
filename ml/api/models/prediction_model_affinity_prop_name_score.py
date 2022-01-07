@@ -112,3 +112,10 @@ class PredictionModelAffinityPropagationNamingScore(prediction_model_abstract.Pr
             total_validated += 1
             mse += math.pow(pred_avg_price - collection['avg_sale_price'], 2)
         return math.sqrt(mse / total_validated)
+
+
+def get_num(num):
+    """
+    Function for score_scaler_func
+    """
+    return num
