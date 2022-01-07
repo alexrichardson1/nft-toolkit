@@ -3,6 +3,7 @@ Model for clustering collections
 """
 
 import math
+import sys
 import distance
 from sklearn.cluster import AffinityPropagation
 import numpy as np
@@ -62,14 +63,17 @@ class PredictionModelAffinityPropagationNaming(prediction_model_abstract.Predict
         """
         Predict using Model
         """
-        lev_similarity = np.array([
-            distance.levenshtein(self.collections_training[
-                self.model.cluster_centers_indices_[cluster_id]]["name"], word)
-            for cluster_id in np.unique(self.model.labels_)])
-        (index, _) = min(enumerate(lev_similarity), key=lambda x: x[1])
-        collections = list(dict((v['name'], v) for v in self.collections_training[np.nonzero(
-            self.model.labels_ == np.unique(self.model.labels_)[index])]).values())
-        return collections[:6]
+        try:
+            lev_similarity = np.array([
+                distance.levenshtein(self.collections_training[
+                    self.model.cluster_centers_indices_[cluster_id]]["name"], word)
+                for cluster_id in np.unique(self.model.labels_)])
+            (index, _) = min(enumerate(lev_similarity), key=lambda x: x[1])
+            collections = list(dict((v['name'], v) for v in self.collections_training[np.nonzero(
+                self.model.labels_ == np.unique(self.model.labels_)[index])]).values())
+            return collections[:6]
+        except IndexError:
+            return None
 
     def preprocess_data(self):
         split_idx_training = int(0.6 * len(self.collections))
@@ -87,8 +91,11 @@ class PredictionModelAffinityPropagationNaming(prediction_model_abstract.Predict
         for collection in self.collections_validation:
             predictions = self.predict(
                 collection['name'], collection['reddit_score'], collection['twitter_score'])
-            pred_avg_price = sum([col['avg_sale_price']
-                                  for col in predictions]) / len(predictions)
+            if predictions is None:
+                pred_avg_price = sys.maxsize
+            else:
+                pred_avg_price = sum([col['avg_sale_price']
+                                      for col in predictions]) / len(predictions)
             total_validated += 1
             mse += math.pow(pred_avg_price - collection['avg_sale_price'], 2)
         return math.sqrt(mse / total_validated)
