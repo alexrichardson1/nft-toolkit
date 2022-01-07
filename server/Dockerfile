@@ -2,9 +2,22 @@ FROM node:16-alpine
 
 WORKDIR /app
 
+RUN apk add --update --no-cache \
+    git \
+    make \
+    g++ \
+    jpeg-dev \
+    cairo-dev \
+    giflib-dev \
+    pango-dev \
+    libtool \
+    autoconf \
+    automake
+
+
 COPY package.json .
 COPY yarn.lock .
-RUN apk add --no-cache git
+
 RUN yarn
 
 COPY . .
