@@ -109,8 +109,11 @@ class PredictionModel:
         """
         Save the model
         """
-        with open('/api/collection_model', 'wb') as file:
-            pickle.dump(self, file)
+        rmse = self.get_rmse()
+        print("RMSE is " + str(rmse))
+        if rmse < 3:
+            with open('api/collection_model', 'wb') as file:
+                pickle.dump(self, file)
 
 
 def get_distance(df1, df2):
