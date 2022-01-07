@@ -7,6 +7,7 @@ import sys
 import threading
 import numpy as np
 from prediction_model_affinity_prop_name_score import PredictionModelAffinityPropagationNamingScore
+from prediction_model_affinity_prop_name_score import get_num
 from prediction_model_affinity_prop_name import PredictionModelAffinityPropagationNaming
 from prediction_model_kmeans import PredictionModelKMeans
 from prediction_model_nearest_neighbors import PredictionModelNearestNeighbors
@@ -31,7 +32,7 @@ def get_rmse_for_affinity_name_score():
         model2 = PredictionModelAffinityPropagationNamingScore(
             collections, lev_scale, np.sqrt)
         model3 = PredictionModelAffinityPropagationNamingScore(
-            collections, lev_scale, lambda n: n)
+            collections, lev_scale, get_num)
         model1.preprocess_data()
         model2.preprocess_data()
         model3.preprocess_data()
