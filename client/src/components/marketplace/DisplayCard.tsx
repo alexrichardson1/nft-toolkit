@@ -3,10 +3,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import SvgIcon from "components/common/SvgLogo";
 import { BigNumber, utils } from "ethers";
-import tetherLogo from "images/tether.svg";
+import circleLogo from "images/circle.svg";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { getLogoByChainId, toTether } from "utils/constants";
+import { getLogoByChainId, toCircle } from "utils/constants";
 import "./displaycard.css";
 import { TokenI } from "./Market";
 
@@ -26,12 +26,12 @@ const priceCard = (logo: string, price: BigNumber, isStable: boolean) => {
       <Typography variant="h6" color="primary" className="card-price">
         Price:{" "}
         {isStable
-          ? utils.formatUnits(price, toTether)
+          ? utils.formatUnits(price, toCircle)
           : utils.formatEther(price)}
       </Typography>
       <SvgIcon
         alt="network-symb"
-        icon={isStable ? tetherLogo : logo}
+        icon={isStable ? circleLogo : logo}
         width="20px"
         height="20px"
         margins

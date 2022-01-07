@@ -62,6 +62,15 @@ export const siderbarMenuItems = [
   { text: "Create New Collection", location: "/create-new-collection" },
 ];
 
-export const tetherAddress = "0xD92E713d051C37EbB2561803a3b5FBAbc4962431";
+export const getCircleByChainId = (id: number): string => {
+  const rinkebyCircle = "0xeb8f08a975ab53e34d8a0330e0d34de942c95926";
+  const CIRCLE_ADDRESSES: { [id: number]: string } = {
+    4: rinkebyCircle,
+    56: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+    137: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    43114: "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e",
+  };
+  return CIRCLE_ADDRESSES[id] || rinkebyCircle;
+};
 
-export const toTether = 6;
+export const toCircle = 6;
