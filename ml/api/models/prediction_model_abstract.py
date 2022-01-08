@@ -115,8 +115,8 @@ class PredictionModel:
         """
         rmse = self.get_rmse()
         print("RMSE is " + str(rmse))
-        if rmse < 3:
-            with open('api/collection_model', 'wb') as file:
+        if rmse < 50:
+            with open('/api/collection_model', 'wb') as file:
                 pickle.dump(self, file)
 
 
