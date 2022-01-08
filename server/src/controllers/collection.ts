@@ -1,5 +1,6 @@
 import { s3, shuffleTokens, SITE_URL } from "@controllers/common";
 import { GenCollectionI, generate } from "@controllers/generateArt";
+import { compileImageNoReq, ReqBodyI } from "@controllers/generateArtCompile";
 import { Collection, CollectionT, Token, TokenT } from "@models/collection";
 import { User, UserCollectionI } from "@models/user";
 import { createCanvas, loadImage } from "canvas";
@@ -181,9 +182,15 @@ export const transformTiers: RequestHandler = (req, _res, next) => {
 export const generateTokens: RequestHandler = async (req, _res, next) => {
   const genCollection: GenCollectionI = req.body;
   try {
-    req.body.tokens = await generate(genCollection);
+    req.body.tokens = await generate(genCollection, req);
     next();
   } catch (error) {
     next(error);
   }
+};
+
+export const postSaveCollection: RequestHandler = (req, _res, next) => {
+  const { images, compInfo }: ReqBodyI = req.body;
+  images.map((img) => compileImageNoReq(img, compInfo));
+  next();
 };
