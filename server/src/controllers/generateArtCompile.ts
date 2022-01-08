@@ -156,28 +156,6 @@ export const compileImageReq = async (
   return createTokenMetadata(name, index, key, image.attributes);
 };
 
-// Compiles image and uploads to S3 in background
-export const compileImageNoReq = (
-  imageToCompile: ImgToCompileI,
-  compilationInfo: CompilationI
-): TokenT => {
-  const { image, index } = imageToCompile;
-  const { name, creator, layerBufs, layerFreq } = compilationInfo;
-  const composites: sharp.OverlayOptions[] = [];
-  const resultImage = createSharpImg(image, layerFreq, layerBufs, composites);
-
-  const { key, filePath, uploadParams } = getUploadInfo(creator, name, index);
-
-  combineImages(resultImage, composites, filePath).then(() => {
-    uploadParams.Body = fs.readFileSync(filePath);
-    s3.upload(uploadParams)
-      .promise()
-      .then(() => fs.unlinkSync(filePath));
-  });
-
-  return createTokenMetadata(name, index, key, image.attributes);
-};
-
 export const imageToMetadata = (
   imageToCompile: ImgToCompileI,
   compilationInfo: CompilationI
