@@ -93,9 +93,13 @@ class PredictionModelAffinityPropagationNaming(prediction_model_abstract.Predict
                 collection['name'], collection['reddit_score'], collection['twitter_score'])
             if predictions is None:
                 pred_avg_price = sys.maxsize
+                avg_name_difference = sys.maxsize
             else:
                 pred_avg_price = sum([col['avg_sale_price']
                                       for col in predictions]) / len(predictions)
+                avg_name_difference = sum([distance.levenshtein(collection['name'], col['name'])
+                                           for col in predictions]) / len(predictions)
             total_validated += 1
-            mse += math.pow(pred_avg_price - collection['avg_sale_price'], 2)
+            mse += math.pow(pred_avg_price -
+                            collection['avg_sale_price'] + avg_name_difference, 2)
         return math.sqrt(mse / total_validated)

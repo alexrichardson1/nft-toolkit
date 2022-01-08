@@ -8,6 +8,7 @@ import sys
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+import distance
 
 
 class PredictionModel:
@@ -98,11 +99,14 @@ class PredictionModel:
                 row['name'], row['reddit_score'], row['twitter_score'])
             if len(predictions) == 0:
                 pred_avg_price = sys.maxsize
+                avg_name_difference = sys.maxsize
             else:
                 pred_avg_price = sum([col['avg_sale_price']
                                       for col in predictions]) / len(predictions)
+                avg_name_difference = sum([distance.levenshtein(row['name'], col['name'])
+                                           for col in predictions]) / len(predictions)
             total_validated += 1
-            mse += math.pow(pred_avg_price - price, 2)
+            mse += math.pow((pred_avg_price - price + avg_name_difference), 2)
         return math.sqrt(mse / total_validated)
 
     def save_model(self):
@@ -111,8 +115,8 @@ class PredictionModel:
         """
         rmse = self.get_rmse()
         print("RMSE is " + str(rmse))
-        if rmse < 3:
-            with open('api/collection_model', 'wb') as file:
+        if rmse < 50:
+            with open('/api/collection_model', 'wb') as file:
                 pickle.dump(self, file)
 
 
