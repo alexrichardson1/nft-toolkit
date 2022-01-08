@@ -4,9 +4,9 @@ import {
   getAllCollections,
   getCollection,
   getUserCollections,
-  postSaveCollection,
   saveCollectionToDB,
   transformTiers,
+  uploadRemainingImgs,
 } from "@controllers/collection";
 import { errorHandler } from "@controllers/common";
 import { addDeployedAddress } from "@controllers/deployed";
@@ -39,8 +39,8 @@ collectionRoutes.post(
   transformTiers,
   generateTokens,
   saveCollectionToDB,
-  postSaveCollection,
-  deployContracts
+  deployContracts,
+  uploadRemainingImgs
 );
 
 collectionRoutes.post(
