@@ -1,10 +1,11 @@
 import {
-  compileImageNoReq,
   compileImageReq,
+  imageToMetadata,
   LayersQI,
 } from "@controllers/generateArtCompile";
 import { AttributeI, TokenT } from "@models/collection";
 import axios from "axios";
+import { Request } from "express";
 
 interface ImageI {
   name: string;
@@ -170,7 +171,10 @@ export const MIN_IMG_UPLOAD = 20;
  * have to positition any features ourselves
  * @param collection - Collection of picture layers
  */
-async function generate(collection: GenCollectionI): Promise<TokenT[]> {
+async function generate(
+  collection: GenCollectionI,
+  req: Request
+): Promise<TokenT[]> {
   const { layers, quantity, name, creator, tiers } = collection;
   let numPossibleCombinations = 1;
   layers.forEach((layer) => {
@@ -212,10 +216,10 @@ async function generate(collection: GenCollectionI): Promise<TokenT[]> {
     images.slice(0, MIN_IMG_UPLOAD).map((img) => compileImageReq(img, compInfo))
   );
   tokens.push(
-    ...images
-      .slice(MIN_IMG_UPLOAD)
-      .map((img) => compileImageNoReq(img, compInfo))
+    ...images.slice(MIN_IMG_UPLOAD).map((img) => imageToMetadata(img, compInfo))
   );
+  req.body.images = images.slice(MIN_IMG_UPLOAD);
+  req.body.compInfo = compInfo;
   tokens.forEach((token) => addRarityScore(token, layerFreq));
   const sortedTokens = [...tokens].sort(sortByRarity);
 

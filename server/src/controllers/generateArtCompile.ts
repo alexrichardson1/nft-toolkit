@@ -129,6 +129,11 @@ interface CompilationI {
   layerFreq: LayersQI;
 }
 
+export interface ReqBodyI {
+  images: ImgToCompileI[];
+  compInfo: CompilationI;
+}
+
 // Compiles image and uploads to S3
 export const compileImageReq = async (
   imageToCompile: ImgToCompileI,
@@ -169,6 +174,18 @@ export const compileImageNoReq = (
       .promise()
       .then(() => fs.unlinkSync(filePath));
   });
+
+  return createTokenMetadata(name, index, key, image.attributes);
+};
+
+export const imageToMetadata = (
+  imageToCompile: ImgToCompileI,
+  compilationInfo: CompilationI
+): TokenT => {
+  const { image, index } = imageToCompile;
+  const { name, creator } = compilationInfo;
+
+  const { key } = getUploadInfo(creator, name, index);
 
   return createTokenMetadata(name, index, key, image.attributes);
 };

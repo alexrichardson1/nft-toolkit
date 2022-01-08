@@ -4,6 +4,7 @@ import {
   getAllCollections,
   getCollection,
   getUserCollections,
+  postSaveCollection,
   saveCollectionToDB,
   transformTiers,
 } from "@controllers/collection";
@@ -38,6 +39,7 @@ collectionRoutes.post(
   transformTiers,
   generateTokens,
   saveCollectionToDB,
+  postSaveCollection,
   deployContracts
 );
 
