@@ -170,14 +170,14 @@ const RecommendationsStep = ({
 
   const generateHypeExplaination = () => {
     if (state.redditHandle === "" && state.twitterHandle === "") {
-      return "Unfortunately we are unable to calculate the hype of you and your collection as you haven't provided your Twitter or Reddit handles. Please go back and add your usernames to calculate your hype";
+      return "Unfortunately, we are unable to calculate the hype of you and your collection as you haven't provided your Twitter or Reddit handles. Please go back and add your usernames to calculate your hype";
     }
     if (state.predictions.hype < BAD_HYPE_UPPER_BOUND) {
-      return "Based on the information provided, you should grow the community who are awaiting your next collection!";
+      return "Based on the information provided, you should grow the community that are awaiting your next collection!";
     } else if (state.predictions.hype < GOOD_HYPE_UPPER_BOUND) {
-      return "Well done, you hase a strong community foundation. You can still grow it and reap the benefits";
+      return "Well done, you have a strong community foundation. You can still grow it and reap the benefits";
     }
-    return "Wow! You have a huge community awaiting for your collection :)";
+    return "Wow! You have a huge community awaiting your collection :)";
   };
 
   return (
