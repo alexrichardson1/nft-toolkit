@@ -20,6 +20,10 @@ contract Market {
   mapping(uint256 => bool) public areStable;
   mapping(address => Royalties) public royalties;
 
+  event Delist(uint256 tokenId);
+  event SellListing(uint256 tokenId, uint256 price);
+  event Buy(uint256 tokenId);
+
   /**
    * @notice Construct a new royalty
    * @param addr The address of the NFT collection contract
@@ -30,7 +34,21 @@ contract Market {
     _stable = ERC20(stable);
   }
 
-  event Delist(uint256 tokenId);
+  /**
+   * @notice Claim the royalties for a given address
+   */
+  function claimRoyalties() external {
+    Royalties storage royalty = royalties[msg.sender];
+    require(royalty.stable > 0 || royalty.native > 0, "No royalties to claim");
+    if (royalty.stable > 0) {
+      _stable.transfer(msg.sender, royalty.stable);
+      royalty.stable = 0;
+    }
+    if (royalty.native > 0) {
+      payable(msg.sender).transfer(royalty.native);
+      royalty.native = 0;
+    }
+  }
 
   /**
    * @notice Delist a NFT
@@ -44,8 +62,6 @@ contract Market {
     delete listings[tokenId];
     emit Delist(tokenId);
   }
-
-  event SellListing(uint256 tokenId, uint256 price);
 
   /**
    * @notice Add a NFT to the listing to be sold
@@ -70,8 +86,6 @@ contract Market {
     areStable[tokenId] = isStable;
     emit SellListing(tokenId, price);
   }
-
-  event Buy(uint256 tokenId);
 
   /**
    * @notice Buy a NFT
@@ -113,18 +127,5 @@ contract Market {
 
     delete listings[tokenId];
     emit Buy(tokenId);
-  }
-
-  function claimRoyalties() external {
-    Royalties storage royalty = royalties[msg.sender];
-    require(royalty.stable > 0 || royalty.native > 0, "No royalties to claim");
-    if (royalty.stable > 0) {
-      _stable.transfer(msg.sender, royalty.stable);
-      royalty.stable = 0;
-    }
-    if (royalty.native > 0) {
-      payable(msg.sender).transfer(royalty.native);
-      royalty.native = 0;
-    }
   }
 }
