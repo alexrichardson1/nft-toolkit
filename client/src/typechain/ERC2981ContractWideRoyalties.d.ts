@@ -18,10 +18,20 @@ import type { TypedEvent, TypedEventFilter, TypedListener } from "./common";
 
 interface ERC2981ContractWideRoyaltiesInterface extends ethers.utils.Interface {
   functions: {
+    "c_0x57ec8f95(bytes32)": FunctionFragment;
+    "c_0xc4d48488(bytes32)": FunctionFragment;
     "royaltyInfo(uint256,uint256)": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
   };
 
+  encodeFunctionData(
+    functionFragment: "c_0x57ec8f95",
+    values: [BytesLike]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "c_0xc4d48488",
+    values: [BytesLike]
+  ): string;
   encodeFunctionData(
     functionFragment: "royaltyInfo",
     values: [BigNumberish, BigNumberish]
@@ -31,6 +41,14 @@ interface ERC2981ContractWideRoyaltiesInterface extends ethers.utils.Interface {
     values: [BytesLike]
   ): string;
 
+  decodeFunctionResult(
+    functionFragment: "c_0x57ec8f95",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "c_0xc4d48488",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "royaltyInfo",
     data: BytesLike
@@ -87,6 +105,16 @@ export class ERC2981ContractWideRoyalties extends BaseContract {
   interface: ERC2981ContractWideRoyaltiesInterface;
 
   functions: {
+    c_0x57ec8f95(
+      c__0x57ec8f95: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<[void]>;
+
+    c_0xc4d48488(
+      c__0xc4d48488: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<[void]>;
+
     royaltyInfo(
       arg0: BigNumberish,
       value: BigNumberish,
@@ -100,6 +128,16 @@ export class ERC2981ContractWideRoyalties extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[boolean]>;
   };
+
+  c_0x57ec8f95(
+    c__0x57ec8f95: BytesLike,
+    overrides?: CallOverrides
+  ): Promise<void>;
+
+  c_0xc4d48488(
+    c__0xc4d48488: BytesLike,
+    overrides?: CallOverrides
+  ): Promise<void>;
 
   royaltyInfo(
     arg0: BigNumberish,
@@ -115,6 +153,16 @@ export class ERC2981ContractWideRoyalties extends BaseContract {
   ): Promise<boolean>;
 
   callStatic: {
+    c_0x57ec8f95(
+      c__0x57ec8f95: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    c_0xc4d48488(
+      c__0xc4d48488: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     royaltyInfo(
       arg0: BigNumberish,
       value: BigNumberish,
@@ -132,6 +180,16 @@ export class ERC2981ContractWideRoyalties extends BaseContract {
   filters: {};
 
   estimateGas: {
+    c_0x57ec8f95(
+      c__0x57ec8f95: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    c_0xc4d48488(
+      c__0xc4d48488: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     royaltyInfo(
       arg0: BigNumberish,
       value: BigNumberish,
@@ -145,6 +203,16 @@ export class ERC2981ContractWideRoyalties extends BaseContract {
   };
 
   populateTransaction: {
+    c_0x57ec8f95(
+      c__0x57ec8f95: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    c_0xc4d48488(
+      c__0xc4d48488: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     royaltyInfo(
       arg0: BigNumberish,
       value: BigNumberish,

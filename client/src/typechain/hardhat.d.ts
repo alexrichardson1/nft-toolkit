@@ -60,6 +60,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165__factory>;
     getContractFactory(
+      name: "Circle",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Circle__factory>;
+    getContractFactory(
       name: "ERC2981Base",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ERC2981Base__factory>;
@@ -140,6 +144,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IERC165>;
+    getContractAt(
+      name: "Circle",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Circle>;
     getContractAt(
       name: "ERC2981Base",
       address: string,
