@@ -51,7 +51,7 @@ describe("NFT Collection Contract", () => {
       ).to.be.revertedWith("Not enough in the collection left to mint amount");
     });
 
-    it("should increment tokenIdTracker by number of minted", async () => {
+    it("Should increment tokenIdTracker by number of minted", async () => {
       expect(await nftContract.tokenIdTracker()).to.equal("0");
       await nftContract.mint(1, {
         value: COLLECTION_WEI_PRICE,
@@ -65,6 +65,15 @@ describe("NFT Collection Contract", () => {
       await nftContract.withdraw();
       expect(await ethers.provider.getBalance(nftContract.address)).to.equal(
         "0"
+      );
+    });
+  });
+
+  describe("Supports Interface", () => {
+    it("Should support ERC721 standard", async () => {
+      const ERC721Interface = "0x80ac58cd";
+      expect(await nftContract.supportsInterface(ERC721Interface)).to.equal(
+        true
       );
     });
   });
