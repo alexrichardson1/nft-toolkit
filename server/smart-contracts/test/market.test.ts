@@ -4,7 +4,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import chai, { expect } from "chai";
 import { solidity } from "ethereum-waffle";
 import { ethers } from "hardhat";
-import { ERC20, Market, NFT } from "../typechain";
+import { Circle, Market, NFT } from "../typechain";
 
 chai.use(solidity);
 
@@ -23,7 +23,7 @@ const CUT = 2000;
 describe("Market Contract", () => {
   let marketContract: Market;
   let nftContract: NFT;
-  let tetherContract: ERC20;
+  let circleContract: Circle;
   let signerOne: SignerWithAddress | undefined;
   let signerTwo: SignerWithAddress | undefined;
 
@@ -42,14 +42,14 @@ describe("Market Contract", () => {
     await nftContract.mint(NUM_NFTS, {
       value: COLLECTION_WEI_PRICE.mul(NUM_NFTS),
     });
-    // Tether Contract
-    const TetherContract = await ethers.getContractFactory("ERC20");
-    tetherContract = await TetherContract.deploy("Tether", "USDT");
+    // Circle Contract
+    const CircleContract = await ethers.getContractFactory("Circle");
+    circleContract = await CircleContract.deploy("Circle", "USDC");
     // Market Contract
     const MarketContract = await ethers.getContractFactory("Market");
     marketContract = await MarketContract.deploy(
       nftContract.address,
-      tetherContract.address
+      circleContract.address
     );
     await marketContract.deployed();
     [signerOne, signerTwo] = await ethers.getSigners();
@@ -134,33 +134,32 @@ describe("Market Contract", () => {
     });
 
     describe("Stable coin", () => {
-      // it("Should not allow buying without the correct stable coin funds", () => {
-      //   expect(
-      //     marketContract.buy(TOKEN_THREE_ID, {
-      //       value: ethers.utils.parseEther("0"),
-      //     })
-      //   ).to.be.revertedWith("ERC20: ...");
-      // });
-      // it("Should allow buying with the correct stable coin funds", async () => {
-      //   if (!signerOne || !signerTwo) {
-      //     return;
-      //   }
-      //   await tetherContract.approve(signerTwo.address, COLLECTION_WEI_PRICE);
-      //   // tetherContract.
-      //   await nftContract.approve(marketContract.address, TOKEN_THREE_ID);
-      //   const sellerBalanceBefore = await tetherContract.balanceOf(
-      //     signerOne.address
-      //   );
-      //   await marketContract.connect(signerTwo).buy(TOKEN_THREE_ID, {
-      //     value: COLLECTION_WEI_PRICE,
-      //   });
-      //   const sellerBalanceAfter = await tetherContract.balanceOf(
-      //     signerOne.address
-      //   );
-      //   expect(sellerBalanceBefore).to.equal(
-      //     sellerBalanceAfter.add("1000000000000")
-      //   );
-      // });
+      it("Should allow buying with the correct stable coin funds", async () => {
+        if (!signerOne || !signerTwo) {
+          return;
+        }
+        await circleContract.connect(signerTwo).mint(COLLECTION_WEI_PRICE);
+        await circleContract
+          .connect(signerTwo)
+          .approve(marketContract.address, COLLECTION_WEI_PRICE);
+        await nftContract.approve(marketContract.address, TOKEN_THREE_ID);
+        const sellerBalanceBefore = await circleContract.balanceOf(
+          signerOne.address
+        );
+        await marketContract.connect(signerTwo).buy(TOKEN_THREE_ID, {
+          value: COLLECTION_WEI_PRICE,
+        });
+        const sellerBalanceAfter = await circleContract.balanceOf(
+          signerOne.address
+        );
+        const divisor = 5;
+        const numerator = 4;
+        expect(sellerBalanceAfter).to.equal(
+          sellerBalanceBefore.add(
+            COLLECTION_WEI_PRICE.div(divisor).mul(numerator)
+          )
+        );
+      });
     });
   });
 
@@ -189,6 +188,27 @@ describe("Market Contract", () => {
       expect(await marketContract.listings(TOKEN_TWO_ID)).to.equal(
         DEFAULT_MAPPING_VALUE
       );
+    });
+  });
+
+  describe("claimRoyalties", () => {
+    it("Should not allow to claim royalties if none available", () => {
+      expect(
+        marketContract.connect(signerTwo || "").claimRoyalties()
+      ).to.be.revertedWith("No royalties to claim");
+    });
+
+    it("Should allow to claim royalties", async () => {
+      await marketContract.claimRoyalties();
+      const postClaim = await marketContract.royalties(
+        signerOne ? signerOne.address : ""
+      );
+      const emptyRoyalty = {
+        stable: BigNumber.from(0),
+        native: BigNumber.from(0),
+      };
+      expect(postClaim.stable).to.equal(emptyRoyalty.stable);
+      expect(postClaim.native).to.equal(emptyRoyalty.native);
     });
   });
 });
