@@ -78,6 +78,10 @@ def get_num_of_twitter_followers(twitter_handle):
     """
     Get number of subscribers to the twitter
     """
+
+    if twitter_handle is None:
+        return 0
+
     url = "https://api.twitter.com/1.1/users/show.json"
     querystring = {"screen_name": twitter_handle}
     twitter_headers = {"Authorization": "Bearer " +
