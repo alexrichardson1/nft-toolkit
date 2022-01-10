@@ -77,4 +77,12 @@ describe("NFT Collection Contract", () => {
       );
     });
   });
+
+  describe("tokenURI", () => {
+    it("Should use correct baseURI", async () => {
+      expect(await nftContract.tokenURI(0)).to.equal(
+        `${BASE_URI}/${nftContract.address}/0`
+      );
+    });
+  });
 });
