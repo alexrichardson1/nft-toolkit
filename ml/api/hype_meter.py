@@ -10,20 +10,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Initialise the Reddit Authentication
-auth = requests.auth.HTTPBasicAuth(
-    os.getenv("REDDIT_CLIENT_ID"), os.getenv("REDDIT_SECRET_ID"))
-data = {'grant_type': 'password',
-        'username': 'fooNFTProj',
-        'password': os.getenv("REDDIT_PASS")}
-
-headers = {'User-Agent': 'Hype-Calc/0.0.1'}
-token_response = requests.post('https://www.reddit.com/api/v1/access_token',
-                               auth=auth, data=data, headers=headers)
-print(token_response.json())
-TOKEN = token_response.json()['access_token']
-headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
-
 
 def get_subreddits_with_handle(reddit_handle):
     """
@@ -31,6 +17,19 @@ def get_subreddits_with_handle(reddit_handle):
     """
     if reddit_handle is None:
         return []
+
+    # Initialise the Reddit Authentication
+    auth = requests.auth.HTTPBasicAuth(
+        os.getenv("REDDIT_CLIENT_ID"), os.getenv("REDDIT_SECRET_ID"))
+    data = {'grant_type': 'password',
+            'username': 'fooNFTProj',
+            'password': os.getenv("REDDIT_PASS")}
+
+    headers = {'User-Agent': 'Hype-Calc/0.0.1'}
+    token_response = requests.post('https://www.reddit.com/api/v1/access_token',
+                                   auth=auth, data=data, headers=headers)
+    token = token_response.json()['access_token']
+    headers = {**headers, **{'Authorization': f"bearer {token}"}}
 
     params = {'query': reddit_handle}
     res = requests.post(
