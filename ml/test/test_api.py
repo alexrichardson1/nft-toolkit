@@ -6,8 +6,8 @@ import sys
 import tempfile
 import json
 import pytest
-# If running locally change to sys.path.insert(1, 'api')
-sys.path.insert(1, 'ml/api')
+
+sys.path.insert(1, './api')
 from routes import create_app  # noqa # pylint:disable=import-error, wrong-import-position
 
 
