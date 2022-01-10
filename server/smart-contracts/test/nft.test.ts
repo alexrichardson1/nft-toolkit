@@ -59,4 +59,13 @@ describe("NFT Collection Contract", () => {
       expect(await nftContract.tokenIdTracker()).to.equal("1");
     });
   });
+
+  describe("Withdraw", () => {
+    it("Should withdraw minting fees correctly", async () => {
+      await nftContract.withdraw();
+      expect(await ethers.provider.getBalance(nftContract.address)).to.equal(
+        "0"
+      );
+    });
+  });
 });
