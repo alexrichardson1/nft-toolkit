@@ -23,6 +23,7 @@ interface MarketInterface extends ethers.utils.Interface {
   functions: {
     "areStable(uint256)": FunctionFragment;
     "buy(uint256)": FunctionFragment;
+    "c_0x95d3f9ef(bytes32)": FunctionFragment;
     "claimRoyalties()": FunctionFragment;
     "delist(uint256)": FunctionFragment;
     "listings(uint256)": FunctionFragment;
@@ -35,6 +36,10 @@ interface MarketInterface extends ethers.utils.Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "buy", values: [BigNumberish]): string;
+  encodeFunctionData(
+    functionFragment: "c_0x95d3f9ef",
+    values: [BytesLike]
+  ): string;
   encodeFunctionData(
     functionFragment: "claimRoyalties",
     values?: undefined
@@ -55,6 +60,10 @@ interface MarketInterface extends ethers.utils.Interface {
 
   decodeFunctionResult(functionFragment: "areStable", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "buy", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "c_0x95d3f9ef",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "claimRoyalties",
     data: BytesLike
@@ -140,6 +149,11 @@ export class Market extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    c_0x95d3f9ef(
+      c__0x95d3f9ef: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<[void]>;
+
     claimRoyalties(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -176,6 +190,11 @@ export class Market extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  c_0x95d3f9ef(
+    c__0x95d3f9ef: BytesLike,
+    overrides?: CallOverrides
+  ): Promise<void>;
+
   claimRoyalties(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -203,6 +222,11 @@ export class Market extends BaseContract {
     areStable(arg0: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
 
     buy(tokenId: BigNumberish, overrides?: CallOverrides): Promise<void>;
+
+    c_0x95d3f9ef(
+      c__0x95d3f9ef: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
     claimRoyalties(overrides?: CallOverrides): Promise<void>;
 
@@ -268,6 +292,11 @@ export class Market extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    c_0x95d3f9ef(
+      c__0x95d3f9ef: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     claimRoyalties(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -298,6 +327,11 @@ export class Market extends BaseContract {
     buy(
       tokenId: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    c_0x95d3f9ef(
+      c__0x95d3f9ef: BytesLike,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     claimRoyalties(
