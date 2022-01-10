@@ -20,6 +20,7 @@ data = {'grant_type': 'password',
 headers = {'User-Agent': 'Hype-Calc/0.0.1'}
 token_response = requests.post('https://www.reddit.com/api/v1/access_token',
                                auth=auth, data=data, headers=headers)
+print(token_response.json())
 TOKEN = token_response.json()['access_token']
 headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
 
