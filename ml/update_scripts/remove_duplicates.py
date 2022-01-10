@@ -3,8 +3,7 @@ Script to remove duplicates in the database
 """
 import sys
 
-# If running locally change to sys.path.insert(1, 'api')
-sys.path.insert(1, '/api')
+sys.path.insert(1, './api')
 from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
 collection = get_collection()
