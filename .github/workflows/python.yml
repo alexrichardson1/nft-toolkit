@@ -27,4 +27,4 @@ jobs:
       - name: ESLint disabled warnings
         run: python3 git-hooks/pre-push.py
       - name: Run pytest
-        run: pytest
+        run: cd ml/ && pytest
