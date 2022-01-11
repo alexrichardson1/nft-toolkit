@@ -29,7 +29,7 @@ export const getMarketURL: RequestHandler = async (req, res, next) => {
     );
     const { collection: openseaCollection }: OpenSeaCol = openseaRes.data;
     if (!openseaCollection) {
-      return next("Collection not found in OpenSea");
+      throw new Error("Collection not found in OpenSea");
     }
     const marketURL = `https://testnets.opensea.io/collection/${openseaCollection.slug}`;
     const collection = await Collection.findOneAndUpdate(
