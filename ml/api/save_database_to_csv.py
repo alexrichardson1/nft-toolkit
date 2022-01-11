@@ -17,11 +17,13 @@ header = ['name', 'reddit_score', 'twitter_score',
 with open('api/training_data.csv', 'w') as file:
     file.truncate(0)
 
-writer = csv.writer(file)
-writer.writerow(header)
+    writer = csv.writer(file)
+    writer.writerow(header)
 
-for document in collection.find():
-    print("Writing row for : " + document['name'])
-    writer.writerow([document['name'], document['reddit_score'],
-                     document['twitter_score'], document['avg_sale_price'],
-                     document['volume'], document['preview_img']])
+    for document in collection.find():
+        print("Writing row for : " + document['name'])
+        writer.writerow([document['name'], document['reddit_score'],
+                        document['twitter_score'], document['avg_sale_price'],
+                        document['volume'], document['preview_img']])
+
+    file.close()
