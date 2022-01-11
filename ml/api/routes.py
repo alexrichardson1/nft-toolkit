@@ -7,7 +7,7 @@ import sys
 from flask import Flask, Blueprint, request
 import pymongo
 from dotenv import load_dotenv
-import hype_meter
+from hype_meter import HypeMeter
 from flask_cors import CORS
 
 
@@ -41,8 +41,10 @@ def get_similar_collections(collection_name):
     twitter = request.args.get('twitter-handle')
     reddit = request.args.get('reddit-handle')
 
-    (reddit_members, subreddits) = hype_meter.get_num_of_reddit_members(reddit)
-    twitter_followers = hype_meter.get_num_of_twitter_followers(twitter)
+    hype_meter = HypeMeter(collection_name, reddit, twitter)
+
+    reddit_members = hype_meter.get_num_of_reddit_members()
+    twitter_followers = hype_meter.get_num_of_twitter_followers()
 
     similar_collections = model.predict(
         collection_name, reddit_members, twitter_followers)
@@ -50,7 +52,7 @@ def get_similar_collections(collection_name):
     if similar_collections is None:
         return {"collections": [], "hype": 0, "price": 0}
 
-    hype = get_hype(similar_collections, twitter, (reddit, subreddits))
+    hype = hype_meter.get_hype(similar_collections)
     (price, final_similar_collections) = get_recommended_price(
         similar_collections, hype)
 
@@ -107,34 +109,6 @@ def create_app(test_config=None):
     app.register_blueprint(price_blueprint)
 
     return app
-
-
-def get_hype(collections, twitter_handle, reddit_data):
-    """
-    Returns hype from 0 to 1
-
-    Args:
-        - names: Names of similar collections
-        - twitter_handle: Collection/Artists' twitter username
-        - reddit_handle: Collection subreddit name
-    """
-    score_of_request = hype_meter.get_overall_score_using_handles(
-        twitter_handle, reddit_data)
-
-    total = 0
-    count = 0
-    for collection in collections:
-        total += collection['twitter_score'] + collection['reddit_score']
-        count += 1
-
-    avg_score = total / count
-
-    if score_of_request > avg_score:
-        return 1
-
-    if avg_score == 0:
-        return 0
-    return score_of_request / avg_score
 
 
 def get_recommended_price(collections, hype):
