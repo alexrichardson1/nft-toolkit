@@ -1,9 +1,14 @@
 import {
   deployContracts,
+  generateTokens,
+  getAllCollections,
   getCollection,
   getUserCollections,
+  makeGif,
   saveCollectionToDB,
   successHandler,
+  transformTiers,
+  uploadRemainingImgs,
 } from "@controllers/collection";
 import { Collection } from "@models/collection";
 import { User, UserCollection } from "@models/user";
@@ -56,7 +61,14 @@ describe("Success Handler", () => {
   });
 });
 
-// TODO: Mock S3 upload
+describe("Make Gif", () => {
+  it("Should fail if invalid tokens provided", () => {
+    expect(makeGif([], "", "")).rejects.toThrowError(
+      Error("Invalid tokens, must include at least one")
+    );
+  });
+});
+
 describe("Save collection to db", () => {
   it("Should successfully add a new user and collection", async () => {
     const mockRequest = {
@@ -80,6 +92,20 @@ describe("Deploy contracts", () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         transaction: expect.any(Object),
+      })
+    );
+  });
+});
+
+describe("Get all collections", () => {
+  it("Should succeed to get all collections", async () => {
+    const mockRequest = {
+      params: {},
+    } as unknown as Request;
+    await getAllCollections(mockRequest, mockResponse, mockNext);
+    expect(mockResponse.json).toHaveBeenCalledWith(
+      expect.objectContaining({
+        collections: [],
       })
     );
   });
@@ -162,5 +188,77 @@ describe("Get collection", () => {
         collection: expect.any(Object),
       })
     );
+  });
+});
+
+describe("Transform tiers", () => {
+  it("Should fail if called with undefined params", async () => {
+    const mockRequest = {
+      body: {},
+    } as unknown as Request;
+    await transformTiers(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
+  });
+
+  it("Should successfully transform tiers", async () => {
+    const mockRequest = {
+      body: {
+        tiers: [
+          { name: "legendary", probability: 5 },
+          { name: "epic", probability: 10 },
+          { name: "rare", probability: 15 },
+          { name: "uncommon", probability: 20 },
+          { name: "common", probability: 50 },
+        ],
+      },
+    } as unknown as Request;
+    await transformTiers(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalled();
+    expect(mockRequest.body.tiers).toEqual([
+      { name: "legendary", probability: 5 },
+      { name: "epic", probability: 15 },
+      { name: "rare", probability: 30 },
+      { name: "uncommon", probability: 50 },
+      { name: "common", probability: 100 },
+    ]);
+  });
+});
+
+describe("Generate tokens", () => {
+  it("Should fail if called with invalid params", async () => {
+    const mockRequest = {
+      body: { layers: [], tiers: [], quantity: 2, name: "", creator: "" },
+    } as unknown as Request;
+    await generateTokens(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(
+      new Error("There are less possible combinations than quantity requested")
+    );
+  });
+
+  it("Should successfully generate tokens", async () => {
+    const mockRequest = {
+      body: { layers: [], tiers: [], quantity: 0, name: "", creator: "" },
+    } as unknown as Request;
+    await generateTokens(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalled();
+  });
+});
+
+describe("Upload remaining images", () => {
+  it("Should fail to upload none image", () => {
+    const mockRequest = {
+      body: {
+        images: [
+          {
+            image: { hash: "", images: [], rarity: 100, attributes: [] },
+            index: 0,
+          },
+        ],
+        compInfo: { name: "", creator: "", layerBufs: {}, layerFreq: {} },
+      },
+    } as unknown as Request;
+    expect(
+      uploadRemainingImgs(mockRequest, mockResponse, mockNext)
+    ).rejects.toThrow(Error("Cannot compile image when none is given"));
   });
 });
