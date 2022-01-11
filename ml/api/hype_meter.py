@@ -98,6 +98,10 @@ class HypeMeter():
                            os.getenv("TWITTER_BEARER_TOKEN")}
         response = requests.request(
             "GET", url, headers=twitter_headers, params=querystring)
+
+        if response.status_code != 200:
+            return 0
+
         resp = json.loads(response.text)
         if "followers_count" in resp:
             return int(resp["followers_count"])
