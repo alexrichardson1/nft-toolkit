@@ -2,7 +2,7 @@
 Test API - tests flask functionality
 """
 import sys
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 import unittest
 
 sys.path.insert(1, './api')
@@ -192,6 +192,79 @@ class TestHypeMeter(unittest.TestCase):
             assert self.mock_hype_meter2.get_score_from_reddit() == 38
             assert mock_get_env.called
             assert mocked_post.call_count == 2
+
+    # pylint:disable=unused-argument
+    def test_get_overall_score_using_handles(self, mock_get_env):
+        """
+        Get overall score using the handles
+        """
+        self.mock_hype_meter4.get_score_from_reddit = MagicMock(
+            return_value=10)
+        self.mock_hype_meter4.get_score_from_twitter = MagicMock(
+            return_value=10)
+        assert self.mock_hype_meter4.get_overall_score_using_handles() == 20
+
+    # pylint:disable=unused-argument
+    def test_get_hype_using_handles(self, mock_get_env):
+        """
+        Get overall score using the handles
+        """
+        self.mock_hype_meter4.get_overall_score_using_handles = MagicMock(
+            return_value=45)
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 12, 'twitter_score': 47}]
+
+        assert self.mock_hype_meter4.get_hype(
+            similar_collections) == (45 / (12 + 47))
+
+    # pylint:disable=unused-argument
+    def test_get_hype_using_handles_very_hyped(self, mock_get_env):
+        """
+        Get overall score using the handles
+        """
+        self.mock_hype_meter4.get_overall_score_using_handles = MagicMock(
+            return_value=12235)
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 12, 'twitter_score': 47}]
+
+        assert self.mock_hype_meter4.get_hype(similar_collections) == 1
+
+    # pylint:disable=unused-argument
+    def test_get_hype_using_handles_badly_hyped_similar_collections(self, mock_get_env):
+        """
+        Get overall score using the handles for a collection with similar collections with bad hype
+        """
+        self.mock_hype_meter4.get_overall_score_using_handles = MagicMock(
+            return_value=10)
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 0, 'twitter_score': 0}]
+
+        assert self.mock_hype_meter4.get_hype(similar_collections) == 1
+
+    # pylint:disable=unused-argument
+    def test_get_hype_badly_hyped_similar_collections_and_bad_hype(self, mock_get_env):
+        """
+        Get overall score using the handles for a collection with a bad hype
+            and bad hype on similar collections
+        """
+        self.mock_hype_meter4.get_overall_score_using_handles = MagicMock(
+            return_value=0)
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 0, 'twitter_score': 0}]
+
+        assert self.mock_hype_meter4.get_hype(similar_collections) == 0
+
+    # pylint:disable=unused-argument
+    def test_get_hype_using_handles_bad_hype(self, mock_get_env):
+        """
+        Get overall score using the handles for a collection with a bad hype
+        """
+        self.mock_hype_meter4.get_overall_score_using_handles = MagicMock(
+            return_value=0)
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 20, 'twitter_score': 50}]
+
+        assert self.mock_hype_meter4.get_hype(similar_collections) == 0
 
 
 if __name__ == '__main__':
