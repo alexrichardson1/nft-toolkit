@@ -120,9 +120,6 @@ class HypeMeter():
         """
         Returns hype given a twitter handle
         """
-        if self.twitter_handle is None:
-            return 0
-
         return self.get_num_of_twitter_followers()
 
     def get_overall_score(self):
@@ -132,7 +129,7 @@ class HypeMeter():
         client = pymongo.MongoClient(os.getenv("MONGO_STRING"))
         collection = client.CollectionDB.collections
         for document in collection.find({"name": self.collection_name}):
-            return document["reddit_members"] + document["twitter_followers"]
+            return document["reddit_score"] + document["twitter_score"]
 
         reddit_score = self.get_score_from_reddit()
         twitter_score = self.get_score_from_twitter()
