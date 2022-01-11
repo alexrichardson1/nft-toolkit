@@ -57,7 +57,7 @@ class TestHypeMeter(unittest.TestCase):
 
     def test_get_num_of_twitter_followers_user4_followers_count_not_in_response(self, mock_get_env):
         """
-        Returns 0 if API response does  not contain followers_count
+        Returns 0 if API response does not contain followers_count
         """
         with patch('hype_meter.requests.request') as mocked_request:
             mocked_request.return_value.text = '{"foo":10}'
@@ -104,6 +104,94 @@ class TestHypeMeter(unittest.TestCase):
             mocked_post.return_value.status_code = 200
             assert self.mock_hype_meter4.get_subreddits_with_handle() == []
             assert mock_get_env.called
+
+    def test_get_num_of_reddit_members_user1(self, mock_get_env):
+        """
+        Get number of reddit members without handle
+        """
+        assert self.mock_hype_meter1.get_num_of_reddit_members() == 0
+        assert not mock_get_env.called
+
+    def test_get_num_of_reddit_members_user2(self, mock_get_env):
+        """
+        Get number of reddit members with a successful call to the API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = \
+                '{"subreddits":[{"subscriber_count":10}, {"subscriber_count":20}]}'
+            assert self.mock_hype_meter2.get_num_of_reddit_members() == 10
+            assert mock_get_env.called
+
+    def test_get_num_of_reddit_members_user2_failed(self, mock_get_env):
+        """
+        Get number of reddit members with a successful call to the API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = '{"subreddits":[{"foo":10}, {"subscriber_count":20}]}'
+            assert self.mock_hype_meter2.get_num_of_reddit_members() == 0
+            assert mock_get_env.called
+            assert mocked_post.call_count == 2
+
+    def test_get_score_from_reddit_user1(self, mock_get_env):
+        """
+        Returns 0 if no reddit handle
+        """
+        assert self.mock_hype_meter1.get_score_from_reddit() == 0
+        assert not mock_get_env.called
+
+    def test_get_score_from_reddit_user2(self, mock_get_env):
+        """
+        Get number of reddit members with a successful call to the API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = '{"subreddits":' + \
+                '[{"subscriber_count":10, "active_user_count":5},' + \
+                ' {"subscriber_count":23, "active_user_count":2}]}'
+            assert self.mock_hype_meter2.get_score_from_reddit() == 40
+            assert mock_get_env.called
+            assert mocked_post.call_count == 2
+
+    def test_get_score_from_reddit_user2_without_sub_count(self, mock_get_env):
+        """
+        Get number of reddit members with a successful call to the API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = '{"subreddits":' + \
+                '[{"active_user_count":5},' + \
+                ' {"active_user_count":2}]}'
+            assert self.mock_hype_meter2.get_score_from_reddit() == 7
+            assert mock_get_env.called
+            assert mocked_post.call_count == 2
+
+    def test_get_score_from_reddit_user2_without_active_members(self, mock_get_env):
+        """
+        Get number of reddit members with a successful call to the API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = '{"subreddits":' + \
+                '[{"subscriber_count":15},' + \
+                ' {"subscriber_count":23}]}'
+            assert self.mock_hype_meter2.get_score_from_reddit() == 38
+            assert mock_get_env.called
+            assert mocked_post.call_count == 2
+
+    def test_get_score_from_reddit_user2_mixed_missing_numbers(self, mock_get_env):
+        """
+        Get number of reddit members with a successful call to the API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = '{"subreddits":' + \
+                '[{"active_user_count":15},' + \
+                ' {"subscriber_count":23}]}'
+            assert self.mock_hype_meter2.get_score_from_reddit() == 38
+            assert mock_get_env.called
+            assert mocked_post.call_count == 2
 
 
 if __name__ == '__main__':
