@@ -12,7 +12,7 @@ from flask_cors import CORS
 
 
 load_dotenv()
-# If running locally change to sys.path.insert(1, 'api/models')
+
 sys.path.insert(1, './api/models')
 price_blueprint = Blueprint('recipes', __name__, template_folder='templates')
 
@@ -29,12 +29,11 @@ def get_similar_collections(collection_name):
     Returns:
         Json file:
             {
-                names: [(string, int)],
+                collections: [(string, int)],
                 hype: int,
                 price: float
             }
     """
-    # If running locally change to sys.path.insert(1, 'api/collection_model')
     with open('./api/collection_model', 'rb') as file:
         model = pickle.load(file)
 
