@@ -6,7 +6,7 @@ export const mockTokenInfo = {
   image:
     "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png",
 };
-export const mockDeployedAddress = "0x1B156C5c75E9dF4CAAb2a5cc5999aC58ff4F9090";
+export const mockDeployedAddress = "0x2575c52d161648B03428B76c3a5003436b514eBC";
 export const mockCreator = "0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752";
 export const mockValidCollectionName = "NotMonkeys";
 
