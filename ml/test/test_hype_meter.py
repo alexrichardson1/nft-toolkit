@@ -46,7 +46,6 @@ class TestHypeMeter(unittest.TestCase):
             assert self.mock_hype_meter3.get_num_of_twitter_followers() == 10
             assert mock_get_env.called
 
-    # pylint:disable=unused-argument
     def test_get_num_of_twitter_followers_user4_failed_request(self, mock_get_env):
         """
         Returns 0 if API call fails
@@ -56,7 +55,6 @@ class TestHypeMeter(unittest.TestCase):
             assert self.mock_hype_meter4.get_num_of_twitter_followers() == 0
             assert mock_get_env.called
 
-    # pylint:disable=unused-argument
     def test_get_num_of_twitter_followers_user4_followers_count_not_in_response(self, mock_get_env):
         """
         Returns 0 if API response does  not contain followers_count
@@ -65,6 +63,46 @@ class TestHypeMeter(unittest.TestCase):
             mocked_request.return_value.text = '{"foo":10}'
             mocked_request.return_value.status_code = 200
             assert self.mock_hype_meter4.get_num_of_twitter_followers() == 0
+            assert mock_get_env.called
+
+    def test_get_subreddits_with_handle_user1(self, mock_get_env):
+        """
+        Returns 0 if no Twitter handle
+        """
+        assert self.mock_hype_meter1.get_subreddits_with_handle() == []
+        assert not mock_get_env.called
+
+    def test_get_subreddits_with_handle_user2(self, mock_get_env):
+        """
+        Successfully returns correct list from API
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 200
+            mocked_post.return_value.text = '{"subreddits":["Obj1", "Obj2"]}'
+
+            subreddits = self.mock_hype_meter2.get_subreddits_with_handle()
+            assert len(subreddits) == 2
+            assert subreddits[0] == 'Obj1'
+            assert subreddits[1] == 'Obj2'
+            assert mock_get_env.called
+
+    def test_get_subreddits_with_handle_failed_request(self, mock_get_env):
+        """
+        Returns [] if API call fails
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.status_code = 404
+            assert len(self.mock_hype_meter4.get_subreddits_with_handle()) == 0
+            assert mock_get_env.called
+
+    def test_get_subreddits_with_handle_user4_subreddits_not_in_response(self, mock_get_env):
+        """
+        Returns 0 if API response does not contain subreddits
+        """
+        with patch('hype_meter.requests.post') as mocked_post:
+            mocked_post.return_value.text = '{"foo":10}'
+            mocked_post.return_value.status_code = 200
+            assert self.mock_hype_meter4.get_subreddits_with_handle() == []
             assert mock_get_env.called
 
 
