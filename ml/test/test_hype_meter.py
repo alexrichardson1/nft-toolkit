@@ -261,6 +261,84 @@ class TestHypeMeter(unittest.TestCase):
 
         assert self.mock_hype_meter4.get_hype(similar_collections) == 0
 
+    # pylint:disable=unused-argument
+    def test_get_recommended_price_with_hype_1(self, mock_get_env):
+        """
+        Get overall score using the handles for a collection with a bad hype
+        """
+
+        hype_val = 1
+
+        def side_effect(arg):
+            self.mock_hype_meter4.hype = hype_val
+
+        self.mock_hype_meter4.get_hype = MagicMock(
+            return_value=hype_val)
+
+        self.mock_hype_meter4.get_hype.side_effect = side_effect
+
+        self.mock_hype_meter4.get_avg_price = MagicMock(
+            return_value=100)
+
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 20, 'twitter_score': 50, 'avg_sale_price': 10}]
+
+        self.mock_hype_meter4.get_hype(similar_collections)
+
+        assert self.mock_hype_meter4.get_recommended_price() == 10
+
+    # pylint:disable=unused-argument
+    def test_get_recommended_price_with_hype_0(self, mock_get_env):
+        """
+        Get overall score using the handles for a collection with a bad hype
+        """
+
+        hype_val = 0
+
+        def side_effect(arg):
+            self.mock_hype_meter4.hype = hype_val
+
+        self.mock_hype_meter4.get_hype = MagicMock(
+            return_value=hype_val)
+
+        self.mock_hype_meter4.get_hype.side_effect = side_effect
+
+        self.mock_hype_meter4.get_avg_price = MagicMock(
+            return_value=100)
+
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 20, 'twitter_score': 50, 'avg_sale_price': 10}]
+
+        self.mock_hype_meter4.get_hype(similar_collections)
+
+        assert self.mock_hype_meter4.get_recommended_price() == 10
+
+    # pylint:disable=unused-argument
+    def test_get_recommended_price_with_hype_half(self, mock_get_env):
+        """
+        Get overall score using the handles for a collection with a bad hype
+        """
+
+        hype_val = 0.5
+
+        def side_effect(arg):
+            self.mock_hype_meter4.hype = hype_val
+
+        self.mock_hype_meter4.get_hype = MagicMock(
+            return_value=hype_val)
+
+        self.mock_hype_meter4.get_hype.side_effect = side_effect
+
+        self.mock_hype_meter4.get_avg_price = MagicMock(
+            return_value=100)
+
+        similar_collections = [
+            {'name': 'foo', 'reddit_score': 20, 'twitter_score': 50, 'avg_sale_price': 10}]
+
+        self.mock_hype_meter4.get_hype(similar_collections)
+
+        assert self.mock_hype_meter4.get_recommended_price() == 5
+
 
 if __name__ == '__main__':
     unittest.main()
