@@ -24,8 +24,8 @@ import { NextFunction, Request, Response } from "express";
 jest.mock("@controllers/common", () => ({
   ...jest.requireActual("@controllers/common"),
   s3: {
-    upload: jest.fn((req) => ({
-      promise: jest.fn(() => new Promise((resolve) => resolve(req))),
+    upload: jest.fn(() => ({
+      promise: jest.fn().mockResolvedValue({}),
     })),
   },
 }));
@@ -235,9 +235,80 @@ describe("Generate tokens", () => {
     );
   });
 
-  it("Should successfully generate tokens", async () => {
+  it("Should successfully generate empty tokens", async () => {
     const mockRequest = {
       body: { layers: [], tiers: [], quantity: 0, name: "", creator: "" },
+    } as unknown as Request;
+    await generateTokens(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalled();
+  });
+});
+
+describe("Generate full img generation pipeline", () => {
+  const TIMEOUT = 3600000;
+  jest.setTimeout(TIMEOUT);
+
+  it("Should successfully full generate tokens", async () => {
+    const mockRequest = {
+      body: {
+        layers: [
+          {
+            name: "background",
+            images: [
+              {
+                name: "blue",
+                image:
+                  "https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752/Morkus+Babies/Background/images/1.png",
+                rarity: 15,
+              },
+              {
+                name: "green",
+                image:
+                  "https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752/Morkus+Babies/Background/images/2.png",
+                rarity: 25,
+              },
+              {
+                name: "pink",
+                image:
+                  "https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752/Morkus+Babies/Background/images/3.png",
+                rarity: 20,
+              },
+              {
+                name: "purple",
+                image:
+                  "https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752/Morkus+Babies/Background/images/4.png",
+                rarity: 15,
+              },
+              {
+                name: "white",
+                image:
+                  "https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752/Morkus+Babies/Background/images/5.png",
+                rarity: 25,
+              },
+            ],
+            rarity: 100,
+          },
+          {
+            name: "head",
+            images: [
+              {
+                name: "base",
+                image:
+                  "https://nft-toolkit-collections.s3.eu-west-2.amazonaws.com/0xA7184E32858b3B3F3C5D33ef21cadFFDb7db0752/Morkus+Babies/Base/images/1.png",
+                rarity: 100,
+              },
+            ],
+            rarity: 100,
+          },
+        ],
+        tiers: [
+          { name: "legendary", probability: 10 },
+          { name: "common", probability: 90 },
+        ],
+        quantity: 4,
+        name: "",
+        creator: "",
+      },
     } as unknown as Request;
     await generateTokens(mockRequest, mockResponse, mockNext);
     expect(mockNext).toHaveBeenCalled();
