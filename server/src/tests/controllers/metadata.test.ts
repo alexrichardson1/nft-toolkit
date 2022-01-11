@@ -10,6 +10,7 @@ import {
   mockTokenInfo,
 } from "@tests/mockCollectionInfo";
 import db from "@tests/testDB";
+import { BigNumber } from "ethers";
 import { NextFunction, Request, Response } from "express";
 import { Document, Types } from "mongoose";
 
@@ -19,6 +20,17 @@ let mockCollection: Document<unknown, unknown, CollectionT> &
   CollectionT & {
     _id: Types.ObjectId;
   };
+
+jest.mock("@server/../smart-contracts/typechain/factories/NFT__factory", () => {
+  return {
+    NFT__factory: {
+      connect: jest.fn(() => ({
+        name: jest.fn().mockResolvedValue("Mustafas Babies v2"),
+        royaltyInfo: jest.fn().mockResolvedValue([void 0, BigNumber.from(0)]),
+      })),
+    },
+  };
+});
 
 const getMockRequest = ({
   chainId = "4",
@@ -153,6 +165,7 @@ describe("Get collection metadata", () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         name: "Mustafas Babies v2",
+        seller_fee_basis_points: 0,
       })
     );
   });
