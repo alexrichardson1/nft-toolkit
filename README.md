@@ -2,7 +2,7 @@
 
 NFToolkit provides a no-code solution for generating NFTs and publishing marketplaces.
 
-[Website](http://nftoolkit.eu-west-2.elasticbeanstalk.com/ "NFToolkit")
+[NFToolkit](http://nftoolkit.eu-west-2.elasticbeanstalk.com/ "NFToolkit")
 
 ## Features
 
