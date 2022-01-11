@@ -5,7 +5,6 @@ import os
 import pickle
 import sys
 from flask import Flask, Blueprint, request
-import pymongo
 from dotenv import load_dotenv
 from hype_meter import HypeMeter
 from flask_cors import CORS
@@ -52,10 +51,11 @@ def get_similar_collections(collection_name):
         return {"collections": [], "hype": 0, "price": 0}
 
     hype = hype_meter.get_hype(similar_collections)
-    (price, final_similar_collections) = get_recommended_price(
-        similar_collections, hype)
+    price = hype_meter.get_recommended_price()
 
-    return {"collections": final_similar_collections, "hype": hype * 100, "price": price}
+    return {"collections": hype_meter.similar_collections_formatted,
+            "hype": hype * 100,
+            "price": price}
 
 
 @price_blueprint.route('/')
@@ -69,15 +69,6 @@ def home_page():
     """
 
     return "This is the ML API server"
-
-
-def get_collection():
-    """
-    Returns MondoDB's CollectionDB.collection_copy
-    """
-    client = pymongo.MongoClient(
-        os.getenv("MONGO_STRING"))
-    return client.CollectionDB.collection_copy
 
 
 def create_app(test_config=None):
@@ -108,37 +99,3 @@ def create_app(test_config=None):
     app.register_blueprint(price_blueprint)
 
     return app
-
-
-def get_recommended_price(collections, hype):
-    """
-    Returns predicted minting price
-
-    Args:
-        - collections: Names of similar collections
-        - hype: Hype from 0 to 1
-    """
-    (similar_collections_avg_price, similar_collections) = get_avg_price(collections)
-    if hype == 0:
-        return (similar_collections_avg_price * 0.1, similar_collections)
-    return (similar_collections_avg_price * hype * 0.1, similar_collections)
-
-
-def get_avg_price(collections):
-    """
-    Returns average price of an asset from the list of similar collections
-
-    Args:
-        - collections: Names of similar collections
-    """
-    db_collection = get_collection()
-    prices = []
-    collection_data = []
-    for collection in collections:
-        document = db_collection.find_one({'name': collection['name']})
-        prices.append(document["avg_sale_price"])
-        collection_data.append(
-            {"name": document['name'], "img": document['preview_img']})
-    if len(prices) == 0:
-        return (0, collection_data)
-    return (sum(prices) / len(prices), collection_data)
