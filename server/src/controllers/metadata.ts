@@ -77,12 +77,8 @@ export const getCollectionMetadata: RequestHandler = async (req, res, next) => {
     return next(error);
   }
 
-  if (!collection.address) {
-    return next(new Error("Collection not deployed"));
-  }
-
   const provider = getRPCProvider(chainIdNum);
-  const nftContract = NFTFactory.connect(collection.address, provider);
+  const nftContract = NFTFactory.connect(collection.address ?? "", provider);
   const external_link = `${SITE_URL}/${collection.chainId}/${collection.address}`;
 
   const result = {
