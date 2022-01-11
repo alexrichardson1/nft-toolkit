@@ -8,11 +8,6 @@ import unittest
 sys.path.insert(1, './api')
 from hype_meter import HypeMeter  # noqa # pylint:disable=import-error, wrong-import-position
 
-mockHypeMeter1 = HypeMeter("cyberPunks", None, None)
-mockHypeMeter2 = HypeMeter("cyberPunks", "reddit", None)
-mockHypeMeter3 = HypeMeter("cyberPunks", None, "twitter")
-mockHypeMeter4 = HypeMeter("cyberPunks", "reddit", "twitter")
-
 
 @patch("os.getenv", return_value="foo")
 class TestHypeMeter(unittest.TestCase):
