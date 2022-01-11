@@ -1,4 +1,5 @@
 [SIMILARITIES]
-
-# Minimum lines number of a similarity.
 min-similarity-lines=100
+
+[DESIGN]
+max-public-methods=25
