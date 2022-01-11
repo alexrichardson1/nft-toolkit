@@ -64,6 +64,23 @@ describe("Add contract address to collection", () => {
     expect(user).toBeDefined();
   });
 
+  it("Should fail if empty tokens provided", async () => {
+    const mockCollection = new Collection({
+      ...mockCollectionInfo,
+      tokens: [],
+    });
+    await mockCollection.save();
+    const mockUser = new User({
+      _id: mockCreator,
+      collections: [],
+    });
+    await mockUser.save();
+    await addDeployedAddress(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(
+      new Error("Tokens must include at least one")
+    );
+  });
+
   it("Should succeed to set deployed address", async () => {
     const mockCollection = new Collection(mockCollectionInfo);
     await mockCollection.save();
