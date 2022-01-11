@@ -69,7 +69,10 @@ class HypeMeter():
         subreddits = self.get_subreddits_with_handle()
         if len(subreddits) == 0:
             return 0
-        return int(subreddits[0]['subscriber_count'])
+
+        return \
+            int(subreddits[0]['subscriber_count']) if (
+                'subscriber_count' in subreddits[0]) else 0
 
     def get_score_from_reddit(self):
         """
@@ -80,12 +83,14 @@ class HypeMeter():
             return 0
 
         if self.subreddits is None:
-            self.subreddits = self.get_subreddits_with_handle()
+            self.get_subreddits_with_handle()
 
         total = 0
         for subreddit in self.subreddits:
-            total += int(subreddit['subscriber_count']) + \
-                int(subreddit['active_user_count'])
+            total += \
+                (int(subreddit['subscriber_count']) if 'subscriber_count' in subreddit else 0) + \
+                (int(subreddit['active_user_count'])
+                 if 'active_user_count' in subreddit else 0)
         return total
 
     def get_num_of_twitter_followers(self):
