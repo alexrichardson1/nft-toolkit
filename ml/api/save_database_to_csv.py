@@ -23,7 +23,7 @@ with open('api/training_data.csv', 'w') as file:
     for document in collection.find():
         print("Writing row for : " + document['name'])
         writer.writerow([document['name'], document['reddit_score'],
-                        document['twitter_score'], document['avg_sale_price'],
-                        document['volume'], document['preview_img']])
+                         document['twitter_score'], document['avg_sale_price'],
+                         document['volume'], document['preview_img']])
 
     file.close()
