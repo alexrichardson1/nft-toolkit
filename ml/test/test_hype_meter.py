@@ -1,0 +1,65 @@
+"""
+Test API - tests flask functionality
+"""
+import sys
+from unittest.mock import patch
+import unittest
+
+sys.path.insert(1, './api')
+from hype_meter import HypeMeter  # noqa # pylint:disable=import-error, wrong-import-position
+
+mockHypeMeter1 = HypeMeter("cyberPunks", None, None)
+mockHypeMeter2 = HypeMeter("cyberPunks", "reddit", None)
+mockHypeMeter3 = HypeMeter("cyberPunks", None, "twitter")
+mockHypeMeter4 = HypeMeter("cyberPunks", "reddit", "twitter")
+
+
+class TestHypeMeter(unittest.TestCase):
+    """
+    Test Class for Hype Meter
+    """
+
+    def setUp(self):
+        """
+        Set up function to create hypemeters
+        """
+        self.mock_hype_meter1 = HypeMeter("cyberPunks", None, None)
+        self.mock_hype_meter2 = HypeMeter("cyberPunks", "reddit", None)
+        self.mock_hype_meter3 = HypeMeter("cyberPunks", None, "twitter")
+        self.mock_hype_meter4 = HypeMeter("cyberPunks", "reddit", "twitter")
+
+    def test_get_num_of_twitter_followers_user1(self):
+        """
+        Returns 0 if no Twitter handle
+        """
+        assert self.mock_hype_meter1.get_num_of_twitter_followers() == 0
+
+    def test_get_num_of_twitter_followers_user3(self):
+        """
+        Successfully returns correct number from API
+        """
+        with patch('hype_meter.requests.request') as mocked_request:
+            mocked_request.return_value.text = '{"followers_count":10}'
+            mocked_request.return_value.status_code = 200
+            assert self.mock_hype_meter3.get_num_of_twitter_followers() == 10
+
+    def test_get_num_of_twitter_followers_user4_failed_request(self):
+        """
+        Returns 0 if API call fails
+        """
+        with patch('hype_meter.requests.request') as mocked_request:
+            mocked_request.return_value.status_code = 404
+            assert self.mock_hype_meter4.get_num_of_twitter_followers() == 0
+
+    def test_get_num_of_twitter_followers_user4_followers_count_not_int_response(self):
+        """
+        Returns 0 if API response does  not contain followers_count
+        """
+        with patch('hype_meter.requests.request') as mocked_request:
+            mocked_request.return_value.text = '{"foo":10}'
+            mocked_request.return_value.status_code = 200
+            assert self.mock_hype_meter4.get_num_of_twitter_followers() == 0
+
+
+if __name__ == '__main__':
+    unittest.main()
