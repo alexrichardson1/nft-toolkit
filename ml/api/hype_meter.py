@@ -52,7 +52,11 @@ class HypeMeter():
             self.subreddits = []
             return self.subreddits
 
-        self.subreddits = res.json()['subreddits']
+        resp = json.loads(res.text)
+        if "subreddits" in resp:
+            self.subreddits = resp["subreddits"]
+        else:
+            self.subreddits = []
         return self.subreddits
 
     def get_num_of_reddit_members(self):
@@ -76,10 +80,10 @@ class HypeMeter():
             return 0
 
         if self.subreddits is None:
-            subreddits = self.get_subreddits_with_handle()
+            self.subreddits = self.get_subreddits_with_handle()
 
         total = 0
-        for subreddit in subreddits:
+        for subreddit in self.subreddits:
             total += int(subreddit['subscriber_count']) + \
                 int(subreddit['active_user_count'])
         return total
