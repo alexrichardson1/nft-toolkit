@@ -35,7 +35,11 @@ def get_similar_subreddits(collection_name_param_subreddits):
     if res.status_code != 200:
         return []
 
-    return res.json()['subreddits']
+    resp = json.loads(res.text)
+    if "subreddits" in resp:
+        return resp["subreddits"]
+
+    return []
 
 
 def score_reddit_activity_using_collection_name(collection_name_param_reddit_score):
@@ -45,8 +49,10 @@ def score_reddit_activity_using_collection_name(collection_name_param_reddit_sco
     subreddits = get_similar_subreddits(collection_name_param_reddit_score)
     total = 0
     for subreddit in subreddits:
-        total += int(subreddit['subscriber_count']) + \
-            int(subreddit['active_user_count'])
+        total += \
+            (int(subreddit['subscriber_count']) if 'subscriber_count' in subreddit else 0) + \
+            (int(subreddit['active_user_count'])
+             if 'active_user_count' in subreddit else 0)
     return total
 
 
