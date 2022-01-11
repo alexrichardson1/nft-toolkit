@@ -1,4 +1,8 @@
-import { getTokenMetadata } from "@controllers/metadata";
+import {
+  getAllTokenMetadata,
+  getCollectionMetadata,
+  getTokenMetadata,
+} from "@controllers/metadata";
 import { Collection, CollectionT } from "@models/collection";
 import {
   mockCollectionInfo,
@@ -89,6 +93,67 @@ describe("Token Metadata", () => {
     await getTokenMetadata(getMockRequest(), mockResponse, mockNext);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining(mockTokenInfo)
+    );
+  });
+});
+
+describe("Get all token metadata", () => {
+  it("Should fail if called with undefined params", async () => {
+    const mockRequest = {
+      params: {},
+    } as unknown as Request;
+    await getAllTokenMetadata(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
+  });
+
+  it("Should fail if collection does not exist in db", async () => {
+    await getAllTokenMetadata(getMockRequest(), mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Collection not found"));
+  });
+
+  it("Should succeed if collection does exist in db", async () => {
+    await mockCollection.save();
+    await getAllTokenMetadata(getMockRequest(), mockResponse, mockNext);
+    expect(mockResponse.json).toHaveBeenCalled();
+  });
+});
+
+describe("Get collection metadata", () => {
+  it("Should fail if called with undefined params", async () => {
+    const mockRequest = {
+      params: {},
+    } as unknown as Request;
+    await getCollectionMetadata(mockRequest, mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Invalid params"));
+  });
+
+  it("Should fail if collection does not exist in db", async () => {
+    await getCollectionMetadata(getMockRequest(), mockResponse, mockNext);
+    expect(mockNext).toHaveBeenCalledWith(new Error("Collection not found"));
+  });
+
+  it("Should succeed if collection has been deployed with no royalty", async () => {
+    await mockCollection.save();
+    await getCollectionMetadata(getMockRequest(), mockResponse, mockNext);
+    expect(mockResponse.json).toHaveBeenCalledWith(
+      expect.objectContaining({
+        name: "Mustafas Babies v2",
+      })
+    );
+  });
+
+  it("Should succeed if collection has been deployed with market", async () => {
+    const mockCollectionMarket = new Collection({
+      ...mockCollectionInfo,
+      address: mockDeployedAddress,
+      marketAddress: "0x6a924e1Dc38dff34F5ED8f983CAA69f915Ec5ce2",
+    });
+    await mockCollectionMarket.save();
+    await getCollectionMetadata(getMockRequest(), mockResponse, mockNext);
+    expect(mockResponse.json).toHaveBeenCalledWith(
+      expect.objectContaining({
+        name: "Mustafas Babies v2",
+      })
     );
   });
 });
