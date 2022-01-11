@@ -16,6 +16,7 @@ class HypeMeter():
     Object class to get hype using collection names, reddit handle and twitter handle
     """
 
+    # pylint:disable=too-many-instance-attributes
     def __init__(self, collection_name, reddit_handle, twitter_handle):
         self.reddit_handle = reddit_handle
         self.twitter_handle = twitter_handle

@@ -2,4 +2,4 @@
 min-similarity-lines=100
 
 [DESIGN]
-max-public-methods=25
+max-public-methods=30
