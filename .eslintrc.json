@@ -37,7 +37,8 @@
           "trait_type",
           "fee_recipient",
           "seller_fee_basis_points",
-          "external_link"
+          "external_link",
+          "NFT__factory"
         ]
       }
     ],
