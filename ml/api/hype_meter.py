@@ -21,6 +21,9 @@ class HypeMeter():
         self.twitter_handle = twitter_handle
         self.subreddits = None
         self.collection_name = collection_name
+        self.hype = None
+        self.similar_collections = None
+        self.similar_collections_formatted = None
 
     def get_subreddits_with_handle(self):
         """
@@ -147,6 +150,7 @@ class HypeMeter():
         Returns evaluation of hype using other similar collections
         """
         score_of_request = self.get_overall_score_using_handles()
+        self.similar_collections = similar_collections
 
         total = 0
         count = 0
@@ -157,8 +161,54 @@ class HypeMeter():
         avg_score = total / count
 
         if score_of_request > avg_score:
-            return 1
+            self.hype = 1
+            return self.hype
 
         if avg_score == 0:
+            self.hype = 0
+            return self.hype
+
+        self.hype = score_of_request / avg_score
+        return self.hype
+
+    def get_recommended_price(self):
+        """
+        Returns predicted minting price
+
+        Args:
+            - collections: Names of similar collections
+        """
+        similar_collections_avg_price = self.get_avg_price()
+        if self.hype == 0:
+            return similar_collections_avg_price * 0.1
+        return similar_collections_avg_price * self.hype * 0.1
+
+    def get_avg_price(self):
+        """
+        Returns average price of an asset from the list of similar collections
+
+        Args:
+            - collections: Names of similar collections
+        """
+        db_collection = get_collection()
+        prices = []
+        collection_data = []
+        for collection in self.similar_collections:
+            document = db_collection.find_one({'name': collection['name']})
+            prices.append(document["avg_sale_price"])
+            collection_data.append(
+                {"name": document['name'], "img": document['preview_img']})
+
+        self.similar_collections_formatted = collection_data
+        if len(prices) == 0:
             return 0
-        return score_of_request / avg_score
+        return sum(prices) / len(prices)
+
+
+def get_collection():
+    """
+    Returns MondoDB's CollectionDB.collection_copy
+    """
+    client = pymongo.MongoClient(
+        os.getenv("MONGO_STRING"))
+    return client.CollectionDB.collection_copy

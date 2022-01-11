@@ -4,7 +4,7 @@ Script to remove duplicates in the database
 import sys
 
 sys.path.insert(1, './api')
-from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
+from hype_meter import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
 collection = get_collection()
 

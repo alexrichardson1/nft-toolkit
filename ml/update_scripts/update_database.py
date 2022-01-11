@@ -8,7 +8,7 @@ import json
 import requests
 
 sys.path.insert(1, './api')
-from routes import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
+from hype_meter import get_collection  # noqa # pylint:disable=import-error, wrong-import-position
 
 
 def get_similar_subreddits(collection_name_param_subreddits):

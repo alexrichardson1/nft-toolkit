@@ -3,7 +3,7 @@ Script to save database data to cvs file
 """
 
 import csv
-from routes import get_collection
+from hype_meter import get_collection
 from dotenv import load_dotenv
 
 
