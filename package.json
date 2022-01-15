@@ -30,7 +30,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-tsdoc": "^0.2.14",
     "glob-parent": "^5.1.2",
-    "marked": "^0.3.18",
+    "marked": "^4.0.10",
     "mem": "^4.0.0",
     "minimatch": "^3.0.2",
     "minimist": "^0.2.1",
